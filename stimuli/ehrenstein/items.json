@@ -1,0 +1,4322 @@
+[
+ {
+  "name": "ehr_R70_n4_dark_p0_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n4_dark_p0_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n4_dark_p0_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n4_dark_p0_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n4_dark_p1_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n4_dark_p1_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n4_dark_p1_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n4_dark_p1_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n4_dark_p2_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n4_dark_p2_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n4_dark_p2_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n4_dark_p2_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n4_dark_p3_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n4_dark_p3_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n4_dark_p3_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n4_dark_p3_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n4_dark_p4_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n4_dark_p4_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n4_dark_p4_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n4_dark_p4_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n4_light_p0_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "light",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n4_light_p0_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "light",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n4_light_p0_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n4_light_p0_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n4_light_p1_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "light",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n4_light_p1_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "light",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n4_light_p1_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n4_light_p1_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n4_light_p2_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "light",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n4_light_p2_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "light",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n4_light_p2_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n4_light_p2_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n4_light_p3_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "light",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n4_light_p3_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "light",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n4_light_p3_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n4_light_p3_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n4_light_p4_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "light",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n4_light_p4_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "light",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n4_light_p4_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n4_light_p4_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 4,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n6_dark_p0_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n6_dark_p0_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n6_dark_p0_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n6_dark_p0_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n6_dark_p1_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n6_dark_p1_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n6_dark_p1_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n6_dark_p1_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n6_dark_p2_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n6_dark_p2_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n6_dark_p2_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n6_dark_p2_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n6_dark_p3_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n6_dark_p3_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n6_dark_p3_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n6_dark_p3_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n6_dark_p4_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n6_dark_p4_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n6_dark_p4_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n6_dark_p4_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n6_light_p0_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "light",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n6_light_p0_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "light",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n6_light_p0_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n6_light_p0_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n6_light_p1_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "light",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n6_light_p1_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "light",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n6_light_p1_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n6_light_p1_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n6_light_p2_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "light",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n6_light_p2_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "light",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n6_light_p2_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n6_light_p2_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n6_light_p3_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "light",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n6_light_p3_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "light",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n6_light_p3_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n6_light_p3_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n6_light_p4_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "light",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n6_light_p4_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "light",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n6_light_p4_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n6_light_p4_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 6,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n8_dark_p0_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n8_dark_p0_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n8_dark_p0_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n8_dark_p0_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n8_dark_p1_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n8_dark_p1_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n8_dark_p1_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n8_dark_p1_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n8_dark_p2_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n8_dark_p2_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n8_dark_p2_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n8_dark_p2_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n8_dark_p3_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n8_dark_p3_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n8_dark_p3_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n8_dark_p3_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n8_dark_p4_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n8_dark_p4_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n8_dark_p4_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n8_dark_p4_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n8_light_p0_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "light",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n8_light_p0_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "light",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n8_light_p0_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n8_light_p0_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n8_light_p1_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "light",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n8_light_p1_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "light",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n8_light_p1_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n8_light_p1_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n8_light_p2_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "light",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n8_light_p2_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "light",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n8_light_p2_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n8_light_p2_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n8_light_p3_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "light",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n8_light_p3_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "light",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n8_light_p3_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n8_light_p3_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n8_light_p4_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "light",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n8_light_p4_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "light",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n8_light_p4_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n8_light_p4_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 8,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n12_dark_p0_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n12_dark_p0_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n12_dark_p0_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n12_dark_p0_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n12_dark_p1_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n12_dark_p1_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n12_dark_p1_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n12_dark_p1_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n12_dark_p2_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n12_dark_p2_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n12_dark_p2_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n12_dark_p2_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n12_dark_p3_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n12_dark_p3_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n12_dark_p3_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n12_dark_p3_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n12_dark_p4_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n12_dark_p4_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n12_dark_p4_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n12_dark_p4_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n12_light_p0_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "light",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n12_light_p0_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "light",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n12_light_p0_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n12_light_p0_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n12_light_p1_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "light",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n12_light_p1_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "light",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n12_light_p1_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n12_light_p1_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n12_light_p2_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "light",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n12_light_p2_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "light",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n12_light_p2_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n12_light_p2_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n12_light_p3_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "light",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n12_light_p3_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "light",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n12_light_p3_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n12_light_p3_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n12_light_p4_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "light",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n12_light_p4_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "light",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n12_light_p4_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n12_light_p4_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 12,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n16_dark_p0_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n16_dark_p0_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n16_dark_p0_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n16_dark_p0_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n16_dark_p1_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n16_dark_p1_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n16_dark_p1_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n16_dark_p1_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n16_dark_p2_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n16_dark_p2_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n16_dark_p2_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n16_dark_p2_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n16_dark_p3_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n16_dark_p3_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n16_dark_p3_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n16_dark_p3_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n16_dark_p4_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n16_dark_p4_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n16_dark_p4_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n16_dark_p4_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n16_light_p0_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "light",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n16_light_p0_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "light",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n16_light_p0_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n16_light_p0_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n16_light_p1_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "light",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n16_light_p1_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "light",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n16_light_p1_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n16_light_p1_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n16_light_p2_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "light",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n16_light_p2_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "light",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n16_light_p2_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n16_light_p2_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n16_light_p3_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "light",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n16_light_p3_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "light",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n16_light_p3_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n16_light_p3_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n16_light_p4_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "light",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n16_light_p4_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "light",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n16_light_p4_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n16_light_p4_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 16,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n24_dark_p0_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n24_dark_p0_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n24_dark_p0_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n24_dark_p0_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n24_dark_p1_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n24_dark_p1_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n24_dark_p1_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n24_dark_p1_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n24_dark_p2_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n24_dark_p2_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n24_dark_p2_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n24_dark_p2_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n24_dark_p3_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n24_dark_p3_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n24_dark_p3_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n24_dark_p3_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n24_dark_p4_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n24_dark_p4_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n24_dark_p4_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n24_dark_p4_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n24_light_p0_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "light",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n24_light_p0_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "light",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n24_light_p0_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n24_light_p0_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n24_light_p1_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "light",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n24_light_p1_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "light",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n24_light_p1_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n24_light_p1_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n24_light_p2_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "light",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n24_light_p2_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "light",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n24_light_p2_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n24_light_p2_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n24_light_p3_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "light",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n24_light_p3_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "light",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n24_light_p3_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n24_light_p3_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R70_n24_light_p4_illusory",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "light",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R70_n24_light_p4_real",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "light",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R70_n24_light_p4_control_mid",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R70_n24_light_p4_control_end",
+  "shape": "ehrenstein",
+  "R": 70,
+  "n": 24,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n4_dark_p0_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n4_dark_p0_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n4_dark_p0_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n4_dark_p0_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n4_dark_p1_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n4_dark_p1_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n4_dark_p1_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n4_dark_p1_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n4_dark_p2_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n4_dark_p2_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n4_dark_p2_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n4_dark_p2_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n4_dark_p3_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n4_dark_p3_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n4_dark_p3_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n4_dark_p3_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n4_dark_p4_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n4_dark_p4_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n4_dark_p4_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n4_dark_p4_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n4_light_p0_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "light",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n4_light_p0_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "light",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n4_light_p0_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n4_light_p0_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n4_light_p1_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "light",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n4_light_p1_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "light",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n4_light_p1_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n4_light_p1_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n4_light_p2_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "light",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n4_light_p2_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "light",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n4_light_p2_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n4_light_p2_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n4_light_p3_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "light",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n4_light_p3_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "light",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n4_light_p3_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n4_light_p3_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n4_light_p4_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "light",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n4_light_p4_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "light",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n4_light_p4_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n4_light_p4_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 4,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n6_dark_p0_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n6_dark_p0_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n6_dark_p0_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n6_dark_p0_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n6_dark_p1_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n6_dark_p1_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n6_dark_p1_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n6_dark_p1_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n6_dark_p2_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n6_dark_p2_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n6_dark_p2_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n6_dark_p2_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n6_dark_p3_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n6_dark_p3_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n6_dark_p3_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n6_dark_p3_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n6_dark_p4_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n6_dark_p4_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n6_dark_p4_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n6_dark_p4_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n6_light_p0_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "light",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n6_light_p0_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "light",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n6_light_p0_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n6_light_p0_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n6_light_p1_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "light",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n6_light_p1_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "light",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n6_light_p1_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n6_light_p1_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n6_light_p2_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "light",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n6_light_p2_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "light",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n6_light_p2_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n6_light_p2_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n6_light_p3_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "light",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n6_light_p3_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "light",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n6_light_p3_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n6_light_p3_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n6_light_p4_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "light",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n6_light_p4_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "light",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n6_light_p4_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n6_light_p4_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 6,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n8_dark_p0_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n8_dark_p0_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n8_dark_p0_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n8_dark_p0_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n8_dark_p1_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n8_dark_p1_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n8_dark_p1_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n8_dark_p1_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n8_dark_p2_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n8_dark_p2_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n8_dark_p2_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n8_dark_p2_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n8_dark_p3_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n8_dark_p3_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n8_dark_p3_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n8_dark_p3_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n8_dark_p4_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n8_dark_p4_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n8_dark_p4_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n8_dark_p4_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n8_light_p0_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "light",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n8_light_p0_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "light",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n8_light_p0_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n8_light_p0_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n8_light_p1_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "light",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n8_light_p1_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "light",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n8_light_p1_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n8_light_p1_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n8_light_p2_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "light",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n8_light_p2_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "light",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n8_light_p2_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n8_light_p2_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n8_light_p3_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "light",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n8_light_p3_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "light",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n8_light_p3_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n8_light_p3_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n8_light_p4_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "light",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n8_light_p4_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "light",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n8_light_p4_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n8_light_p4_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 8,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n12_dark_p0_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n12_dark_p0_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n12_dark_p0_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n12_dark_p0_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n12_dark_p1_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n12_dark_p1_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n12_dark_p1_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n12_dark_p1_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n12_dark_p2_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n12_dark_p2_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n12_dark_p2_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n12_dark_p2_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n12_dark_p3_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n12_dark_p3_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n12_dark_p3_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n12_dark_p3_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n12_dark_p4_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n12_dark_p4_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n12_dark_p4_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n12_dark_p4_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n12_light_p0_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "light",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n12_light_p0_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "light",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n12_light_p0_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n12_light_p0_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n12_light_p1_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "light",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n12_light_p1_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "light",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n12_light_p1_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n12_light_p1_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n12_light_p2_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "light",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n12_light_p2_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "light",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n12_light_p2_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n12_light_p2_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n12_light_p3_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "light",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n12_light_p3_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "light",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n12_light_p3_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n12_light_p3_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n12_light_p4_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "light",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n12_light_p4_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "light",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n12_light_p4_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n12_light_p4_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 12,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n16_dark_p0_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n16_dark_p0_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n16_dark_p0_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n16_dark_p0_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n16_dark_p1_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n16_dark_p1_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n16_dark_p1_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n16_dark_p1_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n16_dark_p2_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n16_dark_p2_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n16_dark_p2_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n16_dark_p2_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n16_dark_p3_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n16_dark_p3_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n16_dark_p3_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n16_dark_p3_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n16_dark_p4_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n16_dark_p4_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n16_dark_p4_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n16_dark_p4_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n16_light_p0_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "light",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n16_light_p0_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "light",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n16_light_p0_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n16_light_p0_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n16_light_p1_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "light",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n16_light_p1_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "light",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n16_light_p1_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n16_light_p1_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n16_light_p2_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "light",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n16_light_p2_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "light",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n16_light_p2_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n16_light_p2_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n16_light_p3_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "light",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n16_light_p3_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "light",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n16_light_p3_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n16_light_p3_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n16_light_p4_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "light",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n16_light_p4_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "light",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n16_light_p4_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n16_light_p4_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 16,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n24_dark_p0_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n24_dark_p0_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n24_dark_p0_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n24_dark_p0_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n24_dark_p1_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n24_dark_p1_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n24_dark_p1_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n24_dark_p1_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n24_dark_p2_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n24_dark_p2_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n24_dark_p2_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n24_dark_p2_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n24_dark_p3_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n24_dark_p3_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n24_dark_p3_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n24_dark_p3_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n24_dark_p4_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n24_dark_p4_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n24_dark_p4_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n24_dark_p4_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n24_light_p0_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "light",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n24_light_p0_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "light",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n24_light_p0_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n24_light_p0_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n24_light_p1_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "light",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n24_light_p1_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "light",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n24_light_p1_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n24_light_p1_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n24_light_p2_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "light",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n24_light_p2_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "light",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n24_light_p2_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n24_light_p2_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n24_light_p3_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "light",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n24_light_p3_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "light",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n24_light_p3_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n24_light_p3_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control_end"
+ },
+ {
+  "name": "ehr_R100_n24_light_p4_illusory",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "light",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "ehr_R100_n24_light_p4_real",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "light",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "ehr_R100_n24_light_p4_control_mid",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control_mid"
+ },
+ {
+  "name": "ehr_R100_n24_light_p4_control_end",
+  "shape": "ehrenstein",
+  "R": 100,
+  "n": 24,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control_end"
+ }
+]

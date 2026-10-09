@@ -1,0 +1,14 @@
+numpy
+scipy
+torch
+transformers
+opencv-python
+pillow
+matplotlib
+
+# DeepGaze IIE / MSDB
+git+https://github.com/matthias-k/DeepGaze.git
+
+# MSI-Net only (run msinet_maps.py in a separate TensorFlow environment)
+# tensorflow
+# huggingface_hub

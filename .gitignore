@@ -1,0 +1,8 @@
+__pycache__/
+work/
+weights/
+data/
+stimuli/*/maps_msinet/
+figures/*.pdf
+*.zip
+.DS_Store

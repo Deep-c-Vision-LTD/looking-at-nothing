@@ -1,0 +1,3842 @@
+[
+ {
+  "name": "square_sr20_dark_p0_illusory",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr20_dark_p0_real",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr20_dark_p0_control",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr20_dark_p0_control90",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr20_dark_p1_illusory",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr20_dark_p1_real",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr20_dark_p1_control",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr20_dark_p1_control90",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr20_dark_p2_illusory",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr20_dark_p2_real",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr20_dark_p2_control",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr20_dark_p2_control90",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr20_dark_p3_illusory",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr20_dark_p3_real",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr20_dark_p3_control",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr20_dark_p3_control90",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr20_dark_p4_illusory",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr20_dark_p4_real",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr20_dark_p4_control",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr20_dark_p4_control90",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr20_light_p0_illusory",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr20_light_p0_real",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr20_light_p0_control",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr20_light_p0_control90",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr20_light_p1_illusory",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr20_light_p1_real",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr20_light_p1_control",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr20_light_p1_control90",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr20_light_p2_illusory",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr20_light_p2_real",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr20_light_p2_control",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr20_light_p2_control90",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr20_light_p3_illusory",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr20_light_p3_real",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr20_light_p3_control",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr20_light_p3_control90",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr20_light_p4_illusory",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr20_light_p4_real",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr20_light_p4_control",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr20_light_p4_control90",
+  "shape": "square",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr30_dark_p0_illusory",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr30_dark_p0_real",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr30_dark_p0_control",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr30_dark_p0_control90",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr30_dark_p1_illusory",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr30_dark_p1_real",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr30_dark_p1_control",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr30_dark_p1_control90",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr30_dark_p2_illusory",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr30_dark_p2_real",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr30_dark_p2_control",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr30_dark_p2_control90",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr30_dark_p3_illusory",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr30_dark_p3_real",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr30_dark_p3_control",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr30_dark_p3_control90",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr30_dark_p4_illusory",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr30_dark_p4_real",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr30_dark_p4_control",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr30_dark_p4_control90",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr30_light_p0_illusory",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr30_light_p0_real",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr30_light_p0_control",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr30_light_p0_control90",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr30_light_p1_illusory",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr30_light_p1_real",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr30_light_p1_control",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr30_light_p1_control90",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr30_light_p2_illusory",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr30_light_p2_real",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr30_light_p2_control",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr30_light_p2_control90",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr30_light_p3_illusory",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr30_light_p3_real",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr30_light_p3_control",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr30_light_p3_control90",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr30_light_p4_illusory",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr30_light_p4_real",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr30_light_p4_control",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr30_light_p4_control90",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr40_dark_p0_illusory",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr40_dark_p0_real",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr40_dark_p0_control",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr40_dark_p0_control90",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr40_dark_p1_illusory",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr40_dark_p1_real",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr40_dark_p1_control",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr40_dark_p1_control90",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr40_dark_p2_illusory",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr40_dark_p2_real",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr40_dark_p2_control",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr40_dark_p2_control90",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr40_dark_p3_illusory",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr40_dark_p3_real",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr40_dark_p3_control",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr40_dark_p3_control90",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr40_dark_p4_illusory",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr40_dark_p4_real",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr40_dark_p4_control",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr40_dark_p4_control90",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr40_light_p0_illusory",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr40_light_p0_real",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr40_light_p0_control",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr40_light_p0_control90",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr40_light_p1_illusory",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr40_light_p1_real",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr40_light_p1_control",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr40_light_p1_control90",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr40_light_p2_illusory",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr40_light_p2_real",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr40_light_p2_control",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr40_light_p2_control90",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr40_light_p3_illusory",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr40_light_p3_real",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr40_light_p3_control",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr40_light_p3_control90",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr40_light_p4_illusory",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr40_light_p4_real",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr40_light_p4_control",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr40_light_p4_control90",
+  "shape": "square",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr50_dark_p0_illusory",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr50_dark_p0_real",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr50_dark_p0_control",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr50_dark_p0_control90",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr50_dark_p1_illusory",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr50_dark_p1_real",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr50_dark_p1_control",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr50_dark_p1_control90",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr50_dark_p2_illusory",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr50_dark_p2_real",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr50_dark_p2_control",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr50_dark_p2_control90",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr50_dark_p3_illusory",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr50_dark_p3_real",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr50_dark_p3_control",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr50_dark_p3_control90",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr50_dark_p4_illusory",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr50_dark_p4_real",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr50_dark_p4_control",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr50_dark_p4_control90",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr50_light_p0_illusory",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr50_light_p0_real",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr50_light_p0_control",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr50_light_p0_control90",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr50_light_p1_illusory",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr50_light_p1_real",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr50_light_p1_control",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr50_light_p1_control90",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr50_light_p2_illusory",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr50_light_p2_real",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr50_light_p2_control",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr50_light_p2_control90",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr50_light_p3_illusory",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr50_light_p3_real",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr50_light_p3_control",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr50_light_p3_control90",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr50_light_p4_illusory",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr50_light_p4_real",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr50_light_p4_control",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr50_light_p4_control90",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr60_dark_p0_illusory",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr60_dark_p0_real",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr60_dark_p0_control",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr60_dark_p0_control90",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr60_dark_p1_illusory",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr60_dark_p1_real",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr60_dark_p1_control",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr60_dark_p1_control90",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr60_dark_p2_illusory",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr60_dark_p2_real",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr60_dark_p2_control",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr60_dark_p2_control90",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr60_dark_p3_illusory",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr60_dark_p3_real",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr60_dark_p3_control",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr60_dark_p3_control90",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr60_dark_p4_illusory",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr60_dark_p4_real",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr60_dark_p4_control",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr60_dark_p4_control90",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr60_light_p0_illusory",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr60_light_p0_real",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr60_light_p0_control",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr60_light_p0_control90",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr60_light_p1_illusory",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr60_light_p1_real",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr60_light_p1_control",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr60_light_p1_control90",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr60_light_p2_illusory",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr60_light_p2_real",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr60_light_p2_control",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr60_light_p2_control90",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr60_light_p3_illusory",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr60_light_p3_real",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr60_light_p3_control",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr60_light_p3_control90",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr60_light_p4_illusory",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr60_light_p4_real",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr60_light_p4_control",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr60_light_p4_control90",
+  "shape": "square",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr70_dark_p0_illusory",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr70_dark_p0_real",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr70_dark_p0_control",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr70_dark_p0_control90",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr70_dark_p1_illusory",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr70_dark_p1_real",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr70_dark_p1_control",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr70_dark_p1_control90",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr70_dark_p2_illusory",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr70_dark_p2_real",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr70_dark_p2_control",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr70_dark_p2_control90",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr70_dark_p3_illusory",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr70_dark_p3_real",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr70_dark_p3_control",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr70_dark_p3_control90",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr70_dark_p4_illusory",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr70_dark_p4_real",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr70_dark_p4_control",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr70_dark_p4_control90",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr70_light_p0_illusory",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr70_light_p0_real",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr70_light_p0_control",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr70_light_p0_control90",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr70_light_p1_illusory",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr70_light_p1_real",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr70_light_p1_control",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr70_light_p1_control90",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr70_light_p2_illusory",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr70_light_p2_real",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr70_light_p2_control",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr70_light_p2_control90",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr70_light_p3_illusory",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr70_light_p3_real",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr70_light_p3_control",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr70_light_p3_control90",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control90"
+ },
+ {
+  "name": "square_sr70_light_p4_illusory",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "square_sr70_light_p4_real",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "square_sr70_light_p4_control",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control"
+ },
+ {
+  "name": "square_sr70_light_p4_control90",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr20_dark_p0_illusory",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr20_dark_p0_real",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr20_dark_p0_control",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr20_dark_p0_control90",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr20_dark_p1_illusory",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr20_dark_p1_real",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr20_dark_p1_control",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr20_dark_p1_control90",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr20_dark_p2_illusory",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr20_dark_p2_real",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr20_dark_p2_control",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr20_dark_p2_control90",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr20_dark_p3_illusory",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr20_dark_p3_real",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr20_dark_p3_control",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr20_dark_p3_control90",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr20_dark_p4_illusory",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr20_dark_p4_real",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr20_dark_p4_control",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr20_dark_p4_control90",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr20_light_p0_illusory",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr20_light_p0_real",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr20_light_p0_control",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr20_light_p0_control90",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr20_light_p1_illusory",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr20_light_p1_real",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr20_light_p1_control",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr20_light_p1_control90",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr20_light_p2_illusory",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr20_light_p2_real",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr20_light_p2_control",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr20_light_p2_control90",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr20_light_p3_illusory",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr20_light_p3_real",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr20_light_p3_control",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr20_light_p3_control90",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr20_light_p4_illusory",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr20_light_p4_real",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr20_light_p4_control",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr20_light_p4_control90",
+  "shape": "triangle",
+  "sr": 0.2,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr30_dark_p0_illusory",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr30_dark_p0_real",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr30_dark_p0_control",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr30_dark_p0_control90",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr30_dark_p1_illusory",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr30_dark_p1_real",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr30_dark_p1_control",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr30_dark_p1_control90",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr30_dark_p2_illusory",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr30_dark_p2_real",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr30_dark_p2_control",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr30_dark_p2_control90",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr30_dark_p3_illusory",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr30_dark_p3_real",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr30_dark_p3_control",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr30_dark_p3_control90",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr30_dark_p4_illusory",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr30_dark_p4_real",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr30_dark_p4_control",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr30_dark_p4_control90",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr30_light_p0_illusory",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr30_light_p0_real",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr30_light_p0_control",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr30_light_p0_control90",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr30_light_p1_illusory",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr30_light_p1_real",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr30_light_p1_control",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr30_light_p1_control90",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr30_light_p2_illusory",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr30_light_p2_real",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr30_light_p2_control",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr30_light_p2_control90",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr30_light_p3_illusory",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr30_light_p3_real",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr30_light_p3_control",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr30_light_p3_control90",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr30_light_p4_illusory",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr30_light_p4_real",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr30_light_p4_control",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr30_light_p4_control90",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr40_dark_p0_illusory",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr40_dark_p0_real",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr40_dark_p0_control",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr40_dark_p0_control90",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr40_dark_p1_illusory",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr40_dark_p1_real",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr40_dark_p1_control",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr40_dark_p1_control90",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr40_dark_p2_illusory",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr40_dark_p2_real",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr40_dark_p2_control",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr40_dark_p2_control90",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr40_dark_p3_illusory",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr40_dark_p3_real",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr40_dark_p3_control",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr40_dark_p3_control90",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr40_dark_p4_illusory",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr40_dark_p4_real",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr40_dark_p4_control",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr40_dark_p4_control90",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr40_light_p0_illusory",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr40_light_p0_real",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr40_light_p0_control",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr40_light_p0_control90",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr40_light_p1_illusory",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr40_light_p1_real",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr40_light_p1_control",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr40_light_p1_control90",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr40_light_p2_illusory",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr40_light_p2_real",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr40_light_p2_control",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr40_light_p2_control90",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr40_light_p3_illusory",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr40_light_p3_real",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr40_light_p3_control",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr40_light_p3_control90",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr40_light_p4_illusory",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr40_light_p4_real",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr40_light_p4_control",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr40_light_p4_control90",
+  "shape": "triangle",
+  "sr": 0.4,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr50_dark_p0_illusory",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr50_dark_p0_real",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr50_dark_p0_control",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr50_dark_p0_control90",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr50_dark_p1_illusory",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr50_dark_p1_real",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr50_dark_p1_control",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr50_dark_p1_control90",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr50_dark_p2_illusory",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr50_dark_p2_real",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr50_dark_p2_control",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr50_dark_p2_control90",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr50_dark_p3_illusory",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr50_dark_p3_real",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr50_dark_p3_control",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr50_dark_p3_control90",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr50_dark_p4_illusory",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr50_dark_p4_real",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr50_dark_p4_control",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr50_dark_p4_control90",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr50_light_p0_illusory",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr50_light_p0_real",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr50_light_p0_control",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr50_light_p0_control90",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr50_light_p1_illusory",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr50_light_p1_real",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr50_light_p1_control",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr50_light_p1_control90",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr50_light_p2_illusory",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr50_light_p2_real",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr50_light_p2_control",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr50_light_p2_control90",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr50_light_p3_illusory",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr50_light_p3_real",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr50_light_p3_control",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr50_light_p3_control90",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr50_light_p4_illusory",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr50_light_p4_real",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr50_light_p4_control",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr50_light_p4_control90",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr60_dark_p0_illusory",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr60_dark_p0_real",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr60_dark_p0_control",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr60_dark_p0_control90",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr60_dark_p1_illusory",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr60_dark_p1_real",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr60_dark_p1_control",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr60_dark_p1_control90",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr60_dark_p2_illusory",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr60_dark_p2_real",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr60_dark_p2_control",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr60_dark_p2_control90",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr60_dark_p3_illusory",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr60_dark_p3_real",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr60_dark_p3_control",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr60_dark_p3_control90",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr60_dark_p4_illusory",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr60_dark_p4_real",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr60_dark_p4_control",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr60_dark_p4_control90",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr60_light_p0_illusory",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr60_light_p0_real",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr60_light_p0_control",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr60_light_p0_control90",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr60_light_p1_illusory",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr60_light_p1_real",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr60_light_p1_control",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr60_light_p1_control90",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr60_light_p2_illusory",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr60_light_p2_real",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr60_light_p2_control",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr60_light_p2_control90",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr60_light_p3_illusory",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr60_light_p3_real",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr60_light_p3_control",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr60_light_p3_control90",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr60_light_p4_illusory",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr60_light_p4_real",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr60_light_p4_control",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr60_light_p4_control90",
+  "shape": "triangle",
+  "sr": 0.6,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr70_dark_p0_illusory",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr70_dark_p0_real",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr70_dark_p0_control",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr70_dark_p0_control90",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr70_dark_p1_illusory",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr70_dark_p1_real",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr70_dark_p1_control",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr70_dark_p1_control90",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr70_dark_p2_illusory",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr70_dark_p2_real",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr70_dark_p2_control",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr70_dark_p2_control90",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr70_dark_p3_illusory",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr70_dark_p3_real",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr70_dark_p3_control",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr70_dark_p3_control90",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr70_dark_p4_illusory",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr70_dark_p4_real",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr70_dark_p4_control",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr70_dark_p4_control90",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr70_light_p0_illusory",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 0,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr70_light_p0_real",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 0,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr70_light_p0_control",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr70_light_p0_control90",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 0,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr70_light_p1_illusory",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 1,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr70_light_p1_real",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 1,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr70_light_p1_control",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr70_light_p1_control90",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 1,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr70_light_p2_illusory",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 2,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr70_light_p2_real",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 2,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr70_light_p2_control",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr70_light_p2_control90",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 2,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr70_light_p3_illusory",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 3,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr70_light_p3_real",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 3,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr70_light_p3_control",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr70_light_p3_control90",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 3,
+  "cond": "control90"
+ },
+ {
+  "name": "triangle_sr70_light_p4_illusory",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 4,
+  "cond": "illusory"
+ },
+ {
+  "name": "triangle_sr70_light_p4_real",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 4,
+  "cond": "real"
+ },
+ {
+  "name": "triangle_sr70_light_p4_control",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control"
+ },
+ {
+  "name": "triangle_sr70_light_p4_control90",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 4,
+  "cond": "control90"
+ }
+]
