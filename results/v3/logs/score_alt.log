@@ -1,0 +1,112 @@
+21:56:14 DeepGaze MSDB: pipeline check on 4 stim_v3 images, max |r_inside - v2| per tag: DeepGaze_MSDB 0.00e+00
+21:56:14 DeepGaze MSDB shard 0/3: 120 of 360 images to score, tags ['DeepGaze_MSDB']
+21:56:41 DeepGaze IIE: pipeline check on 4 stim_v3 images, max |r_inside - v2| per tag: DeepGaze_IIE 0.00e+00
+21:56:41 DeepGaze IIE: 360 of 360 images to score, tags ['DeepGaze_IIE']
+21:57:29   DeepGaze IIE 20/360 48s (2.39 s/img)
+21:58:36   DeepGaze IIE 40/360 116s (2.89 s/img)
+21:59:38   DeepGaze IIE 60/360 177s (2.95 s/img)
+22:00:48   DeepGaze IIE 80/360 247s (3.08 s/img)
+22:01:41   DeepGaze IIE 100/360 301s (3.01 s/img)
+22:01:55   DeepGaze MSDB shard 0/3 20/120 341s (17.03 s/img)
+22:02:38   DeepGaze IIE 120/360 357s (2.98 s/img)
+22:03:42   DeepGaze IIE 140/360 421s (3.01 s/img)
+22:04:46   DeepGaze IIE 160/360 485s (3.03 s/img)
+22:05:48   DeepGaze IIE 180/360 547s (3.04 s/img)
+22:06:52   DeepGaze IIE 200/360 611s (3.06 s/img)
+22:07:47   DeepGaze IIE 220/360 666s (3.03 s/img)
+22:08:10   DeepGaze MSDB shard 0/3 40/120 716s (17.90 s/img)
+22:08:48   DeepGaze IIE 240/360 728s (3.03 s/img)
+22:09:49   DeepGaze IIE 260/360 788s (3.03 s/img)
+22:10:49   DeepGaze IIE 280/360 848s (3.03 s/img)
+22:11:46   DeepGaze IIE 300/360 905s (3.02 s/img)
+22:12:43   DeepGaze IIE 320/360 962s (3.01 s/img)
+22:13:45   DeepGaze IIE 340/360 1024s (3.01 s/img)
+22:14:03   DeepGaze MSDB shard 0/3 60/120 1069s (17.81 s/img)
+22:14:39   DeepGaze IIE 360/360 1078s (3.00 s/img)
+22:14:39 DeepGaze IIE: done, 1078s
+22:14:55 sweep dinov2: pipeline check on 4 stim_v3 images, max |r_inside - v2| per tag: dinov2_L2_s336 0.00e+00, dinov2_L8_s336 0.00e+00, dinov2_L12_s336 0.00e+00, dinov2_L2_s448 0.00e+00, dinov2_L8_s448 0.00e+00, dinov2_L12_s448 0.00e+00
+22:14:55 sweep dinov2: 360 of 360 images to score, tags ['dinov2_L2_s336', 'dinov2_L8_s336', 'dinov2_L12_s336', 'dinov2_L2_s448', 'dinov2_L8_s448', 'dinov2_L12_s448']
+22:15:07   sweep dinov2 20/360 13s (0.63 s/img)
+22:15:21   sweep dinov2 40/360 27s (0.67 s/img)
+22:15:37   sweep dinov2 60/360 43s (0.71 s/img)
+22:15:54   sweep dinov2 80/360 60s (0.75 s/img)
+22:16:10   sweep dinov2 100/360 75s (0.75 s/img)
+22:16:26   sweep dinov2 120/360 92s (0.76 s/img)
+22:16:43   sweep dinov2 140/360 109s (0.78 s/img)
+22:17:00   sweep dinov2 160/360 125s (0.78 s/img)
+22:17:13   sweep dinov2 180/360 138s (0.77 s/img)
+22:17:25   sweep dinov2 200/360 150s (0.75 s/img)
+22:17:38   sweep dinov2 220/360 163s (0.74 s/img)
+22:17:50   sweep dinov2 240/360 176s (0.73 s/img)
+22:18:04   sweep dinov2 260/360 189s (0.73 s/img)
+22:18:17   sweep dinov2 280/360 202s (0.72 s/img)
+22:18:30   sweep dinov2 300/360 215s (0.72 s/img)
+22:18:43   sweep dinov2 320/360 229s (0.71 s/img)
+22:18:58   sweep dinov2 340/360 244s (0.72 s/img)
+22:19:14   DeepGaze MSDB shard 0/3 80/120 1379s (17.24 s/img)
+22:19:14   sweep dinov2 360/360 259s (0.72 s/img)
+22:19:14 sweep dinov2: done, 259s
+22:19:28 sweep clip: pipeline check on 4 stim_v3 images, max |r_inside - v2| per tag: clip_L4_s336 0.00e+00, clip_L12_s336 0.00e+00, clip_L24_s336 0.00e+00, clip_L4_s448 0.00e+00, clip_L12_s448 0.00e+00, clip_L24_s448 0.00e+00
+22:19:28 sweep clip: 360 of 360 images to score, tags ['clip_L4_s336', 'clip_L12_s336', 'clip_L24_s336', 'clip_L4_s448', 'clip_L12_s448', 'clip_L24_s448']
+22:20:10   sweep clip 20/360 41s (2.07 s/img)
+22:20:46   sweep clip 40/360 77s (1.93 s/img)
+22:21:15   sweep clip 60/360 107s (1.78 s/img)
+22:21:44   sweep clip 80/360 136s (1.70 s/img)
+22:22:14   sweep clip 100/360 166s (1.66 s/img)
+22:22:47   sweep clip 120/360 199s (1.66 s/img)
+22:23:18   sweep clip 140/360 229s (1.64 s/img)
+22:23:47   sweep clip 160/360 259s (1.62 s/img)
+22:24:09   DeepGaze MSDB shard 0/3 100/120 1674s (16.74 s/img)
+22:24:16   sweep clip 180/360 288s (1.60 s/img)
+22:24:46   sweep clip 200/360 317s (1.59 s/img)
+22:25:15   sweep clip 220/360 347s (1.58 s/img)
+22:25:44   sweep clip 240/360 376s (1.57 s/img)
+22:26:13   sweep clip 260/360 405s (1.56 s/img)
+22:26:43   sweep clip 280/360 434s (1.55 s/img)
+22:27:12   sweep clip 300/360 464s (1.55 s/img)
+22:27:41   sweep clip 320/360 493s (1.54 s/img)
+22:28:10   sweep clip 340/360 522s (1.54 s/img)
+22:28:40   sweep clip 360/360 552s (1.53 s/img)
+22:28:40 sweep clip: done, 552s
+22:28:41   DeepGaze MSDB shard 0/3 120/120 1947s (16.22 s/img)
+22:28:41 DeepGaze MSDB shard 0/3: done, 1947s
+22:28:50 sweep siglip: pipeline check on 4 stim_v3 images, max |r_inside - v2| per tag: siglip_L4_s336 0.00e+00, siglip_L8_s336 0.00e+00, siglip_L24_s336 0.00e+00, siglip_L4_s448 0.00e+00, siglip_L8_s448 0.00e+00, siglip_L24_s448 0.00e+00
+22:28:50 sweep siglip: 360 of 360 images to score, tags ['siglip_L4_s336', 'siglip_L8_s336', 'siglip_L24_s336', 'siglip_L4_s448', 'siglip_L8_s448', 'siglip_L24_s448']
+22:28:52 DeepGaze MSDB shard 1/3: 120 of 360 images to score, tags ['DeepGaze_MSDB']
+22:29:13   sweep siglip 20/360 24s (1.19 s/img)
+22:29:38   sweep siglip 40/360 49s (1.22 s/img)
+22:30:03   sweep siglip 60/360 74s (1.23 s/img)
+22:30:28   sweep siglip 80/360 99s (1.23 s/img)
+22:30:53   sweep siglip 100/360 124s (1.24 s/img)
+22:31:18   sweep siglip 120/360 149s (1.24 s/img)
+22:31:43   sweep siglip 140/360 174s (1.24 s/img)
+22:32:08   sweep siglip 160/360 199s (1.24 s/img)
+22:32:33   sweep siglip 180/360 223s (1.24 s/img)
+22:32:59   sweep siglip 200/360 250s (1.25 s/img)
+22:33:19   DeepGaze MSDB shard 1/3 20/120 267s (13.36 s/img)
+22:33:25   sweep siglip 220/360 276s (1.25 s/img)
+22:33:51   sweep siglip 240/360 302s (1.26 s/img)
+22:34:16   sweep siglip 260/360 327s (1.26 s/img)
+22:34:42   sweep siglip 280/360 353s (1.26 s/img)
+22:35:09   sweep siglip 300/360 379s (1.26 s/img)
+22:35:35   sweep siglip 320/360 405s (1.27 s/img)
+22:36:01   sweep siglip 340/360 431s (1.27 s/img)
+22:36:27   sweep siglip 360/360 458s (1.27 s/img)
+22:36:27 sweep siglip: done, 458s
+22:36:42 DeepGaze MSDB shard 2/6: 60 of 360 images to score, tags ['DeepGaze_MSDB']
+22:38:00   DeepGaze MSDB shard 1/3 40/120 548s (13.70 s/img)
+22:41:38   DeepGaze MSDB shard 2/6 20/60 296s (14.79 s/img)
+22:42:50   DeepGaze MSDB shard 1/3 60/120 839s (13.98 s/img)
+22:46:19   DeepGaze MSDB shard 2/6 40/60 577s (14.43 s/img)
+22:47:32   DeepGaze MSDB shard 1/3 80/120 1121s (14.01 s/img)
+22:50:59   DeepGaze MSDB shard 2/6 60/60 857s (14.28 s/img)
+22:50:59 DeepGaze MSDB shard 2/6: done, 857s
+22:51:21 DeepGaze MSDB shard 5/6: 60 of 360 images to score, tags ['DeepGaze_MSDB']
+22:52:04   DeepGaze MSDB shard 1/3 100/120 1392s (13.92 s/img)
+22:56:08   DeepGaze MSDB shard 5/6 20/60 287s (14.33 s/img)
+22:56:47   DeepGaze MSDB shard 1/3 120/120 1675s (13.96 s/img)
+22:56:47 DeepGaze MSDB shard 1/3: done, 1675s
+22:59:27   DeepGaze MSDB shard 5/6 40/60 485s (12.13 s/img)
+23:02:33   DeepGaze MSDB shard 5/6 60/60 672s (11.20 s/img)
+23:02:33 DeepGaze MSDB shard 5/6: done, 672s
+23:02:41 merge DeepGaze_MSDB: 4 shard files, 360 images in v3/scores/raw/DeepGaze_MSDB.json

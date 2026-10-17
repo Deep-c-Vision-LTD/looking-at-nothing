@@ -1,0 +1,40 @@
+{
+ "tag": "dinov2_L6_R4_s0",
+ "fset": "dinov2_L6",
+ "arch": "R4",
+ "seed": 0,
+ "job": "dinov2_R1n-R1-R4_s0",
+ "device": "mps",
+ "n_train": 12803,
+ "batches": 400,
+ "epochs": 6,
+ "bs": 32,
+ "lr": 0.0005,
+ "hist": [
+  {
+   "epoch": 0,
+   "loss": 0.71312
+  },
+  {
+   "epoch": 1,
+   "loss": 0.508
+  },
+  {
+   "epoch": 2,
+   "loss": 0.45054
+  },
+  {
+   "epoch": 3,
+   "loss": 0.39719
+  },
+  {
+   "epoch": 4,
+   "loss": 0.34555
+  },
+  {
+   "epoch": 5,
+   "loss": 0.30987
+  }
+ ],
+ "finished": "2026-10-17 05:25:02"
+}

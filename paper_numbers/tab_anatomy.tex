@@ -1,0 +1,27 @@
+% tab_anatomy.tex (Table 1): written by hand from results/v2/anatomy/anatomy.json, not generated; every number in it is
+% a macro of paper_numbers/output/numbers.tex (anatomy.json) or numbers_extra.tex (readout-swap parameter counts).
+% Block numbering is 1-based throughout (hs[i] = output of block i before the final layer normalisation).
+% Needs \usepackage{booktabs,array,tabularx}; sidewaystable needs the rotating package.
+\begin{sidewaystable}
+\centering
+\fontsize{7.5}{9}\selectfont
+\setlength{\tabcolsep}{2.2pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Model anatomy as implemented in the code and checkpoints used here. hs[$i$]: output of block $i$ (1-based) before the final layer normalisation. GAP: global-average-pooling branch. ASPP: atrous spatial pyramid pooling. On the illusion displays every learned centre bias was switched off and the DeepGaze centre bias was uniform; no model is recurrent. Parameters: trainable readout parameters (MSI-Net: all weights). $^\dagger$Training data or loss of an external model taken from its documentation, not from local code. $^\ddagger$Summed over all 120 readout components: four backbones, each with 30 components (three instances in ten cross-validation folds), averaged as a mixture.}
+\label{tab:anatomy}
+\begin{tabularx}{\textheight}{@{}>{\raggedright\arraybackslash}p{1.9cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{2.4cm}>{\raggedright\arraybackslash}X>{\raggedleft\arraybackslash}p{1.0cm}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Model & Backbone (pretraining) & Tensors read & Test input & Readout & Params & Loss; fixation data \\
+\midrule
+DeepGaze IIE & \AnatIIENBackbones{} CNNs: ShapeNet-C ResNet-50, EfficientNet-B5, DenseNet-201, ResNeXt-50 (ImageNet, supervised) & \AnatIIENLayers{} feature maps from late stages of the four CNNs & 1024$\times$768, halved internally; one scale & 1$\times$1 convolutions with image-wide LayerNorm; learned Gaussian blur, $\sigma$ \AnatIIEBlurMin--\AnatIIEBlurMax{} px & \AnatIIEParamsM M$^\ddagger$ & NLL; SALICON, then MIT1003$^\dagger$ \\
+DeepGaze MSDB & CLIP RN50x64 (image-text) and DINOv2-B/14 (self-supervised) & CLIP layer4.2.conv2 (\AnatMSDBChannelsCLIP{} ch) and DINOv2 hs[7], hs[11] (\AnatMSDBChannelsDino{} ch each); \AnatMSDBChannels{} ch & 512$\times$384 at 17.5 px/deg; \AnatMSDBNScales{} internal scales & 1$\times$1 convolutions with image-wide LayerNorm; Gaussian blur \AnatMSDBBlurDeg{} deg (\AnatMSDBBlurPx{} px) & \AnatMSDBParams & NLL; five datasets$^\dagger$ \\
+MSI-Net & VGG16 (ImageNet initialisation) & pool3, pool4, pool5, concatenated & aspect kept, 320$\times$240 & ASPP (1$\times$1, rates 4, 8, 12, image pooling) and decoder; min-max output & \AnatMSINetParamsM M & KL$^\dagger$; SALICON (mouse tracking) \\
+xSoyelNet-ASPP & DINOv2-B/14 (self-supervised) & block 12 output after the final LayerNorm & 448 px letterbox; trained at 224 px & ASPP, dilations 1, 3, 6, 12, with GAP; sigmoid & \AnatXSAsppParamsM M & KL $+$ 2(1 $-$ CC); SALICON, CAT2000, MIT1003 (\NTrainMIT), ETDB; checkpoint chosen on held-out MIT1003 \\
+xSoyelNet-ML & DINOv2-B/14 (self-supervised) & hs[7] and hs[11], concatenated & 280--448 px squashed, with flips (8 maps) & ASPP, dilations 1, 3, 6, 12, with GAP; sigmoid & \AnatXSMlParamsM M & KL $+$ 2(1 $-$ CC); SALICON \NTrainSalicon, CAT2000 \NTrainCAT, MIT1003 \NTrainMIT; 8 epochs at 336 px \\
+Spectral residual & none & image & 64 px wide & log-spectrum residual; Gaussian blur & 0 & none \\
+Edge-energy null & none & image & 1024$\times$768 & Sobel magnitude; Gaussian blur, $\sigma$ 25 px & 0 & none \\
+\midrule
+Readout swap (this study) & DINOv2-B/14; SigLIP-L/16; IIE's ShapeNet-C ResNet-50 & DINOv2 hs[12] and hs[6]; SigLIP hs[24]; ShapeNet-C at IIE's six taps (2,048 ch) & 336 and 448 px squashed; trained at 336 px & R1n, R1 pointwise; R2, R3, R4 ASPP variants (Section~\ref{sec:swap}) & \RSParamsPointwiseMinM{} to \RSParamsRfourMaxM M & KL $+$ 2(1 $-$ CC); \NTrainImages{} images (SALICON, CAT2000, MIT1003); \NTrainEpochs{} epochs; 3 seeds \\
+\bottomrule
+\end{tabularx}
+\end{sidewaystable}

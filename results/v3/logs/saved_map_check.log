@@ -1,0 +1,5 @@
+DeepGaze_IIE max abs diff of measures recomputed from saved maps: 0.0e+00 shape (768, 1024)
+DeepGaze_MSDB max abs diff of measures recomputed from saved maps: 0.0e+00 shape (768, 1024)
+dinov2_L12_s336 max abs diff of measures recomputed from saved maps: 2.2e-06 shape (336, 336)
+siglip_L24_s448 max abs diff of measures recomputed from saved maps: 2.5e-06 shape (448, 448)
+clip_L12_s448 max abs diff of measures recomputed from saved maps: 3.3e-06 shape (448, 448)

@@ -1,0 +1,7022 @@
+[
+ {
+  "name": "square_sr30_dark_p0_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p0",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr30_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p0_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p0",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr30_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p0_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p0",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr30_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p0_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p0",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr30_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p0_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p0",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr30_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p0_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p0",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr30_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p1_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p1",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr30_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p1_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p1",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr30_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p1_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p1",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr30_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p1_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p1",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr30_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p1_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p1",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr30_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p1_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p1",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr30_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p2_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p2",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr30_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p2_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p2",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr30_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p2_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p2",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr30_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p2_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p2",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr30_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p2_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p2",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr30_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p2_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p2",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr30_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p3_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p3",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr30_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p3_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p3",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr30_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p3_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p3",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr30_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p3_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p3",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr30_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p3_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p3",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr30_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p3_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p3",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr30_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p4_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p4",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr30_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p4_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p4",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr30_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p4_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p4",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr30_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p4_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p4",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr30_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p4_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p4",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr30_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_dark_p4_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_dark_p4",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr30_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p0_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p0",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr30_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p0_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p0",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr30_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p0_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p0",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr30_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p0_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p0",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr30_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p0_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p0",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr30_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p0_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p0",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr30_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p1_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p1",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr30_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p1_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p1",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr30_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p1_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p1",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr30_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p1_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p1",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr30_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p1_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p1",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr30_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p1_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p1",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr30_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p2_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p2",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr30_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p2_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p2",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr30_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p2_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p2",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr30_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p2_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p2",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr30_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p2_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p2",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr30_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p2_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p2",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr30_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p3_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p3",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr30_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p3_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p3",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr30_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p3_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p3",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr30_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p3_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p3",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr30_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p3_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p3",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr30_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p3_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p3",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr30_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p4_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p4",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr30_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p4_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p4",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr30_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p4_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p4",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr30_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p4_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p4",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr30_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p4_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p4",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr30_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr30_light_p4_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr30_light_p4",
+  "shape": "square",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr30_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr30_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p0_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p0",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr50_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p0_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p0",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr50_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p0_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p0",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr50_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p0_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p0",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr50_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p0_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p0",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr50_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p0_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p0",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr50_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p1_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p1",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr50_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p1_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p1",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr50_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p1_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p1",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr50_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p1_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p1",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr50_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p1_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p1",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr50_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p1_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p1",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr50_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p2_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p2",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr50_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p2_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p2",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr50_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p2_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p2",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr50_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p2_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p2",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr50_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p2_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p2",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr50_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p2_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p2",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr50_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p3_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p3",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr50_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p3_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p3",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr50_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p3_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p3",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr50_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p3_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p3",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr50_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p3_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p3",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr50_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p3_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p3",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr50_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p4_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p4",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr50_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p4_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p4",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr50_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p4_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p4",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr50_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p4_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p4",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr50_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p4_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p4",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr50_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_dark_p4_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_dark_p4",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr50_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p0_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p0",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr50_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p0_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p0",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr50_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p0_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p0",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr50_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p0_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p0",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr50_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p0_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p0",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr50_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p0_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p0",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr50_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p1_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p1",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr50_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p1_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p1",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr50_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p1_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p1",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr50_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p1_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p1",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr50_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p1_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p1",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr50_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p1_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p1",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr50_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p2_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p2",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr50_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p2_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p2",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr50_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p2_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p2",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr50_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p2_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p2",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr50_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p2_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p2",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr50_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p2_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p2",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr50_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p3_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p3",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr50_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p3_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p3",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr50_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p3_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p3",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr50_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p3_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p3",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr50_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p3_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p3",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr50_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p3_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p3",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr50_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p4_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p4",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr50_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p4_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p4",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr50_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p4_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p4",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr50_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p4_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p4",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr50_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p4_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p4",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr50_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr50_light_p4_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr50_light_p4",
+  "shape": "square",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr50_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr50_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p0_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p0",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr70_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p0_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p0",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr70_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p0_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p0",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr70_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p0_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p0",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr70_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p0_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p0",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr70_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p0_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p0",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr70_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p1_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p1",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr70_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p1_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p1",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr70_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p1_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p1",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr70_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p1_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p1",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr70_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p1_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p1",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr70_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p1_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p1",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr70_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p2_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p2",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr70_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p2_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p2",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr70_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p2_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p2",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr70_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p2_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p2",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr70_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p2_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p2",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr70_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p2_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p2",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr70_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p3_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p3",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr70_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p3_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p3",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr70_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p3_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p3",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr70_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p3_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p3",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr70_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p3_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p3",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr70_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p3_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p3",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr70_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p4_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p4",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr70_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p4_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p4",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr70_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p4_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p4",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr70_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p4_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p4",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr70_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p4_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p4",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr70_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_dark_p4_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_dark_p4",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr70_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p0_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p0",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr70_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p0_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p0",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr70_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p0_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p0",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr70_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p0_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p0",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr70_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p0_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p0",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr70_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p0_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p0",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr70_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p1_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p1",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr70_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p1_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p1",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr70_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p1_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p1",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr70_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p1_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p1",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr70_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p1_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p1",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr70_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p1_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p1",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr70_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p2_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p2",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr70_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p2_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p2",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr70_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p2_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p2",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr70_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p2_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p2",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr70_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p2_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p2",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr70_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p2_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p2",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr70_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p3_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p3",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr70_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p3_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p3",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr70_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p3_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p3",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr70_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p3_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p3",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr70_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p3_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p3",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr70_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p3_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p3",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr70_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p4_alt10a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p4",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   10,
+   -10,
+   10,
+   -10
+  ],
+  "aoi": "aoi/square_sr70_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p4_alt10b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p4",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   -10,
+   10,
+   -10,
+   10
+  ],
+  "aoi": "aoi/square_sr70_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p4_alt20a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p4",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   20,
+   -20,
+   20,
+   -20
+  ],
+  "aoi": "aoi/square_sr70_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p4_alt20b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p4",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   -20,
+   20,
+   -20,
+   20
+  ],
+  "aoi": "aoi/square_sr70_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p4_alt30a",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p4",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   30,
+   -30,
+   30,
+   -30
+  ],
+  "aoi": "aoi/square_sr70_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "square_sr70_light_p4_alt30b",
+  "illusion": "kanizsa",
+  "config": "square_sr70_light_p4",
+  "shape": "square",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   -30,
+   30,
+   -30,
+   30
+  ],
+  "aoi": "aoi/square_sr70_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/square_sr70_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p0_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p0",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p0_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p0",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p0_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p0",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p0_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p0",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p0_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p0",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p0_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p0",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p1_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p1",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p1_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p1",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p1_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p1",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p1_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p1",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p1_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p1",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p1_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p1",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p2_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p2",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p2_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p2",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p2_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p2",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p2_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p2",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p2_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p2",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p2_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p2",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p3_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p3",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p3_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p3",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p3_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p3",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p3_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p3",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p3_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p3",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p3_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p3",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p4_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p4",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p4_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p4",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p4_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p4",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p4_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p4",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p4_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p4",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_dark_p4_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_dark_p4",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr30_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p0_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p0",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr30_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p0_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p0",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr30_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p0_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p0",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr30_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p0_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p0",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr30_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p0_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p0",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr30_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p0_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p0",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr30_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p1_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p1",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr30_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p1_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p1",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr30_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p1_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p1",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr30_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p1_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p1",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr30_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p1_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p1",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr30_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p1_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p1",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr30_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p2_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p2",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr30_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p2_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p2",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr30_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p2_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p2",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr30_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p2_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p2",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr30_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p2_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p2",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr30_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p2_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p2",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr30_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p3_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p3",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr30_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p3_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p3",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr30_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p3_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p3",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr30_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p3_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p3",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr30_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p3_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p3",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr30_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p3_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p3",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr30_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p4_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p4",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr30_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p4_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p4",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr30_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p4_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p4",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr30_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p4_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p4",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr30_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p4_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p4",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr30_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr30_light_p4_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr30_light_p4",
+  "shape": "triangle",
+  "sr": 0.3,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr30_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr30_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p0_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p0",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p0_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p0",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p0_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p0",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p0_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p0",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p0_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p0",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p0_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p0",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p1_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p1",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p1_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p1",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p1_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p1",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p1_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p1",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p1_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p1",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p1_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p1",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p2_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p2",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p2_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p2",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p2_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p2",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p2_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p2",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p2_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p2",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p2_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p2",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p3_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p3",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p3_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p3",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p3_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p3",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p3_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p3",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p3_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p3",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p3_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p3",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p4_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p4",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p4_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p4",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p4_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p4",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p4_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p4",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p4_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p4",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_dark_p4_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_dark_p4",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr50_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p0_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p0",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr50_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p0_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p0",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr50_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p0_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p0",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr50_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p0_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p0",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr50_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p0_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p0",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr50_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p0_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p0",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr50_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p1_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p1",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr50_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p1_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p1",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr50_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p1_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p1",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr50_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p1_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p1",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr50_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p1_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p1",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr50_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p1_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p1",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr50_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p2_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p2",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr50_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p2_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p2",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr50_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p2_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p2",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr50_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p2_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p2",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr50_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p2_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p2",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr50_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p2_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p2",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr50_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p3_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p3",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr50_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p3_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p3",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr50_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p3_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p3",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr50_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p3_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p3",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr50_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p3_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p3",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr50_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p3_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p3",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr50_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p4_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p4",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr50_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p4_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p4",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr50_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p4_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p4",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr50_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p4_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p4",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr50_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p4_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p4",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr50_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr50_light_p4_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr50_light_p4",
+  "shape": "triangle",
+  "sr": 0.5,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr50_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr50_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p0_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p0",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p0_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p0",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p0_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p0",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p0_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p0",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p0_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p0",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p0_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p0",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 0,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p1_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p1",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p1_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p1",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p1_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p1",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p1_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p1",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p1_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p1",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p1_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p1",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 1,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p2_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p2",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p2_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p2",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p2_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p2",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p2_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p2",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p2_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p2",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p2_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p2",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 2,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p3_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p3",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p3_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p3",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p3_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p3",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p3_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p3",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p3_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p3",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p3_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p3",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 3,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p4_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p4",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p4_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p4",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p4_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p4",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p4_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p4",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p4_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p4",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_dark_p4_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_dark_p4",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "dark",
+  "pos": 4,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr70_dark_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_dark_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p0_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p0",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr70_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p0_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p0",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr70_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p0_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p0",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr70_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p0_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p0",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr70_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p0_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p0",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr70_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p0_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p0",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 0,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr70_light_p0_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p0_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p1_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p1",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr70_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p1_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p1",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr70_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p1_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p1",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr70_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p1_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p1",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr70_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p1_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p1",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr70_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p1_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p1",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 1,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr70_light_p1_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p1_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p2_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p2",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr70_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p2_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p2",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr70_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p2_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p2",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr70_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p2_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p2",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr70_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p2_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p2",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr70_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p2_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p2",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 2,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr70_light_p2_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p2_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p3_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p3",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr70_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p3_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p3",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr70_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p3_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p3",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr70_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p3_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p3",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr70_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p3_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p3",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr70_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p3_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p3",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 3,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr70_light_p3_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p3_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p4_alt10a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p4",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt10a",
+  "alt_theta": 10,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   10,
+   -10
+  ],
+  "aoi": "aoi/triangle_sr70_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p4_alt10b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p4",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt10b",
+  "alt_theta": 10,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -10,
+   10
+  ],
+  "aoi": "aoi/triangle_sr70_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p4_alt20a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p4",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt20a",
+  "alt_theta": 20,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   20,
+   -20
+  ],
+  "aoi": "aoi/triangle_sr70_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p4_alt20b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p4",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt20b",
+  "alt_theta": 20,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -20,
+   20
+  ],
+  "aoi": "aoi/triangle_sr70_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p4_alt30a",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p4",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt30a",
+  "alt_theta": 30,
+  "phase": "a",
+  "rots_deg": [
+   0,
+   30,
+   -30
+  ],
+  "aoi": "aoi/triangle_sr70_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p4_illusory_aoi.npz"
+ },
+ {
+  "name": "triangle_sr70_light_p4_alt30b",
+  "illusion": "kanizsa",
+  "config": "triangle_sr70_light_p4",
+  "shape": "triangle",
+  "sr": 0.7,
+  "pol": "light",
+  "pos": 4,
+  "cond": "alt30b",
+  "alt_theta": 30,
+  "phase": "b",
+  "rots_deg": [
+   0,
+   -30,
+   30
+  ],
+  "aoi": "aoi/triangle_sr70_light_p4_aoi.npz",
+  "stim_v3_aoi": "v2/stim_v3/img/triangle_sr70_light_p4_illusory_aoi.npz"
+ }
+]

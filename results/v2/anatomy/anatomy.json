@@ -1,0 +1,4246 @@
+{
+ "written_by": "v2/anatomy/build_anatomy.py of the original project (not distributed: it cites the non-distributed xSoyelNet training code) from inspect_readouts.py, inspect_hf.py, inspect_deepgaze.py (analysis/anatomy/inspect_deepgaze.py here), inspect_msinet*.py (CPU only)",
+ "conventions": {
+  "hf_hidden_states": "Verified empirically (transformers 5.12.1): hidden_states[0] = input to block 0 (embeddings; for CLIP after pre_layrnorm); hidden_states[i] = output of 0-based block i-1 = 1-based block i; no final LayerNorm in any hidden_states entry. last_hidden_state = final LayerNorm(hidden_states[-1]) for DINOv2 and SigLIP; for CLIP last_hidden_state == hidden_states[24] (post_layernorm only acts on the pooled CLS token).",
+  "block_numbering_in_this_project": "sweep 'L<k>' and the paper's layer analysis use the HF index = 1-based block k; xSoyelNet-ML / ab M6 / M610 and DeepGaze MSDB 'blocks 6 and 10' are 0-based (= HF hidden_states[7], [11] = 1-based blocks 7 and 11). So sweep 'block 6' (hidden_states[6]) and xSoyelNet-ML's 'block 6' (hidden_states[7]) are different tensors.",
+  "pre_vs_post_ln": "xSoyelNet-ASPP and ab/readout_A/B read last_hidden_state (after the final LayerNorm); every sweep readout and M6/M610 read hidden_states (before it).",
+  "deepgaze_layernorm": "DeepGaze LayerNorm normalises over (C, H, W) per image, i.e. with image-wide statistics, so DeepGaze's 1x1 readout is pointwise in its convolutions but not in its normalisation.",
+  "rf_units": "theoretical receptive fields are in pixels of the backbone input; DeepGaze IIE backbones see the display at half resolution, so display px = 2 x"
+ },
+ "iie_feature_set_for_readout_swap": {
+  "recommendation": "DeepGaze IIE backbone 1: RGBShapeNetC (torchvision ResNet-50 trained on Stylized-ImageNet + ImageNet, fine-tuned on ImageNet), layers layer3.0.conv2, layer3.3.conv2, layer3.5.conv1, layer3.5.conv2 (256 ch each, stride 16), layer4.1.conv2, layer4.2.conv2 (512 ch each, stride 32); 2,048 channels",
+  "reasons": [
+   "cheapest on CPU: 0.15 s per 512 x 384 forward with 3 threads (EfficientNet-B5 0.89 s, DenseNet-201 0.23 s, ResNeXt-50 0.19 s)",
+   "documented, standard torchvision module names (deepgaze2e.py BACKBONES entry 1) and weights already cached locally; IIE's own trained readout for exactly these features is in deepgaze2e.pth (models.0.*, 30 components), so R1 can be compared with IIE's own weights",
+   "smallest and finite theoretical receptive fields (107, 203, 235, 267, 363, 427 px of the backbone input), needed for an analysis of units whose receptive field excludes every inducer; EfficientNet-B5 has squeeze-excitation (global gating) in every block and DenseNet-201's hooked layers have a 3,799 px receptive field (global)",
+   "no global operation inside the backbone up to the hooked layers (pure conv / BN / ReLU / max-pool), so any global context in a readout test comes from the readout"
+  ],
+  "caveat": "IIE feeds the backbone a half-resolution image; layer4 maps (stride 32) are nearest-upsampled to the stride-16 grid before concatenation",
+  "consistent_with": "readout_swap/README.md (the same backbone and layers are the iie_shapenetc feature set of the readout swap)"
+ },
+ "records": [
+  {
+   "model": "DeepGaze IIE",
+   "group": "paper model",
+   "code": "site-packages/deepgaze_pytorch/deepgaze2e.py; called from gate_kanizsa.py (run_v2.py key 'iie')",
+   "backbones": [
+    {
+     "net": "RGBShapeNetC",
+     "architecture": "ResNet-50 (torchvision layout)",
+     "kind": "CNN",
+     "pretraining_data": "Stylized-ImageNet + ImageNet, then fine-tuned on ImageNet",
+     "pretraining_objective": "supervised classification",
+     "layers_read": [
+      {
+       "module": "module.layer3.0.conv2",
+       "shape_at_384x512": [
+        1,
+        256,
+        24,
+        32
+       ],
+       "theoretical_rf_px_backbone_input": 107,
+       "stride_px_backbone_input": 16,
+       "theoretical_rf_display_px": 214
+      },
+      {
+       "module": "module.layer3.3.conv2",
+       "shape_at_384x512": [
+        1,
+        256,
+        24,
+        32
+       ],
+       "theoretical_rf_px_backbone_input": 203,
+       "stride_px_backbone_input": 16,
+       "theoretical_rf_display_px": 406
+      },
+      {
+       "module": "module.layer3.5.conv1",
+       "shape_at_384x512": [
+        1,
+        256,
+        24,
+        32
+       ],
+       "theoretical_rf_px_backbone_input": 235,
+       "stride_px_backbone_input": 16,
+       "theoretical_rf_display_px": 470
+      },
+      {
+       "module": "module.layer3.5.conv2",
+       "shape_at_384x512": [
+        1,
+        256,
+        24,
+        32
+       ],
+       "theoretical_rf_px_backbone_input": 267,
+       "stride_px_backbone_input": 16,
+       "theoretical_rf_display_px": 534
+      },
+      {
+       "module": "module.layer4.1.conv2",
+       "shape_at_384x512": [
+        1,
+        512,
+        12,
+        16
+       ],
+       "theoretical_rf_px_backbone_input": 363,
+       "stride_px_backbone_input": 32,
+       "theoretical_rf_display_px": 726
+      },
+      {
+       "module": "module.layer4.2.conv2",
+       "shape_at_384x512": [
+        1,
+        512,
+        12,
+        16
+       ],
+       "theoretical_rf_px_backbone_input": 427,
+       "stride_px_backbone_input": 32,
+       "theoretical_rf_display_px": 854
+      }
+     ],
+     "channels": 2048,
+     "readout_params": 698790,
+     "components": 30,
+     "blur_sigma_px_at_half_input": [
+      8.99,
+      9.14,
+      9.44
+     ],
+     "cpu_forward_s_384x512_3threads": 0.15
+    },
+    {
+     "net": "RGBEfficientNetB5",
+     "architecture": "EfficientNet-B5 (efficientnet_pytorch; squeeze-excitation in every block)",
+     "kind": "CNN",
+     "pretraining_data": "ImageNet",
+     "pretraining_objective": "supervised classification",
+     "layers_read": [
+      {
+       "module": "_blocks.24._depthwise_conv",
+       "shape_at_384x512": [
+        1,
+        1056,
+        24,
+        32
+       ],
+       "theoretical_rf_px_backbone_input": 723,
+       "stride_px_backbone_input": 16,
+       "theoretical_rf_display_px": 1446
+      },
+      {
+       "module": "_blocks.26._depthwise_conv",
+       "shape_at_384x512": [
+        1,
+        1056,
+        24,
+        32
+       ],
+       "theoretical_rf_px_backbone_input": 851,
+       "stride_px_backbone_input": 16,
+       "theoretical_rf_display_px": 1702
+      },
+      {
+       "module": "_blocks.35._project_conv",
+       "shape_at_384x512": [
+        1,
+        304,
+        12,
+        16
+       ],
+       "theoretical_rf_px_backbone_input": 1939,
+       "stride_px_backbone_input": 32,
+       "theoretical_rf_display_px": 3878
+      }
+     ],
+     "channels": 2416,
+     "readout_params": 809190,
+     "components": 30,
+     "blur_sigma_px_at_half_input": [
+      9.95,
+      10.05,
+      10.18
+     ],
+     "cpu_forward_s_384x512_3threads": 0.89
+    },
+    {
+     "net": "RGBDenseNet201",
+     "architecture": "DenseNet-201 (torchvision v0.6.0 hub)",
+     "kind": "CNN",
+     "pretraining_data": "ImageNet",
+     "pretraining_objective": "supervised classification",
+     "layers_read": [
+      {
+       "module": "features.denseblock4.denselayer32.norm1",
+       "shape_at_384x512": [
+        1,
+        1888,
+        12,
+        16
+       ],
+       "theoretical_rf_px_backbone_input": 3799,
+       "stride_px_backbone_input": 32,
+       "theoretical_rf_display_px": 7598
+      },
+      {
+       "module": "features.denseblock4.denselayer32.conv1",
+       "shape_at_384x512": [
+        1,
+        128,
+        12,
+        16
+       ],
+       "theoretical_rf_px_backbone_input": 3799,
+       "stride_px_backbone_input": 32,
+       "theoretical_rf_display_px": 7598
+      },
+      {
+       "module": "features.denseblock4.denselayer31.conv2",
+       "shape_at_384x512": [
+        1,
+        32,
+        12,
+        16
+       ],
+       "theoretical_rf_px_backbone_input": 3799,
+       "stride_px_backbone_input": 32,
+       "theoretical_rf_display_px": 7598
+      }
+     ],
+     "channels": 2048,
+     "readout_params": 698790,
+     "components": 30,
+     "blur_sigma_px_at_half_input": [
+      11.5,
+      11.59,
+      11.66
+     ],
+     "cpu_forward_s_384x512_3threads": 0.23
+    },
+    {
+     "net": "RGBResNext50",
+     "architecture": "ResNeXt-50 32x4d (torchvision v0.6.0 hub)",
+     "kind": "CNN",
+     "pretraining_data": "ImageNet",
+     "pretraining_objective": "supervised classification",
+     "layers_read": [
+      {
+       "module": "layer3.5.conv1",
+       "shape_at_384x512": [
+        1,
+        512,
+        24,
+        32
+       ],
+       "theoretical_rf_px_backbone_input": 235,
+       "stride_px_backbone_input": 16,
+       "theoretical_rf_display_px": 470
+      },
+      {
+       "module": "layer3.5.conv2",
+       "shape_at_384x512": [
+        1,
+        512,
+        24,
+        32
+       ],
+       "theoretical_rf_px_backbone_input": 267,
+       "stride_px_backbone_input": 16,
+       "theoretical_rf_display_px": 534
+      },
+      {
+       "module": "layer3.4.conv2",
+       "shape_at_384x512": [
+        1,
+        512,
+        24,
+        32
+       ],
+       "theoretical_rf_px_backbone_input": 235,
+       "stride_px_backbone_input": 16,
+       "theoretical_rf_display_px": 470
+      },
+      {
+       "module": "layer4.2.conv2",
+       "shape_at_384x512": [
+        1,
+        1024,
+        12,
+        16
+       ],
+       "theoretical_rf_px_backbone_input": 427,
+       "stride_px_backbone_input": 32,
+       "theoretical_rf_display_px": 854
+      }
+     ],
+     "channels": 2560,
+     "readout_params": 852390,
+     "components": 30,
+     "blur_sigma_px_at_half_input": [
+      9.36,
+      9.7,
+      9.88
+     ],
+     "cpu_forward_s_384x512_3threads": 0.19
+    }
+   ],
+   "cnn_or_transformer": "CNN (4 backbones)",
+   "layers_read_convention": "torchvision module paths, 0-based block index inside each stage; hooks on conv outputs (before BatchNorm/ReLU) except DenseNet 'norm1' (after BN); no LayerNorm question (CNNs)",
+   "input": {
+    "our_call": "full 1024x768 RGB in [0,255]",
+    "internal": "F.interpolate(scale_factor=1/2, mode='nearest') -> 512x384 fed to every backbone",
+    "backbone_normalisation": "ImageNet mean/std (Normalizer)",
+    "scales": [
+     "single scale (downsample 2)"
+    ],
+    "letterbox_or_squash": "aspect preserved (no resize to square)",
+    "tta": null,
+    "ensemble": "4 backbones x 30 readout components (3 instances x 10 cross-validation folds) averaged as a probability mixture (logsumexp - log n)"
+   },
+   "readout": {
+    "type": "per component: saliency network LayerNorm -> 1x1 conv C->8 -> bias -> softplus -> LayerNorm -> 1x1 8->16 -> softplus -> LayerNorm -> 1x1 16->1 -> softplus; fixation-selection network LayerNorm -> 1x1 1->128 -> softplus -> LayerNorm -> 1x1 128->16 -> softplus -> 1x1 16->1; finalizer: nearest upsampling to half input size, learned Gaussian blur (truncate 3 sigma), + w * centre bias, nearest upsampling to input size, log-softmax over pixels",
+    "pointwise": true,
+    "aspp": false,
+    "dilation_rates": null,
+    "global_average_pooling_branch": false,
+    "gaussian_blur": true,
+    "normalisation_in_readout": "DeepGaze LayerNorm uses normalized_shape = (C, H, W): one mean and one variance over ALL channels AND ALL positions of the image, then a per-channel affine. The 1x1 readout is therefore not purely local: every position is normalised by image-wide statistics (three times per saliency network, twice in the fixation-selection network)",
+    "readout_grid_display_px": "24 x 32 grid for a 768 x 1024 display (ceil(768/2/16) x ceil(1024/2/16)); one cell = 32 x 32 display px; layer4 / DenseNet maps (12 x 16) are nearest-upsampled to it",
+    "blur_sigma_display_px": {
+     "mean": 20.2,
+     "per_backbone_mean": [
+      18.3,
+      20.1,
+      23.2,
+      19.4
+     ],
+     "note": "sigma is learned in px of the half-resolution map (384 x 512 here); x2 for display px"
+    },
+    "output": "log density (sums to 1); our runs exponentiate it",
+    "n_params": 3059160,
+    "n_params_note": "trainable readout + finalizer parameters over all 120 components (backbones frozen); per backbone: 698790, 809190, 698790, 852390"
+   },
+   "loss": "negative log-likelihood of fixations under the predicted log density (deepgaze_pytorch training code); training run itself not in local code",
+   "fixation_training_data": "not in local code or checkpoint. Package docstring cites Linardos et al. 2021 (external: SALICON pre-training, MIT1003 fine-tuning with 10-fold cross-validation, consistent with the 10 folds per instance in the code)",
+   "centre_bias_at_test": "uniform log-density map -log(H W) passed as centre bias; it adds a constant that log-softmax removes, so no centre bias (learned weight 0.67 to 0.70 is irrelevant)",
+   "recurrence": "none (feed-forward)",
+   "evidence": [
+    "site-packages/deepgaze_pytorch/deepgaze2e.py:24  backbone 1 and its six hooked layers (lines below)",
+    "site-packages/deepgaze_pytorch/features/shapenet.py:84  ShapeNet-C weights: SIN + IN, fine-tuned on IN",
+    "site-packages/deepgaze_pytorch/features/efficientnet.py:18  EfficientNet-B5 ImageNet weights",
+    "site-packages/deepgaze_pytorch/features/densenet.py:15  DenseNet-201 torchvision ImageNet weights",
+    "site-packages/deepgaze_pytorch/features/resnext.py:15  ResNeXt-50 torchvision ImageNet weights",
+    "site-packages/deepgaze_pytorch/deepgaze2e.py:66  saliency network: 1x1 convs C->8->16->1 with LayerNorm/softplus",
+    "site-packages/deepgaze_pytorch/deepgaze2e.py:85  fixation-selection network 1->128->16->1",
+    "site-packages/deepgaze_pytorch/deepgaze2e.py:118  finalizer, Gaussian sigma init 8, learned",
+    "site-packages/deepgaze_pytorch/deepgaze2e.py:126  downsample 2",
+    "site-packages/deepgaze_pytorch/deepgaze2e.py:127  readout factor 16",
+    "site-packages/deepgaze_pytorch/deepgaze2e.py:140  3 instances x 10 cross-validation folds per backbone",
+    "site-packages/deepgaze_pytorch/modules.py:292  input downsampled by 2 before the backbones (default nearest)",
+    "site-packages/deepgaze_pytorch/modules.py:159  finalizer: log-softmax normalisation",
+    "site-packages/deepgaze_pytorch/modules.py:325  mixture over components",
+    "site-packages/deepgaze_pytorch/layers.py:109  LayerNorm statistics over C x H x W (image-wide)",
+    "site-packages/deepgaze_pytorch/modules.py:130  Gaussian blur, truncate 3",
+    "site-packages/deepgaze_pytorch/training.py:114  training loss = NLL",
+    "gate_kanizsa.py:122  our call: uniform centre bias, full 1024x768 image",
+    "v2/anatomy/facts_deepgaze.json [IIE_backbones]  channels, shapes, theoretical RFs and CPU times measured by inspect_deepgaze.py",
+    "v2/anatomy/facts_deepgaze.json [IIE_checkpoint]  readout parameter counts and learned sigmas from deepgaze2e.pth"
+   ]
+  },
+  {
+   "model": "DeepGaze MSDB",
+   "group": "paper model",
+   "code": "site-packages/deepgaze_pytorch/deepgazemsdb.py; called from gate_kanizsa.py (run_v2.py key 'msdb')",
+   "backbones": [
+    {
+     "net": "CLIP RN50x64 (OpenAI clip.load('RN50x64'), attention-pool head removed)",
+     "kind": "CNN (modified ResNet, stages 3/15/36/10)",
+     "pretraining_data": "OpenAI CLIP image-text pairs (external)",
+     "pretraining_objective": "contrastive image-text",
+     "layers_read": [
+      {
+       "module": "layer4.2.conv2",
+       "channels": 1024,
+       "note": "3x3 conv of the last bottleneck of stage 4, before BN; stride 32",
+       "theoretical_rf_px_backbone_input": 1593
+      }
+     ]
+    },
+    {
+     "net": "DINOv2 ViT-B/14 (torch.hub facebookresearch/dinov2:6a62615 'dinov2_vitb14', no registers; weights identical to HF facebook/dinov2-base, spot-checked tensors max abs diff 0)",
+     "kind": "transformer",
+     "pretraining_data": "LVD-142M (external)",
+     "pretraining_objective": "self-supervised (DINO + iBOT), distilled",
+     "layers_read": [
+      {
+       "module": "blocks.10",
+       "hf_hidden_states_index": 11,
+       "block_0_based": 10,
+       "block_1_based": 11,
+       "channels": 768,
+       "final_norm": "before (model.norm not applied)"
+      },
+      {
+       "module": "blocks.6",
+       "hf_hidden_states_index": 7,
+       "block_0_based": 6,
+       "block_1_based": 7,
+       "channels": 768,
+       "final_norm": "before (model.norm not applied)"
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "CNN + transformer",
+   "channels": {
+    "total": 2560,
+    "per_layer": [
+     1024,
+     768,
+     768
+    ],
+    "saliency_network_in_channels": 2560,
+    "note": "verified by instantiation: CLIP RN50x64 layer4.2.conv2 = 1024, DINOv2 blocks.10 = 768, blocks.6 = 768, sum 2560. The package comment '_INPUT_CHANNELS = 2560  # CLIP (1792) + DINOv2 (768)' is wrong about the split"
+   },
+   "layers_read_convention": "DINOv2: facebookresearch module index, 0-based (blocks.6 = HF hidden_states[7] = 1-based block 7); CLIP: module path",
+   "input": {
+    "our_call": "display downsampled to 512 x 384 (cv2.INTER_AREA), pixel_per_dva = 17.5 (35 x 0.5), dataset=None",
+    "internal_scales": {
+     "pixel_per_dva": {
+      "5.0": [
+       110,
+       147
+      ],
+      "10.0": [
+       220,
+       293
+      ],
+      "17.5": [
+       384,
+       512
+      ],
+      "24.0": [
+       527,
+       703
+      ],
+      "30.0": [
+       659,
+       878
+      ]
+     },
+     "size": {
+      "128": [
+       96,
+       128
+      ],
+      "256": [
+       192,
+       256
+      ],
+      "512": [
+       384,
+       512
+      ],
+      "768": [
+       576,
+       768
+      ],
+      "1024": [
+       768,
+       1024
+      ]
+     }
+    },
+    "scale_weights_dataset_None": {
+     "pixel_per_dva": {
+      "5.0": 0.0334,
+      "10.0": 0.0361,
+      "17.5": 0.1525,
+      "24.0": 0.1035,
+      "30.0": 0.0733
+     },
+     "size": {
+      "128": 0.0451,
+      "256": 0.098,
+      "512": 0.169,
+      "768": 0.0966,
+      "1024": 0.1926
+     }
+    },
+    "note": "10 rescaled copies (5 pixel-per-degree targets 5..30 and 5 absolute sizes 128..1024 px longest side, bicubic) through both backbones; features bilinearly resized to the readout grid and summed with dataset-averaged weights; scales above 17.5 px/dva and sizes above 512 upsample our half-resolution input",
+    "letterbox_or_squash": "aspect preserved",
+    "tta": null,
+    "dinov2_input": "nearest-resized to a multiple of 14"
+   },
+   "readout": {
+    "type": "saliency network: LayerNorm(2560) -> 1x1 2560->8 -> softplus -> LayerNorm -> 1x1 8->16 -> softplus -> LayerNorm -> 1x1 16->1 -> softplus -> LayerNorm -> 1x1 1->128 -> softplus -> LayerNorm -> 1x1 128->1 -> softplus; bilinear upsampling to half input size; dataset-aware Gaussian blur (sigma in degrees x px/deg); + w * centre bias; nearest upsampling; log-softmax",
+    "pointwise": true,
+    "aspp": false,
+    "dilation_rates": null,
+    "global_average_pooling_branch": false,
+    "gaussian_blur": true,
+    "normalisation_in_readout": "same DeepGaze LayerNorm over (C, H, W): image-wide statistics at every LayerNorm",
+    "readout_grid": "[48, 64] for our 384 x 512 input (readout factor 8; one cell = 16 x 16 display px)",
+    "blur_sigma": {
+     "dva": 0.766,
+     "px_at_saliency_map": 6.703,
+     "display_px": 26.81
+    },
+    "output": "log density; our runs exponentiate and resize to 1024 x 768",
+    "n_params": 26525,
+    "n_params_note": "head checkpoint: saliency network 26460 + finalizer and scale weights"
+   },
+   "loss": "negative log-likelihood of fixations (DeepGaze family; ICCV 2025 paper, external); training code not in the package",
+   "fixation_training_data": "code defines dataset-specific parameters for MIT1003, CAT2000, COCO-Freeview, DAEMONS, FIGRIM (MSDBDataset); dataset=None averages them",
+   "centre_bias_at_test": "uniform log-density map; constant, removed by log-softmax; no centre bias",
+   "recurrence": "none (feed-forward)",
+   "cpu_cost": {
+    "full_forward_s_384x512_3threads": 26.2
+   },
+   "evidence": [
+    "site-packages/deepgaze_pytorch/deepgazemsdb.py:48  2560 input channels (comment's 1792/768 split is wrong)",
+    "site-packages/deepgaze_pytorch/deepgazemsdb.py:321  CLIP RN50x64 layer4.2.conv2",
+    "site-packages/deepgaze_pytorch/deepgazemsdb.py:330  DINOv2 blocks 10 and 6 (0-based)",
+    "site-packages/deepgaze_pytorch/deepgazemsdb.py:46  five pixel-per-degree scales",
+    "site-packages/deepgaze_pytorch/deepgazemsdb.py:47  five absolute-size scales",
+    "site-packages/deepgaze_pytorch/deepgazemsdb.py:54  pointwise saliency network",
+    "site-packages/deepgaze_pytorch/deepgazemsdb.py:104  dataset=None: averaged blur sigma",
+    "site-packages/deepgaze_pytorch/deepgazemsdb.py:262  dataset=None: averaged scale weights",
+    "site-packages/deepgaze_pytorch/deepgazemsdb.py:29  the five training datasets with their own parameters",
+    "site-packages/deepgaze_pytorch/features/dino.py:21  DINOv2 ViT-B/14 from torch.hub",
+    "site-packages/deepgaze_pytorch/features/clip_resnet.py:17  CLIP RN50x64",
+    "gate_kanizsa.py:133  our call: half resolution, 17.5 px/dva, dataset=None",
+    "v2/anatomy/facts_deepgaze.json [MSDB_backbone_outputs_at_384x512]  instantiated channel counts 1024 + 768 + 768",
+    "v2/anatomy/facts_deepgaze.json [MSDB_checkpoint]  head parameters, sigmas, scale weights",
+    "v2/anatomy/facts_hf.json [msdb_hub_dinov2_vs_hf_dinov2_base_max_abs_diff]  MSDB DINOv2 weights = facebook/dinov2-base"
+   ]
+  },
+  {
+   "model": "MSI-Net",
+   "group": "paper model",
+   "code": "msinet_maps.py (models/msinet_maps.py here) -> HF SavedModel alexanderkroner/MSI-Net, snapshot d950b35945db961ae63f84bc2b23f6bd578d0b8f",
+   "backbones": [
+    {
+     "net": "VGG16 encoder (13 convs; pool4 and pool5 with stride 1, conv5 dilated 2; output stride 8)",
+     "kind": "CNN",
+     "pretraining_data": "ImageNet (model card); then whole network trained on SALICON",
+     "pretraining_objective": "supervised classification (encoder init)",
+     "layers_read": [
+      {
+       "module": "concat of pool3 (256 ch), pool4 (512 ch), pool5 (512 ch) outputs",
+       "channels": 1280,
+       "theoretical_rf_px_network_input": 204
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "CNN",
+   "layers_read_convention": "graph node names (max_pooling2d_2/3/4 = pool3/4/5)",
+   "input": {
+    "our_call": "aspect-preserving resize to fit 240 x 320 (H x W) with centred zero padding (none needed for 4:3), raw RGB 0..255",
+    "internal": "graph subtracts [103.939, 116.779, 123.68] per channel",
+    "scales": [
+     "single"
+    ],
+    "letterbox_or_squash": "aspect-preserving (letterbox with zero padding when needed)",
+    "tta": null
+   },
+   "readout": {
+    "type": "ASPP on the 1280-ch encoder output at stride 8: 1x1 conv, 3x3 convs at rates 4, 8, 12 (256 ch each, ReLU), and an image-pooling branch (spatial Mean over H,W -> 1x1 conv 256 -> bilinear broadcast); concat (1280) -> 1x1 256; decoder: 3 x (bilinear x2 + 3x3 conv 128/64/32, ReLU) -> 3x3 conv to 1 channel -> min-max normalisation to [0,1]",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     4,
+     8,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "grid_at_240x320": "30 x 40 cells; one cell = 25.6 x 25.6 display px; rate-12 branch spans 25 cells (640 display px)",
+    "output": "min-max normalised map in [0,1] (graph ops Min, Sub, Max, RealDiv after decoder/conv4)",
+    "n_params": 24934209,
+    "n_params_note": "all weights (whole network; weights frozen into the graph as constants)"
+   },
+   "loss": "KL divergence (Kroner et al. 2020, external; not recoverable from the frozen graph)",
+   "fixation_training_data": "SALICON base model only (model card: 'here we only provide the SALICON base model'; SALICON = mouse tracking)",
+   "centre_bias_at_test": "no explicit centre-bias component in the graph",
+   "recurrence": "none (feed-forward)",
+   "evidence": [
+    "msinet_maps.py:14  target size rule (240 x 320 for 4:3)",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:172  weights = SALICON base model",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:20  model card: ASPP + global scene information",
+    "v2/anatomy/facts_msinet.json [mean_ops]  one Mean over axes [1, 2] with keep_dims (image-pooling branch)",
+    "v2/anatomy/facts_msinet.json [atrous_space_to_batch]  atrous rates 2 (conv5) and 4, 8, 12 (ASPP)",
+    "v2/anatomy/facts_msinet.json [concat_ops]  encoder concat of pool3/4/5; ASPP concat of 4 branches + pooled branch",
+    "v2/anatomy/facts_msinet.json [frozen_weight_shapes]  kernel shapes; 24,934,209 weights",
+    "v2/anatomy/facts_msinet.json [output_normalisation_ops]  min-max output normalisation"
+   ]
+  },
+  {
+   "model": "xSoyelNet-ASPP",
+   "group": "paper model (author's)",
+   "checkpoint": "weights/xsoyelnet_aspp.pt (not distributed)",
+   "code": "gate_kanizsa.py (load_models 'aspp'); src/model_aspp.py",
+   "backbones": [
+    {
+     "net": "DINOv2-B/14 (facebook/dinov2-base; the backbone weights stored in fv_aspp.pt are identical to it, max abs diff 0)",
+     "kind": "transformer",
+     "pretraining_data": "LVD-142M (external)",
+     "pretraining_objective": "self-supervised (DINO + iBOT)",
+     "layers_read": [
+      {
+       "tensor": "last_hidden_state",
+       "hf_hidden_states_index": "12 followed by the final LayerNorm",
+       "block_0_based": 11,
+       "block_1_based": 12,
+       "final_layernorm": "AFTER (post-LN)"
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "transformer",
+   "input": {
+    "test": "448 x 448: longest side resized to 448 (cv2 bilinear), replicate-padded top/bottom (letterbox), map cropped back and resized to 1024 x 768",
+    "train": "224 x 224 square resize (PIL bilinear) of every training image (squash); 16 x 16 tokens",
+    "test_token_grid": "32 x 32 tokens, image content 32 x 24",
+    "tta": null,
+    "normalisation": "ImageNet mean/std"
+   },
+   "readout": {
+    "type": "ASPP readout on the frozen token grid (CLS token dropped): four parallel 3x3 convolutions with dilation 1, 3, 6, 12 (128 channels each, BatchNorm + GELU), plus a global-average-pooling branch (AdaptiveAvgPool2d(1) -> 1x1 conv -> BN -> GELU, bilinearly broadcast back to the grid), concatenated (640 ch) -> 1x1 projection to 128 ch (BN, GELU, Dropout2d 0.1) -> 1x1 head to 1 channel -> (+ learned 16x16 centre-bias map, bilinear, switchable) -> bilinear upsampling to the input size -> sigmoid",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     3,
+     6,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "output": "sigmoid map in [0,1] (not a probability density); the r measure uses it after clipping at 0",
+    "local_extent_tokens": "3, 7, 13 and 25 tokens (3x3 kernels at dilation 1, 3, 6, 12) plus a whole-image branch (global average pooling)",
+    "normalisation_in_readout": "BatchNorm2d in eval mode (fixed running statistics: a per-channel affine, local)",
+    "n_params": 3721089,
+    "in_channels": 768,
+    "spatial_extent": {
+     "448": {
+      "token_grid": [
+       32,
+       32
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       800,
+       800
+      ],
+      "token_size_display_px": [
+       32.0,
+       32.0
+      ],
+      "covers_whole_grid": false
+     }
+    }
+   },
+   "loss": "KL + 2 (1 - CC) on sigmoid output (combined_loss, same form as ab loss_A)",
+   "fixation_training_data": "SALICON + CAT2000 + MIT1003[:-200] (803) + ETDB (Wilming et al. 2017; 593 image/map pairs), as listed in the training script (not distributed; the training-set contents are not verifiable from the checkpoint)",
+   "training": {
+    "epochs": 15,
+    "batch": 16,
+    "optimiser": "AdamW lr 8e-4, weight decay 1e-4, cosine T_max 15",
+    "seed": "random.seed(0) for the list shuffle only; torch seed not set",
+    "checkpoint_selection": "best CC on MIT1003 last 200 (the held-out images also used to report held-out CC), evaluated at 224 px; stored val {\"CC\": 0.7047361519932747, \"NSS\": 2.3692681716584705, \"SIM\": 0.5655358049273491}",
+    "device": "GPU (cuda)"
+   },
+   "centre_bias_at_test": "disabled (use_center_bias = False)",
+   "recurrence": "none",
+   "evidence": [
+    "gate_kanizsa.py:102  model class",
+    "gate_kanizsa.py:104  checkpoint fv_aspp.pt, centre bias off",
+    "gate_kanizsa.py:106  448 px letterbox",
+    "gate_kanizsa.py:109  replicate padding",
+    "src/model_aspp.py:65  reads last_hidden_state (after final LayerNorm)",
+    "xSoyelNet-ASPP training script (not distributed):53  training data incl. ETDB",
+    "xSoyelNet-ASPP training script (not distributed):11  15 epochs",
+    "xSoyelNet-ASPP training script (not distributed):13  lr 8e-4",
+    "xSoyelNet-ASPP training script (not distributed):12  batch 16",
+    "xSoyelNet-ASPP training script (not distributed):102  checkpoint selected on MIT1003 held-out CC",
+    "src/data.py:21  training resolution 224 (square resize)",
+    "v2/anatomy/facts_readouts.json [readouts.xSoyelNet-ASPP/fv_aspp]  3,721,089 trainable readout parameters; 223 frozen backbone tensors",
+    "v2/anatomy/facts_hf.json [fv_aspp_backbone_vs_hf_dinov2_base]  backbone identical to facebook/dinov2-base"
+   ]
+  },
+  {
+   "model": "xSoyelNet-ML",
+   "group": "paper model (author's)",
+   "checkpoint": "ab/readout_M610.pt",
+   "code": "run_v2.py (key 'ml') -> scales.py sal_at -> ab_layers.py",
+   "backbones": [
+    {
+     "net": "DINOv2-B/14 (facebook/dinov2-base)",
+     "kind": "transformer",
+     "pretraining_data": "LVD-142M (external)",
+     "pretraining_objective": "self-supervised (DINO + iBOT)",
+     "layers_read": [
+      {
+       "tensor": "hidden_states[7]",
+       "block_0_based": 6,
+       "block_1_based": 7,
+       "final_layernorm": "before (pre-LN)"
+      },
+      {
+       "tensor": "hidden_states[11]",
+       "block_0_based": 10,
+       "block_1_based": 11,
+       "final_layernorm": "before (pre-LN)"
+      }
+     ],
+     "note": "concatenated along channels (1536)"
+    }
+   ],
+   "cnn_or_transformer": "transformer",
+   "input": {
+    "test": "square resize (cv2.INTER_AREA, squash 4:3 -> 1:1) to 280, 336, 392, 448 px, each with and without horizontal flip; 8 sigmoid maps resized back to 1024 x 768 and averaged",
+    "train": "336 x 336 square resize (squash), 24 x 24 tokens",
+    "tta": "4 sizes x 2 flips",
+    "normalisation": "ImageNet mean/std"
+   },
+   "readout": {
+    "type": "ASPP readout on the frozen token grid (CLS token dropped): four parallel 3x3 convolutions with dilation 1, 3, 6, 12 (128 channels each, BatchNorm + GELU), plus a global-average-pooling branch (AdaptiveAvgPool2d(1) -> 1x1 conv -> BN -> GELU, bilinearly broadcast back to the grid), concatenated (640 ch) -> 1x1 projection to 128 ch (BN, GELU, Dropout2d 0.1) -> 1x1 head to 1 channel -> (+ learned 16x16 centre-bias map, bilinear, switchable) -> bilinear upsampling to the input size -> sigmoid",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     3,
+     6,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "output": "sigmoid map in [0,1] (not a probability density); the r measure uses it after clipping at 0",
+    "local_extent_tokens": "3, 7, 13 and 25 tokens (3x3 kernels at dilation 1, 3, 6, 12) plus a whole-image branch (global average pooling)",
+    "normalisation_in_readout": "BatchNorm2d in eval mode (fixed running statistics: a per-channel affine, local)",
+    "n_params": 7358337,
+    "in_channels": 1536,
+    "spatial_extent": {
+     "280": {
+      "token_grid": [
+       20,
+       20
+      ],
+      "largest_local_branch_tokens": [
+       20,
+       20
+      ],
+      "largest_local_branch_px_network_input": 280,
+      "largest_local_branch_display_px": [
+       1024,
+       768
+      ],
+      "token_size_display_px": [
+       51.2,
+       38.4
+      ],
+      "covers_whole_grid": true
+     },
+     "336": {
+      "token_grid": [
+       24,
+       24
+      ],
+      "largest_local_branch_tokens": [
+       24,
+       24
+      ],
+      "largest_local_branch_px_network_input": 336,
+      "largest_local_branch_display_px": [
+       1024,
+       768
+      ],
+      "token_size_display_px": [
+       42.7,
+       32.0
+      ],
+      "covers_whole_grid": true
+     },
+     "392": {
+      "token_grid": [
+       28,
+       28
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       914,
+       686
+      ],
+      "token_size_display_px": [
+       36.6,
+       27.4
+      ],
+      "covers_whole_grid": false
+     },
+     "448": {
+      "token_grid": [
+       32,
+       32
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       800,
+       600
+      ],
+      "token_size_display_px": [
+       32.0,
+       24.0
+      ],
+      "covers_whole_grid": false
+     }
+    }
+   },
+   "loss": "KL(gt || pred) + 2 (1 - CC), on sigmoid(logits) against the blurred fixation / mouse-tracking density map, both normalised to sum 1 for the KL term",
+   "fixation_training_data": "12,803 images: SALICON train 10,000 (official SALICON maps; SALICON is mouse-tracking, not eye-tracking), MIT1003 sorted first 803 (last 200 held out), CAT2000 train 2,000 (msi/static); all 12,803 have at least one fixation; targets resized to 336x336 (cv2.INTER_AREA); no augmentation",
+   "training": {
+    "epochs": 8,
+    "batch": 32,
+    "optimiser": "AdamW lr 5e-4, weight decay 1e-4, cosine T_max 8",
+    "seed": 0,
+    "checkpoint_selection": "final epoch",
+    "features": "computed on the fly from the frozen backbone (float32, MPS at the time)"
+   },
+   "centre_bias_at_test": "disabled (use_cb = False)",
+   "recurrence": "none",
+   "heldout_mit1003_cc": {
+    "single_336": 0.7452,
+    "tta": 0.7678
+   },
+   "evidence": [
+    "run_v2.py:42  checkpoint ab/readout_M610.pt",
+    "run_v2.py:43  hidden_states 7 and 11, TTA, centre bias off",
+    "scales.py:19  square resize (squash)",
+    "scales.py:27  HF hidden_states, CLS dropped",
+    "ab_layers.py:23  indices 7 and 11",
+    "ab_layers.py:11  docstring: 0-based naming",
+    "ab_layers.py:43  8 epochs, batch 32, lr 5e-4",
+    "ab_layers.py:61  loss A",
+    "ab_objective.py:115  map-regression loss KL + 2(1 - CC)",
+    "ab_objective.py:35  training list: SALICON train + MIT1003[:-200] + CAT2000",
+    "ab/run.log:2  logged counts {salicon 10000, mit1003 803, cat2000 2000}",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:176  SALICON recording type = mouse tracking (MSI-Net model card, local cache)",
+    "v2/anatomy/facts_readouts.json [readouts.ab/readout_M610]  7,358,337 trainable parameters, 1536 input channels",
+    "v2/anatomy/facts_readouts.json [hash_compare]  ab/readout_M610.pt is byte-identical to the xSoyelNet-ML checkpoint (weights/readout_M610.pt, not distributed)",
+    "v2/anatomy/facts_hf.json [dinov2-base]  hidden_states[i] = output of 0-based block i-1, before the final LayerNorm"
+   ]
+  },
+  {
+   "model": "Spectral residual",
+   "group": "paper model (training-free)",
+   "code": "run_v2.py spectral_residual",
+   "backbones": [],
+   "cnn_or_transformer": "neither (Fourier transform)",
+   "layers_read": null,
+   "input": {
+    "test": "grey image resized to 64 px width (INTER_AREA, aspect kept: 64 x 48)",
+    "tta": null
+   },
+   "readout": {
+    "type": "log-amplitude spectrum minus its 3x3 box-filtered version, inverse FFT with original phase, squared magnitude, Gaussian blur sigma 2.5 px at 64 px width (= 40 display px), bilinear resize to 1024 x 768",
+    "pointwise": null,
+    "aspp": false,
+    "global_average_pooling_branch": false,
+    "gaussian_blur": true,
+    "n_params": 0,
+    "note": "the spectrum is a whole-image operation: every output pixel depends on the whole image"
+   },
+   "loss": null,
+   "fixation_training_data": null,
+   "centre_bias_at_test": "none",
+   "recurrence": "none",
+   "evidence": [
+    "run_v2.py:21  implementation",
+    "run_v2.py:27  blur sigma 2.5 px at 64 px width"
+   ]
+  },
+  {
+   "model": "Edge-energy null",
+   "group": "paper model (training-free)",
+   "code": "run_v2.py edge_null",
+   "backbones": [],
+   "cnn_or_transformer": "neither (Sobel filter)",
+   "layers_read": null,
+   "input": {
+    "test": "full 1024 x 768 grey image in [0,1]",
+    "tta": null
+   },
+   "readout": {
+    "type": "Sobel gradient magnitude (3x3) blurred with a Gaussian of sigma 25 display px",
+    "pointwise": null,
+    "aspp": false,
+    "global_average_pooling_branch": false,
+    "gaussian_blur": true,
+    "n_params": 0,
+    "spatial_extent": "Gaussian sigma 25 px (OpenCV kernel about 151 px wide)"
+   },
+   "loss": null,
+   "fixation_training_data": null,
+   "centre_bias_at_test": "none",
+   "recurrence": "none",
+   "evidence": [
+    "run_v2.py:30  implementation, sigma 25"
+   ]
+  },
+  {
+   "model": "sweep dinov2 L2",
+   "group": "layer-sweep readout (18)",
+   "checkpoint": "sweep/dinov2/readout_L2.pt",
+   "code": "sweep.py",
+   "backbones": [
+    {
+     "net": "DINOv2-B/14 (facebook/dinov2-base)",
+     "kind": "transformer",
+     "pretraining_data": "LVD-142M (external)",
+     "pretraining_objective": "self-supervised (DINO + iBOT)",
+     "layers_read": [
+      {
+       "tensor": "hidden_states[2]",
+       "block_0_based": 1,
+       "block_1_based": 2,
+       "of_blocks": 12,
+       "final_layernorm": "before (pre-LN)",
+       "cls_token_dropped": true
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "transformer",
+   "input": {
+    "train": "336 x 336 square resize (cv2.INTER_AREA, squash)",
+    "test_illusions": "336, 448, 560, 672 px square resize (squash), each scored separately; no TTA",
+    "test_mit1003": "336 px, centre bias on",
+    "normalisation": "ImageNet",
+    "token_grid": {
+     "336": 24,
+     "448": 32,
+     "560": 40,
+     "672": 48
+    }
+   },
+   "readout": {
+    "type": "ASPP readout on the frozen token grid (CLS token dropped): four parallel 3x3 convolutions with dilation 1, 3, 6, 12 (128 channels each, BatchNorm + GELU), plus a global-average-pooling branch (AdaptiveAvgPool2d(1) -> 1x1 conv -> BN -> GELU, bilinearly broadcast back to the grid), concatenated (640 ch) -> 1x1 projection to 128 ch (BN, GELU, Dropout2d 0.1) -> 1x1 head to 1 channel -> (+ learned 16x16 centre-bias map, bilinear, switchable) -> bilinear upsampling to the input size -> sigmoid",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     3,
+     6,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "output": "sigmoid map in [0,1] (not a probability density); the r measure uses it after clipping at 0",
+    "local_extent_tokens": "3, 7, 13 and 25 tokens (3x3 kernels at dilation 1, 3, 6, 12) plus a whole-image branch (global average pooling)",
+    "normalisation_in_readout": "BatchNorm2d in eval mode (fixed running statistics: a per-channel affine, local)",
+    "n_params": 3721089,
+    "in_channels": 768,
+    "spatial_extent": {
+     "336": {
+      "token_grid": [
+       24,
+       24
+      ],
+      "largest_local_branch_tokens": [
+       24,
+       24
+      ],
+      "largest_local_branch_px_network_input": 336,
+      "largest_local_branch_display_px": [
+       1024,
+       768
+      ],
+      "token_size_display_px": [
+       42.7,
+       32.0
+      ],
+      "covers_whole_grid": true
+     },
+     "448": {
+      "token_grid": [
+       32,
+       32
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       800,
+       600
+      ],
+      "token_size_display_px": [
+       32.0,
+       24.0
+      ],
+      "covers_whole_grid": false
+     },
+     "560": {
+      "token_grid": [
+       40,
+       40
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       640,
+       480
+      ],
+      "token_size_display_px": [
+       25.6,
+       19.2
+      ],
+      "covers_whole_grid": false
+     },
+     "672": {
+      "token_grid": [
+       48,
+       48
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       533,
+       400
+      ],
+      "token_size_display_px": [
+       21.3,
+       16.0
+      ],
+      "covers_whole_grid": false
+     }
+    }
+   },
+   "loss": "KL(gt || pred) + 2 (1 - CC), on sigmoid(logits) against the blurred fixation / mouse-tracking density map, both normalised to sum 1 for the KL term",
+   "fixation_training_data": "12,803 images: SALICON train 10,000 (official SALICON maps; SALICON is mouse-tracking, not eye-tracking), MIT1003 sorted first 803 (last 200 held out), CAT2000 train 2,000 (msi/static); all 12,803 have at least one fixation; targets resized to 336x336 (cv2.INTER_AREA); no augmentation",
+   "training": {
+    "epochs": 6,
+    "batch": 32,
+    "optimiser": "AdamW lr 5e-4, weight decay 1e-4, cosine T_max 6",
+    "seed": 0,
+    "checkpoint_selection": "final epoch",
+    "joint": "all six readouts of a backbone trained together from one frozen forward pass per batch (identical batches)"
+   },
+   "centre_bias_at_test": "disabled for illusions (use_cb = False); enabled for MIT1003",
+   "recurrence": "none",
+   "heldout_mit1003_cc": 0.6259,
+   "evidence": [
+    "sweep.py:25  backbone facebook/dinov2-base and layer list",
+    "sweep.py:54  reads hidden_states[L] (pre final LN), CLS dropped except SigLIP",
+    "sweep.py:46  square resize",
+    "sweep.py:62  ASPP readout",
+    "sweep.py:70  6 epochs, batch 32, lr 5e-4",
+    "sweep.py:88  loss A",
+    "sweep.py:124  centre bias off for illusions",
+    "sweep.py:117  illusion test sizes",
+    "v2/anatomy/facts_hf.json [dinov2-base / clip-vit-large-patch14 / siglip-large-patch16-256]  hidden_states convention verified empirically",
+    "v2/anatomy/facts_readouts.json [readouts.sweep/dinov2/readout_L2]  3,721,089 trainable parameters; byte-identical to the public-repo copy",
+    "ab_objective.py:35  training list: SALICON train + MIT1003[:-200] + CAT2000",
+    "ab/run.log:2  logged counts {salicon 10000, mit1003 803, cat2000 2000}",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:176  SALICON recording type = mouse tracking (MSI-Net model card, local cache)"
+   ]
+  },
+  {
+   "model": "sweep dinov2 L4",
+   "group": "layer-sweep readout (18)",
+   "checkpoint": "sweep/dinov2/readout_L4.pt",
+   "code": "sweep.py",
+   "backbones": [
+    {
+     "net": "DINOv2-B/14 (facebook/dinov2-base)",
+     "kind": "transformer",
+     "pretraining_data": "LVD-142M (external)",
+     "pretraining_objective": "self-supervised (DINO + iBOT)",
+     "layers_read": [
+      {
+       "tensor": "hidden_states[4]",
+       "block_0_based": 3,
+       "block_1_based": 4,
+       "of_blocks": 12,
+       "final_layernorm": "before (pre-LN)",
+       "cls_token_dropped": true
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "transformer",
+   "input": {
+    "train": "336 x 336 square resize (cv2.INTER_AREA, squash)",
+    "test_illusions": "336, 448, 560, 672 px square resize (squash), each scored separately; no TTA",
+    "test_mit1003": "336 px, centre bias on",
+    "normalisation": "ImageNet",
+    "token_grid": {
+     "336": 24,
+     "448": 32,
+     "560": 40,
+     "672": 48
+    }
+   },
+   "readout": {
+    "type": "ASPP readout on the frozen token grid (CLS token dropped): four parallel 3x3 convolutions with dilation 1, 3, 6, 12 (128 channels each, BatchNorm + GELU), plus a global-average-pooling branch (AdaptiveAvgPool2d(1) -> 1x1 conv -> BN -> GELU, bilinearly broadcast back to the grid), concatenated (640 ch) -> 1x1 projection to 128 ch (BN, GELU, Dropout2d 0.1) -> 1x1 head to 1 channel -> (+ learned 16x16 centre-bias map, bilinear, switchable) -> bilinear upsampling to the input size -> sigmoid",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     3,
+     6,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "output": "sigmoid map in [0,1] (not a probability density); the r measure uses it after clipping at 0",
+    "local_extent_tokens": "3, 7, 13 and 25 tokens (3x3 kernels at dilation 1, 3, 6, 12) plus a whole-image branch (global average pooling)",
+    "normalisation_in_readout": "BatchNorm2d in eval mode (fixed running statistics: a per-channel affine, local)",
+    "n_params": 3721089,
+    "in_channels": 768,
+    "spatial_extent": {
+     "336": {
+      "token_grid": [
+       24,
+       24
+      ],
+      "largest_local_branch_tokens": [
+       24,
+       24
+      ],
+      "largest_local_branch_px_network_input": 336,
+      "largest_local_branch_display_px": [
+       1024,
+       768
+      ],
+      "token_size_display_px": [
+       42.7,
+       32.0
+      ],
+      "covers_whole_grid": true
+     },
+     "448": {
+      "token_grid": [
+       32,
+       32
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       800,
+       600
+      ],
+      "token_size_display_px": [
+       32.0,
+       24.0
+      ],
+      "covers_whole_grid": false
+     },
+     "560": {
+      "token_grid": [
+       40,
+       40
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       640,
+       480
+      ],
+      "token_size_display_px": [
+       25.6,
+       19.2
+      ],
+      "covers_whole_grid": false
+     },
+     "672": {
+      "token_grid": [
+       48,
+       48
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       533,
+       400
+      ],
+      "token_size_display_px": [
+       21.3,
+       16.0
+      ],
+      "covers_whole_grid": false
+     }
+    }
+   },
+   "loss": "KL(gt || pred) + 2 (1 - CC), on sigmoid(logits) against the blurred fixation / mouse-tracking density map, both normalised to sum 1 for the KL term",
+   "fixation_training_data": "12,803 images: SALICON train 10,000 (official SALICON maps; SALICON is mouse-tracking, not eye-tracking), MIT1003 sorted first 803 (last 200 held out), CAT2000 train 2,000 (msi/static); all 12,803 have at least one fixation; targets resized to 336x336 (cv2.INTER_AREA); no augmentation",
+   "training": {
+    "epochs": 6,
+    "batch": 32,
+    "optimiser": "AdamW lr 5e-4, weight decay 1e-4, cosine T_max 6",
+    "seed": 0,
+    "checkpoint_selection": "final epoch",
+    "joint": "all six readouts of a backbone trained together from one frozen forward pass per batch (identical batches)"
+   },
+   "centre_bias_at_test": "disabled for illusions (use_cb = False); enabled for MIT1003",
+   "recurrence": "none",
+   "heldout_mit1003_cc": 0.7082,
+   "evidence": [
+    "sweep.py:25  backbone facebook/dinov2-base and layer list",
+    "sweep.py:54  reads hidden_states[L] (pre final LN), CLS dropped except SigLIP",
+    "sweep.py:46  square resize",
+    "sweep.py:62  ASPP readout",
+    "sweep.py:70  6 epochs, batch 32, lr 5e-4",
+    "sweep.py:88  loss A",
+    "sweep.py:124  centre bias off for illusions",
+    "sweep.py:117  illusion test sizes",
+    "v2/anatomy/facts_hf.json [dinov2-base / clip-vit-large-patch14 / siglip-large-patch16-256]  hidden_states convention verified empirically",
+    "v2/anatomy/facts_readouts.json [readouts.sweep/dinov2/readout_L4]  3,721,089 trainable parameters; byte-identical to the public-repo copy",
+    "ab_objective.py:35  training list: SALICON train + MIT1003[:-200] + CAT2000",
+    "ab/run.log:2  logged counts {salicon 10000, mit1003 803, cat2000 2000}",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:176  SALICON recording type = mouse tracking (MSI-Net model card, local cache)"
+   ]
+  },
+  {
+   "model": "sweep dinov2 L6",
+   "group": "layer-sweep readout (18)",
+   "checkpoint": "sweep/dinov2/readout_L6.pt",
+   "code": "sweep.py",
+   "backbones": [
+    {
+     "net": "DINOv2-B/14 (facebook/dinov2-base)",
+     "kind": "transformer",
+     "pretraining_data": "LVD-142M (external)",
+     "pretraining_objective": "self-supervised (DINO + iBOT)",
+     "layers_read": [
+      {
+       "tensor": "hidden_states[6]",
+       "block_0_based": 5,
+       "block_1_based": 6,
+       "of_blocks": 12,
+       "final_layernorm": "before (pre-LN)",
+       "cls_token_dropped": true
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "transformer",
+   "input": {
+    "train": "336 x 336 square resize (cv2.INTER_AREA, squash)",
+    "test_illusions": "336, 448, 560, 672 px square resize (squash), each scored separately; no TTA",
+    "test_mit1003": "336 px, centre bias on",
+    "normalisation": "ImageNet",
+    "token_grid": {
+     "336": 24,
+     "448": 32,
+     "560": 40,
+     "672": 48
+    }
+   },
+   "readout": {
+    "type": "ASPP readout on the frozen token grid (CLS token dropped): four parallel 3x3 convolutions with dilation 1, 3, 6, 12 (128 channels each, BatchNorm + GELU), plus a global-average-pooling branch (AdaptiveAvgPool2d(1) -> 1x1 conv -> BN -> GELU, bilinearly broadcast back to the grid), concatenated (640 ch) -> 1x1 projection to 128 ch (BN, GELU, Dropout2d 0.1) -> 1x1 head to 1 channel -> (+ learned 16x16 centre-bias map, bilinear, switchable) -> bilinear upsampling to the input size -> sigmoid",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     3,
+     6,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "output": "sigmoid map in [0,1] (not a probability density); the r measure uses it after clipping at 0",
+    "local_extent_tokens": "3, 7, 13 and 25 tokens (3x3 kernels at dilation 1, 3, 6, 12) plus a whole-image branch (global average pooling)",
+    "normalisation_in_readout": "BatchNorm2d in eval mode (fixed running statistics: a per-channel affine, local)",
+    "n_params": 3721089,
+    "in_channels": 768,
+    "spatial_extent": {
+     "336": {
+      "token_grid": [
+       24,
+       24
+      ],
+      "largest_local_branch_tokens": [
+       24,
+       24
+      ],
+      "largest_local_branch_px_network_input": 336,
+      "largest_local_branch_display_px": [
+       1024,
+       768
+      ],
+      "token_size_display_px": [
+       42.7,
+       32.0
+      ],
+      "covers_whole_grid": true
+     },
+     "448": {
+      "token_grid": [
+       32,
+       32
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       800,
+       600
+      ],
+      "token_size_display_px": [
+       32.0,
+       24.0
+      ],
+      "covers_whole_grid": false
+     },
+     "560": {
+      "token_grid": [
+       40,
+       40
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       640,
+       480
+      ],
+      "token_size_display_px": [
+       25.6,
+       19.2
+      ],
+      "covers_whole_grid": false
+     },
+     "672": {
+      "token_grid": [
+       48,
+       48
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       533,
+       400
+      ],
+      "token_size_display_px": [
+       21.3,
+       16.0
+      ],
+      "covers_whole_grid": false
+     }
+    }
+   },
+   "loss": "KL(gt || pred) + 2 (1 - CC), on sigmoid(logits) against the blurred fixation / mouse-tracking density map, both normalised to sum 1 for the KL term",
+   "fixation_training_data": "12,803 images: SALICON train 10,000 (official SALICON maps; SALICON is mouse-tracking, not eye-tracking), MIT1003 sorted first 803 (last 200 held out), CAT2000 train 2,000 (msi/static); all 12,803 have at least one fixation; targets resized to 336x336 (cv2.INTER_AREA); no augmentation",
+   "training": {
+    "epochs": 6,
+    "batch": 32,
+    "optimiser": "AdamW lr 5e-4, weight decay 1e-4, cosine T_max 6",
+    "seed": 0,
+    "checkpoint_selection": "final epoch",
+    "joint": "all six readouts of a backbone trained together from one frozen forward pass per batch (identical batches)"
+   },
+   "centre_bias_at_test": "disabled for illusions (use_cb = False); enabled for MIT1003",
+   "recurrence": "none",
+   "heldout_mit1003_cc": 0.7427,
+   "evidence": [
+    "sweep.py:25  backbone facebook/dinov2-base and layer list",
+    "sweep.py:54  reads hidden_states[L] (pre final LN), CLS dropped except SigLIP",
+    "sweep.py:46  square resize",
+    "sweep.py:62  ASPP readout",
+    "sweep.py:70  6 epochs, batch 32, lr 5e-4",
+    "sweep.py:88  loss A",
+    "sweep.py:124  centre bias off for illusions",
+    "sweep.py:117  illusion test sizes",
+    "v2/anatomy/facts_hf.json [dinov2-base / clip-vit-large-patch14 / siglip-large-patch16-256]  hidden_states convention verified empirically",
+    "v2/anatomy/facts_readouts.json [readouts.sweep/dinov2/readout_L6]  3,721,089 trainable parameters; byte-identical to the public-repo copy",
+    "ab_objective.py:35  training list: SALICON train + MIT1003[:-200] + CAT2000",
+    "ab/run.log:2  logged counts {salicon 10000, mit1003 803, cat2000 2000}",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:176  SALICON recording type = mouse tracking (MSI-Net model card, local cache)"
+   ]
+  },
+  {
+   "model": "sweep dinov2 L8",
+   "group": "layer-sweep readout (18)",
+   "checkpoint": "sweep/dinov2/readout_L8.pt",
+   "code": "sweep.py",
+   "backbones": [
+    {
+     "net": "DINOv2-B/14 (facebook/dinov2-base)",
+     "kind": "transformer",
+     "pretraining_data": "LVD-142M (external)",
+     "pretraining_objective": "self-supervised (DINO + iBOT)",
+     "layers_read": [
+      {
+       "tensor": "hidden_states[8]",
+       "block_0_based": 7,
+       "block_1_based": 8,
+       "of_blocks": 12,
+       "final_layernorm": "before (pre-LN)",
+       "cls_token_dropped": true
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "transformer",
+   "input": {
+    "train": "336 x 336 square resize (cv2.INTER_AREA, squash)",
+    "test_illusions": "336, 448, 560, 672 px square resize (squash), each scored separately; no TTA",
+    "test_mit1003": "336 px, centre bias on",
+    "normalisation": "ImageNet",
+    "token_grid": {
+     "336": 24,
+     "448": 32,
+     "560": 40,
+     "672": 48
+    }
+   },
+   "readout": {
+    "type": "ASPP readout on the frozen token grid (CLS token dropped): four parallel 3x3 convolutions with dilation 1, 3, 6, 12 (128 channels each, BatchNorm + GELU), plus a global-average-pooling branch (AdaptiveAvgPool2d(1) -> 1x1 conv -> BN -> GELU, bilinearly broadcast back to the grid), concatenated (640 ch) -> 1x1 projection to 128 ch (BN, GELU, Dropout2d 0.1) -> 1x1 head to 1 channel -> (+ learned 16x16 centre-bias map, bilinear, switchable) -> bilinear upsampling to the input size -> sigmoid",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     3,
+     6,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "output": "sigmoid map in [0,1] (not a probability density); the r measure uses it after clipping at 0",
+    "local_extent_tokens": "3, 7, 13 and 25 tokens (3x3 kernels at dilation 1, 3, 6, 12) plus a whole-image branch (global average pooling)",
+    "normalisation_in_readout": "BatchNorm2d in eval mode (fixed running statistics: a per-channel affine, local)",
+    "n_params": 3721089,
+    "in_channels": 768,
+    "spatial_extent": {
+     "336": {
+      "token_grid": [
+       24,
+       24
+      ],
+      "largest_local_branch_tokens": [
+       24,
+       24
+      ],
+      "largest_local_branch_px_network_input": 336,
+      "largest_local_branch_display_px": [
+       1024,
+       768
+      ],
+      "token_size_display_px": [
+       42.7,
+       32.0
+      ],
+      "covers_whole_grid": true
+     },
+     "448": {
+      "token_grid": [
+       32,
+       32
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       800,
+       600
+      ],
+      "token_size_display_px": [
+       32.0,
+       24.0
+      ],
+      "covers_whole_grid": false
+     },
+     "560": {
+      "token_grid": [
+       40,
+       40
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       640,
+       480
+      ],
+      "token_size_display_px": [
+       25.6,
+       19.2
+      ],
+      "covers_whole_grid": false
+     },
+     "672": {
+      "token_grid": [
+       48,
+       48
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       533,
+       400
+      ],
+      "token_size_display_px": [
+       21.3,
+       16.0
+      ],
+      "covers_whole_grid": false
+     }
+    }
+   },
+   "loss": "KL(gt || pred) + 2 (1 - CC), on sigmoid(logits) against the blurred fixation / mouse-tracking density map, both normalised to sum 1 for the KL term",
+   "fixation_training_data": "12,803 images: SALICON train 10,000 (official SALICON maps; SALICON is mouse-tracking, not eye-tracking), MIT1003 sorted first 803 (last 200 held out), CAT2000 train 2,000 (msi/static); all 12,803 have at least one fixation; targets resized to 336x336 (cv2.INTER_AREA); no augmentation",
+   "training": {
+    "epochs": 6,
+    "batch": 32,
+    "optimiser": "AdamW lr 5e-4, weight decay 1e-4, cosine T_max 6",
+    "seed": 0,
+    "checkpoint_selection": "final epoch",
+    "joint": "all six readouts of a backbone trained together from one frozen forward pass per batch (identical batches)"
+   },
+   "centre_bias_at_test": "disabled for illusions (use_cb = False); enabled for MIT1003",
+   "recurrence": "none",
+   "heldout_mit1003_cc": 0.7456,
+   "evidence": [
+    "sweep.py:25  backbone facebook/dinov2-base and layer list",
+    "sweep.py:54  reads hidden_states[L] (pre final LN), CLS dropped except SigLIP",
+    "sweep.py:46  square resize",
+    "sweep.py:62  ASPP readout",
+    "sweep.py:70  6 epochs, batch 32, lr 5e-4",
+    "sweep.py:88  loss A",
+    "sweep.py:124  centre bias off for illusions",
+    "sweep.py:117  illusion test sizes",
+    "v2/anatomy/facts_hf.json [dinov2-base / clip-vit-large-patch14 / siglip-large-patch16-256]  hidden_states convention verified empirically",
+    "v2/anatomy/facts_readouts.json [readouts.sweep/dinov2/readout_L8]  3,721,089 trainable parameters; byte-identical to the public-repo copy",
+    "ab_objective.py:35  training list: SALICON train + MIT1003[:-200] + CAT2000",
+    "ab/run.log:2  logged counts {salicon 10000, mit1003 803, cat2000 2000}",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:176  SALICON recording type = mouse tracking (MSI-Net model card, local cache)"
+   ]
+  },
+  {
+   "model": "sweep dinov2 L10",
+   "group": "layer-sweep readout (18)",
+   "checkpoint": "sweep/dinov2/readout_L10.pt",
+   "code": "sweep.py",
+   "backbones": [
+    {
+     "net": "DINOv2-B/14 (facebook/dinov2-base)",
+     "kind": "transformer",
+     "pretraining_data": "LVD-142M (external)",
+     "pretraining_objective": "self-supervised (DINO + iBOT)",
+     "layers_read": [
+      {
+       "tensor": "hidden_states[10]",
+       "block_0_based": 9,
+       "block_1_based": 10,
+       "of_blocks": 12,
+       "final_layernorm": "before (pre-LN)",
+       "cls_token_dropped": true
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "transformer",
+   "input": {
+    "train": "336 x 336 square resize (cv2.INTER_AREA, squash)",
+    "test_illusions": "336, 448, 560, 672 px square resize (squash), each scored separately; no TTA",
+    "test_mit1003": "336 px, centre bias on",
+    "normalisation": "ImageNet",
+    "token_grid": {
+     "336": 24,
+     "448": 32,
+     "560": 40,
+     "672": 48
+    }
+   },
+   "readout": {
+    "type": "ASPP readout on the frozen token grid (CLS token dropped): four parallel 3x3 convolutions with dilation 1, 3, 6, 12 (128 channels each, BatchNorm + GELU), plus a global-average-pooling branch (AdaptiveAvgPool2d(1) -> 1x1 conv -> BN -> GELU, bilinearly broadcast back to the grid), concatenated (640 ch) -> 1x1 projection to 128 ch (BN, GELU, Dropout2d 0.1) -> 1x1 head to 1 channel -> (+ learned 16x16 centre-bias map, bilinear, switchable) -> bilinear upsampling to the input size -> sigmoid",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     3,
+     6,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "output": "sigmoid map in [0,1] (not a probability density); the r measure uses it after clipping at 0",
+    "local_extent_tokens": "3, 7, 13 and 25 tokens (3x3 kernels at dilation 1, 3, 6, 12) plus a whole-image branch (global average pooling)",
+    "normalisation_in_readout": "BatchNorm2d in eval mode (fixed running statistics: a per-channel affine, local)",
+    "n_params": 3721089,
+    "in_channels": 768,
+    "spatial_extent": {
+     "336": {
+      "token_grid": [
+       24,
+       24
+      ],
+      "largest_local_branch_tokens": [
+       24,
+       24
+      ],
+      "largest_local_branch_px_network_input": 336,
+      "largest_local_branch_display_px": [
+       1024,
+       768
+      ],
+      "token_size_display_px": [
+       42.7,
+       32.0
+      ],
+      "covers_whole_grid": true
+     },
+     "448": {
+      "token_grid": [
+       32,
+       32
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       800,
+       600
+      ],
+      "token_size_display_px": [
+       32.0,
+       24.0
+      ],
+      "covers_whole_grid": false
+     },
+     "560": {
+      "token_grid": [
+       40,
+       40
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       640,
+       480
+      ],
+      "token_size_display_px": [
+       25.6,
+       19.2
+      ],
+      "covers_whole_grid": false
+     },
+     "672": {
+      "token_grid": [
+       48,
+       48
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       533,
+       400
+      ],
+      "token_size_display_px": [
+       21.3,
+       16.0
+      ],
+      "covers_whole_grid": false
+     }
+    }
+   },
+   "loss": "KL(gt || pred) + 2 (1 - CC), on sigmoid(logits) against the blurred fixation / mouse-tracking density map, both normalised to sum 1 for the KL term",
+   "fixation_training_data": "12,803 images: SALICON train 10,000 (official SALICON maps; SALICON is mouse-tracking, not eye-tracking), MIT1003 sorted first 803 (last 200 held out), CAT2000 train 2,000 (msi/static); all 12,803 have at least one fixation; targets resized to 336x336 (cv2.INTER_AREA); no augmentation",
+   "training": {
+    "epochs": 6,
+    "batch": 32,
+    "optimiser": "AdamW lr 5e-4, weight decay 1e-4, cosine T_max 6",
+    "seed": 0,
+    "checkpoint_selection": "final epoch",
+    "joint": "all six readouts of a backbone trained together from one frozen forward pass per batch (identical batches)"
+   },
+   "centre_bias_at_test": "disabled for illusions (use_cb = False); enabled for MIT1003",
+   "recurrence": "none",
+   "heldout_mit1003_cc": 0.7343,
+   "evidence": [
+    "sweep.py:25  backbone facebook/dinov2-base and layer list",
+    "sweep.py:54  reads hidden_states[L] (pre final LN), CLS dropped except SigLIP",
+    "sweep.py:46  square resize",
+    "sweep.py:62  ASPP readout",
+    "sweep.py:70  6 epochs, batch 32, lr 5e-4",
+    "sweep.py:88  loss A",
+    "sweep.py:124  centre bias off for illusions",
+    "sweep.py:117  illusion test sizes",
+    "v2/anatomy/facts_hf.json [dinov2-base / clip-vit-large-patch14 / siglip-large-patch16-256]  hidden_states convention verified empirically",
+    "v2/anatomy/facts_readouts.json [readouts.sweep/dinov2/readout_L10]  3,721,089 trainable parameters; byte-identical to the public-repo copy",
+    "ab_objective.py:35  training list: SALICON train + MIT1003[:-200] + CAT2000",
+    "ab/run.log:2  logged counts {salicon 10000, mit1003 803, cat2000 2000}",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:176  SALICON recording type = mouse tracking (MSI-Net model card, local cache)"
+   ]
+  },
+  {
+   "model": "sweep dinov2 L12",
+   "group": "layer-sweep readout (18)",
+   "checkpoint": "sweep/dinov2/readout_L12.pt",
+   "code": "sweep.py",
+   "backbones": [
+    {
+     "net": "DINOv2-B/14 (facebook/dinov2-base)",
+     "kind": "transformer",
+     "pretraining_data": "LVD-142M (external)",
+     "pretraining_objective": "self-supervised (DINO + iBOT)",
+     "layers_read": [
+      {
+       "tensor": "hidden_states[12]",
+       "block_0_based": 11,
+       "block_1_based": 12,
+       "of_blocks": 12,
+       "final_layernorm": "before (pre-LN)",
+       "cls_token_dropped": true
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "transformer",
+   "input": {
+    "train": "336 x 336 square resize (cv2.INTER_AREA, squash)",
+    "test_illusions": "336, 448, 560, 672 px square resize (squash), each scored separately; no TTA",
+    "test_mit1003": "336 px, centre bias on",
+    "normalisation": "ImageNet",
+    "token_grid": {
+     "336": 24,
+     "448": 32,
+     "560": 40,
+     "672": 48
+    }
+   },
+   "readout": {
+    "type": "ASPP readout on the frozen token grid (CLS token dropped): four parallel 3x3 convolutions with dilation 1, 3, 6, 12 (128 channels each, BatchNorm + GELU), plus a global-average-pooling branch (AdaptiveAvgPool2d(1) -> 1x1 conv -> BN -> GELU, bilinearly broadcast back to the grid), concatenated (640 ch) -> 1x1 projection to 128 ch (BN, GELU, Dropout2d 0.1) -> 1x1 head to 1 channel -> (+ learned 16x16 centre-bias map, bilinear, switchable) -> bilinear upsampling to the input size -> sigmoid",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     3,
+     6,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "output": "sigmoid map in [0,1] (not a probability density); the r measure uses it after clipping at 0",
+    "local_extent_tokens": "3, 7, 13 and 25 tokens (3x3 kernels at dilation 1, 3, 6, 12) plus a whole-image branch (global average pooling)",
+    "normalisation_in_readout": "BatchNorm2d in eval mode (fixed running statistics: a per-channel affine, local)",
+    "n_params": 3721089,
+    "in_channels": 768,
+    "spatial_extent": {
+     "336": {
+      "token_grid": [
+       24,
+       24
+      ],
+      "largest_local_branch_tokens": [
+       24,
+       24
+      ],
+      "largest_local_branch_px_network_input": 336,
+      "largest_local_branch_display_px": [
+       1024,
+       768
+      ],
+      "token_size_display_px": [
+       42.7,
+       32.0
+      ],
+      "covers_whole_grid": true
+     },
+     "448": {
+      "token_grid": [
+       32,
+       32
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       800,
+       600
+      ],
+      "token_size_display_px": [
+       32.0,
+       24.0
+      ],
+      "covers_whole_grid": false
+     },
+     "560": {
+      "token_grid": [
+       40,
+       40
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       640,
+       480
+      ],
+      "token_size_display_px": [
+       25.6,
+       19.2
+      ],
+      "covers_whole_grid": false
+     },
+     "672": {
+      "token_grid": [
+       48,
+       48
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       533,
+       400
+      ],
+      "token_size_display_px": [
+       21.3,
+       16.0
+      ],
+      "covers_whole_grid": false
+     }
+    }
+   },
+   "loss": "KL(gt || pred) + 2 (1 - CC), on sigmoid(logits) against the blurred fixation / mouse-tracking density map, both normalised to sum 1 for the KL term",
+   "fixation_training_data": "12,803 images: SALICON train 10,000 (official SALICON maps; SALICON is mouse-tracking, not eye-tracking), MIT1003 sorted first 803 (last 200 held out), CAT2000 train 2,000 (msi/static); all 12,803 have at least one fixation; targets resized to 336x336 (cv2.INTER_AREA); no augmentation",
+   "training": {
+    "epochs": 6,
+    "batch": 32,
+    "optimiser": "AdamW lr 5e-4, weight decay 1e-4, cosine T_max 6",
+    "seed": 0,
+    "checkpoint_selection": "final epoch",
+    "joint": "all six readouts of a backbone trained together from one frozen forward pass per batch (identical batches)"
+   },
+   "centre_bias_at_test": "disabled for illusions (use_cb = False); enabled for MIT1003",
+   "recurrence": "none",
+   "heldout_mit1003_cc": 0.7309,
+   "evidence": [
+    "sweep.py:25  backbone facebook/dinov2-base and layer list",
+    "sweep.py:54  reads hidden_states[L] (pre final LN), CLS dropped except SigLIP",
+    "sweep.py:46  square resize",
+    "sweep.py:62  ASPP readout",
+    "sweep.py:70  6 epochs, batch 32, lr 5e-4",
+    "sweep.py:88  loss A",
+    "sweep.py:124  centre bias off for illusions",
+    "sweep.py:117  illusion test sizes",
+    "v2/anatomy/facts_hf.json [dinov2-base / clip-vit-large-patch14 / siglip-large-patch16-256]  hidden_states convention verified empirically",
+    "v2/anatomy/facts_readouts.json [readouts.sweep/dinov2/readout_L12]  3,721,089 trainable parameters; byte-identical to the public-repo copy",
+    "ab_objective.py:35  training list: SALICON train + MIT1003[:-200] + CAT2000",
+    "ab/run.log:2  logged counts {salicon 10000, mit1003 803, cat2000 2000}",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:176  SALICON recording type = mouse tracking (MSI-Net model card, local cache)"
+   ]
+  },
+  {
+   "model": "sweep clip L4",
+   "group": "layer-sweep readout (18)",
+   "checkpoint": "sweep/clip/readout_L4.pt",
+   "code": "sweep.py",
+   "backbones": [
+    {
+     "net": "CLIP ViT-L/14 (vision tower) (openai/clip-vit-large-patch14)",
+     "kind": "transformer",
+     "pretraining_data": "OpenAI WIT-400M image-text pairs (external)",
+     "pretraining_objective": "contrastive image-text (softmax CLIP loss)",
+     "layers_read": [
+      {
+       "tensor": "hidden_states[4]",
+       "block_0_based": 3,
+       "block_1_based": 4,
+       "of_blocks": 24,
+       "final_layernorm": "CLIP has no final LayerNorm on patch tokens; pre_layrnorm precedes block 0",
+       "cls_token_dropped": true
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "transformer",
+   "input": {
+    "train": "336 x 336 square resize (cv2.INTER_AREA, squash)",
+    "test_illusions": "336, 448, 560, 672 px square resize (squash), each scored separately; no TTA",
+    "test_mit1003": "336 px, centre bias on",
+    "normalisation": "CLIP",
+    "token_grid": {
+     "336": 24,
+     "448": 32,
+     "560": 40,
+     "672": 48
+    }
+   },
+   "readout": {
+    "type": "ASPP readout on the frozen token grid (CLS token dropped): four parallel 3x3 convolutions with dilation 1, 3, 6, 12 (128 channels each, BatchNorm + GELU), plus a global-average-pooling branch (AdaptiveAvgPool2d(1) -> 1x1 conv -> BN -> GELU, bilinearly broadcast back to the grid), concatenated (640 ch) -> 1x1 projection to 128 ch (BN, GELU, Dropout2d 0.1) -> 1x1 head to 1 channel -> (+ learned 16x16 centre-bias map, bilinear, switchable) -> bilinear upsampling to the input size -> sigmoid",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     3,
+     6,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "output": "sigmoid map in [0,1] (not a probability density); the r measure uses it after clipping at 0",
+    "local_extent_tokens": "3, 7, 13 and 25 tokens (3x3 kernels at dilation 1, 3, 6, 12) plus a whole-image branch (global average pooling)",
+    "normalisation_in_readout": "BatchNorm2d in eval mode (fixed running statistics: a per-channel affine, local)",
+    "n_params": 4933505,
+    "in_channels": 1024,
+    "spatial_extent": {
+     "336": {
+      "token_grid": [
+       24,
+       24
+      ],
+      "largest_local_branch_tokens": [
+       24,
+       24
+      ],
+      "largest_local_branch_px_network_input": 336,
+      "largest_local_branch_display_px": [
+       1024,
+       768
+      ],
+      "token_size_display_px": [
+       42.7,
+       32.0
+      ],
+      "covers_whole_grid": true
+     },
+     "448": {
+      "token_grid": [
+       32,
+       32
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       800,
+       600
+      ],
+      "token_size_display_px": [
+       32.0,
+       24.0
+      ],
+      "covers_whole_grid": false
+     },
+     "560": {
+      "token_grid": [
+       40,
+       40
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       640,
+       480
+      ],
+      "token_size_display_px": [
+       25.6,
+       19.2
+      ],
+      "covers_whole_grid": false
+     },
+     "672": {
+      "token_grid": [
+       48,
+       48
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       533,
+       400
+      ],
+      "token_size_display_px": [
+       21.3,
+       16.0
+      ],
+      "covers_whole_grid": false
+     }
+    }
+   },
+   "loss": "KL(gt || pred) + 2 (1 - CC), on sigmoid(logits) against the blurred fixation / mouse-tracking density map, both normalised to sum 1 for the KL term",
+   "fixation_training_data": "12,803 images: SALICON train 10,000 (official SALICON maps; SALICON is mouse-tracking, not eye-tracking), MIT1003 sorted first 803 (last 200 held out), CAT2000 train 2,000 (msi/static); all 12,803 have at least one fixation; targets resized to 336x336 (cv2.INTER_AREA); no augmentation",
+   "training": {
+    "epochs": 6,
+    "batch": 32,
+    "optimiser": "AdamW lr 5e-4, weight decay 1e-4, cosine T_max 6",
+    "seed": 0,
+    "checkpoint_selection": "final epoch",
+    "joint": "all six readouts of a backbone trained together from one frozen forward pass per batch (identical batches)"
+   },
+   "centre_bias_at_test": "disabled for illusions (use_cb = False); enabled for MIT1003",
+   "recurrence": "none",
+   "heldout_mit1003_cc": 0.6571,
+   "evidence": [
+    "sweep.py:27  backbone openai/clip-vit-large-patch14 and layer list",
+    "sweep.py:54  reads hidden_states[L] (pre final LN), CLS dropped except SigLIP",
+    "sweep.py:46  square resize",
+    "sweep.py:62  ASPP readout",
+    "sweep.py:70  6 epochs, batch 32, lr 5e-4",
+    "sweep.py:88  loss A",
+    "sweep.py:124  centre bias off for illusions",
+    "sweep.py:117  illusion test sizes",
+    "v2/anatomy/facts_hf.json [dinov2-base / clip-vit-large-patch14 / siglip-large-patch16-256]  hidden_states convention verified empirically",
+    "v2/anatomy/facts_readouts.json [readouts.sweep/clip/readout_L4]  4,933,505 trainable parameters; byte-identical to the public-repo copy",
+    "ab_objective.py:35  training list: SALICON train + MIT1003[:-200] + CAT2000",
+    "ab/run.log:2  logged counts {salicon 10000, mit1003 803, cat2000 2000}",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:176  SALICON recording type = mouse tracking (MSI-Net model card, local cache)"
+   ]
+  },
+  {
+   "model": "sweep clip L8",
+   "group": "layer-sweep readout (18)",
+   "checkpoint": "sweep/clip/readout_L8.pt",
+   "code": "sweep.py",
+   "backbones": [
+    {
+     "net": "CLIP ViT-L/14 (vision tower) (openai/clip-vit-large-patch14)",
+     "kind": "transformer",
+     "pretraining_data": "OpenAI WIT-400M image-text pairs (external)",
+     "pretraining_objective": "contrastive image-text (softmax CLIP loss)",
+     "layers_read": [
+      {
+       "tensor": "hidden_states[8]",
+       "block_0_based": 7,
+       "block_1_based": 8,
+       "of_blocks": 24,
+       "final_layernorm": "CLIP has no final LayerNorm on patch tokens; pre_layrnorm precedes block 0",
+       "cls_token_dropped": true
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "transformer",
+   "input": {
+    "train": "336 x 336 square resize (cv2.INTER_AREA, squash)",
+    "test_illusions": "336, 448, 560, 672 px square resize (squash), each scored separately; no TTA",
+    "test_mit1003": "336 px, centre bias on",
+    "normalisation": "CLIP",
+    "token_grid": {
+     "336": 24,
+     "448": 32,
+     "560": 40,
+     "672": 48
+    }
+   },
+   "readout": {
+    "type": "ASPP readout on the frozen token grid (CLS token dropped): four parallel 3x3 convolutions with dilation 1, 3, 6, 12 (128 channels each, BatchNorm + GELU), plus a global-average-pooling branch (AdaptiveAvgPool2d(1) -> 1x1 conv -> BN -> GELU, bilinearly broadcast back to the grid), concatenated (640 ch) -> 1x1 projection to 128 ch (BN, GELU, Dropout2d 0.1) -> 1x1 head to 1 channel -> (+ learned 16x16 centre-bias map, bilinear, switchable) -> bilinear upsampling to the input size -> sigmoid",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     3,
+     6,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "output": "sigmoid map in [0,1] (not a probability density); the r measure uses it after clipping at 0",
+    "local_extent_tokens": "3, 7, 13 and 25 tokens (3x3 kernels at dilation 1, 3, 6, 12) plus a whole-image branch (global average pooling)",
+    "normalisation_in_readout": "BatchNorm2d in eval mode (fixed running statistics: a per-channel affine, local)",
+    "n_params": 4933505,
+    "in_channels": 1024,
+    "spatial_extent": {
+     "336": {
+      "token_grid": [
+       24,
+       24
+      ],
+      "largest_local_branch_tokens": [
+       24,
+       24
+      ],
+      "largest_local_branch_px_network_input": 336,
+      "largest_local_branch_display_px": [
+       1024,
+       768
+      ],
+      "token_size_display_px": [
+       42.7,
+       32.0
+      ],
+      "covers_whole_grid": true
+     },
+     "448": {
+      "token_grid": [
+       32,
+       32
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       800,
+       600
+      ],
+      "token_size_display_px": [
+       32.0,
+       24.0
+      ],
+      "covers_whole_grid": false
+     },
+     "560": {
+      "token_grid": [
+       40,
+       40
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       640,
+       480
+      ],
+      "token_size_display_px": [
+       25.6,
+       19.2
+      ],
+      "covers_whole_grid": false
+     },
+     "672": {
+      "token_grid": [
+       48,
+       48
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       533,
+       400
+      ],
+      "token_size_display_px": [
+       21.3,
+       16.0
+      ],
+      "covers_whole_grid": false
+     }
+    }
+   },
+   "loss": "KL(gt || pred) + 2 (1 - CC), on sigmoid(logits) against the blurred fixation / mouse-tracking density map, both normalised to sum 1 for the KL term",
+   "fixation_training_data": "12,803 images: SALICON train 10,000 (official SALICON maps; SALICON is mouse-tracking, not eye-tracking), MIT1003 sorted first 803 (last 200 held out), CAT2000 train 2,000 (msi/static); all 12,803 have at least one fixation; targets resized to 336x336 (cv2.INTER_AREA); no augmentation",
+   "training": {
+    "epochs": 6,
+    "batch": 32,
+    "optimiser": "AdamW lr 5e-4, weight decay 1e-4, cosine T_max 6",
+    "seed": 0,
+    "checkpoint_selection": "final epoch",
+    "joint": "all six readouts of a backbone trained together from one frozen forward pass per batch (identical batches)"
+   },
+   "centre_bias_at_test": "disabled for illusions (use_cb = False); enabled for MIT1003",
+   "recurrence": "none",
+   "heldout_mit1003_cc": 0.7374,
+   "evidence": [
+    "sweep.py:27  backbone openai/clip-vit-large-patch14 and layer list",
+    "sweep.py:54  reads hidden_states[L] (pre final LN), CLS dropped except SigLIP",
+    "sweep.py:46  square resize",
+    "sweep.py:62  ASPP readout",
+    "sweep.py:70  6 epochs, batch 32, lr 5e-4",
+    "sweep.py:88  loss A",
+    "sweep.py:124  centre bias off for illusions",
+    "sweep.py:117  illusion test sizes",
+    "v2/anatomy/facts_hf.json [dinov2-base / clip-vit-large-patch14 / siglip-large-patch16-256]  hidden_states convention verified empirically",
+    "v2/anatomy/facts_readouts.json [readouts.sweep/clip/readout_L8]  4,933,505 trainable parameters; byte-identical to the public-repo copy",
+    "ab_objective.py:35  training list: SALICON train + MIT1003[:-200] + CAT2000",
+    "ab/run.log:2  logged counts {salicon 10000, mit1003 803, cat2000 2000}",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:176  SALICON recording type = mouse tracking (MSI-Net model card, local cache)"
+   ]
+  },
+  {
+   "model": "sweep clip L12",
+   "group": "layer-sweep readout (18)",
+   "checkpoint": "sweep/clip/readout_L12.pt",
+   "code": "sweep.py",
+   "backbones": [
+    {
+     "net": "CLIP ViT-L/14 (vision tower) (openai/clip-vit-large-patch14)",
+     "kind": "transformer",
+     "pretraining_data": "OpenAI WIT-400M image-text pairs (external)",
+     "pretraining_objective": "contrastive image-text (softmax CLIP loss)",
+     "layers_read": [
+      {
+       "tensor": "hidden_states[12]",
+       "block_0_based": 11,
+       "block_1_based": 12,
+       "of_blocks": 24,
+       "final_layernorm": "CLIP has no final LayerNorm on patch tokens; pre_layrnorm precedes block 0",
+       "cls_token_dropped": true
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "transformer",
+   "input": {
+    "train": "336 x 336 square resize (cv2.INTER_AREA, squash)",
+    "test_illusions": "336, 448, 560, 672 px square resize (squash), each scored separately; no TTA",
+    "test_mit1003": "336 px, centre bias on",
+    "normalisation": "CLIP",
+    "token_grid": {
+     "336": 24,
+     "448": 32,
+     "560": 40,
+     "672": 48
+    }
+   },
+   "readout": {
+    "type": "ASPP readout on the frozen token grid (CLS token dropped): four parallel 3x3 convolutions with dilation 1, 3, 6, 12 (128 channels each, BatchNorm + GELU), plus a global-average-pooling branch (AdaptiveAvgPool2d(1) -> 1x1 conv -> BN -> GELU, bilinearly broadcast back to the grid), concatenated (640 ch) -> 1x1 projection to 128 ch (BN, GELU, Dropout2d 0.1) -> 1x1 head to 1 channel -> (+ learned 16x16 centre-bias map, bilinear, switchable) -> bilinear upsampling to the input size -> sigmoid",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     3,
+     6,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "output": "sigmoid map in [0,1] (not a probability density); the r measure uses it after clipping at 0",
+    "local_extent_tokens": "3, 7, 13 and 25 tokens (3x3 kernels at dilation 1, 3, 6, 12) plus a whole-image branch (global average pooling)",
+    "normalisation_in_readout": "BatchNorm2d in eval mode (fixed running statistics: a per-channel affine, local)",
+    "n_params": 4933505,
+    "in_channels": 1024,
+    "spatial_extent": {
+     "336": {
+      "token_grid": [
+       24,
+       24
+      ],
+      "largest_local_branch_tokens": [
+       24,
+       24
+      ],
+      "largest_local_branch_px_network_input": 336,
+      "largest_local_branch_display_px": [
+       1024,
+       768
+      ],
+      "token_size_display_px": [
+       42.7,
+       32.0
+      ],
+      "covers_whole_grid": true
+     },
+     "448": {
+      "token_grid": [
+       32,
+       32
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       800,
+       600
+      ],
+      "token_size_display_px": [
+       32.0,
+       24.0
+      ],
+      "covers_whole_grid": false
+     },
+     "560": {
+      "token_grid": [
+       40,
+       40
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       640,
+       480
+      ],
+      "token_size_display_px": [
+       25.6,
+       19.2
+      ],
+      "covers_whole_grid": false
+     },
+     "672": {
+      "token_grid": [
+       48,
+       48
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       533,
+       400
+      ],
+      "token_size_display_px": [
+       21.3,
+       16.0
+      ],
+      "covers_whole_grid": false
+     }
+    }
+   },
+   "loss": "KL(gt || pred) + 2 (1 - CC), on sigmoid(logits) against the blurred fixation / mouse-tracking density map, both normalised to sum 1 for the KL term",
+   "fixation_training_data": "12,803 images: SALICON train 10,000 (official SALICON maps; SALICON is mouse-tracking, not eye-tracking), MIT1003 sorted first 803 (last 200 held out), CAT2000 train 2,000 (msi/static); all 12,803 have at least one fixation; targets resized to 336x336 (cv2.INTER_AREA); no augmentation",
+   "training": {
+    "epochs": 6,
+    "batch": 32,
+    "optimiser": "AdamW lr 5e-4, weight decay 1e-4, cosine T_max 6",
+    "seed": 0,
+    "checkpoint_selection": "final epoch",
+    "joint": "all six readouts of a backbone trained together from one frozen forward pass per batch (identical batches)"
+   },
+   "centre_bias_at_test": "disabled for illusions (use_cb = False); enabled for MIT1003",
+   "recurrence": "none",
+   "heldout_mit1003_cc": 0.7597,
+   "evidence": [
+    "sweep.py:27  backbone openai/clip-vit-large-patch14 and layer list",
+    "sweep.py:54  reads hidden_states[L] (pre final LN), CLS dropped except SigLIP",
+    "sweep.py:46  square resize",
+    "sweep.py:62  ASPP readout",
+    "sweep.py:70  6 epochs, batch 32, lr 5e-4",
+    "sweep.py:88  loss A",
+    "sweep.py:124  centre bias off for illusions",
+    "sweep.py:117  illusion test sizes",
+    "v2/anatomy/facts_hf.json [dinov2-base / clip-vit-large-patch14 / siglip-large-patch16-256]  hidden_states convention verified empirically",
+    "v2/anatomy/facts_readouts.json [readouts.sweep/clip/readout_L12]  4,933,505 trainable parameters; byte-identical to the public-repo copy",
+    "ab_objective.py:35  training list: SALICON train + MIT1003[:-200] + CAT2000",
+    "ab/run.log:2  logged counts {salicon 10000, mit1003 803, cat2000 2000}",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:176  SALICON recording type = mouse tracking (MSI-Net model card, local cache)"
+   ]
+  },
+  {
+   "model": "sweep clip L16",
+   "group": "layer-sweep readout (18)",
+   "checkpoint": "sweep/clip/readout_L16.pt",
+   "code": "sweep.py",
+   "backbones": [
+    {
+     "net": "CLIP ViT-L/14 (vision tower) (openai/clip-vit-large-patch14)",
+     "kind": "transformer",
+     "pretraining_data": "OpenAI WIT-400M image-text pairs (external)",
+     "pretraining_objective": "contrastive image-text (softmax CLIP loss)",
+     "layers_read": [
+      {
+       "tensor": "hidden_states[16]",
+       "block_0_based": 15,
+       "block_1_based": 16,
+       "of_blocks": 24,
+       "final_layernorm": "CLIP has no final LayerNorm on patch tokens; pre_layrnorm precedes block 0",
+       "cls_token_dropped": true
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "transformer",
+   "input": {
+    "train": "336 x 336 square resize (cv2.INTER_AREA, squash)",
+    "test_illusions": "336, 448, 560, 672 px square resize (squash), each scored separately; no TTA",
+    "test_mit1003": "336 px, centre bias on",
+    "normalisation": "CLIP",
+    "token_grid": {
+     "336": 24,
+     "448": 32,
+     "560": 40,
+     "672": 48
+    }
+   },
+   "readout": {
+    "type": "ASPP readout on the frozen token grid (CLS token dropped): four parallel 3x3 convolutions with dilation 1, 3, 6, 12 (128 channels each, BatchNorm + GELU), plus a global-average-pooling branch (AdaptiveAvgPool2d(1) -> 1x1 conv -> BN -> GELU, bilinearly broadcast back to the grid), concatenated (640 ch) -> 1x1 projection to 128 ch (BN, GELU, Dropout2d 0.1) -> 1x1 head to 1 channel -> (+ learned 16x16 centre-bias map, bilinear, switchable) -> bilinear upsampling to the input size -> sigmoid",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     3,
+     6,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "output": "sigmoid map in [0,1] (not a probability density); the r measure uses it after clipping at 0",
+    "local_extent_tokens": "3, 7, 13 and 25 tokens (3x3 kernels at dilation 1, 3, 6, 12) plus a whole-image branch (global average pooling)",
+    "normalisation_in_readout": "BatchNorm2d in eval mode (fixed running statistics: a per-channel affine, local)",
+    "n_params": 4933505,
+    "in_channels": 1024,
+    "spatial_extent": {
+     "336": {
+      "token_grid": [
+       24,
+       24
+      ],
+      "largest_local_branch_tokens": [
+       24,
+       24
+      ],
+      "largest_local_branch_px_network_input": 336,
+      "largest_local_branch_display_px": [
+       1024,
+       768
+      ],
+      "token_size_display_px": [
+       42.7,
+       32.0
+      ],
+      "covers_whole_grid": true
+     },
+     "448": {
+      "token_grid": [
+       32,
+       32
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       800,
+       600
+      ],
+      "token_size_display_px": [
+       32.0,
+       24.0
+      ],
+      "covers_whole_grid": false
+     },
+     "560": {
+      "token_grid": [
+       40,
+       40
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       640,
+       480
+      ],
+      "token_size_display_px": [
+       25.6,
+       19.2
+      ],
+      "covers_whole_grid": false
+     },
+     "672": {
+      "token_grid": [
+       48,
+       48
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       533,
+       400
+      ],
+      "token_size_display_px": [
+       21.3,
+       16.0
+      ],
+      "covers_whole_grid": false
+     }
+    }
+   },
+   "loss": "KL(gt || pred) + 2 (1 - CC), on sigmoid(logits) against the blurred fixation / mouse-tracking density map, both normalised to sum 1 for the KL term",
+   "fixation_training_data": "12,803 images: SALICON train 10,000 (official SALICON maps; SALICON is mouse-tracking, not eye-tracking), MIT1003 sorted first 803 (last 200 held out), CAT2000 train 2,000 (msi/static); all 12,803 have at least one fixation; targets resized to 336x336 (cv2.INTER_AREA); no augmentation",
+   "training": {
+    "epochs": 6,
+    "batch": 32,
+    "optimiser": "AdamW lr 5e-4, weight decay 1e-4, cosine T_max 6",
+    "seed": 0,
+    "checkpoint_selection": "final epoch",
+    "joint": "all six readouts of a backbone trained together from one frozen forward pass per batch (identical batches)"
+   },
+   "centre_bias_at_test": "disabled for illusions (use_cb = False); enabled for MIT1003",
+   "recurrence": "none",
+   "heldout_mit1003_cc": 0.7409,
+   "evidence": [
+    "sweep.py:27  backbone openai/clip-vit-large-patch14 and layer list",
+    "sweep.py:54  reads hidden_states[L] (pre final LN), CLS dropped except SigLIP",
+    "sweep.py:46  square resize",
+    "sweep.py:62  ASPP readout",
+    "sweep.py:70  6 epochs, batch 32, lr 5e-4",
+    "sweep.py:88  loss A",
+    "sweep.py:124  centre bias off for illusions",
+    "sweep.py:117  illusion test sizes",
+    "v2/anatomy/facts_hf.json [dinov2-base / clip-vit-large-patch14 / siglip-large-patch16-256]  hidden_states convention verified empirically",
+    "v2/anatomy/facts_readouts.json [readouts.sweep/clip/readout_L16]  4,933,505 trainable parameters; byte-identical to the public-repo copy",
+    "ab_objective.py:35  training list: SALICON train + MIT1003[:-200] + CAT2000",
+    "ab/run.log:2  logged counts {salicon 10000, mit1003 803, cat2000 2000}",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:176  SALICON recording type = mouse tracking (MSI-Net model card, local cache)"
+   ]
+  },
+  {
+   "model": "sweep clip L20",
+   "group": "layer-sweep readout (18)",
+   "checkpoint": "sweep/clip/readout_L20.pt",
+   "code": "sweep.py",
+   "backbones": [
+    {
+     "net": "CLIP ViT-L/14 (vision tower) (openai/clip-vit-large-patch14)",
+     "kind": "transformer",
+     "pretraining_data": "OpenAI WIT-400M image-text pairs (external)",
+     "pretraining_objective": "contrastive image-text (softmax CLIP loss)",
+     "layers_read": [
+      {
+       "tensor": "hidden_states[20]",
+       "block_0_based": 19,
+       "block_1_based": 20,
+       "of_blocks": 24,
+       "final_layernorm": "CLIP has no final LayerNorm on patch tokens; pre_layrnorm precedes block 0",
+       "cls_token_dropped": true
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "transformer",
+   "input": {
+    "train": "336 x 336 square resize (cv2.INTER_AREA, squash)",
+    "test_illusions": "336, 448, 560, 672 px square resize (squash), each scored separately; no TTA",
+    "test_mit1003": "336 px, centre bias on",
+    "normalisation": "CLIP",
+    "token_grid": {
+     "336": 24,
+     "448": 32,
+     "560": 40,
+     "672": 48
+    }
+   },
+   "readout": {
+    "type": "ASPP readout on the frozen token grid (CLS token dropped): four parallel 3x3 convolutions with dilation 1, 3, 6, 12 (128 channels each, BatchNorm + GELU), plus a global-average-pooling branch (AdaptiveAvgPool2d(1) -> 1x1 conv -> BN -> GELU, bilinearly broadcast back to the grid), concatenated (640 ch) -> 1x1 projection to 128 ch (BN, GELU, Dropout2d 0.1) -> 1x1 head to 1 channel -> (+ learned 16x16 centre-bias map, bilinear, switchable) -> bilinear upsampling to the input size -> sigmoid",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     3,
+     6,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "output": "sigmoid map in [0,1] (not a probability density); the r measure uses it after clipping at 0",
+    "local_extent_tokens": "3, 7, 13 and 25 tokens (3x3 kernels at dilation 1, 3, 6, 12) plus a whole-image branch (global average pooling)",
+    "normalisation_in_readout": "BatchNorm2d in eval mode (fixed running statistics: a per-channel affine, local)",
+    "n_params": 4933505,
+    "in_channels": 1024,
+    "spatial_extent": {
+     "336": {
+      "token_grid": [
+       24,
+       24
+      ],
+      "largest_local_branch_tokens": [
+       24,
+       24
+      ],
+      "largest_local_branch_px_network_input": 336,
+      "largest_local_branch_display_px": [
+       1024,
+       768
+      ],
+      "token_size_display_px": [
+       42.7,
+       32.0
+      ],
+      "covers_whole_grid": true
+     },
+     "448": {
+      "token_grid": [
+       32,
+       32
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       800,
+       600
+      ],
+      "token_size_display_px": [
+       32.0,
+       24.0
+      ],
+      "covers_whole_grid": false
+     },
+     "560": {
+      "token_grid": [
+       40,
+       40
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       640,
+       480
+      ],
+      "token_size_display_px": [
+       25.6,
+       19.2
+      ],
+      "covers_whole_grid": false
+     },
+     "672": {
+      "token_grid": [
+       48,
+       48
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       533,
+       400
+      ],
+      "token_size_display_px": [
+       21.3,
+       16.0
+      ],
+      "covers_whole_grid": false
+     }
+    }
+   },
+   "loss": "KL(gt || pred) + 2 (1 - CC), on sigmoid(logits) against the blurred fixation / mouse-tracking density map, both normalised to sum 1 for the KL term",
+   "fixation_training_data": "12,803 images: SALICON train 10,000 (official SALICON maps; SALICON is mouse-tracking, not eye-tracking), MIT1003 sorted first 803 (last 200 held out), CAT2000 train 2,000 (msi/static); all 12,803 have at least one fixation; targets resized to 336x336 (cv2.INTER_AREA); no augmentation",
+   "training": {
+    "epochs": 6,
+    "batch": 32,
+    "optimiser": "AdamW lr 5e-4, weight decay 1e-4, cosine T_max 6",
+    "seed": 0,
+    "checkpoint_selection": "final epoch",
+    "joint": "all six readouts of a backbone trained together from one frozen forward pass per batch (identical batches)"
+   },
+   "centre_bias_at_test": "disabled for illusions (use_cb = False); enabled for MIT1003",
+   "recurrence": "none",
+   "heldout_mit1003_cc": 0.7255,
+   "evidence": [
+    "sweep.py:27  backbone openai/clip-vit-large-patch14 and layer list",
+    "sweep.py:54  reads hidden_states[L] (pre final LN), CLS dropped except SigLIP",
+    "sweep.py:46  square resize",
+    "sweep.py:62  ASPP readout",
+    "sweep.py:70  6 epochs, batch 32, lr 5e-4",
+    "sweep.py:88  loss A",
+    "sweep.py:124  centre bias off for illusions",
+    "sweep.py:117  illusion test sizes",
+    "v2/anatomy/facts_hf.json [dinov2-base / clip-vit-large-patch14 / siglip-large-patch16-256]  hidden_states convention verified empirically",
+    "v2/anatomy/facts_readouts.json [readouts.sweep/clip/readout_L20]  4,933,505 trainable parameters; byte-identical to the public-repo copy",
+    "ab_objective.py:35  training list: SALICON train + MIT1003[:-200] + CAT2000",
+    "ab/run.log:2  logged counts {salicon 10000, mit1003 803, cat2000 2000}",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:176  SALICON recording type = mouse tracking (MSI-Net model card, local cache)"
+   ]
+  },
+  {
+   "model": "sweep clip L24",
+   "group": "layer-sweep readout (18)",
+   "checkpoint": "sweep/clip/readout_L24.pt",
+   "code": "sweep.py",
+   "backbones": [
+    {
+     "net": "CLIP ViT-L/14 (vision tower) (openai/clip-vit-large-patch14)",
+     "kind": "transformer",
+     "pretraining_data": "OpenAI WIT-400M image-text pairs (external)",
+     "pretraining_objective": "contrastive image-text (softmax CLIP loss)",
+     "layers_read": [
+      {
+       "tensor": "hidden_states[24]",
+       "block_0_based": 23,
+       "block_1_based": 24,
+       "of_blocks": 24,
+       "final_layernorm": "CLIP has no final LayerNorm on patch tokens; pre_layrnorm precedes block 0",
+       "cls_token_dropped": true
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "transformer",
+   "input": {
+    "train": "336 x 336 square resize (cv2.INTER_AREA, squash)",
+    "test_illusions": "336, 448, 560, 672 px square resize (squash), each scored separately; no TTA",
+    "test_mit1003": "336 px, centre bias on",
+    "normalisation": "CLIP",
+    "token_grid": {
+     "336": 24,
+     "448": 32,
+     "560": 40,
+     "672": 48
+    }
+   },
+   "readout": {
+    "type": "ASPP readout on the frozen token grid (CLS token dropped): four parallel 3x3 convolutions with dilation 1, 3, 6, 12 (128 channels each, BatchNorm + GELU), plus a global-average-pooling branch (AdaptiveAvgPool2d(1) -> 1x1 conv -> BN -> GELU, bilinearly broadcast back to the grid), concatenated (640 ch) -> 1x1 projection to 128 ch (BN, GELU, Dropout2d 0.1) -> 1x1 head to 1 channel -> (+ learned 16x16 centre-bias map, bilinear, switchable) -> bilinear upsampling to the input size -> sigmoid",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     3,
+     6,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "output": "sigmoid map in [0,1] (not a probability density); the r measure uses it after clipping at 0",
+    "local_extent_tokens": "3, 7, 13 and 25 tokens (3x3 kernels at dilation 1, 3, 6, 12) plus a whole-image branch (global average pooling)",
+    "normalisation_in_readout": "BatchNorm2d in eval mode (fixed running statistics: a per-channel affine, local)",
+    "n_params": 4933505,
+    "in_channels": 1024,
+    "spatial_extent": {
+     "336": {
+      "token_grid": [
+       24,
+       24
+      ],
+      "largest_local_branch_tokens": [
+       24,
+       24
+      ],
+      "largest_local_branch_px_network_input": 336,
+      "largest_local_branch_display_px": [
+       1024,
+       768
+      ],
+      "token_size_display_px": [
+       42.7,
+       32.0
+      ],
+      "covers_whole_grid": true
+     },
+     "448": {
+      "token_grid": [
+       32,
+       32
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       800,
+       600
+      ],
+      "token_size_display_px": [
+       32.0,
+       24.0
+      ],
+      "covers_whole_grid": false
+     },
+     "560": {
+      "token_grid": [
+       40,
+       40
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       640,
+       480
+      ],
+      "token_size_display_px": [
+       25.6,
+       19.2
+      ],
+      "covers_whole_grid": false
+     },
+     "672": {
+      "token_grid": [
+       48,
+       48
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 350,
+      "largest_local_branch_display_px": [
+       533,
+       400
+      ],
+      "token_size_display_px": [
+       21.3,
+       16.0
+      ],
+      "covers_whole_grid": false
+     }
+    }
+   },
+   "loss": "KL(gt || pred) + 2 (1 - CC), on sigmoid(logits) against the blurred fixation / mouse-tracking density map, both normalised to sum 1 for the KL term",
+   "fixation_training_data": "12,803 images: SALICON train 10,000 (official SALICON maps; SALICON is mouse-tracking, not eye-tracking), MIT1003 sorted first 803 (last 200 held out), CAT2000 train 2,000 (msi/static); all 12,803 have at least one fixation; targets resized to 336x336 (cv2.INTER_AREA); no augmentation",
+   "training": {
+    "epochs": 6,
+    "batch": 32,
+    "optimiser": "AdamW lr 5e-4, weight decay 1e-4, cosine T_max 6",
+    "seed": 0,
+    "checkpoint_selection": "final epoch",
+    "joint": "all six readouts of a backbone trained together from one frozen forward pass per batch (identical batches)"
+   },
+   "centre_bias_at_test": "disabled for illusions (use_cb = False); enabled for MIT1003",
+   "recurrence": "none",
+   "heldout_mit1003_cc": 0.718,
+   "evidence": [
+    "sweep.py:27  backbone openai/clip-vit-large-patch14 and layer list",
+    "sweep.py:54  reads hidden_states[L] (pre final LN), CLS dropped except SigLIP",
+    "sweep.py:46  square resize",
+    "sweep.py:62  ASPP readout",
+    "sweep.py:70  6 epochs, batch 32, lr 5e-4",
+    "sweep.py:88  loss A",
+    "sweep.py:124  centre bias off for illusions",
+    "sweep.py:117  illusion test sizes",
+    "v2/anatomy/facts_hf.json [dinov2-base / clip-vit-large-patch14 / siglip-large-patch16-256]  hidden_states convention verified empirically",
+    "v2/anatomy/facts_readouts.json [readouts.sweep/clip/readout_L24]  4,933,505 trainable parameters; byte-identical to the public-repo copy",
+    "ab_objective.py:35  training list: SALICON train + MIT1003[:-200] + CAT2000",
+    "ab/run.log:2  logged counts {salicon 10000, mit1003 803, cat2000 2000}",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:176  SALICON recording type = mouse tracking (MSI-Net model card, local cache)"
+   ]
+  },
+  {
+   "model": "sweep siglip L4",
+   "group": "layer-sweep readout (18)",
+   "checkpoint": "sweep/siglip/readout_L4.pt",
+   "code": "sweep.py",
+   "backbones": [
+    {
+     "net": "SigLIP-L/16 at 256 (vision tower) (google/siglip-large-patch16-256)",
+     "kind": "transformer",
+     "pretraining_data": "WebLI image-text pairs (external)",
+     "pretraining_objective": "sigmoid image-text contrastive",
+     "layers_read": [
+      {
+       "tensor": "hidden_states[4]",
+       "block_0_based": 3,
+       "block_1_based": 4,
+       "of_blocks": 24,
+       "final_layernorm": "before (pre-LN)",
+       "cls_token_dropped": false
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "transformer",
+   "input": {
+    "train": "336 x 336 square resize (cv2.INTER_AREA, squash)",
+    "test_illusions": "336, 448, 560, 672 px square resize (squash), each scored separately; no TTA",
+    "test_mit1003": "336 px, centre bias on",
+    "normalisation": "0.5/0.5",
+    "token_grid": {
+     "336": 21,
+     "448": 28,
+     "560": 35,
+     "672": 42
+    }
+   },
+   "readout": {
+    "type": "ASPP readout on the frozen token grid (CLS token dropped): four parallel 3x3 convolutions with dilation 1, 3, 6, 12 (128 channels each, BatchNorm + GELU), plus a global-average-pooling branch (AdaptiveAvgPool2d(1) -> 1x1 conv -> BN -> GELU, bilinearly broadcast back to the grid), concatenated (640 ch) -> 1x1 projection to 128 ch (BN, GELU, Dropout2d 0.1) -> 1x1 head to 1 channel -> (+ learned 16x16 centre-bias map, bilinear, switchable) -> bilinear upsampling to the input size -> sigmoid",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     3,
+     6,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "output": "sigmoid map in [0,1] (not a probability density); the r measure uses it after clipping at 0",
+    "local_extent_tokens": "3, 7, 13 and 25 tokens (3x3 kernels at dilation 1, 3, 6, 12) plus a whole-image branch (global average pooling)",
+    "normalisation_in_readout": "BatchNorm2d in eval mode (fixed running statistics: a per-channel affine, local)",
+    "n_params": 4933505,
+    "in_channels": 1024,
+    "spatial_extent": {
+     "336": {
+      "token_grid": [
+       21,
+       21
+      ],
+      "largest_local_branch_tokens": [
+       21,
+       21
+      ],
+      "largest_local_branch_px_network_input": 336,
+      "largest_local_branch_display_px": [
+       1024,
+       768
+      ],
+      "token_size_display_px": [
+       48.8,
+       36.6
+      ],
+      "covers_whole_grid": true
+     },
+     "448": {
+      "token_grid": [
+       28,
+       28
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 400,
+      "largest_local_branch_display_px": [
+       914,
+       686
+      ],
+      "token_size_display_px": [
+       36.6,
+       27.4
+      ],
+      "covers_whole_grid": false
+     },
+     "560": {
+      "token_grid": [
+       35,
+       35
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 400,
+      "largest_local_branch_display_px": [
+       731,
+       549
+      ],
+      "token_size_display_px": [
+       29.3,
+       21.9
+      ],
+      "covers_whole_grid": false
+     },
+     "672": {
+      "token_grid": [
+       42,
+       42
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 400,
+      "largest_local_branch_display_px": [
+       610,
+       457
+      ],
+      "token_size_display_px": [
+       24.4,
+       18.3
+      ],
+      "covers_whole_grid": false
+     }
+    }
+   },
+   "loss": "KL(gt || pred) + 2 (1 - CC), on sigmoid(logits) against the blurred fixation / mouse-tracking density map, both normalised to sum 1 for the KL term",
+   "fixation_training_data": "12,803 images: SALICON train 10,000 (official SALICON maps; SALICON is mouse-tracking, not eye-tracking), MIT1003 sorted first 803 (last 200 held out), CAT2000 train 2,000 (msi/static); all 12,803 have at least one fixation; targets resized to 336x336 (cv2.INTER_AREA); no augmentation",
+   "training": {
+    "epochs": 6,
+    "batch": 32,
+    "optimiser": "AdamW lr 5e-4, weight decay 1e-4, cosine T_max 6",
+    "seed": 0,
+    "checkpoint_selection": "final epoch",
+    "joint": "all six readouts of a backbone trained together from one frozen forward pass per batch (identical batches)"
+   },
+   "centre_bias_at_test": "disabled for illusions (use_cb = False); enabled for MIT1003",
+   "recurrence": "none",
+   "heldout_mit1003_cc": 0.6908,
+   "evidence": [
+    "sweep.py:29  backbone google/siglip-large-patch16-256 and layer list",
+    "sweep.py:54  reads hidden_states[L] (pre final LN), CLS dropped except SigLIP",
+    "sweep.py:46  square resize",
+    "sweep.py:62  ASPP readout",
+    "sweep.py:70  6 epochs, batch 32, lr 5e-4",
+    "sweep.py:88  loss A",
+    "sweep.py:124  centre bias off for illusions",
+    "sweep.py:117  illusion test sizes",
+    "v2/anatomy/facts_hf.json [dinov2-base / clip-vit-large-patch14 / siglip-large-patch16-256]  hidden_states convention verified empirically",
+    "v2/anatomy/facts_readouts.json [readouts.sweep/siglip/readout_L4]  4,933,505 trainable parameters; byte-identical to the public-repo copy",
+    "ab_objective.py:35  training list: SALICON train + MIT1003[:-200] + CAT2000",
+    "ab/run.log:2  logged counts {salicon 10000, mit1003 803, cat2000 2000}",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:176  SALICON recording type = mouse tracking (MSI-Net model card, local cache)"
+   ]
+  },
+  {
+   "model": "sweep siglip L8",
+   "group": "layer-sweep readout (18)",
+   "checkpoint": "sweep/siglip/readout_L8.pt",
+   "code": "sweep.py",
+   "backbones": [
+    {
+     "net": "SigLIP-L/16 at 256 (vision tower) (google/siglip-large-patch16-256)",
+     "kind": "transformer",
+     "pretraining_data": "WebLI image-text pairs (external)",
+     "pretraining_objective": "sigmoid image-text contrastive",
+     "layers_read": [
+      {
+       "tensor": "hidden_states[8]",
+       "block_0_based": 7,
+       "block_1_based": 8,
+       "of_blocks": 24,
+       "final_layernorm": "before (pre-LN)",
+       "cls_token_dropped": false
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "transformer",
+   "input": {
+    "train": "336 x 336 square resize (cv2.INTER_AREA, squash)",
+    "test_illusions": "336, 448, 560, 672 px square resize (squash), each scored separately; no TTA",
+    "test_mit1003": "336 px, centre bias on",
+    "normalisation": "0.5/0.5",
+    "token_grid": {
+     "336": 21,
+     "448": 28,
+     "560": 35,
+     "672": 42
+    }
+   },
+   "readout": {
+    "type": "ASPP readout on the frozen token grid (CLS token dropped): four parallel 3x3 convolutions with dilation 1, 3, 6, 12 (128 channels each, BatchNorm + GELU), plus a global-average-pooling branch (AdaptiveAvgPool2d(1) -> 1x1 conv -> BN -> GELU, bilinearly broadcast back to the grid), concatenated (640 ch) -> 1x1 projection to 128 ch (BN, GELU, Dropout2d 0.1) -> 1x1 head to 1 channel -> (+ learned 16x16 centre-bias map, bilinear, switchable) -> bilinear upsampling to the input size -> sigmoid",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     3,
+     6,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "output": "sigmoid map in [0,1] (not a probability density); the r measure uses it after clipping at 0",
+    "local_extent_tokens": "3, 7, 13 and 25 tokens (3x3 kernels at dilation 1, 3, 6, 12) plus a whole-image branch (global average pooling)",
+    "normalisation_in_readout": "BatchNorm2d in eval mode (fixed running statistics: a per-channel affine, local)",
+    "n_params": 4933505,
+    "in_channels": 1024,
+    "spatial_extent": {
+     "336": {
+      "token_grid": [
+       21,
+       21
+      ],
+      "largest_local_branch_tokens": [
+       21,
+       21
+      ],
+      "largest_local_branch_px_network_input": 336,
+      "largest_local_branch_display_px": [
+       1024,
+       768
+      ],
+      "token_size_display_px": [
+       48.8,
+       36.6
+      ],
+      "covers_whole_grid": true
+     },
+     "448": {
+      "token_grid": [
+       28,
+       28
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 400,
+      "largest_local_branch_display_px": [
+       914,
+       686
+      ],
+      "token_size_display_px": [
+       36.6,
+       27.4
+      ],
+      "covers_whole_grid": false
+     },
+     "560": {
+      "token_grid": [
+       35,
+       35
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 400,
+      "largest_local_branch_display_px": [
+       731,
+       549
+      ],
+      "token_size_display_px": [
+       29.3,
+       21.9
+      ],
+      "covers_whole_grid": false
+     },
+     "672": {
+      "token_grid": [
+       42,
+       42
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 400,
+      "largest_local_branch_display_px": [
+       610,
+       457
+      ],
+      "token_size_display_px": [
+       24.4,
+       18.3
+      ],
+      "covers_whole_grid": false
+     }
+    }
+   },
+   "loss": "KL(gt || pred) + 2 (1 - CC), on sigmoid(logits) against the blurred fixation / mouse-tracking density map, both normalised to sum 1 for the KL term",
+   "fixation_training_data": "12,803 images: SALICON train 10,000 (official SALICON maps; SALICON is mouse-tracking, not eye-tracking), MIT1003 sorted first 803 (last 200 held out), CAT2000 train 2,000 (msi/static); all 12,803 have at least one fixation; targets resized to 336x336 (cv2.INTER_AREA); no augmentation",
+   "training": {
+    "epochs": 6,
+    "batch": 32,
+    "optimiser": "AdamW lr 5e-4, weight decay 1e-4, cosine T_max 6",
+    "seed": 0,
+    "checkpoint_selection": "final epoch",
+    "joint": "all six readouts of a backbone trained together from one frozen forward pass per batch (identical batches)"
+   },
+   "centre_bias_at_test": "disabled for illusions (use_cb = False); enabled for MIT1003",
+   "recurrence": "none",
+   "heldout_mit1003_cc": 0.7571,
+   "evidence": [
+    "sweep.py:29  backbone google/siglip-large-patch16-256 and layer list",
+    "sweep.py:54  reads hidden_states[L] (pre final LN), CLS dropped except SigLIP",
+    "sweep.py:46  square resize",
+    "sweep.py:62  ASPP readout",
+    "sweep.py:70  6 epochs, batch 32, lr 5e-4",
+    "sweep.py:88  loss A",
+    "sweep.py:124  centre bias off for illusions",
+    "sweep.py:117  illusion test sizes",
+    "v2/anatomy/facts_hf.json [dinov2-base / clip-vit-large-patch14 / siglip-large-patch16-256]  hidden_states convention verified empirically",
+    "v2/anatomy/facts_readouts.json [readouts.sweep/siglip/readout_L8]  4,933,505 trainable parameters; byte-identical to the public-repo copy",
+    "ab_objective.py:35  training list: SALICON train + MIT1003[:-200] + CAT2000",
+    "ab/run.log:2  logged counts {salicon 10000, mit1003 803, cat2000 2000}",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:176  SALICON recording type = mouse tracking (MSI-Net model card, local cache)"
+   ]
+  },
+  {
+   "model": "sweep siglip L12",
+   "group": "layer-sweep readout (18)",
+   "checkpoint": "sweep/siglip/readout_L12.pt",
+   "code": "sweep.py",
+   "backbones": [
+    {
+     "net": "SigLIP-L/16 at 256 (vision tower) (google/siglip-large-patch16-256)",
+     "kind": "transformer",
+     "pretraining_data": "WebLI image-text pairs (external)",
+     "pretraining_objective": "sigmoid image-text contrastive",
+     "layers_read": [
+      {
+       "tensor": "hidden_states[12]",
+       "block_0_based": 11,
+       "block_1_based": 12,
+       "of_blocks": 24,
+       "final_layernorm": "before (pre-LN)",
+       "cls_token_dropped": false
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "transformer",
+   "input": {
+    "train": "336 x 336 square resize (cv2.INTER_AREA, squash)",
+    "test_illusions": "336, 448, 560, 672 px square resize (squash), each scored separately; no TTA",
+    "test_mit1003": "336 px, centre bias on",
+    "normalisation": "0.5/0.5",
+    "token_grid": {
+     "336": 21,
+     "448": 28,
+     "560": 35,
+     "672": 42
+    }
+   },
+   "readout": {
+    "type": "ASPP readout on the frozen token grid (CLS token dropped): four parallel 3x3 convolutions with dilation 1, 3, 6, 12 (128 channels each, BatchNorm + GELU), plus a global-average-pooling branch (AdaptiveAvgPool2d(1) -> 1x1 conv -> BN -> GELU, bilinearly broadcast back to the grid), concatenated (640 ch) -> 1x1 projection to 128 ch (BN, GELU, Dropout2d 0.1) -> 1x1 head to 1 channel -> (+ learned 16x16 centre-bias map, bilinear, switchable) -> bilinear upsampling to the input size -> sigmoid",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     3,
+     6,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "output": "sigmoid map in [0,1] (not a probability density); the r measure uses it after clipping at 0",
+    "local_extent_tokens": "3, 7, 13 and 25 tokens (3x3 kernels at dilation 1, 3, 6, 12) plus a whole-image branch (global average pooling)",
+    "normalisation_in_readout": "BatchNorm2d in eval mode (fixed running statistics: a per-channel affine, local)",
+    "n_params": 4933505,
+    "in_channels": 1024,
+    "spatial_extent": {
+     "336": {
+      "token_grid": [
+       21,
+       21
+      ],
+      "largest_local_branch_tokens": [
+       21,
+       21
+      ],
+      "largest_local_branch_px_network_input": 336,
+      "largest_local_branch_display_px": [
+       1024,
+       768
+      ],
+      "token_size_display_px": [
+       48.8,
+       36.6
+      ],
+      "covers_whole_grid": true
+     },
+     "448": {
+      "token_grid": [
+       28,
+       28
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 400,
+      "largest_local_branch_display_px": [
+       914,
+       686
+      ],
+      "token_size_display_px": [
+       36.6,
+       27.4
+      ],
+      "covers_whole_grid": false
+     },
+     "560": {
+      "token_grid": [
+       35,
+       35
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 400,
+      "largest_local_branch_display_px": [
+       731,
+       549
+      ],
+      "token_size_display_px": [
+       29.3,
+       21.9
+      ],
+      "covers_whole_grid": false
+     },
+     "672": {
+      "token_grid": [
+       42,
+       42
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 400,
+      "largest_local_branch_display_px": [
+       610,
+       457
+      ],
+      "token_size_display_px": [
+       24.4,
+       18.3
+      ],
+      "covers_whole_grid": false
+     }
+    }
+   },
+   "loss": "KL(gt || pred) + 2 (1 - CC), on sigmoid(logits) against the blurred fixation / mouse-tracking density map, both normalised to sum 1 for the KL term",
+   "fixation_training_data": "12,803 images: SALICON train 10,000 (official SALICON maps; SALICON is mouse-tracking, not eye-tracking), MIT1003 sorted first 803 (last 200 held out), CAT2000 train 2,000 (msi/static); all 12,803 have at least one fixation; targets resized to 336x336 (cv2.INTER_AREA); no augmentation",
+   "training": {
+    "epochs": 6,
+    "batch": 32,
+    "optimiser": "AdamW lr 5e-4, weight decay 1e-4, cosine T_max 6",
+    "seed": 0,
+    "checkpoint_selection": "final epoch",
+    "joint": "all six readouts of a backbone trained together from one frozen forward pass per batch (identical batches)"
+   },
+   "centre_bias_at_test": "disabled for illusions (use_cb = False); enabled for MIT1003",
+   "recurrence": "none",
+   "heldout_mit1003_cc": 0.7482,
+   "evidence": [
+    "sweep.py:29  backbone google/siglip-large-patch16-256 and layer list",
+    "sweep.py:54  reads hidden_states[L] (pre final LN), CLS dropped except SigLIP",
+    "sweep.py:46  square resize",
+    "sweep.py:62  ASPP readout",
+    "sweep.py:70  6 epochs, batch 32, lr 5e-4",
+    "sweep.py:88  loss A",
+    "sweep.py:124  centre bias off for illusions",
+    "sweep.py:117  illusion test sizes",
+    "v2/anatomy/facts_hf.json [dinov2-base / clip-vit-large-patch14 / siglip-large-patch16-256]  hidden_states convention verified empirically",
+    "v2/anatomy/facts_readouts.json [readouts.sweep/siglip/readout_L12]  4,933,505 trainable parameters; byte-identical to the public-repo copy",
+    "ab_objective.py:35  training list: SALICON train + MIT1003[:-200] + CAT2000",
+    "ab/run.log:2  logged counts {salicon 10000, mit1003 803, cat2000 2000}",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:176  SALICON recording type = mouse tracking (MSI-Net model card, local cache)"
+   ]
+  },
+  {
+   "model": "sweep siglip L16",
+   "group": "layer-sweep readout (18)",
+   "checkpoint": "sweep/siglip/readout_L16.pt",
+   "code": "sweep.py",
+   "backbones": [
+    {
+     "net": "SigLIP-L/16 at 256 (vision tower) (google/siglip-large-patch16-256)",
+     "kind": "transformer",
+     "pretraining_data": "WebLI image-text pairs (external)",
+     "pretraining_objective": "sigmoid image-text contrastive",
+     "layers_read": [
+      {
+       "tensor": "hidden_states[16]",
+       "block_0_based": 15,
+       "block_1_based": 16,
+       "of_blocks": 24,
+       "final_layernorm": "before (pre-LN)",
+       "cls_token_dropped": false
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "transformer",
+   "input": {
+    "train": "336 x 336 square resize (cv2.INTER_AREA, squash)",
+    "test_illusions": "336, 448, 560, 672 px square resize (squash), each scored separately; no TTA",
+    "test_mit1003": "336 px, centre bias on",
+    "normalisation": "0.5/0.5",
+    "token_grid": {
+     "336": 21,
+     "448": 28,
+     "560": 35,
+     "672": 42
+    }
+   },
+   "readout": {
+    "type": "ASPP readout on the frozen token grid (CLS token dropped): four parallel 3x3 convolutions with dilation 1, 3, 6, 12 (128 channels each, BatchNorm + GELU), plus a global-average-pooling branch (AdaptiveAvgPool2d(1) -> 1x1 conv -> BN -> GELU, bilinearly broadcast back to the grid), concatenated (640 ch) -> 1x1 projection to 128 ch (BN, GELU, Dropout2d 0.1) -> 1x1 head to 1 channel -> (+ learned 16x16 centre-bias map, bilinear, switchable) -> bilinear upsampling to the input size -> sigmoid",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     3,
+     6,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "output": "sigmoid map in [0,1] (not a probability density); the r measure uses it after clipping at 0",
+    "local_extent_tokens": "3, 7, 13 and 25 tokens (3x3 kernels at dilation 1, 3, 6, 12) plus a whole-image branch (global average pooling)",
+    "normalisation_in_readout": "BatchNorm2d in eval mode (fixed running statistics: a per-channel affine, local)",
+    "n_params": 4933505,
+    "in_channels": 1024,
+    "spatial_extent": {
+     "336": {
+      "token_grid": [
+       21,
+       21
+      ],
+      "largest_local_branch_tokens": [
+       21,
+       21
+      ],
+      "largest_local_branch_px_network_input": 336,
+      "largest_local_branch_display_px": [
+       1024,
+       768
+      ],
+      "token_size_display_px": [
+       48.8,
+       36.6
+      ],
+      "covers_whole_grid": true
+     },
+     "448": {
+      "token_grid": [
+       28,
+       28
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 400,
+      "largest_local_branch_display_px": [
+       914,
+       686
+      ],
+      "token_size_display_px": [
+       36.6,
+       27.4
+      ],
+      "covers_whole_grid": false
+     },
+     "560": {
+      "token_grid": [
+       35,
+       35
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 400,
+      "largest_local_branch_display_px": [
+       731,
+       549
+      ],
+      "token_size_display_px": [
+       29.3,
+       21.9
+      ],
+      "covers_whole_grid": false
+     },
+     "672": {
+      "token_grid": [
+       42,
+       42
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 400,
+      "largest_local_branch_display_px": [
+       610,
+       457
+      ],
+      "token_size_display_px": [
+       24.4,
+       18.3
+      ],
+      "covers_whole_grid": false
+     }
+    }
+   },
+   "loss": "KL(gt || pred) + 2 (1 - CC), on sigmoid(logits) against the blurred fixation / mouse-tracking density map, both normalised to sum 1 for the KL term",
+   "fixation_training_data": "12,803 images: SALICON train 10,000 (official SALICON maps; SALICON is mouse-tracking, not eye-tracking), MIT1003 sorted first 803 (last 200 held out), CAT2000 train 2,000 (msi/static); all 12,803 have at least one fixation; targets resized to 336x336 (cv2.INTER_AREA); no augmentation",
+   "training": {
+    "epochs": 6,
+    "batch": 32,
+    "optimiser": "AdamW lr 5e-4, weight decay 1e-4, cosine T_max 6",
+    "seed": 0,
+    "checkpoint_selection": "final epoch",
+    "joint": "all six readouts of a backbone trained together from one frozen forward pass per batch (identical batches)"
+   },
+   "centre_bias_at_test": "disabled for illusions (use_cb = False); enabled for MIT1003",
+   "recurrence": "none",
+   "heldout_mit1003_cc": 0.7369,
+   "evidence": [
+    "sweep.py:29  backbone google/siglip-large-patch16-256 and layer list",
+    "sweep.py:54  reads hidden_states[L] (pre final LN), CLS dropped except SigLIP",
+    "sweep.py:46  square resize",
+    "sweep.py:62  ASPP readout",
+    "sweep.py:70  6 epochs, batch 32, lr 5e-4",
+    "sweep.py:88  loss A",
+    "sweep.py:124  centre bias off for illusions",
+    "sweep.py:117  illusion test sizes",
+    "v2/anatomy/facts_hf.json [dinov2-base / clip-vit-large-patch14 / siglip-large-patch16-256]  hidden_states convention verified empirically",
+    "v2/anatomy/facts_readouts.json [readouts.sweep/siglip/readout_L16]  4,933,505 trainable parameters; byte-identical to the public-repo copy",
+    "ab_objective.py:35  training list: SALICON train + MIT1003[:-200] + CAT2000",
+    "ab/run.log:2  logged counts {salicon 10000, mit1003 803, cat2000 2000}",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:176  SALICON recording type = mouse tracking (MSI-Net model card, local cache)"
+   ]
+  },
+  {
+   "model": "sweep siglip L20",
+   "group": "layer-sweep readout (18)",
+   "checkpoint": "sweep/siglip/readout_L20.pt",
+   "code": "sweep.py",
+   "backbones": [
+    {
+     "net": "SigLIP-L/16 at 256 (vision tower) (google/siglip-large-patch16-256)",
+     "kind": "transformer",
+     "pretraining_data": "WebLI image-text pairs (external)",
+     "pretraining_objective": "sigmoid image-text contrastive",
+     "layers_read": [
+      {
+       "tensor": "hidden_states[20]",
+       "block_0_based": 19,
+       "block_1_based": 20,
+       "of_blocks": 24,
+       "final_layernorm": "before (pre-LN)",
+       "cls_token_dropped": false
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "transformer",
+   "input": {
+    "train": "336 x 336 square resize (cv2.INTER_AREA, squash)",
+    "test_illusions": "336, 448, 560, 672 px square resize (squash), each scored separately; no TTA",
+    "test_mit1003": "336 px, centre bias on",
+    "normalisation": "0.5/0.5",
+    "token_grid": {
+     "336": 21,
+     "448": 28,
+     "560": 35,
+     "672": 42
+    }
+   },
+   "readout": {
+    "type": "ASPP readout on the frozen token grid (CLS token dropped): four parallel 3x3 convolutions with dilation 1, 3, 6, 12 (128 channels each, BatchNorm + GELU), plus a global-average-pooling branch (AdaptiveAvgPool2d(1) -> 1x1 conv -> BN -> GELU, bilinearly broadcast back to the grid), concatenated (640 ch) -> 1x1 projection to 128 ch (BN, GELU, Dropout2d 0.1) -> 1x1 head to 1 channel -> (+ learned 16x16 centre-bias map, bilinear, switchable) -> bilinear upsampling to the input size -> sigmoid",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     3,
+     6,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "output": "sigmoid map in [0,1] (not a probability density); the r measure uses it after clipping at 0",
+    "local_extent_tokens": "3, 7, 13 and 25 tokens (3x3 kernels at dilation 1, 3, 6, 12) plus a whole-image branch (global average pooling)",
+    "normalisation_in_readout": "BatchNorm2d in eval mode (fixed running statistics: a per-channel affine, local)",
+    "n_params": 4933505,
+    "in_channels": 1024,
+    "spatial_extent": {
+     "336": {
+      "token_grid": [
+       21,
+       21
+      ],
+      "largest_local_branch_tokens": [
+       21,
+       21
+      ],
+      "largest_local_branch_px_network_input": 336,
+      "largest_local_branch_display_px": [
+       1024,
+       768
+      ],
+      "token_size_display_px": [
+       48.8,
+       36.6
+      ],
+      "covers_whole_grid": true
+     },
+     "448": {
+      "token_grid": [
+       28,
+       28
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 400,
+      "largest_local_branch_display_px": [
+       914,
+       686
+      ],
+      "token_size_display_px": [
+       36.6,
+       27.4
+      ],
+      "covers_whole_grid": false
+     },
+     "560": {
+      "token_grid": [
+       35,
+       35
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 400,
+      "largest_local_branch_display_px": [
+       731,
+       549
+      ],
+      "token_size_display_px": [
+       29.3,
+       21.9
+      ],
+      "covers_whole_grid": false
+     },
+     "672": {
+      "token_grid": [
+       42,
+       42
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 400,
+      "largest_local_branch_display_px": [
+       610,
+       457
+      ],
+      "token_size_display_px": [
+       24.4,
+       18.3
+      ],
+      "covers_whole_grid": false
+     }
+    }
+   },
+   "loss": "KL(gt || pred) + 2 (1 - CC), on sigmoid(logits) against the blurred fixation / mouse-tracking density map, both normalised to sum 1 for the KL term",
+   "fixation_training_data": "12,803 images: SALICON train 10,000 (official SALICON maps; SALICON is mouse-tracking, not eye-tracking), MIT1003 sorted first 803 (last 200 held out), CAT2000 train 2,000 (msi/static); all 12,803 have at least one fixation; targets resized to 336x336 (cv2.INTER_AREA); no augmentation",
+   "training": {
+    "epochs": 6,
+    "batch": 32,
+    "optimiser": "AdamW lr 5e-4, weight decay 1e-4, cosine T_max 6",
+    "seed": 0,
+    "checkpoint_selection": "final epoch",
+    "joint": "all six readouts of a backbone trained together from one frozen forward pass per batch (identical batches)"
+   },
+   "centre_bias_at_test": "disabled for illusions (use_cb = False); enabled for MIT1003",
+   "recurrence": "none",
+   "heldout_mit1003_cc": 0.7276,
+   "evidence": [
+    "sweep.py:29  backbone google/siglip-large-patch16-256 and layer list",
+    "sweep.py:54  reads hidden_states[L] (pre final LN), CLS dropped except SigLIP",
+    "sweep.py:46  square resize",
+    "sweep.py:62  ASPP readout",
+    "sweep.py:70  6 epochs, batch 32, lr 5e-4",
+    "sweep.py:88  loss A",
+    "sweep.py:124  centre bias off for illusions",
+    "sweep.py:117  illusion test sizes",
+    "v2/anatomy/facts_hf.json [dinov2-base / clip-vit-large-patch14 / siglip-large-patch16-256]  hidden_states convention verified empirically",
+    "v2/anatomy/facts_readouts.json [readouts.sweep/siglip/readout_L20]  4,933,505 trainable parameters; byte-identical to the public-repo copy",
+    "ab_objective.py:35  training list: SALICON train + MIT1003[:-200] + CAT2000",
+    "ab/run.log:2  logged counts {salicon 10000, mit1003 803, cat2000 2000}",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:176  SALICON recording type = mouse tracking (MSI-Net model card, local cache)"
+   ]
+  },
+  {
+   "model": "sweep siglip L24",
+   "group": "layer-sweep readout (18)",
+   "checkpoint": "sweep/siglip/readout_L24.pt",
+   "code": "sweep.py",
+   "backbones": [
+    {
+     "net": "SigLIP-L/16 at 256 (vision tower) (google/siglip-large-patch16-256)",
+     "kind": "transformer",
+     "pretraining_data": "WebLI image-text pairs (external)",
+     "pretraining_objective": "sigmoid image-text contrastive",
+     "layers_read": [
+      {
+       "tensor": "hidden_states[24]",
+       "block_0_based": 23,
+       "block_1_based": 24,
+       "of_blocks": 24,
+       "final_layernorm": "before (pre-LN)",
+       "cls_token_dropped": false
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "transformer",
+   "input": {
+    "train": "336 x 336 square resize (cv2.INTER_AREA, squash)",
+    "test_illusions": "336, 448, 560, 672 px square resize (squash), each scored separately; no TTA",
+    "test_mit1003": "336 px, centre bias on",
+    "normalisation": "0.5/0.5",
+    "token_grid": {
+     "336": 21,
+     "448": 28,
+     "560": 35,
+     "672": 42
+    }
+   },
+   "readout": {
+    "type": "ASPP readout on the frozen token grid (CLS token dropped): four parallel 3x3 convolutions with dilation 1, 3, 6, 12 (128 channels each, BatchNorm + GELU), plus a global-average-pooling branch (AdaptiveAvgPool2d(1) -> 1x1 conv -> BN -> GELU, bilinearly broadcast back to the grid), concatenated (640 ch) -> 1x1 projection to 128 ch (BN, GELU, Dropout2d 0.1) -> 1x1 head to 1 channel -> (+ learned 16x16 centre-bias map, bilinear, switchable) -> bilinear upsampling to the input size -> sigmoid",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     3,
+     6,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "output": "sigmoid map in [0,1] (not a probability density); the r measure uses it after clipping at 0",
+    "local_extent_tokens": "3, 7, 13 and 25 tokens (3x3 kernels at dilation 1, 3, 6, 12) plus a whole-image branch (global average pooling)",
+    "normalisation_in_readout": "BatchNorm2d in eval mode (fixed running statistics: a per-channel affine, local)",
+    "n_params": 4933505,
+    "in_channels": 1024,
+    "spatial_extent": {
+     "336": {
+      "token_grid": [
+       21,
+       21
+      ],
+      "largest_local_branch_tokens": [
+       21,
+       21
+      ],
+      "largest_local_branch_px_network_input": 336,
+      "largest_local_branch_display_px": [
+       1024,
+       768
+      ],
+      "token_size_display_px": [
+       48.8,
+       36.6
+      ],
+      "covers_whole_grid": true
+     },
+     "448": {
+      "token_grid": [
+       28,
+       28
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 400,
+      "largest_local_branch_display_px": [
+       914,
+       686
+      ],
+      "token_size_display_px": [
+       36.6,
+       27.4
+      ],
+      "covers_whole_grid": false
+     },
+     "560": {
+      "token_grid": [
+       35,
+       35
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 400,
+      "largest_local_branch_display_px": [
+       731,
+       549
+      ],
+      "token_size_display_px": [
+       29.3,
+       21.9
+      ],
+      "covers_whole_grid": false
+     },
+     "672": {
+      "token_grid": [
+       42,
+       42
+      ],
+      "largest_local_branch_tokens": [
+       25,
+       25
+      ],
+      "largest_local_branch_px_network_input": 400,
+      "largest_local_branch_display_px": [
+       610,
+       457
+      ],
+      "token_size_display_px": [
+       24.4,
+       18.3
+      ],
+      "covers_whole_grid": false
+     }
+    }
+   },
+   "loss": "KL(gt || pred) + 2 (1 - CC), on sigmoid(logits) against the blurred fixation / mouse-tracking density map, both normalised to sum 1 for the KL term",
+   "fixation_training_data": "12,803 images: SALICON train 10,000 (official SALICON maps; SALICON is mouse-tracking, not eye-tracking), MIT1003 sorted first 803 (last 200 held out), CAT2000 train 2,000 (msi/static); all 12,803 have at least one fixation; targets resized to 336x336 (cv2.INTER_AREA); no augmentation",
+   "training": {
+    "epochs": 6,
+    "batch": 32,
+    "optimiser": "AdamW lr 5e-4, weight decay 1e-4, cosine T_max 6",
+    "seed": 0,
+    "checkpoint_selection": "final epoch",
+    "joint": "all six readouts of a backbone trained together from one frozen forward pass per batch (identical batches)"
+   },
+   "centre_bias_at_test": "disabled for illusions (use_cb = False); enabled for MIT1003",
+   "recurrence": "none",
+   "heldout_mit1003_cc": 0.7212,
+   "evidence": [
+    "sweep.py:29  backbone google/siglip-large-patch16-256 and layer list",
+    "sweep.py:54  reads hidden_states[L] (pre final LN), CLS dropped except SigLIP",
+    "sweep.py:46  square resize",
+    "sweep.py:62  ASPP readout",
+    "sweep.py:70  6 epochs, batch 32, lr 5e-4",
+    "sweep.py:88  loss A",
+    "sweep.py:124  centre bias off for illusions",
+    "sweep.py:117  illusion test sizes",
+    "v2/anatomy/facts_hf.json [dinov2-base / clip-vit-large-patch14 / siglip-large-patch16-256]  hidden_states convention verified empirically",
+    "v2/anatomy/facts_readouts.json [readouts.sweep/siglip/readout_L24]  4,933,505 trainable parameters; byte-identical to the public-repo copy",
+    "ab_objective.py:35  training list: SALICON train + MIT1003[:-200] + CAT2000",
+    "ab/run.log:2  logged counts {salicon 10000, mit1003 803, cat2000 2000}",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:176  SALICON recording type = mouse tracking (MSI-Net model card, local cache)"
+   ]
+  },
+  {
+   "model": "ab/readout_A",
+   "group": "objective / layer test readout",
+   "checkpoint": "ab/readout_A.pt",
+   "code": "ab_objective.py",
+   "backbones": [
+    {
+     "net": "DINOv2-B/14 (facebook/dinov2-base)",
+     "kind": "transformer",
+     "pretraining_data": "LVD-142M (external)",
+     "pretraining_objective": "self-supervised",
+     "layers_read": [
+      {
+       "tensor": "last_hidden_state",
+       "block_0_based": 11,
+       "block_1_based": 12,
+       "final_layernorm": "AFTER (post-LN), same tensor as xSoyelNet-ASPP"
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "transformer",
+   "input": {
+    "train": "336 x 336 square resize (squash)",
+    "test_gate": "336 px square resize, single size (ab_objective / ab_layers eval); scales.py also scored M6/M610 at 168-560 px",
+    "features": "cached once in float16 (ab/feat.npy, no longer on disk) at 336 px"
+   },
+   "readout": {
+    "type": "ASPP readout on the frozen token grid (CLS token dropped): four parallel 3x3 convolutions with dilation 1, 3, 6, 12 (128 channels each, BatchNorm + GELU), plus a global-average-pooling branch (AdaptiveAvgPool2d(1) -> 1x1 conv -> BN -> GELU, bilinearly broadcast back to the grid), concatenated (640 ch) -> 1x1 projection to 128 ch (BN, GELU, Dropout2d 0.1) -> 1x1 head to 1 channel -> (+ learned 16x16 centre-bias map, bilinear, switchable) -> bilinear upsampling to the input size -> sigmoid",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     3,
+     6,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "output": "sigmoid map",
+    "local_extent_tokens": "3, 7, 13 and 25 tokens (3x3 kernels at dilation 1, 3, 6, 12) plus a whole-image branch (global average pooling)",
+    "normalisation_in_readout": "BatchNorm2d in eval mode (fixed running statistics: a per-channel affine, local)",
+    "n_params": 3721089,
+    "in_channels": 768,
+    "spatial_extent": {
+     "336": {
+      "token_grid": [
+       24,
+       24
+      ],
+      "largest_local_branch_tokens": [
+       24,
+       24
+      ],
+      "largest_local_branch_px_network_input": 336,
+      "largest_local_branch_display_px": [
+       1024,
+       768
+      ],
+      "token_size_display_px": [
+       42.7,
+       32.0
+      ],
+      "covers_whole_grid": true
+     }
+    }
+   },
+   "loss": "KL(gt || pred) + 2 (1 - CC), on sigmoid(logits) against the blurred fixation / mouse-tracking density map, both normalised to sum 1 for the KL term",
+   "fixation_training_data": "12,803 images: SALICON train 10,000 (official SALICON maps; SALICON is mouse-tracking, not eye-tracking), MIT1003 sorted first 803 (last 200 held out), CAT2000 train 2,000 (msi/static); all 12,803 have at least one fixation; targets resized to 336x336 (cv2.INTER_AREA); no augmentation",
+   "training": {
+    "epochs": 8,
+    "batch": 32,
+    "optimiser": "AdamW lr 5e-4, weight decay 1e-4, cosine T_max 8",
+    "seed": 0,
+    "checkpoint_selection": "final epoch"
+   },
+   "centre_bias_at_test": "disabled for illusions; enabled for MIT1003",
+   "recurrence": "none",
+   "heldout_mit1003_cc": 0.7288,
+   "evidence": [
+    "ab_objective.py:79  reads last_hidden_state (post-LN)",
+    "ab_objective.py:84  float16 feature cache",
+    "ab_objective.py:132  8 epochs, batch 32, lr 5e-4",
+    "ab_objective.py:124  loss B = fixation NLL under log-softmax",
+    "ab_objective.py:195  centre bias off for the gate",
+    "v2/anatomy/facts_readouts.json [readouts.ab/readout_A]  3,721,089 trainable parameters, 768 input channels",
+    "ab_objective.py:35  training list: SALICON train + MIT1003[:-200] + CAT2000",
+    "ab/run.log:2  logged counts {salicon 10000, mit1003 803, cat2000 2000}",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:176  SALICON recording type = mouse tracking (MSI-Net model card, local cache)"
+   ]
+  },
+  {
+   "model": "ab/readout_B",
+   "group": "objective / layer test readout",
+   "checkpoint": "ab/readout_B.pt",
+   "code": "ab_objective.py",
+   "backbones": [
+    {
+     "net": "DINOv2-B/14 (facebook/dinov2-base)",
+     "kind": "transformer",
+     "pretraining_data": "LVD-142M (external)",
+     "pretraining_objective": "self-supervised",
+     "layers_read": [
+      {
+       "tensor": "last_hidden_state",
+       "block_0_based": 11,
+       "block_1_based": 12,
+       "final_layernorm": "AFTER (post-LN), same tensor as xSoyelNet-ASPP"
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "transformer",
+   "input": {
+    "train": "336 x 336 square resize (squash)",
+    "test_gate": "336 px square resize, single size (ab_objective / ab_layers eval); scales.py also scored M6/M610 at 168-560 px",
+    "features": "cached once in float16 (ab/feat.npy, no longer on disk) at 336 px"
+   },
+   "readout": {
+    "type": "ASPP readout on the frozen token grid (CLS token dropped): four parallel 3x3 convolutions with dilation 1, 3, 6, 12 (128 channels each, BatchNorm + GELU), plus a global-average-pooling branch (AdaptiveAvgPool2d(1) -> 1x1 conv -> BN -> GELU, bilinearly broadcast back to the grid), concatenated (640 ch) -> 1x1 projection to 128 ch (BN, GELU, Dropout2d 0.1) -> 1x1 head to 1 channel -> (+ learned 16x16 centre-bias map, bilinear, switchable) -> bilinear upsampling to the input size -> sigmoid",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     3,
+     6,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "output": "softmax density over pixels at test (logits trained with log-softmax NLL)",
+    "local_extent_tokens": "3, 7, 13 and 25 tokens (3x3 kernels at dilation 1, 3, 6, 12) plus a whole-image branch (global average pooling)",
+    "normalisation_in_readout": "BatchNorm2d in eval mode (fixed running statistics: a per-channel affine, local)",
+    "n_params": 3721089,
+    "in_channels": 768,
+    "spatial_extent": {
+     "336": {
+      "token_grid": [
+       24,
+       24
+      ],
+      "largest_local_branch_tokens": [
+       24,
+       24
+      ],
+      "largest_local_branch_px_network_input": 336,
+      "largest_local_branch_display_px": [
+       1024,
+       768
+      ],
+      "token_size_display_px": [
+       42.7,
+       32.0
+      ],
+      "covers_whole_grid": true
+     }
+    }
+   },
+   "loss": "negative log-likelihood of the observed fixation points under log-softmax over the 336 x 336 pixels (DeepGaze-style objective); fixations of SALICON (.mat gaze, mouse-based), MIT1003 fixPts, CAT2000 fixLocs",
+   "fixation_training_data": "12,803 images: SALICON train 10,000 (official SALICON maps; SALICON is mouse-tracking, not eye-tracking), MIT1003 sorted first 803 (last 200 held out), CAT2000 train 2,000 (msi/static); all 12,803 have at least one fixation; targets resized to 336x336 (cv2.INTER_AREA); no augmentation",
+   "training": {
+    "epochs": 8,
+    "batch": 32,
+    "optimiser": "AdamW lr 5e-4, weight decay 1e-4, cosine T_max 8",
+    "seed": 0,
+    "checkpoint_selection": "final epoch"
+   },
+   "centre_bias_at_test": "disabled for illusions; enabled for MIT1003",
+   "recurrence": "none",
+   "heldout_mit1003_cc": 0.6805,
+   "evidence": [
+    "ab_objective.py:79  reads last_hidden_state (post-LN)",
+    "ab_objective.py:84  float16 feature cache",
+    "ab_objective.py:132  8 epochs, batch 32, lr 5e-4",
+    "ab_objective.py:124  loss B = fixation NLL under log-softmax",
+    "ab_objective.py:195  centre bias off for the gate",
+    "v2/anatomy/facts_readouts.json [readouts.ab/readout_B]  3,721,089 trainable parameters, 768 input channels",
+    "ab_objective.py:35  training list: SALICON train + MIT1003[:-200] + CAT2000",
+    "ab/run.log:2  logged counts {salicon 10000, mit1003 803, cat2000 2000}",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:176  SALICON recording type = mouse tracking (MSI-Net model card, local cache)"
+   ]
+  },
+  {
+   "model": "ab/readout_M6",
+   "group": "objective / layer test readout",
+   "checkpoint": "ab/readout_M6.pt",
+   "code": "ab_layers.py",
+   "backbones": [
+    {
+     "net": "DINOv2-B/14 (facebook/dinov2-base)",
+     "kind": "transformer",
+     "pretraining_data": "LVD-142M (external)",
+     "pretraining_objective": "self-supervised",
+     "layers_read": [
+      {
+       "tensor": "hidden_states[7]",
+       "block_0_based": 6,
+       "block_1_based": 7,
+       "final_layernorm": "before (pre-LN)"
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "transformer",
+   "input": {
+    "train": "336 x 336 square resize (squash)",
+    "test_gate": "336 px square resize, single size (ab_objective / ab_layers eval); scales.py also scored M6/M610 at 168-560 px",
+    "features": "computed on the fly (float32)"
+   },
+   "readout": {
+    "type": "ASPP readout on the frozen token grid (CLS token dropped): four parallel 3x3 convolutions with dilation 1, 3, 6, 12 (128 channels each, BatchNorm + GELU), plus a global-average-pooling branch (AdaptiveAvgPool2d(1) -> 1x1 conv -> BN -> GELU, bilinearly broadcast back to the grid), concatenated (640 ch) -> 1x1 projection to 128 ch (BN, GELU, Dropout2d 0.1) -> 1x1 head to 1 channel -> (+ learned 16x16 centre-bias map, bilinear, switchable) -> bilinear upsampling to the input size -> sigmoid",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     3,
+     6,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "output": "sigmoid map",
+    "local_extent_tokens": "3, 7, 13 and 25 tokens (3x3 kernels at dilation 1, 3, 6, 12) plus a whole-image branch (global average pooling)",
+    "normalisation_in_readout": "BatchNorm2d in eval mode (fixed running statistics: a per-channel affine, local)",
+    "n_params": 3721089,
+    "in_channels": 768,
+    "spatial_extent": {
+     "336": {
+      "token_grid": [
+       24,
+       24
+      ],
+      "largest_local_branch_tokens": [
+       24,
+       24
+      ],
+      "largest_local_branch_px_network_input": 336,
+      "largest_local_branch_display_px": [
+       1024,
+       768
+      ],
+      "token_size_display_px": [
+       42.7,
+       32.0
+      ],
+      "covers_whole_grid": true
+     }
+    }
+   },
+   "loss": "KL(gt || pred) + 2 (1 - CC), on sigmoid(logits) against the blurred fixation / mouse-tracking density map, both normalised to sum 1 for the KL term",
+   "fixation_training_data": "12,803 images: SALICON train 10,000 (official SALICON maps; SALICON is mouse-tracking, not eye-tracking), MIT1003 sorted first 803 (last 200 held out), CAT2000 train 2,000 (msi/static); all 12,803 have at least one fixation; targets resized to 336x336 (cv2.INTER_AREA); no augmentation",
+   "training": {
+    "epochs": 8,
+    "batch": 32,
+    "optimiser": "AdamW lr 5e-4, weight decay 1e-4, cosine T_max 8",
+    "seed": 0,
+    "checkpoint_selection": "final epoch"
+   },
+   "centre_bias_at_test": "disabled for illusions; enabled for MIT1003",
+   "recurrence": "none",
+   "heldout_mit1003_cc": 0.7422,
+   "evidence": [
+    "ab_layers.py:23  hidden_states indices",
+    "ab_layers.py:43  8 epochs",
+    "ab_layers.py:94  centre bias off for the gate",
+    "v2/anatomy/facts_readouts.json [readouts.ab/readout_M6]  3,721,089 trainable parameters, 768 input channels",
+    "ab_objective.py:35  training list: SALICON train + MIT1003[:-200] + CAT2000",
+    "ab/run.log:2  logged counts {salicon 10000, mit1003 803, cat2000 2000}",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:176  SALICON recording type = mouse tracking (MSI-Net model card, local cache)"
+   ]
+  },
+  {
+   "model": "ab/readout_M610",
+   "group": "objective / layer test readout (= xSoyelNet-ML weights)",
+   "checkpoint": "ab/readout_M610.pt",
+   "code": "ab_layers.py",
+   "backbones": [
+    {
+     "net": "DINOv2-B/14 (facebook/dinov2-base)",
+     "kind": "transformer",
+     "pretraining_data": "LVD-142M (external)",
+     "pretraining_objective": "self-supervised",
+     "layers_read": [
+      {
+       "tensor": "hidden_states[7]",
+       "block_0_based": 6,
+       "block_1_based": 7,
+       "final_layernorm": "before (pre-LN)"
+      },
+      {
+       "tensor": "hidden_states[11]",
+       "block_0_based": 10,
+       "block_1_based": 11,
+       "final_layernorm": "before (pre-LN)"
+      }
+     ]
+    }
+   ],
+   "cnn_or_transformer": "transformer",
+   "input": {
+    "train": "336 x 336 square resize (squash)",
+    "test_gate": "336 px square resize, single size (ab_objective / ab_layers eval); scales.py also scored M6/M610 at 168-560 px",
+    "features": "computed on the fly (float32)"
+   },
+   "readout": {
+    "type": "ASPP readout on the frozen token grid (CLS token dropped): four parallel 3x3 convolutions with dilation 1, 3, 6, 12 (128 channels each, BatchNorm + GELU), plus a global-average-pooling branch (AdaptiveAvgPool2d(1) -> 1x1 conv -> BN -> GELU, bilinearly broadcast back to the grid), concatenated (640 ch) -> 1x1 projection to 128 ch (BN, GELU, Dropout2d 0.1) -> 1x1 head to 1 channel -> (+ learned 16x16 centre-bias map, bilinear, switchable) -> bilinear upsampling to the input size -> sigmoid",
+    "pointwise": false,
+    "aspp": true,
+    "dilation_rates": [
+     1,
+     3,
+     6,
+     12
+    ],
+    "global_average_pooling_branch": true,
+    "gaussian_blur": false,
+    "output": "sigmoid map",
+    "local_extent_tokens": "3, 7, 13 and 25 tokens (3x3 kernels at dilation 1, 3, 6, 12) plus a whole-image branch (global average pooling)",
+    "normalisation_in_readout": "BatchNorm2d in eval mode (fixed running statistics: a per-channel affine, local)",
+    "n_params": 7358337,
+    "in_channels": 1536,
+    "spatial_extent": {
+     "336": {
+      "token_grid": [
+       24,
+       24
+      ],
+      "largest_local_branch_tokens": [
+       24,
+       24
+      ],
+      "largest_local_branch_px_network_input": 336,
+      "largest_local_branch_display_px": [
+       1024,
+       768
+      ],
+      "token_size_display_px": [
+       42.7,
+       32.0
+      ],
+      "covers_whole_grid": true
+     }
+    }
+   },
+   "loss": "KL(gt || pred) + 2 (1 - CC), on sigmoid(logits) against the blurred fixation / mouse-tracking density map, both normalised to sum 1 for the KL term",
+   "fixation_training_data": "12,803 images: SALICON train 10,000 (official SALICON maps; SALICON is mouse-tracking, not eye-tracking), MIT1003 sorted first 803 (last 200 held out), CAT2000 train 2,000 (msi/static); all 12,803 have at least one fixation; targets resized to 336x336 (cv2.INTER_AREA); no augmentation",
+   "training": {
+    "epochs": 8,
+    "batch": 32,
+    "optimiser": "AdamW lr 5e-4, weight decay 1e-4, cosine T_max 8",
+    "seed": 0,
+    "checkpoint_selection": "final epoch"
+   },
+   "centre_bias_at_test": "disabled for illusions; enabled for MIT1003",
+   "recurrence": "none",
+   "heldout_mit1003_cc": 0.7452,
+   "evidence": [
+    "ab_layers.py:23  hidden_states indices",
+    "ab_layers.py:43  8 epochs",
+    "ab_layers.py:94  centre bias off for the gate",
+    "v2/anatomy/facts_readouts.json [readouts.ab/readout_M610]  7,358,337 trainable parameters, 1536 input channels",
+    "ab_objective.py:35  training list: SALICON train + MIT1003[:-200] + CAT2000",
+    "ab/run.log:2  logged counts {salicon 10000, mit1003 803, cat2000 2000}",
+    "~/.cache/huggingface/hub/models--alexanderkroner--MSI-Net/snapshots/d950b35945db961ae63f84bc2b23f6bd578d0b8f/README.md:176  SALICON recording type = mouse tracking (MSI-Net model card, local cache)"
+   ]
+  }
+ ]
+}

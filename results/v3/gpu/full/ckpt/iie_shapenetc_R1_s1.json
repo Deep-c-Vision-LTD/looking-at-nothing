@@ -1,0 +1,40 @@
+{
+ "tag": "iie_shapenetc_R1_s1",
+ "fset": "iie_shapenetc",
+ "arch": "R1",
+ "seed": 1,
+ "job": "iie_R1n-R1-R4_s1",
+ "device": "mps",
+ "n_train": 12803,
+ "batches": 400,
+ "epochs": 6,
+ "bs": 32,
+ "lr": 0.0005,
+ "hist": [
+  {
+   "epoch": 0,
+   "loss": 1.03611
+  },
+  {
+   "epoch": 1,
+   "loss": 0.70085
+  },
+  {
+   "epoch": 2,
+   "loss": 0.66389
+  },
+  {
+   "epoch": 3,
+   "loss": 0.64441
+  },
+  {
+   "epoch": 4,
+   "loss": 0.63227
+  },
+  {
+   "epoch": 5,
+   "loss": 0.62467
+  }
+ ],
+ "finished": "2026-10-17 13:11:44"
+}

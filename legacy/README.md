@@ -1,0 +1,1 @@
+Code, stimuli and results of the first version of this study (960 displays, six models, 18 layer readouts); the current code uses its stimuli and results only as byte-identity and cross-check references, and its layer readouts (v1.0 release) in the layer sweep.

@@ -1,0 +1,482 @@
+{
+ "square_sr30_dark_p0_real_filled_c25": {
+  "r_inside": 0.6845666187295872,
+  "grey": 191
+ },
+ "square_sr30_dark_p0_real_filled_c75": {
+  "r_inside": 0.733055760021446,
+  "grey": 64
+ },
+ "square_sr30_dark_p1_real_filled_c25": {
+  "r_inside": 0.6723194924670056,
+  "grey": 191
+ },
+ "square_sr30_dark_p1_real_filled_c75": {
+  "r_inside": 0.7308954081310414,
+  "grey": 64
+ },
+ "square_sr30_dark_p2_real_filled_c25": {
+  "r_inside": 0.6736068137375116,
+  "grey": 191
+ },
+ "square_sr30_dark_p2_real_filled_c75": {
+  "r_inside": 0.7326117994137201,
+  "grey": 64
+ },
+ "square_sr30_dark_p3_real_filled_c25": {
+  "r_inside": 0.6736465639755801,
+  "grey": 191
+ },
+ "square_sr30_dark_p3_real_filled_c75": {
+  "r_inside": 0.7358479698352397,
+  "grey": 64
+ },
+ "square_sr30_dark_p4_real_filled_c25": {
+  "r_inside": 0.6777238183904368,
+  "grey": 191
+ },
+ "square_sr30_dark_p4_real_filled_c75": {
+  "r_inside": 0.7437716453234654,
+  "grey": 64
+ },
+ "square_sr30_light_p0_real_filled_c25": {
+  "r_inside": 0.7200723924097816,
+  "grey": 64
+ },
+ "square_sr30_light_p0_real_filled_c75": {
+  "r_inside": 0.7563940812770314,
+  "grey": 191
+ },
+ "square_sr30_light_p1_real_filled_c25": {
+  "r_inside": 0.7111718128575988,
+  "grey": 64
+ },
+ "square_sr30_light_p1_real_filled_c75": {
+  "r_inside": 0.7468492561445843,
+  "grey": 191
+ },
+ "square_sr30_light_p2_real_filled_c25": {
+  "r_inside": 0.7191048874490825,
+  "grey": 64
+ },
+ "square_sr30_light_p2_real_filled_c75": {
+  "r_inside": 0.7473026053430001,
+  "grey": 191
+ },
+ "square_sr30_light_p3_real_filled_c25": {
+  "r_inside": 0.7343408307804139,
+  "grey": 64
+ },
+ "square_sr30_light_p3_real_filled_c75": {
+  "r_inside": 0.7651625372375284,
+  "grey": 191
+ },
+ "square_sr30_light_p4_real_filled_c25": {
+  "r_inside": 0.7394418923857362,
+  "grey": 64
+ },
+ "square_sr30_light_p4_real_filled_c75": {
+  "r_inside": 0.7643504750270489,
+  "grey": 191
+ },
+ "square_sr50_dark_p0_real_filled_c25": {
+  "r_inside": 0.596992226665359,
+  "grey": 191
+ },
+ "square_sr50_dark_p0_real_filled_c75": {
+  "r_inside": 0.6331942670084739,
+  "grey": 64
+ },
+ "square_sr50_dark_p1_real_filled_c25": {
+  "r_inside": 0.5989625250038215,
+  "grey": 191
+ },
+ "square_sr50_dark_p1_real_filled_c75": {
+  "r_inside": 0.6361324385711017,
+  "grey": 64
+ },
+ "square_sr50_dark_p2_real_filled_c25": {
+  "r_inside": 0.5757331474239589,
+  "grey": 191
+ },
+ "square_sr50_dark_p2_real_filled_c75": {
+  "r_inside": 0.62760029697303,
+  "grey": 64
+ },
+ "square_sr50_dark_p3_real_filled_c25": {
+  "r_inside": 0.5972912551398449,
+  "grey": 191
+ },
+ "square_sr50_dark_p3_real_filled_c75": {
+  "r_inside": 0.6317332228691384,
+  "grey": 64
+ },
+ "square_sr50_dark_p4_real_filled_c25": {
+  "r_inside": 0.5759024094380824,
+  "grey": 191
+ },
+ "square_sr50_dark_p4_real_filled_c75": {
+  "r_inside": 0.6246361654411825,
+  "grey": 64
+ },
+ "square_sr50_light_p0_real_filled_c25": {
+  "r_inside": 0.6361723997996913,
+  "grey": 64
+ },
+ "square_sr50_light_p0_real_filled_c75": {
+  "r_inside": 0.6460340373374259,
+  "grey": 191
+ },
+ "square_sr50_light_p1_real_filled_c25": {
+  "r_inside": 0.6396384199203267,
+  "grey": 64
+ },
+ "square_sr50_light_p1_real_filled_c75": {
+  "r_inside": 0.6532040036341467,
+  "grey": 191
+ },
+ "square_sr50_light_p2_real_filled_c25": {
+  "r_inside": 0.6014953685879882,
+  "grey": 64
+ },
+ "square_sr50_light_p2_real_filled_c75": {
+  "r_inside": 0.6282959392378227,
+  "grey": 191
+ },
+ "square_sr50_light_p3_real_filled_c25": {
+  "r_inside": 0.6367982500617839,
+  "grey": 64
+ },
+ "square_sr50_light_p3_real_filled_c75": {
+  "r_inside": 0.6532814174854797,
+  "grey": 191
+ },
+ "square_sr50_light_p4_real_filled_c25": {
+  "r_inside": 0.6080080887942524,
+  "grey": 64
+ },
+ "square_sr50_light_p4_real_filled_c75": {
+  "r_inside": 0.6283931931647408,
+  "grey": 191
+ },
+ "square_sr70_dark_p0_real_filled_c25": {
+  "r_inside": 0.4841027677926656,
+  "grey": 191
+ },
+ "square_sr70_dark_p0_real_filled_c75": {
+  "r_inside": 0.49812236943793387,
+  "grey": 64
+ },
+ "square_sr70_dark_p1_real_filled_c25": {
+  "r_inside": 0.49699303181402626,
+  "grey": 191
+ },
+ "square_sr70_dark_p1_real_filled_c75": {
+  "r_inside": 0.5183136706015133,
+  "grey": 64
+ },
+ "square_sr70_dark_p2_real_filled_c25": {
+  "r_inside": 0.4990551626672472,
+  "grey": 191
+ },
+ "square_sr70_dark_p2_real_filled_c75": {
+  "r_inside": 0.5155545069247027,
+  "grey": 64
+ },
+ "square_sr70_dark_p3_real_filled_c25": {
+  "r_inside": 0.49811117694102597,
+  "grey": 191
+ },
+ "square_sr70_dark_p3_real_filled_c75": {
+  "r_inside": 0.5148166330694555,
+  "grey": 64
+ },
+ "square_sr70_dark_p4_real_filled_c25": {
+  "r_inside": 0.49113125007182534,
+  "grey": 191
+ },
+ "square_sr70_dark_p4_real_filled_c75": {
+  "r_inside": 0.5035418199988035,
+  "grey": 64
+ },
+ "square_sr70_light_p0_real_filled_c25": {
+  "r_inside": 0.5004727697362988,
+  "grey": 64
+ },
+ "square_sr70_light_p0_real_filled_c75": {
+  "r_inside": 0.5049565297484968,
+  "grey": 191
+ },
+ "square_sr70_light_p1_real_filled_c25": {
+  "r_inside": 0.510412973823934,
+  "grey": 64
+ },
+ "square_sr70_light_p1_real_filled_c75": {
+  "r_inside": 0.5160064734606252,
+  "grey": 191
+ },
+ "square_sr70_light_p2_real_filled_c25": {
+  "r_inside": 0.5055538854929753,
+  "grey": 64
+ },
+ "square_sr70_light_p2_real_filled_c75": {
+  "r_inside": 0.5102769428110805,
+  "grey": 191
+ },
+ "square_sr70_light_p3_real_filled_c25": {
+  "r_inside": 0.5000286352018487,
+  "grey": 64
+ },
+ "square_sr70_light_p3_real_filled_c75": {
+  "r_inside": 0.5126963543471341,
+  "grey": 191
+ },
+ "square_sr70_light_p4_real_filled_c25": {
+  "r_inside": 0.4960522535020038,
+  "grey": 64
+ },
+ "square_sr70_light_p4_real_filled_c75": {
+  "r_inside": 0.5019177067880759,
+  "grey": 191
+ },
+ "triangle_sr30_dark_p0_real_filled_c25": {
+  "r_inside": 0.5328979564206467,
+  "grey": 191
+ },
+ "triangle_sr30_dark_p0_real_filled_c75": {
+  "r_inside": 0.5920695677976121,
+  "grey": 64
+ },
+ "triangle_sr30_dark_p1_real_filled_c25": {
+  "r_inside": 0.5040828680419448,
+  "grey": 191
+ },
+ "triangle_sr30_dark_p1_real_filled_c75": {
+  "r_inside": 0.5824049029914323,
+  "grey": 64
+ },
+ "triangle_sr30_dark_p2_real_filled_c25": {
+  "r_inside": 0.5058155111137822,
+  "grey": 191
+ },
+ "triangle_sr30_dark_p2_real_filled_c75": {
+  "r_inside": 0.5642223219580312,
+  "grey": 64
+ },
+ "triangle_sr30_dark_p3_real_filled_c25": {
+  "r_inside": 0.4973839670584662,
+  "grey": 191
+ },
+ "triangle_sr30_dark_p3_real_filled_c75": {
+  "r_inside": 0.5828402390096239,
+  "grey": 64
+ },
+ "triangle_sr30_dark_p4_real_filled_c25": {
+  "r_inside": 0.4996609674016867,
+  "grey": 191
+ },
+ "triangle_sr30_dark_p4_real_filled_c75": {
+  "r_inside": 0.5730228561834213,
+  "grey": 64
+ },
+ "triangle_sr30_light_p0_real_filled_c25": {
+  "r_inside": 0.5700574220761766,
+  "grey": 64
+ },
+ "triangle_sr30_light_p0_real_filled_c75": {
+  "r_inside": 0.6022330108270059,
+  "grey": 191
+ },
+ "triangle_sr30_light_p1_real_filled_c25": {
+  "r_inside": 0.5318827027376842,
+  "grey": 64
+ },
+ "triangle_sr30_light_p1_real_filled_c75": {
+  "r_inside": 0.5733782717110973,
+  "grey": 191
+ },
+ "triangle_sr30_light_p2_real_filled_c25": {
+  "r_inside": 0.5263072136610805,
+  "grey": 64
+ },
+ "triangle_sr30_light_p2_real_filled_c75": {
+  "r_inside": 0.5590372822546497,
+  "grey": 191
+ },
+ "triangle_sr30_light_p3_real_filled_c25": {
+  "r_inside": 0.538114922836508,
+  "grey": 64
+ },
+ "triangle_sr30_light_p3_real_filled_c75": {
+  "r_inside": 0.5801421773957409,
+  "grey": 191
+ },
+ "triangle_sr30_light_p4_real_filled_c25": {
+  "r_inside": 0.5312380942667971,
+  "grey": 64
+ },
+ "triangle_sr30_light_p4_real_filled_c75": {
+  "r_inside": 0.5625384390376323,
+  "grey": 191
+ },
+ "triangle_sr50_dark_p0_real_filled_c25": {
+  "r_inside": 0.4087036640420038,
+  "grey": 191
+ },
+ "triangle_sr50_dark_p0_real_filled_c75": {
+  "r_inside": 0.45676785378343565,
+  "grey": 64
+ },
+ "triangle_sr50_dark_p1_real_filled_c25": {
+  "r_inside": 0.390879088224247,
+  "grey": 191
+ },
+ "triangle_sr50_dark_p1_real_filled_c75": {
+  "r_inside": 0.43431626400664236,
+  "grey": 64
+ },
+ "triangle_sr50_dark_p2_real_filled_c25": {
+  "r_inside": 0.3800871094220962,
+  "grey": 191
+ },
+ "triangle_sr50_dark_p2_real_filled_c75": {
+  "r_inside": 0.4283154132299514,
+  "grey": 64
+ },
+ "triangle_sr50_dark_p3_real_filled_c25": {
+  "r_inside": 0.39552860786524985,
+  "grey": 191
+ },
+ "triangle_sr50_dark_p3_real_filled_c75": {
+  "r_inside": 0.44982194491345345,
+  "grey": 64
+ },
+ "triangle_sr50_dark_p4_real_filled_c25": {
+  "r_inside": 0.38435476463532636,
+  "grey": 191
+ },
+ "triangle_sr50_dark_p4_real_filled_c75": {
+  "r_inside": 0.43774640018222694,
+  "grey": 64
+ },
+ "triangle_sr50_light_p0_real_filled_c25": {
+  "r_inside": 0.42029878814670807,
+  "grey": 64
+ },
+ "triangle_sr50_light_p0_real_filled_c75": {
+  "r_inside": 0.44289338010264295,
+  "grey": 191
+ },
+ "triangle_sr50_light_p1_real_filled_c25": {
+  "r_inside": 0.41100001057224433,
+  "grey": 64
+ },
+ "triangle_sr50_light_p1_real_filled_c75": {
+  "r_inside": 0.4376549070481435,
+  "grey": 191
+ },
+ "triangle_sr50_light_p2_real_filled_c25": {
+  "r_inside": 0.39528314605378484,
+  "grey": 64
+ },
+ "triangle_sr50_light_p2_real_filled_c75": {
+  "r_inside": 0.42509090128902355,
+  "grey": 191
+ },
+ "triangle_sr50_light_p3_real_filled_c25": {
+  "r_inside": 0.4222714456635422,
+  "grey": 64
+ },
+ "triangle_sr50_light_p3_real_filled_c75": {
+  "r_inside": 0.4487451358317849,
+  "grey": 191
+ },
+ "triangle_sr50_light_p4_real_filled_c25": {
+  "r_inside": 0.40649142882900213,
+  "grey": 64
+ },
+ "triangle_sr50_light_p4_real_filled_c75": {
+  "r_inside": 0.4325931460281086,
+  "grey": 191
+ },
+ "triangle_sr70_dark_p0_real_filled_c25": {
+  "r_inside": 0.3064640870823438,
+  "grey": 191
+ },
+ "triangle_sr70_dark_p0_real_filled_c75": {
+  "r_inside": 0.3269814300623042,
+  "grey": 64
+ },
+ "triangle_sr70_dark_p1_real_filled_c25": {
+  "r_inside": 0.3090355286086856,
+  "grey": 191
+ },
+ "triangle_sr70_dark_p1_real_filled_c75": {
+  "r_inside": 0.3269881538825875,
+  "grey": 64
+ },
+ "triangle_sr70_dark_p2_real_filled_c25": {
+  "r_inside": 0.30778066266511084,
+  "grey": 191
+ },
+ "triangle_sr70_dark_p2_real_filled_c75": {
+  "r_inside": 0.3238649294547513,
+  "grey": 64
+ },
+ "triangle_sr70_dark_p3_real_filled_c25": {
+  "r_inside": 0.3100247375324303,
+  "grey": 191
+ },
+ "triangle_sr70_dark_p3_real_filled_c75": {
+  "r_inside": 0.32400585268623555,
+  "grey": 64
+ },
+ "triangle_sr70_dark_p4_real_filled_c25": {
+  "r_inside": 0.30706133346248754,
+  "grey": 191
+ },
+ "triangle_sr70_dark_p4_real_filled_c75": {
+  "r_inside": 0.3212333831413811,
+  "grey": 64
+ },
+ "triangle_sr70_light_p0_real_filled_c25": {
+  "r_inside": 0.3254169941287119,
+  "grey": 64
+ },
+ "triangle_sr70_light_p0_real_filled_c75": {
+  "r_inside": 0.32780827754347314,
+  "grey": 191
+ },
+ "triangle_sr70_light_p1_real_filled_c25": {
+  "r_inside": 0.3186133809773002,
+  "grey": 64
+ },
+ "triangle_sr70_light_p1_real_filled_c75": {
+  "r_inside": 0.32221694023231323,
+  "grey": 191
+ },
+ "triangle_sr70_light_p2_real_filled_c25": {
+  "r_inside": 0.3068959205762725,
+  "grey": 64
+ },
+ "triangle_sr70_light_p2_real_filled_c75": {
+  "r_inside": 0.31049774748056463,
+  "grey": 191
+ },
+ "triangle_sr70_light_p3_real_filled_c25": {
+  "r_inside": 0.3248049833071554,
+  "grey": 64
+ },
+ "triangle_sr70_light_p3_real_filled_c75": {
+  "r_inside": 0.32741852918114756,
+  "grey": 191
+ },
+ "triangle_sr70_light_p4_real_filled_c25": {
+  "r_inside": 0.3182748195020204,
+  "grey": 64
+ },
+ "triangle_sr70_light_p4_real_filled_c75": {
+  "r_inside": 0.31430590943709885,
+  "grey": 191
+ }
+}

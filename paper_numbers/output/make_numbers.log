@@ -1,0 +1,1191 @@
+# numbers.tex: 1955 macros (1178 quantities); tab_readout.tex; tab_survey.tex
+# readout swap: results created 2026-10-17 21:52:48; complete 20, provisional 0, missing 0 of 20 cells
+# file codes: [core2] = v2/verify/core_aoi_D30_835295.json; [lnsum] = v2/verify/local_nulls_summary.json; [lns] = v2/verify/local_nulls_stats.json; [fill] = v2/verify/fill_contrast_stats.json; [pos] = v2/verify/position_check.json; [S2] = v2/scores/results.json; [S2raw]/ = v2/scores/raw/; [D2] = v2/decompose/results.json; [A2] = v2/anatomy/anatomy.json; [S3] = v3/scores/results.json; [F3] = v3/gpu/full/results_full.json; [conv] = v2/conventions.md; [enc] = v2/verify/encoding_nulls.json
+# 0. Design counts (stimuli, statistics, training data, readout-swap design)
+\NKzConfigs: 60: [D2]/design/n_configs (= [conv])
+\NEhrConfigs: 40: [conv], conventions paragraph: 'Mean over configurations (60 Kanizsa, 40 Ehrenstein)'
+\NKzCells: 12: [S2]/cells/kanizsa (length: shape x support ratio x polarity)
+\NEhrCells: 8: [S2]/cells/ehrenstein (length: radius x line count x polarity)
+\NPositions: 5: [D2]/design/positions_per_cell
+\NKzConditions: 9: derived: conditions named in [S2]/models/DeepGaze IIE/variants/native/kanizsa/effects plus control180
+\NEhrConditions: 5: derived: conditions named in ... ehrenstein/effects plus control_end
+\NKzImages: 540: derived: NKzConditions x NKzConfigs
+\NEhrImages: 200: derived: NEhrConditions x NEhrConfigs
+\NStimImages: 740: derived: NKzImages + NEhrImages
+\NAltImages: 360: derived: [S3]/models/DeepGaze IIE/results/r_inside/all/ratio_alt_phase (6 angle x phase keys) x NKzConfigs
+\NAltAngles: 3: derived: angles in ... ratio_alt_phase keys
+\AltAnglesList: 10, 20 and 30: derived: angles in ... ratio_alt_phase keys (degrees)
+\NBoot: 10,000: [S2]/bootstrap
+\NLocalNulls: 15: derived: count of models with kind 'local null' in [S3]/models
+\LocalNullSigmas: 8, 16, 25, 40 and 60: derived: sigma suffixes of the local-null names in [S3]/models
+\NSurveyModels: 6: derived: the six saliency models of [S2]/models (edge-energy null excluded)
+\NTrainImages: 12,803: [A2]/records/12/fixation_training_data
+\NTrainSalicon: 10,000: [A2]/records/12/fixation_training_data (SALICON = mouse tracking)
+\NTrainMIT: 803: [A2]/records/12/fixation_training_data
+\NTrainCAT: 2,000: [A2]/records/12/fixation_training_data
+\NMITHeldout: 200: [A2]/records/12/fixation_training_data
+\NTrainEpochs: 6: [A2]/records/12/training/epochs (full-data recipe = sweep recipe, readout_swap/README.md)
+\NTrainBatch: 32: [A2]/records/12/training/batch
+\ValidityMargin: 0.03: [F3]/cc_margin
+\RSNFeatureSets: 4: design: readout_swap/README.md (4 feature sets); keys of [F3]/mit
+\RSNReadouts: 5: design: readout_swap/README.md (R1n, R1, R2, R3, R4)
+\RSNSeedsPlanned: 3: design: readout_swap/README.md (seeds 0, 1, 2)
+\RSNModelsPlanned: 60: derived: RSNFeatureSets x RSNReadouts x RSNSeedsPlanned
+# 1. Survey: six saliency models and the edge-energy null (v2/scores/results.json; position and core from v2/verify)
+\SvyIIEKz (+CI): +0.098 [0.072, 0.124]: [S2]/models/DeepGaze IIE/variants/native/kanizsa/effects/illusory-control180/inside
+\SvyIIEKzNinety (+CI): +0.104 [0.074, 0.136]: [S2]/models/DeepGaze IIE/variants/native/kanizsa/effects/illusory-control90/inside
+\SvyIIERealFilled (+CI): +0.245 [0.218, 0.271]: [S2]/models/DeepGaze IIE/variants/native/kanizsa/effects/real_filled-control180/inside
+\SvyIIEReal (+CI): +0.230 [0.204, 0.256]: [S2]/models/DeepGaze IIE/variants/native/kanizsa/effects/real-control180/inside
+\SvyIIEKzP: p < .001: [S2]/models/DeepGaze IIE/variants/native/kanizsa/effects/illusory-control180/inside/p_str
+\SvyIIEEhr (+CI): +0.034 [0.024, 0.043]: [S2]/models/DeepGaze IIE/variants/native/ehrenstein/effects/illusory-control_end/inside
+\SvyIIEKzIndex (+CI): 0.40 [0.28, 0.55]: [S2]/models/DeepGaze IIE/variants/native/kanizsa/index/inside/real_filled
+\SvyIIEEhrIndex (+CI): 0.33 [0.29, 0.38]: [S2]/models/DeepGaze IIE/variants/native/ehrenstein/index/inside/real_filled
+\SvyIIEUniTen (+CI): 0.82 [0.70, 0.93]: [S2]/models/DeepGaze IIE/variants/native/kanizsa/section_B/inside/ratio_10
+\SvyIIEUniTwenty (+CI): 0.49 [0.34, 0.62]: [S2]/models/DeepGaze IIE/variants/native/kanizsa/section_B/inside/ratio_20
+\SvyIIEUniThirty (+CI): 0.08 [-0.05, 0.21]: [S2]/models/DeepGaze IIE/variants/native/kanizsa/section_B/inside/ratio_30
+\SvyIIEUniTwentyEroded (+CI): 0.50 [0.37, 0.63]: [S2]/models/DeepGaze IIE/variants/native/kanizsa/section_B/inside_eroded/ratio_20
+\SvyIIEUniTwentyErodedAll (+CI): 0.51 [0.38, 0.64]: [S2]/models/DeepGaze IIE/variants/native/kanizsa/section_B/inside_eroded_all/ratio_20
+\SvyIIEPosMin: +0.093: derived: min over the 5 positions of [pos]/DeepGaze_IIE
+\SvyIIEPosMax: +0.103: derived: max over the 5 positions of [pos]/DeepGaze_IIE
+\SvyIIEKzDark: +0.081: EXTRA SOURCE [S2raw]/DeepGaze_IIE.json (per-image r_inside of the run summarised by [S2]): mean over the 30 dark configurations of r(illusory) - r(control180)
+\SvyIIEKzLight: +0.114: EXTRA SOURCE [S2raw]/DeepGaze_IIE.json (per-image r_inside of the run summarised by [S2]): mean over the 30 light configurations of r(illusory) - r(control180)
+\SvyMSDBKz (+CI): +0.075 [0.056, 0.095]: [S2]/models/DeepGaze MSDB/variants/native/kanizsa/effects/illusory-control180/inside
+\SvyMSDBKzNinety (+CI): +0.091 [0.069, 0.114]: [S2]/models/DeepGaze MSDB/variants/native/kanizsa/effects/illusory-control90/inside
+\SvyMSDBRealFilled (+CI): +0.163 [0.139, 0.187]: [S2]/models/DeepGaze MSDB/variants/native/kanizsa/effects/real_filled-control180/inside
+\SvyMSDBReal (+CI): +0.156 [0.129, 0.182]: [S2]/models/DeepGaze MSDB/variants/native/kanizsa/effects/real-control180/inside
+\SvyMSDBKzP: p < .001: [S2]/models/DeepGaze MSDB/variants/native/kanizsa/effects/illusory-control180/inside/p_str
+\SvyMSDBEhr (+CI): +0.025 [0.012, 0.038]: [S2]/models/DeepGaze MSDB/variants/native/ehrenstein/effects/illusory-control_end/inside
+\SvyMSDBKzIndex (+CI): 0.46 [0.34, 0.58]: [S2]/models/DeepGaze MSDB/variants/native/kanizsa/index/inside/real_filled
+\SvyMSDBEhrIndex (+CI): 0.24 [0.11, 0.39]: [S2]/models/DeepGaze MSDB/variants/native/ehrenstein/index/inside/real_filled
+\SvyMSDBUniTen (+CI): 0.81 [0.69, 0.91]: [S2]/models/DeepGaze MSDB/variants/native/kanizsa/section_B/inside/ratio_10
+\SvyMSDBUniTwenty (+CI): 0.60 [0.36, 0.79]: [S2]/models/DeepGaze MSDB/variants/native/kanizsa/section_B/inside/ratio_20
+\SvyMSDBUniThirty (+CI): 0.35 [0.06, 0.58]: [S2]/models/DeepGaze MSDB/variants/native/kanizsa/section_B/inside/ratio_30
+\SvyMSDBUniTwentyEroded (+CI): 0.61 [0.38, 0.79]: [S2]/models/DeepGaze MSDB/variants/native/kanizsa/section_B/inside_eroded/ratio_20
+\SvyMSDBUniTwentyErodedAll (+CI): 0.58 [0.35, 0.77]: [S2]/models/DeepGaze MSDB/variants/native/kanizsa/section_B/inside_eroded_all/ratio_20
+\SvyMSDBPosMin: +0.070: derived: min over the 5 positions of [pos]/DeepGaze_MSDB
+\SvyMSDBPosMax: +0.078: derived: max over the 5 positions of [pos]/DeepGaze_MSDB
+\SvyMSDBKzDark: +0.066: EXTRA SOURCE [S2raw]/DeepGaze_MSDB.json (per-image r_inside of the run summarised by [S2]): mean over the 30 dark configurations of r(illusory) - r(control180)
+\SvyMSDBKzLight: +0.084: EXTRA SOURCE [S2raw]/DeepGaze_MSDB.json (per-image r_inside of the run summarised by [S2]): mean over the 30 light configurations of r(illusory) - r(control180)
+\SvyMSINetKz (+CI): -0.016 [-0.030, 0.001]: [S2]/models/MSI-Net/variants/native/kanizsa/effects/illusory-control180/inside
+\SvyMSINetKzNinety (+CI): +0.001 [-0.013, 0.017]: [S2]/models/MSI-Net/variants/native/kanizsa/effects/illusory-control90/inside
+\SvyMSINetRealFilled (+CI): +0.111 [0.090, 0.131]: [S2]/models/MSI-Net/variants/native/kanizsa/effects/real_filled-control180/inside
+\SvyMSINetReal (+CI): +0.158 [0.131, 0.183]: [S2]/models/MSI-Net/variants/native/kanizsa/effects/real-control180/inside
+\SvyMSINetKzP: p = .061: [S2]/models/MSI-Net/variants/native/kanizsa/effects/illusory-control180/inside/p_str
+\SvyMSINetEhr (+CI): +0.0003 [-0.013, 0.015]: [S2]/models/MSI-Net/variants/native/ehrenstein/effects/illusory-control_end/inside
+\SvyMSINetKzIndex (+CI): -0.14 [-0.27, 0.01]: [S2]/models/MSI-Net/variants/native/kanizsa/index/inside/real_filled
+\SvyMSINetEhrIndex (+CI): 0.00 [-0.06, 0.10]: [S2]/models/MSI-Net/variants/native/ehrenstein/index/inside/real_filled
+\SvyMSINetPosMin: -0.022: derived: min over the 5 positions of [pos]/MSI-Net
+\SvyMSINetPosMax: -0.012: derived: max over the 5 positions of [pos]/MSI-Net
+\SvyMSINetKzDark: -0.035: EXTRA SOURCE [S2raw]/MSI-Net.json (per-image r_inside of the run summarised by [S2]): mean over the 30 dark configurations of r(illusory) - r(control180)
+\SvyMSINetKzLight: +0.003: EXTRA SOURCE [S2raw]/MSI-Net.json (per-image r_inside of the run summarised by [S2]): mean over the 30 light configurations of r(illusory) - r(control180)
+\SvyMSINetKzCore (+CI): -0.014 [-0.027, -0.001]: [core2]/MSI-Net/illusory:r_core (core r, D 30 px)
+\SvyMSINetKzCoreShare (+CI): -0.008 [-0.015, -0.0003]: [core2]/MSI-Net/illusory:core (core share of map mass, D 30 px)
+\SvyXSAsppKz (+CI): -0.160 [-0.201, -0.122]: [S2]/models/xSoyelNet-ASPP/variants/native/kanizsa/effects/illusory-control180/inside
+\SvyXSAsppKzNinety (+CI): -0.149 [-0.189, -0.113]: [S2]/models/xSoyelNet-ASPP/variants/native/kanizsa/effects/illusory-control90/inside
+\SvyXSAsppRealFilled (+CI): -0.073 [-0.105, -0.039]: [S2]/models/xSoyelNet-ASPP/variants/native/kanizsa/effects/real_filled-control180/inside
+\SvyXSAsppReal (+CI): -0.132 [-0.166, -0.096]: [S2]/models/xSoyelNet-ASPP/variants/native/kanizsa/effects/real-control180/inside
+\SvyXSAsppKzP: p < .001: [S2]/models/xSoyelNet-ASPP/variants/native/kanizsa/effects/illusory-control180/inside/p_str
+\SvyXSAsppEhr (+CI): -0.006 [-0.031, 0.018]: [S2]/models/xSoyelNet-ASPP/variants/native/ehrenstein/effects/illusory-control_end/inside
+\SvyXSAsppEhrIndex (+CI): -0.10 [-0.61, 0.28]: [S2]/models/xSoyelNet-ASPP/variants/native/ehrenstein/index/inside/real_filled
+\SvyXSAsppPosMin: -0.180: derived: min over the 5 positions of [pos]/xSoyelNet-ASPP
+\SvyXSAsppPosMax: -0.139: derived: max over the 5 positions of [pos]/xSoyelNet-ASPP
+\SvyXSAsppKzDark: -0.191: EXTRA SOURCE [S2raw]/xSoyelNet-ASPP.json (per-image r_inside of the run summarised by [S2]): mean over the 30 dark configurations of r(illusory) - r(control180)
+\SvyXSAsppKzLight: -0.129: EXTRA SOURCE [S2raw]/xSoyelNet-ASPP.json (per-image r_inside of the run summarised by [S2]): mean over the 30 light configurations of r(illusory) - r(control180)
+\SvyXSAsppKzCore (+CI): -0.123 [-0.153, -0.096]: [core2]/xSoyelNet-ASPP/illusory:r_core (core r, D 30 px)
+\SvyXSAsppKzCoreShare (+CI): -0.069 [-0.084, -0.055]: [core2]/xSoyelNet-ASPP/illusory:core (core share of map mass, D 30 px)
+\SvyXSMlKz (+CI): -0.024 [-0.035, -0.013]: [S2]/models/xSoyelNet-ML/variants/native/kanizsa/effects/illusory-control180/inside
+\SvyXSMlKzNinety (+CI): +0.030 [0.019, 0.041]: [S2]/models/xSoyelNet-ML/variants/native/kanizsa/effects/illusory-control90/inside
+\SvyXSMlRealFilled (+CI): +0.071 [0.056, 0.087]: [S2]/models/xSoyelNet-ML/variants/native/kanizsa/effects/real_filled-control180/inside
+\SvyXSMlReal (+CI): +0.049 [0.036, 0.062]: [S2]/models/xSoyelNet-ML/variants/native/kanizsa/effects/real-control180/inside
+\SvyXSMlKzP: p < .001: [S2]/models/xSoyelNet-ML/variants/native/kanizsa/effects/illusory-control180/inside/p_str
+\SvyXSMlEhr (+CI): +0.034 [0.023, 0.046]: [S2]/models/xSoyelNet-ML/variants/native/ehrenstein/effects/illusory-control_end/inside
+\SvyXSMlKzIndex (+CI): -0.34 [-0.51, -0.19]: [S2]/models/xSoyelNet-ML/variants/native/kanizsa/index/inside/real_filled
+\SvyXSMlEhrIndex (+CI): 0.33 [0.24, 0.42]: [S2]/models/xSoyelNet-ML/variants/native/ehrenstein/index/inside/real_filled
+\SvyXSMlPosMin: -0.035: derived: min over the 5 positions of [pos]/xSoyelNet-ML
+\SvyXSMlPosMax: -0.014: derived: max over the 5 positions of [pos]/xSoyelNet-ML
+\SvyXSMlKzDark: -0.011: EXTRA SOURCE [S2raw]/xSoyelNet-ML.json (per-image r_inside of the run summarised by [S2]): mean over the 30 dark configurations of r(illusory) - r(control180)
+\SvyXSMlKzLight: -0.038: EXTRA SOURCE [S2raw]/xSoyelNet-ML.json (per-image r_inside of the run summarised by [S2]): mean over the 30 light configurations of r(illusory) - r(control180)
+\SvyXSMlKzCore (+CI): -0.013 [-0.026, -0.002]: [core2]/xSoyelNet-ML/illusory:r_core (core r, D 30 px)
+\SvyXSMlKzCoreShare (+CI): -0.010 [-0.017, -0.004]: [core2]/xSoyelNet-ML/illusory:core (core share of map mass, D 30 px)
+\SvySpecResKz (+CI): -0.035 [-0.050, -0.020]: [S2]/models/Spectral residual/variants/native/kanizsa/effects/illusory-control180/inside
+\SvySpecResKzNinety (+CI): -0.036 [-0.051, -0.021]: [S2]/models/Spectral residual/variants/native/kanizsa/effects/illusory-control90/inside
+\SvySpecResRealFilled (+CI): -0.023 [-0.055, 0.010]: [S2]/models/Spectral residual/variants/native/kanizsa/effects/real_filled-control180/inside
+\SvySpecResReal (+CI): -0.010 [-0.031, 0.014]: [S2]/models/Spectral residual/variants/native/kanizsa/effects/real-control180/inside
+\SvySpecResKzP: p < .001: [S2]/models/Spectral residual/variants/native/kanizsa/effects/illusory-control180/inside/p_str
+\SvySpecResEhr (+CI): -0.009 [-0.015, -0.002]: [S2]/models/Spectral residual/variants/native/ehrenstein/effects/illusory-control_end/inside
+\SvySpecResEhrIndex (+CI): -0.26 [-0.51, -0.10]: [S2]/models/Spectral residual/variants/native/ehrenstein/index/inside/real_filled
+\SvySpecResPosMin: -0.048: derived: min over the 5 positions of [pos]/Spectral_residual
+\SvySpecResPosMax: -0.002: derived: max over the 5 positions of [pos]/Spectral_residual
+\SvySpecResKzDark: -0.030: EXTRA SOURCE [S2raw]/Spectral_residual.json (per-image r_inside of the run summarised by [S2]): mean over the 30 dark configurations of r(illusory) - r(control180)
+\SvySpecResKzLight: -0.040: EXTRA SOURCE [S2raw]/Spectral_residual.json (per-image r_inside of the run summarised by [S2]): mean over the 30 light configurations of r(illusory) - r(control180)
+\SvyEdgeNullKz (+CI): -0.069 [-0.085, -0.052]: [S2]/models/Edge-energy null/variants/native/kanizsa/effects/illusory-control180/inside
+\SvyEdgeNullKzNinety (+CI): -0.071 [-0.088, -0.056]: [S2]/models/Edge-energy null/variants/native/kanizsa/effects/illusory-control90/inside
+\SvyEdgeNullRealFilled (+CI): +0.036 [-0.011, 0.086]: [S2]/models/Edge-energy null/variants/native/kanizsa/effects/real_filled-control180/inside
+\SvyEdgeNullReal (+CI): +0.183 [0.109, 0.258]: [S2]/models/Edge-energy null/variants/native/kanizsa/effects/real-control180/inside
+\SvyEdgeNullKzP: p < .001: [S2]/models/Edge-energy null/variants/native/kanizsa/effects/illusory-control180/inside/p_str
+\SvyEdgeNullEhr (+CI): -0.023 [-0.024, -0.022]: [S2]/models/Edge-energy null/variants/native/ehrenstein/effects/illusory-control_end/inside
+\SvyEdgeNullEhrIndex (+CI): -1.49 [-5.48, -0.84]: [S2]/models/Edge-energy null/variants/native/ehrenstein/index/inside/real_filled
+\SvyEdgeNullPosMin: -0.069: derived: min over the 5 positions of [pos]/Edge-energy_null
+\SvyEdgeNullPosMax: -0.069: derived: max over the 5 positions of [pos]/Edge-energy_null
+\SvyEdgeNullKzDark: -0.069: EXTRA SOURCE [S2raw]/Edge-energy_null.json (per-image r_inside of the run summarised by [S2]): mean over the 30 dark configurations of r(illusory) - r(control180)
+\SvyEdgeNullKzLight: -0.069: EXTRA SOURCE [S2raw]/Edge-energy_null.json (per-image r_inside of the run summarised by [S2]): mean over the 30 light configurations of r(illusory) - r(control180)
+\SvyEdgeNullKzCore (+CI): -0.031 [-0.037, -0.024]: [core2]/Edge-energy_null/illusory:r_core (core r, D 30 px)
+\SvyEdgeNullKzCoreShare (+CI): -0.015 [-0.018, -0.012]: [core2]/Edge-energy_null/illusory:core (core share of map mass, D 30 px)
+\SvyNPositiveBothControls: 2: derived: survey models (of NSurveyModels) whose Kanizsa CI lies above 0 against control180 and control90 ([S2])
+\SvyNPositiveEverywhere: 2: derived: of those, models positive at every position ([pos]) and polarity (v2/scores/raw)
+\SvyNSignConstant: 5: derived: survey models whose Kanizsa effect keeps one sign over all positions and both polarities
+\SvyMaxErodedChange: 0.008: derived: max over every model in [S2]/models (size avg for layer readouts), Kanizsa vs control180 and control90 and Ehrenstein, of |effect(inside_eroded or inside_eroded_all) - effect(inside)|
+\SvyMaxModelKz: +0.098: derived: largest Kanizsa effect among the six survey models (IIE)
+\MaxAnyModelKz: +0.145: derived: largest Kanizsa effect among survey models, v2 layer readouts and full-data readouts (SigLIP-L L24)
+# 2. DeepGaze IIE and MSDB: core measures, uniform vs alternating rotation, support ratio (v3/scores/results.json)
+\AltIIEUniTwenty (+CI): 0.49 [0.34, 0.62]: [S3]/models/DeepGaze IIE/results/r_inside/all/ratio_uni/20
+\AltIIEAltTwenty (+CI): 0.75 [0.65, 0.84]: [S3]/models/DeepGaze IIE/results/r_inside/all/ratio_alt/20
+\AltIIEUniThirty (+CI): 0.08 [-0.05, 0.21]: [S3]/models/DeepGaze IIE/results/r_inside/all/ratio_uni/30
+\AltIIEAltThirty (+CI): 0.45 [0.32, 0.57]: [S3]/models/DeepGaze IIE/results/r_inside/all/ratio_alt/30
+\AltIIEDropTwenty (+CI): 0.48 [0.37, 0.58]: [S3]/models/DeepGaze IIE/results/r_inside/all/drop_ratio/20
+\AltIIEDropThirty (+CI): 0.60 [0.51, 0.67]: [S3]/models/DeepGaze IIE/results/r_inside/all/drop_ratio/30
+\AltIIELossUniTwenty (+CI): +0.050 [0.031, 0.069]: [S3]/models/DeepGaze IIE/results/r_inside/all/drop_uni/20 (m(illusory) - m(mis); positive = figure loses mass)
+\AltIIELossAltTwenty (+CI): +0.024 [0.013, 0.037]: [S3]/models/DeepGaze IIE/results/r_inside/all/drop_alt/20 (m(illusory) - m(alt))
+\AltIIELossUniThirty (+CI): +0.089 [0.062, 0.118]: [S3]/models/DeepGaze IIE/results/r_inside/all/drop_uni/30 (m(illusory) - m(mis); positive = figure loses mass)
+\AltIIELossAltThirty (+CI): +0.054 [0.034, 0.075]: [S3]/models/DeepGaze IIE/results/r_inside/all/drop_alt/30 (m(illusory) - m(alt))
+\SvyIIESRSlope (+CI): +0.227 [0.117, 0.341]: [S3]/models/DeepGaze IIE/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr (per unit support ratio)
+\SvyIIEKzSRThree: +0.045: [S3]/models/DeepGaze IIE/results/r_inside/all/sr_slope_vs_control180/mean_by_sr/0.3 (aligned effect at support ratio 0.3)
+\SvyIIEKzSRFive: +0.112: [S3]/models/DeepGaze IIE/results/r_inside/all/sr_slope_vs_control180/mean_by_sr/0.5 (aligned effect at support ratio 0.5)
+\SvyIIEKzSRSeven: +0.136: [S3]/models/DeepGaze IIE/results/r_inside/all/sr_slope_vs_control180/mean_by_sr/0.7 (aligned effect at support ratio 0.7)
+\AltIIESqAligned (+CI): +0.108 [0.062, 0.154]: [S3]/models/DeepGaze IIE/results/r_inside/square/aligned
+\AltIIESqUniTwenty (+CI): 0.50 [0.27, 0.71]: [S3]/models/DeepGaze IIE/results/r_inside/square/ratio_uni/20
+\AltIIESqAltTwenty (+CI): 0.72 [0.55, 0.90]: [S3]/models/DeepGaze IIE/results/r_inside/square/ratio_alt/20
+\AltIIESqUniThirty (+CI): 0.00 [-0.21, 0.17]: [S3]/models/DeepGaze IIE/results/r_inside/square/ratio_uni/30
+\AltIIESqAltThirty (+CI): 0.32 [0.15, 0.48]: [S3]/models/DeepGaze IIE/results/r_inside/square/ratio_alt/30
+\AltIIESqDropTwenty (+CI): 0.55 [0.34, 0.67]: [S3]/models/DeepGaze IIE/results/r_inside/square/drop_ratio/20
+\AltIIESqDropThirty (+CI): 0.68 [0.61, 0.73]: [S3]/models/DeepGaze IIE/results/r_inside/square/drop_ratio/30
+\AltIIETriAligned (+CI): +0.088 [0.065, 0.114]: [S3]/models/DeepGaze IIE/results/r_inside/triangle/aligned
+\AltIIETriUniTwenty (+CI): 0.47 [0.31, 0.63]: [S3]/models/DeepGaze IIE/results/r_inside/triangle/ratio_uni/20
+\AltIIETriAltTwenty (+CI): 0.79 [0.74, 0.83]: [S3]/models/DeepGaze IIE/results/r_inside/triangle/ratio_alt/20
+\AltIIETriUniThirty (+CI): 0.19 [0.05, 0.32]: [S3]/models/DeepGaze IIE/results/r_inside/triangle/ratio_uni/30
+\AltIIETriAltThirty (+CI): 0.61 [0.54, 0.66]: [S3]/models/DeepGaze IIE/results/r_inside/triangle/ratio_alt/30
+\AltIIETriDropTwenty (+CI): 0.40 [0.36, 0.50]: [S3]/models/DeepGaze IIE/results/r_inside/triangle/drop_ratio/20
+\AltIIETriDropThirty (+CI): 0.48 [0.44, 0.55]: [S3]/models/DeepGaze IIE/results/r_inside/triangle/drop_ratio/30
+\AltIIECoreAligned (+CI): +0.094 [0.069, 0.122]: [S3]/models/DeepGaze IIE/results/r_core30/all/aligned
+\SvyIIEKzCore (+CI): +0.094 [0.069, 0.122]: [S3]/models/DeepGaze IIE/results/r_core30/all/aligned
+\SvyIIEKzCoreNinety (+CI): +0.095 [0.067, 0.125]: [S3]/models/DeepGaze IIE/results/r_core30/all/effects_vs_control90/illusory
+\AltIIECoreUniTwenty (+CI): 0.55 [0.44, 0.66]: [S3]/models/DeepGaze IIE/results/r_core30/all/ratio_uni/20
+\AltIIECoreAltTwenty (+CI): 0.76 [0.66, 0.85]: [S3]/models/DeepGaze IIE/results/r_core30/all/ratio_alt/20
+\AltIIECoreUniThirty (+CI): 0.17 [0.09, 0.27]: [S3]/models/DeepGaze IIE/results/r_core30/all/ratio_uni/30
+\AltIIECoreAltThirty (+CI): 0.45 [0.37, 0.55]: [S3]/models/DeepGaze IIE/results/r_core30/all/ratio_alt/30
+\AltIIECoreDropTwenty (+CI): 0.54 [0.42, 0.64]: [S3]/models/DeepGaze IIE/results/r_core30/all/drop_ratio/20
+\AltIIECoreDropThirty (+CI): 0.67 [0.58, 0.72]: [S3]/models/DeepGaze IIE/results/r_core30/all/drop_ratio/30
+\AltIIECoreLossUniTwenty (+CI): +0.042 [0.027, 0.058]: [S3]/models/DeepGaze IIE/results/r_core30/all/drop_uni/20 (m(illusory) - m(mis); positive = figure loses mass)
+\AltIIECoreLossAltTwenty (+CI): +0.023 [0.012, 0.035]: [S3]/models/DeepGaze IIE/results/r_core30/all/drop_alt/20 (m(illusory) - m(alt))
+\AltIIECoreLossUniThirty (+CI): +0.077 [0.054, 0.103]: [S3]/models/DeepGaze IIE/results/r_core30/all/drop_uni/30 (m(illusory) - m(mis); positive = figure loses mass)
+\AltIIECoreLossAltThirty (+CI): +0.052 [0.032, 0.073]: [S3]/models/DeepGaze IIE/results/r_core30/all/drop_alt/30 (m(illusory) - m(alt))
+\SvyIIESRSlopeCore (+CI): +0.124 [-0.027, 0.294]: [S3]/models/DeepGaze IIE/results/r_core30/all/sr_slope_vs_control180/slope_per_unit_sr (per unit support ratio)
+\AltIIECoreSqAligned (+CI): +0.125 [0.084, 0.165]: [S3]/models/DeepGaze IIE/results/r_core30/square/aligned
+\AltIIECoreSqUniTwenty (+CI): 0.58 [0.44, 0.73]: [S3]/models/DeepGaze IIE/results/r_core30/square/ratio_uni/20
+\AltIIECoreSqAltTwenty (+CI): 0.75 [0.61, 0.89]: [S3]/models/DeepGaze IIE/results/r_core30/square/ratio_alt/20
+\AltIIECoreSqUniThirty (+CI): 0.15 [0.05, 0.27]: [S3]/models/DeepGaze IIE/results/r_core30/square/ratio_uni/30
+\AltIIECoreSqAltThirty (+CI): 0.39 [0.28, 0.51]: [S3]/models/DeepGaze IIE/results/r_core30/square/ratio_alt/30
+\AltIIECoreSqDropTwenty (+CI): 0.61 [0.41, 0.71]: [S3]/models/DeepGaze IIE/results/r_core30/square/drop_ratio/20
+\AltIIECoreSqDropThirty (+CI): 0.72 [0.65, 0.76]: [S3]/models/DeepGaze IIE/results/r_core30/square/drop_ratio/30
+\AltIIECoreTriAligned (+CI): +0.063 [0.051, 0.077]: [S3]/models/DeepGaze IIE/results/r_core30/triangle/aligned
+\AltIIECoreTriUniTwenty (+CI): 0.49 [0.34, 0.65]: [S3]/models/DeepGaze IIE/results/r_core30/triangle/ratio_uni/20
+\AltIIECoreTriAltTwenty (+CI): 0.77 [0.73, 0.82]: [S3]/models/DeepGaze IIE/results/r_core30/triangle/ratio_alt/20
+\AltIIECoreTriUniThirty (+CI): 0.21 [0.09, 0.35]: [S3]/models/DeepGaze IIE/results/r_core30/triangle/ratio_uni/30
+\AltIIECoreTriAltThirty (+CI): 0.58 [0.52, 0.62]: [S3]/models/DeepGaze IIE/results/r_core30/triangle/ratio_alt/30
+\AltIIECoreTriDropTwenty (+CI): 0.44 [0.39, 0.55]: [S3]/models/DeepGaze IIE/results/r_core30/triangle/drop_ratio/20
+\AltIIECoreTriDropThirty (+CI): 0.54 [0.49, 0.62]: [S3]/models/DeepGaze IIE/results/r_core30/triangle/drop_ratio/30
+\AltIIECoreShareAligned (+CI): +0.052 [0.038, 0.067]: [S3]/models/DeepGaze IIE/results/f_core30/all/aligned
+\SvyIIEKzCoreShare (+CI): +0.052 [0.038, 0.067]: [S3]/models/DeepGaze IIE/results/f_core30/all/aligned
+\SvyIIEKzCoreShareNinety (+CI): +0.051 [0.038, 0.066]: [S3]/models/DeepGaze IIE/results/f_core30/all/effects_vs_control90/illusory
+\AltIIECoreShareUniTwenty (+CI): 0.61 [0.49, 0.73]: [S3]/models/DeepGaze IIE/results/f_core30/all/ratio_uni/20
+\AltIIECoreShareAltTwenty (+CI): 0.80 [0.72, 0.90]: [S3]/models/DeepGaze IIE/results/f_core30/all/ratio_alt/20
+\AltIIECoreShareUniThirty (+CI): 0.24 [0.16, 0.33]: [S3]/models/DeepGaze IIE/results/f_core30/all/ratio_uni/30
+\AltIIECoreShareAltThirty (+CI): 0.51 [0.43, 0.60]: [S3]/models/DeepGaze IIE/results/f_core30/all/ratio_alt/30
+\AltIIECoreShareDropTwenty (+CI): 0.50 [0.34, 0.63]: [S3]/models/DeepGaze IIE/results/f_core30/all/drop_ratio/20
+\AltIIECoreShareDropThirty (+CI): 0.65 [0.56, 0.72]: [S3]/models/DeepGaze IIE/results/f_core30/all/drop_ratio/30
+\AltIIECoreShareLossUniTwenty (+CI): +0.020 [0.013, 0.028]: [S3]/models/DeepGaze IIE/results/f_core30/all/drop_uni/20 (m(illusory) - m(mis); positive = figure loses mass)
+\AltIIECoreShareLossAltTwenty (+CI): +0.010 [0.005, 0.016]: [S3]/models/DeepGaze IIE/results/f_core30/all/drop_alt/20 (m(illusory) - m(alt))
+\AltIIECoreShareLossUniThirty (+CI): +0.039 [0.028, 0.051]: [S3]/models/DeepGaze IIE/results/f_core30/all/drop_uni/30 (m(illusory) - m(mis); positive = figure loses mass)
+\AltIIECoreShareLossAltThirty (+CI): +0.025 [0.016, 0.036]: [S3]/models/DeepGaze IIE/results/f_core30/all/drop_alt/30 (m(illusory) - m(alt))
+\SvyIIESRSlopeCoreShare (+CI): +0.069 [-0.012, 0.155]: [S3]/models/DeepGaze IIE/results/f_core30/all/sr_slope_vs_control180/slope_per_unit_sr (per unit support ratio)
+\AltIIECoreShareSqAligned (+CI): +0.067 [0.045, 0.088]: [S3]/models/DeepGaze IIE/results/f_core30/square/aligned
+\AltIIECoreShareSqUniTwenty (+CI): 0.69 [0.55, 0.84]: [S3]/models/DeepGaze IIE/results/f_core30/square/ratio_uni/20
+\AltIIECoreShareSqAltTwenty (+CI): 0.82 [0.68, 0.97]: [S3]/models/DeepGaze IIE/results/f_core30/square/ratio_alt/20
+\AltIIECoreShareSqUniThirty (+CI): 0.27 [0.17, 0.39]: [S3]/models/DeepGaze IIE/results/f_core30/square/ratio_uni/30
+\AltIIECoreShareSqAltThirty (+CI): 0.46 [0.36, 0.58]: [S3]/models/DeepGaze IIE/results/f_core30/square/ratio_alt/30
+\AltIIECoreShareSqDropTwenty (+CI): 0.59 [0.18, 0.73]: [S3]/models/DeepGaze IIE/results/f_core30/square/drop_ratio/20
+\AltIIECoreShareSqDropThirty (+CI): 0.73 [0.65, 0.78]: [S3]/models/DeepGaze IIE/results/f_core30/square/drop_ratio/30
+\AltIIECoreShareTriAligned (+CI): +0.037 [0.029, 0.046]: [S3]/models/DeepGaze IIE/results/f_core30/triangle/aligned
+\AltIIECoreShareTriUniTwenty (+CI): 0.48 [0.34, 0.63]: [S3]/models/DeepGaze IIE/results/f_core30/triangle/ratio_uni/20
+\AltIIECoreShareTriAltTwenty (+CI): 0.79 [0.75, 0.83]: [S3]/models/DeepGaze IIE/results/f_core30/triangle/ratio_alt/20
+\AltIIECoreShareTriUniThirty (+CI): 0.20 [0.09, 0.31]: [S3]/models/DeepGaze IIE/results/f_core30/triangle/ratio_uni/30
+\AltIIECoreShareTriAltThirty (+CI): 0.59 [0.53, 0.63]: [S3]/models/DeepGaze IIE/results/f_core30/triangle/ratio_alt/30
+\AltIIECoreShareTriDropTwenty (+CI): 0.41 [0.37, 0.48]: [S3]/models/DeepGaze IIE/results/f_core30/triangle/drop_ratio/20
+\AltIIECoreShareTriDropThirty (+CI): 0.51 [0.48, 0.57]: [S3]/models/DeepGaze IIE/results/f_core30/triangle/drop_ratio/30
+\AltMSDBUniTwenty (+CI): 0.60 [0.36, 0.79]: [S3]/models/DeepGaze MSDB/results/r_inside/all/ratio_uni/20
+\AltMSDBAltTwenty (+CI): 0.71 [0.61, 0.80]: [S3]/models/DeepGaze MSDB/results/r_inside/all/ratio_alt/20
+\AltMSDBUniThirty (+CI): 0.35 [0.06, 0.58]: [S3]/models/DeepGaze MSDB/results/r_inside/all/ratio_uni/30
+\AltMSDBAltThirty (+CI): 0.52 [0.31, 0.67]: [S3]/models/DeepGaze MSDB/results/r_inside/all/ratio_alt/30
+\AltMSDBDropTwenty (+CI): 0.72 [0.57, 1.02]: [S3]/models/DeepGaze MSDB/results/r_inside/all/drop_ratio/20
+\AltMSDBDropThirty (+CI): 0.75 [0.65, 0.86]: [S3]/models/DeepGaze MSDB/results/r_inside/all/drop_ratio/30
+\AltMSDBLossUniTwenty (+CI): +0.030 [0.015, 0.045]: [S3]/models/DeepGaze MSDB/results/r_inside/all/drop_uni/20 (m(illusory) - m(mis); positive = figure loses mass)
+\AltMSDBLossAltTwenty (+CI): +0.022 [0.013, 0.030]: [S3]/models/DeepGaze MSDB/results/r_inside/all/drop_alt/20 (m(illusory) - m(alt))
+\AltMSDBLossUniThirty (+CI): +0.049 [0.033, 0.065]: [S3]/models/DeepGaze MSDB/results/r_inside/all/drop_uni/30 (m(illusory) - m(mis); positive = figure loses mass)
+\AltMSDBLossAltThirty (+CI): +0.036 [0.024, 0.049]: [S3]/models/DeepGaze MSDB/results/r_inside/all/drop_alt/30 (m(illusory) - m(alt))
+\SvyMSDBSRSlope (+CI): +0.119 [0.004, 0.246]: [S3]/models/DeepGaze MSDB/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr (per unit support ratio)
+\SvyMSDBKzSRThree: +0.042: [S3]/models/DeepGaze MSDB/results/r_inside/all/sr_slope_vs_control180/mean_by_sr/0.3 (aligned effect at support ratio 0.3)
+\SvyMSDBKzSRFive: +0.094: [S3]/models/DeepGaze MSDB/results/r_inside/all/sr_slope_vs_control180/mean_by_sr/0.5 (aligned effect at support ratio 0.5)
+\SvyMSDBKzSRSeven: +0.089: [S3]/models/DeepGaze MSDB/results/r_inside/all/sr_slope_vs_control180/mean_by_sr/0.7 (aligned effect at support ratio 0.7)
+\AltMSDBSqAligned (+CI): +0.060 [0.045, 0.077]: [S3]/models/DeepGaze MSDB/results/r_inside/square/aligned
+\AltMSDBSqUniTwenty (+CI): 0.22 [0.01, 0.45]: [S3]/models/DeepGaze MSDB/results/r_inside/square/ratio_uni/20
+\AltMSDBSqAltTwenty (+CI): 0.56 [0.43, 0.72]: [S3]/models/DeepGaze MSDB/results/r_inside/square/ratio_alt/20
+\AltMSDBSqUniThirty (+CI): -0.13 [-0.27, 0.01]: [S3]/models/DeepGaze MSDB/results/r_inside/square/ratio_uni/30
+\AltMSDBSqAltThirty (+CI): 0.16 [0.01, 0.30]: [S3]/models/DeepGaze MSDB/results/r_inside/square/ratio_alt/30
+\AltMSDBSqDropTwenty (+CI): 0.56 [0.47, 0.62]: [S3]/models/DeepGaze MSDB/results/r_inside/square/drop_ratio/20
+\AltMSDBSqDropThirty (+CI): 0.74 [0.68, 0.79]: [S3]/models/DeepGaze MSDB/results/r_inside/square/drop_ratio/30
+\AltMSDBTriAligned (+CI): +0.089 [0.057, 0.121]: [S3]/models/DeepGaze MSDB/results/r_inside/triangle/aligned
+\AltMSDBTriUniTwenty (+CI): 0.86 [0.77, 0.98]: [S3]/models/DeepGaze MSDB/results/r_inside/triangle/ratio_uni/20
+\AltMSDBTriAltTwenty (+CI): 0.81 [0.76, 0.89]: [S3]/models/DeepGaze MSDB/results/r_inside/triangle/ratio_alt/20
+\AltMSDBTriUniThirty (+CI): 0.68 [0.56, 0.80]: [S3]/models/DeepGaze MSDB/results/r_inside/triangle/ratio_uni/30
+\AltMSDBTriAltThirty (+CI): 0.76 [0.71, 0.81]: [S3]/models/DeepGaze MSDB/results/r_inside/triangle/ratio_alt/30
+\AltMSDBTriDropTwenty (+CI): 1.33 [0.71, 4.18]: [S3]/models/DeepGaze MSDB/results/r_inside/triangle/drop_ratio/20
+\AltMSDBTriDropThirty (+CI): 0.76 [0.48, 1.21]: [S3]/models/DeepGaze MSDB/results/r_inside/triangle/drop_ratio/30
+\AltMSDBCoreAligned (+CI): +0.081 [0.066, 0.096]: [S3]/models/DeepGaze MSDB/results/r_core30/all/aligned
+\SvyMSDBKzCore (+CI): +0.081 [0.066, 0.096]: [S3]/models/DeepGaze MSDB/results/r_core30/all/aligned
+\SvyMSDBKzCoreNinety (+CI): +0.099 [0.081, 0.117]: [S3]/models/DeepGaze MSDB/results/r_core30/all/effects_vs_control90/illusory
+\AltMSDBCoreUniTwenty (+CI): 0.50 [0.29, 0.71]: [S3]/models/DeepGaze MSDB/results/r_core30/all/ratio_uni/20
+\AltMSDBCoreAltTwenty (+CI): 0.65 [0.55, 0.75]: [S3]/models/DeepGaze MSDB/results/r_core30/all/ratio_alt/20
+\AltMSDBCoreUniThirty (+CI): 0.26 [0.05, 0.49]: [S3]/models/DeepGaze MSDB/results/r_core30/all/ratio_uni/30
+\AltMSDBCoreAltThirty (+CI): 0.42 [0.26, 0.60]: [S3]/models/DeepGaze MSDB/results/r_core30/all/ratio_alt/30
+\AltMSDBCoreDropTwenty (+CI): 0.71 [0.59, 0.94]: [S3]/models/DeepGaze MSDB/results/r_core30/all/drop_ratio/20
+\AltMSDBCoreDropThirty (+CI): 0.78 [0.70, 0.88]: [S3]/models/DeepGaze MSDB/results/r_core30/all/drop_ratio/30
+\AltMSDBCoreLossUniTwenty (+CI): +0.041 [0.021, 0.062]: [S3]/models/DeepGaze MSDB/results/r_core30/all/drop_uni/20 (m(illusory) - m(mis); positive = figure loses mass)
+\AltMSDBCoreLossAltTwenty (+CI): +0.029 [0.017, 0.041]: [S3]/models/DeepGaze MSDB/results/r_core30/all/drop_alt/20 (m(illusory) - m(alt))
+\AltMSDBCoreLossUniThirty (+CI): +0.060 [0.038, 0.084]: [S3]/models/DeepGaze MSDB/results/r_core30/all/drop_uni/30 (m(illusory) - m(mis); positive = figure loses mass)
+\AltMSDBCoreLossAltThirty (+CI): +0.047 [0.030, 0.066]: [S3]/models/DeepGaze MSDB/results/r_core30/all/drop_alt/30 (m(illusory) - m(alt))
+\SvyMSDBSRSlopeCore (+CI): +0.051 [-0.052, 0.155]: [S3]/models/DeepGaze MSDB/results/r_core30/all/sr_slope_vs_control180/slope_per_unit_sr (per unit support ratio)
+\AltMSDBCoreSqAligned (+CI): +0.086 [0.067, 0.108]: [S3]/models/DeepGaze MSDB/results/r_core30/square/aligned
+\AltMSDBCoreSqUniTwenty (+CI): 0.21 [0.03, 0.43]: [S3]/models/DeepGaze MSDB/results/r_core30/square/ratio_uni/20
+\AltMSDBCoreSqAltTwenty (+CI): 0.53 [0.41, 0.68]: [S3]/models/DeepGaze MSDB/results/r_core30/square/ratio_alt/20
+\AltMSDBCoreSqUniThirty (+CI): -0.07 [-0.17, 0.05]: [S3]/models/DeepGaze MSDB/results/r_core30/square/ratio_uni/30
+\AltMSDBCoreSqAltThirty (+CI): 0.17 [0.06, 0.29]: [S3]/models/DeepGaze MSDB/results/r_core30/square/ratio_alt/30
+\AltMSDBCoreSqDropTwenty (+CI): 0.60 [0.51, 0.66]: [S3]/models/DeepGaze MSDB/results/r_core30/square/drop_ratio/20
+\AltMSDBCoreSqDropThirty (+CI): 0.78 [0.72, 0.83]: [S3]/models/DeepGaze MSDB/results/r_core30/square/drop_ratio/30
+\AltMSDBCoreTriAligned (+CI): +0.076 [0.053, 0.098]: [S3]/models/DeepGaze MSDB/results/r_core30/triangle/aligned
+\AltMSDBCoreTriUniTwenty (+CI): 0.83 [0.74, 0.95]: [S3]/models/DeepGaze MSDB/results/r_core30/triangle/ratio_uni/20
+\AltMSDBCoreTriAltTwenty (+CI): 0.78 [0.71, 0.87]: [S3]/models/DeepGaze MSDB/results/r_core30/triangle/ratio_alt/20
+\AltMSDBCoreTriUniThirty (+CI): 0.64 [0.53, 0.76]: [S3]/models/DeepGaze MSDB/results/r_core30/triangle/ratio_uni/30
+\AltMSDBCoreTriAltThirty (+CI): 0.71 [0.66, 0.77]: [S3]/models/DeepGaze MSDB/results/r_core30/triangle/ratio_alt/30
+\AltMSDBCoreTriDropTwenty (+CI): 1.29 [0.74, 3.28]: [S3]/models/DeepGaze MSDB/results/r_core30/triangle/drop_ratio/20
+\AltMSDBCoreTriDropThirty (+CI): 0.79 [0.55, 1.26]: [S3]/models/DeepGaze MSDB/results/r_core30/triangle/drop_ratio/30
+\AltMSDBCoreShareAligned (+CI): +0.041 [0.032, 0.051]: [S3]/models/DeepGaze MSDB/results/f_core30/all/aligned
+\SvyMSDBKzCoreShare (+CI): +0.041 [0.032, 0.051]: [S3]/models/DeepGaze MSDB/results/f_core30/all/aligned
+\SvyMSDBKzCoreShareNinety (+CI): +0.049 [0.041, 0.058]: [S3]/models/DeepGaze MSDB/results/f_core30/all/effects_vs_control90/illusory
+\AltMSDBCoreShareUniTwenty (+CI): 0.59 [0.42, 0.77]: [S3]/models/DeepGaze MSDB/results/f_core30/all/ratio_uni/20
+\AltMSDBCoreShareAltTwenty (+CI): 0.72 [0.64, 0.81]: [S3]/models/DeepGaze MSDB/results/f_core30/all/ratio_alt/20
+\AltMSDBCoreShareUniThirty (+CI): 0.40 [0.24, 0.59]: [S3]/models/DeepGaze MSDB/results/f_core30/all/ratio_uni/30
+\AltMSDBCoreShareAltThirty (+CI): 0.52 [0.40, 0.65]: [S3]/models/DeepGaze MSDB/results/f_core30/all/ratio_alt/30
+\AltMSDBCoreShareDropTwenty (+CI): 0.68 [0.51, 1.03]: [S3]/models/DeepGaze MSDB/results/f_core30/all/drop_ratio/20
+\AltMSDBCoreShareDropThirty (+CI): 0.81 [0.71, 0.95]: [S3]/models/DeepGaze MSDB/results/f_core30/all/drop_ratio/30
+\AltMSDBCoreShareLossUniTwenty (+CI): +0.017 [0.008, 0.026]: [S3]/models/DeepGaze MSDB/results/f_core30/all/drop_uni/20 (m(illusory) - m(mis); positive = figure loses mass)
+\AltMSDBCoreShareLossAltTwenty (+CI): +0.011 [0.007, 0.017]: [S3]/models/DeepGaze MSDB/results/f_core30/all/drop_alt/20 (m(illusory) - m(alt))
+\AltMSDBCoreShareLossUniThirty (+CI): +0.025 [0.014, 0.036]: [S3]/models/DeepGaze MSDB/results/f_core30/all/drop_uni/30 (m(illusory) - m(mis); positive = figure loses mass)
+\AltMSDBCoreShareLossAltThirty (+CI): +0.020 [0.012, 0.029]: [S3]/models/DeepGaze MSDB/results/f_core30/all/drop_alt/30 (m(illusory) - m(alt))
+\SvyMSDBSRSlopeCoreShare (+CI): -0.030 [-0.094, 0.031]: [S3]/models/DeepGaze MSDB/results/f_core30/all/sr_slope_vs_control180/slope_per_unit_sr (per unit support ratio)
+\AltMSDBCoreShareSqAligned (+CI): +0.046 [0.031, 0.060]: [S3]/models/DeepGaze MSDB/results/f_core30/square/aligned
+\AltMSDBCoreShareSqUniTwenty (+CI): 0.38 [0.16, 0.58]: [S3]/models/DeepGaze MSDB/results/f_core30/square/ratio_uni/20
+\AltMSDBCoreShareSqAltTwenty (+CI): 0.68 [0.55, 0.81]: [S3]/models/DeepGaze MSDB/results/f_core30/square/ratio_alt/20
+\AltMSDBCoreShareSqUniThirty (+CI): 0.17 [0.07, 0.30]: [S3]/models/DeepGaze MSDB/results/f_core30/square/ratio_uni/30
+\AltMSDBCoreShareSqAltThirty (+CI): 0.36 [0.26, 0.49]: [S3]/models/DeepGaze MSDB/results/f_core30/square/ratio_alt/30
+\AltMSDBCoreShareSqDropTwenty (+CI): 0.52 [0.36, 0.62]: [S3]/models/DeepGaze MSDB/results/f_core30/square/drop_ratio/20
+\AltMSDBCoreShareSqDropThirty (+CI): 0.77 [0.67, 0.84]: [S3]/models/DeepGaze MSDB/results/f_core30/square/drop_ratio/30
+\AltMSDBCoreShareTriAligned (+CI): +0.036 [0.027, 0.046]: [S3]/models/DeepGaze MSDB/results/f_core30/triangle/aligned
+\AltMSDBCoreShareTriUniTwenty (+CI): 0.87 [0.76, 1.00]: [S3]/models/DeepGaze MSDB/results/f_core30/triangle/ratio_uni/20
+\AltMSDBCoreShareTriAltTwenty (+CI): 0.78 [0.72, 0.85]: [S3]/models/DeepGaze MSDB/results/f_core30/triangle/ratio_alt/20
+\AltMSDBCoreShareTriUniThirty (+CI): 0.70 [0.56, 0.85]: [S3]/models/DeepGaze MSDB/results/f_core30/triangle/ratio_uni/30
+\AltMSDBCoreShareTriAltThirty (+CI): 0.71 [0.67, 0.76]: [S3]/models/DeepGaze MSDB/results/f_core30/triangle/ratio_alt/30
+\AltMSDBCoreShareTriDropTwenty (+CI): 1.65 [0.58, 8.78]: [S3]/models/DeepGaze MSDB/results/f_core30/triangle/drop_ratio/20
+\AltMSDBCoreShareTriDropThirty (+CI): 0.94 [0.66, 1.87]: [S3]/models/DeepGaze MSDB/results/f_core30/triangle/drop_ratio/30
+# 3. Local nulls: blurred corner, ink and edge-energy maps (v3/scores/results.json; Ehrenstein and indices from v2/verify)
+\NullCornerEightKz (+CI): +0.176 [0.170, 0.182]: [S3]/models/null corner_s8/results/r_inside/all/aligned
+\NullCornerEightKzNinety (+CI): +0.115 [0.088, 0.142]: [S3]/models/null corner_s8/results/r_inside/all/effects_vs_control90/illusory
+\NullCornerEightUniTwenty (+CI): 1.09 [1.08, 1.10]: [S3]/models/null corner_s8/results/r_inside/all/ratio_uni/20
+\NullCornerEightAltTwenty (+CI): 1.08 [1.06, 1.10]: [S3]/models/null corner_s8/results/r_inside/all/ratio_alt/20
+\NullCornerEightDropTwenty (+CI): 0.87 [0.75, 0.97]: [S3]/models/null corner_s8/results/r_inside/all/drop_ratio/20
+\NullCornerEightLossUniTwenty (+CI): -0.016 [-0.018, -0.013]: [S3]/models/null corner_s8/results/r_inside/all/drop_uni/20 (positive = figure loses mass)
+\NullCornerEightLossAltTwenty (+CI): -0.014 [-0.018, -0.010]: [S3]/models/null corner_s8/results/r_inside/all/drop_alt/20
+\NullCornerEightSRSlope (+CI): -0.040 [-0.069, -0.011]: [S3]/models/null corner_s8/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullCornerEightKzCore (+CI): 0.000 [0.000, 0.000]: [S3]/models/null corner_s8/results/r_core30/all/aligned
+\NullCornerEightSRSlopeCore (+CI): 0.000 [-0.0001, 0.000]: [S3]/models/null corner_s8/results/r_core30/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullCornerEightCoreMaxInducerOnly: 0.000: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null corner_s8/results/r_core30/all/effects_vs_control180 (here illusory)
+\NullCornerEightKzCoreShare (+CI): 0.000 [0.000, 0.000]: [S3]/models/null corner_s8/results/f_core30/all/aligned
+\NullCornerEightCoreShareMaxInducerOnly: 0.000: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null corner_s8/results/f_core30/all/effects_vs_control180 (here illusory)
+\NullCornerEightEhr: +0.030: [lnsum]/corner_s8/E_ill (point estimate; no CI in the verify files)
+\NullCornerSixteenKz (+CI): +0.211 [0.198, 0.224]: [S3]/models/null corner_s16/results/r_inside/all/aligned
+\NullCornerSixteenKzNinety (+CI): +0.134 [0.108, 0.160]: [S3]/models/null corner_s16/results/r_inside/all/effects_vs_control90/illusory
+\NullCornerSixteenUniTwenty (+CI): 1.05 [1.04, 1.07]: [S3]/models/null corner_s16/results/r_inside/all/ratio_uni/20
+\NullCornerSixteenAltTwenty (+CI): 1.05 [1.03, 1.06]: [S3]/models/null corner_s16/results/r_inside/all/ratio_alt/20
+\NullCornerSixteenDropTwenty (+CI): 0.90 [0.76, 0.99]: [S3]/models/null corner_s16/results/r_inside/all/drop_ratio/20
+\NullCornerSixteenLossUniTwenty (+CI): -0.011 [-0.014, -0.008]: [S3]/models/null corner_s16/results/r_inside/all/drop_uni/20 (positive = figure loses mass)
+\NullCornerSixteenLossAltTwenty (+CI): -0.010 [-0.013, -0.006]: [S3]/models/null corner_s16/results/r_inside/all/drop_alt/20
+\NullCornerSixteenSRSlope (+CI): -0.114 [-0.169, -0.059]: [S3]/models/null corner_s16/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullCornerSixteenKzCore (+CI): +0.015 [0.011, 0.019]: [S3]/models/null corner_s16/results/r_core30/all/aligned
+\NullCornerSixteenCoreUniTwenty (+CI): 1.18 [1.08, 1.38]: [S3]/models/null corner_s16/results/r_core30/all/ratio_uni/20
+\NullCornerSixteenCoreAltTwenty (+CI): 1.16 [1.07, 1.37]: [S3]/models/null corner_s16/results/r_core30/all/ratio_alt/20
+\NullCornerSixteenCoreDropTwenty (+CI): 0.91 [0.78, 0.99]: [S3]/models/null corner_s16/results/r_core30/all/drop_ratio/20
+\NullCornerSixteenSRSlopeCore (+CI): -0.036 [-0.050, -0.023]: [S3]/models/null corner_s16/results/r_core30/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullCornerSixteenCoreMaxInducerOnly: +0.019: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null corner_s16/results/r_core30/all/effects_vs_control180 (here mis30)
+\NullCornerSixteenKzCoreShare (+CI): +0.010 [0.007, 0.012]: [S3]/models/null corner_s16/results/f_core30/all/aligned
+\NullCornerSixteenCoreShareMaxInducerOnly: +0.012: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null corner_s16/results/f_core30/all/effects_vs_control180 (here mis30)
+\NullCornerSixteenEhr (+CI): +0.035 [0.031, 0.039]: [lns]/corner_s16/E
+\NullCornerSixteenKzIndex (+CI): 0.62 [0.60, 0.64]: [lns]/corner_s16/K_index
+\NullCornerTwentyFiveKz (+CI): +0.237 [0.221, 0.252]: [S3]/models/null corner_s25/results/r_inside/all/aligned
+\NullCornerTwentyFiveKzNinety (+CI): +0.141 [0.116, 0.164]: [S3]/models/null corner_s25/results/r_inside/all/effects_vs_control90/illusory
+\NullCornerTwentyFiveUniTwenty (+CI): 1.03 [1.01, 1.05]: [S3]/models/null corner_s25/results/r_inside/all/ratio_uni/20
+\NullCornerTwentyFiveAltTwenty (+CI): 1.03 [1.01, 1.05]: [S3]/models/null corner_s25/results/r_inside/all/ratio_alt/20
+\NullCornerTwentyFiveDropTwenty (+CI): 0.95 [0.78, 1.07]: [S3]/models/null corner_s25/results/r_inside/all/drop_ratio/20
+\NullCornerTwentyFiveLossUniTwenty (+CI): -0.007 [-0.011, -0.003]: [S3]/models/null corner_s25/results/r_inside/all/drop_uni/20 (positive = figure loses mass)
+\NullCornerTwentyFiveLossAltTwenty (+CI): -0.007 [-0.011, -0.003]: [S3]/models/null corner_s25/results/r_inside/all/drop_alt/20
+\NullCornerTwentyFiveSRSlope (+CI): -0.152 [-0.186, -0.118]: [S3]/models/null corner_s25/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullCornerTwentyFiveKzCore (+CI): +0.073 [0.052, 0.094]: [S3]/models/null corner_s25/results/r_core30/all/aligned
+\NullCornerTwentyFiveCoreUniTwenty (+CI): 1.10 [1.04, 1.21]: [S3]/models/null corner_s25/results/r_core30/all/ratio_uni/20
+\NullCornerTwentyFiveCoreAltTwenty (+CI): 1.09 [1.04, 1.19]: [S3]/models/null corner_s25/results/r_core30/all/ratio_alt/20
+\NullCornerTwentyFiveCoreDropTwenty (+CI): 0.91 [0.78, 1.01]: [S3]/models/null corner_s25/results/r_core30/all/drop_ratio/20
+\NullCornerTwentyFiveSRSlopeCore (+CI): -0.215 [-0.264, -0.167]: [S3]/models/null corner_s25/results/r_core30/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullCornerTwentyFiveCoreMaxInducerOnly: +0.080: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null corner_s25/results/r_core30/all/effects_vs_control180 (here alt30)
+\NullCornerTwentyFiveKzCoreShare (+CI): +0.040 [0.031, 0.048]: [S3]/models/null corner_s25/results/f_core30/all/aligned
+\NullCornerTwentyFiveCoreShareMaxInducerOnly: +0.044: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null corner_s25/results/f_core30/all/effects_vs_control180 (here mis30)
+\NullCornerTwentyFiveEhr (+CI): +0.026 [0.021, 0.031]: [lns]/corner_s25/E
+\NullCornerTwentyFiveKzIndex (+CI): 0.66 [0.63, 0.70]: [lns]/corner_s25/K_index
+\NullCornerFortyKz (+CI): +0.241 [0.227, 0.255]: [S3]/models/null corner_s40/results/r_inside/all/aligned
+\NullCornerFortyKzNinety (+CI): +0.131 [0.108, 0.154]: [S3]/models/null corner_s40/results/r_inside/all/effects_vs_control90/illusory
+\NullCornerFortyUniTwenty (+CI): 1.01 [1.00, 1.03]: [S3]/models/null corner_s40/results/r_inside/all/ratio_uni/20
+\NullCornerFortyAltTwenty (+CI): 1.02 [1.00, 1.03]: [S3]/models/null corner_s40/results/r_inside/all/ratio_alt/20
+\NullCornerFortyLossUniTwenty (+CI): -0.004 [-0.008, 0.000]: [S3]/models/null corner_s40/results/r_inside/all/drop_uni/20 (positive = figure loses mass)
+\NullCornerFortyLossAltTwenty (+CI): -0.004 [-0.008, -0.0002]: [S3]/models/null corner_s40/results/r_inside/all/drop_alt/20
+\NullCornerFortySRSlope (+CI): -0.033 [-0.146, 0.073]: [S3]/models/null corner_s40/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullCornerFortyKzCore (+CI): +0.155 [0.115, 0.193]: [S3]/models/null corner_s40/results/r_core30/all/aligned
+\NullCornerFortyCoreUniTwenty (+CI): 1.03 [1.01, 1.08]: [S3]/models/null corner_s40/results/r_core30/all/ratio_uni/20
+\NullCornerFortyCoreAltTwenty (+CI): 1.03 [1.01, 1.08]: [S3]/models/null corner_s40/results/r_core30/all/ratio_alt/20
+\NullCornerFortyCoreDropTwenty (+CI): 1.00 [0.83, 1.30]: [S3]/models/null corner_s40/results/r_core30/all/drop_ratio/20
+\NullCornerFortySRSlopeCore (+CI): -0.409 [-0.458, -0.360]: [S3]/models/null corner_s40/results/r_core30/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullCornerFortyCoreMaxInducerOnly: +0.161: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null corner_s40/results/r_core30/all/effects_vs_control180 (here mis20)
+\NullCornerFortyKzCoreShare (+CI): +0.076 [0.061, 0.090]: [S3]/models/null corner_s40/results/f_core30/all/aligned
+\NullCornerFortyCoreShareMaxInducerOnly: +0.079: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null corner_s40/results/f_core30/all/effects_vs_control180 (here alt20)
+\NullCornerFortyEhr (+CI): +0.010 [0.005, 0.015]: [lns]/corner_s40/E
+\NullCornerFortyKzIndex (+CI): 0.73 [0.70, 0.77]: [lns]/corner_s40/K_index
+\NullCornerSixtyKz (+CI): +0.194 [0.169, 0.217]: [S3]/models/null corner_s60/results/r_inside/all/aligned
+\NullCornerSixtyKzNinety (+CI): +0.097 [0.077, 0.118]: [S3]/models/null corner_s60/results/r_inside/all/effects_vs_control90/illusory
+\NullCornerSixtyUniTwenty (+CI): 1.00 [0.99, 1.02]: [S3]/models/null corner_s60/results/r_inside/all/ratio_uni/20
+\NullCornerSixtyAltTwenty (+CI): 1.01 [0.99, 1.02]: [S3]/models/null corner_s60/results/r_inside/all/ratio_alt/20
+\NullCornerSixtyLossUniTwenty (+CI): -0.001 [-0.004, 0.002]: [S3]/models/null corner_s60/results/r_inside/all/drop_uni/20 (positive = figure loses mass)
+\NullCornerSixtyLossAltTwenty (+CI): -0.001 [-0.004, 0.001]: [S3]/models/null corner_s60/results/r_inside/all/drop_alt/20
+\NullCornerSixtySRSlope (+CI): +0.119 [-0.043, 0.273]: [S3]/models/null corner_s60/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullCornerSixtyKzCore (+CI): +0.157 [0.125, 0.188]: [S3]/models/null corner_s60/results/r_core30/all/aligned
+\NullCornerSixtyCoreUniTwenty (+CI): 1.01 [0.99, 1.03]: [S3]/models/null corner_s60/results/r_core30/all/ratio_uni/20
+\NullCornerSixtyCoreAltTwenty (+CI): 1.01 [1.00, 1.03]: [S3]/models/null corner_s60/results/r_core30/all/ratio_alt/20
+\NullCornerSixtySRSlopeCore (+CI): -0.239 [-0.430, -0.067]: [S3]/models/null corner_s60/results/r_core30/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullCornerSixtyCoreMaxInducerOnly: +0.159: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null corner_s60/results/r_core30/all/effects_vs_control180 (here mis10)
+\NullCornerSixtyKzCoreShare (+CI): +0.079 [0.066, 0.091]: [S3]/models/null corner_s60/results/f_core30/all/aligned
+\NullCornerSixtyCoreShareMaxInducerOnly: +0.080: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null corner_s60/results/f_core30/all/effects_vs_control180 (here alt10)
+\NullCornerSixtyEhr: -0.001: [lnsum]/corner_s60/E_ill (point estimate; no CI in the verify files)
+\NullInkEightKz (+CI): -0.037 [-0.049, -0.028]: [S3]/models/null ink_s8/results/r_inside/all/aligned
+\NullInkEightKzNinety (+CI): -0.036 [-0.046, -0.027]: [S3]/models/null ink_s8/results/r_inside/all/effects_vs_control90/illusory
+\NullInkEightUniTwenty (+CI): 0.83 [0.79, 0.85]: [S3]/models/null ink_s8/results/r_inside/all/ratio_uni/20
+\NullInkEightAltTwenty (+CI): 0.85 [0.83, 0.86]: [S3]/models/null ink_s8/results/r_inside/all/ratio_alt/20
+\NullInkEightDropTwenty (+CI): 0.86 [0.77, 0.94]: [S3]/models/null ink_s8/results/r_inside/all/drop_ratio/20
+\NullInkEightLossUniTwenty (+CI): -0.006 [-0.007, -0.006]: [S3]/models/null ink_s8/results/r_inside/all/drop_uni/20 (positive = figure loses mass)
+\NullInkEightLossAltTwenty (+CI): -0.006 [-0.007, -0.004]: [S3]/models/null ink_s8/results/r_inside/all/drop_alt/20
+\NullInkEightSRSlope (+CI): +0.076 [0.021, 0.130]: [S3]/models/null ink_s8/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullInkEightKzCore (+CI): 0.000 [0.000, 0.000]: [S3]/models/null ink_s8/results/r_core30/all/aligned
+\NullInkEightSRSlopeCore (+CI): 0.000 [0.000, 0.000]: [S3]/models/null ink_s8/results/r_core30/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullInkEightCoreMaxInducerOnly: 0.000: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null ink_s8/results/r_core30/all/effects_vs_control180 (here illusory)
+\NullInkEightKzCoreShare (+CI): 0.000 [0.000, 0.000]: [S3]/models/null ink_s8/results/f_core30/all/aligned
+\NullInkEightCoreShareMaxInducerOnly: 0.000: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null ink_s8/results/f_core30/all/effects_vs_control180 (here illusory)
+\NullInkEightEhr: -0.013: [lnsum]/ink_s8/E_ill (point estimate; no CI in the verify files)
+\NullInkSixteenKz (+CI): -0.067 [-0.085, -0.051]: [S3]/models/null ink_s16/results/r_inside/all/aligned
+\NullInkSixteenKzNinety (+CI): -0.060 [-0.073, -0.048]: [S3]/models/null ink_s16/results/r_inside/all/effects_vs_control90/illusory
+\NullInkSixteenUniTwenty (+CI): 0.88 [0.85, 0.90]: [S3]/models/null ink_s16/results/r_inside/all/ratio_uni/20
+\NullInkSixteenAltTwenty (+CI): 0.89 [0.88, 0.91]: [S3]/models/null ink_s16/results/r_inside/all/ratio_alt/20
+\NullInkSixteenDropTwenty (+CI): 0.85 [0.76, 0.93]: [S3]/models/null ink_s16/results/r_inside/all/drop_ratio/20
+\NullInkSixteenLossUniTwenty (+CI): -0.008 [-0.009, -0.008]: [S3]/models/null ink_s16/results/r_inside/all/drop_uni/20 (positive = figure loses mass)
+\NullInkSixteenLossAltTwenty (+CI): -0.007 [-0.008, -0.006]: [S3]/models/null ink_s16/results/r_inside/all/drop_alt/20
+\NullInkSixteenSRSlope (+CI): +0.110 [0.019, 0.201]: [S3]/models/null ink_s16/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullInkSixteenKzCore (+CI): -0.003 [-0.005, -0.002]: [S3]/models/null ink_s16/results/r_core30/all/aligned
+\NullInkSixteenCoreUniTwenty (+CI): 0.87 [0.84, 0.89]: [S3]/models/null ink_s16/results/r_core30/all/ratio_uni/20
+\NullInkSixteenCoreAltTwenty (+CI): 0.89 [0.87, 0.90]: [S3]/models/null ink_s16/results/r_core30/all/ratio_alt/20
+\NullInkSixteenCoreDropTwenty (+CI): 0.86 [0.76, 0.94]: [S3]/models/null ink_s16/results/r_core30/all/drop_ratio/20
+\NullInkSixteenSRSlopeCore (+CI): +0.011 [0.004, 0.017]: [S3]/models/null ink_s16/results/r_core30/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullInkSixteenCoreMaxInducerOnly: -0.003: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null ink_s16/results/r_core30/all/effects_vs_control180 (here illusory)
+\NullInkSixteenKzCoreShare (+CI): -0.002 [-0.003, -0.002]: [S3]/models/null ink_s16/results/f_core30/all/aligned
+\NullInkSixteenCoreShareMaxInducerOnly: -0.002: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null ink_s16/results/f_core30/all/effects_vs_control180 (here illusory)
+\NullInkSixteenEhr: -0.020: [lnsum]/ink_s16/E_ill (point estimate; no CI in the verify files)
+\NullInkTwentyFiveKz (+CI): -0.086 [-0.102, -0.069]: [S3]/models/null ink_s25/results/r_inside/all/aligned
+\NullInkTwentyFiveKzNinety (+CI): -0.072 [-0.083, -0.061]: [S3]/models/null ink_s25/results/r_inside/all/effects_vs_control90/illusory
+\NullInkTwentyFiveUniTwenty (+CI): 0.90 [0.88, 0.92]: [S3]/models/null ink_s25/results/r_inside/all/ratio_uni/20
+\NullInkTwentyFiveAltTwenty (+CI): 0.92 [0.90, 0.93]: [S3]/models/null ink_s25/results/r_inside/all/ratio_alt/20
+\NullInkTwentyFiveDropTwenty (+CI): 0.85 [0.76, 0.93]: [S3]/models/null ink_s25/results/r_inside/all/drop_ratio/20
+\NullInkTwentyFiveLossUniTwenty (+CI): -0.008 [-0.009, -0.008]: [S3]/models/null ink_s25/results/r_inside/all/drop_uni/20 (positive = figure loses mass)
+\NullInkTwentyFiveLossAltTwenty (+CI): -0.007 [-0.008, -0.006]: [S3]/models/null ink_s25/results/r_inside/all/drop_alt/20
+\NullInkTwentyFiveSRSlope (+CI): +0.075 [-0.026, 0.172]: [S3]/models/null ink_s25/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullInkTwentyFiveKzCore (+CI): -0.024 [-0.034, -0.015]: [S3]/models/null ink_s25/results/r_core30/all/aligned
+\NullInkTwentyFiveCoreUniTwenty (+CI): 0.91 [0.88, 0.92]: [S3]/models/null ink_s25/results/r_core30/all/ratio_uni/20
+\NullInkTwentyFiveCoreAltTwenty (+CI): 0.92 [0.90, 0.93]: [S3]/models/null ink_s25/results/r_core30/all/ratio_alt/20
+\NullInkTwentyFiveCoreDropTwenty (+CI): 0.86 [0.76, 0.94]: [S3]/models/null ink_s25/results/r_core30/all/drop_ratio/20
+\NullInkTwentyFiveSRSlopeCore (+CI): +0.075 [0.031, 0.118]: [S3]/models/null ink_s25/results/r_core30/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullInkTwentyFiveCoreMaxInducerOnly: -0.024: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null ink_s25/results/r_core30/all/effects_vs_control180 (here illusory)
+\NullInkTwentyFiveKzCoreShare (+CI): -0.013 [-0.017, -0.009]: [S3]/models/null ink_s25/results/f_core30/all/aligned
+\NullInkTwentyFiveCoreShareMaxInducerOnly: -0.013: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null ink_s25/results/f_core30/all/effects_vs_control180 (here illusory)
+\NullInkTwentyFiveEhr (+CI): -0.024 [-0.026, -0.023]: [lns]/ink_s25/E
+\NullInkTwentyFiveKzIndex (+CI): -0.35 [-0.48, -0.26]: [lns]/ink_s25/K_index
+\NullInkFortyKz (+CI): -0.090 [-0.105, -0.076]: [S3]/models/null ink_s40/results/r_inside/all/aligned
+\NullInkFortyKzNinety (+CI): -0.069 [-0.080, -0.059]: [S3]/models/null ink_s40/results/r_inside/all/effects_vs_control90/illusory
+\NullInkFortyUniTwenty (+CI): 0.92 [0.91, 0.93]: [S3]/models/null ink_s40/results/r_inside/all/ratio_uni/20
+\NullInkFortyAltTwenty (+CI): 0.94 [0.93, 0.94]: [S3]/models/null ink_s40/results/r_inside/all/ratio_alt/20
+\NullInkFortyDropTwenty (+CI): 0.85 [0.75, 0.94]: [S3]/models/null ink_s40/results/r_inside/all/drop_ratio/20
+\NullInkFortyLossUniTwenty (+CI): -0.007 [-0.008, -0.006]: [S3]/models/null ink_s40/results/r_inside/all/drop_uni/20 (positive = figure loses mass)
+\NullInkFortyLossAltTwenty (+CI): -0.006 [-0.007, -0.005]: [S3]/models/null ink_s40/results/r_inside/all/drop_alt/20
+\NullInkFortySRSlope (+CI): -0.027 [-0.121, 0.060]: [S3]/models/null ink_s40/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullInkFortyKzCore (+CI): -0.057 [-0.073, -0.041]: [S3]/models/null ink_s40/results/r_core30/all/aligned
+\NullInkFortyCoreUniTwenty (+CI): 0.93 [0.91, 0.94]: [S3]/models/null ink_s40/results/r_core30/all/ratio_uni/20
+\NullInkFortyCoreAltTwenty (+CI): 0.94 [0.93, 0.94]: [S3]/models/null ink_s40/results/r_core30/all/ratio_alt/20
+\NullInkFortyCoreDropTwenty (+CI): 0.86 [0.76, 0.94]: [S3]/models/null ink_s40/results/r_core30/all/drop_ratio/20
+\NullInkFortySRSlopeCore (+CI): +0.128 [0.059, 0.197]: [S3]/models/null ink_s40/results/r_core30/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullInkFortyCoreMaxInducerOnly: -0.057: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null ink_s40/results/r_core30/all/effects_vs_control180 (here illusory)
+\NullInkFortyKzCoreShare (+CI): -0.028 [-0.035, -0.021]: [S3]/models/null ink_s40/results/f_core30/all/aligned
+\NullInkFortyCoreShareMaxInducerOnly: -0.028: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null ink_s40/results/f_core30/all/effects_vs_control180 (here illusory)
+\NullInkFortyEhr (+CI): -0.025 [-0.026, -0.024]: [lns]/ink_s40/E
+\NullInkFortyKzIndex (+CI): -0.50 [-0.80, -0.35]: [lns]/ink_s40/K_index
+\NullInkSixtyKz (+CI): -0.070 [-0.083, -0.058]: [S3]/models/null ink_s60/results/r_inside/all/aligned
+\NullInkSixtyKzNinety (+CI): -0.050 [-0.059, -0.041]: [S3]/models/null ink_s60/results/r_inside/all/effects_vs_control90/illusory
+\NullInkSixtyUniTwenty (+CI): 0.94 [0.93, 0.94]: [S3]/models/null ink_s60/results/r_inside/all/ratio_uni/20
+\NullInkSixtyAltTwenty (+CI): 0.95 [0.94, 0.95]: [S3]/models/null ink_s60/results/r_inside/all/ratio_alt/20
+\NullInkSixtyDropTwenty (+CI): 0.84 [0.74, 0.94]: [S3]/models/null ink_s60/results/r_inside/all/drop_ratio/20
+\NullInkSixtyLossUniTwenty (+CI): -0.004 [-0.005, -0.004]: [S3]/models/null ink_s60/results/r_inside/all/drop_uni/20 (positive = figure loses mass)
+\NullInkSixtyLossAltTwenty (+CI): -0.004 [-0.005, -0.003]: [S3]/models/null ink_s60/results/r_inside/all/drop_alt/20
+\NullInkSixtySRSlope (+CI): -0.085 [-0.150, -0.020]: [S3]/models/null ink_s60/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullInkSixtyKzCore (+CI): -0.057 [-0.068, -0.045]: [S3]/models/null ink_s60/results/r_core30/all/aligned
+\NullInkSixtyCoreUniTwenty (+CI): 0.94 [0.93, 0.94]: [S3]/models/null ink_s60/results/r_core30/all/ratio_uni/20
+\NullInkSixtyCoreAltTwenty (+CI): 0.95 [0.94, 0.95]: [S3]/models/null ink_s60/results/r_core30/all/ratio_alt/20
+\NullInkSixtyCoreDropTwenty (+CI): 0.86 [0.75, 0.94]: [S3]/models/null ink_s60/results/r_core30/all/drop_ratio/20
+\NullInkSixtySRSlopeCore (+CI): +0.051 [-0.016, 0.118]: [S3]/models/null ink_s60/results/r_core30/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullInkSixtyCoreMaxInducerOnly: -0.057: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null ink_s60/results/r_core30/all/effects_vs_control180 (here illusory)
+\NullInkSixtyKzCoreShare (+CI): -0.029 [-0.035, -0.022]: [S3]/models/null ink_s60/results/f_core30/all/aligned
+\NullInkSixtyCoreShareMaxInducerOnly: -0.029: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null ink_s60/results/f_core30/all/effects_vs_control180 (here illusory)
+\NullInkSixtyEhr: -0.019: [lnsum]/ink_s60/E_ill (point estimate; no CI in the verify files)
+\NullEdgeEightKz (+CI): -0.112 [-0.127, -0.098]: [S3]/models/null edge_s8/results/r_inside/all/aligned
+\NullEdgeEightKzNinety (+CI): -0.112 [-0.127, -0.098]: [S3]/models/null edge_s8/results/r_inside/all/effects_vs_control90/illusory
+\NullEdgeEightUniTwenty (+CI): 0.77 [0.73, 0.80]: [S3]/models/null edge_s8/results/r_inside/all/ratio_uni/20
+\NullEdgeEightAltTwenty (+CI): 0.81 [0.80, 0.82]: [S3]/models/null edge_s8/results/r_inside/all/ratio_alt/20
+\NullEdgeEightDropTwenty (+CI): 0.84 [0.75, 0.92]: [S3]/models/null edge_s8/results/r_inside/all/drop_ratio/20
+\NullEdgeEightLossUniTwenty (+CI): -0.026 [-0.028, -0.024]: [S3]/models/null edge_s8/results/r_inside/all/drop_uni/20 (positive = figure loses mass)
+\NullEdgeEightLossAltTwenty (+CI): -0.022 [-0.025, -0.019]: [S3]/models/null edge_s8/results/r_inside/all/drop_alt/20
+\NullEdgeEightSRSlope (+CI): -0.041 [-0.137, 0.053]: [S3]/models/null edge_s8/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullEdgeEightKzCore (+CI): 0.000 [0.000, 0.000]: [S3]/models/null edge_s8/results/r_core30/all/aligned
+\NullEdgeEightSRSlopeCore (+CI): 0.000 [0.000, 0.000]: [S3]/models/null edge_s8/results/r_core30/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullEdgeEightCoreMaxInducerOnly: 0.000: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null edge_s8/results/r_core30/all/effects_vs_control180 (here illusory)
+\NullEdgeEightKzCoreShare (+CI): 0.000 [0.000, 0.000]: [S3]/models/null edge_s8/results/f_core30/all/aligned
+\NullEdgeEightCoreShareMaxInducerOnly: 0.000: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null edge_s8/results/f_core30/all/effects_vs_control180 (here illusory)
+\NullEdgeEightEhr: -0.013: [lnsum]/edge_s8/E_ill (point estimate; no CI in the verify files)
+\NullEdgeSixteenKz (+CI): -0.089 [-0.106, -0.073]: [S3]/models/null edge_s16/results/r_inside/all/aligned
+\NullEdgeSixteenKzNinety (+CI): -0.091 [-0.108, -0.075]: [S3]/models/null edge_s16/results/r_inside/all/effects_vs_control90/illusory
+\NullEdgeSixteenUniTwenty (+CI): 0.80 [0.76, 0.83]: [S3]/models/null edge_s16/results/r_inside/all/ratio_uni/20
+\NullEdgeSixteenAltTwenty (+CI): 0.83 [0.82, 0.85]: [S3]/models/null edge_s16/results/r_inside/all/ratio_alt/20
+\NullEdgeSixteenDropTwenty (+CI): 0.83 [0.74, 0.93]: [S3]/models/null edge_s16/results/r_inside/all/drop_ratio/20
+\NullEdgeSixteenLossUniTwenty (+CI): -0.018 [-0.020, -0.015]: [S3]/models/null edge_s16/results/r_inside/all/drop_uni/20 (positive = figure loses mass)
+\NullEdgeSixteenLossAltTwenty (+CI): -0.015 [-0.018, -0.012]: [S3]/models/null edge_s16/results/r_inside/all/drop_alt/20
+\NullEdgeSixteenSRSlope (+CI): -0.096 [-0.191, -0.004]: [S3]/models/null edge_s16/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullEdgeSixteenKzCore (+CI): -0.010 [-0.012, -0.009]: [S3]/models/null edge_s16/results/r_core30/all/aligned
+\NullEdgeSixteenCoreUniTwenty (+CI): 0.83 [0.80, 0.86]: [S3]/models/null edge_s16/results/r_core30/all/ratio_uni/20
+\NullEdgeSixteenCoreAltTwenty (+CI): 0.86 [0.84, 0.87]: [S3]/models/null edge_s16/results/r_core30/all/ratio_alt/20
+\NullEdgeSixteenCoreDropTwenty (+CI): 0.84 [0.76, 0.92]: [S3]/models/null edge_s16/results/r_core30/all/drop_ratio/20
+\NullEdgeSixteenSRSlopeCore (+CI): +0.008 [-0.003, 0.020]: [S3]/models/null edge_s16/results/r_core30/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullEdgeSixteenCoreMaxInducerOnly: -0.010: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null edge_s16/results/r_core30/all/effects_vs_control180 (here illusory)
+\NullEdgeSixteenKzCoreShare (+CI): -0.006 [-0.006, -0.005]: [S3]/models/null edge_s16/results/f_core30/all/aligned
+\NullEdgeSixteenCoreShareMaxInducerOnly: -0.006: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null edge_s16/results/f_core30/all/effects_vs_control180 (here illusory)
+\NullEdgeSixteenEhr: -0.019: [lnsum]/edge_s16/E_ill (point estimate; no CI in the verify files)
+\NullEdgeTwentyFiveKz (+CI): -0.069 [-0.085, -0.052]: [S3]/models/null edge_s25/results/r_inside/all/aligned
+\NullEdgeTwentyFiveKzNinety (+CI): -0.071 [-0.088, -0.056]: [S3]/models/null edge_s25/results/r_inside/all/effects_vs_control90/illusory
+\NullEdgeTwentyFiveUniTwenty (+CI): 0.82 [0.78, 0.85]: [S3]/models/null edge_s25/results/r_inside/all/ratio_uni/20
+\NullEdgeTwentyFiveAltTwenty (+CI): 0.85 [0.83, 0.87]: [S3]/models/null edge_s25/results/r_inside/all/ratio_alt/20
+\NullEdgeTwentyFiveDropTwenty (+CI): 0.83 [0.74, 0.93]: [S3]/models/null edge_s25/results/r_inside/all/drop_ratio/20
+\NullEdgeTwentyFiveLossUniTwenty (+CI): -0.012 [-0.015, -0.010]: [S3]/models/null edge_s25/results/r_inside/all/drop_uni/20 (positive = figure loses mass)
+\NullEdgeTwentyFiveLossAltTwenty (+CI): -0.010 [-0.013, -0.008]: [S3]/models/null edge_s25/results/r_inside/all/drop_alt/20
+\NullEdgeTwentyFiveSRSlope (+CI): -0.103 [-0.196, -0.013]: [S3]/models/null edge_s25/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullEdgeTwentyFiveKzCore (+CI): -0.031 [-0.037, -0.024]: [S3]/models/null edge_s25/results/r_core30/all/aligned
+\NullEdgeTwentyFiveCoreUniTwenty (+CI): 0.84 [0.80, 0.87]: [S3]/models/null edge_s25/results/r_core30/all/ratio_uni/20
+\NullEdgeTwentyFiveCoreAltTwenty (+CI): 0.87 [0.85, 0.88]: [S3]/models/null edge_s25/results/r_core30/all/ratio_alt/20
+\NullEdgeTwentyFiveCoreDropTwenty (+CI): 0.84 [0.76, 0.93]: [S3]/models/null edge_s25/results/r_core30/all/drop_ratio/20
+\NullEdgeTwentyFiveSRSlopeCore (+CI): +0.019 [-0.024, 0.062]: [S3]/models/null edge_s25/results/r_core30/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullEdgeTwentyFiveCoreMaxInducerOnly: -0.031: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null edge_s25/results/r_core30/all/effects_vs_control180 (here illusory)
+\NullEdgeTwentyFiveKzCoreShare (+CI): -0.015 [-0.018, -0.012]: [S3]/models/null edge_s25/results/f_core30/all/aligned
+\NullEdgeTwentyFiveCoreShareMaxInducerOnly: -0.015: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null edge_s25/results/f_core30/all/effects_vs_control180 (here illusory)
+\NullEdgeTwentyFiveEhr (+CI): -0.023 [-0.024, -0.022]: [lns]/edge_s25/E
+\NullEdgeTwentyFiveKzIndex (+CI): -1.88 [-19.71, 17.97]: [lns]/edge_s25/K_index
+\NullEdgeFortyKz (+CI): -0.045 [-0.060, -0.032]: [S3]/models/null edge_s40/results/r_inside/all/aligned
+\NullEdgeFortyKzNinety (+CI): -0.048 [-0.061, -0.035]: [S3]/models/null edge_s40/results/r_inside/all/effects_vs_control90/illusory
+\NullEdgeFortyUniTwenty (+CI): 0.84 [0.79, 0.88]: [S3]/models/null edge_s40/results/r_inside/all/ratio_uni/20
+\NullEdgeFortyAltTwenty (+CI): 0.87 [0.84, 0.89]: [S3]/models/null edge_s40/results/r_inside/all/ratio_alt/20
+\NullEdgeFortyDropTwenty (+CI): 0.85 [0.74, 0.94]: [S3]/models/null edge_s40/results/r_inside/all/drop_ratio/20
+\NullEdgeFortyLossUniTwenty (+CI): -0.007 [-0.009, -0.005]: [S3]/models/null edge_s40/results/r_inside/all/drop_uni/20 (positive = figure loses mass)
+\NullEdgeFortyLossAltTwenty (+CI): -0.006 [-0.008, -0.004]: [S3]/models/null edge_s40/results/r_inside/all/drop_alt/20
+\NullEdgeFortySRSlope (+CI): -0.069 [-0.149, 0.008]: [S3]/models/null edge_s40/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullEdgeFortyKzCore (+CI): -0.036 [-0.047, -0.026]: [S3]/models/null edge_s40/results/r_core30/all/aligned
+\NullEdgeFortyCoreUniTwenty (+CI): 0.85 [0.81, 0.88]: [S3]/models/null edge_s40/results/r_core30/all/ratio_uni/20
+\NullEdgeFortyCoreAltTwenty (+CI): 0.87 [0.84, 0.89]: [S3]/models/null edge_s40/results/r_core30/all/ratio_alt/20
+\NullEdgeFortyCoreDropTwenty (+CI): 0.86 [0.76, 0.94]: [S3]/models/null edge_s40/results/r_core30/all/drop_ratio/20
+\NullEdgeFortySRSlopeCore (+CI): +0.017 [-0.051, 0.084]: [S3]/models/null edge_s40/results/r_core30/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullEdgeFortyCoreMaxInducerOnly: -0.036: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null edge_s40/results/r_core30/all/effects_vs_control180 (here illusory)
+\NullEdgeFortyKzCoreShare (+CI): -0.017 [-0.022, -0.012]: [S3]/models/null edge_s40/results/f_core30/all/aligned
+\NullEdgeFortyCoreShareMaxInducerOnly: -0.017: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null edge_s40/results/f_core30/all/effects_vs_control180 (here illusory)
+\NullEdgeFortyEhr: -0.024: [lnsum]/edge_s40/E_ill (point estimate; no CI in the verify files)
+\NullEdgeSixtyKz (+CI): -0.026 [-0.037, -0.017]: [S3]/models/null edge_s60/results/r_inside/all/aligned
+\NullEdgeSixtyKzNinety (+CI): -0.027 [-0.036, -0.018]: [S3]/models/null edge_s60/results/r_inside/all/effects_vs_control90/illusory
+\NullEdgeSixtyUniTwenty (+CI): 0.87 [0.81, 0.90]: [S3]/models/null edge_s60/results/r_inside/all/ratio_uni/20
+\NullEdgeSixtyAltTwenty (+CI): 0.88 [0.85, 0.91]: [S3]/models/null edge_s60/results/r_inside/all/ratio_alt/20
+\NullEdgeSixtyDropTwenty (+CI): 0.86 [0.75, 0.95]: [S3]/models/null edge_s60/results/r_inside/all/drop_ratio/20
+\NullEdgeSixtyLossUniTwenty (+CI): -0.004 [-0.005, -0.003]: [S3]/models/null edge_s60/results/r_inside/all/drop_uni/20 (positive = figure loses mass)
+\NullEdgeSixtyLossAltTwenty (+CI): -0.003 [-0.004, -0.002]: [S3]/models/null edge_s60/results/r_inside/all/drop_alt/20
+\NullEdgeSixtySRSlope (+CI): -0.040 [-0.104, 0.020]: [S3]/models/null edge_s60/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullEdgeSixtyKzCore (+CI): -0.024 [-0.033, -0.015]: [S3]/models/null edge_s60/results/r_core30/all/aligned
+\NullEdgeSixtyCoreUniTwenty (+CI): 0.87 [0.83, 0.90]: [S3]/models/null edge_s60/results/r_core30/all/ratio_uni/20
+\NullEdgeSixtyCoreAltTwenty (+CI): 0.89 [0.86, 0.91]: [S3]/models/null edge_s60/results/r_core30/all/ratio_alt/20
+\NullEdgeSixtyCoreDropTwenty (+CI): 0.88 [0.77, 0.96]: [S3]/models/null edge_s60/results/r_core30/all/drop_ratio/20
+\NullEdgeSixtySRSlopeCore (+CI): +0.005 [-0.050, 0.056]: [S3]/models/null edge_s60/results/r_core30/all/sr_slope_vs_control180/slope_per_unit_sr
+\NullEdgeSixtyCoreMaxInducerOnly: -0.024: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null edge_s60/results/r_core30/all/effects_vs_control180 (here illusory)
+\NullEdgeSixtyKzCoreShare (+CI): -0.013 [-0.018, -0.008]: [S3]/models/null edge_s60/results/f_core30/all/aligned
+\NullEdgeSixtyCoreShareMaxInducerOnly: -0.013: derived: largest |effect| over inducer-only conditions illusory, control90, mis10, mis20, mis30, alt10, alt20, alt30 in [S3]/models/null edge_s60/results/f_core30/all/effects_vs_control180 (here illusory)
+\NullEdgeSixtyEhr: -0.019: [lnsum]/edge_s60/E_ill (point estimate; no CI in the verify files)
+\NullCornerKzMin: +0.176: derived: min over sigma of NullCorner<sigma>Kz
+\NullCornerKzMax: +0.241: derived: max over sigma of NullCorner<sigma>Kz
+\NullCornerMinOverIIE: 1.8: derived: NullCornerKzMin / SvyIIEKz (times)
+\NullCornerSixteenCoreIllPctIIE: 16%: derived: NullCornerSixteenKzCore / SvyIIEKzCore (illusory - control180, core r, D 30)
+\NullCornerSixteenCoreMaxPctIIE: 20%: derived: NullCornerSixteenCoreMaxInducerOnly / SvyIIEKzCore
+\NullCornerSixteenCoreShareMaxPctIIE: 22%: derived: NullCornerSixteenCoreShareMaxInducerOnly / SvyIIEKzCoreShare
+\NullCornerTwentyFiveCoreIllPctIIE: 77%: derived: NullCornerTwentyFiveKzCore / SvyIIEKzCore (illusory - control180, core r, D 30)
+\NullCornerTwentyFiveCoreMaxPctIIE: 85%: derived: NullCornerTwentyFiveCoreMaxInducerOnly / SvyIIEKzCore
+\NullCornerTwentyFiveCoreShareMaxPctIIE: 86%: derived: NullCornerTwentyFiveCoreShareMaxInducerOnly / SvyIIEKzCoreShare
+\NullCornerMinRetained: 0.97: derived: min over corner nulls, angles 10/20/30 and both rotations of ratio_uni / ratio_alt ([S3]/models/null corner_s*/results/r_inside/all)
+\NullMinUniTwenty: 0.77: derived: min over local nulls with ratios computed of ratio_uni 20 on r_inside (null edge_s8)
+\NullMinCoreUniTwenty: 0.83: derived: min over local nulls with ratios computed of ratio_uni 20 on r_core30 (null edge_s16)
+\NullMaxLossTwenty: -0.001: derived: max over local nulls and both rotations at 20 deg of m(illusory) - m(rotated) on r_inside (('corner', 60)); <= 0 means no null loses figure mass
+\NullDropAllTwentyMin: 0.83: derived: min over the 13 local nulls with a uniform drop CI excluding 0 of drop_ratio 20, r_inside, all ([S3])
+\NullDropAllTwentyMax: 0.95: derived: max over the same 13 local nulls
+\NullDropAllThirtyMin: 0.84: derived: min over the 12 local nulls with a uniform drop CI excluding 0 of drop_ratio 30, r_inside, all ([S3])
+\NullDropAllThirtyMax: 1.07: derived: max over the same 12 local nulls
+\NullDropSqTwentyMin: 1.00: derived: min over the 15 local nulls with a uniform drop CI excluding 0 of drop_ratio 20, r_inside, square ([S3])
+\NullDropSqTwentyMax: 1.02: derived: max over the same 15 local nulls
+\NullDropSqThirtyMin: 1.00: derived: min over the 13 local nulls with a uniform drop CI excluding 0 of drop_ratio 30, r_inside, square ([S3])
+\NullDropSqThirtyMax: 1.02: derived: max over the same 13 local nulls
+\NullDropTriTwentyMin: 0.65: derived: min over the 13 local nulls with a uniform drop CI excluding 0 of drop_ratio 20, r_inside, triangle ([S3])
+\NullDropTriTwentyMax: 0.69: derived: max over the same 13 local nulls
+\NullDropTriThirtyMin: 0.57: derived: min over the 14 local nulls with a uniform drop CI excluding 0 of drop_ratio 30, r_inside, triangle ([S3])
+\NullDropTriThirtyMax: 0.69: derived: max over the same 14 local nulls
+\NullDropCoreAllTwentyMin: 0.84: derived: min over the 11 local nulls with a uniform drop CI excluding 0 of drop_ratio 20, r_core30, all ([S3])
+\NullDropCoreAllTwentyMax: 1.00: derived: max over the same 11 local nulls
+\NullDropCoreAllThirtyMin: 0.85: derived: min over the 10 local nulls with a uniform drop CI excluding 0 of drop_ratio 30, r_core30, all ([S3])
+\NullDropCoreAllThirtyMax: 1.02: derived: max over the same 10 local nulls
+\NullDropCoreSqTwentyMin: 1.00: derived: min over the 12 local nulls with a uniform drop CI excluding 0 of drop_ratio 20, r_core30, square ([S3])
+\NullDropCoreSqTwentyMax: 1.02: derived: max over the same 12 local nulls
+\NullDropCoreSqThirtyMin: 1.00: derived: min over the 11 local nulls with a uniform drop CI excluding 0 of drop_ratio 30, r_core30, square ([S3])
+\NullDropCoreSqThirtyMax: 1.01: derived: max over the same 11 local nulls
+\NullDropCoreTriTwentyMin: 0.65: derived: min over the 11 local nulls with a uniform drop CI excluding 0 of drop_ratio 20, r_core30, triangle ([S3])
+\NullDropCoreTriTwentyMax: 0.69: derived: max over the same 11 local nulls
+\NullDropCoreTriThirtyMin: 0.64: derived: min over the 10 local nulls with a uniform drop CI excluding 0 of drop_ratio 30, r_core30, triangle ([S3])
+\NullDropCoreTriThirtyMax: 0.69: derived: max over the same 10 local nulls
+\NullDropCoreShareAllTwentyMin: 0.84: derived: min over the 10 local nulls with a uniform drop CI excluding 0 of drop_ratio 20, f_core30, all ([S3])
+\NullDropCoreShareAllTwentyMax: 0.92: derived: max over the same 10 local nulls
+\NullDropCoreShareAllThirtyMin: 0.66: derived: min over the 10 local nulls with a uniform drop CI excluding 0 of drop_ratio 30, f_core30, all ([S3])
+\NullDropCoreShareAllThirtyMax: 0.95: derived: max over the same 10 local nulls
+\NullDropCoreShareSqTwentyMin: 1.00: derived: min over the 11 local nulls with a uniform drop CI excluding 0 of drop_ratio 20, f_core30, square ([S3])
+\NullDropCoreShareSqTwentyMax: 1.01: derived: max over the same 11 local nulls
+\NullDropCoreShareSqThirtyMin: 1.00: derived: min over the 10 local nulls with a uniform drop CI excluding 0 of drop_ratio 30, f_core30, square ([S3])
+\NullDropCoreShareSqThirtyMax: 1.01: derived: max over the same 10 local nulls
+\NullDropCoreShareTriTwentyMin: 0.65: derived: min over the 10 local nulls with a uniform drop CI excluding 0 of drop_ratio 20, f_core30, triangle ([S3])
+\NullDropCoreShareTriTwentyMax: 0.69: derived: max over the same 10 local nulls
+\NullDropCoreShareTriThirtyMin: 0.67: derived: min over the 10 local nulls with a uniform drop CI excluding 0 of drop_ratio 30, f_core30, triangle ([S3])
+\NullDropCoreShareTriThirtyMax: 0.69: derived: max over the same 10 local nulls
+\NullCornerCoreSlopeLeast: -0.04: derived: least negative core-r SR slope over corner nulls sigma 16 to 60
+\NullCornerCoreSlopeMost: -0.41: derived: most negative core-r SR slope over corner nulls sigma 16 to 60
+\NullNegUniTwentyMin: 0.77: derived: min over the 10 ink and edge-energy nulls (all with aligned CI below 0) of ratio_uni 20, r_inside, all ([S3])
+\NullNegUniTwentyMax: 0.94: derived: max over the same nulls
+\NullNegDropTwentyMin: 0.83: derived: min over the 10 ink and edge-energy nulls with a uniform drop CI excluding 0 of drop_ratio 20, r_inside, all
+\NullNegDropTwentyMax: 0.86: derived: max over the same nulls
+\NNullNeg: 10: derived: number of local nulls with a negative aligned effect (ink and edge-energy)
+\NNullCorner: 5: derived: number of corner nulls (all with a positive aligned effect)
+\NullNPooledLossAboveZero: 0: derived: count of (null, rotation, angle 10/20/30) whose pooled figure-mass loss CI lies above 0 ([S3]/r_inside/all/drop_uni / drop_alt)
+\NullTriMaxLossThirty: 0.016: derived: max over local nulls and both rotations of the triangle figure-mass loss at 30 deg, r_inside (null corner_s40, drop_uni)
+\NullTriLossThirtySigmaMin: 25: derived: smallest corner-null sigma whose triangle loss at 30 deg has a CI above 0 (either rotation)
+\NullCornerSixtyTriLossUniTwenty (+CI): +0.003 [0.002, 0.004]: [S3]/models/null corner_s60/results/r_inside/triangle/drop_uni/20
+\NullCornerSixtyTriLossAltTwenty (+CI): +0.002 [0.002, 0.002]: [S3]/models/null corner_s60/results/r_inside/triangle/drop_alt/20
+\AltIIETriLossUniThirty (+CI): +0.071 [0.046, 0.097]: [S3]/models/DeepGaze IIE/results/r_inside/triangle/drop_uni/30
+\AltMSDBTriLossUniThirty (+CI): +0.029 [0.017, 0.041]: [S3]/models/DeepGaze MSDB/results/r_inside/triangle/drop_uni/30
+\NullCornerTwentyFiveRealFilled (+CI): +0.356 [0.349, 0.363]: [S3]/models/null corner_s25/results/r_inside/all/effects_vs_control180/real_filled
+\NKzCellsPerShape: 6: derived: NKzCells / 2 shapes (clusters behind every square-only or triangle-only interval)
+# 4. Model anatomy: parameters, channels, scales, blur (v2/anatomy/anatomy.json)
+\AnatIIEBlurMean: 20.2: [A2]/records/0/readout/blur_sigma_display_px/mean (display px)
+\AnatIIEBlurMin: 18: [A2]/records/0/readout/blur_sigma_display_px/per_backbone_mean (min, display px)
+\AnatIIEBlurMax: 23: [A2]/records/0/readout/blur_sigma_display_px/per_backbone_mean (max, display px)
+\AnatIIENBackbones: 4: [A2]/records/0/backbones (length)
+\AnatIIENLayers: 16: derived: sum of len(layers_read) over [A2]/records/0/backbones
+\AnatIIEParamsM: 3.06: [A2]/records/0/readout/n_params (millions)
+\AnatMSDBBlurPx: 26.8: [A2]/records/1/readout/blur_sigma/display_px
+\AnatMSDBBlurDeg: 0.77: [A2]/records/1/readout/blur_sigma/dva
+\AnatMSDBPxPerDeg: 35: derived: display_px / dva of [A2]/records/1/readout/blur_sigma (display pixels per degree at which MSDB was run)
+\NullSigmaDegSixteen: 0.46: derived: 16 px / AnatMSDBPxPerDeg (null blur in degrees at the geometry MSDB was run at)
+\NullSigmaDegTwentyFive: 0.71: derived: 25 px / AnatMSDBPxPerDeg (null blur in degrees at the geometry MSDB was run at)
+\AnatMSDBChannels: 2,560: [A2]/records/1/channels/total
+\AnatMSDBChannelsCLIP: 1,024: [A2]/records/1/channels/per_layer/0 (CLIP RN50x64 layer4.2.conv2)
+\AnatMSDBChannelsDino: 768: [A2]/records/1/channels/per_layer/1 (each DINOv2 block, hs[7] and hs[11])
+\AnatMSDBNScales: 10: derived: number of entries in [A2]/records/1/input/internal_scales
+\AnatMSDBParams: 26,525: [A2]/records/1/readout/n_params
+\AnatMSINetParamsM: 24.93: [A2]/records/2/readout/n_params (millions)
+\AnatMSINetParams: 24,934,209: [A2]/records/2/readout/n_params
+\AnatXSAsppParamsM: 3.72: [A2]/records/3/readout/n_params (millions)
+\AnatXSAsppParams: 3,721,089: [A2]/records/3/readout/n_params
+\AnatXSMlParamsM: 7.36: [A2]/records/4/readout/n_params (millions)
+\AnatXSMlParams: 7,358,337: [A2]/records/4/readout/n_params
+\AnatSweepDinoParamsM: 3.72: [A2]/records/12/readout/n_params (millions)
+\AnatSweepDinoParams: 3,721,089: [A2]/records/12/readout/n_params
+\AnatSweepSiglipParamsM: 4.93: [A2]/records/24/readout/n_params (millions)
+\AnatSweepSiglipParams: 4,933,505: [A2]/records/24/readout/n_params
+\AnatSweepClipParamsM: 4.93: [A2]/records/18/readout/n_params (millions)
+\AnatSweepClipParams: 4,933,505: [A2]/records/18/readout/n_params
+\AnatXSMlCC: 0.745: [A2]/records/4/heldout_mit1003_cc/single_336
+\AnatSweepDinoTwelveCC: 0.731: [A2]/records/12/heldout_mit1003_cc
+\AnatSweepDinoSixCC: 0.743: [A2]/records/9/heldout_mit1003_cc
+\AnatSweepSiglipTwentyFourCC: 0.721: [A2]/records/24/heldout_mit1003_cc
+\AnatReadoutACC: 0.729: [A2]/records/25/heldout_mit1003_cc
+# 5. Shapley decomposition of the Kanizsa effect (v2/decompose/results.json); DINOv2 blocks in 1-based numbering
+\DecIIENPlayers: 4: [D2]/games/IIE_backbones/n_players
+\DecIIENCoalitions: 16: [D2]/games/IIE_backbones/n_coalitions
+\DecIIEShareShapeNetC (+CI): 0.15 [0.10, 0.18]: [D2]/games/IIE_backbones/aoi/inside/players/ShapeNetC ResNet-50/share
+\DecIIEShareEffNet (+CI): 0.45 [0.36, 0.58]: [D2]/games/IIE_backbones/aoi/inside/players/EfficientNet-B5/share
+\DecIIEShareDenseNet (+CI): 0.29 [0.23, 0.34]: [D2]/games/IIE_backbones/aoi/inside/players/DenseNet-201/share
+\DecIIEShareResNeXt (+CI): 0.11 [0.06, 0.15]: [D2]/games/IIE_backbones/aoi/inside/players/ResNeXt-50/share
+\DecIIEAloneShapeNetC (+CI): +0.055 [0.026, 0.084]: [D2]/iie_path_alone_effects/inside/ShapeNetC ResNet-50
+\DecIIEAloneEffNet (+CI): +0.173 [0.150, 0.198]: [D2]/iie_path_alone_effects/inside/EfficientNet-B5
+\DecIIEAloneDenseNet (+CI): +0.114 [0.072, 0.163]: [D2]/iie_path_alone_effects/inside/DenseNet-201
+\DecIIEAloneResNeXt (+CI): +0.043 [0.015, 0.072]: [D2]/iie_path_alone_effects/inside/ResNeXt-50
+\DecIIEAloneMin: +0.043: derived: min over backbones of [D2]/iie_path_alone_effects/inside/*/mean
+\DecIIEAloneMax: +0.173: derived: max over backbones of the same
+\DecIIESumInsertAlone: 1.02: [D2]/games/IIE_backbones/aoi/inside/sum_insert_alone_share (x effect)
+\DecIIESumRemoveAlone: 0.98: [D2]/games/IIE_backbones/aoi/inside/sum_remove_alone_share (x effect)
+\DecIIEMaxShare: 0.45: derived: largest IIE backbone share (carries rule: share >= 0.5)
+\DecMSDBTensorShareCLIP (+CI): 0.58 [0.44, 0.70]: [D2]/games/MSDB_feature_tensors/aoi/inside/players/CLIP RN50x64 layer4.2.conv2/share
+\DecMSDBTensorShareDinoEleven (+CI): 0.30 [0.19, 0.43]: [D2]/games/MSDB_feature_tensors/aoi/inside/players/DINOv2 block 10/share
+\DecMSDBTensorShareDinoSeven (+CI): 0.12 [0.08, 0.17]: [D2]/games/MSDB_feature_tensors/aoi/inside/players/DINOv2 block 6/share
+\DecMSDBShareCLIP (+CI): 0.58 [0.44, 0.70]: [D2]/games/MSDB_backbones/aoi/inside/players/CLIP RN50x64/share
+\DecMSDBShareDino (+CI): 0.42 [0.30, 0.56]: [D2]/games/MSDB_backbones/aoi/inside/players/DINOv2 (blocks 6 + 10)/share
+\DecMSDBSqShareCLIP (+CI): 0.32 [0.24, 0.39]: [D2]/games/MSDB_backbones/aoi/inside/by_subset_point_estimates/shape=square/shares/CLIP RN50x64
+\DecMSDBSqShareDino (+CI): 0.68 [0.61, 0.76]: [D2]/games/MSDB_backbones/aoi/inside/by_subset_point_estimates/shape=square/shares/DINOv2 (blocks 6 + 10)
+\DecMSDBTriShareCLIP (+CI): 0.76 [0.71, 0.83]: [D2]/games/MSDB_backbones/aoi/inside/by_subset_point_estimates/shape=triangle/shares/CLIP RN50x64
+\DecMSDBTriShareDino (+CI): 0.24 [0.17, 0.29]: [D2]/games/MSDB_backbones/aoi/inside/by_subset_point_estimates/shape=triangle/shares/DINOv2 (blocks 6 + 10)
+\DecMSDBScaleShareCoarse (+CI): 0.08 [0.03, 0.12]: [D2]/games/MSDB_scale_groups/aoi/inside/players/coarse (ppd 5, 10; size 128, 256)/share
+\DecMSDBScaleShareNative (+CI): 0.35 [0.32, 0.39]: [D2]/games/MSDB_scale_groups/aoi/inside/players/native (ppd 17.5; size 512)/share
+\DecMSDBScaleShareFine (+CI): 0.57 [0.53, 0.62]: [D2]/games/MSDB_scale_groups/aoi/inside/players/fine (ppd 24, 30; size 768, 1024)/share
+\DecMSDBScaleWeightCoarse: 0.21: [D2]/games/MSDB_scale_groups/aoi/inside/scale_weight_and_share_per_weight/coarse (ppd 5, 10; size 128, 256)/weight
+\DecMSDBScalePerWeightCoarse: 0.37: [D2]/games/MSDB_scale_groups/aoi/inside/scale_weight_and_share_per_weight/coarse (ppd 5, 10; size 128, 256)/share_per_weight
+\DecMSDBScaleWeightNative: 0.32: [D2]/games/MSDB_scale_groups/aoi/inside/scale_weight_and_share_per_weight/native (ppd 17.5; size 512)/weight
+\DecMSDBScalePerWeightNative: 1.09: [D2]/games/MSDB_scale_groups/aoi/inside/scale_weight_and_share_per_weight/native (ppd 17.5; size 512)/share_per_weight
+\DecMSDBScaleWeightFine: 0.47: [D2]/games/MSDB_scale_groups/aoi/inside/scale_weight_and_share_per_weight/fine (ppd 24, 30; size 768, 1024)/weight
+\DecMSDBScalePerWeightFine: 1.22: [D2]/games/MSDB_scale_groups/aoi/inside/scale_weight_and_share_per_weight/fine (ppd 24, 30; size 768, 1024)/share_per_weight
+\DecMSDBLargestSingleScale (+CI): 0.21 [0.18, 0.23]: [D2]/games/MSDB_scales10/aoi/inside/players/size1024/share (largest of 10 scales: size1024)
+\DecMSDBLargestSingleScaleName: size 1024: [D2]/games/MSDB_scales10/aoi/inside/players (argmax share)
+# 6. Human comparison (descriptive only) and Ehrenstein
+\HumKzIndex: 0.857: [S2]/human_index/kanizsa (Kavsek pooled)
+\HumEhrIndex: 0.824: [S2]/human_index/ehrenstein (Kavsek pooled)
+\HumNChildren: 97: [conv], human reference: 'dominated by children (97 of 127)'
+\HumNTotal: 127: [conv], human reference: 'dominated by children (97 of 127)'
+\HumIIEIndexFillTwentyFive (+CI): 0.43 [0.30, 0.59]: [fill]/IIE_c25/index (figure grey at 25% of the inducer contrast)
+\HumIIEIndexFillFifty (+CI): 0.40 [0.28, 0.55]: [fill]/IIE_c50/index (figure grey at 50% of the inducer contrast)
+\HumIIEIndexFillSeventyFive (+CI): 0.38 [0.26, 0.54]: [fill]/IIE_c75/index (figure grey at 75% of the inducer contrast)
+\HumNullCornerTwentyFiveIndexFillTwentyFive (+CI): 0.86 [0.84, 0.88]: [fill]/corner_s25_c25/index (figure grey at 25% of the inducer contrast)
+\HumNullCornerTwentyFiveIndexFillFifty (+CI): 0.66 [0.63, 0.70]: [fill]/corner_s25_c50/index (figure grey at 50% of the inducer contrast)
+\HumNullCornerTwentyFiveIndexFillSeventyFive (+CI): 0.58 [0.54, 0.62]: [fill]/corner_s25_c75/index (figure grey at 75% of the inducer contrast)
+\EhrMSDBDiscLogMass (+CI): -0.005 [-0.027, 0.018]: [S2]/models/DeepGaze MSDB/variants/native/ehrenstein/mass/illusory-control_end/dlog_inside (log map mass on the illusory disc)
+\EhrMSDBLineLogMass (+CI): -0.109 [-0.144, -0.073]: [S2]/models/DeepGaze MSDB/variants/native/ehrenstein/mass/illusory-control_end/dlog_ind (log map mass on the inducing lines)
+# 6b. Readout-free encoding against a proximity-matched near-exterior null (supplementary; v2/verify/encoding_nulls.json)
+\EncDinoNLayersPass: 5: derived: layers of [enc]/dinov2/layers whose interior CI lower bound exceeds the near-exterior CI upper bound
+\EncDinoNLayers: 12: [enc]/dinov2/layers (count)
+\EncDinoLayersPass: 6, 7, 10, 11 and 12: derived: the passing layers (1-based hs index) in [enc]/dinov2/layers
+\EncClipNLayersPass: 0: derived: layers of [enc]/clip/layers whose interior CI lower bound exceeds the near-exterior CI upper bound
+\EncClipNLayers: 24: [enc]/clip/layers (count)
+\EncClipLayersPass: none: derived: the passing layers (1-based hs index) in [enc]/clip/layers
+\EncSiglipNLayersPass: 1: derived: layers of [enc]/siglip/layers whose interior CI lower bound exceeds the near-exterior CI upper bound
+\EncSiglipNLayers: 24: [enc]/siglip/layers (count)
+\EncSiglipLayersPass: 7: derived: the passing layers (1-based hs index) in [enc]/siglip/layers
+\EncClipTwentyFourInterior (+CI): 0.433 [0.380, 0.486]: [enc]/clip/layers/24/int
+\EncClipTwentyFourNearExterior (+CI): 0.354 [0.294, 0.418]: [enc]/clip/layers/24/ext_near
+# 7. Full-data readout swap: 4 feature sets x 5 readouts x 3 seeds (v3/gpu/full/results_full.json)
+\RSResultsCreated: 2026-10-17 21:52:48: [F3]/created
+\RSDinoTwelveCCThreshold: 0.696: derived: [F3]/mit/dinov2_L12/R4/mean - cc_margin
+\RSDinoTwelveRoneFixedSeeds: 3: [F3]/stim_v3/dinov2_L12/R1n/seeds_present (length)
+\RSDinoTwelveRoneFixedProvisional: no: derived: fewer than 3 seeds in [F3]/mit/stim_v3/dinov2_L12/R1n
+\RSDinoTwelveRoneFixedCC: 0.710: [F3]/mit/dinov2_L12/R1n/mean (n 3)
+\RSDinoTwelveRoneFixedValid: valid: [F3]/mit/dinov2_L12/R1n/valid
+\RSDinoTwelveRoneFixedKz (+CI): -0.134 [-0.175, -0.096]: [F3]/stim_v3/dinov2_L12/R1n/kanizsa/illusory-control180/avg|inside (size avg, seeds 3)
+\RSDinoTwelveRoneFixedKzCore (+CI): -0.114 [-0.146, -0.083]: [F3]/stim_v3/dinov2_L12/R1n/kanizsa/illusory-control180/avg|r_core30 (size avg, seeds 3)
+\RSDinoTwelveRoneFixedKzNinety (+CI): -0.095 [-0.137, -0.056]: [F3]/stim_v3/dinov2_L12/R1n/kanizsa/illusory-control90/avg|inside (size avg, seeds 3)
+\RSDinoTwelveRoneFixedRealFilled (+CI): -0.072 [-0.108, -0.037]: [F3]/stim_v3/dinov2_L12/R1n/kanizsa/real_filled-control180/avg|inside (size avg, seeds 3)
+\RSDinoTwelveRoneFixedReal (+CI): -0.098 [-0.148, -0.051]: [F3]/stim_v3/dinov2_L12/R1n/kanizsa/real-control180/avg|inside (size avg, seeds 3)
+\RSDinoTwelveRoneFixedEhr (+CI): -0.008 [-0.028, 0.012]: [F3]/stim_v3/dinov2_L12/R1n/ehrenstein/illusory-control_end/avg|inside
+\RSDinoTwelveRoneFixedUniTwenty (+CI): n.e. : [F3]/section_B/dinov2_L12/R1n/inside/eligible = false (aligned CI not above 0)
+\RSDinoTwelveRoneFixedAltTwenty (+CI): n.e. : not eligible: aligned CI not above 0
+\RSDinoTwelveRoneFixedDropTwenty (+CI): 0.35 [0.16, 0.52]: [F3]/stim_alt/dinov2_L12/R1n/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSDinoTwelveRoneFixedRotUni (+CI): 0.66 [0.60, 0.71]: [F3]/stim_alt/dinov2_L12/R1n/r_inside/ratio_uni20 (seeds [0, 1, 2])
+\RSDinoTwelveRoneFixedRotAlt (+CI): 0.88 [0.82, 0.95]: [F3]/stim_alt/dinov2_L12/R1n/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSDinoTwelveRoneFixedRotDrop (+CI): 0.35 [0.16, 0.52]: [F3]/stim_alt/dinov2_L12/R1n/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSDinoTwelveRoneSeeds: 3: [F3]/stim_v3/dinov2_L12/R1/seeds_present (length)
+\RSDinoTwelveRoneProvisional: no: derived: fewer than 3 seeds in [F3]/mit/stim_v3/dinov2_L12/R1
+\RSDinoTwelveRoneCC: 0.708: [F3]/mit/dinov2_L12/R1/mean (n 3)
+\RSDinoTwelveRoneValid: valid: [F3]/mit/dinov2_L12/R1/valid
+\RSDinoTwelveRoneKz (+CI): -0.073 [-0.095, -0.052]: [F3]/stim_v3/dinov2_L12/R1/kanizsa/illusory-control180/avg|inside (size avg, seeds 3)
+\RSDinoTwelveRoneKzCore (+CI): -0.059 [-0.076, -0.043]: [F3]/stim_v3/dinov2_L12/R1/kanizsa/illusory-control180/avg|r_core30 (size avg, seeds 3)
+\RSDinoTwelveRoneKzNinety (+CI): -0.057 [-0.080, -0.036]: [F3]/stim_v3/dinov2_L12/R1/kanizsa/illusory-control90/avg|inside (size avg, seeds 3)
+\RSDinoTwelveRoneRealFilled (+CI): -0.014 [-0.043, 0.015]: [F3]/stim_v3/dinov2_L12/R1/kanizsa/real_filled-control180/avg|inside (size avg, seeds 3)
+\RSDinoTwelveRoneReal (+CI): -0.047 [-0.080, -0.014]: [F3]/stim_v3/dinov2_L12/R1/kanizsa/real-control180/avg|inside (size avg, seeds 3)
+\RSDinoTwelveRoneEhr (+CI): +0.006 [-0.003, 0.016]: [F3]/stim_v3/dinov2_L12/R1/ehrenstein/illusory-control_end/avg|inside
+\RSDinoTwelveRoneUniTwenty (+CI): n.e. : [F3]/section_B/dinov2_L12/R1/inside/eligible = false (aligned CI not above 0)
+\RSDinoTwelveRoneAltTwenty (+CI): n.e. : not eligible: aligned CI not above 0
+\RSDinoTwelveRoneDropTwenty (+CI): 0.50 [0.24, 0.72]: [F3]/stim_alt/dinov2_L12/R1/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSDinoTwelveRoneRotUni (+CI): 0.57 [0.47, 0.67]: [F3]/stim_alt/dinov2_L12/R1/r_inside/ratio_uni20 (seeds [0, 1, 2])
+\RSDinoTwelveRoneRotAlt (+CI): 0.78 [0.70, 0.90]: [F3]/stim_alt/dinov2_L12/R1/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSDinoTwelveRoneRotDrop (+CI): 0.50 [0.24, 0.72]: [F3]/stim_alt/dinov2_L12/R1/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSDinoTwelveRtwoSeeds: 3: [F3]/stim_v3/dinov2_L12/R2/seeds_present (length)
+\RSDinoTwelveRtwoProvisional: no: derived: fewer than 3 seeds in [F3]/mit/stim_v3/dinov2_L12/R2
+\RSDinoTwelveRtwoCC: 0.722: [F3]/mit/dinov2_L12/R2/mean (n 3)
+\RSDinoTwelveRtwoValid: valid: [F3]/mit/dinov2_L12/R2/valid
+\RSDinoTwelveRtwoKz (+CI): -0.130 [-0.162, -0.098]: [F3]/stim_v3/dinov2_L12/R2/kanizsa/illusory-control180/avg|inside (size avg, seeds 3)
+\RSDinoTwelveRtwoKzCore (+CI): -0.118 [-0.145, -0.092]: [F3]/stim_v3/dinov2_L12/R2/kanizsa/illusory-control180/avg|r_core30 (size avg, seeds 3)
+\RSDinoTwelveRtwoKzNinety (+CI): -0.119 [-0.147, -0.091]: [F3]/stim_v3/dinov2_L12/R2/kanizsa/illusory-control90/avg|inside (size avg, seeds 3)
+\RSDinoTwelveRtwoRealFilled (+CI): -0.081 [-0.108, -0.053]: [F3]/stim_v3/dinov2_L12/R2/kanizsa/real_filled-control180/avg|inside (size avg, seeds 3)
+\RSDinoTwelveRtwoReal (+CI): -0.128 [-0.157, -0.098]: [F3]/stim_v3/dinov2_L12/R2/kanizsa/real-control180/avg|inside (size avg, seeds 3)
+\RSDinoTwelveRtwoEhr (+CI): +0.013 [0.002, 0.023]: [F3]/stim_v3/dinov2_L12/R2/ehrenstein/illusory-control_end/avg|inside
+\RSDinoTwelveRtwoUniTwenty (+CI): n.e. : [F3]/section_B/dinov2_L12/R2/inside/eligible = false (aligned CI not above 0)
+\RSDinoTwelveRtwoAltTwenty (+CI): n.e. : not eligible: aligned CI not above 0
+\RSDinoTwelveRtwoDropTwenty (+CI): 0.52 [0.37, 0.68]: [F3]/stim_alt/dinov2_L12/R2/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSDinoTwelveRtwoRotUni (+CI): 0.69 [0.62, 0.76]: [F3]/stim_alt/dinov2_L12/R2/r_inside/ratio_uni20 (seeds [0, 1, 2])
+\RSDinoTwelveRtwoRotAlt (+CI): 0.84 [0.79, 0.89]: [F3]/stim_alt/dinov2_L12/R2/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSDinoTwelveRtwoRotDrop (+CI): 0.52 [0.37, 0.68]: [F3]/stim_alt/dinov2_L12/R2/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSDinoTwelveRthreeSeeds: 3: [F3]/stim_v3/dinov2_L12/R3/seeds_present (length)
+\RSDinoTwelveRthreeProvisional: no: derived: fewer than 3 seeds in [F3]/mit/stim_v3/dinov2_L12/R3
+\RSDinoTwelveRthreeCC: 0.724: [F3]/mit/dinov2_L12/R3/mean (n 3)
+\RSDinoTwelveRthreeValid: valid: [F3]/mit/dinov2_L12/R3/valid
+\RSDinoTwelveRthreeKz (+CI): -0.130 [-0.184, -0.081]: [F3]/stim_v3/dinov2_L12/R3/kanizsa/illusory-control180/avg|inside (size avg, seeds 3)
+\RSDinoTwelveRthreeKzCore (+CI): -0.104 [-0.148, -0.062]: [F3]/stim_v3/dinov2_L12/R3/kanizsa/illusory-control180/avg|r_core30 (size avg, seeds 3)
+\RSDinoTwelveRthreeKzNinety (+CI): -0.110 [-0.155, -0.070]: [F3]/stim_v3/dinov2_L12/R3/kanizsa/illusory-control90/avg|inside (size avg, seeds 3)
+\RSDinoTwelveRthreeRealFilled (+CI): -0.088 [-0.138, -0.041]: [F3]/stim_v3/dinov2_L12/R3/kanizsa/real_filled-control180/avg|inside (size avg, seeds 3)
+\RSDinoTwelveRthreeReal (+CI): -0.134 [-0.197, -0.075]: [F3]/stim_v3/dinov2_L12/R3/kanizsa/real-control180/avg|inside (size avg, seeds 3)
+\RSDinoTwelveRthreeEhr (+CI): +0.005 [-0.025, 0.033]: [F3]/stim_v3/dinov2_L12/R3/ehrenstein/illusory-control_end/avg|inside
+\RSDinoTwelveRthreeUniTwenty (+CI): n.e. : [F3]/section_B/dinov2_L12/R3/inside/eligible = false (aligned CI not above 0)
+\RSDinoTwelveRthreeAltTwenty (+CI): n.e. : not eligible: aligned CI not above 0
+\RSDinoTwelveRthreeDropTwenty (+CI): 0.76 [0.48, 1.00]: [F3]/stim_alt/dinov2_L12/R3/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSDinoTwelveRthreeRotUni (+CI): 0.58 [0.44, 0.67]: [F3]/stim_alt/dinov2_L12/R3/r_inside/ratio_uni20 (seeds [0, 1, 2])
+\RSDinoTwelveRthreeRotAlt (+CI): 0.69 [0.58, 0.78]: [F3]/stim_alt/dinov2_L12/R3/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSDinoTwelveRthreeRotDrop (+CI): 0.76 [0.48, 1.00]: [F3]/stim_alt/dinov2_L12/R3/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSDinoTwelveRfourSeeds: 3: [F3]/stim_v3/dinov2_L12/R4/seeds_present (length)
+\RSDinoTwelveRfourProvisional: no: derived: fewer than 3 seeds in [F3]/mit/stim_v3/dinov2_L12/R4
+\RSDinoTwelveRfourCC: 0.726: [F3]/mit/dinov2_L12/R4/mean (n 3)
+\RSDinoTwelveRfourValid: valid: [F3]/mit/dinov2_L12/R4/valid
+\RSDinoTwelveRfourKz (+CI): -0.114 [-0.146, -0.083]: [F3]/stim_v3/dinov2_L12/R4/kanizsa/illusory-control180/avg|inside (size avg, seeds 3)
+\RSDinoTwelveRfourKzCore (+CI): -0.100 [-0.127, -0.075]: [F3]/stim_v3/dinov2_L12/R4/kanizsa/illusory-control180/avg|r_core30 (size avg, seeds 3)
+\RSDinoTwelveRfourKzNinety (+CI): -0.096 [-0.122, -0.071]: [F3]/stim_v3/dinov2_L12/R4/kanizsa/illusory-control90/avg|inside (size avg, seeds 3)
+\RSDinoTwelveRfourRealFilled (+CI): -0.077 [-0.110, -0.045]: [F3]/stim_v3/dinov2_L12/R4/kanizsa/real_filled-control180/avg|inside (size avg, seeds 3)
+\RSDinoTwelveRfourReal (+CI): -0.094 [-0.123, -0.064]: [F3]/stim_v3/dinov2_L12/R4/kanizsa/real-control180/avg|inside (size avg, seeds 3)
+\RSDinoTwelveRfourEhr (+CI): +0.002 [-0.013, 0.014]: [F3]/stim_v3/dinov2_L12/R4/ehrenstein/illusory-control_end/avg|inside
+\RSDinoTwelveRfourUniTwenty (+CI): n.e. : [F3]/section_B/dinov2_L12/R4/inside/eligible = false (aligned CI not above 0)
+\RSDinoTwelveRfourAltTwenty (+CI): n.e. : not eligible: aligned CI not above 0
+\RSDinoTwelveRfourDropTwenty (+CI): 0.51 [0.24, 0.80]: [F3]/stim_alt/dinov2_L12/R4/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSDinoTwelveRfourRotUni (+CI): 0.72 [0.62, 0.81]: [F3]/stim_alt/dinov2_L12/R4/r_inside/ratio_uni20 (seeds [0, 1, 2])
+\RSDinoTwelveRfourRotAlt (+CI): 0.86 [0.79, 0.93]: [F3]/stim_alt/dinov2_L12/R4/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSDinoTwelveRfourRotDrop (+CI): 0.51 [0.24, 0.80]: [F3]/stim_alt/dinov2_L12/R4/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSDinoTwelveRoneFixedMinusRone (+CI): -0.061 [-0.082, -0.042]: [F3]/contrasts/dinov2_L12/R1n-R1/kanizsa|illusory-control180|avg|inside (seeds [3, 3])
+\RSDinoTwelveRoneFixedMinusRfour (+CI): -0.020 [-0.037, -0.003]: [F3]/contrasts/dinov2_L12/R1n-R4/kanizsa|illusory-control180|avg|inside (seeds [3, 3])
+\RSDinoTwelveRoneMinusRfour (+CI): +0.041 [0.025, 0.059]: [F3]/contrasts/dinov2_L12/R1-R4/kanizsa|illusory-control180|avg|inside (seeds [3, 3])
+\RSDinoTwelveRoneFixedMinusRtwo (+CI): -0.004 [-0.019, 0.010]: [F3]/contrasts/dinov2_L12/R1n-R2/kanizsa|illusory-control180|avg|inside (seeds [3, 3])
+\RSDinoTwelveRoneFixedMinusRthree (+CI): -0.004 [-0.025, 0.017]: [F3]/contrasts/dinov2_L12/R1n-R3/kanizsa|illusory-control180|avg|inside (seeds [3, 3])
+\RSDinoSixCCThreshold: 0.712: derived: [F3]/mit/dinov2_L6/R4/mean - cc_margin
+\RSDinoSixRoneFixedSeeds: 3: [F3]/stim_v3/dinov2_L6/R1n/seeds_present (length)
+\RSDinoSixRoneFixedProvisional: no: derived: fewer than 3 seeds in [F3]/mit/stim_v3/dinov2_L6/R1n
+\RSDinoSixRoneFixedCC: 0.700: [F3]/mit/dinov2_L6/R1n/mean (n 3)
+\RSDinoSixRoneFixedValid: invalid: [F3]/mit/dinov2_L6/R1n/valid
+\RSDinoSixRoneFixedKz (+CI): +0.051 [0.037, 0.065]: [F3]/stim_v3/dinov2_L6/R1n/kanizsa/illusory-control180/avg|inside (size avg, seeds 3)
+\RSDinoSixRoneFixedKzCore (+CI): +0.059 [0.040, 0.077]: [F3]/stim_v3/dinov2_L6/R1n/kanizsa/illusory-control180/avg|r_core30 (size avg, seeds 3)
+\RSDinoSixRoneFixedKzNinety (+CI): +0.068 [0.057, 0.080]: [F3]/stim_v3/dinov2_L6/R1n/kanizsa/illusory-control90/avg|inside (size avg, seeds 3)
+\RSDinoSixRoneFixedRealFilled (+CI): +0.197 [0.160, 0.232]: [F3]/stim_v3/dinov2_L6/R1n/kanizsa/real_filled-control180/avg|inside (size avg, seeds 3)
+\RSDinoSixRoneFixedReal (+CI): +0.160 [0.127, 0.192]: [F3]/stim_v3/dinov2_L6/R1n/kanizsa/real-control180/avg|inside (size avg, seeds 3)
+\RSDinoSixRoneFixedEhr (+CI): +0.065 [0.047, 0.083]: [F3]/stim_v3/dinov2_L6/R1n/ehrenstein/illusory-control_end/avg|inside
+\RSDinoSixRoneFixedUniTwenty (+CI): 0.56 [0.23, 0.78]: [F3]/section_B/dinov2_L6/R1n/inside/ratio_20
+\RSDinoSixRoneFixedAltTwenty (+CI): 1.09 [0.99, 1.23]: [F3]/stim_alt/dinov2_L6/R1n/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSDinoSixRoneFixedDropTwenty (+CI): -0.20 [-0.83, 0.01]: [F3]/stim_alt/dinov2_L6/R1n/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSDinoSixRoneFixedRotUni (+CI): 0.56 [0.23, 0.78]: [F3]/stim_alt/dinov2_L6/R1n/r_inside/ratio_uni20 (seeds [0, 1, 2])
+\RSDinoSixRoneFixedRotAlt (+CI): 1.09 [0.99, 1.23]: [F3]/stim_alt/dinov2_L6/R1n/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSDinoSixRoneFixedRotDrop (+CI): -0.20 [-0.83, 0.01]: [F3]/stim_alt/dinov2_L6/R1n/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSDinoSixRoneSeeds: 3: [F3]/stim_v3/dinov2_L6/R1/seeds_present (length)
+\RSDinoSixRoneProvisional: no: derived: fewer than 3 seeds in [F3]/mit/stim_v3/dinov2_L6/R1
+\RSDinoSixRoneCC: 0.698: [F3]/mit/dinov2_L6/R1/mean (n 3)
+\RSDinoSixRoneValid: invalid: [F3]/mit/dinov2_L6/R1/valid
+\RSDinoSixRoneKz (+CI): +0.054 [0.044, 0.064]: [F3]/stim_v3/dinov2_L6/R1/kanizsa/illusory-control180/avg|inside (size avg, seeds 3)
+\RSDinoSixRoneKzCore (+CI): +0.058 [0.041, 0.073]: [F3]/stim_v3/dinov2_L6/R1/kanizsa/illusory-control180/avg|r_core30 (size avg, seeds 3)
+\RSDinoSixRoneKzNinety (+CI): +0.074 [0.065, 0.085]: [F3]/stim_v3/dinov2_L6/R1/kanizsa/illusory-control90/avg|inside (size avg, seeds 3)
+\RSDinoSixRoneRealFilled (+CI): +0.145 [0.117, 0.173]: [F3]/stim_v3/dinov2_L6/R1/kanizsa/real_filled-control180/avg|inside (size avg, seeds 3)
+\RSDinoSixRoneReal (+CI): +0.140 [0.112, 0.166]: [F3]/stim_v3/dinov2_L6/R1/kanizsa/real-control180/avg|inside (size avg, seeds 3)
+\RSDinoSixRoneEhr (+CI): +0.057 [0.039, 0.075]: [F3]/stim_v3/dinov2_L6/R1/ehrenstein/illusory-control_end/avg|inside
+\RSDinoSixRoneUniTwenty (+CI): 0.41 [0.10, 0.64]: [F3]/section_B/dinov2_L6/R1/inside/ratio_20
+\RSDinoSixRoneAltTwenty (+CI): 0.82 [0.69, 0.95]: [F3]/stim_alt/dinov2_L6/R1/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSDinoSixRoneDropTwenty (+CI): 0.30 [0.14, 0.39]: [F3]/stim_alt/dinov2_L6/R1/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSDinoSixRoneRotUni (+CI): 0.41 [0.10, 0.64]: [F3]/stim_alt/dinov2_L6/R1/r_inside/ratio_uni20 (seeds [0, 1, 2])
+\RSDinoSixRoneRotAlt (+CI): 0.82 [0.69, 0.95]: [F3]/stim_alt/dinov2_L6/R1/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSDinoSixRoneRotDrop (+CI): 0.30 [0.14, 0.39]: [F3]/stim_alt/dinov2_L6/R1/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSDinoSixRtwoSeeds: 3: [F3]/stim_v3/dinov2_L6/R2/seeds_present (length)
+\RSDinoSixRtwoProvisional: no: derived: fewer than 3 seeds in [F3]/mit/stim_v3/dinov2_L6/R2
+\RSDinoSixRtwoCC: 0.725: [F3]/mit/dinov2_L6/R2/mean (n 3)
+\RSDinoSixRtwoValid: valid: [F3]/mit/dinov2_L6/R2/valid
+\RSDinoSixRtwoKz (+CI): +0.072 [0.056, 0.087]: [F3]/stim_v3/dinov2_L6/R2/kanizsa/illusory-control180/avg|inside (size avg, seeds 3)
+\RSDinoSixRtwoKzCore (+CI): +0.068 [0.059, 0.078]: [F3]/stim_v3/dinov2_L6/R2/kanizsa/illusory-control180/avg|r_core30 (size avg, seeds 3)
+\RSDinoSixRtwoKzNinety (+CI): +0.100 [0.082, 0.117]: [F3]/stim_v3/dinov2_L6/R2/kanizsa/illusory-control90/avg|inside (size avg, seeds 3)
+\RSDinoSixRtwoRealFilled (+CI): +0.102 [0.089, 0.112]: [F3]/stim_v3/dinov2_L6/R2/kanizsa/real_filled-control180/avg|inside (size avg, seeds 3)
+\RSDinoSixRtwoReal (+CI): +0.133 [0.123, 0.144]: [F3]/stim_v3/dinov2_L6/R2/kanizsa/real-control180/avg|inside (size avg, seeds 3)
+\RSDinoSixRtwoEhr (+CI): +0.104 [0.082, 0.125]: [F3]/stim_v3/dinov2_L6/R2/ehrenstein/illusory-control_end/avg|inside
+\RSDinoSixRtwoUniTwenty (+CI): 0.67 [0.54, 0.79]: [F3]/section_B/dinov2_L6/R2/inside/ratio_20
+\RSDinoSixRtwoAltTwenty (+CI): 1.11 [1.03, 1.20]: [F3]/stim_alt/dinov2_L6/R2/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSDinoSixRtwoDropTwenty (+CI): -0.35 [-0.85, -0.08]: [F3]/stim_alt/dinov2_L6/R2/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSDinoSixRtwoRotUni (+CI): 0.67 [0.54, 0.79]: [F3]/stim_alt/dinov2_L6/R2/r_inside/ratio_uni20 (seeds [0, 1, 2])
+\RSDinoSixRtwoRotAlt (+CI): 1.11 [1.03, 1.20]: [F3]/stim_alt/dinov2_L6/R2/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSDinoSixRtwoRotDrop (+CI): -0.35 [-0.85, -0.08]: [F3]/stim_alt/dinov2_L6/R2/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSDinoSixRthreeSeeds: 3: [F3]/stim_v3/dinov2_L6/R3/seeds_present (length)
+\RSDinoSixRthreeProvisional: no: derived: fewer than 3 seeds in [F3]/mit/stim_v3/dinov2_L6/R3
+\RSDinoSixRthreeCC: 0.727: [F3]/mit/dinov2_L6/R3/mean (n 3)
+\RSDinoSixRthreeValid: valid: [F3]/mit/dinov2_L6/R3/valid
+\RSDinoSixRthreeKz (+CI): +0.068 [0.053, 0.082]: [F3]/stim_v3/dinov2_L6/R3/kanizsa/illusory-control180/avg|inside (size avg, seeds 3)
+\RSDinoSixRthreeKzCore (+CI): +0.060 [0.050, 0.071]: [F3]/stim_v3/dinov2_L6/R3/kanizsa/illusory-control180/avg|r_core30 (size avg, seeds 3)
+\RSDinoSixRthreeKzNinety (+CI): +0.088 [0.072, 0.102]: [F3]/stim_v3/dinov2_L6/R3/kanizsa/illusory-control90/avg|inside (size avg, seeds 3)
+\RSDinoSixRthreeRealFilled (+CI): +0.058 [0.044, 0.072]: [F3]/stim_v3/dinov2_L6/R3/kanizsa/real_filled-control180/avg|inside (size avg, seeds 3)
+\RSDinoSixRthreeReal (+CI): +0.098 [0.083, 0.114]: [F3]/stim_v3/dinov2_L6/R3/kanizsa/real-control180/avg|inside (size avg, seeds 3)
+\RSDinoSixRthreeEhr (+CI): +0.065 [0.045, 0.085]: [F3]/stim_v3/dinov2_L6/R3/ehrenstein/illusory-control_end/avg|inside
+\RSDinoSixRthreeUniTwenty (+CI): 0.65 [0.46, 0.80]: [F3]/section_B/dinov2_L6/R3/inside/ratio_20
+\RSDinoSixRthreeAltTwenty (+CI): 1.02 [0.90, 1.13]: [F3]/stim_alt/dinov2_L6/R3/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSDinoSixRthreeDropTwenty (+CI): -0.05 [-0.59, 0.21]: [F3]/stim_alt/dinov2_L6/R3/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSDinoSixRthreeRotUni (+CI): 0.65 [0.46, 0.80]: [F3]/stim_alt/dinov2_L6/R3/r_inside/ratio_uni20 (seeds [0, 1, 2])
+\RSDinoSixRthreeRotAlt (+CI): 1.02 [0.90, 1.13]: [F3]/stim_alt/dinov2_L6/R3/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSDinoSixRthreeRotDrop (+CI): -0.05 [-0.59, 0.21]: [F3]/stim_alt/dinov2_L6/R3/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSDinoSixRfourSeeds: 3: [F3]/stim_v3/dinov2_L6/R4/seeds_present (length)
+\RSDinoSixRfourProvisional: no: derived: fewer than 3 seeds in [F3]/mit/stim_v3/dinov2_L6/R4
+\RSDinoSixRfourCC: 0.742: [F3]/mit/dinov2_L6/R4/mean (n 3)
+\RSDinoSixRfourValid: valid: [F3]/mit/dinov2_L6/R4/valid
+\RSDinoSixRfourKz (+CI): +0.090 [0.069, 0.110]: [F3]/stim_v3/dinov2_L6/R4/kanizsa/illusory-control180/avg|inside (size avg, seeds 3)
+\RSDinoSixRfourKzCore (+CI): +0.082 [0.071, 0.093]: [F3]/stim_v3/dinov2_L6/R4/kanizsa/illusory-control180/avg|r_core30 (size avg, seeds 3)
+\RSDinoSixRfourKzNinety (+CI): +0.121 [0.100, 0.141]: [F3]/stim_v3/dinov2_L6/R4/kanizsa/illusory-control90/avg|inside (size avg, seeds 3)
+\RSDinoSixRfourRealFilled (+CI): +0.130 [0.120, 0.140]: [F3]/stim_v3/dinov2_L6/R4/kanizsa/real_filled-control180/avg|inside (size avg, seeds 3)
+\RSDinoSixRfourReal (+CI): +0.173 [0.163, 0.183]: [F3]/stim_v3/dinov2_L6/R4/kanizsa/real-control180/avg|inside (size avg, seeds 3)
+\RSDinoSixRfourEhr (+CI): +0.109 [0.092, 0.127]: [F3]/stim_v3/dinov2_L6/R4/ehrenstein/illusory-control_end/avg|inside
+\RSDinoSixRfourUniTwenty (+CI): 0.59 [0.43, 0.73]: [F3]/section_B/dinov2_L6/R4/inside/ratio_20
+\RSDinoSixRfourAltTwenty (+CI): 0.95 [0.86, 1.02]: [F3]/stim_alt/dinov2_L6/R4/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSDinoSixRfourDropTwenty (+CI): 0.12 [-0.08, 0.26]: [F3]/stim_alt/dinov2_L6/R4/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSDinoSixRfourRotUni (+CI): 0.59 [0.43, 0.73]: [F3]/stim_alt/dinov2_L6/R4/r_inside/ratio_uni20 (seeds [0, 1, 2])
+\RSDinoSixRfourRotAlt (+CI): 0.95 [0.86, 1.02]: [F3]/stim_alt/dinov2_L6/R4/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSDinoSixRfourRotDrop (+CI): 0.12 [-0.08, 0.26]: [F3]/stim_alt/dinov2_L6/R4/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSDinoSixRoneFixedMinusRone (+CI): -0.003 [-0.010, 0.005]: [F3]/contrasts/dinov2_L6/R1n-R1/kanizsa|illusory-control180|avg|inside (seeds [3, 3])
+\RSDinoSixRoneFixedMinusRfour (+CI): -0.039 [-0.067, -0.013]: [F3]/contrasts/dinov2_L6/R1n-R4/kanizsa|illusory-control180|avg|inside (seeds [3, 3])
+\RSDinoSixRoneMinusRfour (+CI): -0.036 [-0.060, -0.014]: [F3]/contrasts/dinov2_L6/R1-R4/kanizsa|illusory-control180|avg|inside (seeds [3, 3])
+\RSDinoSixRoneFixedMinusRtwo (+CI): -0.021 [-0.043, 0.001]: [F3]/contrasts/dinov2_L6/R1n-R2/kanizsa|illusory-control180|avg|inside (seeds [3, 3])
+\RSDinoSixRoneFixedMinusRthree (+CI): -0.017 [-0.037, 0.002]: [F3]/contrasts/dinov2_L6/R1n-R3/kanizsa|illusory-control180|avg|inside (seeds [3, 3])
+\RSSiglipTwentyFourCCThreshold: 0.691: derived: [F3]/mit/siglip_L24/R4/mean - cc_margin
+\RSSiglipTwentyFourRoneFixedSeeds: 3: [F3]/stim_v3/siglip_L24/R1n/seeds_present (length)
+\RSSiglipTwentyFourRoneFixedProvisional: no: derived: fewer than 3 seeds in [F3]/mit/stim_v3/siglip_L24/R1n
+\RSSiglipTwentyFourRoneFixedCC: 0.677: [F3]/mit/siglip_L24/R1n/mean (n 3)
+\RSSiglipTwentyFourRoneFixedValid: invalid: [F3]/mit/siglip_L24/R1n/valid
+\RSSiglipTwentyFourRoneFixedKz (+CI): +0.144 [0.116, 0.171]: [F3]/stim_v3/siglip_L24/R1n/kanizsa/illusory-control180/avg|inside (size avg, seeds 3)
+\RSSiglipTwentyFourRoneFixedKzCore (+CI): +0.134 [0.103, 0.167]: [F3]/stim_v3/siglip_L24/R1n/kanizsa/illusory-control180/avg|r_core30 (size avg, seeds 3)
+\RSSiglipTwentyFourRoneFixedKzNinety (+CI): +0.180 [0.146, 0.212]: [F3]/stim_v3/siglip_L24/R1n/kanizsa/illusory-control90/avg|inside (size avg, seeds 3)
+\RSSiglipTwentyFourRoneFixedRealFilled (+CI): +0.156 [0.132, 0.180]: [F3]/stim_v3/siglip_L24/R1n/kanizsa/real_filled-control180/avg|inside (size avg, seeds 3)
+\RSSiglipTwentyFourRoneFixedReal (+CI): +0.165 [0.135, 0.196]: [F3]/stim_v3/siglip_L24/R1n/kanizsa/real-control180/avg|inside (size avg, seeds 3)
+\RSSiglipTwentyFourRoneFixedEhr (+CI): +0.016 [-0.012, 0.042]: [F3]/stim_v3/siglip_L24/R1n/ehrenstein/illusory-control_end/avg|inside
+\RSSiglipTwentyFourRoneFixedUniTwenty (+CI): 0.67 [0.59, 0.73]: [F3]/section_B/siglip_L24/R1n/inside/ratio_20
+\RSSiglipTwentyFourRoneFixedAltTwenty (+CI): 0.72 [0.58, 0.83]: [F3]/stim_alt/siglip_L24/R1n/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSSiglipTwentyFourRoneFixedDropTwenty (+CI): 0.85 [0.53, 1.25]: [F3]/stim_alt/siglip_L24/R1n/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSSiglipTwentyFourRoneFixedRotUni (+CI): 0.67 [0.59, 0.73]: [F3]/stim_alt/siglip_L24/R1n/r_inside/ratio_uni20 (seeds [0, 1, 2])
+\RSSiglipTwentyFourRoneFixedRotAlt (+CI): 0.72 [0.58, 0.83]: [F3]/stim_alt/siglip_L24/R1n/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSSiglipTwentyFourRoneFixedRotDrop (+CI): 0.85 [0.53, 1.25]: [F3]/stim_alt/siglip_L24/R1n/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSSiglipTwentyFourRoneSeeds: 3: [F3]/stim_v3/siglip_L24/R1/seeds_present (length)
+\RSSiglipTwentyFourRoneProvisional: no: derived: fewer than 3 seeds in [F3]/mit/stim_v3/siglip_L24/R1
+\RSSiglipTwentyFourRoneCC: 0.678: [F3]/mit/siglip_L24/R1/mean (n 3)
+\RSSiglipTwentyFourRoneValid: invalid: [F3]/mit/siglip_L24/R1/valid
+\RSSiglipTwentyFourRoneKz (+CI): +0.124 [0.100, 0.149]: [F3]/stim_v3/siglip_L24/R1/kanizsa/illusory-control180/avg|inside (size avg, seeds 3)
+\RSSiglipTwentyFourRoneKzCore (+CI): +0.119 [0.088, 0.149]: [F3]/stim_v3/siglip_L24/R1/kanizsa/illusory-control180/avg|r_core30 (size avg, seeds 3)
+\RSSiglipTwentyFourRoneKzNinety (+CI): +0.168 [0.137, 0.199]: [F3]/stim_v3/siglip_L24/R1/kanizsa/illusory-control90/avg|inside (size avg, seeds 3)
+\RSSiglipTwentyFourRoneRealFilled (+CI): +0.156 [0.131, 0.182]: [F3]/stim_v3/siglip_L24/R1/kanizsa/real_filled-control180/avg|inside (size avg, seeds 3)
+\RSSiglipTwentyFourRoneReal (+CI): +0.152 [0.125, 0.180]: [F3]/stim_v3/siglip_L24/R1/kanizsa/real-control180/avg|inside (size avg, seeds 3)
+\RSSiglipTwentyFourRoneEhr (+CI): +0.039 [0.014, 0.062]: [F3]/stim_v3/siglip_L24/R1/ehrenstein/illusory-control_end/avg|inside
+\RSSiglipTwentyFourRoneUniTwenty (+CI): 0.77 [0.64, 0.87]: [F3]/section_B/siglip_L24/R1/inside/ratio_20
+\RSSiglipTwentyFourRoneAltTwenty (+CI): 0.85 [0.71, 0.97]: [F3]/stim_alt/siglip_L24/R1/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSSiglipTwentyFourRoneDropTwenty (+CI): 0.62 [0.17, 1.19]: [F3]/stim_alt/siglip_L24/R1/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSSiglipTwentyFourRoneRotUni (+CI): 0.77 [0.64, 0.87]: [F3]/stim_alt/siglip_L24/R1/r_inside/ratio_uni20 (seeds [0, 1, 2])
+\RSSiglipTwentyFourRoneRotAlt (+CI): 0.85 [0.71, 0.97]: [F3]/stim_alt/siglip_L24/R1/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSSiglipTwentyFourRoneRotDrop (+CI): 0.62 [0.17, 1.19]: [F3]/stim_alt/siglip_L24/R1/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSSiglipTwentyFourRtwoSeeds: 3: [F3]/stim_v3/siglip_L24/R2/seeds_present (length)
+\RSSiglipTwentyFourRtwoProvisional: no: derived: fewer than 3 seeds in [F3]/mit/stim_v3/siglip_L24/R2
+\RSSiglipTwentyFourRtwoCC: 0.715: [F3]/mit/siglip_L24/R2/mean (n 3)
+\RSSiglipTwentyFourRtwoValid: valid: [F3]/mit/siglip_L24/R2/valid
+\RSSiglipTwentyFourRtwoKz (+CI): +0.136 [0.117, 0.159]: [F3]/stim_v3/siglip_L24/R2/kanizsa/illusory-control180/avg|inside (size avg, seeds 3)
+\RSSiglipTwentyFourRtwoKzCore (+CI): +0.126 [0.094, 0.159]: [F3]/stim_v3/siglip_L24/R2/kanizsa/illusory-control180/avg|r_core30 (size avg, seeds 3)
+\RSSiglipTwentyFourRtwoKzNinety (+CI): +0.136 [0.116, 0.159]: [F3]/stim_v3/siglip_L24/R2/kanizsa/illusory-control90/avg|inside (size avg, seeds 3)
+\RSSiglipTwentyFourRtwoRealFilled (+CI): +0.175 [0.152, 0.201]: [F3]/stim_v3/siglip_L24/R2/kanizsa/real_filled-control180/avg|inside (size avg, seeds 3)
+\RSSiglipTwentyFourRtwoReal (+CI): +0.129 [0.108, 0.152]: [F3]/stim_v3/siglip_L24/R2/kanizsa/real-control180/avg|inside (size avg, seeds 3)
+\RSSiglipTwentyFourRtwoEhr (+CI): +0.032 [0.016, 0.048]: [F3]/stim_v3/siglip_L24/R2/ehrenstein/illusory-control_end/avg|inside
+\RSSiglipTwentyFourRtwoUniTwenty (+CI): 0.82 [0.67, 0.96]: [F3]/section_B/siglip_L24/R2/inside/ratio_20
+\RSSiglipTwentyFourRtwoAltTwenty (+CI): 0.68 [0.54, 0.83]: [F3]/stim_alt/siglip_L24/R2/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSSiglipTwentyFourRtwoDropTwenty (+CI): 1.80 [0.76, 7.01]: [F3]/stim_alt/siglip_L24/R2/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSSiglipTwentyFourRtwoRotUni (+CI): 0.82 [0.67, 0.96]: [F3]/stim_alt/siglip_L24/R2/r_inside/ratio_uni20 (seeds [0, 1, 2])
+\RSSiglipTwentyFourRtwoRotAlt (+CI): 0.68 [0.54, 0.83]: [F3]/stim_alt/siglip_L24/R2/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSSiglipTwentyFourRtwoRotDrop (+CI): 1.80 [0.76, 7.01]: [F3]/stim_alt/siglip_L24/R2/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSSiglipTwentyFourRthreeSeeds: 3: [F3]/stim_v3/siglip_L24/R3/seeds_present (length)
+\RSSiglipTwentyFourRthreeProvisional: no: derived: fewer than 3 seeds in [F3]/mit/stim_v3/siglip_L24/R3
+\RSSiglipTwentyFourRthreeCC: 0.708: [F3]/mit/siglip_L24/R3/mean (n 3)
+\RSSiglipTwentyFourRthreeValid: valid: [F3]/mit/siglip_L24/R3/valid
+\RSSiglipTwentyFourRthreeKz (+CI): +0.113 [0.039, 0.188]: [F3]/stim_v3/siglip_L24/R3/kanizsa/illusory-control180/avg|inside (size avg, seeds 3)
+\RSSiglipTwentyFourRthreeKzCore (+CI): +0.107 [0.037, 0.180]: [F3]/stim_v3/siglip_L24/R3/kanizsa/illusory-control180/avg|r_core30 (size avg, seeds 3)
+\RSSiglipTwentyFourRthreeKzNinety (+CI): +0.134 [0.073, 0.194]: [F3]/stim_v3/siglip_L24/R3/kanizsa/illusory-control90/avg|inside (size avg, seeds 3)
+\RSSiglipTwentyFourRthreeRealFilled (+CI): +0.103 [0.047, 0.164]: [F3]/stim_v3/siglip_L24/R3/kanizsa/real_filled-control180/avg|inside (size avg, seeds 3)
+\RSSiglipTwentyFourRthreeReal (+CI): +0.126 [0.075, 0.181]: [F3]/stim_v3/siglip_L24/R3/kanizsa/real-control180/avg|inside (size avg, seeds 3)
+\RSSiglipTwentyFourRthreeEhr (+CI): +0.092 [0.058, 0.127]: [F3]/stim_v3/siglip_L24/R3/ehrenstein/illusory-control_end/avg|inside
+\RSSiglipTwentyFourRthreeUniTwenty (+CI): 1.01 [0.85, 1.27]: [F3]/section_B/siglip_L24/R3/inside/ratio_20
+\RSSiglipTwentyFourRthreeAltTwenty (+CI): 1.07 [0.95, 1.27]: [F3]/stim_alt/siglip_L24/R3/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSSiglipTwentyFourRthreeDropTwenty (+CI): n.e. : [F3]/stim_alt/siglip_L24/R3/r_inside/drop_ratio20/den_ci_excludes_0 = false
+\RSSiglipTwentyFourRthreeRotUni (+CI): 1.01 [0.85, 1.27]: [F3]/stim_alt/siglip_L24/R3/r_inside/ratio_uni20 (seeds [0, 1, 2])
+\RSSiglipTwentyFourRthreeRotAlt (+CI): 1.07 [0.95, 1.27]: [F3]/stim_alt/siglip_L24/R3/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSSiglipTwentyFourRthreeRotDrop (+CI): n.e. : [F3]/stim_alt/siglip_L24/R3/r_inside/drop_ratio20: aligned or denominator CI includes 0
+\RSSiglipTwentyFourRfourSeeds: 3: [F3]/stim_v3/siglip_L24/R4/seeds_present (length)
+\RSSiglipTwentyFourRfourProvisional: no: derived: fewer than 3 seeds in [F3]/mit/stim_v3/siglip_L24/R4
+\RSSiglipTwentyFourRfourCC: 0.721: [F3]/mit/siglip_L24/R4/mean (n 3)
+\RSSiglipTwentyFourRfourValid: valid: [F3]/mit/siglip_L24/R4/valid
+\RSSiglipTwentyFourRfourKz (+CI): +0.143 [0.119, 0.171]: [F3]/stim_v3/siglip_L24/R4/kanizsa/illusory-control180/avg|inside (size avg, seeds 3)
+\RSSiglipTwentyFourRfourKzCore (+CI): +0.138 [0.102, 0.176]: [F3]/stim_v3/siglip_L24/R4/kanizsa/illusory-control180/avg|r_core30 (size avg, seeds 3)
+\RSSiglipTwentyFourRfourKzNinety (+CI): +0.148 [0.125, 0.175]: [F3]/stim_v3/siglip_L24/R4/kanizsa/illusory-control90/avg|inside (size avg, seeds 3)
+\RSSiglipTwentyFourRfourRealFilled (+CI): +0.157 [0.135, 0.179]: [F3]/stim_v3/siglip_L24/R4/kanizsa/real_filled-control180/avg|inside (size avg, seeds 3)
+\RSSiglipTwentyFourRfourReal (+CI): +0.122 [0.104, 0.140]: [F3]/stim_v3/siglip_L24/R4/kanizsa/real-control180/avg|inside (size avg, seeds 3)
+\RSSiglipTwentyFourRfourEhr (+CI): +0.038 [0.024, 0.052]: [F3]/stim_v3/siglip_L24/R4/ehrenstein/illusory-control_end/avg|inside
+\RSSiglipTwentyFourRfourUniTwenty (+CI): 0.81 [0.67, 0.95]: [F3]/section_B/siglip_L24/R4/inside/ratio_20
+\RSSiglipTwentyFourRfourAltTwenty (+CI): 0.63 [0.48, 0.80]: [F3]/stim_alt/siglip_L24/R4/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSSiglipTwentyFourRfourDropTwenty (+CI): 1.97 [0.95, 6.12]: [F3]/stim_alt/siglip_L24/R4/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSSiglipTwentyFourRfourRotUni (+CI): 0.81 [0.67, 0.95]: [F3]/stim_alt/siglip_L24/R4/r_inside/ratio_uni20 (seeds [0, 1, 2])
+\RSSiglipTwentyFourRfourRotAlt (+CI): 0.63 [0.48, 0.80]: [F3]/stim_alt/siglip_L24/R4/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSSiglipTwentyFourRfourRotDrop (+CI): 1.97 [0.95, 6.12]: [F3]/stim_alt/siglip_L24/R4/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSSiglipTwentyFourRoneFixedMinusRone (+CI): +0.019 [0.009, 0.029]: [F3]/contrasts/siglip_L24/R1n-R1/kanizsa|illusory-control180|avg|inside (seeds [3, 3])
+\RSSiglipTwentyFourRoneFixedMinusRfour (+CI): +0.0001 [-0.030, 0.030]: [F3]/contrasts/siglip_L24/R1n-R4/kanizsa|illusory-control180|avg|inside (seeds [3, 3])
+\RSSiglipTwentyFourRoneMinusRfour (+CI): -0.019 [-0.049, 0.009]: [F3]/contrasts/siglip_L24/R1-R4/kanizsa|illusory-control180|avg|inside (seeds [3, 3])
+\RSSiglipTwentyFourRoneFixedMinusRtwo (+CI): +0.007 [-0.018, 0.034]: [F3]/contrasts/siglip_L24/R1n-R2/kanizsa|illusory-control180|avg|inside (seeds [3, 3])
+\RSSiglipTwentyFourRoneFixedMinusRthree (+CI): +0.030 [-0.026, 0.088]: [F3]/contrasts/siglip_L24/R1n-R3/kanizsa|illusory-control180|avg|inside (seeds [3, 3])
+\RSIIEFeatCCThreshold: 0.697: derived: [F3]/mit/iie_shapenetc/R4/mean - cc_margin
+\RSIIEFeatRoneFixedSeeds: 3: [F3]/stim_v3/iie_shapenetc/R1n/seeds_present (length)
+\RSIIEFeatRoneFixedProvisional: no: derived: fewer than 3 seeds in [F3]/mit/stim_v3/iie_shapenetc/R1n
+\RSIIEFeatRoneFixedCC: 0.684: [F3]/mit/iie_shapenetc/R1n/mean (n 3)
+\RSIIEFeatRoneFixedValid: invalid: [F3]/mit/iie_shapenetc/R1n/valid
+\RSIIEFeatRoneFixedKz (+CI): +0.101 [0.061, 0.142]: [F3]/stim_v3/iie_shapenetc/R1n/kanizsa/illusory-control180/avg|inside (size avg, seeds 3)
+\RSIIEFeatRoneFixedKzCore (+CI): +0.094 [0.057, 0.134]: [F3]/stim_v3/iie_shapenetc/R1n/kanizsa/illusory-control180/avg|r_core30 (size avg, seeds 3)
+\RSIIEFeatRoneFixedKzNinety (+CI): +0.093 [0.054, 0.132]: [F3]/stim_v3/iie_shapenetc/R1n/kanizsa/illusory-control90/avg|inside (size avg, seeds 3)
+\RSIIEFeatRoneFixedRealFilled (+CI): +0.092 [0.053, 0.132]: [F3]/stim_v3/iie_shapenetc/R1n/kanizsa/real_filled-control180/avg|inside (size avg, seeds 3)
+\RSIIEFeatRoneFixedReal (+CI): +0.115 [0.090, 0.144]: [F3]/stim_v3/iie_shapenetc/R1n/kanizsa/real-control180/avg|inside (size avg, seeds 3)
+\RSIIEFeatRoneFixedEhr (+CI): +0.117 [0.094, 0.143]: [F3]/stim_v3/iie_shapenetc/R1n/ehrenstein/illusory-control_end/avg|inside
+\RSIIEFeatRoneFixedUniTwenty (+CI): 0.54 [0.41, 0.71]: [F3]/section_B/iie_shapenetc/R1n/inside/ratio_20
+\RSIIEFeatRoneFixedAltTwenty (+CI): 0.80 [0.67, 0.95]: [F3]/stim_alt/iie_shapenetc/R1n/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSIIEFeatRoneFixedDropTwenty (+CI): 0.43 [0.17, 0.59]: [F3]/stim_alt/iie_shapenetc/R1n/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSIIEFeatRoneFixedRotUni (+CI): 0.54 [0.41, 0.71]: [F3]/stim_alt/iie_shapenetc/R1n/r_inside/ratio_uni20 (seeds [0, 1, 2])
+\RSIIEFeatRoneFixedRotAlt (+CI): 0.80 [0.67, 0.95]: [F3]/stim_alt/iie_shapenetc/R1n/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSIIEFeatRoneFixedRotDrop (+CI): 0.43 [0.17, 0.59]: [F3]/stim_alt/iie_shapenetc/R1n/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSIIEFeatRoneSeeds: 3: [F3]/stim_v3/iie_shapenetc/R1/seeds_present (length)
+\RSIIEFeatRoneProvisional: no: derived: fewer than 3 seeds in [F3]/mit/stim_v3/iie_shapenetc/R1
+\RSIIEFeatRoneCC: 0.685: [F3]/mit/iie_shapenetc/R1/mean (n 3)
+\RSIIEFeatRoneValid: invalid: [F3]/mit/iie_shapenetc/R1/valid
+\RSIIEFeatRoneKz (+CI): +0.086 [0.048, 0.124]: [F3]/stim_v3/iie_shapenetc/R1/kanizsa/illusory-control180/avg|inside (size avg, seeds 3)
+\RSIIEFeatRoneKzCore (+CI): +0.077 [0.042, 0.114]: [F3]/stim_v3/iie_shapenetc/R1/kanizsa/illusory-control180/avg|r_core30 (size avg, seeds 3)
+\RSIIEFeatRoneKzNinety (+CI): +0.076 [0.038, 0.117]: [F3]/stim_v3/iie_shapenetc/R1/kanizsa/illusory-control90/avg|inside (size avg, seeds 3)
+\RSIIEFeatRoneRealFilled (+CI): +0.068 [0.017, 0.119]: [F3]/stim_v3/iie_shapenetc/R1/kanizsa/real_filled-control180/avg|inside (size avg, seeds 3)
+\RSIIEFeatRoneReal (+CI): +0.105 [0.073, 0.141]: [F3]/stim_v3/iie_shapenetc/R1/kanizsa/real-control180/avg|inside (size avg, seeds 3)
+\RSIIEFeatRoneEhr (+CI): +0.053 [0.030, 0.074]: [F3]/stim_v3/iie_shapenetc/R1/ehrenstein/illusory-control_end/avg|inside
+\RSIIEFeatRoneUniTwenty (+CI): 0.51 [0.38, 0.68]: [F3]/section_B/iie_shapenetc/R1/inside/ratio_20
+\RSIIEFeatRoneAltTwenty (+CI): 0.77 [0.65, 0.93]: [F3]/stim_alt/iie_shapenetc/R1/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSIIEFeatRoneDropTwenty (+CI): 0.46 [0.21, 0.63]: [F3]/stim_alt/iie_shapenetc/R1/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSIIEFeatRoneRotUni (+CI): 0.51 [0.38, 0.68]: [F3]/stim_alt/iie_shapenetc/R1/r_inside/ratio_uni20 (seeds [0, 1, 2])
+\RSIIEFeatRoneRotAlt (+CI): 0.77 [0.65, 0.93]: [F3]/stim_alt/iie_shapenetc/R1/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSIIEFeatRoneRotDrop (+CI): 0.46 [0.21, 0.63]: [F3]/stim_alt/iie_shapenetc/R1/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSIIEFeatRtwoSeeds: 3: [F3]/stim_v3/iie_shapenetc/R2/seeds_present (length)
+\RSIIEFeatRtwoProvisional: no: derived: fewer than 3 seeds in [F3]/mit/stim_v3/iie_shapenetc/R2
+\RSIIEFeatRtwoCC: 0.714: [F3]/mit/iie_shapenetc/R2/mean (n 3)
+\RSIIEFeatRtwoValid: valid: [F3]/mit/iie_shapenetc/R2/valid
+\RSIIEFeatRtwoKz (+CI): +0.080 [0.049, 0.114]: [F3]/stim_v3/iie_shapenetc/R2/kanizsa/illusory-control180/avg|inside (size avg, seeds 3)
+\RSIIEFeatRtwoKzCore (+CI): +0.084 [0.048, 0.124]: [F3]/stim_v3/iie_shapenetc/R2/kanizsa/illusory-control180/avg|r_core30 (size avg, seeds 3)
+\RSIIEFeatRtwoKzNinety (+CI): +0.112 [0.079, 0.148]: [F3]/stim_v3/iie_shapenetc/R2/kanizsa/illusory-control90/avg|inside (size avg, seeds 3)
+\RSIIEFeatRtwoRealFilled (+CI): +0.126 [0.099, 0.151]: [F3]/stim_v3/iie_shapenetc/R2/kanizsa/real_filled-control180/avg|inside (size avg, seeds 3)
+\RSIIEFeatRtwoReal (+CI): +0.128 [0.102, 0.153]: [F3]/stim_v3/iie_shapenetc/R2/kanizsa/real-control180/avg|inside (size avg, seeds 3)
+\RSIIEFeatRtwoEhr (+CI): +0.112 [0.085, 0.145]: [F3]/stim_v3/iie_shapenetc/R2/ehrenstein/illusory-control_end/avg|inside
+\RSIIEFeatRtwoUniTwenty (+CI): -0.03 [-0.31, 0.16]: [F3]/section_B/iie_shapenetc/R2/inside/ratio_20
+\RSIIEFeatRtwoAltTwenty (+CI): 0.44 [0.24, 0.60]: [F3]/stim_alt/iie_shapenetc/R2/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSIIEFeatRtwoDropTwenty (+CI): 0.55 [0.41, 0.65]: [F3]/stim_alt/iie_shapenetc/R2/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSIIEFeatRtwoRotUni (+CI): -0.03 [-0.31, 0.16]: [F3]/stim_alt/iie_shapenetc/R2/r_inside/ratio_uni20 (seeds [0, 1, 2])
+\RSIIEFeatRtwoRotAlt (+CI): 0.44 [0.24, 0.60]: [F3]/stim_alt/iie_shapenetc/R2/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSIIEFeatRtwoRotDrop (+CI): 0.55 [0.41, 0.65]: [F3]/stim_alt/iie_shapenetc/R2/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSIIEFeatRthreeSeeds: 3: [F3]/stim_v3/iie_shapenetc/R3/seeds_present (length)
+\RSIIEFeatRthreeProvisional: no: derived: fewer than 3 seeds in [F3]/mit/stim_v3/iie_shapenetc/R3
+\RSIIEFeatRthreeCC: 0.699: [F3]/mit/iie_shapenetc/R3/mean (n 3)
+\RSIIEFeatRthreeValid: valid: [F3]/mit/iie_shapenetc/R3/valid
+\RSIIEFeatRthreeKz (+CI): +0.109 [0.071, 0.144]: [F3]/stim_v3/iie_shapenetc/R3/kanizsa/illusory-control180/avg|inside (size avg, seeds 3)
+\RSIIEFeatRthreeKzCore (+CI): +0.104 [0.066, 0.141]: [F3]/stim_v3/iie_shapenetc/R3/kanizsa/illusory-control180/avg|r_core30 (size avg, seeds 3)
+\RSIIEFeatRthreeKzNinety (+CI): +0.120 [0.081, 0.157]: [F3]/stim_v3/iie_shapenetc/R3/kanizsa/illusory-control90/avg|inside (size avg, seeds 3)
+\RSIIEFeatRthreeRealFilled (+CI): +0.044 [-0.001, 0.084]: [F3]/stim_v3/iie_shapenetc/R3/kanizsa/real_filled-control180/avg|inside (size avg, seeds 3)
+\RSIIEFeatRthreeReal (+CI): +0.096 [0.059, 0.127]: [F3]/stim_v3/iie_shapenetc/R3/kanizsa/real-control180/avg|inside (size avg, seeds 3)
+\RSIIEFeatRthreeEhr (+CI): +0.157 [0.126, 0.188]: [F3]/stim_v3/iie_shapenetc/R3/ehrenstein/illusory-control_end/avg|inside
+\RSIIEFeatRthreeUniTwenty (+CI): 0.25 [0.08, 0.38]: [F3]/section_B/iie_shapenetc/R3/inside/ratio_20
+\RSIIEFeatRthreeAltTwenty (+CI): 0.67 [0.49, 0.79]: [F3]/stim_alt/iie_shapenetc/R3/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSIIEFeatRthreeDropTwenty (+CI): 0.44 [0.32, 0.59]: [F3]/stim_alt/iie_shapenetc/R3/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSIIEFeatRthreeRotUni (+CI): 0.25 [0.08, 0.38]: [F3]/stim_alt/iie_shapenetc/R3/r_inside/ratio_uni20 (seeds [0, 1, 2])
+\RSIIEFeatRthreeRotAlt (+CI): 0.67 [0.49, 0.79]: [F3]/stim_alt/iie_shapenetc/R3/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSIIEFeatRthreeRotDrop (+CI): 0.44 [0.32, 0.59]: [F3]/stim_alt/iie_shapenetc/R3/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSIIEFeatRfourSeeds: 3: [F3]/stim_v3/iie_shapenetc/R4/seeds_present (length)
+\RSIIEFeatRfourProvisional: no: derived: fewer than 3 seeds in [F3]/mit/stim_v3/iie_shapenetc/R4
+\RSIIEFeatRfourCC: 0.727: [F3]/mit/iie_shapenetc/R4/mean (n 3)
+\RSIIEFeatRfourValid: valid: [F3]/mit/iie_shapenetc/R4/valid
+\RSIIEFeatRfourKz (+CI): +0.082 [0.050, 0.117]: [F3]/stim_v3/iie_shapenetc/R4/kanizsa/illusory-control180/avg|inside (size avg, seeds 3)
+\RSIIEFeatRfourKzCore (+CI): +0.086 [0.049, 0.127]: [F3]/stim_v3/iie_shapenetc/R4/kanizsa/illusory-control180/avg|r_core30 (size avg, seeds 3)
+\RSIIEFeatRfourKzNinety (+CI): +0.107 [0.076, 0.142]: [F3]/stim_v3/iie_shapenetc/R4/kanizsa/illusory-control90/avg|inside (size avg, seeds 3)
+\RSIIEFeatRfourRealFilled (+CI): +0.122 [0.088, 0.155]: [F3]/stim_v3/iie_shapenetc/R4/kanizsa/real_filled-control180/avg|inside (size avg, seeds 3)
+\RSIIEFeatRfourReal (+CI): +0.125 [0.095, 0.155]: [F3]/stim_v3/iie_shapenetc/R4/kanizsa/real-control180/avg|inside (size avg, seeds 3)
+\RSIIEFeatRfourEhr (+CI): +0.107 [0.083, 0.137]: [F3]/stim_v3/iie_shapenetc/R4/ehrenstein/illusory-control_end/avg|inside
+\RSIIEFeatRfourUniTwenty (+CI): 0.10 [-0.11, 0.27]: [F3]/section_B/iie_shapenetc/R4/inside/ratio_20
+\RSIIEFeatRfourAltTwenty (+CI): 0.49 [0.32, 0.66]: [F3]/stim_alt/iie_shapenetc/R4/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSIIEFeatRfourDropTwenty (+CI): 0.56 [0.42, 0.67]: [F3]/stim_alt/iie_shapenetc/R4/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSIIEFeatRfourRotUni (+CI): 0.10 [-0.11, 0.27]: [F3]/stim_alt/iie_shapenetc/R4/r_inside/ratio_uni20 (seeds [0, 1, 2])
+\RSIIEFeatRfourRotAlt (+CI): 0.49 [0.32, 0.66]: [F3]/stim_alt/iie_shapenetc/R4/r_inside/ratio_alt20 (seeds [0, 1, 2])
+\RSIIEFeatRfourRotDrop (+CI): 0.56 [0.42, 0.67]: [F3]/stim_alt/iie_shapenetc/R4/r_inside/drop_ratio20 (seeds [0, 1, 2])
+\RSIIEFeatRoneFixedMinusRone (+CI): +0.015 [0.007, 0.024]: [F3]/contrasts/iie_shapenetc/R1n-R1/kanizsa|illusory-control180|avg|inside (seeds [3, 3])
+\RSIIEFeatRoneFixedMinusRfour (+CI): +0.019 [-0.006, 0.047]: [F3]/contrasts/iie_shapenetc/R1n-R4/kanizsa|illusory-control180|avg|inside (seeds [3, 3])
+\RSIIEFeatRoneMinusRfour (+CI): +0.004 [-0.018, 0.028]: [F3]/contrasts/iie_shapenetc/R1-R4/kanizsa|illusory-control180|avg|inside (seeds [3, 3])
+\RSIIEFeatRoneFixedMinusRtwo (+CI): +0.021 [-0.003, 0.048]: [F3]/contrasts/iie_shapenetc/R1n-R2/kanizsa|illusory-control180|avg|inside (seeds [3, 3])
+\RSIIEFeatRoneFixedMinusRthree (+CI): -0.007 [-0.027, 0.010]: [F3]/contrasts/iie_shapenetc/R1n-R3/kanizsa|illusory-control180|avg|inside (seeds [3, 3])
+\RSNCellsPlanned: 20: derived: RSNFeatureSets x RSNReadouts
+\RSNCellsComplete: 20: derived: cells with all planned seeds (MIT1003 and stimuli)
+\RSNCellsProvisional: 0: derived: cells with scores from fewer than the planned seeds
+\RSNCellsMissing: 0: derived: cells with no scores yet
+\RSNModelsDone: 60: derived: sum of seeds_present over [F3]/stim_v3
+\RSProvisional: no: derived: any readout-swap cell provisional or missing
+\RSStatusText: 20 of the 20 feature-readout cells had all three seeds: derived: RSNCellsComplete, RSNCellsProvisional, RSNCellsMissing in words
+\RSDinoTwelveSign: negative: derived: sign of RSDinoTwelveRfourKz
+\RSDinoTwelveNSameSign: 5: derived: readouts on dinov2_L12 whose Kanizsa CI excludes 0 on the side of R4's sign
+\RSDinoTwelveNAvailable: 5: derived: readouts on dinov2_L12 with scores
+\RSDinoTwelveKzMin: -0.134: derived: min Kanizsa effect over available readouts on dinov2_L12
+\RSDinoTwelveKzMax: -0.073: derived: max Kanizsa effect over available readouts on dinov2_L12
+\RSDinoTwelveKzValidMin: -0.134: derived: min over valid readouts on dinov2_L12
+\RSDinoTwelveKzValidMax: -0.073: derived: max over valid readouts on dinov2_L12
+\RSDinoTwelveNValid: 5: derived: readouts on dinov2_L12 with scores that pass the validity rule
+\RSDinoTwelveRotUniValidMin: 0.57: derived: min over valid readouts on dinov2_L12 of stim_alt ratio_uni20 (r_inside)
+\RSDinoTwelveRotUniValidMax: 0.72: derived: max over valid readouts on dinov2_L12 of stim_alt ratio_uni20 (r_inside)
+\RSDinoSixSign: positive: derived: sign of RSDinoSixRfourKz
+\RSDinoSixNSameSign: 5: derived: readouts on dinov2_L6 whose Kanizsa CI excludes 0 on the side of R4's sign
+\RSDinoSixNAvailable: 5: derived: readouts on dinov2_L6 with scores
+\RSDinoSixKzMin: +0.051: derived: min Kanizsa effect over available readouts on dinov2_L6
+\RSDinoSixKzMax: +0.090: derived: max Kanizsa effect over available readouts on dinov2_L6
+\RSDinoSixKzValidMin: +0.068: derived: min over valid readouts on dinov2_L6
+\RSDinoSixKzValidMax: +0.090: derived: max over valid readouts on dinov2_L6
+\RSDinoSixNValid: 3: derived: readouts on dinov2_L6 with scores that pass the validity rule
+\RSDinoSixRotUniValidMin: 0.59: derived: min over valid readouts on dinov2_L6 of stim_alt ratio_uni20 (r_inside)
+\RSDinoSixRotUniValidMax: 0.67: derived: max over valid readouts on dinov2_L6 of stim_alt ratio_uni20 (r_inside)
+\RSSiglipTwentyFourSign: positive: derived: sign of RSSiglipTwentyFourRfourKz
+\RSSiglipTwentyFourNSameSign: 5: derived: readouts on siglip_L24 whose Kanizsa CI excludes 0 on the side of R4's sign
+\RSSiglipTwentyFourNAvailable: 5: derived: readouts on siglip_L24 with scores
+\RSSiglipTwentyFourKzMin: +0.113: derived: min Kanizsa effect over available readouts on siglip_L24
+\RSSiglipTwentyFourKzMax: +0.144: derived: max Kanizsa effect over available readouts on siglip_L24
+\RSSiglipTwentyFourKzValidMin: +0.113: derived: min over valid readouts on siglip_L24
+\RSSiglipTwentyFourKzValidMax: +0.143: derived: max over valid readouts on siglip_L24
+\RSSiglipTwentyFourNValid: 3: derived: readouts on siglip_L24 with scores that pass the validity rule
+\RSSiglipTwentyFourRotUniValidMin: 0.81: derived: min over valid readouts on siglip_L24 of stim_alt ratio_uni20 (r_inside)
+\RSSiglipTwentyFourRotUniValidMax: 1.01: derived: max over valid readouts on siglip_L24 of stim_alt ratio_uni20 (r_inside)
+\RSIIEFeatSign: positive: derived: sign of RSIIEFeatRfourKz
+\RSIIEFeatNSameSign: 5: derived: readouts on iie_shapenetc whose Kanizsa CI excludes 0 on the side of R4's sign
+\RSIIEFeatNAvailable: 5: derived: readouts on iie_shapenetc with scores
+\RSIIEFeatKzMin: +0.080: derived: min Kanizsa effect over available readouts on iie_shapenetc
+\RSIIEFeatKzMax: +0.109: derived: max Kanizsa effect over available readouts on iie_shapenetc
+\RSIIEFeatKzValidMin: +0.080: derived: min over valid readouts on iie_shapenetc
+\RSIIEFeatKzValidMax: +0.109: derived: max over valid readouts on iie_shapenetc
+\RSIIEFeatNValid: 3: derived: readouts on iie_shapenetc with scores that pass the validity rule
+\RSIIEFeatRotUniValidMin: -0.03: derived: min over valid readouts on iie_shapenetc of stim_alt ratio_uni20 (r_inside)
+\RSIIEFeatRotUniValidMax: 0.25: derived: max over valid readouts on iie_shapenetc of stim_alt ratio_uni20 (r_inside)
+\RSNCellsAvailable: 20: derived: readout-swap cells with scores
+\RSNCellsSameSign: 20: derived: cells whose Kanizsa CI excludes 0 with the sign of R4 on the same features
+\RSNValidCells: 14: derived: cells with scores that pass the MIT1003 validity rule
+\RSNValidCellsSameSign: 14: derived: valid cells whose CI excludes 0 with the feature set's sign
+\RSNSeedRuns: 60: derived: per-seed Kanizsa effects (seed_means) over all cells with scores
+\RSNSeedRunsSameSign: 60: derived: per-seed effects with the feature set's sign
+\RSNValidSeedRuns: 42: derived: per-seed Kanizsa effects (seed_means) over the valid cells with scores
+\RSNValidSeedRunsSameSign: 42: derived: of those, per-seed effects with the feature set's sign
+\RSNMultiValidFeatures: 4: derived: feature sets with at least two valid readouts with scores (where a readout comparison among valid readouts exists)
+\RSMultiValidFeatures: DINOv2-B blocks 12 and 6 and SigLIP-L block 24 and IIE ShapeNet-C: derived: the feature sets with at least two valid readouts with scores
+\RSSingleValidFeatures: none: derived: feature sets with at most one valid readout with scores
+\RSNSingleValidFeatures: 0: derived: count of the same
+\RSValidComparisonText: A comparison among valid readouts therefore exists on every feature set.: derived: RSMultiValidFeatures / RSSingleValidFeatures as a sentence
+\RSNMultiValidWord: four: derived: RSNMultiValidFeatures in words
+\TitleCornerAboveAllModels: yes: derived: asserted MaxAnyModelKz (+0.145) < NullCornerKzMin (+0.176)
+\SeedBootNChanged: 0: paper/seed_bootstrap.json/n_changed (intervals whose position relative to 0 changes when seeds are also resampled)
+\SeedBootNIntervals: 40: paper/seed_bootstrap.json/n_intervals (inside and core Kanizsa effects of every cell with scores)
+\SeedBootText: none of the 40: derived: SeedBootNChanged of SeedBootNIntervals, in words
+# 8. Layer sweep: one R4-type ASPP readout per block, seed 0 (v3/scores/results.json; held-out CC from v2/anatomy/anatomy.json)
+\SweepDinoTwoCC: 0.626: [A2]/records/7/heldout_mit1003_cc
+\SweepDinoTwoKz (+CI): 0.000 [-0.017, 0.016]: [S3]/models/DINOv2-B L2/results/r_inside/all/aligned (size avg 336/448 px, seed 0)
+\SweepDinoTwoRotUni (+CI): n.e. : [S3]/models/DINOv2-B L2/results/r_inside/all/ratio_uni/20: not computed (aligned or uniform-drop CI includes 0)
+\SweepDinoTwoRotAlt (+CI): n.e. : [S3]/models/DINOv2-B L2/results/r_inside/all/ratio_alt/20: not computed (aligned or uniform-drop CI includes 0)
+\SweepDinoTwoRotDrop (+CI): n.e. : [S3]/models/DINOv2-B L2/results/r_inside/all/drop_ratio/20: not computed (aligned or uniform-drop CI includes 0)
+\SweepDinoTwoSRSlope (+CI): -0.080 [-0.183, 0.020]: [S3]/models/DINOv2-B L2/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr
+\SweepDinoEightCC: 0.746: [A2]/records/10/heldout_mit1003_cc
+\SweepDinoEightKz (+CI): +0.035 [0.023, 0.046]: [S3]/models/DINOv2-B L8/results/r_inside/all/aligned (size avg 336/448 px, seed 0)
+\SweepDinoEightRotUni (+CI): 1.57 [1.36, 1.94]: [S3]/models/DINOv2-B L8/results/r_inside/all/ratio_uni/20
+\SweepDinoEightRotAlt (+CI): 0.96 [0.87, 1.10]: [S3]/models/DINOv2-B L8/results/r_inside/all/ratio_alt/20
+\SweepDinoEightRotDrop (+CI): -0.06 [-0.32, 0.13]: [S3]/models/DINOv2-B L8/results/r_inside/all/drop_ratio/20
+\SweepDinoEightSRSlope (+CI): +0.007 [-0.073, 0.088]: [S3]/models/DINOv2-B L8/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr
+\SweepDinoTwelveCC: 0.731: [A2]/records/12/heldout_mit1003_cc
+\SweepDinoTwelveKz (+CI): -0.098 [-0.126, -0.070]: [S3]/models/DINOv2-B L12/results/r_inside/all/aligned (size avg 336/448 px, seed 0)
+\SweepDinoTwelveRotUni (+CI): 0.56 [0.41, 0.68]: [S3]/models/DINOv2-B L12/results/r_inside/all/ratio_uni/20
+\SweepDinoTwelveRotAlt (+CI): 0.79 [0.71, 0.87]: [S3]/models/DINOv2-B L12/results/r_inside/all/ratio_alt/20
+\SweepDinoTwelveRotDrop (+CI): 0.48 [0.28, 0.68]: [S3]/models/DINOv2-B L12/results/r_inside/all/drop_ratio/20
+\SweepDinoTwelveSRSlope (+CI): -0.240 [-0.362, -0.130]: [S3]/models/DINOv2-B L12/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr
+\SweepClipFourCC: 0.657: [A2]/records/13/heldout_mit1003_cc
+\SweepClipFourKz (+CI): -0.0003 [-0.017, 0.017]: [S3]/models/CLIP-L L4/results/r_inside/all/aligned (size avg 336/448 px, seed 0)
+\SweepClipFourRotUni (+CI): n.e. : [S3]/models/CLIP-L L4/results/r_inside/all/ratio_uni/20: not computed (aligned or uniform-drop CI includes 0)
+\SweepClipFourRotAlt (+CI): n.e. : [S3]/models/CLIP-L L4/results/r_inside/all/ratio_alt/20: not computed (aligned or uniform-drop CI includes 0)
+\SweepClipFourRotDrop (+CI): 0.45 [-0.47, 0.83]: [S3]/models/CLIP-L L4/results/r_inside/all/drop_ratio/20
+\SweepClipFourSRSlope (+CI): -0.064 [-0.177, 0.043]: [S3]/models/CLIP-L L4/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr
+\SweepClipTwelveCC: 0.760: [A2]/records/15/heldout_mit1003_cc
+\SweepClipTwelveKz (+CI): +0.060 [0.048, 0.073]: [S3]/models/CLIP-L L12/results/r_inside/all/aligned (size avg 336/448 px, seed 0)
+\SweepClipTwelveRotUni (+CI): 0.90 [0.73, 1.04]: [S3]/models/CLIP-L L12/results/r_inside/all/ratio_uni/20
+\SweepClipTwelveRotAlt (+CI): 0.87 [0.76, 0.97]: [S3]/models/CLIP-L L12/results/r_inside/all/ratio_alt/20
+\SweepClipTwelveRotDrop (+CI): n.e. : [S3]/models/CLIP-L L12/results/r_inside/all/drop_ratio/20: not computed (aligned or uniform-drop CI includes 0)
+\SweepClipTwelveSRSlope (+CI): +0.007 [-0.072, 0.095]: [S3]/models/CLIP-L L12/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr
+\SweepClipTwentyFourCC: 0.718: [A2]/records/18/heldout_mit1003_cc
+\SweepClipTwentyFourKz (+CI): +0.014 [-0.012, 0.042]: [S3]/models/CLIP-L L24/results/r_inside/all/aligned (size avg 336/448 px, seed 0)
+\SweepClipTwentyFourRotUni (+CI): n.e. : [S3]/models/CLIP-L L24/results/r_inside/all/ratio_uni/20: not computed (aligned or uniform-drop CI includes 0)
+\SweepClipTwentyFourRotAlt (+CI): n.e. : [S3]/models/CLIP-L L24/results/r_inside/all/ratio_alt/20: not computed (aligned or uniform-drop CI includes 0)
+\SweepClipTwentyFourRotDrop (+CI): n.e. : [S3]/models/CLIP-L L24/results/r_inside/all/drop_ratio/20: not computed (aligned or uniform-drop CI includes 0)
+\SweepClipTwentyFourSRSlope (+CI): +0.228 [0.107, 0.351]: [S3]/models/CLIP-L L24/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr
+\SweepSiglipFourCC: 0.691: [A2]/records/19/heldout_mit1003_cc
+\SweepSiglipFourKz (+CI): +0.020 [0.009, 0.029]: [S3]/models/SigLIP-L L4/results/r_inside/all/aligned (size avg 336/448 px, seed 0)
+\SweepSiglipFourRotUni (+CI): 0.46 [-0.11, 0.89]: [S3]/models/SigLIP-L L4/results/r_inside/all/ratio_uni/20
+\SweepSiglipFourRotAlt (+CI): 1.14 [0.91, 1.59]: [S3]/models/SigLIP-L L4/results/r_inside/all/ratio_alt/20
+\SweepSiglipFourRotDrop (+CI): -0.27 [-2.74, 0.13]: [S3]/models/SigLIP-L L4/results/r_inside/all/drop_ratio/20
+\SweepSiglipFourSRSlope (+CI): -0.030 [-0.104, 0.035]: [S3]/models/SigLIP-L L4/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr
+\SweepSiglipEightCC: 0.757: [A2]/records/20/heldout_mit1003_cc
+\SweepSiglipEightKz (+CI): +0.055 [0.042, 0.069]: [S3]/models/SigLIP-L L8/results/r_inside/all/aligned (size avg 336/448 px, seed 0)
+\SweepSiglipEightRotUni (+CI): 0.55 [0.32, 0.76]: [S3]/models/SigLIP-L L8/results/r_inside/all/ratio_uni/20
+\SweepSiglipEightRotAlt (+CI): 0.89 [0.74, 1.02]: [S3]/models/SigLIP-L L8/results/r_inside/all/ratio_alt/20
+\SweepSiglipEightRotDrop (+CI): 0.24 [-0.08, 0.43]: [S3]/models/SigLIP-L L8/results/r_inside/all/drop_ratio/20
+\SweepSiglipEightSRSlope (+CI): +0.071 [-0.008, 0.151]: [S3]/models/SigLIP-L L8/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr
+\SweepSiglipTwentyFourCC: 0.721: [A2]/records/24/heldout_mit1003_cc
+\SweepSiglipTwentyFourKz (+CI): +0.145 [0.122, 0.170]: [S3]/models/SigLIP-L L24/results/r_inside/all/aligned (size avg 336/448 px, seed 0)
+\SweepSiglipTwentyFourRotUni (+CI): 0.84 [0.71, 0.97]: [S3]/models/SigLIP-L L24/results/r_inside/all/ratio_uni/20
+\SweepSiglipTwentyFourRotAlt (+CI): 0.70 [0.60, 0.80]: [S3]/models/SigLIP-L L24/results/r_inside/all/ratio_alt/20
+\SweepSiglipTwentyFourRotDrop (+CI): 1.86 [0.90, 7.65]: [S3]/models/SigLIP-L L24/results/r_inside/all/drop_ratio/20
+\SweepSiglipTwentyFourSRSlope (+CI): -0.004 [-0.177, 0.166]: [S3]/models/SigLIP-L L24/results/r_inside/all/sr_slope_vs_control180/slope_per_unit_sr
+\SweepNScored: 9: derived: sweep readouts scored on these displays (rows of Appendix B)
+\SweepNTotal: 18: derived: sweep readouts in [A2]
+\SweepNUnscored: 9: derived: SweepNTotal - SweepNScored (sweep blocks not scored on the present displays)
+\RSNPointwiseInvalid: 3: derived: feature sets on which both pointwise readouts (R1n, R1) fail the validity rule
+\RSPointwiseValidFeatures: DINOv2-B block 12: derived: feature sets on which both pointwise readouts pass
+\RSNNonPointwiseInvalid: 0: derived: R2/R3/R4 cells that fail the validity rule

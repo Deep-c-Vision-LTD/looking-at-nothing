@@ -1,0 +1,40 @@
+{
+ "tag": "siglip_L24_R1n_s0",
+ "fset": "siglip_L24",
+ "arch": "R1n",
+ "seed": 0,
+ "job": "siglip_R1n-R1-R4_s0",
+ "device": "mps",
+ "n_train": 12803,
+ "batches": 400,
+ "epochs": 6,
+ "bs": 32,
+ "lr": 0.0005,
+ "hist": [
+  {
+   "epoch": 0,
+   "loss": 1.11636
+  },
+  {
+   "epoch": 1,
+   "loss": 0.85627
+  },
+  {
+   "epoch": 2,
+   "loss": 0.81397
+  },
+  {
+   "epoch": 3,
+   "loss": 0.78731
+  },
+  {
+   "epoch": 4,
+   "loss": 0.77108
+  },
+  {
+   "epoch": 5,
+   "loss": 0.76203
+  }
+ ],
+ "finished": "2026-10-17 09:13:51"
+}

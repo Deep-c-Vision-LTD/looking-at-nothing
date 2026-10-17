@@ -1,14 +1,18 @@
-numpy
-scipy
-torch
-transformers
-opencv-python
-pillow
-matplotlib
+# Python 3.12. Versions used for the paper's runs (CPU and Apple MPS).
+numpy==2.5.0
+scipy==1.18.0
+opencv-python==4.13.0.92
+pillow==12.2.0
+matplotlib==3.11.0
+torch==2.12.0
+torchvision==0.27.0
+transformers==5.12.1
+huggingface_hub==1.19.0
+boltons
 
-# DeepGaze IIE / MSDB
+# DeepGaze IIE and DeepGaze MSDB (deepgaze_pytorch 1.2.1); MSDB also needs OpenAI CLIP (RN50x64)
 git+https://github.com/matthias-k/DeepGaze.git
+git+https://github.com/openai/CLIP.git
 
-# MSI-Net only (run msinet_maps.py in a separate TensorFlow environment)
-# tensorflow
-# huggingface_hub
+# MSI-Net maps only (models/msinet_maps.py via scoring/run_msinet_v3.py), in a separate environment:
+#   tensorflow==2.21.0  keras==3.14.1  huggingface_hub==1.17.0  opencv-python  numpy
