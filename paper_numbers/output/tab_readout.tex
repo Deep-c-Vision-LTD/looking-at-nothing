@@ -4,7 +4,7 @@
 \centering
 \small
 \setlength{\tabcolsep}{4pt}
-\caption{Readout swap on identical frozen features. Each readout was trained on the same 12,803 images with the same recipe; rows give the mean over seeds. MIT1003 CC: held-out correlation on 200 images; $^\dagger$ below the validity threshold (CC of R4 minus 0.03), reported for completeness. Kanizsa effect: $r$(illusory) minus $r$(180$^\circ$ control) on the inside-figure AOI; core: the same contrast for figure pixels more than 30~px from the inducers; both averaged over 336 and 448~px inputs, 95\% cluster-bootstrap CI over 60 configurations. R1n: pointwise readout with fixed per-channel normalisation; R1: DeepGaze-style pointwise readout (image-wide LayerNorm); R2: ASPP without global pooling; R3: dilation-1 branch only; R4: full ASPP with global pooling.}
+\caption{Readout swap on identical frozen features. Each readout was trained on the same 12,803 images with the same recipe; rows give the mean over seeds. MIT1003 CC: held-out correlation on 200 images; $^{\mathrm{a}}$ below the validity threshold (CC of R4 minus 0.03), reported for completeness. Kanizsa effect: $r$(illusory) minus $r$(180$^\circ$ control) on the inside-figure AOI; core: the same contrast for figure pixels more than 30~px from the inducers; both averaged over 336 and 448~px inputs, 95\% cluster-bootstrap CI over 60 configurations. R1n: pointwise readout with fixed per-channel normalisation; R1: DeepGaze-style pointwise readout (image-wide LayerNorm); R2: ASPP without global pooling; R3: dilation-1 branch only; R4: full ASPP with global pooling.}
 \label{tab:readout}
 \begin{tabular}{@{}lcccc@{}}
 \toprule
@@ -18,22 +18,22 @@ Readout & MIT1003 CC & Kanizsa effect [95\% CI] & Core effect [95\% CI] & Seeds 
 \quad R4 & 0.726 & \ensuremath{-0.114} [\ensuremath{-0.146}, \ensuremath{-0.083}] & \ensuremath{-0.100} [\ensuremath{-0.127}, \ensuremath{-0.075}] & 3 \\
 \addlinespace
 \multicolumn{5}{@{}l}{\textit{DINOv2-B block 6}} \\
-\quad R1n & 0.700$^\dagger$ & \ensuremath{+0.051} [0.037, 0.065] & \ensuremath{+0.059} [0.040, 0.077] & 3 \\
-\quad R1 & 0.698$^\dagger$ & \ensuremath{+0.054} [0.044, 0.064] & \ensuremath{+0.058} [0.041, 0.073] & 3 \\
+\quad R1n & 0.700$^{\mathrm{a}}$ & \ensuremath{+0.051} [0.037, 0.065] & \ensuremath{+0.059} [0.040, 0.077] & 3 \\
+\quad R1 & 0.698$^{\mathrm{a}}$ & \ensuremath{+0.054} [0.044, 0.064] & \ensuremath{+0.058} [0.041, 0.073] & 3 \\
 \quad R2 & 0.725 & \ensuremath{+0.072} [0.056, 0.087] & \ensuremath{+0.068} [0.059, 0.078] & 3 \\
 \quad R3 & 0.727 & \ensuremath{+0.068} [0.053, 0.082] & \ensuremath{+0.060} [0.050, 0.071] & 3 \\
 \quad R4 & 0.742 & \ensuremath{+0.090} [0.069, 0.110] & \ensuremath{+0.082} [0.071, 0.093] & 3 \\
 \addlinespace
 \multicolumn{5}{@{}l}{\textit{SigLIP-L block 24}} \\
-\quad R1n & 0.677$^\dagger$ & \ensuremath{+0.144} [0.116, 0.171] & \ensuremath{+0.134} [0.103, 0.167] & 3 \\
-\quad R1 & 0.678$^\dagger$ & \ensuremath{+0.124} [0.100, 0.149] & \ensuremath{+0.119} [0.088, 0.149] & 3 \\
+\quad R1n & 0.677$^{\mathrm{a}}$ & \ensuremath{+0.144} [0.116, 0.171] & \ensuremath{+0.134} [0.103, 0.167] & 3 \\
+\quad R1 & 0.678$^{\mathrm{a}}$ & \ensuremath{+0.124} [0.100, 0.149] & \ensuremath{+0.119} [0.088, 0.149] & 3 \\
 \quad R2 & 0.715 & \ensuremath{+0.136} [0.117, 0.159] & \ensuremath{+0.126} [0.094, 0.159] & 3 \\
 \quad R3 & 0.708 & \ensuremath{+0.113} [0.039, 0.188] & \ensuremath{+0.107} [0.037, 0.180] & 3 \\
 \quad R4 & 0.721 & \ensuremath{+0.143} [0.119, 0.171] & \ensuremath{+0.138} [0.102, 0.176] & 3 \\
 \addlinespace
 \multicolumn{5}{@{}l}{\textit{IIE ShapeNet-C}} \\
-\quad R1n & 0.684$^\dagger$ & \ensuremath{+0.101} [0.061, 0.142] & \ensuremath{+0.094} [0.057, 0.134] & 3 \\
-\quad R1 & 0.685$^\dagger$ & \ensuremath{+0.086} [0.048, 0.124] & \ensuremath{+0.077} [0.042, 0.114] & 3 \\
+\quad R1n & 0.684$^{\mathrm{a}}$ & \ensuremath{+0.101} [0.061, 0.142] & \ensuremath{+0.094} [0.057, 0.134] & 3 \\
+\quad R1 & 0.685$^{\mathrm{a}}$ & \ensuremath{+0.086} [0.048, 0.124] & \ensuremath{+0.077} [0.042, 0.114] & 3 \\
 \quad R2 & 0.714 & \ensuremath{+0.080} [0.049, 0.114] & \ensuremath{+0.084} [0.048, 0.124] & 3 \\
 \quad R3 & 0.699 & \ensuremath{+0.109} [0.071, 0.144] & \ensuremath{+0.104} [0.066, 0.141] & 3 \\
 \quad R4 & 0.727 & \ensuremath{+0.082} [0.050, 0.117] & \ensuremath{+0.086} [0.049, 0.127] & 3 \\

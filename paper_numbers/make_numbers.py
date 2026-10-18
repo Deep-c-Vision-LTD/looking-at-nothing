@@ -863,7 +863,7 @@ def tab_readout():
          r"\begin{table}[t]", r"\centering", r"\small", r"\setlength{\tabcolsep}{4pt}"]
     cap = (r"\caption{Readout swap on identical frozen features. Each readout was trained on the same " + f"{tot:,}" +
            r" images with the same recipe; rows give the mean over seeds. MIT1003 CC: held-out correlation on " + f"{held}" +
-           r" images; $^\dagger$ below the validity threshold (CC of R4 minus " + f"{full['cc_margin']:.2f}" +
+           r" images; $^{\mathrm{a}}$ below the validity threshold (CC of R4 minus " + f"{full['cc_margin']:.2f}" +
            r"), reported for completeness. Kanizsa effect: $r$(illusory) minus $r$(180$^\circ$ control) on the inside-figure AOI; core: the same contrast for figure pixels more than 30~px from the inducers; both averaged over 336 and 448~px inputs, 95\% cluster-bootstrap CI over " +
            f"{nK}" + r" configurations. R1n: pointwise readout with fixed per-channel normalisation; R1: DeepGaze-style pointwise readout (image-wide LayerNorm); R2: ASPP without global pooling; R3: dilation-1 branch only; R4: full ASPP with global pooling.")
     if any_prov:
@@ -878,7 +878,7 @@ def tab_readout():
         L.append(r"\multicolumn{5}{@{}l}{\textit{" + flabel + r"}} \\")
         for ai, (ar, A) in enumerate(ARCHS):
             c = cells[(fs, ar)]
-            cc = "pending" if c["cc"] is None else f"{c['cc']:.3f}" + (r"$^\dagger$" if c["valid"] is False else "")
+            cc = "pending" if c["cc"] is None else f"{c['cc']:.3f}" + (r"$^{\mathrm{a}}$" if c["valid"] is False else "")
             if "Kz" in c:
                 kv, kc = cell2(c["Kz"]); cv, ccc = cell2(c["KzCore"])
                 kz, core = f"{kv} {kc}", f"{cv} {ccc}"
