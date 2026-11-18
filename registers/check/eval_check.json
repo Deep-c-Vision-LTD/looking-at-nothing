@@ -1,0 +1,15 @@
+{
+ "mit_dinov2_L12_R4_s0.json": {
+  "CC_new": 0.7255652563273907,
+  "CC_pub": 0.7255652563273907,
+  "max_abs_diff_cc_per_image": 0.0
+ },
+ "stim_alt_dinov2_L12_R4_s0.json": {
+  "values": 7920,
+  "max_abs_diff": 0.0
+ },
+ "stim_v3_dinov2_L12_R4_s0.json": {
+  "values": 16280,
+  "max_abs_diff": 0.0
+ }
+}

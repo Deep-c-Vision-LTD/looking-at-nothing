@@ -1,0 +1,62 @@
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 24463.33it/s]
+[transformers] [1mCLIPVisionModel LOAD REPORT[0m from: openai/clip-vit-large-patch14
+Key                                                          | Status     |  | 
+-------------------------------------------------------------+------------+--+-
+text_model.encoder.layers.{0...11}.self_attn.k_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.v_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.layer_norm1.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.v_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.mlp.fc1.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.k_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.layer_norm2.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.mlp.fc1.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.mlp.fc2.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.q_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.layer_norm2.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.q_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.layer_norm1.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.out_proj.weight | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.mlp.fc2.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.out_proj.bias   | UNEXPECTED |  | 
+text_model.final_layer_norm.weight                           | UNEXPECTED |  | 
+text_model.embeddings.position_embedding.weight              | UNEXPECTED |  | 
+logit_scale                                                  | UNEXPECTED |  | 
+text_model.embeddings.token_embedding.weight                 | UNEXPECTED |  | 
+visual_projection.weight                                     | UNEXPECTED |  | 
+text_projection.weight                                       | UNEXPECTED |  | 
+text_model.final_layer_norm.bias                             | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+start clip: 24 displays, layers (4, 8, 12, 16, 20, 24), sizes (336, 448), threads 6
+  display 1/24 square_sr30_dark_p0_illusory: 9 locations, 56s elapsed
+  display 2/24 square_sr30_dark_p0_control180: 9 locations, 113s elapsed
+  display 3/24 square_sr30_light_p1_illusory: 9 locations, 170s elapsed
+  display 4/24 square_sr30_light_p1_control180: 9 locations, 227s elapsed
+  display 5/24 square_sr50_dark_p2_illusory: 9 locations, 284s elapsed
+  display 6/24 square_sr50_dark_p2_control180: 9 locations, 340s elapsed
+  display 7/24 square_sr50_light_p3_illusory: 9 locations, 397s elapsed
+  display 8/24 square_sr50_light_p3_control180: 9 locations, 454s elapsed
+  display 9/24 square_sr70_dark_p4_illusory: 9 locations, 511s elapsed
+  display 10/24 square_sr70_dark_p4_control180: 9 locations, 567s elapsed
+  display 11/24 square_sr70_light_p0_illusory: 9 locations, 624s elapsed
+  display 12/24 square_sr70_light_p0_control180: 9 locations, 681s elapsed
+  display 13/24 triangle_sr30_dark_p1_illusory: 8 locations, 732s elapsed
+  display 14/24 triangle_sr30_dark_p1_control180: 8 locations, 782s elapsed
+  display 15/24 triangle_sr30_light_p2_illusory: 8 locations, 833s elapsed
+  display 16/24 triangle_sr30_light_p2_control180: 8 locations, 883s elapsed
+  display 17/24 triangle_sr50_dark_p3_illusory: 8 locations, 934s elapsed
+  display 18/24 triangle_sr50_dark_p3_control180: 8 locations, 985s elapsed
+  display 19/24 triangle_sr50_light_p4_illusory: 8 locations, 1037s elapsed
+  display 20/24 triangle_sr50_light_p4_control180: 8 locations, 1088s elapsed
+  display 21/24 triangle_sr70_dark_p0_illusory: 8 locations, 1140s elapsed
+  display 22/24 triangle_sr70_dark_p0_control180: 8 locations, 1191s elapsed
+  display 23/24 triangle_sr70_light_p1_illusory: 8 locations, 1242s elapsed
+  display 24/24 triangle_sr70_light_p1_control180: 8 locations, 1294s elapsed
+clip L4: readout ERF50 259.0 px (336 276, 448 242), ERF90 533.5; block-token ERF50 77.0, ERF90 489.0
+clip L8: readout ERF50 238.5 px (336 256, 448 221), ERF90 532.5; block-token ERF50 138.0, ERF90 456.5
+clip L12: readout ERF50 318.0 px (336 332, 448 304), ERF90 580.0; block-token ERF50 182.5, ERF90 512.5
+clip L16: readout ERF50 317.5 px (336 335, 448 300), ERF90 566.5; block-token ERF50 258.5, ERF90 550.0
+clip L20: readout ERF50 322.5 px (336 338, 448 307), ERF90 564.5; block-token ERF50 287.5, ERF90 556.5
+clip L24: readout ERF50 319.5 px (336 334, 448 305), ERF90 560.0; block-token ERF50 314.0, ERF90 560.0
+done clip: 1294.2s

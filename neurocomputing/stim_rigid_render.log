@@ -1,0 +1,173 @@
+square_sr30_dark_p0: 11 displays (4s)
+square_sr30_dark_p1: 11 displays (9s)
+square_sr30_dark_p2: 11 displays (13s)
+square_sr30_dark_p3: 11 displays (18s)
+square_sr30_dark_p4: 11 displays (22s)
+square_sr30_light_p0: 11 displays (27s)
+square_sr30_light_p1: 11 displays (31s)
+square_sr30_light_p2: 11 displays (38s)
+square_sr30_light_p3: 11 displays (46s)
+square_sr30_light_p4: 11 displays (51s)
+square_sr50_dark_p0: 11 displays (54s)
+square_sr50_dark_p1: 11 displays (64s)
+square_sr50_dark_p2: 11 displays (71s)
+square_sr50_dark_p3: 11 displays (74s)
+square_sr50_dark_p4: 11 displays (78s)
+square_sr50_light_p0: 11 displays (83s)
+square_sr50_light_p1: 11 displays (88s)
+square_sr50_light_p2: 11 displays (91s)
+square_sr50_light_p3: 11 displays (94s)
+square_sr50_light_p4: 11 displays (96s)
+square_sr70_dark_p0: 11 displays (99s)
+square_sr70_dark_p1: 11 displays (107s)
+square_sr70_dark_p2: 11 displays (116s)
+square_sr70_dark_p3: 11 displays (125s)
+square_sr70_dark_p4: 11 displays (134s)
+square_sr70_light_p0: 11 displays (143s)
+square_sr70_light_p1: 11 displays (151s)
+square_sr70_light_p2: 11 displays (162s)
+square_sr70_light_p3: 11 displays (170s)
+square_sr70_light_p4: 11 displays (174s)
+triangle_sr30_dark_p0: 11 displays (182s)
+triangle_sr30_dark_p1: 11 displays (190s)
+triangle_sr30_dark_p2: 11 displays (195s)
+triangle_sr30_dark_p3: 11 displays (198s)
+triangle_sr30_dark_p4: 11 displays (202s)
+triangle_sr30_light_p0: 11 displays (206s)
+triangle_sr30_light_p1: 11 displays (209s)
+triangle_sr30_light_p2: 11 displays (212s)
+triangle_sr30_light_p3: 11 displays (214s)
+triangle_sr30_light_p4: 11 displays (217s)
+triangle_sr50_dark_p0: 11 displays (222s)
+triangle_sr50_dark_p1: 11 displays (230s)
+triangle_sr50_dark_p2: 11 displays (237s)
+triangle_sr50_dark_p3: 11 displays (245s)
+triangle_sr50_dark_p4: 11 displays (254s)
+triangle_sr50_light_p0: 11 displays (263s)
+triangle_sr50_light_p1: 11 displays (272s)
+triangle_sr50_light_p2: 11 displays (280s)
+triangle_sr50_light_p3: 11 displays (288s)
+triangle_sr50_light_p4: 11 displays (299s)
+triangle_sr70_dark_p0: 11 displays (308s)
+triangle_sr70_dark_p1: 11 displays (313s)
+triangle_sr70_dark_p2: 11 displays (319s)
+triangle_sr70_dark_p3: 11 displays (330s)
+triangle_sr70_dark_p4: 11 displays (336s)
+triangle_sr70_light_p0: 11 displays (340s)
+triangle_sr70_light_p1: 11 displays (346s)
+triangle_sr70_light_p2: 11 displays (351s)
+triangle_sr70_light_p3: 11 displays (357s)
+triangle_sr70_light_p4: 11 displays (360s)
+{
+ "n_displays": 660,
+ "n_rigid": 480,
+ "n_mis_control180": 180,
+ "n_configs": 60,
+ "phis": [
+  10,
+  20,
+  30,
+  45
+ ],
+ "conds": [
+  "illusory",
+  "control180"
+ ],
+ "mis_thetas": [
+  10,
+  20,
+  30
+ ],
+ "refused": [],
+ "n_refused": 0,
+ "checks": {
+  "n_configs": 60,
+  "phi0_pixels_equal": 120,
+  "phi0_aoi_equal": 60,
+  "phi0_core_equal": 60,
+  "mis_inward_pixels_equal": 180
+ },
+ "worst": {
+  "aoi_rel": {
+   "inside": 0.0077428437353355235,
+   "ind": 0.003904724716907458,
+   "polygon": 0.0038812088439230735,
+   "inside_eroded": 0.008555783709787816,
+   "inside_eroded_all": 0.008265438658637384,
+   "core30": 0.006895300308473961,
+   "core45": 0.016233766233766232
+  },
+  "aoi_abs": {
+   "inside": 217,
+   "ind": 68,
+   "polygon": 89,
+   "inside_eroded": 192,
+   "inside_eroded_all": 166,
+   "core30": 100,
+   "core45": 69
+  },
+  "ink_mass_rel": 0.0024011298848478587,
+  "ink_count_rel_reported": 0.005601944826128316,
+  "vertex_centroid_px": 1.1368683772161603e-13,
+  "ind_centroid_shift_px": 0.10969000685914695,
+  "ink_centroid_shift_px": 0.2930639865030977,
+  "inside_centroid_shift_px": 0.5352987454362907,
+  "polygon_centroid_shift_px": 0.7071067811865476,
+  "notch_ink_px": 0,
+  "notch_area_rel": 0.016009371339320577,
+  "rim_px_phi0_max": 191,
+  "rim_px_rot_max": 244,
+  "mis_notch_dir_dev_deg": 0.0,
+  "mis_orient_corr_with_mis_min": 0.9915081599491175,
+  "mis_orient_corr_with_control180_max": 0.8851835816647862,
+  "mis_ink_mass_rel": 0.0017362438885787067
+ },
+ "aoi_over_1pct": {
+  "notch": [
+   "square_sr30_dark_p0_rig45_control180 (1.60%)",
+   "square_sr30_dark_p1_rig45_control180 (1.60%)",
+   "square_sr30_dark_p2_rig45_control180 (1.60%)",
+   "square_sr30_dark_p3_rig45_control180 (1.60%)",
+   "square_sr30_dark_p4_rig45_control180 (1.60%)",
+   "square_sr30_light_p0_rig45_control180 (1.60%)",
+   "square_sr30_light_p1_rig45_control180 (1.60%)",
+   "square_sr30_light_p2_rig45_control180 (1.60%)",
+   "square_sr30_light_p3_rig45_control180 (1.60%)",
+   "square_sr30_light_p4_rig45_control180 (1.60%)",
+   "triangle_sr30_dark_p0_rig45_illusory (1.60%)",
+   "triangle_sr30_dark_p1_rig45_illusory (1.60%)",
+   "triangle_sr30_dark_p2_rig45_illusory (1.60%)",
+   "triangle_sr30_dark_p3_rig45_illusory (1.60%)",
+   "triangle_sr30_dark_p4_rig45_illusory (1.60%)",
+   "triangle_sr30_light_p0_rig45_illusory (1.60%)",
+   "triangle_sr30_light_p1_rig45_illusory (1.60%)",
+   "triangle_sr30_light_p2_rig45_illusory (1.60%)",
+   "triangle_sr30_light_p3_rig45_illusory (1.60%)",
+   "triangle_sr30_light_p4_rig45_illusory (1.60%)"
+  ],
+  "core45": [
+   "square_sr70_dark_p0_rig10 (1.58%, 36 of 2281 px)",
+   "square_sr70_dark_p1_rig10 (1.58%, 36 of 2281 px)",
+   "square_sr70_dark_p2_rig10 (1.58%, 36 of 2281 px)",
+   "square_sr70_dark_p3_rig10 (1.58%, 36 of 2281 px)",
+   "square_sr70_dark_p4_rig10 (1.58%, 36 of 2281 px)",
+   "square_sr70_light_p0_rig10 (1.58%, 36 of 2281 px)",
+   "square_sr70_light_p1_rig10 (1.58%, 36 of 2281 px)",
+   "square_sr70_light_p2_rig10 (1.58%, 36 of 2281 px)",
+   "square_sr70_light_p3_rig10 (1.58%, 36 of 2281 px)",
+   "square_sr70_light_p4_rig10 (1.58%, 36 of 2281 px)",
+   "triangle_sr70_dark_p0_rig45 (1.62%, 5 of 308 px)",
+   "triangle_sr70_dark_p1_rig45 (1.62%, 5 of 308 px)",
+   "triangle_sr70_dark_p2_rig45 (1.62%, 5 of 308 px)",
+   "triangle_sr70_dark_p3_rig45 (1.62%, 5 of 308 px)",
+   "triangle_sr70_dark_p4_rig45 (1.62%, 5 of 308 px)",
+   "triangle_sr70_light_p0_rig45 (1.62%, 5 of 308 px)",
+   "triangle_sr70_light_p1_rig45 (1.62%, 5 of 308 px)",
+   "triangle_sr70_light_p2_rig45 (1.62%, 5 of 308 px)",
+   "triangle_sr70_light_p3_rig45 (1.62%, 5 of 308 px)",
+   "triangle_sr70_light_p4_rig45 (1.62%, 5 of 308 px)"
+  ]
+ },
+ "n_failures": 0
+}
+wrote 1082 files + manifest.json, 20.0 MB, 360s

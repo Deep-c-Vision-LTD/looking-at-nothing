@@ -1,0 +1,182 @@
+Loading weights:   0%|          | 0/223 [00:00<?, ?it/s]Loading weights: 100%|██████████| 223/223 [00:00<00:00, 19394.72it/s]
+Loading weights:   0%|          | 0/224 [00:00<?, ?it/s]Loading weights: 100%|██████████| 224/224 [00:00<00:00, 11942.29it/s]
+{
+ "n": {
+  "kanizsa": 24,
+  "mit1003": 24
+ },
+ "models": {
+  "dinov2": {
+   "336|kanizsa": {
+    "L6": {
+     "median_norm": 2.5804755687713623,
+     "max_over_median": 1.608148217201233,
+     "max_over_median_max": 1.7062634229660034,
+     "frac_tokens_gt2xmedian": 0.0,
+     "frac_images_with_gt2xmedian": 0.0,
+     "frac_tokens_gt6mad": 0.021195023148148147,
+     "frac_tokens_gt1p5xmedian": 0.0035445601851851853
+    },
+    "L12": {
+     "median_norm": 44.23557662963867,
+     "max_over_median": 1.715451955795288,
+     "max_over_median_max": 1.9042335748672485,
+     "frac_tokens_gt2xmedian": 0.0,
+     "frac_images_with_gt2xmedian": 0.0,
+     "frac_tokens_gt6mad": 0.016276041666666668,
+     "frac_tokens_gt1p5xmedian": 0.005280671296296296
+    }
+   },
+   "336|mit1003": {
+    "L6": {
+     "median_norm": 2.4579062461853027,
+     "max_over_median": 1.4789289236068726,
+     "max_over_median_max": 1.9396936893463135,
+     "frac_tokens_gt2xmedian": 0.0,
+     "frac_images_with_gt2xmedian": 0.0,
+     "frac_tokens_gt6mad": 0.0078125,
+     "frac_tokens_gt1p5xmedian": 0.0014467592592592592
+    },
+    "L12": {
+     "median_norm": 54.567317962646484,
+     "max_over_median": 1.5288331508636475,
+     "max_over_median_max": 2.3618412017822266,
+     "frac_tokens_gt2xmedian": 0.00014467592592592592,
+     "frac_images_with_gt2xmedian": 0.08333333333333333,
+     "frac_tokens_gt6mad": 0.0028935185185185184,
+     "frac_tokens_gt1p5xmedian": 0.0013020833333333333
+    }
+   },
+   "448|kanizsa": {
+    "L6": {
+     "median_norm": 2.594991683959961,
+     "max_over_median": 1.64984130859375,
+     "max_over_median_max": 1.7275032997131348,
+     "frac_tokens_gt2xmedian": 0.0,
+     "frac_images_with_gt2xmedian": 0.0,
+     "frac_tokens_gt6mad": 0.015177408854166666,
+     "frac_tokens_gt1p5xmedian": 0.00244140625
+    },
+    "L12": {
+     "median_norm": 43.87723922729492,
+     "max_over_median": 1.616673231124878,
+     "max_over_median_max": 1.9970921277999878,
+     "frac_tokens_gt2xmedian": 0.0,
+     "frac_images_with_gt2xmedian": 0.0,
+     "frac_tokens_gt6mad": 0.010538736979166666,
+     "frac_tokens_gt1p5xmedian": 0.0006510416666666666
+    }
+   },
+   "448|mit1003": {
+    "L6": {
+     "median_norm": 2.4342267513275146,
+     "max_over_median": 1.5633496046066284,
+     "max_over_median_max": 1.8892254829406738,
+     "frac_tokens_gt2xmedian": 0.0,
+     "frac_images_with_gt2xmedian": 0.0,
+     "frac_tokens_gt6mad": 0.008260091145833334,
+     "frac_tokens_gt1p5xmedian": 0.0015869140625
+    },
+    "L12": {
+     "median_norm": 54.29701232910156,
+     "max_over_median": 2.785022258758545,
+     "max_over_median_max": 3.4303417205810547,
+     "frac_tokens_gt2xmedian": 0.000732421875,
+     "frac_images_with_gt2xmedian": 0.75,
+     "frac_tokens_gt6mad": 0.0015869140625,
+     "frac_tokens_gt1p5xmedian": 0.0008544921875
+    }
+   }
+  },
+  "dinov2reg": {
+   "336|kanizsa": {
+    "L6": {
+     "median_norm": 5.511702537536621,
+     "max_over_median": 1.2803353071212769,
+     "max_over_median_max": 1.3192071914672852,
+     "frac_tokens_gt2xmedian": 0.0,
+     "frac_images_with_gt2xmedian": 0.0,
+     "frac_tokens_gt6mad": 0.011067708333333334,
+     "frac_tokens_gt1p5xmedian": 0.0,
+     "register_norm_over_patch_median": 1.5928828716278076
+    },
+    "L12": {
+     "median_norm": 101.40130615234375,
+     "max_over_median": 1.4446930885314941,
+     "max_over_median_max": 1.5679341554641724,
+     "frac_tokens_gt2xmedian": 0.0,
+     "frac_images_with_gt2xmedian": 0.0,
+     "frac_tokens_gt6mad": 0.03219039351851852,
+     "frac_tokens_gt1p5xmedian": 0.004991319444444444,
+     "register_norm_over_patch_median": 1.3232369422912598
+    }
+   },
+   "336|mit1003": {
+    "L6": {
+     "median_norm": 5.382166862487793,
+     "max_over_median": 1.3239351511001587,
+     "max_over_median_max": 1.4882228374481201,
+     "frac_tokens_gt2xmedian": 0.0,
+     "frac_images_with_gt2xmedian": 0.0,
+     "frac_tokens_gt6mad": 0.003978587962962963,
+     "frac_tokens_gt1p5xmedian": 0.0,
+     "register_norm_over_patch_median": 1.5120184421539307
+    },
+    "L12": {
+     "median_norm": 136.6099853515625,
+     "max_over_median": 1.261311411857605,
+     "max_over_median_max": 1.4248687028884888,
+     "frac_tokens_gt2xmedian": 0.0,
+     "frac_images_with_gt2xmedian": 0.0,
+     "frac_tokens_gt6mad": 0.0032552083333333335,
+     "frac_tokens_gt1p5xmedian": 0.0,
+     "register_norm_over_patch_median": 0.9564440250396729
+    }
+   },
+   "448|kanizsa": {
+    "L6": {
+     "median_norm": 5.455581188201904,
+     "max_over_median": 1.2631717920303345,
+     "max_over_median_max": 1.279545545578003,
+     "frac_tokens_gt2xmedian": 0.0,
+     "frac_images_with_gt2xmedian": 0.0,
+     "frac_tokens_gt6mad": 0.004475911458333333,
+     "frac_tokens_gt1p5xmedian": 0.0,
+     "register_norm_over_patch_median": 1.6403050422668457
+    },
+    "L12": {
+     "median_norm": 104.41654968261719,
+     "max_over_median": 1.4342820644378662,
+     "max_over_median_max": 1.6218363046646118,
+     "frac_tokens_gt2xmedian": 0.0,
+     "frac_images_with_gt2xmedian": 0.0,
+     "frac_tokens_gt6mad": 0.0311279296875,
+     "frac_tokens_gt1p5xmedian": 0.0030110677083333335,
+     "register_norm_over_patch_median": 1.2911297082901
+    }
+   },
+   "448|mit1003": {
+    "L6": {
+     "median_norm": 5.255249977111816,
+     "max_over_median": 1.3415982723236084,
+     "max_over_median_max": 1.4744751453399658,
+     "frac_tokens_gt2xmedian": 0.0,
+     "frac_images_with_gt2xmedian": 0.0,
+     "frac_tokens_gt6mad": 0.005533854166666667,
+     "frac_tokens_gt1p5xmedian": 0.0,
+     "register_norm_over_patch_median": 1.5614267587661743
+    },
+    "L12": {
+     "median_norm": 137.6222381591797,
+     "max_over_median": 1.300626516342163,
+     "max_over_median_max": 1.4238311052322388,
+     "frac_tokens_gt2xmedian": 0.0,
+     "frac_images_with_gt2xmedian": 0.0,
+     "frac_tokens_gt6mad": 0.0020751953125,
+     "frac_tokens_gt1p5xmedian": 0.0,
+     "register_norm_over_patch_median": 0.9759825468063354
+    }
+   }
+  }
+ }
+}

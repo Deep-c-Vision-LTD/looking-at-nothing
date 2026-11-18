@@ -1,0 +1,12 @@
+2026-11-17 12:58:45 === eval dinov2 on mps: 1 heads, stimsets ['stim_v3', 'stim_alt'], maps saved for: none
+Loading weights:   0%|          | 0/223 [00:00<?, ?it/s]Loading weights: 100%|██████████| 223/223 [00:00<00:00, 18231.13it/s]
+2026-11-17 12:58:52 MIT features 200 images 7s
+2026-11-17 12:58:53 dinov2_L12_R4_s0 MIT1003 held-out CC 0.7256 NSS 2.5972 (n 200)
+2026-11-17 12:59:19 stim_v3 px336 block 1/1 features 740 images 24s
+2026-11-17 13:00:17 stim_v3 px448 block 1/1 features 740 images 56s
+2026-11-17 13:00:20 stim_v3 dinov2_L12_R4_s0 scored 740 images x 2 sizes (maps saved: False)
+2026-11-17 13:00:33 stim_alt px336 block 1/1 features 360 images 12s
+2026-11-17 13:01:00 stim_alt px448 block 1/1 features 360 images 26s
+2026-11-17 13:01:01 stim_alt dinov2_L12_R4_s0 scored 360 images x 2 sizes (maps saved: False)
+2026-11-17 13:01:01 === eval dinov2 done
+caffeinate -i env PYTHONDONTWRITEBYTECODE=1 V3_DEVICE=mps  OMP_NUM_THREADS=3   38.32s user 3.00s system 29% cpu 2:19.58 total

@@ -1,0 +1,96 @@
+analyze_re.py sha256 8c412ec6c126926f39269f12c9fb30d1897c5f6240528d1b9668b09a28786bf3
+numpy 2.5.0; started 2026-11-18 11:27:31 GMT
+--- test_cluster_se
+PASS  cluster_se equals the CR1 sandwich of an intercept-only OLS  se 0.269567
+--- test_webb_enumeration
+PASS  Webb enumeration for G = 6 has 6^6 = 46,656 distinct vectors  shape (46656, 6), distinct 46656
+PASS  each Webb value appears equally often per cluster (7,776 times)  [np.int64(7776), np.int64(7776), np.int64(7776), np.int64(7776), np.int64(7776), np.int64(7776)]
+PASS  Webb weights have mean 0 and variance 1  
+PASS  G = 12 uses 9,999 random draws (RandomState 2026)  
+PASS  random draws are reproducible  
+--- test_wild_identity_and_pmin
+PASS  G = 6 is enumerated and the lower bound on the two-sided p is 6 / 46,656  p_min 1.286e-04
+PASS  a strong effect (t > 7) gets p < .05 and at most the sign-constant share 2 x 3^6 / 6^6 = 0.031  p 0.0096, t 7.53
+PASS  with nearly identical cluster sums the p approaches the 6 / 46,656 lower bound (p < .005)  p 0.00013
+PASS  identity weights reproduce the observed t under WCR  
+--- test_enum_vs_random
+PASS  exact enumeration and 200,000 random Webb draws give the same p (|diff| < 0.005)  enum 0.8912 random 0.8919
+PASS  and the same interval (endpoints within 2% of its width)  enum [-0.4992  0.5405] random [-0.4986  0.54  ]
+--- test_two_stage_idx
+PASS  two-stage indices equal the v2 construction (RandomState(2026), clusters first)  
+--- test_holm
+PASS  Holm adjusted p-values for [.01, .04, .03, .005] are [.03, .06, .06, .02]  [0.03 0.06 0.06 0.02]
+PASS  Holm with m = 2  
+PASS  Holm controls the family-wise error at .05 (10 independent true nulls)  FWE 0.0474
+--- test_stability
+PASS  stability screen: |t| = 3 is unstable, |t| = 5 is stable  t 3.00, 5.00
+--- test_fieller
+PASS  Fieller interval is bounded and contains the point estimate for a well-determined denominator  0.475 [0.435 0.518] t_den 46.5
+PASS  Fieller interval is unbounded when the denominator is not distinguishable from zero  t_den -0.07
+--- test_accuracy_rule
+PASS  accuracy criterion: CC equal to R4 - 0.03 is valid, below it is not  
+PASS  accuracy criterion uses the published rounding (cell 0.71216 -> 0.7122 against round(0.7422 - 0.03, 4) = 0.7122)  
+PASS  published thresholds reproduced: registers block 12 R4 0.72824 -> 0.6982, block 6 R4 0.73773 -> 0.7077  
+--- test_bca_symmetric
+PASS  BCa equals the percentile interval when the statistic is a symmetric mean (|z0|, |a| small)  BCa [0.7271 1.3579] pct [0.7271 1.3576] z0 -0.000 a 0.0004
+--- test_bca_vs_scipy
+PASS  BCa matches scipy.stats.bootstrap(method='BCa') on i.i.d. skewed data (endpoints within 3% of width)  ours [0.2638 0.9314] scipy [0.2554, 0.9247]
+--- test_bca_p_inversion
+PASS  BCa p-value inverts the BCa interval: the (1 - p) interval has theta0 as an endpoint (within 1% of width)  p 0.5930; endpoint 0.2000 vs theta0 0.2
+--- test_p1_p2_p5_logic
+PASS  P1: a model that loses 0.05 figure mass passes the IUT against 15 nulls that gain mass  separated 15/15
+PASS  P1: a model that behaves like the nulls fails the IUT  separated 0/15
+PASS  P2 runs on 6 square clusters with full enumeration and passes for alternation retention 0.5  draws 46656
+PASS  P2 fails for a model without alternation retention  
+PASS  P2 wording is ratio-free (no 'cost', no ratio) and names the separated model  On squares, alternating the rotation direction, which keeps the axis mirror symmetries, ke
+PASS  P5: rigid rotation removes none of the loss -> category 1  s* 0.00, A* +0.050
+PASS  P5: rigid rotation reproduces more than half of the loss, alignment effect still beyond the nulls -> 2a  s* 0.59, iut True, C* p 0.000
+PASS  P5: an orientation effect without alignment effect -> category 3  s* 1.25, separated 0/15
+PASS  P5: a model without rigid scores is not computable and not in category 1  
+PASS  P5: secondary quantities (drafted A, control-free A, control change) are reported, never categorised  
+--- test_p5_orientation_of_control
+PASS  P5 estimand: a = 0.0, o_out = 0.02 -> A* = +0.00 and drafted A = -0.02 (within 0.004)  A* -0.0005, drafted -0.0207, L_uni +0.0198, L_rig +0.0204
+PASS  P5 estimand: a = 0.03, o_out = 0.02 -> A* = +0.03 and drafted A = +0.01 (within 0.004)  A* +0.0310, drafted +0.0111, L_uni +0.0507, L_rig +0.0197
+PASS  P5 estimand: canvas effects enter A* as g_in - g_out (0.015), equal orientation responses cancel  A* +0.0150, L_uni -0.0002
+--- test_p5_category_and_abstract
+PASS  P5 categories: (i)+(ii) -> 1; (i), not (ii), s* 0.6 -> 2a; s* 0.3 -> 2b; no loss -> 2b; not (i) -> 3  
+PASS  abstract: both P1 met and both P5 category 1 -> uniform-rotation clause stays  uniform rotation (both models), then alternation for IIE and MSDB
+PASS  abstract: a model outside category 1 -> lead with square alternation (both P2 met)  On squares, alternating rotation separates DeepGaze IIE and MSDB from 15 local nulls
+PASS  abstract: P2 met for one model only -> alternation for that model only  On squares, alternating rotation separates DeepGaze IIE from 15 local nulls
+PASS  abstract: neither P5 category 1 for both nor any P2 -> no rotation claim, no highlight 4  
+PASS  highlight 4 variants are at most 85 characters  [74, 84, 75]
+--- test_p3_p4_p6_title
+PASS  P3: same-sign cells with clear effects keep the sign after Holm  
+PASS  P3: a near-zero cell is not counted and is not called a reversal  
+PASS  P3: an opposite-signed cell is flagged (title and claim narrowed)  
+PASS  WCR results carry the skewness of the cluster means (diagnostic)  skew +0.17
+PASS  P4: a stable contrast with a real profile difference survives Holm and is counted  diff -0.261 [-0.312 -0.2  ] p_holm 0.0008
+PASS  P4: a contrast with an unstable denominator is never counted  t_den 1.20
+PASS  P4: Fieller intervals are computed for both ratios of a contrast  
+PASS  P6: the accuracy criterion is applied against R4 on the same new feature set (R1n at -0.04 is below)  
+PASS  title: an opposite-signed valid interval (here in P3) rules out both titles (claim narrowed)  (c1) P3: 2 of 4 valid swap cells keep R4's sign after Holm adjustment; (d) P3: a valid swap cell has an interval of the opposite sign
+PASS  title: all sets complete, R4 defined, >= 2 valid, every valid cell keeps the sign, P3 in full -> stronger title  Looking at Nothing: The Checkpoint and Layer a Saliency Mode
+PASS  title (c1): P3 not met in full (one cell fails to exclude zero) -> scoped title, not narrowed  (c1) P3: 3 of 4 valid swap cells keep R4's sign after Holm adjustment
+PASS  title (a): a missing A14 run forces the scoped title  (a) dinov2ms_L7L11: not run or incomplete
+PASS  title (a): a missing hs[11]-alone run also forces the scoped title (it can veto through (d))  (a) dinov2ms_L11: not run or incomplete
+PASS  title (c0): no valid non-R4 readout on a title-bearing set -> scoped title (no vacuous pass)  (c0) dinov2reg_L12: 0 of 4 non-R4 readouts met the accuracy criterion (need 2)
+PASS  title (c0): one valid non-R4 readout (fewer than 2) -> scoped title  (c0) dinov2ms_L7L11: 1 of 4 non-R4 readouts met the accuracy criterion (need 2)
+PASS  title (c): a valid registers cell whose interval includes zero forces the scoped title (not a narrowing)  (c) dinov2reg_L12 R3: valid but does not keep R4's sign after Holm adjustment
+PASS  P6: a missing R4 makes the set 'not run' (no exception) and forces the scoped title  (a) dinov2reg_L6: not run or incomplete
+PASS  P6: a cell with scores but no held-out CC is 'not run' (no exception) and forces the scoped title  (a) dinov2ms_L7L11: not run or incomplete
+PASS  title (d): R4 undefined on hs[11] (point estimate +1 x 0.0005) and a valid readout with a clear sign -> both titles ruled out  (d) dinov2ms_L11 R3: valid cell with an interval of the opposite sign
+PASS  title (d): R4 undefined on hs[11] (point estimate -1 x 0.0005) and a valid readout with a clear sign -> both titles ruled out  (d) dinov2ms_L11 R3: valid cell with an interval of the opposite sign
+PASS  title (d): an opposite-signed valid cell on the registers checkpoint rules out both titles  (c) dinov2reg_L12 R2: valid but does not keep R4's sign after Holm adjustment; (d) dinov2reg_L12 R2: valid cell with an interval of the opposite sign
+PASS  title: the P3 result is mandatory  
+--- test_coverage_g12
+PASS  G = 12 (symmetric errors): WCU 95% interval coverage within [0.92, 0.98]  coverage 0.956 (MC SE 0.007); two-stage percentile interval 0.925
+PASS  G = 12 (symmetric errors): WCR test size at .05 within [0.02, 0.08]  rejection rate 0.043
+PASS  G = 12 (strongly skewed stress case): WCU coverage at least that of the two-stage percentile interval and >= 0.87  coverage 0.901 vs percentile 0.885; WCR size 0.090 (reported, not a pass criterion)
+--- test_coverage_g6
+PASS  G = 6, full enumeration (symmetric errors): WCU coverage within [0.91, 0.99]  coverage 0.945 (MC SE 0.009); two-stage percentile interval 0.853
+PASS  G = 6, full enumeration (symmetric errors): WCR size within [0.01, 0.09]  rejection rate 0.065
+PASS  G = 6, full enumeration (strongly skewed stress case): WCU coverage at least that of the percentile interval and >= 0.86  coverage 0.893 vs percentile 0.830; WCR size 0.113 (reported, not a pass criterion)
+--- test_bca_ratio_coverage
+PASS  pairs cluster BCa interval for a ratio of means (G = 12): coverage within [0.90, 0.995]  coverage 0.913 over 300 datasets; Fieller 0.927
+
+73 checks, 0 failed, 100 s

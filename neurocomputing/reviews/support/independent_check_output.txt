@@ -1,0 +1,40 @@
+independent_check.py; analyze_re.py sha256 472ae9e35faa3936476f12f697a8cdcbcf768e70a44a13def168c7cabc6d01c8; numpy 2.5.0; started 2026-11-18 10:32:14 UTC
+== 1. Webb six-point weights
+E[v] = 0.00e+00, E[v^2] = 1.000000000000, E[v^3] = 0.00e+00, E[v^4] = 1.166667 (7/6 = 1.166667)
+analyze_re.WEBB equals the re-derived set: True
+6^6 enumeration identical as a set: True (46656 vectors)
+share of sign-constant vectors = 0.03125 (2 x 3^6 / 6^6 = 0.03125); constant vectors (all v_g equal) = 6
+
+== 2. independent wild cluster bootstrap vs analyze_re.wild_cluster (identical weights)
+largest |difference| over 8 datasets (mean, se, t, p, WCU endpoints): 1.78e-15 -> AGREE
+
+== 4. G = 6 enumeration: is p <= 2 x 3^6 / 6^6 = 0.0313 for every strong effect?
+   cluster means [2, 5, 10, 15, 20, 0.05]: t = 2.73, analyze_re p = 0.0235, independent p = 0.0235
+   cluster means [4, 6, 8, 10, 12, 0.0]: t = 3.78, analyze_re p = 0.0190, independent p = 0.0190
+   cluster means [3, 9, 9, 9, 15, 0.0]: t = 3.48, analyze_re p = 0.0244, independent p = 0.0244
+   random search: 361 datasets with t > 5; largest enumerated p = 0.0123 at cluster means [1.88, 3.91, 1.27, 1.95, 2.43, 1.79], t = 6.02
+
+== 5. BCa: independent implementation vs analyze_re.bca (same two-stage indices), and p by bisection
+   ratio 0.6622: analyze_re [0.545948 0.799913] z0 0.00627 a 0.02622; independent [0.545948 0.799913] z0 0.00627 a 0.02622
+   BCa p for theta0 = 0.5: analyze_re 0.00730; bisection on the interval 0.00723
+
+== 6. Holm
+   largest |difference| of adjusted p over 2,000 random families: 0.0e+00
+
+== 7. title rule edge cases (analyze_re.p6 / title_decision on synthetic cells)
+   (a) all four new readouts on dinov2reg_L12 below the criterion (0 valid comparisons): stronger = True; title = Looking at Nothing: The Checkpoint and Layer a Saliency Mo...
+   (b) P3 only 8 of 10 keep the sign, new sets all pass: stronger = True
+   (c) missing R4 on dinov2ms_L7L11: p6 raises KeyError: 'R4'
+   (d) a cell scored but its CC missing: p6 raises KeyError: 'R2'
+   (e) dinov2ms_L11 with R4 near zero (reference defined = False, R4 point sign +1) and R2 = -0.06: R2 opposite_sign_interval = True; title = None
+
+== 3. coverage of 95% intervals and size of the WCR test at .05 (synthetic; independent DGPs)
+   columns: WCU percentile-t (rule) | WCR-inverted | CR1 t(G-1) | two-stage percentile (published) | WCR size; median widths WCU / WCR-inverted / t
+   G = 12 sym   n = 400: 0.958 | 0.955 | 0.965 | 0.922 | size 0.045   widths 0.991 / 1.001 / 1.013   (MC SE of a coverage near .95: 0.011)
+   G = 12 skew  n = 400: 0.825 | 0.840 | 0.833 | 0.807 | size 0.160   widths 0.969 / 1.012 / 1.044   (MC SE of a coverage near .95: 0.011)
+   G = 12 lever n = 400: 0.940 | 0.945 | 0.948 | 0.902 | size 0.055   widths 0.911 / 0.933 / 0.938   (MC SE of a coverage near .95: 0.011)
+   G =  6 sym   n = 150: 0.960 | 0.960 | 0.960 | 0.847 | size 0.040   widths 1.594 / 1.548 / 1.571   (MC SE of a coverage near .95: 0.018)
+   G =  6 skew  n = 150: 0.847 | 0.840 | 0.840 | 0.707 | size 0.160   widths 1.355 / 1.316 / 1.328   (MC SE of a coverage near .95: 0.018)
+   G =  6 lever n = 150: 0.953 | 0.927 | 0.960 | 0.880 | size 0.073   widths 1.626 / 1.544 / 1.637   (MC SE of a coverage near .95: 0.018)
+
+done in 91 s

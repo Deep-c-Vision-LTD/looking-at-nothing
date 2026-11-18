@@ -1,0 +1,41 @@
+2026-11-17 08:03:20 start clip: 1 displays, layers (4, 8, 12, 16, 20, 24), sizes (336, 448), threads 6
+2026-11-17 08:04:17   display 1/1 square_sr30_dark_p0_illusory: 9 locations, 57s elapsed
+2026-11-17 08:04:17 clip L4: readout ERF50 241.5 px (336 246, 448 237), ERF90 503.0; block-token ERF50 70.5, ERF90 458.0
+2026-11-17 08:04:17 clip L8: readout ERF50 241.5 px (336 255, 448 228), ERF90 528.0; block-token ERF50 145.0, ERF90 465.5
+2026-11-17 08:04:17 clip L12: readout ERF50 311.0 px (336 313, 448 309), ERF90 539.0; block-token ERF50 198.0, ERF90 509.0
+2026-11-17 08:04:17 clip L16: readout ERF50 312.0 px (336 312, 448 312), ERF90 512.0; block-token ERF50 271.5, ERF90 515.0
+2026-11-17 08:04:17 clip L20: readout ERF50 295.5 px (336 297, 448 294), ERF90 500.0; block-token ERF50 292.0, ERF90 508.0
+2026-11-17 08:04:17 clip L24: readout ERF50 309.0 px (336 314, 448 304), ERF90 506.0; block-token ERF50 296.5, ERF90 503.0
+2026-11-17 08:04:17 done clip: 57.5s
+2026-11-17 08:49:06 start clip: 24 displays, layers (4, 8, 12, 16, 20, 24), sizes (336, 448), threads 6
+2026-11-17 08:50:02   display 1/24 square_sr30_dark_p0_illusory: 9 locations, 56s elapsed
+2026-11-17 08:50:59   display 2/24 square_sr30_dark_p0_control180: 9 locations, 113s elapsed
+2026-11-17 08:51:56   display 3/24 square_sr30_light_p1_illusory: 9 locations, 170s elapsed
+2026-11-17 08:52:52   display 4/24 square_sr30_light_p1_control180: 9 locations, 227s elapsed
+2026-11-17 08:53:49   display 5/24 square_sr50_dark_p2_illusory: 9 locations, 284s elapsed
+2026-11-17 08:54:46   display 6/24 square_sr50_dark_p2_control180: 9 locations, 340s elapsed
+2026-11-17 08:55:42   display 7/24 square_sr50_light_p3_illusory: 9 locations, 397s elapsed
+2026-11-17 08:56:39   display 8/24 square_sr50_light_p3_control180: 9 locations, 454s elapsed
+2026-11-17 08:57:36   display 9/24 square_sr70_dark_p4_illusory: 9 locations, 511s elapsed
+2026-11-17 08:58:33   display 10/24 square_sr70_dark_p4_control180: 9 locations, 567s elapsed
+2026-11-17 08:59:30   display 11/24 square_sr70_light_p0_illusory: 9 locations, 624s elapsed
+2026-11-17 09:00:27   display 12/24 square_sr70_light_p0_control180: 9 locations, 681s elapsed
+2026-11-17 09:01:17   display 13/24 triangle_sr30_dark_p1_illusory: 8 locations, 732s elapsed
+2026-11-17 09:02:08   display 14/24 triangle_sr30_dark_p1_control180: 8 locations, 782s elapsed
+2026-11-17 09:02:58   display 15/24 triangle_sr30_light_p2_illusory: 8 locations, 833s elapsed
+2026-11-17 09:03:49   display 16/24 triangle_sr30_light_p2_control180: 8 locations, 883s elapsed
+2026-11-17 09:04:40   display 17/24 triangle_sr50_dark_p3_illusory: 8 locations, 934s elapsed
+2026-11-17 09:05:30   display 18/24 triangle_sr50_dark_p3_control180: 8 locations, 985s elapsed
+2026-11-17 09:06:22   display 19/24 triangle_sr50_light_p4_illusory: 8 locations, 1037s elapsed
+2026-11-17 09:07:14   display 20/24 triangle_sr50_light_p4_control180: 8 locations, 1088s elapsed
+2026-11-17 09:08:05   display 21/24 triangle_sr70_dark_p0_illusory: 8 locations, 1140s elapsed
+2026-11-17 09:08:56   display 22/24 triangle_sr70_dark_p0_control180: 8 locations, 1191s elapsed
+2026-11-17 09:09:48   display 23/24 triangle_sr70_light_p1_illusory: 8 locations, 1242s elapsed
+2026-11-17 09:10:40   display 24/24 triangle_sr70_light_p1_control180: 8 locations, 1294s elapsed
+2026-11-17 09:10:40 clip L4: readout ERF50 259.0 px (336 276, 448 242), ERF90 533.5; block-token ERF50 77.0, ERF90 489.0
+2026-11-17 09:10:40 clip L8: readout ERF50 238.5 px (336 256, 448 221), ERF90 532.5; block-token ERF50 138.0, ERF90 456.5
+2026-11-17 09:10:40 clip L12: readout ERF50 318.0 px (336 332, 448 304), ERF90 580.0; block-token ERF50 182.5, ERF90 512.5
+2026-11-17 09:10:40 clip L16: readout ERF50 317.5 px (336 335, 448 300), ERF90 566.5; block-token ERF50 258.5, ERF90 550.0
+2026-11-17 09:10:40 clip L20: readout ERF50 322.5 px (336 338, 448 307), ERF90 564.5; block-token ERF50 287.5, ERF90 556.5
+2026-11-17 09:10:40 clip L24: readout ERF50 319.5 px (336 334, 448 305), ERF90 560.0; block-token ERF50 314.0, ERF90 560.0
+2026-11-17 09:10:40 done clip: 1294.2s

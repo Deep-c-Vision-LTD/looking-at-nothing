@@ -1,0 +1,33 @@
+Loading weights:   0%|          | 0/223 [00:00<?, ?it/s]Loading weights: 100%|██████████| 223/223 [00:00<00:00, 8501.07it/s]
+start dinov2: 24 displays, layers (2, 4, 6, 8, 10, 12), sizes (336, 448), threads 6
+  display 1/24 square_sr30_dark_p0_illusory: 9 locations, 20s elapsed
+  display 2/24 square_sr30_dark_p0_control180: 9 locations, 39s elapsed
+  display 3/24 square_sr30_light_p1_illusory: 9 locations, 58s elapsed
+  display 4/24 square_sr30_light_p1_control180: 9 locations, 77s elapsed
+  display 5/24 square_sr50_dark_p2_illusory: 9 locations, 96s elapsed
+  display 6/24 square_sr50_dark_p2_control180: 9 locations, 115s elapsed
+  display 7/24 square_sr50_light_p3_illusory: 9 locations, 134s elapsed
+  display 8/24 square_sr50_light_p3_control180: 9 locations, 153s elapsed
+  display 9/24 square_sr70_dark_p4_illusory: 9 locations, 172s elapsed
+  display 10/24 square_sr70_dark_p4_control180: 9 locations, 192s elapsed
+  display 11/24 square_sr70_light_p0_illusory: 9 locations, 211s elapsed
+  display 12/24 square_sr70_light_p0_control180: 9 locations, 230s elapsed
+  display 13/24 triangle_sr30_dark_p1_illusory: 8 locations, 247s elapsed
+  display 14/24 triangle_sr30_dark_p1_control180: 8 locations, 264s elapsed
+  display 15/24 triangle_sr30_light_p2_illusory: 8 locations, 281s elapsed
+  display 16/24 triangle_sr30_light_p2_control180: 8 locations, 298s elapsed
+  display 17/24 triangle_sr50_dark_p3_illusory: 8 locations, 315s elapsed
+  display 18/24 triangle_sr50_dark_p3_control180: 8 locations, 332s elapsed
+  display 19/24 triangle_sr50_light_p4_illusory: 8 locations, 347s elapsed
+  display 20/24 triangle_sr50_light_p4_control180: 8 locations, 363s elapsed
+  display 21/24 triangle_sr70_dark_p0_illusory: 8 locations, 379s elapsed
+  display 22/24 triangle_sr70_dark_p0_control180: 8 locations, 394s elapsed
+  display 23/24 triangle_sr70_light_p1_illusory: 8 locations, 410s elapsed
+  display 24/24 triangle_sr70_light_p1_control180: 8 locations, 426s elapsed
+dinov2 L2: readout ERF50 244.0 px (336 263, 448 225), ERF90 516.0; block-token ERF50 30.5, ERF90 485.5
+dinov2 L4: readout ERF50 287.5 px (336 311, 448 264), ERF90 560.5; block-token ERF50 74.0, ERF90 469.0
+dinov2 L6: readout ERF50 300.5 px (336 321, 448 280), ERF90 574.5; block-token ERF50 140.0, ERF90 443.5
+dinov2 L8: readout ERF50 312.5 px (336 332, 448 293), ERF90 575.5; block-token ERF50 178.0, ERF90 479.0
+dinov2 L10: readout ERF50 294.5 px (336 329, 448 260), ERF90 570.0; block-token ERF50 214.0, ERF90 525.5
+dinov2 L12: readout ERF50 288.5 px (336 320, 448 257), ERF90 556.0; block-token ERF50 239.5, ERF90 546.0
+done dinov2: 425.9s

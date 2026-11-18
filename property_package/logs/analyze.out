@@ -1,0 +1,19 @@
+DINOv2-B L2: E -0.0000 eligible False U20 None ERF50 244.0
+DINOv2-B L4: E +0.0507 eligible True U20 0.7388 ERF50 287.5
+DINOv2-B L6: E +0.0824 eligible True U20 0.6504 ERF50 300.5
+DINOv2-B L8: E +0.0347 eligible True U20 1.5661 ERF50 312.5
+DINOv2-B L10: E -0.0285 eligible True U20 0.2407 ERF50 294.5
+DINOv2-B L12: E -0.0975 eligible True U20 0.5595 ERF50 288.5
+CLIP-L L4: E -0.0003 eligible False U20 None ERF50 259.0
+CLIP-L L8: E +0.0409 eligible True U20 0.2246 ERF50 238.5
+CLIP-L L12: E +0.0605 eligible True U20 0.8962 ERF50 318.0
+CLIP-L L16: E +0.0176 eligible True U20 1.1555 ERF50 317.5
+CLIP-L L20: E -0.0101 eligible False U20 None ERF50 322.5
+CLIP-L L24: E +0.0137 eligible False U20 None ERF50 319.5
+SigLIP-L L4: E +0.0198 eligible True U20 0.4646 ERF50 249.0
+SigLIP-L L8: E +0.0551 eligible True U20 0.5504 ERF50 277.5
+SigLIP-L L12: E -0.0206 eligible True U20 0.4178 ERF50 318.0
+SigLIP-L L16: E +0.0019 eligible False U20 None ERF50 313.0
+SigLIP-L L20: E +0.0473 eligible True U20 0.4105 ERF50 318.5
+SigLIP-L L24: E +0.1447 eligible True U20 0.8374 ERF50 325.5
+decision: INCONCLUSIVE I-d | The layer sweep neither supports nor rules out the receptive-field account (rho = -0.37, 95% CI [-0.62, -0.14], p = .218; pooled within-network rho = -0.27; adjusted R2 for receptive field 0.18 and for network identity -0.10).

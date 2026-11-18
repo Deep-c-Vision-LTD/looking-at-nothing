@@ -1,0 +1,20 @@
+torch 2.12.0; threads 4; pid 91870; device cpu
+Loading weights:   0%|          | 0/223 [00:00<?, ?it/s]Loading weights: 100%|██████████| 223/223 [00:00<00:00, 28429.48it/s]
+Loading weights:   0%|          | 0/223 [00:00<?, ?it/s]Loading weights: 100%|██████████| 223/223 [00:00<00:00, 16116.09it/s]
+Loading weights:   0%|          | 0/224 [00:00<?, ?it/s]Loading weights: 100%|██████████| 224/224 [00:00<00:00, 3440.30it/s]
+PASS  registers checkpoint has 4 register tokens  num_register_tokens 4
+PASS  336 px: dinov2ms shapes (1, 1536, 24, 24) and (1, 768, 24, 24)  
+PASS  336 px: dinov2ms_L7L11[:, 768:] equals dinov2ms_L11 bit for bit  
+PASS  336 px: dinov2ms_L11 equals hidden_states[11] of the published extractor bit for bit  max |d| 0.00e+00
+PASS  336 px: dinov2ms_L7L11[:, :768] equals hidden_states[7] of the published extractor bit for bit  max |d| 0.00e+00
+PASS  336 px: published GPU-side path (fullcommon.feats) equals the published extractor for dinov2_L12 and dinov2_L6  
+PASS  336 px: dinov2reg_L12 and dinov2reg_L6 are (1, 768, 24, 24) after dropping CLS and 4 registers  
+PASS  448 px: dinov2ms shapes (1, 1536, 32, 32) and (1, 768, 32, 32)  
+PASS  448 px: dinov2ms_L7L11[:, 768:] equals dinov2ms_L11 bit for bit  
+PASS  448 px: dinov2ms_L11 equals hidden_states[11] of the published extractor bit for bit  max |d| 0.00e+00
+PASS  448 px: dinov2ms_L7L11[:, :768] equals hidden_states[7] of the published extractor bit for bit  max |d| 0.00e+00
+PASS  448 px: published GPU-side path (fullcommon.feats) equals the published extractor for dinov2_L12 and dinov2_L6  
+PASS  448 px: dinov2reg_L12 and dinov2reg_L6 are (1, 768, 32, 32) after dropping CLS and 4 registers  
+PASS  this process holds no Metal (AGX) client  ioreg: none for this pid
+
+14 checks, 0 failed, 8 s

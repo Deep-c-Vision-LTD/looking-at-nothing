@@ -1,0 +1,41 @@
+2026-11-17 08:04:21 start siglip: 1 displays, layers (4, 8, 12, 16, 20, 24), sizes (336, 448), threads 6
+2026-11-17 08:05:07   display 1/1 square_sr30_dark_p0_illusory: 9 locations, 46s elapsed
+2026-11-17 08:05:07 siglip L4: readout ERF50 226.0 px (336 231, 448 221), ERF90 493.0; block-token ERF50 102.5, ERF90 440.0
+2026-11-17 08:05:07 siglip L8: readout ERF50 261.0 px (336 263, 448 259), ERF90 514.0; block-token ERF50 172.0, ERF90 465.0
+2026-11-17 08:05:07 siglip L12: readout ERF50 298.0 px (336 296, 448 300), ERF90 524.0; block-token ERF50 220.5, ERF90 506.0
+2026-11-17 08:05:07 siglip L16: readout ERF50 295.0 px (336 302, 448 288), ERF90 510.0; block-token ERF50 243.0, ERF90 507.5
+2026-11-17 08:05:07 siglip L20: readout ERF50 310.0 px (336 306, 448 314), ERF90 517.5; block-token ERF50 251.5, ERF90 511.5
+2026-11-17 08:05:07 siglip L24: readout ERF50 300.5 px (336 304, 448 297), ERF90 508.0; block-token ERF50 278.0, ERF90 513.5
+2026-11-17 08:05:07 done siglip: 46.4s
+2026-11-17 09:10:44 start siglip: 24 displays, layers (4, 8, 12, 16, 20, 24), sizes (336, 448), threads 6
+2026-11-17 09:11:31   display 1/24 square_sr30_dark_p0_illusory: 9 locations, 47s elapsed
+2026-11-17 09:12:16   display 2/24 square_sr30_dark_p0_control180: 9 locations, 92s elapsed
+2026-11-17 09:13:02   display 3/24 square_sr30_light_p1_illusory: 9 locations, 138s elapsed
+2026-11-17 09:13:47   display 4/24 square_sr30_light_p1_control180: 9 locations, 183s elapsed
+2026-11-17 09:14:32   display 5/24 square_sr50_dark_p2_illusory: 9 locations, 228s elapsed
+2026-11-17 09:15:17   display 6/24 square_sr50_dark_p2_control180: 9 locations, 274s elapsed
+2026-11-17 09:16:03   display 7/24 square_sr50_light_p3_illusory: 9 locations, 319s elapsed
+2026-11-17 09:16:48   display 8/24 square_sr50_light_p3_control180: 9 locations, 364s elapsed
+2026-11-17 09:17:34   display 9/24 square_sr70_dark_p4_illusory: 9 locations, 410s elapsed
+2026-11-17 09:18:20   display 10/24 square_sr70_dark_p4_control180: 9 locations, 456s elapsed
+2026-11-17 09:19:06   display 11/24 square_sr70_light_p0_illusory: 9 locations, 502s elapsed
+2026-11-17 09:19:52   display 12/24 square_sr70_light_p0_control180: 9 locations, 548s elapsed
+2026-11-17 09:20:33   display 13/24 triangle_sr30_dark_p1_illusory: 8 locations, 589s elapsed
+2026-11-17 09:21:14   display 14/24 triangle_sr30_dark_p1_control180: 8 locations, 630s elapsed
+2026-11-17 09:21:55   display 15/24 triangle_sr30_light_p2_illusory: 8 locations, 671s elapsed
+2026-11-17 09:22:36   display 16/24 triangle_sr30_light_p2_control180: 8 locations, 712s elapsed
+2026-11-17 09:23:16   display 17/24 triangle_sr50_dark_p3_illusory: 8 locations, 752s elapsed
+2026-11-17 09:23:57   display 18/24 triangle_sr50_dark_p3_control180: 8 locations, 793s elapsed
+2026-11-17 09:24:37   display 19/24 triangle_sr50_light_p4_illusory: 8 locations, 833s elapsed
+2026-11-17 09:25:18   display 20/24 triangle_sr50_light_p4_control180: 8 locations, 874s elapsed
+2026-11-17 09:25:58   display 21/24 triangle_sr70_dark_p0_illusory: 8 locations, 914s elapsed
+2026-11-17 09:26:39   display 22/24 triangle_sr70_dark_p0_control180: 8 locations, 955s elapsed
+2026-11-17 09:27:19   display 23/24 triangle_sr70_light_p1_illusory: 8 locations, 995s elapsed
+2026-11-17 09:27:59   display 24/24 triangle_sr70_light_p1_control180: 8 locations, 1036s elapsed
+2026-11-17 09:27:59 siglip L4: readout ERF50 249.0 px (336 259, 448 239), ERF90 542.0; block-token ERF50 116.0, ERF90 466.0
+2026-11-17 09:27:59 siglip L8: readout ERF50 277.5 px (336 284, 448 271), ERF90 561.5; block-token ERF50 155.5, ERF90 473.0
+2026-11-17 09:27:59 siglip L12: readout ERF50 318.0 px (336 326, 448 310), ERF90 562.0; block-token ERF50 203.5, ERF90 511.0
+2026-11-17 09:27:59 siglip L16: readout ERF50 313.0 px (336 323, 448 303), ERF90 554.0; block-token ERF50 240.0, ERF90 524.5
+2026-11-17 09:27:59 siglip L20: readout ERF50 318.5 px (336 326, 448 311), ERF90 556.0; block-token ERF50 252.0, ERF90 531.0
+2026-11-17 09:27:59 siglip L24: readout ERF50 325.5 px (336 333, 448 318), ERF90 554.5; block-token ERF50 288.5, ERF90 544.0
+2026-11-17 09:28:00 done siglip: 1035.6s

@@ -1,0 +1,41 @@
+2026-11-17 08:02:41 start dinov2: 1 displays, layers (2, 4, 6, 8, 10, 12), sizes (336, 448), threads 6
+2026-11-17 08:03:00   display 1/1 square_sr30_dark_p0_illusory: 9 locations, 19s elapsed
+2026-11-17 08:03:00 dinov2 L2: readout ERF50 233.0 px (336 244, 448 222), ERF90 502.0; block-token ERF50 55.0, ERF90 477.5
+2026-11-17 08:03:00 dinov2 L4: readout ERF50 265.5 px (336 282, 448 249), ERF90 520.5; block-token ERF50 67.0, ERF90 461.5
+2026-11-17 08:03:00 dinov2 L6: readout ERF50 306.5 px (336 326, 448 287), ERF90 536.0; block-token ERF50 125.0, ERF90 414.0
+2026-11-17 08:03:00 dinov2 L8: readout ERF50 297.5 px (336 313, 448 282), ERF90 526.5; block-token ERF50 165.5, ERF90 440.0
+2026-11-17 08:03:00 dinov2 L10: readout ERF50 306.5 px (336 343, 448 270), ERF90 540.5; block-token ERF50 190.5, ERF90 477.5
+2026-11-17 08:03:00 dinov2 L12: readout ERF50 299.0 px (336 316, 448 282), ERF90 525.0; block-token ERF50 217.5, ERF90 509.0
+2026-11-17 08:03:00 done dinov2: 19.2s
+2026-11-17 08:41:56 start dinov2: 24 displays, layers (2, 4, 6, 8, 10, 12), sizes (336, 448), threads 6
+2026-11-17 08:42:15   display 1/24 square_sr30_dark_p0_illusory: 9 locations, 20s elapsed
+2026-11-17 08:42:35   display 2/24 square_sr30_dark_p0_control180: 9 locations, 39s elapsed
+2026-11-17 08:42:54   display 3/24 square_sr30_light_p1_illusory: 9 locations, 58s elapsed
+2026-11-17 08:43:13   display 4/24 square_sr30_light_p1_control180: 9 locations, 77s elapsed
+2026-11-17 08:43:32   display 5/24 square_sr50_dark_p2_illusory: 9 locations, 96s elapsed
+2026-11-17 08:43:51   display 6/24 square_sr50_dark_p2_control180: 9 locations, 115s elapsed
+2026-11-17 08:44:10   display 7/24 square_sr50_light_p3_illusory: 9 locations, 134s elapsed
+2026-11-17 08:44:29   display 8/24 square_sr50_light_p3_control180: 9 locations, 153s elapsed
+2026-11-17 08:44:48   display 9/24 square_sr70_dark_p4_illusory: 9 locations, 172s elapsed
+2026-11-17 08:45:07   display 10/24 square_sr70_dark_p4_control180: 9 locations, 192s elapsed
+2026-11-17 08:45:27   display 11/24 square_sr70_light_p0_illusory: 9 locations, 211s elapsed
+2026-11-17 08:45:46   display 12/24 square_sr70_light_p0_control180: 9 locations, 230s elapsed
+2026-11-17 08:46:03   display 13/24 triangle_sr30_dark_p1_illusory: 8 locations, 247s elapsed
+2026-11-17 08:46:20   display 14/24 triangle_sr30_dark_p1_control180: 8 locations, 264s elapsed
+2026-11-17 08:46:37   display 15/24 triangle_sr30_light_p2_illusory: 8 locations, 281s elapsed
+2026-11-17 08:46:53   display 16/24 triangle_sr30_light_p2_control180: 8 locations, 298s elapsed
+2026-11-17 08:47:10   display 17/24 triangle_sr50_dark_p3_illusory: 8 locations, 315s elapsed
+2026-11-17 08:47:27   display 18/24 triangle_sr50_dark_p3_control180: 8 locations, 332s elapsed
+2026-11-17 08:47:43   display 19/24 triangle_sr50_light_p4_illusory: 8 locations, 347s elapsed
+2026-11-17 08:47:59   display 20/24 triangle_sr50_light_p4_control180: 8 locations, 363s elapsed
+2026-11-17 08:48:14   display 21/24 triangle_sr70_dark_p0_illusory: 8 locations, 379s elapsed
+2026-11-17 08:48:30   display 22/24 triangle_sr70_dark_p0_control180: 8 locations, 394s elapsed
+2026-11-17 08:48:46   display 23/24 triangle_sr70_light_p1_illusory: 8 locations, 410s elapsed
+2026-11-17 08:49:02   display 24/24 triangle_sr70_light_p1_control180: 8 locations, 426s elapsed
+2026-11-17 08:49:02 dinov2 L2: readout ERF50 244.0 px (336 263, 448 225), ERF90 516.0; block-token ERF50 30.5, ERF90 485.5
+2026-11-17 08:49:02 dinov2 L4: readout ERF50 287.5 px (336 311, 448 264), ERF90 560.5; block-token ERF50 74.0, ERF90 469.0
+2026-11-17 08:49:02 dinov2 L6: readout ERF50 300.5 px (336 321, 448 280), ERF90 574.5; block-token ERF50 140.0, ERF90 443.5
+2026-11-17 08:49:02 dinov2 L8: readout ERF50 312.5 px (336 332, 448 293), ERF90 575.5; block-token ERF50 178.0, ERF90 479.0
+2026-11-17 08:49:02 dinov2 L10: readout ERF50 294.5 px (336 329, 448 260), ERF90 570.0; block-token ERF50 214.0, ERF90 525.5
+2026-11-17 08:49:02 dinov2 L12: readout ERF50 288.5 px (336 320, 448 257), ERF90 556.0; block-token ERF50 239.5, ERF90 546.0
+2026-11-17 08:49:02 done dinov2: 425.9s

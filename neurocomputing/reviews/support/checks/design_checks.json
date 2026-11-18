@@ -1,0 +1,159 @@
+{
+ "inventory": {
+  "md5_mismatch": 0,
+  "files_in_manifest": 722,
+  "files_on_disk": 722,
+  "manifest_equals_disk": true,
+  "png": 480,
+  "aoi": 240,
+  "expected_png": 480,
+  "missing_png": [],
+  "extra_png": [],
+  "items": 480,
+  "items_equal_png": true,
+  "missing_aoi": []
+ },
+ "geometry_vs_items": {
+  "max_centre_err_px": 4.831972998514682e-05,
+  "max_notch_dir_err_deg": 5.684341886080802e-14
+ },
+ "pixels": {
+  "modes": [
+   "('rig', 'RGB', (768, 1024, 3))",
+   "('v3', 'RGB', (768, 1024, 3))"
+  ],
+  "rgb_channels_equal": true,
+  "bg_mode_ok": true,
+  "border_nonbg_max": 0,
+  "ink_mass_rel": [
+   -0.0024011298848478635,
+   0.0006471251300859127
+  ],
+  "ink128_count_rel": [
+   -0.005601944826128302,
+   0.0035055829654635495
+  ],
+  "full_ink_count_rel": [
+   -0.0065399239543726395,
+   0.005092143549951578
+  ],
+  "aa_count_rel_vs_phi0": [
+   -0.0273141122913505,
+   0.1779538904899136
+  ],
+  "aa_count_rel_rig20_vs_mis20": [
+   -0.01675257731958768,
+   0.010057471264367734
+  ],
+  "n_unique_grey": [
+   155,
+   233
+  ],
+  "n_unique_grey_v3": [
+   140,
+   223
+  ]
+ },
+ "rotation_test": {
+  "n": 80,
+  "mad_max": 0.09057235717773438,
+  "maxdiff_max": 112.0,
+  "frac_gt32_max": 0.001064300537109375,
+  "mad_wrong_direction_min": 0.024045308430989582,
+  "mad_unrotated_min": 2.8754069010416665
+ },
+ "notch_measured": {
+  "n": 1680,
+  "max_dir_err_deg": 3.0,
+  "width_minus_gap": [
+   -5.75,
+   5.25
+  ]
+ },
+ "aoi": {
+  "n": 80,
+  "ind_exact": true,
+  "inside_equals_pil": true,
+  "core30_exact": true,
+  "core45_exact": true,
+  "inside_eroded_exact": true,
+  "inside_vs_halfplane_px_max": 389,
+  "inside_vs_halfplane_max_dist_to_edge": 2.0,
+  "polygon_vs_halfplane_px_max": 0,
+  "iou_inside_min": 0.988702330981513,
+  "iou_ind_min": 0.984472049689441,
+  "inside_area_rel_phi0": [
+   -0.007742843735335514,
+   0.003816003549770741
+  ],
+  "ink_outside_ind_max": 14
+ },
+ "edge_orientation_peaks_deg": {
+  "square_sr50_dark_p0": {
+   "illusory": [
+    0,
+    1
+   ],
+   "mis20": [
+    0,
+    2
+   ],
+   "rig20": [
+    0,
+    2
+   ],
+   "rig20_control": [
+    0,
+    2
+   ],
+   "control180": [
+    0,
+    1
+   ]
+  },
+  "square_sr70_light_p3": {
+   "illusory": [
+    0,
+    178
+   ],
+   "mis20": [
+    2,
+    179
+   ],
+   "rig20": [
+    0,
+    2
+   ],
+   "rig20_control": [
+    0,
+    2
+   ],
+   "control180": [
+    0,
+    178
+   ]
+  },
+  "triangle_sr50_dark_p1": {
+   "illusory": [
+    0,
+    2
+   ],
+   "mis20": [
+    136,
+    137
+   ],
+   "rig20": [
+    136,
+    137
+   ],
+   "rig20_control": [
+    136,
+    137
+   ],
+   "control180": [
+    0,
+    1
+   ]
+  }
+ }
+}

@@ -1,0 +1,3 @@
+G = 4 sym   n = 300: WCU 0.970 | CR1 t(3) 0.970 | two-stage percentile 0.827 | WCR size 0.023 | median width WCU 2.266, t(3) 2.247
+G = 4 skew  n = 300: WCU 0.847 | CR1 t(3) 0.867 | two-stage percentile 0.750 | WCR size 0.137 | median width WCU 2.208, t(3) 2.053
+G = 4 lever n = 300: WCU 0.957 | CR1 t(3) 0.970 | two-stage percentile 0.857 | WCR size 0.020 | median width WCU 2.427, t(3) 2.548

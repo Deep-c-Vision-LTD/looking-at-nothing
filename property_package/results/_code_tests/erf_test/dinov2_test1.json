@@ -1,0 +1,1180 @@
+{
+ "backbone": "dinov2",
+ "hf": "facebook/dinov2-base",
+ "patch": 14,
+ "displays": [
+  "square_sr30_dark_p0_illusory"
+ ],
+ "sizes": [
+  336,
+  448
+ ],
+ "units": "display px (1024 x 768) unless key ends in _model (model-input px)",
+ "layers": {
+  "2": {
+   "ro_s336_all": {
+    "erf50": 244,
+    "erf90": 522,
+    "per_display_erf50": [
+     244
+    ]
+   },
+   "ro_s336_all_model": {
+    "erf50": 88,
+    "erf90": 184,
+    "per_display_erf50": [
+     88
+    ]
+   },
+   "ro_s336_inside": {
+    "erf50": 255,
+    "erf90": 525,
+    "per_display_erf50": [
+     255
+    ]
+   },
+   "ro_s336_inside_model": {
+    "erf50": 91,
+    "erf90": 182,
+    "per_display_erf50": [
+     91
+    ]
+   },
+   "ro_s336_ind": {
+    "erf50": 229,
+    "erf90": 520,
+    "per_display_erf50": [
+     229
+    ]
+   },
+   "ro_s336_ind_model": {
+    "erf50": 84,
+    "erf90": 187,
+    "per_display_erf50": [
+     84
+    ]
+   },
+   "ro_s448_all": {
+    "erf50": 222,
+    "erf90": 482,
+    "per_display_erf50": [
+     222
+    ]
+   },
+   "ro_s448_all_model": {
+    "erf50": 110,
+    "erf90": 239,
+    "per_display_erf50": [
+     110
+    ]
+   },
+   "ro_s448_inside": {
+    "erf50": 224,
+    "erf90": 482,
+    "per_display_erf50": [
+     224
+    ]
+   },
+   "ro_s448_inside_model": {
+    "erf50": 111,
+    "erf90": 238,
+    "per_display_erf50": [
+     111
+    ]
+   },
+   "ro_s448_ind": {
+    "erf50": 220,
+    "erf90": 483,
+    "per_display_erf50": [
+     220
+    ]
+   },
+   "ro_s448_ind_model": {
+    "erf50": 110,
+    "erf90": 239,
+    "per_display_erf50": [
+     110
+    ]
+   },
+   "ro_sizeavg_all": {
+    "erf50": 233.0,
+    "erf90": 502.0
+   },
+   "ro_sizeavg_inside": {
+    "erf50": 239.5,
+    "erf90": 503.5
+   },
+   "ro_sizeavg_ind": {
+    "erf50": 224.5,
+    "erf90": 501.5
+   },
+   "bb_s336_all": {
+    "erf50": 60,
+    "erf90": 484,
+    "per_display_erf50": [
+     60
+    ]
+   },
+   "bb_s336_all_model": {
+    "erf50": 22,
+    "erf90": 180,
+    "per_display_erf50": [
+     22
+    ]
+   },
+   "bb_s336_inside": {
+    "erf50": 48,
+    "erf90": 479,
+    "per_display_erf50": [
+     48
+    ]
+   },
+   "bb_s336_inside_model": {
+    "erf50": 17,
+    "erf90": 177,
+    "per_display_erf50": [
+     17
+    ]
+   },
+   "bb_s336_ind": {
+    "erf50": 66,
+    "erf90": 492,
+    "per_display_erf50": [
+     66
+    ]
+   },
+   "bb_s336_ind_model": {
+    "erf50": 24,
+    "erf90": 187,
+    "per_display_erf50": [
+     24
+    ]
+   },
+   "bb_s448_all": {
+    "erf50": 50,
+    "erf90": 471,
+    "per_display_erf50": [
+     50
+    ]
+   },
+   "bb_s448_all_model": {
+    "erf50": 23,
+    "erf90": 233,
+    "per_display_erf50": [
+     23
+    ]
+   },
+   "bb_s448_inside": {
+    "erf50": 39,
+    "erf90": 474,
+    "per_display_erf50": [
+     39
+    ]
+   },
+   "bb_s448_inside_model": {
+    "erf50": 20,
+    "erf90": 232,
+    "per_display_erf50": [
+     20
+    ]
+   },
+   "bb_s448_ind": {
+    "erf50": 54,
+    "erf90": 468,
+    "per_display_erf50": [
+     54
+    ]
+   },
+   "bb_s448_ind_model": {
+    "erf50": 26,
+    "erf90": 235,
+    "per_display_erf50": [
+     26
+    ]
+   },
+   "bb_sizeavg_all": {
+    "erf50": 55.0,
+    "erf90": 477.5
+   },
+   "bb_sizeavg_inside": {
+    "erf50": 43.5,
+    "erf90": 476.5
+   },
+   "bb_sizeavg_ind": {
+    "erf50": 60.0,
+    "erf90": 480.0
+   }
+  },
+  "4": {
+   "ro_s336_all": {
+    "erf50": 282,
+    "erf90": 546,
+    "per_display_erf50": [
+     282
+    ]
+   },
+   "ro_s336_all_model": {
+    "erf50": 104,
+    "erf90": 199,
+    "per_display_erf50": [
+     104
+    ]
+   },
+   "ro_s336_inside": {
+    "erf50": 289,
+    "erf90": 550,
+    "per_display_erf50": [
+     289
+    ]
+   },
+   "ro_s336_inside_model": {
+    "erf50": 107,
+    "erf90": 200,
+    "per_display_erf50": [
+     107
+    ]
+   },
+   "ro_s336_ind": {
+    "erf50": 272,
+    "erf90": 540,
+    "per_display_erf50": [
+     272
+    ]
+   },
+   "ro_s336_ind_model": {
+    "erf50": 99,
+    "erf90": 199,
+    "per_display_erf50": [
+     99
+    ]
+   },
+   "ro_s448_all": {
+    "erf50": 249,
+    "erf90": 495,
+    "per_display_erf50": [
+     249
+    ]
+   },
+   "ro_s448_all_model": {
+    "erf50": 124,
+    "erf90": 245,
+    "per_display_erf50": [
+     124
+    ]
+   },
+   "ro_s448_inside": {
+    "erf50": 258,
+    "erf90": 492,
+    "per_display_erf50": [
+     258
+    ]
+   },
+   "ro_s448_inside_model": {
+    "erf50": 129,
+    "erf90": 244,
+    "per_display_erf50": [
+     129
+    ]
+   },
+   "ro_s448_ind": {
+    "erf50": 241,
+    "erf90": 500,
+    "per_display_erf50": [
+     241
+    ]
+   },
+   "ro_s448_ind_model": {
+    "erf50": 120,
+    "erf90": 249,
+    "per_display_erf50": [
+     120
+    ]
+   },
+   "ro_sizeavg_all": {
+    "erf50": 265.5,
+    "erf90": 520.5
+   },
+   "ro_sizeavg_inside": {
+    "erf50": 273.5,
+    "erf90": 521.0
+   },
+   "ro_sizeavg_ind": {
+    "erf50": 256.5,
+    "erf90": 520.0
+   },
+   "bb_s336_all": {
+    "erf50": 72,
+    "erf90": 472,
+    "per_display_erf50": [
+     72
+    ]
+   },
+   "bb_s336_all_model": {
+    "erf50": 27,
+    "erf90": 176,
+    "per_display_erf50": [
+     27
+    ]
+   },
+   "bb_s336_inside": {
+    "erf50": 53,
+    "erf90": 453,
+    "per_display_erf50": [
+     53
+    ]
+   },
+   "bb_s336_inside_model": {
+    "erf50": 20,
+    "erf90": 167,
+    "per_display_erf50": [
+     20
+    ]
+   },
+   "bb_s336_ind": {
+    "erf50": 125,
+    "erf90": 499,
+    "per_display_erf50": [
+     125
+    ]
+   },
+   "bb_s336_ind_model": {
+    "erf50": 47,
+    "erf90": 188,
+    "per_display_erf50": [
+     47
+    ]
+   },
+   "bb_s448_all": {
+    "erf50": 62,
+    "erf90": 451,
+    "per_display_erf50": [
+     62
+    ]
+   },
+   "bb_s448_all_model": {
+    "erf50": 33,
+    "erf90": 222,
+    "per_display_erf50": [
+     33
+    ]
+   },
+   "bb_s448_inside": {
+    "erf50": 41,
+    "erf90": 428,
+    "per_display_erf50": [
+     41
+    ]
+   },
+   "bb_s448_inside_model": {
+    "erf50": 21,
+    "erf90": 209,
+    "per_display_erf50": [
+     21
+    ]
+   },
+   "bb_s448_ind": {
+    "erf50": 139,
+    "erf90": 477,
+    "per_display_erf50": [
+     139
+    ]
+   },
+   "bb_s448_ind_model": {
+    "erf50": 67,
+    "erf90": 239,
+    "per_display_erf50": [
+     67
+    ]
+   },
+   "bb_sizeavg_all": {
+    "erf50": 67.0,
+    "erf90": 461.5
+   },
+   "bb_sizeavg_inside": {
+    "erf50": 47.0,
+    "erf90": 440.5
+   },
+   "bb_sizeavg_ind": {
+    "erf50": 132.0,
+    "erf90": 488.0
+   }
+  },
+  "6": {
+   "ro_s336_all": {
+    "erf50": 326,
+    "erf90": 551,
+    "per_display_erf50": [
+     326
+    ]
+   },
+   "ro_s336_all_model": {
+    "erf50": 123,
+    "erf90": 205,
+    "per_display_erf50": [
+     123
+    ]
+   },
+   "ro_s336_inside": {
+    "erf50": 325,
+    "erf90": 539,
+    "per_display_erf50": [
+     325
+    ]
+   },
+   "ro_s336_inside_model": {
+    "erf50": 123,
+    "erf90": 199,
+    "per_display_erf50": [
+     123
+    ]
+   },
+   "ro_s336_ind": {
+    "erf50": 328,
+    "erf90": 569,
+    "per_display_erf50": [
+     328
+    ]
+   },
+   "ro_s336_ind_model": {
+    "erf50": 124,
+    "erf90": 211,
+    "per_display_erf50": [
+     124
+    ]
+   },
+   "ro_s448_all": {
+    "erf50": 287,
+    "erf90": 521,
+    "per_display_erf50": [
+     287
+    ]
+   },
+   "ro_s448_all_model": {
+    "erf50": 148,
+    "erf90": 259,
+    "per_display_erf50": [
+     148
+    ]
+   },
+   "ro_s448_inside": {
+    "erf50": 268,
+    "erf90": 504,
+    "per_display_erf50": [
+     268
+    ]
+   },
+   "ro_s448_inside_model": {
+    "erf50": 137,
+    "erf90": 248,
+    "per_display_erf50": [
+     137
+    ]
+   },
+   "ro_s448_ind": {
+    "erf50": 311,
+    "erf90": 543,
+    "per_display_erf50": [
+     311
+    ]
+   },
+   "ro_s448_ind_model": {
+    "erf50": 159,
+    "erf90": 271,
+    "per_display_erf50": [
+     159
+    ]
+   },
+   "ro_sizeavg_all": {
+    "erf50": 306.5,
+    "erf90": 536.0
+   },
+   "ro_sizeavg_inside": {
+    "erf50": 296.5,
+    "erf90": 521.5
+   },
+   "ro_sizeavg_ind": {
+    "erf50": 319.5,
+    "erf90": 556.0
+   },
+   "bb_s336_all": {
+    "erf50": 131,
+    "erf90": 420,
+    "per_display_erf50": [
+     131
+    ]
+   },
+   "bb_s336_all_model": {
+    "erf50": 50,
+    "erf90": 156,
+    "per_display_erf50": [
+     50
+    ]
+   },
+   "bb_s336_inside": {
+    "erf50": 116,
+    "erf90": 412,
+    "per_display_erf50": [
+     116
+    ]
+   },
+   "bb_s336_inside_model": {
+    "erf50": 43,
+    "erf90": 152,
+    "per_display_erf50": [
+     43
+    ]
+   },
+   "bb_s336_ind": {
+    "erf50": 155,
+    "erf90": 429,
+    "per_display_erf50": [
+     155
+    ]
+   },
+   "bb_s336_ind_model": {
+    "erf50": 60,
+    "erf90": 163,
+    "per_display_erf50": [
+     60
+    ]
+   },
+   "bb_s448_all": {
+    "erf50": 119,
+    "erf90": 408,
+    "per_display_erf50": [
+     119
+    ]
+   },
+   "bb_s448_all_model": {
+    "erf50": 59,
+    "erf90": 201,
+    "per_display_erf50": [
+     59
+    ]
+   },
+   "bb_s448_inside": {
+    "erf50": 96,
+    "erf90": 388,
+    "per_display_erf50": [
+     96
+    ]
+   },
+   "bb_s448_inside_model": {
+    "erf50": 48,
+    "erf90": 194,
+    "per_display_erf50": [
+     48
+    ]
+   },
+   "bb_s448_ind": {
+    "erf50": 148,
+    "erf90": 429,
+    "per_display_erf50": [
+     148
+    ]
+   },
+   "bb_s448_ind_model": {
+    "erf50": 74,
+    "erf90": 212,
+    "per_display_erf50": [
+     74
+    ]
+   },
+   "bb_sizeavg_all": {
+    "erf50": 125.0,
+    "erf90": 414.0
+   },
+   "bb_sizeavg_inside": {
+    "erf50": 106.0,
+    "erf90": 400.0
+   },
+   "bb_sizeavg_ind": {
+    "erf50": 151.5,
+    "erf90": 429.0
+   }
+  },
+  "8": {
+   "ro_s336_all": {
+    "erf50": 313,
+    "erf90": 542,
+    "per_display_erf50": [
+     313
+    ]
+   },
+   "ro_s336_all_model": {
+    "erf50": 118,
+    "erf90": 204,
+    "per_display_erf50": [
+     118
+    ]
+   },
+   "ro_s336_inside": {
+    "erf50": 305,
+    "erf90": 533,
+    "per_display_erf50": [
+     305
+    ]
+   },
+   "ro_s336_inside_model": {
+    "erf50": 116,
+    "erf90": 197,
+    "per_display_erf50": [
+     116
+    ]
+   },
+   "ro_s336_ind": {
+    "erf50": 321,
+    "erf90": 554,
+    "per_display_erf50": [
+     321
+    ]
+   },
+   "ro_s336_ind_model": {
+    "erf50": 121,
+    "erf90": 210,
+    "per_display_erf50": [
+     121
+    ]
+   },
+   "ro_s448_all": {
+    "erf50": 282,
+    "erf90": 511,
+    "per_display_erf50": [
+     282
+    ]
+   },
+   "ro_s448_all_model": {
+    "erf50": 145,
+    "erf90": 257,
+    "per_display_erf50": [
+     145
+    ]
+   },
+   "ro_s448_inside": {
+    "erf50": 270,
+    "erf90": 493,
+    "per_display_erf50": [
+     270
+    ]
+   },
+   "ro_s448_inside_model": {
+    "erf50": 138,
+    "erf90": 245,
+    "per_display_erf50": [
+     138
+    ]
+   },
+   "ro_s448_ind": {
+    "erf50": 297,
+    "erf90": 536,
+    "per_display_erf50": [
+     297
+    ]
+   },
+   "ro_s448_ind_model": {
+    "erf50": 153,
+    "erf90": 271,
+    "per_display_erf50": [
+     153
+    ]
+   },
+   "ro_sizeavg_all": {
+    "erf50": 297.5,
+    "erf90": 526.5
+   },
+   "ro_sizeavg_inside": {
+    "erf50": 287.5,
+    "erf90": 513.0
+   },
+   "ro_sizeavg_ind": {
+    "erf50": 309.0,
+    "erf90": 545.0
+   },
+   "bb_s336_all": {
+    "erf50": 171,
+    "erf90": 448,
+    "per_display_erf50": [
+     171
+    ]
+   },
+   "bb_s336_all_model": {
+    "erf50": 64,
+    "erf90": 169,
+    "per_display_erf50": [
+     64
+    ]
+   },
+   "bb_s336_inside": {
+    "erf50": 152,
+    "erf90": 443,
+    "per_display_erf50": [
+     152
+    ]
+   },
+   "bb_s336_inside_model": {
+    "erf50": 57,
+    "erf90": 167,
+    "per_display_erf50": [
+     57
+    ]
+   },
+   "bb_s336_ind": {
+    "erf50": 201,
+    "erf90": 455,
+    "per_display_erf50": [
+     201
+    ]
+   },
+   "bb_s336_ind_model": {
+    "erf50": 74,
+    "erf90": 173,
+    "per_display_erf50": [
+     74
+    ]
+   },
+   "bb_s448_all": {
+    "erf50": 160,
+    "erf90": 432,
+    "per_display_erf50": [
+     160
+    ]
+   },
+   "bb_s448_all_model": {
+    "erf50": 81,
+    "erf90": 214,
+    "per_display_erf50": [
+     81
+    ]
+   },
+   "bb_s448_inside": {
+    "erf50": 139,
+    "erf90": 413,
+    "per_display_erf50": [
+     139
+    ]
+   },
+   "bb_s448_inside_model": {
+    "erf50": 70,
+    "erf90": 206,
+    "per_display_erf50": [
+     70
+    ]
+   },
+   "bb_s448_ind": {
+    "erf50": 185,
+    "erf90": 451,
+    "per_display_erf50": [
+     185
+    ]
+   },
+   "bb_s448_ind_model": {
+    "erf50": 94,
+    "erf90": 225,
+    "per_display_erf50": [
+     94
+    ]
+   },
+   "bb_sizeavg_all": {
+    "erf50": 165.5,
+    "erf90": 440.0
+   },
+   "bb_sizeavg_inside": {
+    "erf50": 145.5,
+    "erf90": 428.0
+   },
+   "bb_sizeavg_ind": {
+    "erf50": 193.0,
+    "erf90": 453.0
+   }
+  },
+  "10": {
+   "ro_s336_all": {
+    "erf50": 343,
+    "erf90": 552,
+    "per_display_erf50": [
+     343
+    ]
+   },
+   "ro_s336_all_model": {
+    "erf50": 130,
+    "erf90": 210,
+    "per_display_erf50": [
+     130
+    ]
+   },
+   "ro_s336_inside": {
+    "erf50": 340,
+    "erf90": 544,
+    "per_display_erf50": [
+     340
+    ]
+   },
+   "ro_s336_inside_model": {
+    "erf50": 130,
+    "erf90": 203,
+    "per_display_erf50": [
+     130
+    ]
+   },
+   "ro_s336_ind": {
+    "erf50": 346,
+    "erf90": 562,
+    "per_display_erf50": [
+     346
+    ]
+   },
+   "ro_s336_ind_model": {
+    "erf50": 130,
+    "erf90": 215,
+    "per_display_erf50": [
+     130
+    ]
+   },
+   "ro_s448_all": {
+    "erf50": 270,
+    "erf90": 529,
+    "per_display_erf50": [
+     270
+    ]
+   },
+   "ro_s448_all_model": {
+    "erf50": 138,
+    "erf90": 267,
+    "per_display_erf50": [
+     138
+    ]
+   },
+   "ro_s448_inside": {
+    "erf50": 262,
+    "erf90": 522,
+    "per_display_erf50": [
+     262
+    ]
+   },
+   "ro_s448_inside_model": {
+    "erf50": 133,
+    "erf90": 261,
+    "per_display_erf50": [
+     133
+    ]
+   },
+   "ro_s448_ind": {
+    "erf50": 278,
+    "erf90": 539,
+    "per_display_erf50": [
+     278
+    ]
+   },
+   "ro_s448_ind_model": {
+    "erf50": 145,
+    "erf90": 275,
+    "per_display_erf50": [
+     145
+    ]
+   },
+   "ro_sizeavg_all": {
+    "erf50": 306.5,
+    "erf90": 540.5
+   },
+   "ro_sizeavg_inside": {
+    "erf50": 301.0,
+    "erf90": 533.0
+   },
+   "ro_sizeavg_ind": {
+    "erf50": 312.0,
+    "erf90": 550.5
+   },
+   "bb_s336_all": {
+    "erf50": 205,
+    "erf90": 483,
+    "per_display_erf50": [
+     205
+    ]
+   },
+   "bb_s336_all_model": {
+    "erf50": 77,
+    "erf90": 184,
+    "per_display_erf50": [
+     77
+    ]
+   },
+   "bb_s336_inside": {
+    "erf50": 185,
+    "erf90": 470,
+    "per_display_erf50": [
+     185
+    ]
+   },
+   "bb_s336_inside_model": {
+    "erf50": 69,
+    "erf90": 178,
+    "per_display_erf50": [
+     69
+    ]
+   },
+   "bb_s336_ind": {
+    "erf50": 226,
+    "erf90": 497,
+    "per_display_erf50": [
+     226
+    ]
+   },
+   "bb_s336_ind_model": {
+    "erf50": 84,
+    "erf90": 192,
+    "per_display_erf50": [
+     84
+    ]
+   },
+   "bb_s448_all": {
+    "erf50": 176,
+    "erf90": 472,
+    "per_display_erf50": [
+     176
+    ]
+   },
+   "bb_s448_all_model": {
+    "erf50": 89,
+    "erf90": 239,
+    "per_display_erf50": [
+     89
+    ]
+   },
+   "bb_s448_inside": {
+    "erf50": 144,
+    "erf90": 446,
+    "per_display_erf50": [
+     144
+    ]
+   },
+   "bb_s448_inside_model": {
+    "erf50": 74,
+    "erf90": 225,
+    "per_display_erf50": [
+     74
+    ]
+   },
+   "bb_s448_ind": {
+    "erf50": 207,
+    "erf90": 495,
+    "per_display_erf50": [
+     207
+    ]
+   },
+   "bb_s448_ind_model": {
+    "erf50": 104,
+    "erf90": 256,
+    "per_display_erf50": [
+     104
+    ]
+   },
+   "bb_sizeavg_all": {
+    "erf50": 190.5,
+    "erf90": 477.5
+   },
+   "bb_sizeavg_inside": {
+    "erf50": 164.5,
+    "erf90": 458.0
+   },
+   "bb_sizeavg_ind": {
+    "erf50": 216.5,
+    "erf90": 496.0
+   }
+  },
+  "12": {
+   "ro_s336_all": {
+    "erf50": 316,
+    "erf90": 540,
+    "per_display_erf50": [
+     316
+    ]
+   },
+   "ro_s336_all_model": {
+    "erf50": 120,
+    "erf90": 207,
+    "per_display_erf50": [
+     120
+    ]
+   },
+   "ro_s336_inside": {
+    "erf50": 323,
+    "erf90": 535,
+    "per_display_erf50": [
+     323
+    ]
+   },
+   "ro_s336_inside_model": {
+    "erf50": 123,
+    "erf90": 201,
+    "per_display_erf50": [
+     123
+    ]
+   },
+   "ro_s336_ind": {
+    "erf50": 309,
+    "erf90": 550,
+    "per_display_erf50": [
+     309
+    ]
+   },
+   "ro_s336_ind_model": {
+    "erf50": 118,
+    "erf90": 212,
+    "per_display_erf50": [
+     118
+    ]
+   },
+   "ro_s448_all": {
+    "erf50": 282,
+    "erf90": 510,
+    "per_display_erf50": [
+     282
+    ]
+   },
+   "ro_s448_all_model": {
+    "erf50": 147,
+    "erf90": 256,
+    "per_display_erf50": [
+     147
+    ]
+   },
+   "ro_s448_inside": {
+    "erf50": 279,
+    "erf90": 502,
+    "per_display_erf50": [
+     279
+    ]
+   },
+   "ro_s448_inside_model": {
+    "erf50": 145,
+    "erf90": 249,
+    "per_display_erf50": [
+     145
+    ]
+   },
+   "ro_s448_ind": {
+    "erf50": 286,
+    "erf90": 523,
+    "per_display_erf50": [
+     286
+    ]
+   },
+   "ro_s448_ind_model": {
+    "erf50": 149,
+    "erf90": 266,
+    "per_display_erf50": [
+     149
+    ]
+   },
+   "ro_sizeavg_all": {
+    "erf50": 299.0,
+    "erf90": 525.0
+   },
+   "ro_sizeavg_inside": {
+    "erf50": 301.0,
+    "erf90": 518.5
+   },
+   "ro_sizeavg_ind": {
+    "erf50": 297.5,
+    "erf90": 536.5
+   },
+   "bb_s336_all": {
+    "erf50": 242,
+    "erf90": 521,
+    "per_display_erf50": [
+     242
+    ]
+   },
+   "bb_s336_all_model": {
+    "erf50": 91,
+    "erf90": 199,
+    "per_display_erf50": [
+     91
+    ]
+   },
+   "bb_s336_inside": {
+    "erf50": 213,
+    "erf90": 503,
+    "per_display_erf50": [
+     213
+    ]
+   },
+   "bb_s336_inside_model": {
+    "erf50": 81,
+    "erf90": 187,
+    "per_display_erf50": [
+     81
+    ]
+   },
+   "bb_s336_ind": {
+    "erf50": 268,
+    "erf90": 544,
+    "per_display_erf50": [
+     268
+    ]
+   },
+   "bb_s336_ind_model": {
+    "erf50": 102,
+    "erf90": 207,
+    "per_display_erf50": [
+     102
+    ]
+   },
+   "bb_s448_all": {
+    "erf50": 193,
+    "erf90": 497,
+    "per_display_erf50": [
+     193
+    ]
+   },
+   "bb_s448_all_model": {
+    "erf50": 98,
+    "erf90": 249,
+    "per_display_erf50": [
+     98
+    ]
+   },
+   "bb_s448_inside": {
+    "erf50": 166,
+    "erf90": 475,
+    "per_display_erf50": [
+     166
+    ]
+   },
+   "bb_s448_inside_model": {
+    "erf50": 84,
+    "erf90": 236,
+    "per_display_erf50": [
+     84
+    ]
+   },
+   "bb_s448_ind": {
+    "erf50": 217,
+    "erf90": 524,
+    "per_display_erf50": [
+     217
+    ]
+   },
+   "bb_s448_ind_model": {
+    "erf50": 111,
+    "erf90": 264,
+    "per_display_erf50": [
+     111
+    ]
+   },
+   "bb_sizeavg_all": {
+    "erf50": 217.5,
+    "erf90": 509.0
+   },
+   "bb_sizeavg_inside": {
+    "erf50": 189.5,
+    "erf90": 489.0
+   },
+   "bb_sizeavg_ind": {
+    "erf50": 242.5,
+    "erf90": 534.0
+   }
+  }
+ },
+ "seconds": 19.2
+}

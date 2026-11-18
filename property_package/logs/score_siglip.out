@@ -1,0 +1,89 @@
+Loading weights:   0%|          | 0/400 [00:00<?, ?it/s]Loading weights: 100%|██████████| 400/400 [00:00<00:00, 8193.36it/s]
+[transformers] [1mSiglipVisionModel LOAD REPORT[0m from: google/siglip-large-patch16-256
+Key                                                          | Status     |  | 
+-------------------------------------------------------------+------------+--+-
+text_model.encoder.layers.{0...23}.self_attn.q_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.v_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc2.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.q_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm2.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.out_proj.bias   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm2.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm1.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc1.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.k_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc1.weight            | UNEXPECTED |  | 
+logit_bias                                                   | UNEXPECTED |  | 
+text_model.embeddings.position_embedding.weight              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.out_proj.weight | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm1.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.v_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc2.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.k_proj.bias     | UNEXPECTED |  | 
+text_model.final_layer_norm.weight                           | UNEXPECTED |  | 
+text_model.final_layer_norm.bias                             | UNEXPECTED |  | 
+logit_scale                                                  | UNEXPECTED |  | 
+text_model.embeddings.token_embedding.weight                 | UNEXPECTED |  | 
+text_model.head.bias                                         | UNEXPECTED |  | 
+text_model.head.weight                                       | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+start siglip layers (12, 16, 20) -> /Users/hamitsoyel/Downloads/illusion_research/nn/results; torch 2.12.0, threads 3
+1100 of 1100 images to score, tags ['siglip_L12_s336', 'siglip_L16_s336', 'siglip_L20_s336', 'siglip_L12_s448', 'siglip_L16_s448', 'siglip_L20_s448']
+  20/1100 16s (0.78 s/img)
+  40/1100 30s (0.75 s/img)
+  60/1100 44s (0.74 s/img)
+  80/1100 58s (0.73 s/img)
+  100/1100 73s (0.73 s/img)
+  120/1100 87s (0.72 s/img)
+  140/1100 101s (0.72 s/img)
+  160/1100 116s (0.72 s/img)
+  180/1100 130s (0.72 s/img)
+  200/1100 144s (0.72 s/img)
+  220/1100 159s (0.72 s/img)
+  240/1100 173s (0.72 s/img)
+  260/1100 188s (0.72 s/img)
+  280/1100 202s (0.72 s/img)
+  300/1100 216s (0.72 s/img)
+  320/1100 231s (0.72 s/img)
+  340/1100 245s (0.72 s/img)
+  360/1100 260s (0.72 s/img)
+  380/1100 274s (0.72 s/img)
+  400/1100 288s (0.72 s/img)
+  420/1100 303s (0.72 s/img)
+  440/1100 317s (0.72 s/img)
+  460/1100 332s (0.72 s/img)
+  480/1100 346s (0.72 s/img)
+  500/1100 360s (0.72 s/img)
+  520/1100 375s (0.72 s/img)
+  540/1100 389s (0.72 s/img)
+  560/1100 403s (0.72 s/img)
+  580/1100 418s (0.72 s/img)
+  600/1100 432s (0.72 s/img)
+  620/1100 446s (0.72 s/img)
+  640/1100 460s (0.72 s/img)
+  660/1100 475s (0.72 s/img)
+  680/1100 489s (0.72 s/img)
+  700/1100 503s (0.72 s/img)
+  720/1100 517s (0.72 s/img)
+  740/1100 531s (0.72 s/img)
+  760/1100 546s (0.72 s/img)
+  780/1100 560s (0.72 s/img)
+  800/1100 574s (0.72 s/img)
+  820/1100 588s (0.72 s/img)
+  840/1100 602s (0.72 s/img)
+  860/1100 616s (0.72 s/img)
+  880/1100 630s (0.72 s/img)
+  900/1100 644s (0.72 s/img)
+  920/1100 658s (0.72 s/img)
+  940/1100 673s (0.72 s/img)
+  960/1100 687s (0.72 s/img)
+  980/1100 701s (0.72 s/img)
+  1000/1100 715s (0.71 s/img)
+  1020/1100 729s (0.71 s/img)
+  1040/1100 743s (0.71 s/img)
+  1060/1100 757s (0.71 s/img)
+  1080/1100 771s (0.71 s/img)
+  1100/1100 786s (0.71 s/img)
+done siglip layers (12, 16, 20): 786s

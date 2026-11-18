@@ -1,0 +1,14 @@
+2026-11-17 14:43:31 === eval dinov2reg on mps: 4 heads, stimsets ['stim_v3', 'stim_alt'], maps saved for: default
+Loading weights:   0%|          | 0/224 [00:00<?, ?it/s]Loading weights: 100%|██████████| 224/224 [00:00<00:00, 23005.56it/s]
+2026-11-17 14:43:38 MIT features 200 images 7s
+2026-11-17 14:43:39 dinov2reg_L12_R4_s1 MIT1003 held-out CC 0.7266 NSS 2.6085 (n 200)
+2026-11-17 14:43:39 dinov2reg_L6_R4_s1 MIT1003 held-out CC 0.7357 NSS 2.6702 (n 200)
+2026-11-17 14:44:06 stim_v3 px336 block 1/1 features 740 images 25s
+2026-11-17 14:45:06 stim_v3 px448 block 1/1 features 740 images 56s
+2026-11-17 14:45:11 stim_v3 dinov2reg_L12_R4_s1 scored 740 images x 2 sizes (maps saved: False)
+2026-11-17 14:45:11 stim_v3 dinov2reg_L6_R4_s1 scored 740 images x 2 sizes (maps saved: False)
+2026-11-17 14:45:24 stim_alt px336 block 1/1 features 360 images 12s
+2026-11-17 14:45:56 stim_alt px448 block 1/1 features 360 images 27s
+2026-11-17 14:46:05 stim_alt dinov2reg_L12_R4_s1 scored 360 images x 2 sizes (maps saved: True)
+2026-11-17 14:46:05 stim_alt dinov2reg_L6_R4_s1 scored 360 images x 2 sizes (maps saved: True)
+2026-11-17 14:46:05 === eval dinov2reg done

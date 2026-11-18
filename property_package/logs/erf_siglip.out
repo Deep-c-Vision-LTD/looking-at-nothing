@@ -1,0 +1,63 @@
+Loading weights:   0%|          | 0/400 [00:00<?, ?it/s]Loading weights: 100%|██████████| 400/400 [00:00<00:00, 8227.59it/s]
+[transformers] [1mSiglipVisionModel LOAD REPORT[0m from: google/siglip-large-patch16-256
+Key                                                          | Status     |  | 
+-------------------------------------------------------------+------------+--+-
+text_model.encoder.layers.{0...23}.layer_norm1.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.k_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.q_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.k_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm2.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm2.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.q_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.v_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc1.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.out_proj.bias   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc2.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc1.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.out_proj.weight | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.v_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc2.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm1.weight        | UNEXPECTED |  | 
+text_model.final_layer_norm.bias                             | UNEXPECTED |  | 
+text_model.head.bias                                         | UNEXPECTED |  | 
+text_model.embeddings.token_embedding.weight                 | UNEXPECTED |  | 
+text_model.final_layer_norm.weight                           | UNEXPECTED |  | 
+logit_scale                                                  | UNEXPECTED |  | 
+text_model.head.weight                                       | UNEXPECTED |  | 
+logit_bias                                                   | UNEXPECTED |  | 
+text_model.embeddings.position_embedding.weight              | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+start siglip: 24 displays, layers (4, 8, 12, 16, 20, 24), sizes (336, 448), threads 6
+  display 1/24 square_sr30_dark_p0_illusory: 9 locations, 47s elapsed
+  display 2/24 square_sr30_dark_p0_control180: 9 locations, 92s elapsed
+  display 3/24 square_sr30_light_p1_illusory: 9 locations, 138s elapsed
+  display 4/24 square_sr30_light_p1_control180: 9 locations, 183s elapsed
+  display 5/24 square_sr50_dark_p2_illusory: 9 locations, 228s elapsed
+  display 6/24 square_sr50_dark_p2_control180: 9 locations, 274s elapsed
+  display 7/24 square_sr50_light_p3_illusory: 9 locations, 319s elapsed
+  display 8/24 square_sr50_light_p3_control180: 9 locations, 364s elapsed
+  display 9/24 square_sr70_dark_p4_illusory: 9 locations, 410s elapsed
+  display 10/24 square_sr70_dark_p4_control180: 9 locations, 456s elapsed
+  display 11/24 square_sr70_light_p0_illusory: 9 locations, 502s elapsed
+  display 12/24 square_sr70_light_p0_control180: 9 locations, 548s elapsed
+  display 13/24 triangle_sr30_dark_p1_illusory: 8 locations, 589s elapsed
+  display 14/24 triangle_sr30_dark_p1_control180: 8 locations, 630s elapsed
+  display 15/24 triangle_sr30_light_p2_illusory: 8 locations, 671s elapsed
+  display 16/24 triangle_sr30_light_p2_control180: 8 locations, 712s elapsed
+  display 17/24 triangle_sr50_dark_p3_illusory: 8 locations, 752s elapsed
+  display 18/24 triangle_sr50_dark_p3_control180: 8 locations, 793s elapsed
+  display 19/24 triangle_sr50_light_p4_illusory: 8 locations, 833s elapsed
+  display 20/24 triangle_sr50_light_p4_control180: 8 locations, 874s elapsed
+  display 21/24 triangle_sr70_dark_p0_illusory: 8 locations, 914s elapsed
+  display 22/24 triangle_sr70_dark_p0_control180: 8 locations, 955s elapsed
+  display 23/24 triangle_sr70_light_p1_illusory: 8 locations, 995s elapsed
+  display 24/24 triangle_sr70_light_p1_control180: 8 locations, 1036s elapsed
+siglip L4: readout ERF50 249.0 px (336 259, 448 239), ERF90 542.0; block-token ERF50 116.0, ERF90 466.0
+siglip L8: readout ERF50 277.5 px (336 284, 448 271), ERF90 561.5; block-token ERF50 155.5, ERF90 473.0
+siglip L12: readout ERF50 318.0 px (336 326, 448 310), ERF90 562.0; block-token ERF50 203.5, ERF90 511.0
+siglip L16: readout ERF50 313.0 px (336 323, 448 303), ERF90 554.0; block-token ERF50 240.0, ERF90 524.5
+siglip L20: readout ERF50 318.5 px (336 326, 448 311), ERF90 556.0; block-token ERF50 252.0, ERF90 531.0
+siglip L24: readout ERF50 325.5 px (336 333, 448 318), ERF90 554.5; block-token ERF50 288.5, ERF90 544.0
+done siglip: 1035.6s

@@ -1,0 +1,1903 @@
+{
+ "readout": "DINOv2-B L12",
+ "per_image": {
+  "dinov2_L12_s336 raw_v2style": {
+   "n_images": 740,
+   "max_abs_diff": {
+    "f_eroded": 0.0,
+    "f_eroded_all": 0.0,
+    "f_ind": 0.0,
+    "f_inside": 0.0,
+    "r_eroded": 0.0,
+    "r_eroded_all": 0.0,
+    "r_inside": 0.0
+   },
+   "n_bit_identical": 740
+  },
+  "dinov2_L12_s336 raw_v3maps": {
+   "n_images": 480,
+   "max_abs_diff": {
+    "f_core30": 0.0,
+    "f_core45": 0.0,
+    "f_ind": 0.0,
+    "f_inside": 0.0,
+    "r_core30": 0.0,
+    "r_core45": 0.0,
+    "r_eroded_all": 0.0,
+    "r_inside": 0.0
+   },
+   "n_bit_identical": 480
+  },
+  "dinov2_L12_s336 raw_alt": {
+   "n_images": 360,
+   "max_abs_diff": {
+    "f_core30": 0.0,
+    "f_core45": 0.0,
+    "f_ind": 0.0,
+    "f_inside": 0.0,
+    "r_core30": 0.0,
+    "r_core45": 0.0,
+    "r_eroded_all": 0.0,
+    "r_inside": 0.0,
+    "r_inside_f32": 0.0
+   },
+   "n_bit_identical": 360
+  },
+  "dinov2_L12_s448 raw_v2style": {
+   "n_images": 740,
+   "max_abs_diff": {
+    "f_eroded": 0.0,
+    "f_eroded_all": 0.0,
+    "f_ind": 0.0,
+    "f_inside": 0.0,
+    "r_eroded": 0.0,
+    "r_eroded_all": 0.0,
+    "r_inside": 0.0
+   },
+   "n_bit_identical": 740
+  },
+  "dinov2_L12_s448 raw_v3maps": {
+   "n_images": 480,
+   "max_abs_diff": {
+    "f_core30": 0.0,
+    "f_core45": 0.0,
+    "f_ind": 0.0,
+    "f_inside": 0.0,
+    "r_core30": 0.0,
+    "r_core45": 0.0,
+    "r_eroded_all": 0.0,
+    "r_inside": 0.0
+   },
+   "n_bit_identical": 480
+  },
+  "dinov2_L12_s448 raw_alt": {
+   "n_images": 360,
+   "max_abs_diff": {
+    "f_core30": 0.0,
+    "f_core45": 0.0,
+    "f_ind": 0.0,
+    "f_inside": 0.0,
+    "r_core30": 0.0,
+    "r_core45": 0.0,
+    "r_eroded_all": 0.0,
+    "r_inside": 0.0,
+    "r_inside_f32": 0.0
+   },
+   "n_bit_identical": 360
+  }
+ },
+ "summary": {
+  "r_inside all": {
+   "E mean": {
+    "new": -0.0975,
+    "stored": -0.0975,
+    "diff": 0.0
+   },
+   "E ci lo": {
+    "new": -0.126,
+    "stored": -0.126,
+    "diff": 0.0
+   },
+   "E ci hi": {
+    "new": -0.0703,
+    "stored": -0.0703,
+    "diff": 0.0
+   },
+   "ratio_uni(10)": {
+    "new": 0.8113,
+    "stored": 0.8113,
+    "diff": 0.0
+   },
+   "ratio_uni(10) ci lo": {
+    "new": 0.7183,
+    "stored": 0.7183,
+    "diff": 0.0
+   },
+   "ratio_uni(10) ci hi": {
+    "new": 0.9077,
+    "stored": 0.9077,
+    "diff": 0.0
+   },
+   "ratio_uni(20)": {
+    "new": 0.5595,
+    "stored": 0.5595,
+    "diff": 0.0
+   },
+   "ratio_uni(20) ci lo": {
+    "new": 0.4103,
+    "stored": 0.4103,
+    "diff": 0.0
+   },
+   "ratio_uni(20) ci hi": {
+    "new": 0.6816,
+    "stored": 0.6816,
+    "diff": 0.0
+   },
+   "ratio_uni(30)": {
+    "new": 0.4087,
+    "stored": 0.4087,
+    "diff": 0.0
+   },
+   "ratio_uni(30) ci lo": {
+    "new": 0.2695,
+    "stored": 0.2695,
+    "diff": 0.0
+   },
+   "ratio_uni(30) ci hi": {
+    "new": 0.5259,
+    "stored": 0.5259,
+    "diff": 0.0
+   },
+   "ratio_alt(10)": {
+    "new": 0.9389,
+    "stored": 0.9389,
+    "diff": 0.0
+   },
+   "ratio_alt(10) ci lo": {
+    "new": 0.8709,
+    "stored": 0.8709,
+    "diff": 0.0
+   },
+   "ratio_alt(10) ci hi": {
+    "new": 1.0101,
+    "stored": 1.0101,
+    "diff": 0.0
+   },
+   "ratio_alt(20)": {
+    "new": 0.7868,
+    "stored": 0.7868,
+    "diff": 0.0
+   },
+   "ratio_alt(20) ci lo": {
+    "new": 0.7051,
+    "stored": 0.7051,
+    "diff": 0.0
+   },
+   "ratio_alt(20) ci hi": {
+    "new": 0.8678,
+    "stored": 0.8678,
+    "diff": 0.0
+   },
+   "ratio_alt(30)": {
+    "new": 0.6461,
+    "stored": 0.6461,
+    "diff": 0.0
+   },
+   "ratio_alt(30) ci lo": {
+    "new": 0.5572,
+    "stored": 0.5572,
+    "diff": 0.0
+   },
+   "ratio_alt(30) ci hi": {
+    "new": 0.7439,
+    "stored": 0.7439,
+    "diff": 0.0
+   },
+   "drop_ratio(10)": {
+    "new": 0.324,
+    "stored": 0.324,
+    "diff": 0.0
+   },
+   "drop_ratio(10) ci lo": {
+    "new": -0.0761,
+    "stored": -0.0761,
+    "diff": 0.0
+   },
+   "drop_ratio(10) ci hi": {
+    "new": 0.6453,
+    "stored": 0.6453,
+    "diff": 0.0
+   },
+   "drop_ratio(20)": {
+    "new": 0.4839,
+    "stored": 0.4839,
+    "diff": 0.0
+   },
+   "drop_ratio(20) ci lo": {
+    "new": 0.2831,
+    "stored": 0.2831,
+    "diff": 0.0
+   },
+   "drop_ratio(20) ci hi": {
+    "new": 0.683,
+    "stored": 0.683,
+    "diff": 0.0
+   },
+   "drop_ratio(30)": {
+    "new": 0.5985,
+    "stored": 0.5985,
+    "diff": 0.0
+   },
+   "drop_ratio(30) ci lo": {
+    "new": 0.4226,
+    "stored": 0.4226,
+    "diff": 0.0
+   },
+   "drop_ratio(30) ci hi": {
+    "new": 0.7534,
+    "stored": 0.7534,
+    "diff": 0.0
+   },
+   "SR slope": {
+    "new": -0.2396,
+    "stored": -0.2396,
+    "diff": 0.0
+   },
+   "figure-mass loss(20)": {
+    "new": -0.043,
+    "stored": -0.043,
+    "diff": 0.0
+   },
+   "figure-mass loss(30)": {
+    "new": -0.0577,
+    "stored": -0.0577,
+    "diff": 0.0
+   }
+  },
+  "r_inside square": {
+   "E mean": {
+    "new": -0.1179,
+    "stored": -0.1179,
+    "diff": 0.0
+   },
+   "E ci lo": {
+    "new": -0.1611,
+    "stored": -0.1611,
+    "diff": 0.0
+   },
+   "E ci hi": {
+    "new": -0.0721,
+    "stored": -0.0721,
+    "diff": 0.0
+   },
+   "ratio_uni(10)": {
+    "new": 0.8915,
+    "stored": 0.8915,
+    "diff": 0.0
+   },
+   "ratio_uni(10) ci lo": {
+    "new": 0.7841,
+    "stored": 0.7841,
+    "diff": 0.0
+   },
+   "ratio_uni(10) ci hi": {
+    "new": 1.0232,
+    "stored": 1.0232,
+    "diff": 0.0
+   },
+   "ratio_uni(20)": {
+    "new": 0.6959,
+    "stored": 0.6959,
+    "diff": 0.0
+   },
+   "ratio_uni(20) ci lo": {
+    "new": 0.539,
+    "stored": 0.539,
+    "diff": 0.0
+   },
+   "ratio_uni(20) ci hi": {
+    "new": 0.821,
+    "stored": 0.821,
+    "diff": 0.0
+   },
+   "ratio_uni(30)": {
+    "new": 0.49,
+    "stored": 0.49,
+    "diff": 0.0
+   },
+   "ratio_uni(30) ci lo": {
+    "new": 0.2899,
+    "stored": 0.2899,
+    "diff": 0.0
+   },
+   "ratio_uni(30) ci hi": {
+    "new": 0.6385,
+    "stored": 0.6385,
+    "diff": 0.0
+   },
+   "ratio_alt(10)": {
+    "new": 0.902,
+    "stored": 0.902,
+    "diff": 0.0
+   },
+   "ratio_alt(10) ci lo": {
+    "new": 0.7905,
+    "stored": 0.7905,
+    "diff": 0.0
+   },
+   "ratio_alt(10) ci hi": {
+    "new": 1.006,
+    "stored": 1.006,
+    "diff": 0.0
+   },
+   "ratio_alt(20)": {
+    "new": 0.7394,
+    "stored": 0.7394,
+    "diff": 0.0
+   },
+   "ratio_alt(20) ci lo": {
+    "new": 0.6011,
+    "stored": 0.6011,
+    "diff": 0.0
+   },
+   "ratio_alt(20) ci hi": {
+    "new": 0.8463,
+    "stored": 0.8463,
+    "diff": 0.0
+   },
+   "ratio_alt(30)": {
+    "new": 0.5736,
+    "stored": 0.5736,
+    "diff": 0.0
+   },
+   "ratio_alt(30) ci lo": {
+    "new": 0.4532,
+    "stored": 0.4532,
+    "diff": 0.0
+   },
+   "ratio_alt(30) ci hi": {
+    "new": 0.6863,
+    "stored": 0.6863,
+    "diff": 0.0
+   },
+   "drop_ratio(20)": {
+    "new": 0.8567,
+    "stored": 0.8567,
+    "diff": 0.0
+   },
+   "drop_ratio(20) ci lo": {
+    "new": 0.769,
+    "stored": 0.769,
+    "diff": 0.0
+   },
+   "drop_ratio(20) ci hi": {
+    "new": 0.9667,
+    "stored": 0.9667,
+    "diff": 0.0
+   },
+   "drop_ratio(30)": {
+    "new": 0.8361,
+    "stored": 0.8361,
+    "diff": 0.0
+   },
+   "drop_ratio(30) ci lo": {
+    "new": 0.737,
+    "stored": 0.737,
+    "diff": 0.0
+   },
+   "drop_ratio(30) ci hi": {
+    "new": 0.9305,
+    "stored": 0.9305,
+    "diff": 0.0
+   },
+   "SR slope": {
+    "new": -0.3131,
+    "stored": -0.3131,
+    "diff": 0.0
+   },
+   "figure-mass loss(20)": {
+    "new": -0.0359,
+    "stored": -0.0359,
+    "diff": 0.0
+   },
+   "figure-mass loss(30)": {
+    "new": -0.0601,
+    "stored": -0.0601,
+    "diff": 0.0
+   }
+  },
+  "r_inside triangle": {
+   "E mean": {
+    "new": -0.0771,
+    "stored": -0.0771,
+    "diff": 0.0
+   },
+   "E ci lo": {
+    "new": -0.101,
+    "stored": -0.101,
+    "diff": 0.0
+   },
+   "E ci hi": {
+    "new": -0.0513,
+    "stored": -0.0513,
+    "diff": 0.0
+   },
+   "ratio_uni(10)": {
+    "new": 0.6888,
+    "stored": 0.6888,
+    "diff": 0.0
+   },
+   "ratio_uni(10) ci lo": {
+    "new": 0.617,
+    "stored": 0.617,
+    "diff": 0.0
+   },
+   "ratio_uni(10) ci hi": {
+    "new": 0.7623,
+    "stored": 0.7623,
+    "diff": 0.0
+   },
+   "ratio_uni(20)": {
+    "new": 0.351,
+    "stored": 0.351,
+    "diff": 0.0
+   },
+   "ratio_uni(20) ci lo": {
+    "new": 0.1903,
+    "stored": 0.1903,
+    "diff": 0.0
+   },
+   "ratio_uni(20) ci hi": {
+    "new": 0.4439,
+    "stored": 0.4439,
+    "diff": 0.0
+   },
+   "ratio_uni(30)": {
+    "new": 0.2844,
+    "stored": 0.2844,
+    "diff": 0.0
+   },
+   "ratio_uni(30) ci lo": {
+    "new": 0.1182,
+    "stored": 0.1182,
+    "diff": 0.0
+   },
+   "ratio_uni(30) ci hi": {
+    "new": 0.3867,
+    "stored": 0.3867,
+    "diff": 0.0
+   },
+   "ratio_alt(10)": {
+    "new": 0.9952,
+    "stored": 0.9952,
+    "diff": 0.0
+   },
+   "ratio_alt(10) ci lo": {
+    "new": 0.943,
+    "stored": 0.943,
+    "diff": 0.0
+   },
+   "ratio_alt(10) ci hi": {
+    "new": 1.0811,
+    "stored": 1.0811,
+    "diff": 0.0
+   },
+   "ratio_alt(20)": {
+    "new": 0.8593,
+    "stored": 0.8593,
+    "diff": 0.0
+   },
+   "ratio_alt(20) ci lo": {
+    "new": 0.7848,
+    "stored": 0.7848,
+    "diff": 0.0
+   },
+   "ratio_alt(20) ci hi": {
+    "new": 0.9661,
+    "stored": 0.9661,
+    "diff": 0.0
+   },
+   "ratio_alt(30)": {
+    "new": 0.7571,
+    "stored": 0.7571,
+    "diff": 0.0
+   },
+   "ratio_alt(30) ci lo": {
+    "new": 0.6604,
+    "stored": 0.6604,
+    "diff": 0.0
+   },
+   "ratio_alt(30) ci hi": {
+    "new": 0.8613,
+    "stored": 0.8613,
+    "diff": 0.0
+   },
+   "drop_ratio(10)": {
+    "new": 0.0153,
+    "stored": 0.0153,
+    "diff": 0.0
+   },
+   "drop_ratio(10) ci lo": {
+    "new": -0.326,
+    "stored": -0.326,
+    "diff": 0.0
+   },
+   "drop_ratio(10) ci hi": {
+    "new": 0.1596,
+    "stored": 0.1596,
+    "diff": 0.0
+   },
+   "drop_ratio(20)": {
+    "new": 0.2168,
+    "stored": 0.2168,
+    "diff": 0.0
+   },
+   "drop_ratio(20) ci lo": {
+    "new": 0.0481,
+    "stored": 0.0481,
+    "diff": 0.0
+   },
+   "drop_ratio(20) ci hi": {
+    "new": 0.3422,
+    "stored": 0.3422,
+    "diff": 0.0
+   },
+   "drop_ratio(30)": {
+    "new": 0.3395,
+    "stored": 0.3395,
+    "diff": 0.0
+   },
+   "drop_ratio(30) ci lo": {
+    "new": 0.2023,
+    "stored": 0.2023,
+    "diff": 0.0
+   },
+   "drop_ratio(30) ci hi": {
+    "new": 0.4546,
+    "stored": 0.4546,
+    "diff": 0.0
+   },
+   "SR slope": {
+    "new": -0.1661,
+    "stored": -0.1661,
+    "diff": 0.0
+   },
+   "figure-mass loss(20)": {
+    "new": -0.0501,
+    "stored": -0.0501,
+    "diff": 0.0
+   },
+   "figure-mass loss(30)": {
+    "new": -0.0552,
+    "stored": -0.0552,
+    "diff": 0.0
+   }
+  },
+  "r_core30 all": {
+   "E mean": {
+    "new": -0.0898,
+    "stored": -0.0898,
+    "diff": 0.0
+   },
+   "E ci lo": {
+    "new": -0.1163,
+    "stored": -0.1163,
+    "diff": 0.0
+   },
+   "E ci hi": {
+    "new": -0.065,
+    "stored": -0.065,
+    "diff": 0.0
+   },
+   "ratio_uni(10)": {
+    "new": 0.817,
+    "stored": 0.817,
+    "diff": 0.0
+   },
+   "ratio_uni(10) ci lo": {
+    "new": 0.7163,
+    "stored": 0.7163,
+    "diff": 0.0
+   },
+   "ratio_uni(10) ci hi": {
+    "new": 0.9147,
+    "stored": 0.9147,
+    "diff": 0.0
+   },
+   "ratio_uni(20)": {
+    "new": 0.5248,
+    "stored": 0.5248,
+    "diff": 0.0
+   },
+   "ratio_uni(20) ci lo": {
+    "new": 0.3525,
+    "stored": 0.3525,
+    "diff": 0.0
+   },
+   "ratio_uni(20) ci hi": {
+    "new": 0.6574,
+    "stored": 0.6574,
+    "diff": 0.0
+   },
+   "ratio_uni(30)": {
+    "new": 0.3561,
+    "stored": 0.3561,
+    "diff": 0.0
+   },
+   "ratio_uni(30) ci lo": {
+    "new": 0.1932,
+    "stored": 0.1932,
+    "diff": 0.0
+   },
+   "ratio_uni(30) ci hi": {
+    "new": 0.4881,
+    "stored": 0.4881,
+    "diff": 0.0
+   },
+   "ratio_alt(10)": {
+    "new": 0.9244,
+    "stored": 0.9244,
+    "diff": 0.0
+   },
+   "ratio_alt(10) ci lo": {
+    "new": 0.8432,
+    "stored": 0.8432,
+    "diff": 0.0
+   },
+   "ratio_alt(10) ci hi": {
+    "new": 1.0087,
+    "stored": 1.0087,
+    "diff": 0.0
+   },
+   "ratio_alt(20)": {
+    "new": 0.7571,
+    "stored": 0.7571,
+    "diff": 0.0
+   },
+   "ratio_alt(20) ci lo": {
+    "new": 0.6571,
+    "stored": 0.6571,
+    "diff": 0.0
+   },
+   "ratio_alt(20) ci hi": {
+    "new": 0.8577,
+    "stored": 0.8577,
+    "diff": 0.0
+   },
+   "ratio_alt(30)": {
+    "new": 0.6321,
+    "stored": 0.6321,
+    "diff": 0.0
+   },
+   "ratio_alt(30) ci lo": {
+    "new": 0.5284,
+    "stored": 0.5284,
+    "diff": 0.0
+   },
+   "ratio_alt(30) ci hi": {
+    "new": 0.7505,
+    "stored": 0.7505,
+    "diff": 0.0
+   },
+   "drop_ratio(10)": {
+    "new": 0.4131,
+    "stored": 0.4131,
+    "diff": 0.0
+   },
+   "drop_ratio(10) ci lo": {
+    "new": -0.0609,
+    "stored": -0.0609,
+    "diff": 0.0
+   },
+   "drop_ratio(10) ci hi": {
+    "new": 0.8206,
+    "stored": 0.8206,
+    "diff": 0.0
+   },
+   "drop_ratio(20)": {
+    "new": 0.5112,
+    "stored": 0.5112,
+    "diff": 0.0
+   },
+   "drop_ratio(20) ci lo": {
+    "new": 0.2667,
+    "stored": 0.2667,
+    "diff": 0.0
+   },
+   "drop_ratio(20) ci hi": {
+    "new": 0.7457,
+    "stored": 0.7457,
+    "diff": 0.0
+   },
+   "drop_ratio(30)": {
+    "new": 0.5714,
+    "stored": 0.5714,
+    "diff": 0.0
+   },
+   "drop_ratio(30) ci lo": {
+    "new": 0.3782,
+    "stored": 0.3782,
+    "diff": 0.0
+   },
+   "drop_ratio(30) ci hi": {
+    "new": 0.733,
+    "stored": 0.733,
+    "diff": 0.0
+   },
+   "SR slope": {
+    "new": -0.1283,
+    "stored": -0.1283,
+    "diff": 0.0
+   },
+   "figure-mass loss(20)": {
+    "new": -0.0426,
+    "stored": -0.0426,
+    "diff": 0.0
+   },
+   "figure-mass loss(30)": {
+    "new": -0.0578,
+    "stored": -0.0578,
+    "diff": 0.0
+   }
+  },
+  "r_core30 square": {
+   "E mean": {
+    "new": -0.117,
+    "stored": -0.117,
+    "diff": 0.0
+   },
+   "E ci lo": {
+    "new": -0.1517,
+    "stored": -0.1517,
+    "diff": 0.0
+   },
+   "E ci hi": {
+    "new": -0.0784,
+    "stored": -0.0784,
+    "diff": 0.0
+   },
+   "ratio_uni(10)": {
+    "new": 0.8932,
+    "stored": 0.8932,
+    "diff": 0.0
+   },
+   "ratio_uni(10) ci lo": {
+    "new": 0.7798,
+    "stored": 0.7798,
+    "diff": 0.0
+   },
+   "ratio_uni(10) ci hi": {
+    "new": 1.0244,
+    "stored": 1.0244,
+    "diff": 0.0
+   },
+   "ratio_uni(20)": {
+    "new": 0.6568,
+    "stored": 0.6568,
+    "diff": 0.0
+   },
+   "ratio_uni(20) ci lo": {
+    "new": 0.4764,
+    "stored": 0.4764,
+    "diff": 0.0
+   },
+   "ratio_uni(20) ci hi": {
+    "new": 0.8002,
+    "stored": 0.8002,
+    "diff": 0.0
+   },
+   "ratio_uni(30)": {
+    "new": 0.4252,
+    "stored": 0.4252,
+    "diff": 0.0
+   },
+   "ratio_uni(30) ci lo": {
+    "new": 0.204,
+    "stored": 0.204,
+    "diff": 0.0
+   },
+   "ratio_uni(30) ci hi": {
+    "new": 0.6031,
+    "stored": 0.6031,
+    "diff": 0.0
+   },
+   "ratio_alt(10)": {
+    "new": 0.8759,
+    "stored": 0.8759,
+    "diff": 0.0
+   },
+   "ratio_alt(10) ci lo": {
+    "new": 0.753,
+    "stored": 0.753,
+    "diff": 0.0
+   },
+   "ratio_alt(10) ci hi": {
+    "new": 0.9794,
+    "stored": 0.9794,
+    "diff": 0.0
+   },
+   "ratio_alt(20)": {
+    "new": 0.683,
+    "stored": 0.683,
+    "diff": 0.0
+   },
+   "ratio_alt(20) ci lo": {
+    "new": 0.5381,
+    "stored": 0.5381,
+    "diff": 0.0
+   },
+   "ratio_alt(20) ci hi": {
+    "new": 0.7944,
+    "stored": 0.7944,
+    "diff": 0.0
+   },
+   "ratio_alt(30)": {
+    "new": 0.537,
+    "stored": 0.537,
+    "diff": 0.0
+   },
+   "ratio_alt(30) ci lo": {
+    "new": 0.4184,
+    "stored": 0.4184,
+    "diff": 0.0
+   },
+   "ratio_alt(30) ci hi": {
+    "new": 0.6499,
+    "stored": 0.6499,
+    "diff": 0.0
+   },
+   "drop_ratio(20)": {
+    "new": 0.9237,
+    "stored": 0.9237,
+    "diff": 0.0
+   },
+   "drop_ratio(20) ci lo": {
+    "new": 0.8417,
+    "stored": 0.8417,
+    "diff": 0.0
+   },
+   "drop_ratio(20) ci hi": {
+    "new": 1.0945,
+    "stored": 1.0945,
+    "diff": 0.0
+   },
+   "drop_ratio(30)": {
+    "new": 0.8054,
+    "stored": 0.8054,
+    "diff": 0.0
+   },
+   "drop_ratio(30) ci lo": {
+    "new": 0.703,
+    "stored": 0.703,
+    "diff": 0.0
+   },
+   "drop_ratio(30) ci hi": {
+    "new": 0.9241,
+    "stored": 0.9241,
+    "diff": 0.0
+   },
+   "SR slope": {
+    "new": -0.2084,
+    "stored": -0.2084,
+    "diff": 0.0
+   },
+   "figure-mass loss(20)": {
+    "new": -0.0402,
+    "stored": -0.0402,
+    "diff": 0.0
+   },
+   "figure-mass loss(30)": {
+    "new": -0.0672,
+    "stored": -0.0672,
+    "diff": 0.0
+   }
+  },
+  "r_core30 triangle": {
+   "E mean": {
+    "new": -0.0625,
+    "stored": -0.0625,
+    "diff": 0.0
+   },
+   "E ci lo": {
+    "new": -0.0827,
+    "stored": -0.0827,
+    "diff": 0.0
+   },
+   "E ci hi": {
+    "new": -0.0438,
+    "stored": -0.0438,
+    "diff": 0.0
+   },
+   "ratio_uni(10)": {
+    "new": 0.6743,
+    "stored": 0.6743,
+    "diff": 0.0
+   },
+   "ratio_uni(10) ci lo": {
+    "new": 0.5876,
+    "stored": 0.5876,
+    "diff": 0.0
+   },
+   "ratio_uni(10) ci hi": {
+    "new": 0.7618,
+    "stored": 0.7618,
+    "diff": 0.0
+   },
+   "ratio_uni(20)": {
+    "new": 0.278,
+    "stored": 0.278,
+    "diff": 0.0
+   },
+   "ratio_uni(20) ci lo": {
+    "new": 0.0565,
+    "stored": 0.0565,
+    "diff": 0.0
+   },
+   "ratio_uni(20) ci hi": {
+    "new": 0.3951,
+    "stored": 0.3951,
+    "diff": 0.0
+   },
+   "ratio_uni(30)": {
+    "new": 0.2267,
+    "stored": 0.2267,
+    "diff": 0.0
+   },
+   "ratio_uni(30) ci lo": {
+    "new": -0.0028,
+    "stored": -0.0028,
+    "diff": 0.0
+   },
+   "ratio_uni(30) ci hi": {
+    "new": 0.3542,
+    "stored": 0.3542,
+    "diff": 0.0
+   },
+   "ratio_alt(10)": {
+    "new": 1.0151,
+    "stored": 1.0151,
+    "diff": 0.0
+   },
+   "ratio_alt(10) ci lo": {
+    "new": 0.9391,
+    "stored": 0.9391,
+    "diff": 0.0
+   },
+   "ratio_alt(10) ci hi": {
+    "new": 1.1289,
+    "stored": 1.1289,
+    "diff": 0.0
+   },
+   "ratio_alt(20)": {
+    "new": 0.8958,
+    "stored": 0.8958,
+    "diff": 0.0
+   },
+   "ratio_alt(20) ci lo": {
+    "new": 0.8072,
+    "stored": 0.8072,
+    "diff": 0.0
+   },
+   "ratio_alt(20) ci hi": {
+    "new": 1.005,
+    "stored": 1.005,
+    "diff": 0.0
+   },
+   "ratio_alt(30)": {
+    "new": 0.8099,
+    "stored": 0.8099,
+    "diff": 0.0
+   },
+   "ratio_alt(30) ci lo": {
+    "new": 0.7073,
+    "stored": 0.7073,
+    "diff": 0.0
+   },
+   "ratio_alt(30) ci hi": {
+    "new": 0.8895,
+    "stored": 0.8895,
+    "diff": 0.0
+   },
+   "drop_ratio(10)": {
+    "new": -0.0463,
+    "stored": -0.0463,
+    "diff": 0.0
+   },
+   "drop_ratio(10) ci lo": {
+    "new": -0.5163,
+    "stored": -0.5163,
+    "diff": 0.0
+   },
+   "drop_ratio(10) ci hi": {
+    "new": 0.156,
+    "stored": 0.156,
+    "diff": 0.0
+   },
+   "drop_ratio(20)": {
+    "new": 0.1444,
+    "stored": 0.1444,
+    "diff": 0.0
+   },
+   "drop_ratio(20) ci lo": {
+    "new": -0.0064,
+    "stored": -0.0064,
+    "diff": 0.0
+   },
+   "drop_ratio(20) ci hi": {
+    "new": 0.2808,
+    "stored": 0.2808,
+    "diff": 0.0
+   },
+   "drop_ratio(30)": {
+    "new": 0.2459,
+    "stored": 0.2459,
+    "diff": 0.0
+   },
+   "drop_ratio(30) ci lo": {
+    "new": 0.1511,
+    "stored": 0.1511,
+    "diff": 0.0
+   },
+   "drop_ratio(30) ci hi": {
+    "new": 0.3502,
+    "stored": 0.3502,
+    "diff": 0.0
+   },
+   "SR slope": {
+    "new": -0.0483,
+    "stored": -0.0483,
+    "diff": 0.0
+   },
+   "figure-mass loss(20)": {
+    "new": -0.0451,
+    "stored": -0.0451,
+    "diff": 0.0
+   },
+   "figure-mass loss(30)": {
+    "new": -0.0484,
+    "stored": -0.0484,
+    "diff": 0.0
+   }
+  },
+  "f_core30 all": {
+   "E mean": {
+    "new": -0.0538,
+    "stored": -0.0538,
+    "diff": 0.0
+   },
+   "E ci lo": {
+    "new": -0.0691,
+    "stored": -0.0691,
+    "diff": 0.0
+   },
+   "E ci hi": {
+    "new": -0.0395,
+    "stored": -0.0395,
+    "diff": 0.0
+   },
+   "ratio_uni(10)": {
+    "new": 0.6986,
+    "stored": 0.6986,
+    "diff": 0.0
+   },
+   "ratio_uni(10) ci lo": {
+    "new": 0.6057,
+    "stored": 0.6057,
+    "diff": 0.0
+   },
+   "ratio_uni(10) ci hi": {
+    "new": 0.7849,
+    "stored": 0.7849,
+    "diff": 0.0
+   },
+   "ratio_uni(20)": {
+    "new": 0.4372,
+    "stored": 0.4372,
+    "diff": 0.0
+   },
+   "ratio_uni(20) ci lo": {
+    "new": 0.2698,
+    "stored": 0.2698,
+    "diff": 0.0
+   },
+   "ratio_uni(20) ci hi": {
+    "new": 0.5739,
+    "stored": 0.5739,
+    "diff": 0.0
+   },
+   "ratio_uni(30)": {
+    "new": 0.2863,
+    "stored": 0.2863,
+    "diff": 0.0
+   },
+   "ratio_uni(30) ci lo": {
+    "new": 0.1158,
+    "stored": 0.1158,
+    "diff": 0.0
+   },
+   "ratio_uni(30) ci hi": {
+    "new": 0.4362,
+    "stored": 0.4362,
+    "diff": 0.0
+   },
+   "ratio_alt(10)": {
+    "new": 0.7981,
+    "stored": 0.7981,
+    "diff": 0.0
+   },
+   "ratio_alt(10) ci lo": {
+    "new": 0.7029,
+    "stored": 0.7029,
+    "diff": 0.0
+   },
+   "ratio_alt(10) ci hi": {
+    "new": 0.8884,
+    "stored": 0.8884,
+    "diff": 0.0
+   },
+   "ratio_alt(20)": {
+    "new": 0.6563,
+    "stored": 0.6563,
+    "diff": 0.0
+   },
+   "ratio_alt(20) ci lo": {
+    "new": 0.5497,
+    "stored": 0.5497,
+    "diff": 0.0
+   },
+   "ratio_alt(20) ci hi": {
+    "new": 0.7651,
+    "stored": 0.7651,
+    "diff": 0.0
+   },
+   "ratio_alt(30)": {
+    "new": 0.5023,
+    "stored": 0.5023,
+    "diff": 0.0
+   },
+   "ratio_alt(30) ci lo": {
+    "new": 0.377,
+    "stored": 0.377,
+    "diff": 0.0
+   },
+   "ratio_alt(30) ci hi": {
+    "new": 0.6433,
+    "stored": 0.6433,
+    "diff": 0.0
+   },
+   "drop_ratio(10)": {
+    "new": 0.6699,
+    "stored": 0.6699,
+    "diff": 0.0
+   },
+   "drop_ratio(10) ci lo": {
+    "new": 0.4005,
+    "stored": 0.4005,
+    "diff": 0.0
+   },
+   "drop_ratio(10) ci hi": {
+    "new": 0.8796,
+    "stored": 0.8796,
+    "diff": 0.0
+   },
+   "drop_ratio(20)": {
+    "new": 0.6107,
+    "stored": 0.6107,
+    "diff": 0.0
+   },
+   "drop_ratio(20) ci lo": {
+    "new": 0.4051,
+    "stored": 0.4051,
+    "diff": 0.0
+   },
+   "drop_ratio(20) ci hi": {
+    "new": 0.7801,
+    "stored": 0.7801,
+    "diff": 0.0
+   },
+   "drop_ratio(30)": {
+    "new": 0.6975,
+    "stored": 0.6975,
+    "diff": 0.0
+   },
+   "drop_ratio(30) ci lo": {
+    "new": 0.5516,
+    "stored": 0.5516,
+    "diff": 0.0
+   },
+   "drop_ratio(30) ci hi": {
+    "new": 0.8106,
+    "stored": 0.8106,
+    "diff": 0.0
+   },
+   "SR slope": {
+    "new": -0.0296,
+    "stored": -0.0296,
+    "diff": 0.0
+   },
+   "figure-mass loss(20)": {
+    "new": -0.0303,
+    "stored": -0.0303,
+    "diff": 0.0
+   },
+   "figure-mass loss(30)": {
+    "new": -0.0384,
+    "stored": -0.0384,
+    "diff": 0.0
+   }
+  },
+  "f_core30 square": {
+   "E mean": {
+    "new": -0.073,
+    "stored": -0.073,
+    "diff": 0.0
+   },
+   "E ci lo": {
+    "new": -0.0904,
+    "stored": -0.0904,
+    "diff": 0.0
+   },
+   "E ci hi": {
+    "new": -0.055,
+    "stored": -0.055,
+    "diff": 0.0
+   },
+   "ratio_uni(10)": {
+    "new": 0.7441,
+    "stored": 0.7441,
+    "diff": 0.0
+   },
+   "ratio_uni(10) ci lo": {
+    "new": 0.6232,
+    "stored": 0.6232,
+    "diff": 0.0
+   },
+   "ratio_uni(10) ci hi": {
+    "new": 0.87,
+    "stored": 0.87,
+    "diff": 0.0
+   },
+   "ratio_uni(20)": {
+    "new": 0.5277,
+    "stored": 0.5277,
+    "diff": 0.0
+   },
+   "ratio_uni(20) ci lo": {
+    "new": 0.3399,
+    "stored": 0.3399,
+    "diff": 0.0
+   },
+   "ratio_uni(20) ci hi": {
+    "new": 0.7028,
+    "stored": 0.7028,
+    "diff": 0.0
+   },
+   "ratio_uni(30)": {
+    "new": 0.2727,
+    "stored": 0.2727,
+    "diff": 0.0
+   },
+   "ratio_uni(30) ci lo": {
+    "new": 0.0301,
+    "stored": 0.0301,
+    "diff": 0.0
+   },
+   "ratio_uni(30) ci hi": {
+    "new": 0.493,
+    "stored": 0.493,
+    "diff": 0.0
+   },
+   "ratio_alt(10)": {
+    "new": 0.7473,
+    "stored": 0.7473,
+    "diff": 0.0
+   },
+   "ratio_alt(10) ci lo": {
+    "new": 0.6203,
+    "stored": 0.6203,
+    "diff": 0.0
+   },
+   "ratio_alt(10) ci hi": {
+    "new": 0.8578,
+    "stored": 0.8578,
+    "diff": 0.0
+   },
+   "ratio_alt(20)": {
+    "new": 0.5857,
+    "stored": 0.5857,
+    "diff": 0.0
+   },
+   "ratio_alt(20) ci lo": {
+    "new": 0.4486,
+    "stored": 0.4486,
+    "diff": 0.0
+   },
+   "ratio_alt(20) ci hi": {
+    "new": 0.7053,
+    "stored": 0.7053,
+    "diff": 0.0
+   },
+   "ratio_alt(30)": {
+    "new": 0.393,
+    "stored": 0.393,
+    "diff": 0.0
+   },
+   "ratio_alt(30) ci lo": {
+    "new": 0.2537,
+    "stored": 0.2537,
+    "diff": 0.0
+   },
+   "ratio_alt(30) ci hi": {
+    "new": 0.5186,
+    "stored": 0.5186,
+    "diff": 0.0
+   },
+   "drop_ratio(10)": {
+    "new": 0.9873,
+    "stored": 0.9873,
+    "diff": 0.0
+   },
+   "drop_ratio(10) ci lo": {
+    "new": 0.875,
+    "stored": 0.875,
+    "diff": 0.0
+   },
+   "drop_ratio(10) ci hi": {
+    "new": 1.1554,
+    "stored": 1.1554,
+    "diff": 0.0
+   },
+   "drop_ratio(20)": {
+    "new": 0.8771,
+    "stored": 0.8771,
+    "diff": 0.0
+   },
+   "drop_ratio(20) ci lo": {
+    "new": 0.8128,
+    "stored": 0.8128,
+    "diff": 0.0
+   },
+   "drop_ratio(20) ci hi": {
+    "new": 1.0133,
+    "stored": 1.0133,
+    "diff": 0.0
+   },
+   "drop_ratio(30)": {
+    "new": 0.8346,
+    "stored": 0.8346,
+    "diff": 0.0
+   },
+   "drop_ratio(30) ci lo": {
+    "new": 0.7564,
+    "stored": 0.7564,
+    "diff": 0.0
+   },
+   "drop_ratio(30) ci hi": {
+    "new": 0.9673,
+    "stored": 0.9673,
+    "diff": 0.0
+   },
+   "SR slope": {
+    "new": -0.0393,
+    "stored": -0.0393,
+    "diff": 0.0
+   },
+   "figure-mass loss(20)": {
+    "new": -0.0345,
+    "stored": -0.0345,
+    "diff": 0.0
+   },
+   "figure-mass loss(30)": {
+    "new": -0.0531,
+    "stored": -0.0531,
+    "diff": 0.0
+   }
+  },
+  "f_core30 triangle": {
+   "E mean": {
+    "new": -0.0345,
+    "stored": -0.0345,
+    "diff": 0.0
+   },
+   "E ci lo": {
+    "new": -0.0461,
+    "stored": -0.0461,
+    "diff": 0.0
+   },
+   "E ci hi": {
+    "new": -0.0239,
+    "stored": -0.0239,
+    "diff": 0.0
+   },
+   "ratio_uni(10)": {
+    "new": 0.6023,
+    "stored": 0.6023,
+    "diff": 0.0
+   },
+   "ratio_uni(10) ci lo": {
+    "new": 0.4919,
+    "stored": 0.4919,
+    "diff": 0.0
+   },
+   "ratio_uni(10) ci hi": {
+    "new": 0.6658,
+    "stored": 0.6658,
+    "diff": 0.0
+   },
+   "ratio_uni(20)": {
+    "new": 0.2457,
+    "stored": 0.2457,
+    "diff": 0.0
+   },
+   "ratio_uni(20) ci lo": {
+    "new": -0.0637,
+    "stored": -0.0637,
+    "diff": 0.0
+   },
+   "ratio_uni(20) ci hi": {
+    "new": 0.3982,
+    "stored": 0.3982,
+    "diff": 0.0
+   },
+   "ratio_uni(30)": {
+    "new": 0.3151,
+    "stored": 0.3151,
+    "diff": 0.0
+   },
+   "ratio_uni(30) ci lo": {
+    "new": 0.1079,
+    "stored": 0.1079,
+    "diff": 0.0
+   },
+   "ratio_uni(30) ci hi": {
+    "new": 0.4323,
+    "stored": 0.4323,
+    "diff": 0.0
+   },
+   "ratio_alt(10)": {
+    "new": 0.9054,
+    "stored": 0.9054,
+    "diff": 0.0
+   },
+   "ratio_alt(10) ci lo": {
+    "new": 0.8291,
+    "stored": 0.8291,
+    "diff": 0.0
+   },
+   "ratio_alt(10) ci hi": {
+    "new": 0.9699,
+    "stored": 0.9699,
+    "diff": 0.0
+   },
+   "ratio_alt(20)": {
+    "new": 0.8055,
+    "stored": 0.8055,
+    "diff": 0.0
+   },
+   "ratio_alt(20) ci lo": {
+    "new": 0.7098,
+    "stored": 0.7098,
+    "diff": 0.0
+   },
+   "ratio_alt(20) ci hi": {
+    "new": 0.8926,
+    "stored": 0.8926,
+    "diff": 0.0
+   },
+   "ratio_alt(30)": {
+    "new": 0.7333,
+    "stored": 0.7333,
+    "diff": 0.0
+   },
+   "ratio_alt(30) ci lo": {
+    "new": 0.6072,
+    "stored": 0.6072,
+    "diff": 0.0
+   },
+   "ratio_alt(30) ci hi": {
+    "new": 0.8144,
+    "stored": 0.8144,
+    "diff": 0.0
+   },
+   "drop_ratio(10)": {
+    "new": 0.2379,
+    "stored": 0.2379,
+    "diff": 0.0
+   },
+   "drop_ratio(10) ci lo": {
+    "new": 0.0823,
+    "stored": 0.0823,
+    "diff": 0.0
+   },
+   "drop_ratio(10) ci hi": {
+    "new": 0.3671,
+    "stored": 0.3671,
+    "diff": 0.0
+   },
+   "drop_ratio(20)": {
+    "new": 0.2579,
+    "stored": 0.2579,
+    "diff": 0.0
+   },
+   "drop_ratio(20) ci lo": {
+    "new": 0.132,
+    "stored": 0.132,
+    "diff": 0.0
+   },
+   "drop_ratio(20) ci hi": {
+    "new": 0.3691,
+    "stored": 0.3691,
+    "diff": 0.0
+   },
+   "drop_ratio(30)": {
+    "new": 0.3894,
+    "stored": 0.3894,
+    "diff": 0.0
+   },
+   "drop_ratio(30) ci lo": {
+    "new": 0.3001,
+    "stored": 0.3001,
+    "diff": 0.0
+   },
+   "drop_ratio(30) ci hi": {
+    "new": 0.4806,
+    "stored": 0.4806,
+    "diff": 0.0
+   },
+   "SR slope": {
+    "new": -0.02,
+    "stored": -0.02,
+    "diff": 0.0
+   },
+   "figure-mass loss(20)": {
+    "new": -0.026,
+    "stored": -0.026,
+    "diff": 0.0
+   },
+   "figure-mass loss(30)": {
+    "new": -0.0236,
+    "stored": -0.0236,
+    "diff": 0.0
+   }
+  }
+ },
+ "per_size": {
+  "336": {
+   "E mean": {
+    "new": -0.1005,
+    "stored": -0.1005,
+    "diff": 0.0
+   },
+   "E ci lo": {
+    "new": -0.1313,
+    "stored": -0.1313,
+    "diff": 0.0
+   },
+   "E ci hi": {
+    "new": -0.0719,
+    "stored": -0.0719,
+    "diff": 0.0
+   },
+   "ratio_uni(10)": {
+    "new": 0.873,
+    "stored": 0.873,
+    "diff": 0.0
+   },
+   "ratio_uni(10) ci lo": {
+    "new": 0.8021,
+    "stored": 0.8021,
+    "diff": 0.0
+   },
+   "ratio_uni(10) ci hi": {
+    "new": 0.9448,
+    "stored": 0.9448,
+    "diff": 0.0
+   },
+   "ratio_uni(20)": {
+    "new": 0.6204,
+    "stored": 0.6204,
+    "diff": 0.0
+   },
+   "ratio_uni(20) ci lo": {
+    "new": 0.4878,
+    "stored": 0.4878,
+    "diff": 0.0
+   },
+   "ratio_uni(20) ci hi": {
+    "new": 0.7175,
+    "stored": 0.7175,
+    "diff": 0.0
+   },
+   "ratio_uni(30)": {
+    "new": 0.4411,
+    "stored": 0.4411,
+    "diff": 0.0
+   },
+   "ratio_uni(30) ci lo": {
+    "new": 0.2994,
+    "stored": 0.2994,
+    "diff": 0.0
+   },
+   "ratio_uni(30) ci hi": {
+    "new": 0.5508,
+    "stored": 0.5508,
+    "diff": 0.0
+   },
+   "ratio_alt(10)": {
+    "new": 0.9617,
+    "stored": 0.9617,
+    "diff": 0.0
+   },
+   "ratio_alt(10) ci lo": {
+    "new": 0.9025,
+    "stored": 0.9025,
+    "diff": 0.0
+   },
+   "ratio_alt(10) ci hi": {
+    "new": 1.0352,
+    "stored": 1.0352,
+    "diff": 0.0
+   },
+   "ratio_alt(20)": {
+    "new": 0.8012,
+    "stored": 0.8012,
+    "diff": 0.0
+   },
+   "ratio_alt(20) ci lo": {
+    "new": 0.7247,
+    "stored": 0.7247,
+    "diff": 0.0
+   },
+   "ratio_alt(20) ci hi": {
+    "new": 0.889,
+    "stored": 0.889,
+    "diff": 0.0
+   },
+   "ratio_alt(30)": {
+    "new": 0.6443,
+    "stored": 0.6443,
+    "diff": 0.0
+   },
+   "ratio_alt(30) ci lo": {
+    "new": 0.5549,
+    "stored": 0.5549,
+    "diff": 0.0
+   },
+   "ratio_alt(30) ci hi": {
+    "new": 0.7424,
+    "stored": 0.7424,
+    "diff": 0.0
+   },
+   "drop_ratio(10)": {
+    "new": 0.3017,
+    "stored": 0.3017,
+    "diff": 0.0
+   },
+   "drop_ratio(10) ci lo": {
+    "new": -0.3464,
+    "stored": -0.3464,
+    "diff": 0.0
+   },
+   "drop_ratio(10) ci hi": {
+    "new": 0.8507,
+    "stored": 0.8507,
+    "diff": 0.0
+   },
+   "drop_ratio(20)": {
+    "new": 0.5238,
+    "stored": 0.5238,
+    "diff": 0.0
+   },
+   "drop_ratio(20) ci lo": {
+    "new": 0.2639,
+    "stored": 0.2639,
+    "diff": 0.0
+   },
+   "drop_ratio(20) ci hi": {
+    "new": 0.7819,
+    "stored": 0.7819,
+    "diff": 0.0
+   },
+   "drop_ratio(30)": {
+    "new": 0.6364,
+    "stored": 0.6364,
+    "diff": 0.0
+   },
+   "drop_ratio(30) ci lo": {
+    "new": 0.4503,
+    "stored": 0.4503,
+    "diff": 0.0
+   },
+   "drop_ratio(30) ci hi": {
+    "new": 0.7969,
+    "stored": 0.7969,
+    "diff": 0.0
+   },
+   "SR slope": {
+    "new": -0.2212,
+    "stored": -0.2212,
+    "diff": 0.0
+   },
+   "figure-mass loss(20)": {
+    "new": -0.0381,
+    "stored": -0.0381,
+    "diff": 0.0
+   },
+   "figure-mass loss(30)": {
+    "new": -0.0562,
+    "stored": -0.0562,
+    "diff": 0.0
+   }
+  },
+  "448": {
+   "E mean": {
+    "new": -0.0945,
+    "stored": -0.0945,
+    "diff": 0.0
+   },
+   "E ci lo": {
+    "new": -0.1229,
+    "stored": -0.1229,
+    "diff": 0.0
+   },
+   "E ci hi": {
+    "new": -0.0672,
+    "stored": -0.0672,
+    "diff": 0.0
+   },
+   "ratio_uni(10)": {
+    "new": 0.7458,
+    "stored": 0.7458,
+    "diff": 0.0
+   },
+   "ratio_uni(10) ci lo": {
+    "new": 0.6267,
+    "stored": 0.6267,
+    "diff": 0.0
+   },
+   "ratio_uni(10) ci hi": {
+    "new": 0.8668,
+    "stored": 0.8668,
+    "diff": 0.0
+   },
+   "ratio_uni(20)": {
+    "new": 0.4947,
+    "stored": 0.4947,
+    "diff": 0.0
+   },
+   "ratio_uni(20) ci lo": {
+    "new": 0.3207,
+    "stored": 0.3207,
+    "diff": 0.0
+   },
+   "ratio_uni(20) ci hi": {
+    "new": 0.6492,
+    "stored": 0.6492,
+    "diff": 0.0
+   },
+   "ratio_uni(30)": {
+    "new": 0.3743,
+    "stored": 0.3743,
+    "diff": 0.0
+   },
+   "ratio_uni(30) ci lo": {
+    "new": 0.2267,
+    "stored": 0.2267,
+    "diff": 0.0
+   },
+   "ratio_uni(30) ci hi": {
+    "new": 0.5092,
+    "stored": 0.5092,
+    "diff": 0.0
+   },
+   "ratio_alt(10)": {
+    "new": 0.9146,
+    "stored": 0.9146,
+    "diff": 0.0
+   },
+   "ratio_alt(10) ci lo": {
+    "new": 0.8155,
+    "stored": 0.8155,
+    "diff": 0.0
+   },
+   "ratio_alt(10) ci hi": {
+    "new": 1.0215,
+    "stored": 1.0215,
+    "diff": 0.0
+   },
+   "ratio_alt(20)": {
+    "new": 0.7716,
+    "stored": 0.7716,
+    "diff": 0.0
+   },
+   "ratio_alt(20) ci lo": {
+    "new": 0.6691,
+    "stored": 0.6691,
+    "diff": 0.0
+   },
+   "ratio_alt(20) ci hi": {
+    "new": 0.8781,
+    "stored": 0.8781,
+    "diff": 0.0
+   },
+   "ratio_alt(30)": {
+    "new": 0.6481,
+    "stored": 0.6481,
+    "diff": 0.0
+   },
+   "ratio_alt(30) ci lo": {
+    "new": 0.5531,
+    "stored": 0.5531,
+    "diff": 0.0
+   },
+   "ratio_alt(30) ci hi": {
+    "new": 0.758,
+    "stored": 0.758,
+    "diff": 0.0
+   },
+   "drop_ratio(10)": {
+    "new": 0.3358,
+    "stored": 0.3358,
+    "diff": 0.0
+   },
+   "drop_ratio(10) ci lo": {
+    "new": -0.1252,
+    "stored": -0.1252,
+    "diff": 0.0
+   },
+   "drop_ratio(10) ci hi": {
+    "new": 0.6389,
+    "stored": 0.6389,
+    "diff": 0.0
+   },
+   "drop_ratio(20)": {
+    "new": 0.4521,
+    "stored": 0.4521,
+    "diff": 0.0
+   },
+   "drop_ratio(20) ci lo": {
+    "new": 0.2635,
+    "stored": 0.2635,
+    "diff": 0.0
+   },
+   "drop_ratio(20) ci hi": {
+    "new": 0.6287,
+    "stored": 0.6287,
+    "diff": 0.0
+   },
+   "drop_ratio(30)": {
+    "new": 0.5625,
+    "stored": 0.5625,
+    "diff": 0.0
+   },
+   "drop_ratio(30) ci lo": {
+    "new": 0.3886,
+    "stored": 0.3886,
+    "diff": 0.0
+   },
+   "drop_ratio(30) ci hi": {
+    "new": 0.7183,
+    "stored": 0.7183,
+    "diff": 0.0
+   },
+   "SR slope": {
+    "new": -0.258,
+    "stored": -0.258,
+    "diff": 0.0
+   },
+   "figure-mass loss(20)": {
+    "new": -0.0478,
+    "stored": -0.0478,
+    "diff": 0.0
+   },
+   "figure-mass loss(30)": {
+    "new": -0.0592,
+    "stored": -0.0592,
+    "diff": 0.0
+   }
+  }
+ },
+ "max_abs_diff_per_image_any_field": 0.0,
+ "max_abs_diff_summary_any_number": 0.0,
+ "pass": true
+}

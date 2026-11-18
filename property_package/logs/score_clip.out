@@ -1,0 +1,88 @@
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 26573.33it/s]
+[transformers] [1mCLIPVisionModel LOAD REPORT[0m from: openai/clip-vit-large-patch14
+Key                                                          | Status     |  | 
+-------------------------------------------------------------+------------+--+-
+text_model.encoder.layers.{0...11}.layer_norm2.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.mlp.fc1.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.k_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.layer_norm1.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.mlp.fc1.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.layer_norm2.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.v_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.out_proj.weight | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.out_proj.bias   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.mlp.fc2.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.q_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.v_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.q_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.mlp.fc2.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.k_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.layer_norm1.bias          | UNEXPECTED |  | 
+text_model.final_layer_norm.weight                           | UNEXPECTED |  | 
+visual_projection.weight                                     | UNEXPECTED |  | 
+text_model.embeddings.token_embedding.weight                 | UNEXPECTED |  | 
+text_model.embeddings.position_embedding.weight              | UNEXPECTED |  | 
+text_projection.weight                                       | UNEXPECTED |  | 
+logit_scale                                                  | UNEXPECTED |  | 
+text_model.final_layer_norm.bias                             | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+start clip layers (8, 16, 20) -> /Users/hamitsoyel/Downloads/illusion_research/nn/results; torch 2.12.0, threads 3
+1100 of 1100 images to score, tags ['clip_L8_s336', 'clip_L16_s336', 'clip_L20_s336', 'clip_L8_s448', 'clip_L16_s448', 'clip_L20_s448']
+  20/1100 17s (0.84 s/img)
+  40/1100 34s (0.84 s/img)
+  60/1100 50s (0.84 s/img)
+  80/1100 67s (0.83 s/img)
+  100/1100 83s (0.83 s/img)
+  120/1100 100s (0.83 s/img)
+  140/1100 116s (0.83 s/img)
+  160/1100 133s (0.83 s/img)
+  180/1100 149s (0.83 s/img)
+  200/1100 166s (0.83 s/img)
+  220/1100 182s (0.83 s/img)
+  240/1100 199s (0.83 s/img)
+  260/1100 215s (0.83 s/img)
+  280/1100 231s (0.83 s/img)
+  300/1100 248s (0.83 s/img)
+  320/1100 264s (0.83 s/img)
+  340/1100 281s (0.83 s/img)
+  360/1100 297s (0.83 s/img)
+  380/1100 314s (0.83 s/img)
+  400/1100 330s (0.83 s/img)
+  420/1100 347s (0.83 s/img)
+  440/1100 363s (0.82 s/img)
+  460/1100 379s (0.82 s/img)
+  480/1100 395s (0.82 s/img)
+  500/1100 412s (0.82 s/img)
+  520/1100 428s (0.82 s/img)
+  540/1100 445s (0.82 s/img)
+  560/1100 461s (0.82 s/img)
+  580/1100 477s (0.82 s/img)
+  600/1100 494s (0.82 s/img)
+  620/1100 509s (0.82 s/img)
+  640/1100 525s (0.82 s/img)
+  660/1100 541s (0.82 s/img)
+  680/1100 557s (0.82 s/img)
+  700/1100 573s (0.82 s/img)
+  720/1100 588s (0.82 s/img)
+  740/1100 604s (0.82 s/img)
+  760/1100 620s (0.82 s/img)
+  780/1100 636s (0.82 s/img)
+  800/1100 652s (0.82 s/img)
+  820/1100 669s (0.82 s/img)
+  840/1100 685s (0.82 s/img)
+  860/1100 701s (0.82 s/img)
+  880/1100 718s (0.82 s/img)
+  900/1100 734s (0.82 s/img)
+  920/1100 750s (0.81 s/img)
+  940/1100 766s (0.81 s/img)
+  960/1100 782s (0.81 s/img)
+  980/1100 798s (0.81 s/img)
+  1000/1100 814s (0.81 s/img)
+  1020/1100 830s (0.81 s/img)
+  1040/1100 846s (0.81 s/img)
+  1060/1100 862s (0.81 s/img)
+  1080/1100 878s (0.81 s/img)
+  1100/1100 895s (0.81 s/img)
+done clip layers (8, 16, 20): 895s
