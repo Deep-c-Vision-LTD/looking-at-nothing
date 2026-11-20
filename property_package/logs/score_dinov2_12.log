@@ -1,4 +1,4 @@
-2026-11-17 07:55:19 start dinov2 layers (12,) -> /Users/hamitsoyel/Downloads/illusion_research/nn/results/sanity; torch 2.12.0, threads 3
+2026-11-17 07:55:19 start dinov2 layers (12,) -> $LAN_PROJECT_ROOT/nn/results/sanity; torch 2.12.0, threads 3
 2026-11-17 07:55:19 1100 of 1100 images to score, tags ['dinov2_L12_s336', 'dinov2_L12_s448']
 2026-11-17 07:55:24   20/1100 5s (0.27 s/img)
 2026-11-17 07:55:30   40/1100 11s (0.27 s/img)
@@ -56,7 +56,7 @@
 2026-11-17 08:00:09   1080/1100 290s (0.27 s/img)
 2026-11-17 08:00:15   1100/1100 296s (0.27 s/img)
 2026-11-17 08:00:15 done dinov2 layers (12,): 296s
-2026-11-17 09:30:44 start dinov2 layers (12,) -> /Users/hamitsoyel/Downloads/illusion_research/nn/results/sanity_post; torch 2.12.0, threads 3
+2026-11-17 09:30:44 start dinov2 layers (12,) -> $LAN_PROJECT_ROOT/nn/results/sanity_post; torch 2.12.0, threads 3
 2026-11-17 09:30:44 1100 of 1100 images to score, tags ['dinov2_L12_s336', 'dinov2_L12_s448']
 2026-11-17 09:30:50   20/1100 6s (0.28 s/img)
 2026-11-17 09:30:55   40/1100 11s (0.28 s/img)

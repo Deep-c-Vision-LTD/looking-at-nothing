@@ -208,7 +208,7 @@ Report-level corrections relative to `nn/results/report.md`:
 
 ## 7. Provenance and run facts
 
-- Interpreter `/Users/hamitsoyel/Downloads/saliency_research/.venv/bin/python` (Python 3.12, torch 2.12.0). All jobs on the CPU, one heavy job at a time, under `caffeinate -i`; offline Hugging Face cache only (HF_HUB_OFFLINE=1); no downloads.
+- Interpreter `$LAN_SAL_SRC/.venv/bin/python` (Python 3.12, torch 2.12.0). All jobs on the CPU, one heavy job at a time, under `caffeinate -i`; offline Hugging Face cache only (HF_HUB_OFFLINE=1); no downloads.
 - Scoring of the 9 new readouts: 740 stim_v3 + 360 stim_alt images, 336 and 448 px, pipeline of `v2/scores/score_v3.py` + `v3/scores/score_alt.py` (`nn/score_nn.py`, 3 threads). ERF: 24 displays x 2 sizes x 8 or 9 locations x 18 readouts, readout and block-token targets (`nn/erf_nn.py`).
 - Sanity rescore (rule Section 8): DINOv2-B L12 rescored twice (before and after the main run): all 1,100 images x 2 sizes bit-identical to the stored files in all three score files (max |difference| 0.0), and all 357 summary numbers (E, CIs, U, A, D, slope, per size) identical.
 
@@ -259,13 +259,13 @@ Report-level corrections relative to `nn/results/report.md`:
 
 ## 9. Files
 
-- `/Users/hamitsoyel/Downloads/illusion_research/nn/results/property_results.json`
-- `/Users/hamitsoyel/Downloads/illusion_research/nn/PROPERTY_RESULTS.md`
-- `/Users/hamitsoyel/Downloads/illusion_research/nn/figs/erf_vs_rotation.pdf`
-- `/Users/hamitsoyel/Downloads/illusion_research/nn/figs/erf_vs_rotation.png`
-- `/Users/hamitsoyel/Downloads/illusion_research/nn/property_results.py`
-- `/Users/hamitsoyel/Downloads/illusion_research/nn/results/summary.json`
-- `/Users/hamitsoyel/Downloads/illusion_research/nn/results/report.md`
-- `/Users/hamitsoyel/Downloads/illusion_research/nn/results/erf/{dinov2,clip,siglip}.json`
-- `/Users/hamitsoyel/Downloads/illusion_research/nn/results/raw_v3maps, raw_alt, raw_v2style (9 new readouts x 2 sizes)`
-- `/Users/hamitsoyel/Downloads/illusion_research/nn/ANALYSIS_RULE.md, nn/ANALYSIS_RULE.sha256, nn/RUN_LOG.md`
+- `$LAN_PROJECT_ROOT/nn/results/property_results.json`
+- `$LAN_PROJECT_ROOT/nn/PROPERTY_RESULTS.md`
+- `$LAN_PROJECT_ROOT/nn/figs/erf_vs_rotation.pdf`
+- `$LAN_PROJECT_ROOT/nn/figs/erf_vs_rotation.png`
+- `$LAN_PROJECT_ROOT/nn/property_results.py`
+- `$LAN_PROJECT_ROOT/nn/results/summary.json`
+- `$LAN_PROJECT_ROOT/nn/results/report.md`
+- `$LAN_PROJECT_ROOT/nn/results/erf/{dinov2,clip,siglip}.json`
+- `$LAN_PROJECT_ROOT/nn/results/raw_v3maps, raw_alt, raw_v2style (9 new readouts x 2 sizes)`
+- `$LAN_PROJECT_ROOT/nn/ANALYSIS_RULE.md, nn/ANALYSIS_RULE.sha256, nn/RUN_LOG.md`

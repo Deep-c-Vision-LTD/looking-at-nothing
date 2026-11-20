@@ -662,7 +662,7 @@ def write_md(out):
       "there holds S20 point values and is labelled accordingly here.\n")
 
     w("## 7. Provenance and run facts\n")
-    w("- Interpreter `/Users/hamitsoyel/Downloads/saliency_research/.venv/bin/python` (Python 3.12, torch 2.12.0). All jobs on the CPU, one heavy job at a "
+    w("- Interpreter `$LAN_SAL_SRC/.venv/bin/python` (Python 3.12, torch 2.12.0). All jobs on the CPU, one heavy job at a "
       "time, under `caffeinate -i`; offline Hugging Face cache only (HF_HUB_OFFLINE=1); no downloads.")
     w("- Scoring of the 9 new readouts: 740 stim_v3 + 360 stim_alt images, 336 and 448 px, pipeline of `v2/scores/score_v3.py` + `v3/scores/score_alt.py` "
       "(`nn/score_nn.py`, 3 threads). ERF: 24 displays x 2 sizes x 8 or 9 locations x 18 readouts, readout and block-token targets (`nn/erf_nn.py`).")
@@ -680,7 +680,7 @@ def write_md(out):
     for f in ("nn/results/property_results.json", "nn/PROPERTY_RESULTS.md", "nn/figs/erf_vs_rotation.pdf", "nn/figs/erf_vs_rotation.png",
               "nn/property_results.py", "nn/results/summary.json", "nn/results/report.md", "nn/results/erf/{dinov2,clip,siglip}.json",
               "nn/results/raw_v3maps, raw_alt, raw_v2style (9 new readouts x 2 sizes)", "nn/ANALYSIS_RULE.md, nn/ANALYSIS_RULE.sha256, nn/RUN_LOG.md"):
-        w(f"- `/Users/hamitsoyel/Downloads/illusion_research/{f}`")
+        w(f"- `$LAN_PROJECT_ROOT/{f}`")
     txt = "\n".join(L) + "\n"
     assert "—" not in txt and "–" not in txt, "dash character in report"
     open(OUT_MD, "w").write(txt)

@@ -1,4 +1,4 @@
-2026-11-17 08:13:48 start clip layers (8, 16, 20) -> /Users/hamitsoyel/Downloads/illusion_research/nn/results; torch 2.12.0, threads 3
+2026-11-17 08:13:48 start clip layers (8, 16, 20) -> $LAN_PROJECT_ROOT/nn/results; torch 2.12.0, threads 3
 2026-11-17 08:13:48 1100 of 1100 images to score, tags ['clip_L8_s336', 'clip_L16_s336', 'clip_L20_s336', 'clip_L8_s448', 'clip_L16_s448', 'clip_L20_s448']
 2026-11-17 08:14:05   20/1100 17s (0.84 s/img)
 2026-11-17 08:14:22   40/1100 34s (0.84 s/img)

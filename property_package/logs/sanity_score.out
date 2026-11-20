@@ -1,5 +1,5 @@
 Loading weights:   0%|          | 0/223 [00:00<?, ?it/s]Loading weights: 100%|██████████| 223/223 [00:00<00:00, 21473.70it/s]
-start dinov2 layers (12,) -> /Users/hamitsoyel/Downloads/illusion_research/nn/results/sanity; torch 2.12.0, threads 3
+start dinov2 layers (12,) -> $LAN_PROJECT_ROOT/nn/results/sanity; torch 2.12.0, threads 3
 1100 of 1100 images to score, tags ['dinov2_L12_s336', 'dinov2_L12_s448']
   20/1100 5s (0.27 s/img)
   40/1100 11s (0.27 s/img)

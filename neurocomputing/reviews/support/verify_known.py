@@ -6,7 +6,8 @@ arithmetic on published intervals, exactly as the rule does).
 """
 import json, os
 
-ROOT = "/Users/hamitsoyel/Downloads/illusion_research"
+RE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))   # re-analysis folder
+ROOT = os.environ.get("LAN_PROJECT_ROOT") or os.path.dirname(os.path.dirname(RE))   # project root
 F = json.load(open(os.path.join(ROOT, "v3/gpu/full/results_full.json")))
 FS = [("dinov2_L12", "DINOv2-B block 12"), ("dinov2_L6", "DINOv2-B block 6"),
       ("siglip_L24", "SigLIP-L block 24"), ("iie_shapenetc", "ShapeNet-C")]

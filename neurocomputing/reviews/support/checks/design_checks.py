@@ -10,8 +10,8 @@ import numpy as np
 from PIL import Image, ImageDraw
 from scipy.ndimage import distance_transform_edt
 
-RE = "/Users/hamitsoyel/Downloads/illusion_research/neuro/reanalysis"
-ROOT = "/Users/hamitsoyel/Downloads/illusion_research"
+RE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))   # re-analysis folder
+ROOT = os.environ.get("LAN_PROJECT_ROOT") or os.path.dirname(os.path.dirname(RE))   # project root
 SR = os.path.join(RE, "stim_rigid")
 V3 = os.path.join(ROOT, "v2", "stim_v3", "img")
 OUTD = os.path.dirname(os.path.abspath(__file__))

@@ -153,3 +153,43 @@ No file listed in REANALYSIS_RULE.sha256 or in results/explore_scripts.sha256 wa
    - understand/data_inventory.md: inventory of the project tree (cited for CPU-time estimates).
    - gpu/GO_AHEAD: run-state marker of the GPU runner (rule 5.6).
    - supplement.tex: the manuscript supplement, named by explore/report_continuity.py as the reason for that script.
+
+5. Older tracked files cleaned with the README of release v3.0 (20 November 2026). These files were pushed on
+   18 November 2026 (commit f67c7df), before this note existed; unlike sections 1 to 3 they include files outside
+   neurocomputing/, so their paths here are relative to the repository root. No hash record in the repository names
+   them, and none is in a rule hash file.
+   Logs and records (14 files): the absolute path of the project tree replaced by $LAN_PROJECT_ROOT and that of the
+   model code and its Python env by $LAN_SAL_SRC, as in section 1; nothing else changed.
+
+     property_package/PROPERTY_RESULTS.md
+     property_package/logs/run_all.log
+     property_package/logs/run_all.stdout
+     property_package/logs/sanity_post_score.out
+     property_package/logs/sanity_score.out
+     property_package/logs/score_clip.out
+     property_package/logs/score_clip_8-16-20.log
+     property_package/logs/score_dinov2.out
+     property_package/logs/score_dinov2_12.log
+     property_package/logs/score_dinov2_4-6-10.log
+     property_package/logs/score_siglip.out
+     property_package/logs/score_siglip_12-16-20.log
+     registers/logs/run_reg.log
+     registers/logs/run_reg.stdout
+
+   Scripts (8 files). The seven support scripts of the reviews: RE derived from the script's own location and
+   ROOT = LAN_PROJECT_ROOT or the parent of the parent of RE, as in section 2 (compare_tables.py also imports os;
+   design_checks2.py and design_checks3.py build V3 from ROOT and SR from RE). property_results.py: the two report
+   lines that wrote the interpreter and the file locations now write $LAN_SAL_SRC/.venv/bin/python and
+   $LAN_PROJECT_ROOT/<file>, the text of the cleaned PROPERTY_RESULTS.md. No other line changed.
+
+     neurocomputing/reviews/support/checks/design_checks.py
+     neurocomputing/reviews/support/checks/design_checks2.py
+     neurocomputing/reviews/support/checks/design_checks3.py
+     neurocomputing/reviews/support/checks/metal_probe.py
+     neurocomputing/reviews/support/compare_tables.py
+     neurocomputing/reviews/support/independent_check.py
+     neurocomputing/reviews/support/verify_known.py
+     property_package/property_results.py
+
+   Not changed: neurocomputing/reviews/design_review.md, which is hashed in REANALYSIS_RULE.sha256; its two matching
+   lines mention absolute user paths in prose (a review finding); neither is a location that code reads.

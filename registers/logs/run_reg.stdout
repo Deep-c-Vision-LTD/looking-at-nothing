@@ -1,4 +1,4 @@
-2026-11-17 13:02:31 start run_reg (pid 5928, out /Users/hamitsoyel/Downloads/illusion_research/nn/registers/full, 43 GB free)
+2026-11-17 13:02:31 start run_reg (pid 5928, out $LAN_PROJECT_ROOT/nn/registers/full, 43 GB free)
 2026-11-17 13:03:39 start train_dinov2reg_R4_s0 (try 1; 43 GB free)
 2026-11-17 13:50:49 done train_dinov2reg_R4_s0 2830s
 2026-11-17 13:51:56 start eval_dinov2reg_s0 (try 1; 43 GB free)
@@ -14,5 +14,5 @@
 2026-11-17 15:38:32 start eval_dinov2reg_final (try 1; 41 GB free)
 2026-11-17 15:38:35 done eval_dinov2reg_final 3s
 2026-11-17 15:38:59 analysis done
-2026-11-17 15:39:04 report done: /Users/hamitsoyel/Downloads/illusion_research/nn/registers/REGISTERS_RESULTS.md
+2026-11-17 15:39:04 report done: $LAN_PROJECT_ROOT/nn/registers/REGISTERS_RESULTS.md
 2026-11-17 15:39:04 finished; failed steps: none; trained heads: 6 of 6

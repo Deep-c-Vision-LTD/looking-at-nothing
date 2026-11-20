@@ -4,7 +4,7 @@ import of deepgaze_pytorch (no model built). Prints the PID and sleeps so ioreg 
 import os, sys, time
 os.environ.update(HF_HUB_OFFLINE="1", TRANSFORMERS_OFFLINE="1", OMP_NUM_THREADS="4")
 sys.dont_write_bytecode = True
-sys.path.insert(0, "/Users/hamitsoyel/Downloads/illusion_research/neuro/reanalysis/_stub")
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))), "_stub"))   # <re-analysis folder>/_stub
 import ab_objective as AB
 assert AB.DEV == "cpu"
 import torch

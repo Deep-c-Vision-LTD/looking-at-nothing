@@ -28,7 +28,7 @@ text_model.final_layer_norm.bias                             | UNEXPECTED |  |
 
 Notes:
 - UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-start clip layers (8, 16, 20) -> /Users/hamitsoyel/Downloads/illusion_research/nn/results; torch 2.12.0, threads 3
+start clip layers (8, 16, 20) -> $LAN_PROJECT_ROOT/nn/results; torch 2.12.0, threads 3
 1100 of 1100 images to score, tags ['clip_L8_s336', 'clip_L16_s336', 'clip_L20_s336', 'clip_L8_s448', 'clip_L16_s448', 'clip_L20_s448']
   20/1100 17s (0.84 s/img)
   40/1100 34s (0.84 s/img)

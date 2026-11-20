@@ -5,8 +5,9 @@ import json, math, os, sys
 import numpy as np
 from PIL import Image
 
-RE = "/Users/hamitsoyel/Downloads/illusion_research/neuro/reanalysis"
-V3 = "/Users/hamitsoyel/Downloads/illusion_research/v2/stim_v3/img"
+RE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))   # re-analysis folder
+ROOT = os.environ.get("LAN_PROJECT_ROOT") or os.path.dirname(os.path.dirname(RE))   # project root
+V3 = os.path.join(ROOT, "v2", "stim_v3", "img")
 SR = os.path.join(RE, "stim_rigid")
 OUTD = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(RE, "stimcode"))

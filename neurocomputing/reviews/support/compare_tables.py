@@ -1,7 +1,8 @@
 """compare_tables.py: parse the two known-value tables of REANALYSIS_RULE.md Section 1.1 and compare every number with
 the result files (read only)."""
-import json, re
-ROOT = "/Users/hamitsoyel/Downloads/illusion_research"
+import json, os, re
+RE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))   # re-analysis folder
+ROOT = os.environ.get("LAN_PROJECT_ROOT") or os.path.dirname(os.path.dirname(RE))   # project root
 rule = open(f"{ROOT}/neuro/reanalysis/REANALYSIS_RULE.md").read().splitlines()
 F = json.load(open(f"{ROOT}/v3/gpu/full/results_full.json"))
 V = json.load(open(f"{ROOT}/v3/scores/results.json"))["models"]

@@ -21,7 +21,7 @@ import itertools, math, os, sys, time
 import numpy as np
 
 np.seterr(all="ignore")
-RE = "/Users/hamitsoyel/Downloads/illusion_research/neuro/reanalysis"
+RE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))   # re-analysis folder
 sys.path.insert(0, RE)
 import analyze_re as A  # noqa: E402  (numpy / scipy only; require_public() runs only from its main())
 from scipy import stats as sps  # noqa: E402

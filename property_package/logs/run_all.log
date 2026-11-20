@@ -12,5 +12,5 @@
 2026-11-17T09:10:40Z ERF siglip
 2026-11-17T09:28:00Z ERF siglip done
 2026-11-17T09:28:00Z analysis
-2026-11-17T09:30:09Z analysis done: /Users/hamitsoyel/Downloads/illusion_research/nn/results/summary.json, /Users/hamitsoyel/Downloads/illusion_research/nn/results/report.md
+2026-11-17T09:30:09Z analysis done: $LAN_PROJECT_ROOT/nn/results/summary.json, $LAN_PROJECT_ROOT/nn/results/report.md
 decision: INCONCLUSIVE I-d | The layer sweep neither supports nor rules out the receptive-field account (rho = -0.37, 95% CI [-0.62, -0.14], p = .218; pooled within-network rho = -0.27; adjusted R2 for receptive field 0.18 and for network identity -0.10).

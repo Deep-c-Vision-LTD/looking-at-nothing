@@ -1,4 +1,4 @@
-2026-11-17 08:28:46 start siglip layers (12, 16, 20) -> /Users/hamitsoyel/Downloads/illusion_research/nn/results; torch 2.12.0, threads 3
+2026-11-17 08:28:46 start siglip layers (12, 16, 20) -> $LAN_PROJECT_ROOT/nn/results; torch 2.12.0, threads 3
 2026-11-17 08:28:46 1100 of 1100 images to score, tags ['siglip_L12_s336', 'siglip_L16_s336', 'siglip_L20_s336', 'siglip_L12_s448', 'siglip_L16_s448', 'siglip_L20_s448']
 2026-11-17 08:29:02   20/1100 16s (0.78 s/img)
 2026-11-17 08:29:16   40/1100 30s (0.75 s/img)
