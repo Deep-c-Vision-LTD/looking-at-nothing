@@ -1,0 +1,14 @@
+2026-11-19 18:34:49 === stats dinov2reg on mps: 12803 training images, bs 32
+Loading weights:   0%|          | 0/224 [00:00<?, ?it/s]Loading weights: 100%|██████████| 224/224 [00:00<00:00, 28560.44it/s]
+2026-11-19 18:34:50   dinov2reg batch 1/401 1s
+2026-11-19 18:35:38   dinov2reg batch 51/401 49s
+2026-11-19 18:36:31   dinov2reg batch 101/401 102s
+2026-11-19 18:37:22   dinov2reg batch 151/401 153s
+2026-11-19 18:38:13   dinov2reg batch 201/401 204s
+2026-11-19 18:39:04   dinov2reg batch 251/401 255s
+2026-11-19 18:39:56   dinov2reg batch 301/401 307s
+2026-11-19 18:40:47   dinov2reg batch 351/401 358s
+2026-11-19 18:41:37   dinov2reg batch 401/401 408s
+2026-11-19 18:41:37 dinov2reg_L12: C 768 tokens 7374528 mean(|mu|) 1.6037 mean(sd) 4.1337 min sd 6.58e-01 max sd 14.06
+2026-11-19 18:41:37 dinov2reg_L6: C 768 tokens 7374528 mean(|mu|) 0.0337 mean(sd) 0.1668 min sd 3.62e-02 max sd 0.74
+2026-11-19 18:41:37 === stats dinov2reg done 408s

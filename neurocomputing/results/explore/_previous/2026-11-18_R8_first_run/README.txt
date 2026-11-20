@@ -1,0 +1,3 @@
+First R8 run (19:26:41 to 19:26:51 UTC, log results/run_logs/R8_explore_rigid.log; script sha256 a1d26c11edd894345a5258ce05012e9bce4d0659d0d76578b270e7995b521e57) and its test output (19:26:26 UTC, 58 checks, 0 failed; log results/run_logs/T_explore_rigid.log).
+Moved here (not deleted) before a second run with two presentation fixes only: (1) the s* of IIE and MSDB (engine blocks) gets the same 'flag' field as every other unit (the first markdown printed no flag for them, e.g. IIE theta 10, whose L_uni interval includes 0); (2) unit names with a literal '|' are printed with a space in markdown tables (the '|' split the rows). No statistic changed (checked against this JSON in DEVIATIONS.md D7).
+moved 2026-11-18T19:27:53Z

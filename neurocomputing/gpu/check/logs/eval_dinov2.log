@@ -1,0 +1,10 @@
+2026-11-19 18:28:19 === eval dinov2 on mps: 1 heads, stimsets ['stim_v3', 'stim_alt'], maps saved for: none
+2026-11-19 18:28:25 MIT features 200 images 6s
+2026-11-19 18:28:26 dinov2_L12_R4_s0 MIT1003 held-out CC 0.7256 NSS 2.5972 (n 200)
+2026-11-19 18:28:50 stim_v3 px336 block 1/1 features 740 images 22s
+2026-11-19 18:29:41 stim_v3 px448 block 1/1 features 740 images 49s
+2026-11-19 18:29:43 stim_v3 dinov2_L12_R4_s0 scored 740 images x 2 sizes (maps saved: False)
+2026-11-19 18:29:55 stim_alt px336 block 1/1 features 360 images 11s
+2026-11-19 18:30:21 stim_alt px448 block 1/1 features 360 images 25s
+2026-11-19 18:30:22 stim_alt dinov2_L12_R4_s0 scored 360 images x 2 sizes (maps saved: False)
+2026-11-19 18:30:22 === eval dinov2 done

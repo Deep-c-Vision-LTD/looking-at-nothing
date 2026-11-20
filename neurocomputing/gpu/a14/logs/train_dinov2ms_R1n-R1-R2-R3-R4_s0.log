@@ -1,0 +1,72 @@
+2026-11-19 21:51:47 === dinov2ms_R1n-R1-R2-R3-R4_s0 on mps: 12803 training images, 400 batches/epoch, heads [('dinov2ms_L7L11', 'R1n'), ('dinov2ms_L7L11', 'R1'), ('dinov2ms_L7L11', 'R2'), ('dinov2ms_L7L11', 'R3'), ('dinov2ms_L7L11', 'R4'), ('dinov2ms_L11', 'R1n'), ('dinov2ms_L11', 'R1'), ('dinov2ms_L11', 'R2'), ('dinov2ms_L11', 'R3'), ('dinov2ms_L11', 'R4')]
+2026-11-19 21:51:57 R1n calibration dinov2ms_L7L11_R1n_s0: input stats from dinov2ms_L7L11_chstats.npz, hidden layers from 256 images
+2026-11-19 21:51:57   R1n calib layer 1 (8 ch): mu +0.7309 sd 0.2894
+2026-11-19 21:51:57   R1n calib layer 2 (16 ch): mu +0.7377 sd 0.3083
+2026-11-19 21:51:57   R1n calib layer 3 (1 ch): mu +0.7379 sd 0.3186
+2026-11-19 21:51:57   R1n calib layer 4 (128 ch): mu +0.7330 sd 0.2616
+2026-11-19 21:51:57 R1n calibration dinov2ms_L11_R1n_s0: input stats from dinov2ms_L11_chstats.npz, hidden layers from 256 images
+2026-11-19 21:51:57   R1n calib layer 1 (8 ch): mu +0.7261 sd 0.2846
+2026-11-19 21:51:57   R1n calib layer 2 (16 ch): mu +0.7341 sd 0.2939
+2026-11-19 21:51:58   R1n calib layer 3 (1 ch): mu +0.7285 sd 0.2767
+2026-11-19 21:51:58   R1n calib layer 4 (128 ch): mu +0.7332 sd 0.2679
+2026-11-19 21:52:00   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 0 batch 1/400 1.8s
+2026-11-19 21:53:19   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 0 batch 51/400 80.9s
+2026-11-19 21:54:38   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 0 batch 101/400 160.2s
+2026-11-19 21:55:56   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 0 batch 151/400 238.0s
+2026-11-19 21:57:13   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 0 batch 201/400 315.8s
+2026-11-19 21:58:31   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 0 batch 251/400 393.6s
+2026-11-19 21:59:49   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 0 batch 301/400 471.4s
+2026-11-19 22:01:07   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 0 batch 351/400 549.2s
+2026-11-19 22:02:23   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 0 batch 400/400 625.6s
+2026-11-19 22:02:23 dinov2ms_R1n-R1-R2-R3-R4_s0 epoch 0 dinov2ms_L7L11:R1n 0.7668 dinov2ms_L7L11:R1 0.9668 dinov2ms_L7L11:R2 0.6797 dinov2ms_L7L11:R3 0.7110 dinov2ms_L7L11:R4 0.6781 dinov2ms_L11:R1n 0.8931 dinov2ms_L11:R1 1.0564 dinov2ms_L11:R2 0.7521 dinov2ms_L11:R3 0.7958 dinov2ms_L11:R4 0.6753 626s
+2026-11-19 22:02:26   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 1 batch 1/400 1.8s
+2026-11-19 22:03:43   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 1 batch 51/400 79.6s
+2026-11-19 22:05:01   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 1 batch 101/400 157.4s
+2026-11-19 22:06:19   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 1 batch 151/400 235.1s
+2026-11-19 22:07:37   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 1 batch 201/400 312.9s
+2026-11-19 22:08:54   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 1 batch 251/400 390.8s
+2026-11-19 22:10:12   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 1 batch 301/400 468.6s
+2026-11-19 22:11:30   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 1 batch 351/400 546.4s
+2026-11-19 22:12:46   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 1 batch 400/400 622.6s
+2026-11-19 22:12:46 dinov2ms_R1n-R1-R2-R3-R4_s0 epoch 1 dinov2ms_L7L11:R1n 0.5728 dinov2ms_L7L11:R1 0.6353 dinov2ms_L7L11:R2 0.4544 dinov2ms_L7L11:R3 0.5088 dinov2ms_L7L11:R4 0.4472 dinov2ms_L11:R1n 0.6657 dinov2ms_L11:R1 0.6968 dinov2ms_L11:R2 0.4842 dinov2ms_L11:R3 0.5477 dinov2ms_L11:R4 0.4639 623s
+2026-11-19 22:12:48   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 2 batch 1/400 1.7s
+2026-11-19 22:14:06   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 2 batch 51/400 79.5s
+2026-11-19 22:15:24   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 2 batch 101/400 157.4s
+2026-11-19 22:16:42   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 2 batch 151/400 235.1s
+2026-11-19 22:18:00   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 2 batch 201/400 312.9s
+2026-11-19 22:19:17   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 2 batch 251/400 390.7s
+2026-11-19 22:20:35   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 2 batch 301/400 468.6s
+2026-11-19 22:21:53   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 2 batch 351/400 546.4s
+2026-11-19 22:23:09   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 2 batch 400/400 622.7s
+2026-11-19 22:23:09 dinov2ms_R1n-R1-R2-R3-R4_s0 epoch 2 dinov2ms_L7L11:R1n 0.5501 dinov2ms_L7L11:R1 0.6012 dinov2ms_L7L11:R2 0.3941 dinov2ms_L7L11:R3 0.4654 dinov2ms_L7L11:R4 0.3862 dinov2ms_L11:R1n 0.6363 dinov2ms_L11:R1 0.6671 dinov2ms_L11:R2 0.4195 dinov2ms_L11:R3 0.5018 dinov2ms_L11:R4 0.4031 623s
+2026-11-19 22:23:12   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 3 batch 1/400 1.8s
+2026-11-19 22:24:30   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 3 batch 51/400 79.6s
+2026-11-19 22:25:48   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 3 batch 101/400 157.4s
+2026-11-19 22:27:05   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 3 batch 151/400 235.2s
+2026-11-19 22:28:23   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 3 batch 201/400 313.1s
+2026-11-19 22:29:41   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 3 batch 251/400 390.9s
+2026-11-19 22:30:59   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 3 batch 301/400 468.7s
+2026-11-19 22:32:17   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 3 batch 351/400 546.6s
+2026-11-19 22:33:33   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 3 batch 400/400 622.9s
+2026-11-19 22:33:33 dinov2ms_R1n-R1-R2-R3-R4_s0 epoch 3 dinov2ms_L7L11:R1n 0.5369 dinov2ms_L7L11:R1 0.5821 dinov2ms_L7L11:R2 0.3389 dinov2ms_L7L11:R3 0.4330 dinov2ms_L7L11:R4 0.3302 dinov2ms_L11:R1n 0.6204 dinov2ms_L11:R1 0.6531 dinov2ms_L11:R2 0.3634 dinov2ms_L11:R3 0.4687 dinov2ms_L11:R4 0.3474 623s
+2026-11-19 22:33:35   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 4 batch 1/400 1.8s
+2026-11-19 22:34:53   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 4 batch 51/400 79.6s
+2026-11-19 22:36:11   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 4 batch 101/400 157.4s
+2026-11-19 22:37:29   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 4 batch 151/400 235.1s
+2026-11-19 22:38:46   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 4 batch 201/400 312.9s
+2026-11-19 22:40:04   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 4 batch 251/400 390.8s
+2026-11-19 22:41:22   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 4 batch 301/400 468.9s
+2026-11-19 22:42:40   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 4 batch 351/400 546.8s
+2026-11-19 22:43:57   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 4 batch 400/400 623.1s
+2026-11-19 22:43:57 dinov2ms_R1n-R1-R2-R3-R4_s0 epoch 4 dinov2ms_L7L11:R1n 0.5279 dinov2ms_L7L11:R1 0.5701 dinov2ms_L7L11:R2 0.2884 dinov2ms_L7L11:R3 0.4031 dinov2ms_L7L11:R4 0.2799 dinov2ms_L11:R1n 0.6103 dinov2ms_L11:R1 0.6452 dinov2ms_L11:R2 0.3134 dinov2ms_L11:R3 0.4411 dinov2ms_L11:R4 0.2980 623s
+2026-11-19 22:43:59   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 5 batch 1/400 1.7s
+2026-11-19 22:45:17   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 5 batch 51/400 79.7s
+2026-11-19 22:46:35   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 5 batch 101/400 157.7s
+2026-11-19 22:47:53   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 5 batch 151/400 235.7s
+2026-11-19 22:49:11   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 5 batch 201/400 313.7s
+2026-11-19 22:50:29   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 5 batch 251/400 391.7s
+2026-11-19 22:51:47   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 5 batch 301/400 469.7s
+2026-11-19 22:53:05   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 5 batch 351/400 547.6s
+2026-11-19 22:54:21   dinov2ms_R1n-R1-R2-R3-R4_s0 ep 5 batch 400/400 624.0s
+2026-11-19 22:54:21 dinov2ms_R1n-R1-R2-R3-R4_s0 epoch 5 dinov2ms_L7L11:R1n 0.5219 dinov2ms_L7L11:R1 0.5632 dinov2ms_L7L11:R2 0.2540 dinov2ms_L7L11:R3 0.3818 dinov2ms_L7L11:R4 0.2454 dinov2ms_L11:R1n 0.6045 dinov2ms_L11:R1 0.6392 dinov2ms_L11:R2 0.2800 dinov2ms_L11:R3 0.4212 dinov2ms_L11:R4 0.2653 624s
+2026-11-19 22:54:22 === dinov2ms_R1n-R1-R2-R3-R4_s0 done

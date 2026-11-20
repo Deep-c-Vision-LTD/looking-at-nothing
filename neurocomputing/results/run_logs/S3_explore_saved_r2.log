@@ -1,0 +1,14 @@
+### S3_explore_saved_r2 start 2026-11-18T23:48:03Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONDONTWRITEBYTECODE=1 $LAN_SAL_SRC/.venv/bin/python -B -I explore/explore_saved.py
+### S3_explore_saved_r2 pid 28120
+23:48:05 loaded scores
+23:48:07 item 1 done
+23:48:07 item 2 done
+### S3_explore_saved_r2 pid 28120: no Metal client at first check (~5 s)
+23:48:10 item 3 done
+23:48:10 item 5 done
+23:48:11 item 17 done
+23:48:11 item 18 done
+23:48:13 cross-checks done
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/results/explore/explore_saved.json
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/results/explore/explore_saved.md
+### S3_explore_saved_r2 end 2026-11-18T23:48:18Z exit 0 wall 15s

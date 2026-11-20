@@ -1,0 +1,56 @@
+### TTR_P_siglip start 2026-11-18T20:27:50Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONDONTWRITEBYTECODE=1 $LAN_SAL_SRC/.venv/bin/python -B -I explore/ttr/ttr_score.py plain siglip
+### TTR_P_siglip pid 19969
+Loading weights:   0%|          | 0/400 [00:00<?, ?it/s]Loading weights: 100%|██████████| 400/400 [00:00<00:00, 8194.72it/s]
+[transformers] [1mSiglipVisionModel LOAD REPORT[0m from: google/siglip-large-patch16-256
+Key                                                          | Status     |  | 
+-------------------------------------------------------------+------------+--+-
+text_model.encoder.layers.{0...23}.layer_norm2.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc2.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.k_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.v_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.q_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.out_proj.weight | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.k_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.q_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm1.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc1.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm2.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc1.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc2.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm1.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.v_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.out_proj.bias   | UNEXPECTED |  | 
+logit_scale                                                  | UNEXPECTED |  | 
+text_model.head.bias                                         | UNEXPECTED |  | 
+text_model.final_layer_norm.weight                           | UNEXPECTED |  | 
+text_model.embeddings.position_embedding.weight              | UNEXPECTED |  | 
+text_model.final_layer_norm.bias                             | UNEXPECTED |  | 
+logit_bias                                                   | UNEXPECTED |  | 
+text_model.embeddings.token_embedding.weight                 | UNEXPECTED |  | 
+text_model.head.weight                                       | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+### TTR_P_siglip pid 19969: no Metal client at first check (~5 s)
+20:28:20 gate F: PASS {'336': {'sweep_L4': 0.0, 'after_hooks_removed_L4': 0.0, 'sweep_L8': 0.0, 'after_hooks_removed_L8': 0.0, 'sweep_L12': 0.0, 'after_hooks_removed_L12': 0.0, 'sweep_L16': 0.0, 'after_hooks_removed_L16': 0.0, 'sweep_L20': 0.0, 'after_hooks_removed_L20': 0.0, 'sweep_L24': 0.0, 'after_hooks_removed_L24': 0.0, 'fullcommon_siglip_L24': 0.0}, '448': {'sweep_L4': 0.0, 'after_hooks_removed_L4': 0.0, 'sweep_L8': 0.0, 'after_hooks_removed_L8': 0.0, 'sweep_L12': 0.0, 'after_hooks_removed_L12': 0.0, 'sweep_L16': 0.0, 'after_hooks_removed_L16': 0.0, 'sweep_L20': 0.0, 'after_hooks_removed_L20': 0.0, 'sweep_L24': 0.0, 'after_hooks_removed_L24': 0.0, 'fullcommon_siglip_L24': 0.0}}
+### TTR_P_siglip pid 19969: no Metal client at ~30 s
+20:28:28   plain stim_v3 6/480 displays (8s)
+20:29:48   plain stim_v3 66/480 displays (88s)
+20:31:07   plain stim_v3 126/480 displays (167s)
+20:32:26   plain stim_v3 186/480 displays (246s)
+20:33:48   plain stim_v3 246/480 displays (328s)
+20:35:08   plain stim_v3 306/480 displays (408s)
+20:36:29   plain stim_v3 366/480 displays (489s)
+20:37:45   plain stim_v3 426/480 displays (565s)
+20:38:55 plain stim_v3: 480 displays in 635s
+20:39:03   plain stim_alt 6/360 displays (8s)
+20:40:22   plain stim_alt 66/360 displays (86s)
+20:41:46   plain stim_alt 126/360 displays (171s)
+20:43:22   plain stim_alt 186/360 displays (267s)
+20:44:52   plain stim_alt 246/360 displays (357s)
+20:46:25   plain stim_alt 306/360 displays (450s)
+20:47:44 plain stim_alt: 360 displays in 529s
+20:49:29 plain MIT1003 held-out 200: 104s
+20:49:29 gate P: PASS; display values 35280 max |diff| 4.39256776032515e-05; MIT per-image max |diff| 3.6644554138209884e-05; failed []
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/results/explore/ttr/TTR_score_siglip_plain.json
+### TTR_P_siglip end 2026-11-18T20:49:52Z exit 0 wall 1322s

@@ -1,0 +1,13 @@
+=== start dinov2reg s448 grid 32x32 2026-11-18 14:17:00 (pid 6725)
+  1/100 square_sr30_dark_p0 interior-identical tokens 24 far 799 2s
+  11/100 square_sr50_dark_p0 interior-identical tokens 20 far 760 19s
+  21/100 square_sr70_dark_p0 interior-identical tokens 12 far 716 37s
+  31/100 triangle_sr30_dark_p0 interior-identical tokens 12 far 815 55s
+  41/100 triangle_sr50_dark_p0 interior-identical tokens 10 far 770 73s
+  51/100 triangle_sr70_dark_p0 interior-identical tokens 8 far 717 91s
+  61/100 ehr_R70_n8_dark_p0 interior-identical tokens 8 far 797 111s
+  71/100 ehr_R70_n16_dark_p0 interior-identical tokens 8 far 797 119s
+  81/100 ehr_R100_n8_dark_p0 interior-identical tokens 20 far 670 127s
+  91/100 ehr_R100_n16_dark_p0 interior-identical tokens 20 far 670 135s
+  100/100 ehr_R100_n16_light_p4 interior-identical tokens 27 far 680 142s
+=== end dinov2reg s448 142s 2026-11-18 14:19:22

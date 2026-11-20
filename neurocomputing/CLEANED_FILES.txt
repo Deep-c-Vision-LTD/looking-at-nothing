@@ -1,0 +1,155 @@
+Public copy: files of neurocomputing/ that differ from the files the re-analysis wrote
+
+The re-analysis ran in a project tree on the author's machine (folder neuro/reanalysis, mirrored here as
+neurocomputing/). Before publication (20 November 2026) the copies listed below were changed. Every other file added
+together with this note is byte-identical to the file the re-analysis wrote or is its xz-compressed copy
+(XZ_ORIGINALS.sha256 gives the SHA-256 of each decompressed file); XZ_ORIGINALS.sha256 and this note were written
+for the publication.
+
+Hash records written before publication refer to the original bytes. The records that name a changed file:
+- results/FAST_BATTERY.md5: the md5 values of check_cpu_dinov2/eval_check.json, check_cpu_dinov2reg/eval_check.json,
+  check_cpu_iie/eval_check.json, check_cpu_siglip/eval_check.json, results/fast_battery_gates.json and
+  results/fast_battery_outputs.json refer to the files before the path cleaning of section 1. Two more entries no
+  longer match for another reason: DEVIATIONS.md and logs/score_rigid.log were appended to after the record was
+  written.
+- results/fast_battery_outputs.json: its md5 values of the four check_cpu_*/eval_check.json files refer to the files
+  before the path cleaning.
+No file listed in REANALYSIS_RULE.sha256 or in results/explore_scripts.sha256 was changed.
+
+1. Logs and machine-written records (94 files). Absolute paths of the author's machine were replaced, longest
+   first; nothing else changed. JSON records stay valid JSON.
+     absolute path of the project tree                    -> $LAN_PROJECT_ROOT
+     absolute path of the model code and its Python env   -> $LAN_SAL_SRC
+     home folder (torch hub cache lines)                  -> $HOME
+     PyTorch build path in a library warning (two logs:   -> $PYTORCH_SRC/
+     results/run_logs/S4_a6_absolute.log, VCR_S4_verify.log)
+
+   check_cpu_dinov2/eval_check.json
+   check_cpu_dinov2reg/eval_check.json
+   check_cpu_iie/eval_check.json
+   check_cpu_siglip/eval_check.json
+   explore/tests_torch_imports_output.txt
+   gpu/check/eval_check.json
+   gpu/check_reg/eval_check.json
+   results/fast_battery_gates.json
+   results/fast_battery_outputs.json
+   results/msdb_rigid/README.txt
+   results/msdb_rigid/run.log
+   results/run_logs/CMP_msdb_rerun.log
+   results/run_logs/CONT_report_continuity.log
+   results/run_logs/EX_a11_scale.log
+   results/run_logs/EX_a12_kavsek.log
+   results/run_logs/EX_a12_kavsek_msdb.log
+   results/run_logs/EX_a13_region.log
+   results/run_logs/EX_a13_region_msdb.log
+   results/run_logs/EX_a15a_token_norms.log
+   results/run_logs/EX_a3_reg_tokens_analyze.log
+   results/run_logs/EX_a3_reg_tokens_extract.log
+   results/run_logs/EX_a44_logmass.log
+   results/run_logs/EX_a44_logmass_msdb.log
+   results/run_logs/EX_a46_calibration.log
+   results/run_logs/EX_a6_margin_curve.log
+   results/run_logs/EX_item7_corrected.log
+   results/run_logs/EX_s13_block12_nulls.log
+   results/run_logs/G0_render_check_only.log
+   results/run_logs/P5_partial.log
+   results/run_logs/P6R_report_p6_cells.log
+   results/run_logs/PRIMARY_P6.log
+   results/run_logs/R1_local_nulls.log
+   results/run_logs/R2_iie.log
+   results/run_logs/R3_sweep_all.log
+   results/run_logs/R3b_sweep_clip.log
+   results/run_logs/R3c_sweep_siglip.log
+   results/run_logs/R4_eval_dinov2.log
+   results/run_logs/R4_eval_iie.log
+   results/run_logs/R4_eval_siglip.log
+   results/run_logs/R4a_check_dinov2.log
+   results/run_logs/R4a_check_dinov2reg.log
+   results/run_logs/R4a_check_iie.log
+   results/run_logs/R4a_check_siglip.log
+   results/run_logs/R4a_eval_dinov2.log
+   results/run_logs/R4a_eval_dinov2reg.log
+   results/run_logs/R4a_eval_iie.log
+   results/run_logs/R4a_eval_siglip.log
+   results/run_logs/R5_eval_dinov2reg.log
+   results/run_logs/R7_primary_P5.log
+   results/run_logs/R8_explore_rigid.log
+   results/run_logs/R8_explore_rigid_r2.log
+   results/run_logs/REV_TTR_forward.log
+   results/run_logs/REV_TTR_stats.log
+   results/run_logs/S1_sanity.log
+   results/run_logs/S2_primary_P1_P4.log
+   results/run_logs/S3_explore_saved.log
+   results/run_logs/S3_explore_saved_r2.log
+   results/run_logs/S4_a6_absolute.log
+   results/run_logs/S5a_tokens_analyze_copy.log
+   results/run_logs/S5b_tokens_encoding_nulls_copy.log
+   results/run_logs/S5c_a3_tokens_published.log
+   results/run_logs/S5c_a3_tokens_published_r2.log
+   results/run_logs/TTR_A.log
+   results/run_logs/TTR_A_r2.log
+   results/run_logs/TTR_C_clip.log
+   results/run_logs/TTR_C_siglip.log
+   results/run_logs/TTR_K.log
+   results/run_logs/TTR_P_clip.log
+   results/run_logs/TTR_P_siglip.log
+   results/run_logs/TTR_S_clip.log
+   results/run_logs/TTR_S_siglip.log
+   results/run_logs/TTR_T.log
+   results/run_logs/T_a3_tokens.log
+   results/run_logs/T_a3_tokens_r2.log
+   results/run_logs/T_a6_absolute.log
+   results/run_logs/T_explore_rigid.log
+   results/run_logs/T_explore_rigid_r2.log
+   results/run_logs/T_explore_saved.log
+   results/run_logs/T_explore_saved_r2.log
+   results/run_logs/T_explore_saved_r3.log
+   results/run_logs/T_explore_saved_r4.log
+   results/run_logs/T_explore_saved_r5.log
+   results/run_logs/T_report_continuity.log
+   results/run_logs/T_report_continuity_r2.log
+   results/run_logs/T_report_continuity_r3.log
+   results/run_logs/T_report_p6_cells.log
+   results/run_logs/T_report_p6_cells_r2.log
+   results/run_logs/V1_verify.log
+   results/run_logs/VCR_S3_extra.log
+   results/run_logs/VCR_S3_verify.log
+   results/run_logs/VCR_S4_verify.log
+   results/run_logs/VCR_S5_verify.log
+   results/run_logs/VCR_TTR_verify.log
+   results/run_logs/wall_times.tsv
+
+2. Scripts (12 files). Absolute locations replaced by locations derived from the script's own folder,
+   LAN_PROJECT_ROOT and PY, the convention of analyze_re.py and gpu/run_gpu_re.sh (Python: RE from the file's
+   location, ROOT = LAN_PROJECT_ROOT or the parent of the parent of RE, paths into nn/registers built from ROOT;
+   shell: RE, ROOT and PY as in gpu/run_gpu_re.sh, and in run_step.sh RES from its own folder). The interpreter path
+   in two docstrings is written as $PY. No other line changed.
+
+   explore/ttr/review/review_forward.py
+   explore/ttr/review/review_stats.py
+   results/msdb_rigid/run_msdb.sh
+   results/p6_verification/adversary/check.py
+   results/p6_verification/numbers_verifier/cont_check.py
+   results/p6_verification/numbers_verifier/integrity.py
+   results/p6_verification/numbers_verifier/verify_p6_numbers.py
+   results/scripts/battery_a.sh
+   results/scripts/battery_b.sh
+   results/scripts/explore_battery.sh
+   results/scripts/explore_msdb_rerun.sh
+   results/scripts/run_step.sh
+
+3. DEVIATIONS.md, entry D12: the name and path of the runner of another GPU job, which is not part of this
+   repository, replaced by "[name redacted in the public copy]". No other change.
+
+4. Files cited in neurocomputing/ but not published.
+   - results/PRIMARY_P1_P4.md, results/PRIMARY_P6.md, results/EXPLORATORY.md, results/P6_REPORTING.md,
+     results/FAST_BATTERY.md, results/REWRITE_CONSEQUENCES.md: narrative write-ups and planning notes of the author.
+     The numbers they report are in out/ (sanity gate, P1 to P6) and results/explore/ (exploratory and reporting
+     items, including P6_reporting.md and .json and continuity_intervals.md and .json); the fast-battery gate and
+     output records are results/fast_battery_gates.json and results/fast_battery_outputs.json.
+   - explore/ttr/DESIGN.md and explore/ttr/REVIEW.md: design note and internal code review of the test-time
+     registers analysis. The fixed choices are in the headers of explore/ttr/*.py (SHA-256 recorded in
+     results/explore_scripts.sha256) and in DEVIATIONS.md D8; the results are results/explore/ttr_results.md and .json.
+   - understand/data_inventory.md: inventory of the project tree (cited for CPU-time estimates).
+   - gpu/GO_AHEAD: run-state marker of the GPU runner (rule 5.6).
+   - supplement.tex: the manuscript supplement, named by explore/report_continuity.py as the reason for that script.

@@ -1,0 +1,15 @@
+### S5a_tokens_analyze_copy start 2026-11-18T23:58:36Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONDONTWRITEBYTECODE=1 $LAN_SAL_SRC/.venv/bin/python -B -I explore/tokens/analyze.py
+### S5a_tokens_analyze_copy pid 28479
+dinov2 done 1s
+clip done 4s
+### S5a_tokens_analyze_copy pid 28479: no Metal client at first check (~5 s)
+siglip done 6s
+dinov2 readouts done 12s
+clip readouts done 17s
+siglip readouts done 23s
+results.json written 27s
+### S5a_tokens_analyze_copy pid 28479: no Metal client at ~30 s
+Matplotlib is building the font cache; this may take a moment.
+figures: ['$LAN_PROJECT_ROOT/neuro/reanalysis/A3_tokens/published/fig_dinov2.png', '$LAN_PROJECT_ROOT/neuro/reanalysis/A3_tokens/published/fig_clip.png', '$LAN_PROJECT_ROOT/neuro/reanalysis/A3_tokens/published/fig_siglip.png', '$LAN_PROJECT_ROOT/neuro/reanalysis/A3_tokens/published/fig_sizes.png', '$LAN_PROJECT_ROOT/neuro/reanalysis/A3_tokens/published/fig_ratio.png', '$LAN_PROJECT_ROOT/neuro/reanalysis/A3_tokens/published/fig_cnn_iie.png', '$LAN_PROJECT_ROOT/neuro/reanalysis/A3_tokens/published/fig_cnn_sq336.png', '$LAN_PROJECT_ROOT/neuro/reanalysis/A3_tokens/published/fig_cnn_sq448.png']
+done 37s
+### S5a_tokens_analyze_copy end 2026-11-18T23:59:16Z exit 0 wall 40s

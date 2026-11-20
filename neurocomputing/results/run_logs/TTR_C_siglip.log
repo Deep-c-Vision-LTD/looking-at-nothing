@@ -1,0 +1,64 @@
+### TTR_C_siglip start 2026-11-18T22:22:09Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONDONTWRITEBYTECODE=1 $LAN_SAL_SRC/.venv/bin/python -B -I explore/ttr/ttr_score.py arms siglip
+### TTR_C_siglip pid 24724
+### TTR_C_siglip pid 24724: no Metal client at first check (~5 s)
+Loading weights:   0%|          | 0/400 [00:00<?, ?it/s]Loading weights: 100%|██████████| 400/400 [00:00<00:00, 26454.56it/s]
+[transformers] [1mSiglipVisionModel LOAD REPORT[0m from: google/siglip-large-patch16-256
+Key                                                          | Status     |  | 
+-------------------------------------------------------------+------------+--+-
+text_model.encoder.layers.{0...23}.layer_norm2.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.k_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.k_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc2.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc1.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.out_proj.weight | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.out_proj.bias   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.v_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.v_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm1.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm1.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm2.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc2.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.q_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc1.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.q_proj.weight   | UNEXPECTED |  | 
+text_model.final_layer_norm.bias                             | UNEXPECTED |  | 
+text_model.head.bias                                         | UNEXPECTED |  | 
+logit_scale                                                  | UNEXPECTED |  | 
+text_model.embeddings.token_embedding.weight                 | UNEXPECTED |  | 
+text_model.final_layer_norm.weight                           | UNEXPECTED |  | 
+logit_bias                                                   | UNEXPECTED |  | 
+text_model.head.weight                                       | UNEXPECTED |  | 
+text_model.embeddings.position_embedding.weight              | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+22:22:21   ttr stim_v3 6/480 displays (6s)
+### TTR_C_siglip pid 24724: no Metal client at ~30 s
+22:23:13   ttr stim_v3 66/480 displays (58s)
+22:24:10   ttr stim_v3 126/480 displays (115s)
+22:25:14   ttr stim_v3 186/480 displays (179s)
+22:26:23   ttr stim_v3 246/480 displays (248s)
+22:27:34   ttr stim_v3 306/480 displays (319s)
+22:28:46   ttr stim_v3 366/480 displays (391s)
+22:29:59   ttr stim_v3 426/480 displays (464s)
+22:31:05 ttr stim_v3: 480 displays in 530s
+22:32:36 ttr MIT1003 held-out 200: 90s
+22:32:44   ttr stim_alt 6/360 displays (8s)
+22:33:54   ttr stim_alt 66/360 displays (77s)
+22:35:03   ttr stim_alt 126/360 displays (147s)
+22:36:14   ttr stim_alt 186/360 displays (218s)
+22:37:23   ttr stim_alt 246/360 displays (287s)
+22:38:34   ttr stim_alt 306/360 displays (358s)
+22:39:38 ttr stim_alt: 360 displays in 422s
+22:39:46   reg0 stim_v3 6/480 displays (7s)
+22:40:54   reg0 stim_v3 66/480 displays (75s)
+22:41:44   reg0 stim_v3 126/480 displays (125s)
+22:42:30   reg0 stim_v3 186/480 displays (171s)
+22:43:13   reg0 stim_v3 246/480 displays (214s)
+22:43:56   reg0 stim_v3 306/480 displays (257s)
+22:44:39   reg0 stim_v3 366/480 displays (300s)
+22:45:24   reg0 stim_v3 426/480 displays (345s)
+22:46:07 reg0 stim_v3: 480 displays in 388s
+22:47:22 reg0 MIT1003 held-out 200: 76s
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/results/explore/ttr/TTR_score_siglip_arms_ttr_reg0.json
+### TTR_C_siglip end 2026-11-18T22:47:41Z exit 0 wall 1532s

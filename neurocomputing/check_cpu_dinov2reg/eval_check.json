@@ -1,0 +1,12 @@
+{
+ "tol": 0.0001,
+ "pub": "$LAN_PROJECT_ROOT/nn/registers/full/scores",
+ "files": {
+  "stim_v3_dinov2reg_L12_R4_s0.json": {
+   "values": 396,
+   "max_abs_diff": 5.352938456493206e-06
+  }
+ },
+ "worst": 5.352938456493206e-06,
+ "n": 396
+}

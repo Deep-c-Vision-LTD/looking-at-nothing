@@ -1,0 +1,108 @@
+test_explore.py; numpy 2.5.0; threads 2; started 2026-11-18 12:13:50 GMT
+--- imports, no torch, require_public first
+PASS  importing every explore module imports no torch (heavy code is lazy)  12 modules
+PASS  a44_logmass: require_public() is the first action of main (only argument parsing before it)  statement 4
+PASS  a46_calibration: require_public() is the first action of main (only argument parsing before it)  statement 3
+PASS  a11_scale: require_public() is the first action of main (only argument parsing before it)  statement 0
+PASS  a12_kavsek: require_public() is the first action of main (only argument parsing before it)  statement 4
+PASS  a13_region: require_public() is the first action of main (only argument parsing before it)  statement 4
+PASS  a3_reg_tokens_extract: require_public() is the first action of main (only argument parsing before it)  statement 0
+PASS  a3_reg_tokens_analyze: require_public() is the first action of main (only argument parsing before it)  statement 0
+PASS  a15a_token_norms: require_public() is the first action of main (only argument parsing before it)  statement 0
+PASS  s13_block12_nulls: require_public() is the first action of main (only argument parsing before it)  statement 0
+PASS  item7_corrected: require_public() is the first action of main (only argument parsing before it)  statement 0
+PASS  a6_margin_curve: require_public() is the first action of main (only argument parsing before it)  statement 0
+--- Collector and Check
+PASS  per_display averages over seeds and sizes  {'a': 1.5, 'b': 10.0}
+PASS  per_display within one size averages over seeds
+PASS  sizes() lists the unit's sizes
+PASS  an incomplete (seed, size) set raises instead of silently changing the averaging
+PASS  Check: a unit within 1e-4 passes, one at 3e-4 fails, the group fails  {'tolerance': 0.0001, 'n_compared': 2, 'n_without_published_value': 1, 'max_abs_diff': 0.00029999999999996696, 'passed': False, 'failed_units': ['u2']}
+PASS  Check: a unit with no published value is not 'ok'
+PASS  _clean: NaN -> None, numpy -> Python  {'a': None, 'b': 1.5, 'c': [1, 2], 'd': [True]}
+--- rank equalisation, q16, r
+PASS  rank equalisation: rank / N with ties averaged  [[0.25, 0.625], [0.625, 1.0]]
+PASS  r of a constant map = area ratio
+PASS  q16 normalises by the maximum in float16
+PASS  safe_log: log of a zero mass is NaN
+--- mapsrc published-form map and Engine.emit
+PASS  swap/registers form = q16(resize(float16(sigmoid))) (eval_full.score_map)
+PASS  sweep form = q16(resize(sigmoid)) (score_nn / score_rigid)
+PASS  Engine.emit stores fn's values and checks r_inside against the published value (5e-5 passes)
+PASS  a 5e-4 difference fails the 1e-4 readout tolerance
+PASS  null_maps returns the 15 nulls  15
+--- A4.4 log mass
+PASS  log m_R = log(mass in R / total mass)  {'logm_inside': -5.570885801189769, 'logm_notch': -6.669498089857879, 'logm_ink': nan}
+PASS  an empty or zero-mass region gives NaN (unit's region not computable)
+PASS  contrast = mean over configurations of the seed- and size-averaged log difference  0.205705
+PASS  contrast carries a WCU interval around the mean and a WCR p
+--- stim_v3 regions on the generator's rendering (phi = 0)
+PASS  notch and ink are disjoint; notch lies inside the inducer discs
+PASS  inside and inducer discs are disjoint
+PASS  illusory notches point into the polygon, control180 notches out of it  1.000 / 0.000
+PASS  the exact polygon covers the inside AOI up to the PIL half-pixel shift (< 2%)  0.0065
+PASS  ink present and (up to antialiased edge pixels, < 1%) inside the inducer discs  0.0091, 0.2s
+--- A4.6 calibration
+PASS  constant density: every transform gives the area ratio  {'rank': 0.39999999999999997, 'T0.5': 0.4, 'T0.75': 0.4, 'T1': 0.4, 'T1.5': 0.39999999999999997, 'T2': 0.4}
+PASS  DeepGaze T = 1 reproduces r of the density
+PASS  readout exp(logit/T) is invariant to a constant logit shift (max subtracted)
+PASS  readout T = 1.5: exp(z / T) at s x s, then bilinear resize
+PASS  transform list: MSI-Net rank only; others rank and five T
+PASS  criterion: robust when every transform keeps the published sign, sensitive when one flips
+PASS  stats_for: E, U20 = 0.6, A20 = 0.8 (ratios of means)  (0.6000000000000003, 0.8000000000000003)
+--- A12 Kavsek-style AOIs and A13 region variant
+PASS  uniform map: E_K equals the area gain exactly (E_K minus gain = 0)  gain 0.1235
+PASS  uniform map: r_N = |P| / (|P| + |D minus P|), the same AOIs in both conditions (E_N = 0)
+PASS  r_K and r_N equal common_rigid.measures_extra (the stim_rigid scoring pass)
+PASS  gains_v3: per-configuration gain from the pixel counts
+PASS  A12 per-display fn returns r_K of the condition
+--- support-ratio slope (published two-stage percentile method)
+PASS  exact linear effect: slope 0.25 per unit support ratio, degenerate interval  0.2500000000000001
+PASS  noisy effect: the interval contains the point estimate
+--- A11 NNLS mixture fit
+PASS  a map built from sigma-16 regressors is fitted exactly at sigma 16 (R2 = 1)  {4: 0.7084815617086822, 16: 0.9999999999999993, 40: 0.7716066549363871}
+PASS  profile: best sigma 16, pooled R2 profile and per-set profile  {'4': 0.7084815617086822, '16': 0.9999999999999993, '40': 0.7716066549363871}
+PASS  pooled R2 = 1 - sum SSE / sum SST
+PASS  block mean grid is 192 x 256
+--- S13 block 12 minus ink and edge nulls
+PASS  U20 difference: point = U20(block 12) - U20(null)  -0.10000000000000009
+PASS  both denominators screened (|t| >= 4, interval excludes 0) and BCa interval around the point
+PASS  sign-adjusted loss difference uses each model's own sign(E)  0.01358 vs 0.01358
+PASS  signs recorded (-1, -1)
+--- secondary item 7, corrected sign
+PASS  parts_for is a verbatim copy of nn/analyze_nn.py  679 chars
+PASS  spearman is a verbatim copy of nn/analyze_nn.py  172 chars
+PASS  perm_p is a verbatim copy of nn/analyze_nn.py  590 chars
+PASS  boot_rho is a verbatim copy of nn/analyze_nn.py  343 chars
+PASS  ols_r2 is a verbatim copy of nn/analyze_nn.py  294 chars
+PASS  adj is a verbatim copy of nn/analyze_nn.py  100 chars
+PASS  assoc is a verbatim copy of nn/analyze_nn.py  2737 chars
+PASS  stored logic: the rounded E of DINOv2-B L2 (-0.0) gives point sign +1
+PASS  stored logic: and a bootstrap row of zeros (sign -0.0)
+PASS  corrected logic: sign of the unrounded E (-1) for point and bootstrap
+PASS  assoc runs: rho, 100,000-permutation p, bootstrap CI, within-network T
+--- A6 margin curve
+PASS  13 margins 0 to 0.06 in steps of 0.005
+PASS  margin 0: no non-R4 cell is valid
+PASS  margin 0.005: two valid, point agreement 1 of 2, same-side interval 1 of 2  {'margin': 0.005, 'n_valid': 2, 'valid': ['A|R1', 'B|R2'], 'n_sign_agree_point': 1, 'share_sign_agree_point': 0.5, 'n_same_side_interval_excl0': 1, 'share_same_side_interval_excl0': 0.5}
+PASS  margin 0.06: all four valid
+PASS  exit margins follow the published rounding (gaps 0.002, 0.005, 0.0305, 0.042)  {'A|R1': 0.005, 'A|R2': 0.035, 'B|R1': 0.045, 'B|R2': 0.005}
+PASS  0.03 validity as analyze_re.accuracy_valid
+--- A3 (iv) registers token analysis on synthetic token components
+PASS  token components: 5 tokens dropped, dot / nt / nrc as run_vit.py
+PASS  (i) interior about 0.5 against nulls 0.2 (background) and 0.1 (control90): figure-specific  0.4988
+PASS  (ii) near-exterior set: interior 0.5 against ext_near 0.2, passes  ext_near 0.2000
+PASS  (iii) paired excess about 0.3 with a WCU interval; retention under mis20 about (0.25 - 0.1) / 0.3  0.2988, 0.5000, 3.9s
+PASS  ext_near tokens lie wholly outside the figure
+--- A15(a) token norms and the Critic fix 18 condition
+PASS  norm stats: max/median, share and any above twice the median  {'max_over_median': [3.0, 1.0], 'share_gt2xmedian': [0.01, 0.0], 'any_gt2xmedian': [True, False], 'n_gt2xmedian': [1, 0], 'median_norm': [1.0, 1.0]}
+PASS  condition flags exactly the blocks with a high-norm token on a Kanizsa display  ['clip block 24']
+PASS  receptive-field display set: 24 displays, position = cell index mod 5  square_sr30_light_p1_illusory.png
+--- stim_rigid score layouts
+PASS  heads layout {size: {measure: {name}}} -> {name: {measure}}
+PASS  rigid_per_config averages fn over the (seed, size) cells per configuration
+PASS  a missing rigid display gives NaN for its configuration (no silent substitute)
+--- Metal guard (read-only ioreg query)
+PASS  this test process holds no Metal client (or ioreg is unavailable)  True
+PASS  no torch imported by the whole test run
+89 checks, 0 failed, 6.0s

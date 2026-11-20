@@ -1,0 +1,2 @@
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/out/primary_P6.json
+nice -n 10 $PY -B -I analyze_re.py primary --which P6  1.04s user 0.10s system 95% cpu 1.196 total

@@ -1,0 +1,972 @@
+"""
+report_continuity.py: rule 4.5 continuity (the published two-stage percentile interval) for the primary estimates of
+P1, P2, P4 and P5 that had none (REANALYSIS_RULE.md Sections 4.5, 5.1, 5.2, 5.4 and 5.5). Written 20 November 2026,
+after P1 to P6, the title decision and every exploratory output had been run and read, and after the supplement
+(neuro/manuscript/supplement.tex, Section S1) had said that no published-method interval exists for these estimates
+(Methods 3.9 says that the published intervals of every primary estimate are in the supplement); every open choice
+below was made with those results known. Reporting only: nothing computed here is decision-bearing, none of it
+changes P1 to P6, a P5 category, the abstract rule or the title, and the stored primary values are only reproduced
+(gates G1 and G2). Precedent: DEVIATIONS.md D9 (explore_saved.py) and D13 (report_p6_cells.py). No torch; saved
+per-image scores only; the statistics engine is analyze_re.py (imported read only through excommon); the comparison
+and formatting helpers are those of report_p6_cells.py and explore_saved.py, imported read only and unchanged (gate
+G0).
+
+Rule text (quoted verbatim):
+  Section 4.5: "Continuity: the published two-stage percentile intervals are reported in the supplement for every
+  primary estimate."
+  Section 4.2: "Ratios and ratio differences: pairs cluster bootstrap (the two-stage v2 resample, 10,000 resamples,
+  RandomState(2026)) with the BCa adjustment (Efron 1987) (...)"
+  Section 4.3: "A ratio is reported only when the 95% WCU interval of its denominator excludes 0 (otherwise "not
+  reportable"), and always next to the difference it summarises."
+  Section 5.1: "Reported: L_M(20) with its WCU interval, all 15 differences with intervals and p-values, the difference
+  against the null with the largest loss."
+  Section 5.4: "Estimand: for a valid non-R4 readout X and R4 on the same features, U20(X) - U20(R4) and A20(X) -
+  A20(R4), paired by configuration (the same resample for both readouts)."
+  Section 5.5: "rigid share s*(theta) = L_rig(theta) / L_uni(theta) (BCa, stability flag and denominator check on
+  L_uni, Fieller alongside)." and "Secondary quantities, reported for every model and null and never decision-bearing:
+  the drafted alignment loss (RI - M) - (RC - C), the control-free RI - M, and the control's change under rigid
+  rotation RC - C."
+
+What the published method is (read from the published code, not assumed): v3/scores/analyze_alt.py summ() and ratio(),
+whose pooled-design indices are those of v2/scores/analyze_v3.py (imported there), and v3/gpu/analyze_full.py for the
+swap cells.
+  - Resample: two-stage over the configurations that enter the mean: clusters (shape x support ratio x polarity cells,
+    sorted by str) with replacement, then positions with replacement within each drawn cluster slot; 10,000 resamples;
+    numpy RandomState(2026), cluster draws first. Pooled design 12 clusters x 5 positions (analyze_v3.IDX["kanizsa"]);
+    shape-only designs 6 x 5 with their own RandomState(2026) draw (analyze_alt.Design(shape)).
+  - Linear quantity (a mean of per-configuration values): percentiles 2.5 and 97.5 of the resampled means and the
+    two-sided bootstrap p = min(1, 2 min(share of resampled means <= 0, share >= 0)).
+  - Ratio of means: percentiles 2.5 and 97.5 of the ratio of resampled means (nan dropped); no p. The published
+    pipeline reported a ratio only where the percentile interval of its denominator excluded 0.
+  - Paired linear difference of two units on the same configurations: the linear summary of the per-configuration
+    differences (v3/gpu/analyze_full.py, "paired readout contrasts on the same configurations": v2/readout/analyze.boot
+    of seedavg(X) - seedavg(Y), for R1n - R1, R1n - R4, R1 - R4, R1n - R2, R1n - R3).
+  - Ratio differences: the only one the published pipeline computed, diff(t) = ratio_alt(t) - ratio_uni(t)
+    (v3/scores/analyze_alt.py, v3/gpu/analyze_full.py), has one denominator and was resampled as the single ratio
+    (m(alt t) - m(mis t)) / E(illusory). A difference of two ratios with different denominators (the P4 estimand) was
+    never resampled by the published pipeline.
+How the existing continuity values were produced: P1 L20 and P2 square Delta20 of IIE and MSDB by analyze_alt.summ
+(v3/scores/results.json, 4 decimals); E, U20 and A20 of the 20 swap cells by v3/gpu/analyze_full.py
+(v3/gpu/full/results_full.json, 4 decimals); both are reproduced by analyze_re.step_sanity (rule 3.1) with
+analyze_re.pct_summary and pct_ratio on analyze_re.Design(meta).idx and Design(meta, "square").idx; the 20 P6 units by
+report_p6_cells.py (D13) with pct_summary on E. This script mirrors that exactly: the same engine functions, the same
+indices, and the per-configuration arrays that the primary analysis itself uses.
+
+Implementation choices (the rule leaves these open; fixed here, with the results known):
+  (a) Quantities: every numeric estimate stored in the two primary files that has no published-method interval:
+      P1: the 30 model-minus-null differences in L20 (2 models x 15 nulls, result.P1.<model>.vs_null);
+      P2: the 30 model-minus-null differences in square Delta20 (result.P2.<model>.vs_null);
+      P4: the 18 readout-minus-R4 ratio differences (result.P4.contrasts.<key>.diff);
+      P5 at theta = 20, per model: L_uni, L_rig, A* (align_effect), C* (half_criterion), the 15 differences of A*
+      against the nulls (vs_null), the three secondary quantities (secondary) and the rigid share s* (rigid_share).
+      Not new (published values exist; recomputed only for gate G3): P1 L_M(20) and P2 square Delta_M(20) of both
+      models, and both ratios of every P4 contrast (all 26 distinct ratios of the 13 cells are already in supplement
+      table supp_tab_cont_p4, so none is missing; they are printed next to each difference). Not touched: P3
+      (published values, tab_readout_report) and P6 (results/explore/P6_reporting.json, D13).
+  (b) Inputs exactly as analyze_re.step_primary builds them: P1 and P2 from analyze_re.load_survey_and_nulls, P4 from
+      analyze_re.load_swap, P5 from the published stim_v3 and stim_alt scores merged with scores_rigid/<tag>.json and
+      scores_rigid/nulls.json (the inline code of step_primary for P5, repeated in p5_inputs() and checked by gate G2,
+      as report_p6_cells.p6_inputs did for P6). Per-configuration arrays from analyze_re.per_config, ratio_parts and
+      p5_parts, the arrays that p1, p2, p4 and p5 test.
+  (c) Resampling: the published two-stage indices of the design that the primary estimate uses: analyze_re.Design(meta)
+      .idx (12 clusters x 5 positions) for P1, P4 and P5; analyze_re.Design(meta, "square").idx (6 x 5) for P2. Both
+      are analyze_re.two_stage_idx(K, P), RandomState(2026), 10,000 resamples (gate G3 shows they are the published
+      ones).
+  (d) Linear quantities: analyze_re.pct_summary (the published percentile interval and bootstrap p, as analyze_alt.summ
+      and v2/readout/analyze.boot without their rounding). A P1 or P2 model-minus-null difference is a paired linear
+      difference on the same configurations, which the published pipeline summarised exactly this way (paired readout
+      contrasts, above); it also equals the percentile interval of the resample-wise difference of the two published
+      bootstrap distributions (the published pipeline resampled the model L20 and the null L20 with the same indices;
+      checked in the tests), so no new resampling choice enters. P5's quantities are means of per-configuration values
+      over the same 60 configurations and clusters; the earlier pipeline never scored their displays, so their
+      intervals are the published method applied to new scores, with no published value to compare. A p of 0 (every
+      resample on one side of 0) is printed "below resolution (0 outside every resample)", a short form of the D4
+      wording "p below the resolution of 10,000 resamples (0 lies outside every resample)".
+  (e) Ratios: analyze_re.pct_ratio for s* (no p). P4 ratio differences: pct_ratio_diff() below, the percentile interval
+      of bn1 / bd1 - bn2 / bd2 under the same indices, nan resamples dropped by np.nanpercentile as in pct_ratio. This
+      is the published procedure composed for a new statistic: the published pipeline computed both ratios of every P4
+      contrast with the same indices (the sanity gate reproduces all of them with one index set), so the difference is
+      taken resample by resample over the published bootstrap ratios; rule 5.4 defines the estimand "paired by
+      configuration (the same resample for both readouts)". pct_ratio_diff composes analyze_re.bmeans exactly as
+      pct_ratio does and adds no other step (the tests check that with a zero second numerator it equals pct_ratio).
+      Its finite resamples are exactly the bootstrap distribution behind the rule's own BCa interval of the same
+      difference (analyze_re.bca evaluates the same statistic on the same indices and drops every non-finite value).
+      np.nanpercentile drops nan but keeps an infinite resample (a resampled denominator mean exactly 0), so the
+      count n_inf is recorded; when it is 0 the interval is exactly that distribution's 2.5 and 97.5 percentiles
+      without the BCa bias and acceleration adjustment (checked in the tests). Because the
+      published pipeline never resampled such a difference (above), these 18 intervals are a composition of the
+      published procedure, not a published computation; the output says so in every P4 row and lists them apart
+      (composed_not_published).
+  (f) No p is given for a ratio-type quantity (the P4 differences, both P4 ratios, s*): the published ratio summaries
+      (analyze_alt.ratio, analyze_v3.ratio, analyze_re.pct_ratio) return a value and an interval only. Such a p has no
+      published-method analogue; it is listed as such in the output and not invented. The rule's BCa p (P4) stays the
+      only p of these quantities.
+  (g) Reportability: rule 4.3 governs what is printed. A single ratio whose denominator's 95% WCU interval includes 0
+      (s*: the stored rigid_share.denominator_excludes_zero; each P4 ratio: analyze_re.wild_cluster on its denominator,
+      as analyze_re.p4 does) is printed "not reportable" without a value or interval; the values stay in the JSON with
+      reportable = false (the D13 convention). A P4 difference is always listed, with the rule 5.4 flag when a
+      denominator fails the recomputed screen (stored stable and denominators_exclude_zero), because rule 5.4 keeps
+      such a contrast in the family with its flag. Unstable ratios carry the flag. The published pipeline's own screen
+      (percentile interval of the denominator excluding 0) is recorded next to it, never used to print a ratio that
+      rule 4.3 withholds. The rule's BCa p of a P4 difference is printed "below resolution" when no resample of the
+      difference lies on the other side of 0 (its value is then set by the clip of analyze_re.bca_p; D4).
+  (h) Next to each continuity interval: the rule's interval and p as stored in the primary files (WCU and WCR p for
+      linear quantities; BCa interval, BCa p, Holm p, the stability and counted flags for P4; BCa interval and flags
+      for s*), and whether the two intervals agree on excluding 0 and on its side (linear quantities and the P4
+      differences; not for s*, which is not tested against 0). Agreement counts per family.
+  (i) Gates (any failure stops the run before any output file is written):
+      G0 reused code unchanged: SHA-256 of explore/report_p6_cells.py, explore/explore_saved.py and explore/excommon.py
+         equal the hashes embedded in results/explore/P6_reporting.json;
+      G1 every point estimate of this script (each record above, both ratios of each P4 contrast, and the P1 and P2
+         model estimates recomputed for G3) equals the stored primary value (out/primary_P1_P2_P3_P4.json for P1, P2
+         and P4; out/primary_P5.json for P5) to 1e-12;
+      G2 the families reproduced in full on this script's inputs: analyze_re.p1 and p2 (with their wording) and p4
+         against out/primary_P1_P2_P3_P4.json (keys P1, P2, P4), and p1, p2, p5 and abstract_rotation_rule against
+         out/primary_P5.json (every key); every leaf after a JSON round trip, numeric |difference| <= 1e-12 (equal
+         non-finite values), every non-numeric leaf equal;
+      G3 published values reproduced at 4 decimals (tolerance 5.001e-5): mean, percentile interval and bootstrap p of
+         P1 L20 and P2 square Delta20 for IIE, MSDB and the 15 nulls (v3/scores/results.json, models.<name>), and, for
+         the 13 swap cells that enter P4, E (mean, interval, p) and U20 and A20 (value, interval)
+         (v3/gpu/full/results_full.json): the sanity gate's set restricted to the cells of P4, with the published p
+         added (stored unrounded; a multiple of 2e-4, so the tolerance requires equality), which shows that the indices,
+         the arrays and the p are the published ones.
+  (j) A P5 model whose rigid score file is missing is "not computable" (as analyze_re.p5) and its rows say so. A
+      missing primary, published or P6_reporting file, a stored field missing from them, or a score key missing from
+      the inputs, stops the run (a KeyError inside the record builders is reported as "stored field or score key
+      missing", because it can come from either).
+  (k) Outputs results/explore/continuity_intervals.json and continuity_intervals.md (names chosen here). Never
+      overwritten: if either exists, main exits with code 4 before any computation, and write_outputs refuses as well;
+      earlier outputs are moved by hand to results/explore/_previous/<UTC>_continuity/ (the D9 convention), never
+      deleted.
+Revised 20 November 2026 (about 09:35 UTC) after an independent code review (no blocker, nine NITs), before any
+real-data run of this script: the P3 table is named a supplement table; the p = 0 wording of the header matches the
+output; a KeyError inside the record builders is reported as a missing stored field or score key; the P4 agreement
+count is marked as not independent (same resamples, with and without the BCa adjustment); infinite ratio-difference
+resamples are counted (n_inf) and the exact-equality statement with the BCa resamples is conditioned on none; no
+interval, point estimate, index, gate or tolerance changed. The 18 composed P4 intervals were kept, labelled a
+composition.
+Usage (after the rule is public; run under results/scripts/run_step.sh conventions: nice -n 10, OMP_NUM_THREADS=4,
+HF_HUB_OFFLINE=1, TRANSFORMERS_OFFLINE=1, V3_DEVICE=cpu, no Metal client): $PY -B -I explore/report_continuity.py
+"""
+import hashlib, json, math, os, sys, time
+sys.dont_write_bytecode = True
+for _v in ("OMP_NUM_THREADS", "MKL_NUM_THREADS", "VECLIB_MAXIMUM_THREADS", "OPENBLAS_NUM_THREADS"):
+    os.environ.setdefault(_v, os.environ.get("OMP_NUM_THREADS", "4"))     # at most 4 threads (CPU shared)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import numpy as np                                                        # noqa: E402
+import excommon as X                                                      # noqa: E402
+import explore_saved as ES                                                # noqa: E402  (read only, unchanged)
+import report_p6_cells as RP                                              # noqa: E402  (read only, unchanged)
+
+AR = X.AR
+MODELS = ("DeepGaze IIE", "DeepGaze MSDB")
+THETA = 20
+TOL = 1e-12
+TOL4 = 5.001e-5
+SCORES_RIGID = X.SCORES_RIGID
+PATHS = dict(primary_1234=os.path.join(X.RE, "out", "primary_P1_P2_P3_P4.json"),
+             primary_5=os.path.join(X.RE, "out", "primary_P5.json"),
+             p6_reporting=os.path.join(X.RESULTS, "P6_reporting.json"),
+             v3_results=os.path.join(X.ROOT, "v3", "scores", "results.json"),
+             full_results=os.path.join(X.ROOT, "v3", "gpu", "full", "results_full.json"))
+REUSED = ("explore/report_p6_cells.py", "explore/explore_saved.py", "explore/excommon.py")
+OUT_JSON, OUT_MD = "continuity_intervals.json", "continuity_intervals.md"
+POOLED = "pooled: 60 configurations, 12 clusters x 5 positions (analyze_re.Design(meta).idx)"
+SQUARE = "squares: 30 configurations, 6 clusters x 5 positions (analyze_re.Design(meta, 'square').idx)"
+M_LIN = "analyze_re.pct_summary: published two-stage percentile interval and bootstrap p, 10,000 resamples"
+M_RATIO = "analyze_re.pct_ratio: published two-stage percentile interval of the ratio of resampled means"
+M_RDIFF = ("pct_ratio_diff: percentile interval of the resample-wise difference of the two ratios of resampled means "
+           "under the same published indices (a composition; choice (e))")
+NO_P = ("none: the published ratio summary (v3/scores/analyze_alt.ratio, v2/scores/analyze_v3.ratio, "
+        "analyze_re.pct_ratio) returns a value and a percentile interval only, so a p for a ratio-type quantity has no "
+        "published-method analogue")
+PROV_PUB_DIFF = ("published method on a difference the earlier pipeline never computed; both components were resampled "
+                 "by the earlier pipeline with these indices, and the interval equals the percentile interval of the "
+                 "resample-wise difference of their bootstrap distributions")
+PROV_NEW = ("published method applied to an estimate whose displays the earlier pipeline never scored; no published "
+            "value exists to compare")
+PROV_ANALOGUE = ("composition of the published procedure, not a published computation: both ratios were computed by "
+                 "the earlier pipeline with these indices, a difference of two ratios with different denominators never; "
+                 "difference taken resample by resample, whose finite values are the bootstrap distribution behind the "
+                 "rule's BCa interval; with no infinite resample (n_inf = 0) the interval is that distribution's "
+                 "percentiles without the BCa bias and acceleration adjustment (choice (e))")
+P4_AGREE_NOTE = ("not an independent comparison: the composed interval and the rule's BCa interval come from the same "
+                 "resamples, with and without the BCa adjustment")
+P5_LINEAR = (("L_uni", "L_uni", "L_uni(20) = E(0) - E'_mis(20), loss under uniform rotation"),
+             ("L_rig", "L_rig", "L_rig(20) = E(0) - E_rig(20), loss under rigid rotation"),
+             ("A_star", "align_effect", "A*(20) = E_rig(20) - E'_mis(20), alignment effect at matched orientation"),
+             ("C_star", "half_criterion", "C*(20) = L_uni(20) - 2 L_rig(20), half criterion"))
+SECONDARY_LABEL = {"A_drafted": "drafted alignment loss (RI - M) - (RC - C)", "A_control_free": "control-free RI - M",
+                   "control_rigid_change": "control's change under rigid rotation RC - C"}
+SET_LABEL = {"dinov2_L12": "DINOv2-B block 12", "dinov2_L6": "DINOv2-B block 6", "siglip_L24": "SigLIP-L block 24",
+             "iie_shapenetc": "ShapeNet-C ResNet-50"}
+
+
+class GateError(Exception):
+    """A reproduction gate failed, or a required stored file or field is missing: nothing is written."""
+
+
+def _fail(gate, detail):
+    raise GateError(f"{gate} failed: {detail}")
+
+
+def load_required(p):
+    if not os.path.exists(p):
+        _fail("inputs", f"required file missing: {os.path.relpath(p, X.ROOT)}")
+    return AR._load(p)
+
+
+# ====================================================================== inputs (read only)
+def p5_inputs(rig_dir=None):
+    """DeepGaze IIE, MSDB and the 15 nulls for P5 exactly as analyze_re.step_primary builds them (its inline code,
+    repeated; gate G2 compares the outcome with out/primary_P5.json): the published stim_v3 and stim_alt scores merged
+    with scores_rigid/<tag>.json and scores_rigid/nulls.json. A model without a rigid file is None (not computable)."""
+    rig = rig_dir or SCORES_RIGID
+    models = {}
+    for name in MODELS:
+        tag = name.replace(" ", "_")
+        fp = os.path.join(rig, tag + ".json")
+        models[name] = AR.getter({**AR.survey_scores(tag), **AR._load(fp)}) if os.path.exists(fp) else None
+    N, NR = AR.null_scores(), AR._load(os.path.join(rig, "nulls.json"))
+    nulls = {k: AR.getter({**N[k], **NR[k]}) for k in AR.NULLS}
+    return models, nulls
+
+
+def load_inputs():
+    return dict(survey=AR.load_survey_and_nulls(), swap=AR.load_swap(), p5=p5_inputs())
+
+
+# ====================================================================== the only composed statistic (choice (e))
+def pct_ratio_diff(n1, d1, n2, d2, idx, alpha=AR.ALPHA):
+    """Composition of the published procedure for a paired ratio difference mean(n1) / mean(d1) - mean(n2) / mean(d2):
+    the percentile interval of the resample-wise difference of the two ratios of resampled means, both under the same
+    two-stage indices (analyze_re.bmeans, as in analyze_re.pct_ratio; nan resamples dropped by np.nanpercentile as in
+    pct_ratio). No p (choice (f)). Also returned: how many resamples are nan and infinite (np.nanpercentile keeps an
+    infinite one, analyze_re.bca drops it), and how many finite resamples lie below, at and above 0; when none lies
+    on one side, the rule's BCa p of the same difference is set by the clip of analyze_re.bca_p (DEVIATIONS.md D4),
+    because analyze_re.bca resamples the same statistic with the same indices."""
+    with np.errstate(divide="ignore", invalid="ignore"):
+        br = AR.bmeans(n1, idx) / AR.bmeans(d1, idx) - AR.bmeans(n2, idx) / AR.bmeans(d2, idx)
+    lo, hi = np.nanpercentile(br, [100 * alpha / 2, 100 * (1 - alpha / 2)])
+    fin = br[np.isfinite(br)]
+    nb, ne, na = int(np.sum(fin < 0)), int(np.sum(fin == 0)), int(np.sum(fin > 0))
+    return dict(value=float(n1.mean() / d1.mean() - n2.mean() / d2.mean()), ci=[float(lo), float(hi)],
+                n_resamples=int(br.size), n_nan=int(np.isnan(br).sum()), n_inf=int(np.isinf(br).sum()),
+                n_below_0=nb, n_at_0=ne, n_above_0=na,
+                zero_outside_every_resample=bool(ne == 0 and (nb == 0 or na == 0)))
+
+
+# ====================================================================== records
+def side(ci):
+    """+1 if the interval lies above 0, -1 if below, 0 if it includes 0 (None if missing)."""
+    if ci is None or ci[0] is None or ci[1] is None:
+        return None
+    return 1 if ci[0] > 0 else (-1 if ci[1] < 0 else 0)
+
+
+def agree(ci_cont, ci_rule):
+    a, b = side(ci_cont), side(ci_rule)
+    return dict(continuity_side=a, rule_side=b, agree=bool(a is not None and a == b))
+
+
+def lin_record(dKP, idx, stored, design, label, prov):
+    """Continuity record of a linear primary estimate (mean of per-configuration values) next to the stored rule
+    result (WCU interval and WCR p of analyze_re.wild_cluster, copied from the primary file)."""
+    pc = AR.pct_summary(np.asarray(dKP, float), idx)
+    return dict(quantity=label, design=design, estimate=pc["mean"],
+                continuity=dict(ci=pc["ci"], p=pc["p"], p_below_resolution=bool(pc["p"] == 0.0), method=M_LIN),
+                rule=dict(mean=stored["mean"], ci=stored["ci"], p=stored["p"], interval="WCU", p_kind="WCR",
+                          source="stored primary file"),
+                zero_exclusion=agree(pc["ci"], stored["ci"]), provenance=prov)
+
+
+def null_label(k):
+    kind, s = k.split("_s")
+    return f"{kind} sigma {s}"
+
+
+def family_records(D, models, nulls, stored, test, ctrl, design, what):
+    """P1 (illusory minus mis20) or P2 (alt20 minus mis20, squares): model minus each null, per configuration."""
+    out = {}
+    Vn = {k: AR.per_config(D, v, test, ctrl) for k, v in nulls.items()}
+    for m, v in models.items():
+        Vm = AR.per_config(D, v, test, ctrl)
+        out[m] = {k: lin_record(Vm - Vn[k], D.idx, stored[m]["vs_null"][k], design,
+                                f"{m} minus {null_label(k)}, {what}", PROV_PUB_DIFF) for k in nulls}
+    return out
+
+
+def p4_records(D, heads, stored):
+    """P4: the 18 readout-minus-R4 ratio differences (composed continuity interval, no p), both ratios (published
+    method, no p; rule 4.3 reportability of each from its denominator's WCU interval, analyze_re.wild_cluster as in
+    analyze_re.p4),
+    the denominators' percentile intervals (the published screen) and the stored rule values. A contrast whose
+    denominators fail the recomputed screen stays listed with its flag (rule 5.4); only a single ratio whose denominator
+    interval includes 0 is withheld from the markdown (rule 4.3)."""
+    out = {}
+    for i, (fs, ar, meas) in enumerate(AR.P4_LIST, 1):
+        key = f"{fs}|{ar}|{meas}"
+        st = stored[key]
+        n1, d1 = AR.ratio_parts(D, heads[(fs, ar)], meas)
+        n2, d2 = AR.ratio_parts(D, heads[(fs, "R4")], meas)
+        c = pct_ratio_diff(n1, d1, n2, d2, D.idx)
+        r1, r2 = AR.pct_ratio(n1, d1, D.idx), AR.pct_ratio(n2, d2, D.idx)
+        e1, e2 = AR.pct_summary(d1, D.idx), AR.pct_summary(d2, D.idx)
+        w1, w2 = AR.wild_cluster(d1.ravel(), D.g), AR.wild_cluster(d2.ravel(), D.g)
+        rep1, rep2 = bool(X.excl0(w1["ci"])), bool(X.excl0(w2["ci"]))
+        rep, stable = bool(st["denominators_exclude_zero"]), bool(st["stable"])
+        flag = None
+        if not rep:
+            flag = "flagged: a denominator WCU interval includes 0 (listed, not counted; rule 5.4)"
+        elif not stable:
+            flag = "unstable: a denominator |t| below 4 (listed, not counted; rule 5.4)"
+        out[key] = dict(
+            number=i, feature_set=fs, readout=ar, ratio=meas, design=POOLED, estimate=c["value"],
+            quantity=f"{SET_LABEL[fs]} {ar} minus R4, {meas}",
+            continuity=dict(ci=c["ci"], p=None, p_note=NO_P, n_resamples=c["n_resamples"], n_nan=c["n_nan"],
+                            n_inf=c["n_inf"], n_below_0=c["n_below_0"], n_at_0=c["n_at_0"], n_above_0=c["n_above_0"],
+                            method=M_RDIFF),
+            rule=dict(mean=st["diff"], ci=st["ci"], p=st["p"], p_holm=st["p_holm"], counted=st["counted"],
+                      stable=stable, denominators_exclude_zero=rep, t_den_min=st["t_den_min"], interval="BCa",
+                      p_kind="BCa inversion", p_set_by_clip=c["zero_outside_every_resample"],
+                      source="stored primary file"),
+            denominators_exclude_zero=rep, stable=stable, flag=flag,
+            zero_exclusion=agree(c["ci"], st["ci"]),
+            both_ratios=dict(
+                readout=dict(value=r1["value"], continuity_ci=r1["ci"], stored_value=st["ratio_readout"],
+                             rule_bca_ci=st["ratio_readout_bca"]["ci"], fieller_ci=st["fieller_readout"]["ci"],
+                             reportable=rep1, denominator_wcu_ci=w1["ci"], continuity_p=None,
+                             note="published value exists (results_full.json); reproduced in G3"),
+                R4=dict(value=r2["value"], continuity_ci=r2["ci"], stored_value=st["ratio_R4"],
+                        rule_bca_ci=st["ratio_R4_bca"]["ci"], fieller_ci=st["fieller_R4"]["ci"], reportable=rep2,
+                        denominator_wcu_ci=w2["ci"], continuity_p=None,
+                        note="published value exists (results_full.json); reproduced in G3")),
+            published_screen=dict(readout_E=e1, R4_E=e2,
+                                  both_denominators_exclude_0=bool(X.excl0(e1["ci"]) and X.excl0(e2["ci"])),
+                                  note="the earlier pipeline reported a ratio only where its denominator's percentile "
+                                       "interval excluded 0; recorded, never used to print what rule 4.3 withholds"),
+            provenance=PROV_ANALOGUE)
+    return out
+
+
+def share_record(L_rig, L_uni, idx, st, luni_rec, model):
+    """s* = L_rig / L_uni: published percentile interval of the ratio (no p), rule 4.3 reportability from the stored
+    WCU check on L_uni, the stored BCa interval and flags."""
+    pr = AR.pct_ratio(L_rig, L_uni, idx)
+    rep, stable = bool(st["denominator_excludes_zero"]), bool(st["stable"])
+    fl = st.get("fieller") or {}
+    return dict(quantity=f"{model} rigid share s*(20) = L_rig(20) / L_uni(20)", design=POOLED, estimate=pr["value"],
+                continuity=dict(ci=pr["ci"], p=None, p_note=NO_P, method=M_RATIO),
+                rule=dict(mean=st["value"], ci=st["ci"], stable=stable, t_den=st["t_den"],
+                          denominator_excludes_zero=rep, fieller_ci=fl.get("ci"), interval="BCa",
+                          source="stored primary file"),
+                reportable=rep, stable=stable,
+                flag=None if (rep and stable) else ("not reportable (denominator interval includes 0)" if not rep
+                                                   else "unstable"),
+                published_screen=dict(denominator_percentile_ci=luni_rec["continuity"]["ci"],
+                                      denominator_excludes_0=bool(X.excl0(luni_rec["continuity"]["ci"])),
+                                      note="recorded, never used to print what rule 4.3 withholds"),
+                provenance=PROV_NEW)
+
+
+def p5_records(D, models, nulls, stored):
+    """P5 at theta = 20 per model: the four linear estimands, the 15 A* differences, the three secondary quantities and
+    s* (analyze_re.p5_parts arrays)."""
+    out = {}
+    An = {k: AR.p5_parts(D, v, THETA)[2] for k, v in nulls.items()}
+    for m in MODELS:
+        v, st = models.get(m), stored.get(m) or {}
+        if v is None or not st.get("computable", False):
+            out[m] = dict(not_computable="not computable: rigid scores missing or the stored P5 says not computable "
+                                         "(analyze_re.p5)")
+            continue
+        L_uni, L_rig, Aal, sec = AR.p5_parts(D, v, THETA)
+        arrs = dict(L_uni=L_uni, L_rig=L_rig, A_star=Aal, C_star=L_uni - 2 * L_rig)
+        rec = {name: lin_record(arrs[name], D.idx, st[key], POOLED, f"{m} {lab}", PROV_NEW)
+               for name, key, lab in P5_LINEAR}
+        rec["A_star_minus_null"] = {k: lin_record(Aal - An[k], D.idx, st["vs_null"][k], POOLED,
+                                                  f"{m} A*(20) minus {null_label(k)}", PROV_NEW) for k in nulls}
+        rec["secondary"] = {k: lin_record(x, D.idx, st["secondary"][k], POOLED, f"{m} {SECONDARY_LABEL[k]}", PROV_NEW)
+                            for k, x in sec.items()}
+        rec["rigid_share"] = share_record(L_rig, L_uni, D.idx, st["rigid_share"], rec["L_uni"], m)
+        out[m] = rec
+    return out
+
+
+def iter_records(recs):
+    """(path, record) for every continuity record (P1, P2, P4, P5), in table order."""
+    for fam in ("P1", "P2"):
+        for m, per in recs[fam].items():
+            for k, r in per.items():
+                yield f"{fam}/{m}/vs_null/{k}", r
+    for k, r in recs["P4"].items():
+        yield f"P4/contrasts/{k}", r
+    for m, rec in recs["P5"].items():
+        if rec.get("not_computable"):
+            continue
+        for name, _, _ in P5_LINEAR:
+            yield f"P5/{m}/{name}", rec[name]
+        for k, r in rec["A_star_minus_null"].items():
+            yield f"P5/{m}/A_star_minus_null/{k}", r
+        for k, r in rec["secondary"].items():
+            yield f"P5/{m}/secondary/{k}", r
+        yield f"P5/{m}/rigid_share", rec["rigid_share"]
+
+
+# ====================================================================== gates
+def gate_code(rp6):
+    """G0: the reused helper files are those that produced results/explore/P6_reporting.json."""
+    rec = {}
+    for rel in REUSED:
+        cur = X.sha256_file(os.path.join(X.RE, rel))
+        st = (rp6.get("code") or {}).get(rel)
+        rec[rel] = dict(current_sha256=cur, sha256_in_P6_reporting_json=st, equal=bool(cur == st))
+    return dict(files=rec, passed=all(r["equal"] for r in rec.values()))
+
+
+def gate_points(recs, models_est):
+    """G1: every point estimate equals the stored primary value to 1e-12. models_est: [(path, mine, stored)]."""
+    rows = []
+
+    def chk(path, mine, stored):
+        ok = RP._num(mine) and RP._num(stored) and math.isfinite(float(mine)) and math.isfinite(float(stored)) and \
+            abs(float(mine) - float(stored)) <= TOL
+        rows.append(dict(path=path, value=mine, stored=stored,
+                         abs_diff=abs(float(mine) - float(stored)) if (RP._num(mine) and RP._num(stored)) else None,
+                         ok=bool(ok)))
+
+    for path, r in iter_records(recs):
+        chk(path, r["estimate"], r["rule"]["mean"])
+        if "both_ratios" in r:
+            for which in ("readout", "R4"):
+                b = r["both_ratios"][which]
+                chk(f"{path}/ratio_{which}", b["value"], b["stored_value"])
+    for path, mine, stored in models_est:
+        chk(path, mine, stored)
+    bad = [x for x in rows if not x["ok"]]
+    worst = max([x["abs_diff"] for x in rows if x["abs_diff"] is not None], default=None)
+    return dict(n_checks=len(rows), n_failed=len(bad), failures=bad[:20], max_abs_diff=worst, tolerance=TOL,
+                passed=not bad and bool(rows))
+
+
+def gate_families(D, Dsq, inputs, st1234, st5):
+    """G2: analyze_re.p1, p2, p4, p5 and abstract_rotation_rule rerun on this script's inputs, as step_primary does,
+    and compared leaf by leaf with the stored primary files."""
+    models, nulls = inputs["survey"]
+    P1 = AR.p1(D, models, nulls); P1["wording"] = AR.wording_p1(P1)
+    P2 = AR.p2(Dsq, models, nulls); P2["wording"] = AR.wording_p2(P2)
+    P4 = AR.p4(D, inputs["swap"])
+    c1 = RP.gate_compare(RP.roundtrip(dict(P1=P1, P2=P2, P4=P4)), {k: st1234["result"][k] for k in ("P1", "P2", "P4")})
+    c1["stored_created_utc"] = st1234.get("created_utc")
+    m5, n5 = inputs["p5"]
+    P5 = AR.p5(D, m5, n5)
+    new5 = dict(P1=P1, P2=P2, P5=P5, abstract_rotation=AR.abstract_rotation_rule(P1, P2, P5))
+    c5 = RP.gate_compare(RP.roundtrip(new5), st5["result"])
+    c5["stored_created_utc"] = st5.get("created_utc")
+    return dict(primary_P1_P2_P3_P4=c1, primary_P5=c5, passed=bool(c1["passed"] and c5["passed"]))
+
+
+def _get(d, *ks):
+    for k in ks:
+        if isinstance(d, dict) and k in d:
+            d = d[k]
+        elif isinstance(d, list) and isinstance(k, int) and 0 <= k < len(d):
+            d = d[k]
+        else:
+            return None
+    return d
+
+
+def gate_published(D, Dsq, inputs, v3r, full):
+    """G3: published values (4 decimals) reproduced with the indices and arrays used here; returns the gate and the
+    recomputed P1 and P2 model estimates (for G1)."""
+    cats, fails, est = {}, [], []
+
+    def add(cat, unit, field, mine, ref):
+        ok = ES.close4(mine, ref)
+        c = cats.setdefault(cat, dict(n=0, n_agree=0, max_abs_diff=0.0))
+        c["n"] += 1
+        c["n_agree"] += int(bool(ok))
+        if RP._num(mine) and RP._num(ref):
+            c["max_abs_diff"] = max(c["max_abs_diff"], abs(float(mine) - float(ref)))
+        if not ok:
+            fails.append(dict(category=cat, unit=unit, field=field, value=mine, published=ref))
+
+    models, nulls = inputs["survey"]
+    units = [(m, v) for m, v in models.items()] + [("null " + k, v) for k, v in nulls.items()]
+    for name, v in units:
+        ref = _get(v3r, "models", name, "results", "r_inside")
+        for cat, Dx, test, path in (("P1_L20", D, "illusory", ("all", "drop_uni", "20")),
+                                    ("P2_square_Delta20", Dsq, "alt20", ("square", "alt_minus_mis", "20"))):
+            s = AR.pct_summary(AR.per_config(Dx, v, test, "mis20"), Dx.idx)
+            r = _get(ref, *path)
+            add(cat, name, "mean", s["mean"], _get(r, "mean"))
+            for i in (0, 1):
+                add(cat, name, f"ci[{i}]", s["ci"][i], _get(r, "ci", i))
+            add(cat, name, "p", s["p"], _get(r, "p"))
+            if name in models:
+                fam, key = ("P1", "L_model") if cat == "P1_L20" else ("P2", "Delta_model")
+                est.append((f"{fam}/{name}/{key}", s["mean"], key, fam, name))
+    heads = inputs["swap"]
+    cells = []
+    for fs, ar, _ in AR.P4_LIST:
+        for c in ((fs, ar), (fs, "R4")):
+            if c not in cells:
+                cells.append(c)
+    for fs, ar in cells:
+        v = heads[(fs, ar)]
+        unit = f"{fs}|{ar}"
+        s = AR.pct_summary(AR.per_config(D, v, "illusory", "control180"), D.idx)
+        r = _get(full, "stim_v3", fs, ar, "kanizsa", "illusory-control180", "avg|r_inside")
+        add("E_swap", unit, "mean", s["mean"], _get(r, "mean"))
+        for i in (0, 1):
+            add("E_swap", unit, f"ci[{i}]", s["ci"][i], _get(r, "ci", i))
+        add("E_swap", unit, "p", s["p"], _get(r, "p"))
+        for meas, key in (("U20", "ratio_uni20"), ("A20", "ratio_alt20")):
+            num, den = AR.ratio_parts(D, v, meas)
+            s = AR.pct_ratio(num, den, D.idx)
+            r = _get(full, "stim_alt", fs, ar, "r_inside", key)
+            add(f"P4_ratio_{meas}", unit, "value", s["value"], _get(r, "value"))
+            for i in (0, 1):
+                add(f"P4_ratio_{meas}", unit, f"ci[{i}]", s["ci"][i], _get(r, "ci", i))
+    return dict(categories=cats, n_failed=len(fails), failures=fails[:30], tolerance=TOL4, n_cells_P4=len(cells),
+                passed=not fails and bool(cats)), est
+
+
+# ====================================================================== summaries
+def agreement(recs):
+    """Zero-exclusion agreement of the continuity interval with the rule interval, per family (linear quantities and
+    the P4 differences; s* is not tested against 0)."""
+    fams = {}
+    for path, r in iter_records(recs):
+        if path.endswith("/rigid_share"):
+            continue
+        fam = path.split("/")[0]
+        f = fams.setdefault(fam, dict(n=0, n_agree=0, disagreements=[]))
+        f["n"] += 1
+        if r["zero_exclusion"]["agree"]:
+            f["n_agree"] += 1
+        else:
+            f["disagreements"].append(dict(path=path, estimate=r["estimate"], continuity_ci=r["continuity"]["ci"],
+                                           rule_ci=r["rule"]["ci"], rule_interval=r["rule"]["interval"]))
+    if "P4" in fams:
+        fams["P4"]["note"] = P4_AGREE_NOTE
+    tot = dict(n=sum(f["n"] for f in fams.values()), n_agree=sum(f["n_agree"] for f in fams.values()))
+    return dict(per_family=fams, total=tot)
+
+
+def coverage(recs):
+    n = dict(P1=sum(len(v) for v in recs["P1"].values()), P2=sum(len(v) for v in recs["P2"].values()),
+             P4=len(recs["P4"]))
+    n5 = {m: (0 if r.get("not_computable") else len(P5_LINEAR) + len(r["A_star_minus_null"]) + len(r["secondary"]) + 1)
+          for m, r in recs["P5"].items()}
+    allr = list(iter_records(recs))
+    return dict(n_records=dict(**n, P5=n5), n_total=len(allr),
+                n_with_published_method_p=sum(1 for _, r in allr if r["continuity"].get("p") is not None),
+                n_without_p_ratio_type=sum(1 for _, r in allr if r["continuity"].get("p") is None))
+
+
+def no_analogue(recs):
+    """Quantities for which the published method has no defined analogue (stated, not invented)."""
+    n4 = len(recs["P4"])
+    n5 = sum(1 for r in recs["P5"].values() if not r.get("not_computable"))
+    return [dict(what="a p-value for every ratio-type primary estimate: the P4 ratio differences "
+                      f"({n4}), both ratios of each P4 contrast ({2 * n4}, 26 distinct ratios) and the rigid share s* "
+                      f"({n5})",
+                 why="the published ratio summaries (v3/scores/analyze_alt.ratio, v2/scores/analyze_v3.ratio, "
+                     "v3/gpu/analyze_full.py, analyze_re.pct_ratio) return a value and a percentile interval only; the "
+                     "earlier pipeline gave a bootstrap p only for means (summ). These rows carry the interval and no "
+                     "p; the rule's BCa p (P4) stays the only p of these quantities",
+                 status="interval reported; p not computed")]
+
+
+def composed(recs):
+    """Intervals that apply the published procedure to a kind of statistic the published pipeline never resampled
+    (choice (e)); listed apart so that they are never read as published values."""
+    return [dict(what=f"the {len(recs['P4'])} P4 readout-minus-R4 ratio differences (U20 or A20)",
+                 how="percentile interval of the resample-wise difference of the two ratios of resampled means under the "
+                     "published two-stage indices (pct_ratio_diff); with no infinite resample (n_inf = 0, recorded per "
+                     "difference) equal to the 2.5 and 97.5 percentiles of the bootstrap distribution behind the rule's "
+                     "BCa interval, without the BCa adjustment",
+                 why="the published pipeline's only ratio difference, diff(t) = ratio_alt(t) - ratio_uni(t), has one "
+                     "denominator and was resampled as a single ratio; a difference of two ratios with different "
+                     "denominators was never resampled, so no published value or published computation exists for "
+                     "these estimates",
+                 status="interval reported and labelled a composition; no p")]
+
+
+def covered_elsewhere():
+    return [dict(what="P1 L_M(20) and P2 square Delta_M(20) of DeepGaze IIE and MSDB",
+                 where="published values in v3/scores/results.json (supplement table supp_tab_cont_p12); reproduced "
+                       "here at 4 decimals (gate G3), not new"),
+            dict(what="both ratios of every P4 contrast (U20 or A20 of the readout and of R4)",
+                 where="published values in v3/gpu/full/results_full.json (supplement table supp_tab_cont_p4, which "
+                       "already gives both published ratios of all 18 contrasts, 26 distinct ratios of 13 cells, so none "
+                       "is missing); reproduced here at 4 decimals (gate G3) and printed next to each difference, not "
+                       "new"),
+            dict(what="P3: E of the 10 valid non-reference swap cells and of the 4 R4 references",
+                 where="published values in v3/gpu/full/results_full.json (supplement table tab_readout_report); not "
+                       "touched here"),
+            dict(what="P6: E of the 18 new cells and of the 2 registers R4 references",
+                 where="results/explore/P6_reporting.json (report_p6_cells.py, D13); not touched here"),
+            dict(what="the 15 nulls' own P5 quantities at 20 degrees (rule 5.5 secondary list: 'reported for every model "
+                      "and null')",
+                 where="results/explore/explore_rigid.json (R8, supplement table supp_tab_p5_own); null quantities, not "
+                       "estimates stored in the primary files, so outside this script (no stored value for gate G1); "
+                       "not computed here")]
+
+
+def not_printed(recs):
+    """Ratios computed here but withheld from the markdown by rule 4.3 (denominator WCU interval includes 0)."""
+    out = []
+    for path, r in iter_records(recs):
+        if r.get("reportable") is False:
+            out.append(dict(path=path, quantity=r["quantity"], reason=r["flag"]))
+        for which, b in (r.get("both_ratios") or {}).items():
+            if b.get("reportable") is False:
+                out.append(dict(path=f"{path}/ratio_{which}", quantity=f"{r['quantity']}: {which} ratio",
+                                reason="not reportable (denominator interval includes 0)"))
+    return out
+
+
+def md5(p):
+    return hashlib.md5(open(p, "rb").read()).hexdigest() if os.path.exists(p) else None
+
+
+# ====================================================================== run
+def run(D, Dsq):
+    """Records, then gates G0 to G3; returns the result dict or raises GateError (nothing written)."""
+    gates = {}
+    rp6 = load_required(PATHS["p6_reporting"])
+    gates["G0_reused_code"] = gate_code(rp6)
+    if not gates["G0_reused_code"]["passed"]:
+        _fail("G0 (reused code unchanged)", json.dumps(gates["G0_reused_code"], default=str))
+    st1234, st5 = load_required(PATHS["primary_1234"]), load_required(PATHS["primary_5"])
+    v3r, full = load_required(PATHS["v3_results"]), load_required(PATHS["full_results"])
+    inputs = load_inputs()
+    models, nulls = inputs["survey"]
+    try:
+        r1, r5 = st1234["result"], st5["result"]
+        recs = dict(P1=family_records(D, models, nulls, r1["P1"], "illusory", "mis20", POOLED, "L20"),
+                    P2=family_records(Dsq, models, nulls, r1["P2"], "alt20", "mis20", SQUARE, "square Delta20"),
+                    P4=p4_records(D, inputs["swap"], r1["P4"]["contrasts"]),
+                    P5=p5_records(D, *inputs["p5"], r5["P5"]))
+    except KeyError as e:
+        _fail("inputs (stored primary fields or score keys)", f"stored field or score key missing: {e!r}")
+    X.log(f"records computed: {len(list(iter_records(recs)))}")
+    g3, est = gate_published(D, Dsq, inputs, v3r, full)
+    try:
+        models_est = [(path, mine, st1234["result"][fam][name][key]["mean"]) for path, mine, key, fam, name in est]
+    except KeyError as e:
+        _fail("G1 (point estimates)", f"stored field missing: {e!r}")
+    gates["G1_point_estimates"] = g1 = gate_points(recs, models_est)
+    if not g1["passed"]:
+        _fail("G1 (point estimates equal the stored primary values)", json.dumps(g1["failures"][:5], default=str))
+    X.log(f"G1 passed: {g1['n_checks']} point estimates, max |difference| {g1['max_abs_diff']}")
+    gates["G2_families_reproduced"] = g2 = gate_families(D, Dsq, inputs, st1234, st5)
+    if not g2["passed"]:
+        _fail("G2 (stored primary families reproduced)",
+              json.dumps({k: g2[k]["first_mismatches"] for k in ("primary_P1_P2_P3_P4", "primary_P5")}, default=str))
+    X.log(f"G2 passed: {g2['primary_P1_P2_P3_P4']['n_numeric']} and {g2['primary_P5']['n_numeric']} numeric leaves")
+    gates["G3_published_values"] = g3
+    if not g3["passed"]:
+        _fail("G3 (published values at 4 decimals)", json.dumps(g3["failures"][:5], default=str))
+    X.log("G3 passed")
+    return dict(
+        label="reporting only (rule 4.5 continuity); never decision-bearing",
+        definitions=dict(
+            L20="r(illusory) - r(mis20)", square_Delta20="r(alt20) - r(mis20) on the 30 square configurations",
+            U20="E(mis20) / E(illusory)", A20="E(alt20) / E(illusory)", E="r(illusory) - r(control180)",
+            P5="E(0) = I - C; E_rig = RI - RC; E'_mis = M - MC; L_uni = E(0) - E'_mis; L_rig = E(0) - E_rig; "
+               "A* = E_rig - E'_mis; C* = L_uni - 2 L_rig; s* = L_rig / L_uni (theta = 20)",
+            measure="r_inside (rule 2.2); readouts seed-averaged per configuration, then the 336 and 448 px values"),
+        method=dict(
+            resample="two-stage: clusters with replacement, then positions with replacement within each drawn cluster "
+                     "slot; 10,000 resamples; numpy RandomState(2026), cluster draws first (analyze_re.two_stage_idx)",
+            designs=dict(P1=POOLED, P2=SQUARE, P4=POOLED, P5=POOLED),
+            linear=M_LIN, ratio=M_RATIO, ratio_difference=M_RDIFF,
+            p="two-sided bootstrap p = min(1, 2 min(share of resampled means <= 0, share >= 0)) for linear quantities; "
+              "none for ratio-type quantities",
+            reportability="rule 4.3 (stored WCU checks of the denominators) decides what the markdown prints"),
+        gates=gates, coverage=coverage(recs),
+        P1=recs["P1"], P2=recs["P2"], P4=recs["P4"], P5=recs["P5"],
+        agreement=agreement(recs), no_published_method_analogue=no_analogue(recs),
+        composed_not_published=composed(recs),
+        covered_elsewhere=covered_elsewhere(), computed_not_printed_rule_4_3=not_printed(recs),
+        input_md5={os.path.relpath(p, X.ROOT): md5(p) for p in
+                   [PATHS["primary_1234"], PATHS["primary_5"], PATHS["v3_results"], PATHS["full_results"],
+                    PATHS["p6_reporting"]] +
+                   [os.path.join(SCORES_RIGID, f) for f in ("DeepGaze_IIE.json", "DeepGaze_MSDB.json", "nulls.json")]})
+
+
+# ====================================================================== markdown
+f4, ci4 = ES.f4, ES.ci4
+
+
+def ptxt(p):
+    if p is None:
+        return "none (ratio-type)"
+    if p == 0:
+        return "below resolution (0 outside every resample)"
+    return f"{p:.4g}"
+
+
+def yn(b):
+    return "n/a" if b is None else ("yes" if b else "no")
+
+
+def passed(b):
+    return "passed" if b else "FAILED"
+
+
+def rcell(x):
+    """A ratio-type value or interval cell."""
+    return "n/a" if x is None else f4(x)
+
+
+def lin_row(r):
+    return (f"{f4(r['estimate'])} | {ci4(r['rule']['ci'])} | {ptxt(r['rule']['p'])} | {ci4(r['continuity']['ci'])} | "
+            f"{ptxt(r['continuity']['p'])} | {yn(r['zero_exclusion']['agree'])}")
+
+
+def write_md(res, path, prov, wall):
+    L = []
+    w = L.append
+    w("# Rule 4.5 continuity for the primary estimates of P1, P2, P4 and P5 (`report_continuity.py`)\n")
+    w("**REPORTING ONLY.** Nothing here is decision-bearing. Each row is a primary estimate of "
+      "`out/primary_P1_P2_P3_P4.json` or `out/primary_P5.json` (reproduced, gates G1 and G2), with the rule's interval "
+      "and p as stored there and the published two-stage percentile interval (10,000 resamples, RandomState(2026); "
+      "rule 4.5, continuity). The earlier pipeline never computed these estimates; the interval is its method applied "
+      "to them (Section 1), and for the 18 P4 ratio differences a composition of its method, not a published "
+      "computation (Section 7). All values are unrounded in `continuity_intervals.json`; 4 decimals here.\n")
+    w("- Code SHA-256: " + "; ".join(f"`{k}` {v}" for k, v in prov["code"].items()) + ".")
+    w(f"- Rule SHA-256 (`REANALYSIS_RULE.md`): {prov['rule_sha256']}. Public commit (`PUBLIC_PUSH.txt`): "
+      f"{prov['public_commit']}.")
+    run_ = res.get("run") or {}
+    w(f"- Run {run_.get('start_utc')} to {run_.get('end_utc')} ({wall:.1f} s compute). require_public: "
+      f"{run_.get('hashed_files_verified')} hashed files and every stimulus verified.\n")
+
+    g = res["gates"]
+    w("## 0. Reproduction gates (all passed; any failure would have stopped the run before writing)\n")
+    w(f"- G0 reused helpers unchanged (report_p6_cells.py, explore_saved.py and excommon.py equal the hashes in "
+      f"P6_reporting.json): {passed(g['G0_reused_code']['passed'])}.")
+    g1 = g["G1_point_estimates"]
+    w(f"- G1 every point estimate equals the stored primary value: {g1['n_checks']} checks, {g1['n_failed']} failed, "
+      f"max |difference| {g1['max_abs_diff']}, tolerance {g1['tolerance']}: {passed(g1['passed'])}.")
+    g2 = g["G2_families_reproduced"]
+    a, b = g2["primary_P1_P2_P3_P4"], g2["primary_P5"]
+    w(f"- G2 families reproduced in full: `out/primary_P1_P2_P3_P4.json` ({a['stored_created_utc']}; P1, P2, P4) "
+      f"{a['n_leaves']} leaves, {a['n_numeric']} numeric, max |difference| {a['max_abs_diff']}; `out/primary_P5.json` "
+      f"({b['stored_created_utc']}; every key) {b['n_leaves']} leaves, {b['n_numeric']} numeric, max |difference| "
+      f"{b['max_abs_diff']}; tolerance {a['tolerance']}: {passed(g2['passed'])}.")
+    g3 = g["G3_published_values"]
+    w("- G3 published values at 4 decimals (v3/scores/results.json; v3/gpu/full/results_full.json, the "
+      f"{g3['n_cells_P4']} swap cells of P4): " +
+      "; ".join(f"{k} {v['n_agree']} of {v['n']} (largest |difference| {v['max_abs_diff']:.3g})"
+                for k, v in g3["categories"].items()) + f": {passed(g3['passed'])}.\n")
+
+    w("## 1. Method\n")
+    w("- Resample (the published one): clusters with replacement, then positions with replacement within each drawn "
+      "cluster slot, 10,000 resamples, RandomState(2026). P1, P4 and P5: the pooled design (12 clusters of 5 "
+      "configurations); P2: the square design (6 clusters of 5).")
+    w("- Linear quantities: percentile interval of the resampled means and the two-sided bootstrap p "
+      "(`analyze_re.pct_summary`, as `v3/scores/analyze_alt.summ` and `v2/readout/analyze.boot`). A P1 or P2 "
+      "model-minus-null difference is a paired difference on the same configurations, summarised as the earlier "
+      "pipeline summarised its paired readout contrasts (`v3/gpu/analyze_full.py`); it equals the percentile interval "
+      "of the resample-wise difference of the two bootstrap distributions that the earlier pipeline drew for the model "
+      "and the null with the same indices. The P5 displays were never scored by the earlier pipeline; their intervals "
+      "are its method applied to the new scores.")
+    w("- Ratio: percentile interval of the ratio of resampled means, no p (`analyze_re.pct_ratio`). P4 ratio "
+      "difference (a composition, Section 7): percentile interval of the resample-wise difference of the two ratios "
+      "under the same indices (rule 5.4: \"paired by configuration (the same resample for both readouts)\"), which is "
+      "the bootstrap distribution behind the rule's BCa interval without the BCa adjustment (exactly so when no "
+      "resample is infinite; count in Section 5); no p.")
+    w("- Ratios follow rule 4.3: `not reportable` (denominator WCU interval includes 0) is printed without a value; "
+      "`unstable` = denominator |t| < 4. A p of 0 is printed `below resolution (0 outside every resample)`. "
+      "`agree` = the two intervals agree on whether they exclude 0 and on which side.\n")
+
+    cov, agr = res["coverage"], res["agreement"]
+    w("## 2. Summary\n")
+    n4 = cov["n_records"]["P4"]
+    w(f"{cov['n_total']} primary estimates now have a continuity interval: {cov['n_with_published_method_p']} linear "
+      f"ones with the published method and its bootstrap p, {cov['n_without_p_ratio_type'] - n4} rigid share(s) s* "
+      f"with the published ratio method and no p, and the {n4} P4 ratio differences by a composition of the published "
+      "method, with no p (Section 7).\n")
+    w("| family | estimates | continuity interval agrees with the rule interval on excluding 0 |")
+    w("|---|---|---|")
+    nr = cov["n_records"]
+    names = dict(P1="P1 model minus null, L20 (WCU)", P2="P2 model minus null, square Delta20 (WCU)",
+                 P4="P4 readout minus R4 ratio differences (BCa)",
+                 P5="P5 at 20 degrees: linear estimands (WCU) and the rigid share s* (BCa)")
+    for fam in ("P1", "P2", "P4", "P5"):
+        f = agr["per_family"].get(fam, dict(n=0, n_agree=0))
+        if fam == "P5":
+            n = sum(nr["P5"].values())
+            w(f"| {names[fam]} | {n} ({f['n']} linear, {n - f['n']} s*) | {f['n_agree']} of {f['n']} linear (s* is not "
+              "tested against 0) |")
+        elif fam == "P4":
+            w(f"| {names[fam]} | {nr[fam]} | {f['n_agree']} of {f['n']} (same resamples, with and without the BCa "
+              "adjustment, so not an independent comparison) |")
+        else:
+            w(f"| {names[fam]} | {nr[fam]} | {f['n_agree']} of {f['n']} |")
+    w("")
+    dis = [d for f in agr["per_family"].values() for d in f["disagreements"]]
+    if dis:
+        w("Disagreements on excluding 0:\n")
+        for d in dis:
+            w(f"- {d['path']}: {f4(d['estimate'])}, published percentile {ci4(d['continuity_ci'])}, rule "
+              f"{d['rule_interval']} {ci4(d['rule_ci'])}.")
+        w("")
+
+    for fam, title in (("P1", "## 3. P1: model minus null, L20 = r(illusory) - r(mis20), 60 configurations, 12 clusters"),
+                       ("P2", "## 4. P2: model minus null, square Delta20 = r(alt20) - r(mis20), 30 configurations, "
+                              "6 clusters")):
+        w(title + "\n")
+        w("| model | null | estimate | 95% WCU (rule) | WCR p | published percentile | bootstrap p | agree |")
+        w("|---|---|---|---|---|---|---|---|")
+        for m, per in res[fam].items():
+            for k, r in per.items():
+                w(f"| {m} | {null_label(k)} | {lin_row(r)} |")
+        w("")
+
+    w("## 5. P4: readout minus R4 ratio differences, 60 configurations, 12 clusters\n")
+    w("Difference: the rule's BCa interval, BCa p and Holm p (stored), and the composed published-method interval "
+      "(percentile interval of the resample-wise difference; a composition, not a published computation; no "
+      "published-method p, Section 7). Both ratios: the published percentile interval (values exist in "
+      "`v3/gpu/full/results_full.json`; reproduced, G3), printed next to the difference they summarise (rule 4.3).\n")
+    w("| # | feature set | readout | ratio | difference | 95% BCa (rule) | BCa p | Holm p | counted | published "
+      "percentile (composed) | agree | readout ratio [published percentile] | R4 ratio [published percentile] |")
+    w("|---|---|---|---|---|---|---|---|---|---|---|---|---|")
+    def ratio_txt(b):
+        if b["reportable"] is False:
+            return "not reportable (denominator interval includes 0)"
+        return f"{rcell(b['value'])} {ci4(b['continuity_ci'])}"
+
+    for key, r in res["P4"].items():
+        ru, br = r["rule"], r["both_ratios"]
+        diff = f4(r["estimate"]) + (f" ({r['flag']})" if r["flag"] else "")
+        bp = "below resolution (0 outside every resample; D4)" if ru["p_set_by_clip"] else ptxt(ru["p"])
+        w(f"| {r['number']} | {SET_LABEL[r['feature_set']]} | {r['readout']} | {r['ratio']} | {diff} | {ci4(ru['ci'])} | "
+          f"{bp} | {ptxt(ru['p_holm'])} | {yn(ru['counted'])} | {ci4(r['continuity']['ci'])} | "
+          f"{yn(r['zero_exclusion']['agree'])} | {ratio_txt(br['readout'])} | {ratio_txt(br['R4'])} |")
+    w("\nA BCa p printed `below resolution` is the stored p set by the clip of `analyze_re.bca_p`: no resample of "
+      "the difference lies on the other side of 0 (DEVIATIONS.md D4). Holm p and the counted flag are those of the "
+      "stored P4.\n")
+    n_inf = sum(int(r["continuity"]["n_inf"]) for r in res["P4"].values())
+    n_nan = sum(int(r["continuity"]["n_nan"]) for r in res["P4"].values())
+    w(f"Non-finite resamples over the {len(res['P4'])} differences: {n_inf} infinite (a resampled denominator mean "
+      f"exactly 0; kept by `np.nanpercentile`, as in `pct_ratio`, and dropped by `analyze_re.bca`) and {n_nan} nan. "
+      + ("With none infinite, each composed interval is exactly the 2.5 and 97.5 percentiles of the resamples behind "
+         "the rule's BCa interval.\n" if n_inf == 0 else
+         "Where a difference has infinite resamples, its composed interval is not exactly the unadjusted percentiles of "
+         "the resamples behind the rule's BCa interval (per-difference counts in the JSON).\n"))
+
+    w("## 6. P5 at 20 degrees, per model, 60 configurations, 12 clusters\n")
+    for m, rec in res["P5"].items():
+        w(f"### {m}\n")
+        if rec.get("not_computable"):
+            w(f"{rec['not_computable']}.\n")
+            continue
+        w("| quantity | estimate | 95% WCU (rule) | WCR p | published percentile | bootstrap p | agree |")
+        w("|---|---|---|---|---|---|---|")
+        for name, _, lab in P5_LINEAR:
+            w(f"| {lab} | {lin_row(rec[name])} |")
+        for k, r in rec["secondary"].items():
+            w(f"| secondary: {SECONDARY_LABEL[k]} | {lin_row(r)} |")
+        w("")
+        s = rec["rigid_share"]
+        if s["reportable"] is False:
+            w("Rigid share s*(20) = L_rig(20) / L_uni(20): not reportable (the WCU interval of L_uni includes 0; rule "
+              "4.3); no value or interval is printed.\n")
+        else:
+            w(f"Rigid share s*(20) = L_rig(20) / L_uni(20): {f4(s['estimate'])}"
+              f"{' (unstable)' if s['flag'] == 'unstable' else ''}, 95% BCa (rule) {ci4(s['rule']['ci'])}, published "
+              f"percentile {ci4(s['continuity']['ci'])}, no published-method p; next to L_uni(20) "
+              f"{f4(rec['L_uni']['estimate'])} {ci4(rec['L_uni']['rule']['ci'])} and L_rig(20) "
+              f"{f4(rec['L_rig']['estimate'])} {ci4(rec['L_rig']['rule']['ci'])} (WCU).\n")
+        w("| null | A* model minus null | 95% WCU (rule) | WCR p | published percentile | bootstrap p | agree |")
+        w("|---|---|---|---|---|---|---|")
+        for k, r in rec["A_star_minus_null"].items():
+            w(f"| {null_label(k)} | {lin_row(r)} |")
+        w("")
+
+    w("## 7. No published-method analogue, and compositions (stated, not invented)\n")
+    for x in res["no_published_method_analogue"]:
+        w(f"- No analogue: {x['what']}: {x['status']}. Why: {x['why']}.")
+    for x in res["composed_not_published"]:
+        w(f"- Composition, not a published computation: {x['what']}: {x['status']}. How: {x['how']}. Why: {x['why']}.")
+    w("")
+    w("## 8. Primary estimates whose continuity interval exists elsewhere\n")
+    for x in res["covered_elsewhere"]:
+        w(f"- {x['what']}: {x['where']}.")
+    w("")
+    w("## 9. Computed but not printed (rule 4.3)\n")
+    np_ = res["computed_not_printed_rule_4_3"]
+    if np_:
+        for x in np_:
+            w(f"- {x['quantity']} (`{x['path']}`): {x['reason']}; values in the JSON only.")
+    else:
+        w("- None.")
+    w("")
+    with open(path + ".tmp", "w") as f:
+        f.write("\n".join(L) + "\n")
+    os.replace(path + ".tmp", path)
+    print("wrote", path, flush=True)
+
+
+# ====================================================================== outputs and main
+def provenance():
+    pub = os.path.join(X.RE, "PUBLIC_PUSH.txt")
+    code = {os.path.relpath(p, X.RE): X.sha256_file(p) for p in
+            (os.path.abspath(__file__), os.path.join(X.HERE, "excommon.py"), os.path.join(X.HERE, "explore_saved.py"),
+             os.path.join(X.HERE, "report_p6_cells.py"))}
+    return dict(code=code, rule_sha256=X.sha256_file(os.path.join(X.RE, "REANALYSIS_RULE.md")),
+                public_commit=open(pub).read().split()[0] if os.path.exists(pub) else None)
+
+
+def existing_outputs():
+    """Output files that already exist (choice (k): never overwritten)."""
+    return [q for q in (os.path.join(X.RESULTS, OUT_JSON), os.path.join(X.RESULTS, OUT_MD)) if os.path.exists(q)]
+
+
+def write_outputs(res, wall):
+    ex = existing_outputs()
+    if ex:
+        raise FileExistsError("refusing to overwrite (move them to results/explore/_previous/<UTC>_continuity/ "
+                              "first): " + ", ".join(ex))
+    inputs = ["v3/scores/raw_v3maps and v3/scores/raw (DeepGaze IIE, MSDB)", "v3/scores/raw_nulls.json",
+              "v3/gpu/full/scores (swap cells of P4)", "neuro/reanalysis/scores_rigid (DeepGaze IIE, MSDB, nulls)",
+              "out/primary_P1_P2_P3_P4.json and out/primary_P5.json (gates)",
+              "v3/scores/results.json and v3/gpu/full/results_full.json (gate G3)",
+              "results/explore/P6_reporting.json (gate G0)"]
+    p = X.write_json(OUT_JSON, res, os.path.abspath(__file__), inputs=inputs,
+                     notes="reporting only (rule 4.5 continuity); the primary results are reproduced, never changed",
+                     extra_code=[os.path.join(X.HERE, "explore_saved.py"), os.path.join(X.HERE, "report_p6_cells.py")])
+    write_md(X._clean(res), os.path.join(X.RESULTS, OUT_MD), provenance(), wall)
+    return p
+
+
+def main():
+    t0 = time.time()
+    start = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    n_hashed = X.require_public()                                     # rule Section 8.1, before anything else
+    X.log(f"require_public: {n_hashed} hashed files verified")
+    ex = existing_outputs()
+    if ex:                                                            # choice (k): before any computation
+        X.log("outputs exist, nothing computed or written; move them to results/explore/_previous/<UTC>_continuity/ "
+              "first: " + ", ".join(ex))
+        sys.exit(4)
+    D, Dsq = X.design(), X.design("square")
+    try:
+        res = run(D, Dsq)
+    except GateError as e:
+        X.log(f"GATE FAILED, nothing written: {e}")
+        sys.exit(3)
+    wall = time.time() - t0
+    res["run"] = dict(start_utc=start, end_utc=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), compute_s=wall,
+                      hashed_files_verified=n_hashed)
+    write_outputs(res, wall)
+
+
+if __name__ == "__main__":
+    main()

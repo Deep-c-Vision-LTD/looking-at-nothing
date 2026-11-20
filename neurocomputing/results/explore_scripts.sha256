@@ -1,0 +1,76 @@
+# SHA-256 of the exploratory scripts as run on 18 November 2026 (recorded 2026-11-18T14:08:54Z; file mtimes below)
+8e74ba63961f5061e4dc45daee4ac193fcc04dd2115b1e50eb499f9e30c40af4  explore/a11_scale.py
+d9eb80f21118bbf54b80a9efa8883cd0f0ef08a56e9888bbe91d604dba5ac997  explore/a12_kavsek.py
+ee6f35305a6a73835a06e41186e6e915e815fc29fed848d2f4394f76cccd6f1e  explore/a13_region.py
+d30d65a623dc46db2952863076c58d28d068a5135125e7f176ff14b1373c5901  explore/a15a_token_norms.py
+24aa133c0b83715cd6b7ac5631d438fea8ebeacad203b7edd6ff2d07a4f0caaa  explore/a3_reg_tokens_analyze.py
+8d4b05d75c4cc76dc89aa2283c094e7b1e37a5e578cd280fa2c163d4c5d1c54d  explore/a3_reg_tokens_extract.py
+b0b876b0ad4b9b8edf838c37be0eb0de1771314a1bcdc827bb7ae26077250803  explore/a44_logmass.py
+d4e12f5c6e6a75b0f93a8550eebd75c1f6f66f10108e9197cef171a454cf034f  explore/a46_calibration.py
+4bbbc9ca3e4ec15f6eb60b4c4a8f79563e67d55c2b39c0c7b791c566abf9dda7  explore/a6_margin_curve.py
+d168232289be46a9e883385aeee279165e1c7924879c07c5f03204b3b38a397a  explore/excommon.py
+a8d553c197c58f4b9a92559da70500010c3a84e26b89bc52cdec60f679246bc8  explore/item7_corrected.py
+d634d2bf0290aa11bec8565a981cdb0dbdf1a52ea5d8e735a6e2fb8bb8cab559  explore/mapsrc.py
+82e5dc6de50343e4008e3ce055ae9fe919822e639d1cc7647e85c2e77ca0d36c  explore/s13_block12_nulls.py
+c52001f8c19c643eef7a725511a46a03ea645a52390ae23129a6aacfebccefc8  explore/test_explore.py
+7d1d89bed352c9a962f49ac1e2346f9ecdfeec13aa649060a6e72f9f4634abcb  explore/test_torch_imports.py
+2026-11-18T12:13:39+0000 explore/a11_scale.py
+2026-11-18T12:13:32+0000 explore/a12_kavsek.py
+2026-11-18T12:13:32+0000 explore/a13_region.py
+2026-11-18T12:13:32+0000 explore/a15a_token_norms.py
+2026-11-18T12:13:32+0000 explore/a3_reg_tokens_analyze.py
+2026-11-18T12:13:32+0000 explore/a3_reg_tokens_extract.py
+2026-11-18T12:13:32+0000 explore/a44_logmass.py
+2026-11-18T12:13:32+0000 explore/a46_calibration.py
+2026-11-18T12:13:32+0000 explore/a6_margin_curve.py
+2026-11-18T12:03:37+0000 explore/excommon.py
+2026-11-18T12:13:32+0000 explore/item7_corrected.py
+2026-11-18T12:13:39+0000 explore/mapsrc.py
+2026-11-18T12:13:32+0000 explore/s13_block12_nulls.py
+2026-11-18T12:07:25+0000 explore/test_explore.py
+2026-11-18T12:12:01+0000 explore/test_torch_imports.py
+# TTR scripts (rule Section 6 item 12; explore/ttr/DESIGN.md), recorded 2026-11-18T20:27:04Z before their first real-data run; tests: explore/ttr/tests_ttr_output.txt (58 checks, 0 failed)
+33e8083f3aa989c053da7eb814398fb5c748328cadae614b488772547ba26f97  explore/ttr/ttr_common.py
+f4bd2219384c3a83bfa26873f4087791014c2dc8adc13f064d85fb45391f3652  explore/ttr/test_ttr.py
+30e183fd3206ea437bd119a15a95cc2529027da6a556f401f30c33003fbe0b73  explore/ttr/ttr_select.py
+60483b5d9a1e65c9ebd4f6c4f1caa9fec7fb81a45c896361a0a5a69839a2b114  explore/ttr/ttr_score.py
+f76e32c4a37a3dd5deb1b1f7f3054250df11f85572c5e407735951eb1bee0e45  explore/ttr/ttr_analyze.py
+3ef23f6473bca9eb01327def32721b88de88f9095c5415a5c97624a0b81b2092  explore/ttr/tests_ttr_output.txt
+# ttr_score.py changed 2026-11-18T20:27:40Z before its first run (score files written after every stage instead of once per arm; no computation changed)
+80f3b6f253868887d60f4a9ef9b31e8940037b34bba13fba2dd298744e5eb257  explore/ttr/ttr_score.py
+# ttr_analyze.py changed 2026-11-18T23:14:38Z after its first run (markdown only: summary section 0 and the gate-P line; JSON computation unchanged); first outputs moved to results/explore/_previous/2026-11-18_ttr_first_analysis/
+6c1b7b81744a4f49b2939ad008d313098ab4519076a04dceab46bf45fcc05b21  explore/ttr/ttr_analyze.py
+# S3 explore_saved (rule Section 6 items 1, 2, 3, 5, 17, 18; cross-checks of 7, 14, 20), recorded 2026-11-18T23:45:57Z before its first real-data run; tests: explore/tests_explore_saved_output.txt (44 checks, 0 failed)
+dfffefdf2dc2521028ad6965aeb7ceb34be665b3319579047fcd476b82327b76  explore/explore_saved.py
+4c3ec837afa92bff14a8bdd8a6cc9ac15928af1d92d80a1b4b9d872b91b57be3  explore/test_explore_saved.py
+c7b256e0506be05c894be9aafb4efea891944e9ecaa6f1eca6a63a29195291bd  explore/tests_explore_saved_output.txt
+# explore_saved.py changed 2026-11-18T23:47:49Z after its first run (cross-checks added: published L as difference of rounded effects, sweep E from the source file of rule 1.1 item 5; markdown number format); item computations unchanged; first outputs moved to results/explore/_previous/2026-11-18_S3_first_run/
+95236f1daacac26606f90294226f2394e1e73c9c6bacd4bb19d31148f01dfb7a  explore/explore_saved.py
+# S4 a6_absolute (rule Section 6 item 7, second part), recorded 2026-11-18T23:52:30Z before its first real-data run; tests: explore/tests_a6_absolute_output.txt (26 checks, 0 failed)
+e4655f344929f7868a4f8b9595209e7a8dcd80c656ba950910ae1556489431da  explore/a6_absolute.py
+acf48f509591477f8a51dafc2d1e284ef802b0e56ed99ae30a45ebb527ac35b9  explore/test_a6_absolute.py
+e9a41db54c2a95b95feae9d3c6bae6ddbd33ca72906d3911b129065658a0677a  explore/tests_a6_absolute_output.txt
+# S5 token copies and analysis (rule Section 6 item 8 (i), (ii), (iii), (v)), recorded 2026-11-18T23:58:36Z before their first real-data run; tests: explore/tokens/tests_a3_tokens_output.txt (22 checks, 0 failed)
+caa9e13d5f1e97cf872580cabb59a9cb5a171103b661fce5e12c4699947ee2ef  explore/tokens/analyze.py
+02b12ffc45c9d8c99fe0d7edb0d686cb7e79bc46382b37060eb3bb705574fcea  explore/tokens/plots.py
+93d806a1fcb83864053536c9c8e76731a593876226ec34b572d866aeee041e65  explore/tokens/report.py
+2aa1075fd54f968fb017a5e5e1cfa8106c2b5c1dc8bf51c71edaf700fb185cf9  explore/tokens/encoding_nulls.py
+4228e83513276f53c390f57530576277753131203761a459d30bd369892b7716  explore/tokens/a3_tokens_published.py
+3d5f131e824496f79d94046ddf7ff4857e66a5a990b4c3fab42c4fb75f7add0b  explore/tokens/test_a3_tokens.py
+38809bf386134f4108ccd3e6836b1a5fe018a1e10bd30dcddc92313a1be82e5f  explore/tokens/tests_a3_tokens_output.txt
+# a3_tokens_published.py changed 2026-11-19T00:01:06Z after its first run: the saliency rows of the three swap blocks were keyed like the sweep rows of the same blocks (dinov2_L12, dinov2_L6, siglip_L24), so the swap rows showed the sweep readout's E and S20; keys now prefixed swap:/sweep:; ratios whose denominator interval includes 0 printed as not reportable; tex column count; token computations unchanged; first outputs moved to results/explore/_previous/2026-11-19_S5c_first_run/; tests 25 checks, 0 failed
+23f9818664a4ae816a648d7bd3f88e590646a0ae0f571de53f94a15aa98853fd  explore/tokens/a3_tokens_published.py
+438fc8c0531c4a7d5e19efe1253a3de44caeff6a710fbbe13ef23f579cbf76bf  explore/tokens/test_a3_tokens.py
+c8e5b24cadd9c78edab763e0eeeeafac9577855236c3ff49d5677a0cf1e24d25  explore/tokens/tests_a3_tokens_output.txt
+# report_p6_cells (rule 5.6 per-cell reporting items and rule Section 6 items 1, 3 and 5 for the G3 and A14 cells; DEVIATIONS.md D13), revised after an independent code review and recorded 2026-11-20T04:01:32Z before its first real-data run; tests: explore/tests_report_p6_cells_output.txt (101 checks, 0 failed; log results/run_logs/T_report_p6_cells_r2.log); file mtimes below
+5db1fc3bc45f4e4820f28d16eb070ef319979760167c70384b7dbaabaaec7665  explore/report_p6_cells.py
+1ccfd76ce3ef7473e59a54fd4c23725fc4e81b87b24bc0533daab6cdd7083434  explore/test_report_p6_cells.py
+00fc8540cea4b790c56ea635d7e5098c3838c2b2ca8660e55126ae6eb27c6467  explore/tests_report_p6_cells_output.txt
+2026-11-20T04:00:36+0000 explore/report_p6_cells.py
+2026-11-20T04:00:55+0000 explore/test_report_p6_cells.py
+# report_continuity (rule 4.5 continuity for the remaining primary estimates of P1, P2, P4 and P5; DEVIATIONS.md D14), revised after an independent code review and recorded 2026-11-20T09:36:51Z before its first real-data run; tests: explore/tests_report_continuity_output.txt (90 checks, 0 failed; log results/run_logs/T_report_continuity_r3.log); pre-review versions (script 783a1b13...3f12b, tests 33294086...6b500, test output e31d3cdc...dcf) kept in explore/_previous/2026-11-20_report_continuity_before_review/; file mtimes below
+2c3eb599e546daa6bf43b1556a9b41828f778f28272a6c7319618edbe7c2c03e  explore/report_continuity.py
+cf997e73203686d56a204cf33dbadeee480119aaff8130eeb36d08d0b4feda4c  explore/test_report_continuity.py
+46e1eac6fa429ab67997125632cf18fb01520fa5911460d9ea6fa885db5016ea  explore/tests_report_continuity_output.txt
+2026-11-20T09:36:17+0000 explore/report_continuity.py
+2026-11-20T09:36:17+0000 explore/test_report_continuity.py

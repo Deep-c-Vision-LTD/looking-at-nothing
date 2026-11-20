@@ -1,0 +1,27 @@
+### T_a3_tokens start 2026-11-18T23:58:21Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=2 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONDONTWRITEBYTECODE=1 $LAN_SAL_SRC/.venv/bin/python -B -I explore/tokens/test_a3_tokens.py --out explore/tokens/tests_a3_tokens_output.txt
+### T_a3_tokens pid 28464
+test_a3_tokens.py 2026-11-18T23:58:22Z
+PASS  no torch imported
+PASS  main: require_public before any read
+PASS  verdict: unrounded bounds
+PASS  verdict: published rounding can change it (0.3000 > 0.3000 is False)
+PASS  verdict: fails when a null upper bound exceeds the interior lower bound
+PASS  verdict: undefined when a bound is missing
+PASS  agrees: figure-specific with E above 0
+PASS  agrees: figure-specific with E including 0 disagrees
+PASS  agrees: not figure-specific with E including 0 or below agrees
+PASS  agrees: not figure-specific with E above 0 disagrees
+PASS  S20 = 1 - U20 with the interval mapped
+PASS  S20 keeps the flag
+PASS  to_design maps every configuration to its value
+PASS  copy analyze.py: outputs under A3_tokens/published
+PASS  copy plots.py: outputs under A3_tokens/published
+PASS  copy report.py: outputs under A3_tokens/published
+PASS  copy encoding_nulls.py: outputs under A3_tokens/published
+PASS  copy analyze.py: no write into v2/encoding
+PASS  copy analyze.py: require_public at the top when run
+PASS  copy encoding_nulls.py: no write into v2/verify and require_public first
+PASS  copy plots.py: ENC is the redirected folder
+PASS  copy report.py: ENC is the redirected folder
+# 22 checks, 0 failed, 0.0s
+### T_a3_tokens end 2026-11-18T23:58:26Z exit 0 wall 5s

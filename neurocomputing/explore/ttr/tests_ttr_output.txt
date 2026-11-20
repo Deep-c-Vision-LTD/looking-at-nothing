@@ -1,0 +1,66 @@
+=== test_ttr.py 2026-11-18T20:26:39Z  torch 2.12.0
+--- clip
+PASS  (i) clip: plain arm installs no hook and equals the stock hidden states bit for bit  5 hidden states
+PASS  (i) clip: hooks removed on exit (no hook left, hidden states bit-identical again)
+PASS  clip: a shift without a register is refused
+PASS  (ii) clip: register appended at the end (T + 1 tokens in every hidden state) and enters layer 1 as expected  hidden_states[0][:, -1] = pre_layrnorm.bias (non-zero)
+PASS  (ii) clip: the register leaves hidden_states[0] of the image tokens unchanged (no positional change)
+PASS  (iii) clip: register gets the per-image, per-neuron signed max over all unmodified tokens (CLS, patches, register)  max over 38 tokens
+PASS  (iii) clip: patches set to 0 for the register neurons, other neurons untouched
+PASS  (iii) clip: CLS keeps its value for the register neurons
+PASS  (v) clip: neurons in layer 2 leave hidden_states[0..2] identical to reg0 and change hidden_states[3]
+PASS  (iv) clip: a batch of 3 equals 3 single runs to 1e-6 (ttr arm, two hooked layers)  max |diff| 0.00e+00
+PASS  (vi) clip: reg0/ttr features are g x g with CLS and register removed; plain = the stock expression
+PASS  (vi) clip: patch norms exclude CLS and register (36 tokens)
+PASS  (vi) clip: a token count that is not a square grid is refused
+PASS  clip: register norm reported for reg0/ttr, None for plain
+--- siglip
+PASS  (i) siglip: plain arm installs no hook and equals the stock hidden states bit for bit  5 hidden states
+PASS  (i) siglip: hooks removed on exit (no hook left, hidden states bit-identical again)
+PASS  siglip: a shift without a register is refused
+PASS  (ii) siglip: register appended at the end (T + 1 tokens in every hidden state) and enters layer 1 as expected  hidden_states[0][:, -1] = 0 (no pre-LayerNorm)
+PASS  (ii) siglip: the register leaves hidden_states[0] of the image tokens unchanged (no positional change)
+PASS  (iii) siglip: register gets the per-image, per-neuron signed max over all unmodified tokens (CLS, patches, register)  max over 37 tokens
+PASS  (iii) siglip: patches set to 0 for the register neurons, other neurons untouched
+PASS  (vii) siglip: no CLS; every non-register token is zeroed for the register neurons
+PASS  (v) siglip: neurons in layer 2 leave hidden_states[0..2] identical to reg0 and change hidden_states[3]
+PASS  (iv) siglip: a batch of 3 equals 3 single runs to 1e-6 (ttr arm, two hooked layers)  max |diff| 0.00e+00
+PASS  (vi) siglip: reg0/ttr features are g x g with CLS and register removed; plain = the stock expression
+PASS  (vi) siglip: patch norms exclude CLS and register (36 tokens)
+PASS  (vi) siglip: a token count that is not a square grid is refused
+PASS  siglip: register norm reported for reg0/ttr, None for plain
+--- selection
+PASS  (viii) the planted register neuron has the largest score; the dense neuron is removed by the sparsity filter  scores [10.0, 0.0]
+PASS  (viii) without the sparsity filter the dense neuron would rank first
+PASS  (viii) rank_neurons keeps layers <= h, orders by score, ties to the lower neuron
+PASS  (viii) the fallback branch (h = 23) admits the later layer
+PASS  (viii) neuron_dict_top groups the top k by layer
+PASS  (ix) emergence block: first block above 4 at BOTH sizes
+PASS  (ix) emergence block: None if no block exceeds the cutoff
+PASS  (ix) detection block: largest pooled median, ties to the lower block
+PASS  (ix) smallest passing k in the primary branch
+PASS  (ix) fallback branch used when no primary k passes
+PASS  (ix) neither passes: most passing pairs, ties to the primary branch, then the smaller k  {'branch': 'primary', 'k': 10, 'passed': False, 'n_pass': 3, 'n_pairs': 4}
+PASS  (ix) the criterion is <= 2.0 (2.0 itself passes)
+--- guards
+PASS  (x) assert_not_display refuses stim_v3, stim_alt, stim_rigid, stim_v2, stim_ehr paths
+PASS  (x) assert_not_display accepts an MIT1003 path
+PASS  (x) 100 selection images from the 803-image training split, sorted, RandomState(2026), disjoint from the held-out 200
+PASS  (x) the test read guard refuses project files (open, numpy.load, cv2.imread, torch.load)
+--- scoring helpers
+PASS  fast r_inside equals common_alt.measures' boolean-mask formula exactly (20 random maps, some negative)  max |diff| 0.0
+PASS  swap map path = eval_full.score_map (float16 sigmoid -> float32 -> resize)
+PASS  sweep map path = mapsrc published form (float32 sigmoid -> resize)
+PASS  norm rows: ratio max/median, share and count above twice the median
+PASS  token locations: patch centres mapped to the canvas (4 x 4 grid: token 0 inside, 15 inducer, 5 inside)
+PASS  position constancy: share of images with the modal set
+PASS  jaccard
+--- scripts
+PASS  ttr_select.py: main() calls require_public() before anything else
+PASS  ttr_select.py: no MPS device in code (no to('mps'), device='mps', torch.mps or torch.backends.mps)
+PASS  ttr_score.py: main() calls require_public() before anything else
+PASS  ttr_score.py: no MPS device in code (no to('mps'), device='mps', torch.mps or torch.backends.mps)
+PASS  ttr_analyze.py: main() calls require_public() before anything else
+PASS  ttr_analyze.py: no MPS device in code (no to('mps'), device='mps', torch.mps or torch.backends.mps)
+PASS  no MPS tensor was created by the tests
+58 checks, 0 failed, 2.4s

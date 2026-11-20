@@ -1,0 +1,123 @@
+### EX_a13_region start 2026-11-18T14:40:18Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 V3_DEVICE=cpu PYTHONDONTWRITEBYTECODE=1 $LAN_SAL_SRC/.venv/bin/python -B explore/a13_region.py
+### EX_a13_region pid 7736
+14:40:19 group deepgaze: 2 units, 120 displays
+14:40:20 group msinet: 1 units, 120 displays
+14:40:20 group nulls: 15 units, 120 displays
+### EX_a13_region pid 7736: no Metal client at first check (~5 s)
+14:40:24   500 unit-displays (5s); last nulls edge_s16 square_sr30_dark_p4_control180
+14:40:36   1000 unit-displays (17s); last nulls ink_s40 square_sr70_dark_p1_illusory
+14:40:48   1500 unit-displays (29s); last nulls corner_s60 triangle_sr30_light_p2_control180
+### EX_a13_region pid 7736: no Metal client at ~30 s
+14:41:01   2000 unit-displays (42s); last nulls edge_s16 triangle_sr70_dark_p4_control180
+14:41:04 group sweep: 18 units, 120 displays
+Loading weights:   0%|          | 0/223 [00:00<?, ?it/s]Loading weights: 100%|██████████| 223/223 [00:00<00:00, 19797.43it/s]
+14:41:07   sweep dinov2: blocks [2, 4, 6, 8, 10, 12]
+14:41:17   2500 unit-displays (58s); last sweep dinov2_L2 square_sr50_light_p0_control180
+14:41:33   3000 unit-displays (74s); last sweep dinov2_L12 triangle_sr30_light_p0_control180
+14:41:51   3500 unit-displays (91s); last sweep dinov2_L10 triangle_sr70_light_p0_control180
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 21522.52it/s]
+[transformers] [1mCLIPVisionModel LOAD REPORT[0m from: openai/clip-vit-large-patch14
+Key                                                          | Status     |  | 
+-------------------------------------------------------------+------------+--+-
+text_model.encoder.layers.{0...11}.self_attn.v_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.k_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.mlp.fc1.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.v_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.out_proj.weight | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.layer_norm1.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.mlp.fc1.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.mlp.fc2.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.layer_norm2.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.layer_norm2.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.q_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.q_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.mlp.fc2.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.layer_norm1.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.out_proj.bias   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.k_proj.weight   | UNEXPECTED |  | 
+text_model.final_layer_norm.weight                           | UNEXPECTED |  | 
+text_model.embeddings.position_embedding.weight              | UNEXPECTED |  | 
+text_projection.weight                                       | UNEXPECTED |  | 
+text_model.embeddings.token_embedding.weight                 | UNEXPECTED |  | 
+text_model.final_layer_norm.bias                             | UNEXPECTED |  | 
+visual_projection.weight                                     | UNEXPECTED |  | 
+logit_scale                                                  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+14:41:54   sweep clip: blocks [4, 8, 12, 16, 20, 24]
+14:42:31   4000 unit-displays (132s); last sweep clip_L16 square_sr50_light_p2_control180
+14:43:04   4500 unit-displays (165s); last sweep clip_L12 triangle_sr30_light_p2_control180
+14:43:39   5000 unit-displays (200s); last sweep clip_L8 triangle_sr70_light_p4_control180
+Loading weights:   0%|          | 0/400 [00:00<?, ?it/s]Loading weights: 100%|██████████| 400/400 [00:00<00:00, 21966.03it/s]
+[transformers] [1mSiglipVisionModel LOAD REPORT[0m from: google/siglip-large-patch16-256
+Key                                                          | Status     |  | 
+-------------------------------------------------------------+------------+--+-
+text_model.encoder.layers.{0...23}.self_attn.v_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm1.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc1.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm2.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.q_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.q_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc1.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.k_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.out_proj.weight | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc2.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.v_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm2.bias          | UNEXPECTED |  | 
+text_model.final_layer_norm.weight                           | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm1.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc2.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.k_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.out_proj.bias   | UNEXPECTED |  | 
+text_model.head.weight                                       | UNEXPECTED |  | 
+logit_scale                                                  | UNEXPECTED |  | 
+logit_bias                                                   | UNEXPECTED |  | 
+text_model.head.bias                                         | UNEXPECTED |  | 
+text_model.embeddings.position_embedding.weight              | UNEXPECTED |  | 
+text_model.embeddings.token_embedding.weight                 | UNEXPECTED |  | 
+text_model.final_layer_norm.bias                             | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+14:43:42   sweep siglip: blocks [4, 8, 12, 16, 20, 24]
+14:44:12   5500 unit-displays (233s); last sweep siglip_L4 square_sr50_light_p4_control180
+14:44:46   6000 unit-displays (267s); last sweep siglip_L24 triangle_sr30_light_p4_control180
+14:45:24 group swap: 20 units, 120 displays
+14:45:25   6500 unit-displays (306s); last swap dinov2_L12|R1n square_sr30_light_p4_control180
+14:45:28   7000 unit-displays (309s); last swap dinov2_L12|R2 square_sr30_dark_p3_control180
+14:45:33   7500 unit-displays (313s); last swap dinov2_L12|R1n triangle_sr30_dark_p3_control180
+14:45:36   8000 unit-displays (317s); last swap dinov2_L12|R3 triangle_sr70_light_p4_control180
+14:45:40   8500 unit-displays (321s); last swap dinov2_L12|R1 square_sr50_dark_p3_control180
+14:45:47   9000 unit-displays (328s); last swap dinov2_L12|R3 square_sr30_light_p2_control180
+14:45:54   9500 unit-displays (335s); last swap dinov2_L12|R1 triangle_sr50_light_p4_control180
+14:46:03   10000 unit-displays (344s); last swap dinov2_L12|R4 triangle_sr50_light_p2_control180
+14:46:07   10500 unit-displays (348s); last swap dinov2_L6|R2 square_sr50_light_p2_control180
+14:46:12   11000 unit-displays (353s); last swap dinov2_L6|R4 square_sr50_dark_p1_control180
+14:46:16   11500 unit-displays (356s); last swap dinov2_L6|R2 triangle_sr30_light_p2_control180
+14:46:20   12000 unit-displays (361s); last swap dinov2_L6|R1n square_sr70_light_p2_control180
+14:46:27   12500 unit-displays (368s); last swap dinov2_L6|R3 square_sr70_dark_p1_control180
+14:46:35   13000 unit-displays (376s); last swap dinov2_L6|R1n triangle_sr70_light_p0_control180
+14:46:42   13500 unit-displays (383s); last swap dinov2_L6|R3 triangle_sr70_dark_p3_control180
+14:46:48   14000 unit-displays (389s); last swap siglip_L24|R1 triangle_sr30_dark_p1_control180
+14:46:53   14500 unit-displays (394s); last swap siglip_L24|R4 square_sr70_light_p0_control180
+14:46:57   15000 unit-displays (398s); last swap siglip_L24|R2 triangle_sr50_dark_p3_control180
+14:47:03   15500 unit-displays (404s); last swap siglip_L24|R1n square_sr30_light_p4_control180
+14:47:09   16000 unit-displays (409s); last swap siglip_L24|R2 square_sr30_dark_p3_control180
+14:47:17   16500 unit-displays (418s); last swap siglip_L24|R1n triangle_sr30_dark_p3_control180
+14:47:23   17000 unit-displays (424s); last swap siglip_L24|R3 triangle_sr70_light_p4_control180
+14:47:29   17500 unit-displays (430s); last swap iie_shapenetc|R1 square_sr50_dark_p3_control180
+14:47:37   18000 unit-displays (438s); last swap iie_shapenetc|R3 square_sr30_light_p2_control180
+14:47:45   18500 unit-displays (446s); last swap iie_shapenetc|R1 triangle_sr50_light_p4_control180
+14:47:54   19000 unit-displays (455s); last swap iie_shapenetc|R4 triangle_sr50_light_p2_control180
+14:48:02   19500 unit-displays (463s); last swap iie_shapenetc|R2 square_sr50_light_p2_control180
+14:48:20   20000 unit-displays (481s); last swap iie_shapenetc|R4 square_sr50_dark_p1_control180
+14:48:30   20500 unit-displays (490s); last swap iie_shapenetc|R2 triangle_sr30_light_p2_control180
+14:48:42 group registers: 2 units, 120 displays
+Loading weights:   0%|          | 0/224 [00:00<?, ?it/s]Loading weights: 100%|██████████| 224/224 [00:00<00:00, 7406.69it/s]
+14:48:42   registers backbone dinov2reg: 6 heads
+14:48:51   21000 unit-displays (512s); last registers dinov2reg_L12|R4 square_sr30_dark_p3_control180
+14:49:18   21500 unit-displays (539s); last registers dinov2reg_L12|R4 square_sr70_light_p4_control180
+14:49:46   22000 unit-displays (567s); last registers dinov2reg_L6|R4 triangle_sr50_light_p2_control180
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/results/explore/A13_region.json
+### EX_a13_region end 2026-11-18T14:50:19Z exit 0 wall 601s

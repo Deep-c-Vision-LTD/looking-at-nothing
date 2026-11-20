@@ -1,0 +1,4 @@
+### R7 start 2026-11-18T18:37:01Z cmd: analyze_re.py primary --which P5
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/out/primary_P5.json
+exit 0
+### R7 end 2026-11-18T18:37:03Z

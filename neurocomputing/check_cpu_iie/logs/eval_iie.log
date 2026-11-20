@@ -1,0 +1,6 @@
+2026-11-18 13:04:51 === eval iie on cpu: 2 heads, stimsets ['stim_v3'], maps saved for: none
+2026-11-18 13:04:56 stim_v3 px336 block 1/1 features 18 images 4s
+2026-11-18 13:05:04 stim_v3 px448 block 1/1 features 18 images 7s
+2026-11-18 13:05:05 stim_v3 iie_shapenetc_R1n_s0 scored 18 images x 2 sizes (maps saved: False)
+2026-11-18 13:05:05 stim_v3 iie_shapenetc_R4_s0 scored 18 images x 2 sizes (maps saved: False)
+2026-11-18 13:05:05 === eval iie done

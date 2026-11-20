@@ -1,0 +1,38 @@
+2026-11-20 01:11:37 === eval dinov2ms on mps: 30 heads, stimsets ['stim_v3', 'stim_alt'], maps saved for: none
+Loading weights:   0%|          | 0/223 [00:00<?, ?it/s]Loading weights: 100%|██████████| 223/223 [00:00<00:00, 8489.80it/s]
+2026-11-20 01:11:44 MIT features 200 images 6s
+2026-11-20 01:11:45 dinov2ms_L7L11_R1_s2 MIT1003 held-out CC 0.7243 NSS 2.6030 (n 200)
+2026-11-20 01:11:45 dinov2ms_L7L11_R1n_s2 MIT1003 held-out CC 0.7292 NSS 2.6177 (n 200)
+2026-11-20 01:11:46 dinov2ms_L7L11_R2_s2 MIT1003 held-out CC 0.7371 NSS 2.6330 (n 200)
+2026-11-20 01:11:47 dinov2ms_L7L11_R3_s2 MIT1003 held-out CC 0.7359 NSS 2.6260 (n 200)
+2026-11-20 01:11:47 dinov2ms_L7L11_R4_s2 MIT1003 held-out CC 0.7448 NSS 2.6789 (n 200)
+2026-11-20 01:11:48 dinov2ms_L11_R1_s2 MIT1003 held-out CC 0.7083 NSS 2.5245 (n 200)
+2026-11-20 01:11:48 dinov2ms_L11_R1n_s2 MIT1003 held-out CC 0.7165 NSS 2.5597 (n 200)
+2026-11-20 01:11:49 dinov2ms_L11_R2_s2 MIT1003 held-out CC 0.7227 NSS 2.5763 (n 200)
+2026-11-20 01:11:50 dinov2ms_L11_R3_s2 MIT1003 held-out CC 0.7269 NSS 2.5787 (n 200)
+2026-11-20 01:11:50 dinov2ms_L11_R4_s2 MIT1003 held-out CC 0.7345 NSS 2.6420 (n 200)
+2026-11-20 01:12:15 stim_v3 px336 block 1/1 features 740 images 22s
+2026-11-20 01:13:24 stim_v3 px448 block 1/1 features 740 images 52s
+2026-11-20 01:13:47 stim_v3 dinov2ms_L7L11_R1_s2 scored 740 images x 2 sizes (maps saved: False)
+2026-11-20 01:13:47 stim_v3 dinov2ms_L7L11_R1n_s2 scored 740 images x 2 sizes (maps saved: False)
+2026-11-20 01:13:47 stim_v3 dinov2ms_L7L11_R2_s2 scored 740 images x 2 sizes (maps saved: False)
+2026-11-20 01:13:47 stim_v3 dinov2ms_L7L11_R3_s2 scored 740 images x 2 sizes (maps saved: False)
+2026-11-20 01:13:47 stim_v3 dinov2ms_L7L11_R4_s2 scored 740 images x 2 sizes (maps saved: False)
+2026-11-20 01:13:47 stim_v3 dinov2ms_L11_R1_s2 scored 740 images x 2 sizes (maps saved: False)
+2026-11-20 01:13:47 stim_v3 dinov2ms_L11_R1n_s2 scored 740 images x 2 sizes (maps saved: False)
+2026-11-20 01:13:47 stim_v3 dinov2ms_L11_R2_s2 scored 740 images x 2 sizes (maps saved: False)
+2026-11-20 01:13:47 stim_v3 dinov2ms_L11_R3_s2 scored 740 images x 2 sizes (maps saved: False)
+2026-11-20 01:13:47 stim_v3 dinov2ms_L11_R4_s2 scored 740 images x 2 sizes (maps saved: False)
+2026-11-20 01:13:59 stim_alt px336 block 1/1 features 360 images 11s
+2026-11-20 01:14:32 stim_alt px448 block 1/1 features 360 images 24s
+2026-11-20 01:14:43 stim_alt dinov2ms_L7L11_R1_s2 scored 360 images x 2 sizes (maps saved: False)
+2026-11-20 01:14:43 stim_alt dinov2ms_L7L11_R1n_s2 scored 360 images x 2 sizes (maps saved: False)
+2026-11-20 01:14:43 stim_alt dinov2ms_L7L11_R2_s2 scored 360 images x 2 sizes (maps saved: False)
+2026-11-20 01:14:43 stim_alt dinov2ms_L7L11_R3_s2 scored 360 images x 2 sizes (maps saved: False)
+2026-11-20 01:14:43 stim_alt dinov2ms_L7L11_R4_s2 scored 360 images x 2 sizes (maps saved: False)
+2026-11-20 01:14:43 stim_alt dinov2ms_L11_R1_s2 scored 360 images x 2 sizes (maps saved: False)
+2026-11-20 01:14:43 stim_alt dinov2ms_L11_R1n_s2 scored 360 images x 2 sizes (maps saved: False)
+2026-11-20 01:14:43 stim_alt dinov2ms_L11_R2_s2 scored 360 images x 2 sizes (maps saved: False)
+2026-11-20 01:14:43 stim_alt dinov2ms_L11_R3_s2 scored 360 images x 2 sizes (maps saved: False)
+2026-11-20 01:14:43 stim_alt dinov2ms_L11_R4_s2 scored 360 images x 2 sizes (maps saved: False)
+2026-11-20 01:14:43 === eval dinov2ms done

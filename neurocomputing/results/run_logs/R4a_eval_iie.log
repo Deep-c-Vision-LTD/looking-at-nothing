@@ -1,0 +1,14 @@
+### R4a_eval_iie start 2026-11-18T13:04:46Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis/gpu cmd: nice -n 10 env V3_DEVICE=cpu V3_MAPS=none OMP_NUM_THREADS=4 $LAN_SAL_SRC/.venv/bin/python -B eval_re.py --bb iie --out ../check_cpu_iie --ckpt-dir $LAN_PROJECT_ROOT/v3/gpu/full/ckpt --tags iie_shapenetc_R4_s0,iie_shapenetc_R1n_s0 --stimsets stim_v3 --stim-limit 18 --skip-mit
+### R4a_eval_iie pid 3474
+2026-11-18 13:04:51 === eval iie on cpu: 2 heads, stimsets ['stim_v3'], maps saved for: none
+$LAN_SAL_SRC/.venv/lib/python3.12/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+$LAN_SAL_SRC/.venv/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+### R4a_eval_iie pid 3474: no Metal client at first check (~5 s)
+2026-11-18 13:04:56 stim_v3 px336 block 1/1 features 18 images 4s
+2026-11-18 13:05:04 stim_v3 px448 block 1/1 features 18 images 7s
+2026-11-18 13:05:05 stim_v3 iie_shapenetc_R1n_s0 scored 18 images x 2 sizes (maps saved: False)
+2026-11-18 13:05:05 stim_v3 iie_shapenetc_R4_s0 scored 18 images x 2 sizes (maps saved: False)
+2026-11-18 13:05:05 === eval iie done
+### R4a_eval_iie end 2026-11-18T13:05:06Z exit 0 wall 20s

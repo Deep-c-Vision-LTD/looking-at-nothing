@@ -23,3 +23,9 @@ stimuli/*/contact*.png
 # first-version artefacts that are regenerated, not distributed
 legacy/stimuli/*/maps_msinet/
 legacy/figures/*.pdf
+# release v3.0 assets unzipped in place (heads and receptive-field arrays; see the release notes)
+neurocomputing/gpu/*/ckpt/*.pt
+registers/full/ckpt/*.pt
+property_package/results/erf/*_cdfs.npz
+# scratch folder of the neurocomputing/explore tests (dirname of the re-analysis folder)
+/_trash/

@@ -1,0 +1,4 @@
+### P5_partial start 2026-11-18T14:05:13Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 $LAN_SAL_SRC/.venv/bin/python -B -I results/scripts/p5_partial.py
+### P5_partial pid 6166
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/results/primary_P5_partial.json
+### P5_partial end 2026-11-18T14:05:18Z exit 0 wall 5s

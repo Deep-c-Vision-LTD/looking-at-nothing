@@ -1,0 +1,4 @@
+### V1_verify start 2026-11-18T13:58:31Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 $LAN_SAL_SRC/.venv/bin/python -B -I results/scripts/verify_fast_battery.py
+### V1_verify pid 5832
+verified: 109 files, missing 0, non-finite values 0
+### V1_verify end 2026-11-18T13:58:36Z exit 0 wall 5s

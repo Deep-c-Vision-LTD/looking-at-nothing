@@ -1,0 +1,10 @@
+### CONT_report_continuity start 2026-11-20T09:36:58Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONDONTWRITEBYTECODE=1 V3_DEVICE=cpu $LAN_SAL_SRC/.venv/bin/python -B -I explore/report_continuity.py
+### CONT_report_continuity pid 22703
+09:36:58 require_public: 33 hashed files verified
+09:36:59 records computed: 124
+09:36:59 G1 passed: 164 point estimates, max |difference| 0.0
+09:37:00 G2 passed: 1322 and 1219 numeric leaves
+09:37:00 G3 passed
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/results/explore/continuity_intervals.json
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/results/explore/continuity_intervals.md
+### CONT_report_continuity end 2026-11-20T09:37:03Z exit 0 wall 5s

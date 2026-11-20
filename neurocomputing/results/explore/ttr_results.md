@@ -1,0 +1,292 @@
+# Test-time registers on the flagged CLIP-L and SigLIP-L blocks (exploratory)
+
+- Generated 2026-11-18 23:14 UTC by `explore/ttr/ttr_analyze.py` from `scores_ttr/` and `results/explore/ttr/`. **Exploratory** (REANALYSIS_RULE.md Section 6, item 12): unadjusted, never decision-bearing; P3, P4, P5 and the title are unchanged. Design: `explore/ttr/DESIGN.md`; deviations: `DEVIATIONS.md` D8.
+- Readouts frozen (flag F1). Intervals: WCU (12 clusters; 6 for the square Delta20) for linear quantities, BCa with the stability flag for ratios and ratio differences; `*` marks an interval that excludes 0. 4 decimals; unrounded values in `ttr_results.json`.
+
+## 0. Summary (exploratory)
+
+- clip: 30 register neurons in layers [8, 9, 10, 11, 12, 20, 21, 22] (fallback branch, k = 30; emergence block 12, so the primary branch searched layers 0 to 11 and no k up to 300 met the criterion there; the fallback searched layers 0 to 23).
+- siglip: 200 register neurons in layers [4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 20, 21, 22, 23] (fallback branch, k = 200; emergence block 8, so the primary branch searched layers 0 to 7 and no k up to 300 met the criterion there; the fallback searched layers 0 to 23).
+- clip token norms on the 24 A15(a) Kanizsa displays, blocks [12, 16, 20, 24] at 336 and 448 px (90th percentile of max/median): plain 9.67 to 28.63; register only 9.71 to 28.71; ttr 1.52 to 2.29. Strict gate K (<= 2.0) failing blocks: [12, 16, 24] (labelled "not suppressed on the displays"); on the 24 MIT1003 images: none failing.
+- siglip token norms on the 24 A15(a) Kanizsa displays, blocks [8, 12, 16, 20, 24] at 336 and 448 px (90th percentile of max/median): plain 4.60 to 20.18; register only 4.59 to 20.18; ttr 1.48 to 2.04. Strict gate K (<= 2.0) failing blocks: [12] (labelled "not suppressed on the displays"); on the 24 MIT1003 images: none failing.
+  - siglip block 4: flagged before the emergence block; unchanged by TTR (2.68 -> 2.68 at 336 px), as no register neuron lies below it.
+- On every stim_v3 display and flagged block, the plain tokens above twice the median sit outside both the inside AOI and the inducer AOI (background), for illusory and control180 displays alike (Section 5).
+- Contrast E = r(illusory) - r(control180), readouts frozen (WCU 95% intervals; `*` excludes 0):
+  - clip_L12: plain +0.0605 [+0.0461, +0.0753]*; ttr +0.0650 [+0.0501, +0.0802]*; ttr - plain +0.0044 [+0.0030, +0.0059]*; register only - plain +0.0015 [+0.0003, +0.0026]*; interval on the same side (relative to the sign of the plain point estimate).
+  - clip_L16: plain +0.0176 [+0.0036, +0.0317]*; ttr +0.0079 [-0.0057, +0.0217]; ttr - plain -0.0097 [-0.0154, -0.0041]*; register only - plain +0.0009 [-0.0022, +0.0041]; interval includes 0 (relative to the sign of the plain point estimate).
+  - clip_L20: plain -0.0101 [-0.0253, +0.0048]; ttr -0.0248 [-0.0410, -0.0084]*; ttr - plain -0.0147 [-0.0218, -0.0077]*; register only - plain +0.0013 [-0.0024, +0.0050]; interval on the same side (relative to the sign of the plain point estimate).
+  - clip_L24: plain +0.0137 [-0.0176, +0.0444]; ttr -0.0163 [-0.0454, +0.0119]; ttr - plain -0.0300 [-0.0468, -0.0139]*; register only - plain +0.0003 [-0.0023, +0.0030]; interval includes 0 (relative to the sign of the plain point estimate).
+  - siglip_L4: plain +0.0198 [+0.0093, +0.0306]*; ttr +0.0198 [+0.0092, +0.0306]*; ttr - plain -0.0000 [-0.0001, +0.0001]; register only - plain -0.0000 [-0.0001, +0.0001]; interval on the same side (relative to the sign of the plain point estimate).
+  - siglip_L8: plain +0.0551 [+0.0404, +0.0699]*; ttr +0.0536 [+0.0391, +0.0684]*; ttr - plain -0.0015 [-0.0023, -0.0006]*; register only - plain -0.0003 [-0.0005, -0.0002]*; interval on the same side (relative to the sign of the plain point estimate).
+  - siglip_L12: plain -0.0206 [-0.0348, -0.0066]*; ttr -0.0208 [-0.0376, -0.0043]*; ttr - plain -0.0003 [-0.0058, +0.0054]; register only - plain +0.0003 [-0.0001, +0.0008]; interval on the same side (relative to the sign of the plain point estimate).
+  - siglip_L16: plain +0.0019 [-0.0131, +0.0169]; ttr -0.0090 [-0.0249, +0.0069]; ttr - plain -0.0109 [-0.0152, -0.0067]*; register only - plain -0.0007 [-0.0017, +0.0003]; interval includes 0 (relative to the sign of the plain point estimate).
+  - siglip_L20: plain +0.0473 [+0.0157, +0.0784]*; ttr +0.0324 [+0.0049, +0.0600]*; ttr - plain -0.0149 [-0.0222, -0.0077]*; register only - plain -0.0012 [-0.0025, +0.0002]; interval on the same side (relative to the sign of the plain point estimate).
+  - siglip_L24: plain +0.1447 [+0.1186, +0.1703]*; ttr +0.1252 [+0.0986, +0.1515]*; ttr - plain -0.0195 [-0.0307, -0.0084]*; register only - plain -0.0031 [-0.0046, -0.0015]*; interval on the same side (relative to the sign of the plain point estimate).
+  - siglip_L24|R1n: plain +0.1436 [+0.1120, +0.1749]*; ttr +0.1489 [+0.1189, +0.1785]*; ttr - plain +0.0052 [-0.0016, +0.0120]; register only - plain -0.0023 [-0.0033, -0.0013]*; interval on the same side (relative to the sign of the plain point estimate).
+  - siglip_L24|R1: plain +0.1244 [+0.0962, +0.1519]*; ttr +0.1173 [+0.0927, +0.1422]*; ttr - plain -0.0071 [-0.0142, -0.0002]*; register only - plain -0.0029 [-0.0041, -0.0019]*; interval on the same side (relative to the sign of the plain point estimate).
+  - siglip_L24|R2: plain +0.1362 [+0.1140, +0.1585]*; ttr +0.1080 [+0.0869, +0.1282]*; ttr - plain -0.0282 [-0.0387, -0.0177]*; register only - plain -0.0025 [-0.0036, -0.0014]*; interval on the same side (relative to the sign of the plain point estimate).
+  - siglip_L24|R3: plain +0.1133 [+0.0204, +0.2043]*; ttr +0.0698 [-0.0125, +0.1511]; ttr - plain -0.0436 [-0.0563, -0.0305]*; register only - plain -0.0027 [-0.0039, -0.0015]*; interval includes 0 (relative to the sign of the plain point estimate).
+  - siglip_L24|R4: plain +0.1435 [+0.1154, +0.1717]*; ttr +0.1203 [+0.0911, +0.1487]*; ttr - plain -0.0232 [-0.0306, -0.0157]*; register only - plain -0.0034 [-0.0047, -0.0020]*; interval on the same side (relative to the sign of the plain point estimate).
+- SigLIP-L block 24 swap under ttr (P3-like, unadjusted): 3 of 4 non-R4 cells keep R4's sign (R1n, R1, R2); opposite-sign intervals: none; 12 of 12 seed point estimates have R4's sign.
+- P4-like (R2 - R4), plain: U20 +0.0094 [-0.0309, +0.0454]; A20 +0.0492 [+0.0135, +0.0775]*.
+- P4-like (R2 - R4), ttr: U20 +0.0531 [-0.0110, +0.1009]; A20 +0.0942 [+0.0539, +0.1383]*.
+- Held-out MIT1003 CC, ttr - plain: -0.0026 to +0.0064 over 15 units; 0 flagged (drop > 0.03).
+
+Sentence template (DESIGN.md Section 4.4) filled for SigLIP-L block 24 R4: "With test-time registers (Jiang et al. 2025; 200 register neurons in layers 4 to 23, chosen on 100 MIT1003 training images), the high-norm tokens at SigLIP-L block 24 fell from 4.60 to 1.66 times the median (90th percentile, 336 px); with the readouts unchanged, R4 gave +0.1203 [+0.0911, +0.1487]* (same run without registers +0.1435 [+0.1154, +0.1717]*; difference -0.0232 [-0.0306, -0.0157]*); exploratory."
+
+## 1. Selection and gates
+
+| backbone | e (h) | detection block d | tau 336 / 448 | chosen | neurons (per layer) | not suppressed on selection images | synthetic check |
+|---|---|---|---|---|---|---|---|
+| clip | 12 (11) | 13 | 56.30 / 54.55 | fallback k = 30 (passed) | 30 (8: 1, 9: 2, 10: 4, 11: 7, 12: 9, 20: 1, 21: 3, 22: 3) | none | pass |
+| siglip | 8 (7) | 12 | 82.27 / 85.84 | fallback k = 200 (passed) | 200 (4: 1, 5: 3, 6: 30, 7: 35, 8: 21, 9: 17, 10: 19, 11: 8, 12: 9, 14: 3, 15: 1, 16: 5, 17: 2, 18: 2, 20: 1, 21: 1, 22: 5, 23: 37) | none | pass |
+
+- clip: gate F pass (max |diff| 0 required); gate P pass: 6720 per-image r_inside values (stim_v3 and stim_alt, both sizes), max |diff| 1.02e-06 (tolerance 1e-4); sweep MIT1003 mean CC of 4 readouts against the 4-decimal published means, max |diff| 3.6e-05 (tolerance 1.5e-4); exact-formula check max |diff| 0 on 48 values.
+- siglip: gate F pass (max |diff| 0 required); gate P pass: 35280 per-image r_inside values (stim_v3 and stim_alt, both sizes), max |diff| 4.39e-05 (tolerance 1e-4); sweep MIT1003 mean CC of 6 readouts against the 4-decimal published means, max |diff| 4.69e-05 (tolerance 1.5e-4); swap MIT1003 per-image CC (3000 values, published on MPS to 5 decimals) max |diff| 3.66e-05 (tolerance 1e-4); exact-formula check max |diff| 0 on 252 values.
+
+### Gate K: token norms on the A15(a) images (90th percentile of max/median over 24 images; plain -> ttr)
+
+| backbone | block | label | Kanizsa 336 | Kanizsa 448 | MIT1003 336 | MIT1003 448 | share > 2x median, Kanizsa 336 (plain -> ttr) |
+|---|---|---|---|---|---|---|---|
+| clip | 12 | not suppressed on the displays | 12.04 -> 2.14 | 12.69 -> 2.29 | 13.44 -> 1.68 | 13.61 -> 1.80 | 0.0224 -> 0.0021 |
+| clip | 16 | not suppressed on the displays | 27.89 -> 1.96 | 28.63 -> 2.05 | 27.29 -> 1.86 | 28.03 -> 1.94 | 0.0325 -> 0.0000 |
+| clip | 20 | suppressed | 15.36 -> 1.52 | 15.92 -> 1.53 | 16.98 -> 1.59 | 17.51 -> 1.58 | 0.0236 -> 0.0000 |
+| clip | 24 | not suppressed on the displays | 9.67 -> 2.08 | 9.88 -> 2.08 | 10.44 -> 1.95 | 10.73 -> 1.95 | 0.0373 -> 0.0179 |
+| siglip | 4 | flagged, before the emergence block | 2.68 -> 2.68 | 2.55 -> 2.55 | 2.53 -> 2.53 | 2.41 -> 2.41 | 0.0045 -> 0.0045 |
+| siglip | 8 | suppressed | 8.81 -> 1.84 | 11.06 -> 1.88 | 9.99 -> 1.61 | 10.08 -> 1.68 | 0.0283 -> 0.0000 |
+| siglip | 12 | not suppressed on the displays | 17.57 -> 2.02 | 20.18 -> 2.04 | 20.15 -> 1.78 | 20.51 -> 1.87 | 0.0300 -> 0.0003 |
+| siglip | 16 | suppressed | 12.92 -> 1.57 | 14.56 -> 1.60 | 16.71 -> 1.67 | 16.59 -> 1.69 | 0.0296 -> 0.0000 |
+| siglip | 20 | suppressed | 9.84 -> 1.50 | 11.08 -> 1.48 | 11.11 -> 1.58 | 11.09 -> 1.58 | 0.0295 -> 0.0000 |
+| siglip | 24 | suppressed | 4.60 -> 1.66 | 5.17 -> 1.74 | 4.90 -> 1.79 | 4.93 -> 1.84 | 0.0265 -> 0.0000 |
+
+- clip: gate K on the displays NOT passed (failing blocks [12, 16, 24]); on MIT1003 passed (failing none); plain reproduces A15(a) to 0.
+- siglip: gate K on the displays NOT passed (failing blocks [12]); on MIT1003 passed (failing none); plain reproduces A15(a) to 0.
+
+## 2. Contrast with and without test-time registers (frozen readouts)
+
+| unit | E plain | E ttr | ttr - plain | sign status | E reg0 | reg0 - plain | E_real ttr |
+|---|---|---|---|---|---|---|---|
+| clip_L12 | +0.0605 [+0.0461, +0.0753]* | +0.0650 [+0.0501, +0.0802]* | +0.0044 [+0.0030, +0.0059]* | interval on the same side | +0.0620 [+0.0475, +0.0769]* | +0.0015 [+0.0003, +0.0026]* | +0.1045 [+0.0804, +0.1292]* |
+| clip_L16 | +0.0176 [+0.0036, +0.0317]* | +0.0079 [-0.0057, +0.0217] | -0.0097 [-0.0154, -0.0041]* | interval includes 0 | +0.0186 [+0.0030, +0.0339]* | +0.0009 [-0.0022, +0.0041] | +0.0953 [+0.0620, +0.1285]* |
+| clip_L20 | -0.0101 [-0.0253, +0.0048] | -0.0248 [-0.0410, -0.0084]* | -0.0147 [-0.0218, -0.0077]* | interval on the same side | -0.0088 [-0.0261, +0.0077] | +0.0013 [-0.0024, +0.0050] | +0.0789 [+0.0537, +0.1040]* |
+| clip_L24 | +0.0137 [-0.0176, +0.0444] | -0.0163 [-0.0454, +0.0119] | -0.0300 [-0.0468, -0.0139]* | interval includes 0 | +0.0140 [-0.0167, +0.0439] | +0.0003 [-0.0023, +0.0030] | +0.1145 [+0.0805, +0.1486]* |
+| siglip_L4 | +0.0198 [+0.0093, +0.0306]* | +0.0198 [+0.0092, +0.0306]* | -0.0000 [-0.0001, +0.0001] | interval on the same side | +0.0198 [+0.0092, +0.0306]* | -0.0000 [-0.0001, +0.0001] | +0.1073 [+0.0737, +0.1425]* |
+| siglip_L8 | +0.0551 [+0.0404, +0.0699]* | +0.0536 [+0.0391, +0.0684]* | -0.0015 [-0.0023, -0.0006]* | interval on the same side | +0.0548 [+0.0401, +0.0696]* | -0.0003 [-0.0005, -0.0002]* | +0.1394 [+0.1046, +0.1757]* |
+| siglip_L12 | -0.0206 [-0.0348, -0.0066]* | -0.0208 [-0.0376, -0.0043]* | -0.0003 [-0.0058, +0.0054] | interval on the same side | -0.0202 [-0.0346, -0.0063]* | +0.0003 [-0.0001, +0.0008] | +0.0647 [+0.0401, +0.0897]* |
+| siglip_L16 | +0.0019 [-0.0131, +0.0169] | -0.0090 [-0.0249, +0.0069] | -0.0109 [-0.0152, -0.0067]* | interval includes 0 | +0.0012 [-0.0142, +0.0167] | -0.0007 [-0.0017, +0.0003] | +0.1115 [+0.0872, +0.1361]* |
+| siglip_L20 | +0.0473 [+0.0157, +0.0784]* | +0.0324 [+0.0049, +0.0600]* | -0.0149 [-0.0222, -0.0077]* | interval on the same side | +0.0461 [+0.0146, +0.0771]* | -0.0012 [-0.0025, +0.0002] | +0.0712 [+0.0359, +0.1064]* |
+| siglip_L24 | +0.1447 [+0.1186, +0.1703]* | +0.1252 [+0.0986, +0.1515]* | -0.0195 [-0.0307, -0.0084]* | interval on the same side | +0.1416 [+0.1160, +0.1667]* | -0.0031 [-0.0046, -0.0015]* | +0.1300 [+0.1126, +0.1476]* |
+| siglip_L24 R1n | +0.1436 [+0.1120, +0.1749]* | +0.1489 [+0.1189, +0.1785]* | +0.0052 [-0.0016, +0.0120] | interval on the same side | +0.1413 [+0.1100, +0.1720]* | -0.0023 [-0.0033, -0.0013]* | +0.1521 [+0.1138, +0.1904]* |
+| siglip_L24 R1 | +0.1244 [+0.0962, +0.1519]* | +0.1173 [+0.0927, +0.1422]* | -0.0071 [-0.0142, -0.0002]* | interval on the same side | +0.1214 [+0.0938, +0.1487]* | -0.0029 [-0.0041, -0.0019]* | +0.1340 [+0.1072, +0.1610]* |
+| siglip_L24 R2 | +0.1362 [+0.1140, +0.1585]* | +0.1080 [+0.0869, +0.1282]* | -0.0282 [-0.0387, -0.0177]* | interval on the same side | +0.1338 [+0.1116, +0.1560]* | -0.0025 [-0.0036, -0.0014]* | +0.0975 [+0.0746, +0.1206]* |
+| siglip_L24 R3 | +0.1133 [+0.0204, +0.2043]* | +0.0698 [-0.0125, +0.1511] | -0.0436 [-0.0563, -0.0305]* | interval includes 0 | +0.1107 [+0.0187, +0.2013]* | -0.0027 [-0.0039, -0.0015]* | +0.0821 [+0.0339, +0.1300]* |
+| siglip_L24 R4 | +0.1435 [+0.1154, +0.1717]* | +0.1203 [+0.0911, +0.1487]* | -0.0232 [-0.0306, -0.0157]* | interval on the same side | +0.1402 [+0.1121, +0.1682]* | -0.0034 [-0.0047, -0.0020]* | +0.0949 [+0.0793, +0.1107]* |
+
+### 90 degree control and rotation profile
+
+| unit | arm | E90 | L10 | L20 | L30 | U10 | U20 | U30 | A20 | square Delta20 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| clip_L12 | plain | +0.0632 [+0.0463, +0.0800]* | -0.0045 [-0.0088, -0.0004]* | +0.0063 [-0.0044, +0.0170] | +0.0254 [+0.0079, +0.0424]* | 1.0749 [+1.0192, +1.1571]* | 0.8962 [+0.7220, +1.0385]* | 0.5809 [+0.3132, +0.8076]* | 0.8667 [+0.7652, +0.9704]* | +0.0041 [-0.0027, +0.0108] |
+| clip_L12 | reg0 | +0.0638 [+0.0462, +0.0813]* | -0.0046 [-0.0087, -0.0007]* | +0.0061 [-0.0047, +0.0169] | +0.0257 [+0.0079, +0.0431]* | 1.0750 [+1.0207, +1.1486]* | 0.9016 [+0.7347, +1.0441]* | 0.5863 [+0.3314, +0.8093]* | n/a | n/a |
+| clip_L12 | ttr | +0.0660 [+0.0490, +0.0831]* | -0.0044 [-0.0089, -0.0001]* | +0.0063 [-0.0050, +0.0176] | +0.0266 [+0.0094, +0.0436]* | 1.0682 [+1.0106, +1.1439]* | 0.9027 [+0.7336, +1.0410]* | 0.5903 [+0.3409, +0.8037]* | 0.8613 [+0.7578, +0.9761]* | +0.0028 [-0.0047, +0.0103] |
+| clip_L16 | plain | +0.0309 [+0.0132, +0.0481]* | -0.0062 [-0.0135, +0.0008] | -0.0027 [-0.0114, +0.0058] | -0.0002 [-0.0120, +0.0115] | 1.3541 [+0.9936, +2.5303]* (unstable) | 1.1555 [+0.7869, +2.3598]* (unstable) | 1.0116 [+0.5707, +2.7348]* (unstable) | 1.3095 [+0.6027, +2.5099]* (unstable) | +0.0297 [+0.0183, +0.0412]* |
+| clip_L16 | reg0 | +0.0315 [+0.0133, +0.0490]* | -0.0055 [-0.0132, +0.0020] | -0.0019 [-0.0110, +0.0069] | +0.0003 [-0.0125, +0.0127] | 1.2947 [+0.9520, +2.4377]* (unstable) | 1.1041 [+0.7605, +2.3060]* (unstable) | 0.9865 [+0.5577, +2.7496]* (unstable) | n/a | n/a |
+| clip_L16 | ttr | +0.0341 [+0.0185, +0.0495]* | -0.0047 [-0.0112, +0.0016] | +0.0022 [-0.0040, +0.0086] | +0.0090 [+0.0008, +0.0174]* | 1.5983 [-2.2942, +12.5292] (not reportable (denominator interval includes 0)) | 0.7229 [-0.7854, +3.9942] (not reportable (denominator interval includes 0)) | -0.1390 [-11.8446, +2.9171] (not reportable (denominator interval includes 0)) | 1.7608 [-3.8964, +13.4436] (not reportable (denominator interval includes 0)) | +0.0296 [+0.0157, +0.0436]* |
+| clip_L20 | plain | -0.0020 [-0.0183, +0.0137] | -0.0031 [-0.0098, +0.0034] | -0.0120 [-0.0253, +0.0011] | -0.0196 [-0.0345, -0.0044]* | 0.6938 [-2.0301, +2.3179] (not reportable (denominator interval includes 0)) | -0.1876 [-3.5401, +4.8038] (not reportable (denominator interval includes 0)) | -0.9326 [-8.3569, +11.3170] (not reportable (denominator interval includes 0)) | -1.2006 [-13.0310, +21.4479] (not reportable (denominator interval includes 0)) | +0.0238 [+0.0127, +0.0348]* |
+| clip_L20 | reg0 | +0.0010 [-0.0159, +0.0173] | -0.0021 [-0.0087, +0.0045] | -0.0106 [-0.0237, +0.0021] | -0.0182 [-0.0327, -0.0036]* | 0.7597 [-3.5242, +3.1957] (not reportable (denominator interval includes 0)) | -0.2024 [-8.1880, +4.9179] (not reportable (denominator interval includes 0)) | -1.0569 [-19.6944, +8.9629] (not reportable (denominator interval includes 0)) | n/a | n/a |
+| clip_L20 | ttr | -0.0068 [-0.0223, +0.0087] | +0.0013 [-0.0066, +0.0090] | -0.0088 [-0.0233, +0.0056] | -0.0186 [-0.0362, -0.0011]* | 1.0513 [+0.7824, +1.5681]* (unstable) | 0.6460 [+0.3695, +1.4715]* (unstable) | 0.2512 [-0.1667, +0.8700] (unstable) | 0.2567 [-0.2659, +0.6088] (unstable) | +0.0266 [+0.0163, +0.0369]* |
+| clip_L24 | plain | -0.0043 [-0.0359, +0.0267] | +0.0097 [-0.0003, +0.0197] | +0.0104 [-0.0099, +0.0305] | -0.0015 [-0.0252, +0.0223] | 0.2898 [-9.8045, +3.1748] (not reportable (denominator interval includes 0)) | 0.2395 [-3.0395, +7.6128] (not reportable (denominator interval includes 0)) | 1.1067 [-0.8441, +36.4946] (not reportable (denominator interval includes 0)) | 1.4118 [-1.5712, +26.6011] (not reportable (denominator interval includes 0)) | +0.0134 [-0.0104, +0.0372] |
+| clip_L24 | reg0 | -0.0008 [-0.0315, +0.0295] | +0.0105 [+0.0003, +0.0206]* | +0.0126 [-0.0070, +0.0322] | +0.0016 [-0.0215, +0.0243] | 0.2498 [-9.1979, +4.0668] (not reportable (denominator interval includes 0)) | 0.0983 [-5.3652, +6.5050] (not reportable (denominator interval includes 0)) | 0.8865 [-0.4446, +28.0084] (not reportable (denominator interval includes 0)) | n/a | n/a |
+| clip_L24 | ttr | -0.0128 [-0.0448, +0.0200] | +0.0152 [+0.0011, +0.0293]* | +0.0078 [-0.0140, +0.0298] | -0.0126 [-0.0378, +0.0121] | 1.9318 [-0.4311, +53.0996] (not reportable (denominator interval includes 0)) | 1.4772 [-1.0715, +37.7748] (not reportable (denominator interval includes 0)) | 0.2270 [-2.9188, +3.3966] (not reportable (denominator interval includes 0)) | 0.0386 [-45.8088, +0.6834] (not reportable (denominator interval includes 0)) | +0.0219 [+0.0081, +0.0356]* |
+| siglip_L4 | plain | +0.0301 [+0.0131, +0.0477]* | +0.0041 [-0.0017, +0.0100] | +0.0106 [+0.0013, +0.0198]* | +0.0124 [+0.0015, +0.0235]* | 0.7914 [+0.4440, +1.0734]* (unstable) | 0.4646 [-0.1164, +0.8884] (unstable) | 0.3752 [-0.3418, +0.8284] (unstable) | 1.1432 [+0.9016, +1.5333]* (unstable) | +0.0179 [+0.0059, +0.0298]* |
+| siglip_L4 | reg0 | +0.0300 [+0.0130, +0.0476]* | +0.0041 [-0.0017, +0.0099] | +0.0105 [+0.0012, +0.0197]* | +0.0123 [+0.0015, +0.0234]* | 0.7938 [+0.4460, +1.0768]* (unstable) | 0.4686 [-0.1101, +0.8925] (unstable) | 0.3788 [-0.3374, +0.8311] (unstable) | n/a | n/a |
+| siglip_L4 | ttr | +0.0300 [+0.0130, +0.0476]* | +0.0041 [-0.0017, +0.0099] | +0.0105 [+0.0012, +0.0197]* | +0.0123 [+0.0015, +0.0234]* | 0.7938 [+0.4460, +1.0768]* (unstable) | 0.4686 [-0.1101, +0.8925] (unstable) | 0.3788 [-0.3374, +0.8311] (unstable) | 1.1479 [+0.9071, +1.5431]* (unstable) | +0.0179 [+0.0059, +0.0298]* |
+| siglip_L8 | plain | +0.1168 [+0.0980, +0.1357]* | +0.0108 [+0.0018, +0.0199]* | +0.0248 [+0.0120, +0.0375]* | +0.0421 [+0.0294, +0.0547]* | 0.8035 [+0.6586, +0.9383]* | 0.5504 [+0.3438, +0.7731]* | 0.2369 [-0.0387, +0.4438] | 0.8922 [+0.7517, +1.0316]* | +0.0272 [+0.0161, +0.0384]* |
+| siglip_L8 | reg0 | +0.1164 [+0.0975, +0.1354]* | +0.0109 [+0.0018, +0.0200]* | +0.0249 [+0.0121, +0.0376]* | +0.0421 [+0.0294, +0.0549]* | 0.8009 [+0.6554, +0.9364]* | 0.5459 [+0.3369, +0.7707]* | 0.2310 [-0.0488, +0.4395] | n/a | n/a |
+| siglip_L8 | ttr | +0.1149 [+0.0965, +0.1336]* | +0.0110 [+0.0017, +0.0203]* | +0.0248 [+0.0117, +0.0378]* | +0.0421 [+0.0290, +0.0552]* | 0.7952 [+0.6367, +0.9397]* | 0.5376 [+0.3060, +0.7769]* | 0.2154 [-0.0963, +0.4418] | 0.8782 [+0.7226, +1.0213]* | +0.0271 [+0.0164, +0.0378]* |
+| siglip_L12 | plain | +0.0015 [-0.0073, +0.0101] | -0.0083 [-0.0126, -0.0039]* | -0.0120 [-0.0203, -0.0034]* | -0.0087 [-0.0196, +0.0024] | 0.5971 [-0.2050, +0.8290] (unstable) | 0.4178 [-0.6698, +0.8466] (unstable) | 0.5771 [-0.1974, +1.1619] (unstable) | 0.7607 [+0.2497, +1.4684]* (unstable) | -0.0057 [-0.0192, +0.0079] |
+| siglip_L12 | reg0 | +0.0018 [-0.0069, +0.0106] | -0.0083 [-0.0127, -0.0039]* | -0.0120 [-0.0204, -0.0034]* | -0.0088 [-0.0198, +0.0024] | 0.5878 [-0.2489, +0.8275] (unstable) | 0.4048 [-0.7270, +0.8421] (unstable) | 0.5669 [-0.2357, +1.1683] (unstable) | n/a | n/a |
+| siglip_L12 | ttr | +0.0056 [-0.0043, +0.0152] | -0.0064 [-0.0114, -0.0014]* | -0.0078 [-0.0171, +0.0016] | -0.0050 [-0.0176, +0.0081] | 0.6949 [-0.2111, +0.9554] (unstable) | 0.6280 [-0.4527, +1.0840] (unstable) | 0.7608 [-0.0032, +1.4886] (unstable) | 0.6276 [-0.1868, +1.2981] (unstable) | +0.0029 [-0.0092, +0.0149] |
+| siglip_L16 | plain | +0.0564 [+0.0361, +0.0760]* | -0.0064 [-0.0160, +0.0033] | -0.0019 [-0.0211, +0.0173] | +0.0238 [+0.0023, +0.0459]* | 4.3128 [+1.7516, +1047.0474]* (not reportable (denominator interval includes 0)) | 1.9920 [-0.3538, +168.8091] (not reportable (denominator interval includes 0)) | -11.3606 [-12928.2117, -3.3884]* (not reportable (denominator interval includes 0)) | 4.3671 [+1.0337, +551.0342]* (not reportable (denominator interval includes 0)) | -0.0093 [-0.0376, +0.0191] |
+| siglip_L16 | reg0 | +0.0557 [+0.0356, +0.0756]* | -0.0064 [-0.0160, +0.0031] | -0.0019 [-0.0212, +0.0176] | +0.0232 [+0.0017, +0.0454]* | 6.3483 [+3.3869, +6264.2076]* (not reportable (denominator interval includes 0)) | 2.5501 [+0.6971, +4692.2341]* (not reportable (denominator interval includes 0)) | -18.2139 [-13794.8885, -9.2256]* (not reportable (denominator interval includes 0)) | n/a | n/a |
+| siglip_L16 | ttr | +0.0495 [+0.0244, +0.0740]* | -0.0142 [-0.0255, -0.0029]* | -0.0084 [-0.0288, +0.0118] | +0.0205 [-0.0029, +0.0442] | -0.5734 [-21.7339, +6.8362] (not reportable (denominator interval includes 0)) | 0.0703 [-26.3210, +3.0162] (not reportable (denominator interval includes 0)) | 3.2771 [-7.9046, +40.6647] (not reportable (denominator interval includes 0)) | -0.8963 [-39.6300, +4.7642] (not reportable (denominator interval includes 0)) | -0.0008 [-0.0257, +0.0240] |
+| siglip_L20 | plain | +0.0831 [+0.0490, +0.1176]* | +0.0120 [+0.0009, +0.0232]* | +0.0279 [+0.0069, +0.0491]* | +0.0582 [+0.0328, +0.0843]* | 0.7463 [+0.3192, +0.9335]* (unstable) | 0.4105 [-0.5234, +0.8081] (unstable) | -0.2315 [-1.8405, +0.3724] (unstable) | 0.2200 [-2.0320, +0.8951] (unstable) | -0.0483 [-0.1130, +0.0163] |
+| siglip_L20 | reg0 | +0.0807 [+0.0475, +0.1144]* | +0.0122 [+0.0008, +0.0236]* | +0.0280 [+0.0068, +0.0494]* | +0.0577 [+0.0318, +0.0839]* | 0.7350 [+0.2997, +0.9282]* (unstable) | 0.3937 [-0.5881, +0.8027] (unstable) | -0.2517 [-1.9200, +0.3667] (unstable) | n/a | n/a |
+| siglip_L20 | ttr | +0.0726 [+0.0414, +0.1044]* | +0.0108 [+0.0017, +0.0198]* | +0.0258 [+0.0053, +0.0463]* | +0.0569 [+0.0307, +0.0836]* | 0.6651 [-0.4721, +0.9129] (unstable) | 0.2029 [-1.7908, +0.7999] (unstable) | -0.7575 [-4.8490, +0.2122] (unstable) | 0.2430 [-4.4213, +1.2725] (unstable) | -0.0431 [-0.0984, +0.0122] |
+| siglip_L24 | plain | +0.1384 [+0.1121, +0.1642]* | -0.0094 [-0.0247, +0.0063] | +0.0235 [+0.0050, +0.0429]* | +0.0721 [+0.0493, +0.0950]* | 1.0652 [+0.9640, +1.1504]* | 0.8374 [+0.7076, +0.9690]* | 0.5021 [+0.4140, +0.6333]* | 0.6969 [+0.5923, +0.7884]* | -0.0492 [-0.0900, -0.0083]* |
+| siglip_L24 | reg0 | +0.1367 [+0.1105, +0.1626]* | -0.0092 [-0.0242, +0.0065] | +0.0231 [+0.0041, +0.0428]* | +0.0702 [+0.0478, +0.0928]* | 1.0651 [+0.9619, +1.1528]* | 0.8367 [+0.7025, +0.9753]* | 0.5045 [+0.4172, +0.6386]* | n/a | n/a |
+| siglip_L24 | ttr | +0.1190 [+0.0953, +0.1423]* | -0.0135 [-0.0211, -0.0058]* | +0.0110 [-0.0017, +0.0234] | +0.0540 [+0.0329, +0.0750]* | 1.1078 [+1.0375, +1.1660]* | 0.9125 [+0.8061, +1.0154]* | 0.5690 [+0.4713, +0.6757]* | 0.8186 [+0.6978, +0.9569]* | -0.0356 [-0.0667, -0.0046]* |
+| siglip_L24 R1n | plain | +0.1797 [+0.1411, +0.2182]* | +0.0237 [+0.0157, +0.0318]* | +0.0476 [+0.0381, +0.0571]* | +0.0802 [+0.0653, +0.0950]* | 0.8348 [+0.7840, +0.8866]* | 0.6684 [+0.5898, +0.7303]* | 0.4417 [+0.3847, +0.4904]* | 0.7174 [+0.5717, +0.8258]* | -0.0186 [-0.0449, +0.0076] |
+| siglip_L24 R1n | reg0 | +0.1779 [+0.1394, +0.2163]* | +0.0239 [+0.0159, +0.0320]* | +0.0480 [+0.0387, +0.0572]* | +0.0802 [+0.0651, +0.0950]* | 0.8307 [+0.7792, +0.8833]* | 0.6605 [+0.5824, +0.7231]* | 0.4328 [+0.3770, +0.4826]* | n/a | n/a |
+| siglip_L24 R1n | ttr | +0.1931 [+0.1529, +0.2335]* | +0.0246 [+0.0170, +0.0321]* | +0.0470 [+0.0396, +0.0545]* | +0.0862 [+0.0716, +0.1007]* | 0.8346 [+0.7829, +0.8916]* | 0.6843 [+0.6142, +0.7463]* | 0.4206 [+0.3511, +0.4897]* | 0.7391 [+0.5695, +0.8685]* | -0.0199 [-0.0446, +0.0049] |
+| siglip_L24 R1 | plain | +0.1675 [+0.1304, +0.2048]* | +0.0102 [+0.0040, +0.0166]* | +0.0292 [+0.0183, +0.0402]* | +0.0620 [+0.0520, +0.0721]* | 0.9182 [+0.8556, +0.9760]* | 0.7656 [+0.6415, +0.8655]* | 0.5014 [+0.3966, +0.5848]* | 0.8541 [+0.7116, +0.9669]* | -0.0070 [-0.0305, +0.0165] |
+| siglip_L24 R1 | reg0 | +0.1648 [+0.1285, +0.2015]* | +0.0103 [+0.0043, +0.0165]* | +0.0292 [+0.0187, +0.0398]* | +0.0613 [+0.0516, +0.0712]* | 0.9151 [+0.8526, +0.9750]* | 0.7599 [+0.6352, +0.8636]* | 0.4949 [+0.3923, +0.5802]* | n/a | n/a |
+| siglip_L24 R1 | ttr | +0.1703 [+0.1333, +0.2068]* | +0.0047 [-0.0019, +0.0113] | +0.0172 [+0.0022, +0.0324]* | +0.0530 [+0.0425, +0.0636]* | 0.9600 [+0.8967, +1.0272]* | 0.8533 [+0.7208, +0.9868]* | 0.5482 [+0.4399, +0.6598]* | 0.9452 [+0.7747, +1.0904]* | -0.0060 [-0.0328, +0.0209] |
+| siglip_L24 R2 | plain | +0.1356 [+0.1115, +0.1590]* | -0.0041 [-0.0159, +0.0078] | +0.0243 [+0.0025, +0.0461]* | +0.0689 [+0.0424, +0.0966]* | 1.0301 [+0.9374, +1.0957]* | 0.8219 [+0.6637, +0.9590]* | 0.4944 [+0.3498, +0.6475]* | 0.6793 [+0.5236, +0.8170]* | -0.0511 [-0.0957, -0.0064]* |
+| siglip_L24 R2 | reg0 | +0.1335 [+0.1095, +0.1569]* | -0.0040 [-0.0157, +0.0077] | +0.0241 [+0.0026, +0.0458]* | +0.0675 [+0.0414, +0.0946]* | 1.0302 [+0.9370, +1.0968]* | 0.8197 [+0.6615, +0.9606]* | 0.4953 [+0.3515, +0.6484]* | n/a | n/a |
+| siglip_L24 R2 | ttr | +0.1127 [+0.0890, +0.1355]* | -0.0080 [-0.0188, +0.0027] | +0.0119 [-0.0090, +0.0331] | +0.0514 [+0.0227, +0.0801]* | 1.0743 [+0.9909, +1.1819]* | 0.8900 [+0.7217, +1.0701]* | 0.5240 [+0.3438, +0.7292]* | 0.7818 [+0.5930, +0.9933]* | -0.0367 [-0.0785, +0.0050] |
+| siglip_L24 R3 | plain | +0.1338 [+0.0592, +0.2076]* | -0.0082 [-0.0208, +0.0043] | -0.0012 [-0.0176, +0.0155] | +0.0349 [+0.0001, +0.0704]* | 1.0726 [+0.9615, +1.3716]* (unstable) | 1.0104 [+0.8444, +1.2638]* (unstable) | 0.6919 [+0.5131, +0.8605]* (unstable) | 1.0742 [+0.9651, +1.3138]* (unstable) | -0.0058 [-0.0179, +0.0062] |
+| siglip_L24 R3 | reg0 | +0.1321 [+0.0580, +0.2055]* | -0.0092 [-0.0216, +0.0033] | -0.0021 [-0.0183, +0.0147] | +0.0342 [-0.0007, +0.0695] | 1.0830 [+0.9700, +1.4240]* (unstable) | 1.0189 [+0.8522, +1.2938]* (unstable) | 0.6913 [+0.5089, +0.8633]* (unstable) | n/a | n/a |
+| siglip_L24 R3 | ttr | +0.0951 [+0.0338, +0.1548]* | -0.0138 [-0.0255, -0.0020]* | -0.0122 [-0.0291, +0.0052] | +0.0140 [-0.0154, +0.0435] | 1.1977 [+0.9945, +2.5490]* (not reportable (denominator interval includes 0)) | 1.1751 [+0.8964, +2.4847]* (not reportable (denominator interval includes 0)) | 0.7988 [+0.3959, +1.4894]* (not reportable (denominator interval includes 0)) | 1.3428 [+1.1378, +2.7989]* (not reportable (denominator interval includes 0)) | -0.0060 [-0.0155, +0.0035] |
+| siglip_L24 R4 | plain | +0.1482 [+0.1208, +0.1755]* | -0.0044 [-0.0159, +0.0075] | +0.0269 [+0.0056, +0.0485]* | +0.0798 [+0.0493, +0.1102]* | 1.0308 [+0.9422, +1.0909]* | 0.8125 [+0.6653, +0.9429]* | 0.4442 [+0.2970, +0.5748]* | 0.6301 [+0.4726, +0.7933]* | -0.0626 [-0.1162, -0.0090]* |
+| siglip_L24 R4 | reg0 | +0.1453 [+0.1183, +0.1724]* | -0.0044 [-0.0157, +0.0071] | +0.0266 [+0.0055, +0.0479]* | +0.0781 [+0.0486, +0.1078]* | 1.0311 [+0.9430, +1.0929]* | 0.8104 [+0.6635, +0.9456]* | 0.4424 [+0.2978, +0.5728]* | n/a | n/a |
+| siglip_L24 R4 | ttr | +0.1273 [+0.1017, +0.1526]* | -0.0042 [-0.0134, +0.0051] | +0.0196 [-0.0013, +0.0404] | +0.0641 [+0.0317, +0.0955]* | 1.0352 [+0.9579, +1.1110]* | 0.8369 [+0.6834, +0.9855]* | 0.4677 [+0.2945, +0.6343]* | 0.6876 [+0.4936, +0.9281]* | -0.0501 [-0.0993, -0.0008]* |
+
+### Paired changes (arm minus plain, per configuration)
+
+| unit | arm | dE90 | dL20 | dE_real | dU20 | dA20 |
+|---|---|---|---|---|---|---|
+| clip_L12 | ttr | +0.0028 [+0.0006, +0.0051]* | +0.0000 [-0.0010, +0.0010] | -0.0023 [-0.0043, -0.0002]* | +0.0065 [-0.0072, +0.0230] | -0.0054 [-0.0176, +0.0101] |
+| clip_L12 | reg0 | +0.0006 [-0.0002, +0.0014] | -0.0002 [-0.0006, +0.0002] | +0.0016 [+0.0005, +0.0027]* | +0.0054 [-0.0017, +0.0126] | n/a |
+| clip_L16 | ttr | +0.0033 [-0.0029, +0.0096] | +0.0049 [+0.0008, +0.0091]* | -0.0211 [-0.0277, -0.0147]* | -0.4326 [-6.0109, +0.4757] (not reportable (a denominator interval includes 0)) | +0.4513 [-6.7744, +11.2080] (not reportable (a denominator interval includes 0)) |
+| clip_L16 | reg0 | +0.0006 [-0.0014, +0.0026] | +0.0008 [-0.0001, +0.0017] | +0.0007 [-0.0010, +0.0023] | -0.0513 [-0.3630, +0.0319] (unstable) | n/a |
+| clip_L20 | ttr | -0.0049 [-0.0168, +0.0075] | +0.0033 [-0.0016, +0.0081] | -0.0086 [-0.0181, +0.0007] | +0.8336 [-3.3401, +4.5074] (not reportable (a denominator interval includes 0)) | +1.4574 [-16.7651, +14.4990] (not reportable (a denominator interval includes 0)) |
+| clip_L20 | reg0 | +0.0029 [+0.0016, +0.0042]* | +0.0014 [-0.0004, +0.0033] | +0.0015 [-0.0015, +0.0044] | -0.0149 [-8.2402, +12.6238] (not reportable (a denominator interval includes 0)) | n/a |
+| clip_L24 | ttr | -0.0086 [-0.0232, +0.0061] | -0.0027 [-0.0169, +0.0109] | -0.0173 [-0.0402, +0.0053] | +1.2377 [-26.2539, +9.5411] (not reportable (a denominator interval includes 0)) | -1.3732 [-7.8521, +34.9485] (not reportable (a denominator interval includes 0)) |
+| clip_L24 | reg0 | +0.0034 [-0.0000, +0.0069] | +0.0022 [-0.0007, +0.0053] | -0.0029 [-0.0055, -0.0005]* | -0.1412 [-27.9738, +0.6395] (not reportable (a denominator interval includes 0)) | n/a |
+| siglip_L4 | ttr | -0.0000 [-0.0001, +0.0000] | -0.0001 [-0.0002, -0.0000]* | -0.0002 [-0.0003, -0.0001]* | +0.0040 [+0.0011, +0.0103]* (unstable) | +0.0047 [+0.0019, +0.0177]* (unstable) |
+| siglip_L4 | reg0 | -0.0000 [-0.0001, +0.0000] | -0.0001 [-0.0002, -0.0000]* | -0.0002 [-0.0003, -0.0001]* | +0.0040 [+0.0011, +0.0103]* (unstable) | n/a |
+| siglip_L8 | ttr | -0.0019 [-0.0024, -0.0014]* | +0.0000 [-0.0007, +0.0007] | -0.0021 [-0.0033, -0.0008]* | -0.0128 [-0.0423, +0.0058] | -0.0140 [-0.0338, -0.0051]* |
+| siglip_L8 | reg0 | -0.0005 [-0.0008, -0.0002]* | +0.0001 [-0.0000, +0.0002] | -0.0004 [-0.0007, -0.0001]* | -0.0045 [-0.0086, -0.0019]* | n/a |
+| siglip_L12 | ttr | +0.0042 [+0.0003, +0.0081]* | +0.0042 [+0.0014, +0.0070]* | +0.0016 [-0.0030, +0.0062] | +0.2101 [+0.0525, +0.6470]* (unstable) | -0.1330 [-0.5318, -0.0328]* (unstable) |
+| siglip_L12 | reg0 | +0.0004 [-0.0001, +0.0008] | -0.0001 [-0.0004, +0.0002] | +0.0010 [+0.0005, +0.0015]* | -0.0130 [-0.0714, +0.0014] (unstable) | n/a |
+| siglip_L16 | ttr | -0.0068 [-0.0138, +0.0002] | -0.0065 [-0.0131, -0.0000]* | -0.0058 [-0.0109, -0.0006]* | -1.9217 [-100.0849, +3.4470] (not reportable (a denominator interval includes 0)) | -5.2634 [-207.0159, +3.5189] (not reportable (a denominator interval includes 0)) |
+| siglip_L16 | reg0 | -0.0006 [-0.0015, +0.0003] | +0.0000 [-0.0006, +0.0007] | -0.0019 [-0.0031, -0.0006]* | +0.5581 [+0.0113, +6311.4390]* (not reportable (a denominator interval includes 0)) | n/a |
+| siglip_L20 | ttr | -0.0105 [-0.0154, -0.0057]* | -0.0020 [-0.0068, +0.0026] | -0.0100 [-0.0250, +0.0047] | -0.2076 [-1.5350, +0.0010] (unstable) | +0.0230 [-2.2165, +0.4031] (unstable) |
+| siglip_L20 | reg0 | -0.0023 [-0.0040, -0.0007]* | +0.0001 [-0.0009, +0.0010] | -0.0010 [-0.0022, +0.0002] | -0.0168 [-0.0824, -0.0004]* (unstable) | n/a |
+| siglip_L24 | ttr | -0.0194 [-0.0289, -0.0097]* | -0.0126 [-0.0247, -0.0012]* | -0.0264 [-0.0396, -0.0135]* | +0.0751 [-0.0003, +0.1396] | +0.1217 [+0.0596, +0.1747]* |
+| siglip_L24 | reg0 | -0.0017 [-0.0034, -0.0001]* | -0.0004 [-0.0022, +0.0013] | -0.0049 [-0.0064, -0.0034]* | -0.0007 [-0.0131, +0.0108] | n/a |
+| siglip_L24 R1n | ttr | +0.0134 [+0.0045, +0.0221]* | -0.0006 [-0.0081, +0.0064] | -0.0130 [-0.0233, -0.0027]* | +0.0159 [-0.0267, +0.0507] | +0.0217 [-0.0254, +0.0513] |
+| siglip_L24 R1n | reg0 | -0.0018 [-0.0027, -0.0009]* | +0.0004 [-0.0003, +0.0010] | -0.0012 [-0.0032, +0.0009] | -0.0079 [-0.0133, -0.0041]* | n/a |
+| siglip_L24 R1 | ttr | +0.0029 [-0.0061, +0.0120] | -0.0120 [-0.0207, -0.0036]* | -0.0180 [-0.0268, -0.0091]* | +0.0878 [+0.0331, +0.1449]* | +0.0911 [+0.0346, +0.1315]* |
+| siglip_L24 R1 | reg0 | -0.0027 [-0.0039, -0.0015]* | -0.0000 [-0.0008, +0.0008] | -0.0021 [-0.0040, -0.0004]* | -0.0056 [-0.0116, +0.0002] | n/a |
+| siglip_L24 R2 | ttr | -0.0228 [-0.0331, -0.0121]* | -0.0124 [-0.0236, -0.0014]* | -0.0313 [-0.0461, -0.0166]* | +0.0681 [-0.0030, +0.1608] | +0.1025 [+0.0393, +0.1765]* |
+| siglip_L24 R2 | reg0 | -0.0021 [-0.0033, -0.0008]* | -0.0001 [-0.0016, +0.0014] | -0.0035 [-0.0049, -0.0021]* | -0.0022 [-0.0131, +0.0080] | n/a |
+| siglip_L24 R3 | ttr | -0.0387 [-0.0550, -0.0222]* | -0.0110 [-0.0183, -0.0037]* | -0.0435 [-0.0623, -0.0246]* | +0.1647 [+0.0418, +1.5893]* (not reportable (a denominator interval includes 0)) | +0.2685 [+0.1514, +1.7319]* (not reportable (a denominator interval includes 0)) |
+| siglip_L24 R3 | reg0 | -0.0017 [-0.0033, -0.0001]* | -0.0009 [-0.0023, +0.0005] | -0.0007 [-0.0031, +0.0016] | +0.0085 [-0.0028, +0.0413] (unstable) | n/a |
+| siglip_L24 R4 | ttr | -0.0209 [-0.0296, -0.0121]* | -0.0073 [-0.0185, +0.0032] | -0.0270 [-0.0385, -0.0155]* | +0.0244 [-0.0442, +0.0950] | +0.0575 [-0.0080, +0.1301] |
+| siglip_L24 R4 | reg0 | -0.0029 [-0.0041, -0.0016]* | -0.0003 [-0.0016, +0.0010] | -0.0043 [-0.0059, -0.0027]* | -0.0021 [-0.0129, +0.0062] | n/a |
+
+## 3. SigLIP-L block 24 readout swap under test-time registers (P3-like and P4-like, unadjusted)
+
+- plain: R4 E +0.1435 [+0.1154, +0.1717]* (sign +1, defined True).
+  - R1n: E +0.1436 [+0.1120, +0.1749]*, WCR p 0.0002; keeps R4's sign (unadjusted) True; opposite-sign interval False; seeds with R4's sign 3 of 3 (+0.1348, +0.1767, +0.1194).
+  - R1: E +0.1244 [+0.0962, +0.1519]*, WCR p 0.0002; keeps R4's sign (unadjusted) True; opposite-sign interval False; seeds with R4's sign 3 of 3 (+0.0856, +0.1306, +0.1570).
+  - R2: E +0.1362 [+0.1140, +0.1585]*, WCR p 0.0004; keeps R4's sign (unadjusted) True; opposite-sign interval False; seeds with R4's sign 3 of 3 (+0.1448, +0.1169, +0.1470).
+  - R3: E +0.1133 [+0.0204, +0.2043]*, WCR p 0.0266; keeps R4's sign (unadjusted) True; opposite-sign interval False; seeds with R4's sign 3 of 3 (+0.1691, +0.0807, +0.0902).
+  - P4-like (R2 - R4) U20: +0.0094 [-0.0309, +0.0454], BCa p 0.6026; ratios R2 0.8219, R4 0.8125.
+  - P4-like (R2 - R4) A20: +0.0492 [+0.0135, +0.0775]*, BCa p 0.01015; ratios R2 0.6793, R4 0.6301.
+  - accuracy criterion analogue (shown, never used to drop a cell): {'R1n': False, 'R1': False, 'R2': True, 'R3': True, 'R4': True}
+- ttr: R4 E +0.1203 [+0.0911, +0.1487]* (sign +1, defined True).
+  - R1n: E +0.1489 [+0.1189, +0.1785]*, WCR p 0.0002; keeps R4's sign (unadjusted) True; opposite-sign interval False; seeds with R4's sign 3 of 3 (+0.1361, +0.1825, +0.1279).
+  - R1: E +0.1173 [+0.0927, +0.1422]*, WCR p 0.0002; keeps R4's sign (unadjusted) True; opposite-sign interval False; seeds with R4's sign 3 of 3 (+0.0750, +0.1350, +0.1420).
+  - R2: E +0.1080 [+0.0869, +0.1282]*, WCR p 0.0004; keeps R4's sign (unadjusted) True; opposite-sign interval False; seeds with R4's sign 3 of 3 (+0.1193, +0.0860, +0.1188).
+  - R3: E +0.0698 [-0.0125, +0.1511], WCR p 0.081; keeps R4's sign (unadjusted) False; opposite-sign interval False; seeds with R4's sign 3 of 3 (+0.1320, +0.0414, +0.0359).
+  - P4-like (R2 - R4) U20: +0.0531 [-0.0110, +0.1009], BCa p 0.09784; ratios R2 0.8900, R4 0.8369.
+  - P4-like (R2 - R4) A20: +0.0942 [+0.0539, +0.1383]*, BCa p 9.909e-06; ratios R2 0.7818, R4 0.6876.
+  - accuracy criterion analogue (shown, never used to drop a cell): {'R1n': False, 'R1': False, 'R2': True, 'R3': True, 'R4': True}
+
+## 4. Held-out MIT1003 CC (336 px, centre bias on)
+
+| unit | plain | reg0 | ttr | ttr - plain | flag (drop > 0.03) |
+|---|---|---|---|---|---|
+| clip_L12 | 0.7597 | 0.7598 | 0.7622 | +0.0025 | no |
+| clip_L16 | 0.7409 | 0.7407 | 0.7473 | +0.0064 | no |
+| clip_L20 | 0.7255 | 0.7251 | 0.7288 | +0.0033 | no |
+| clip_L24 | 0.7180 | 0.7178 | 0.7171 | -0.0010 | no |
+| siglip_L4 | 0.6908 | 0.6910 | 0.6910 | +0.0002 | no |
+| siglip_L8 | 0.7571 | 0.7569 | 0.7583 | +0.0012 | no |
+| siglip_L12 | 0.7482 | 0.7482 | 0.7495 | +0.0013 | no |
+| siglip_L16 | 0.7369 | 0.7368 | 0.7388 | +0.0020 | no |
+| siglip_L20 | 0.7276 | 0.7278 | 0.7290 | +0.0014 | no |
+| siglip_L24 | 0.7212 | 0.7212 | 0.7194 | -0.0018 | no |
+| siglip_L24 R1n | 0.6769 | 0.6767 | 0.6751 | -0.0018 | no |
+| siglip_L24 R1 | 0.6785 | 0.6785 | 0.6768 | -0.0018 | no |
+| siglip_L24 R2 | 0.7153 | 0.7153 | 0.7127 | -0.0026 | no |
+| siglip_L24 R3 | 0.7083 | 0.7082 | 0.7065 | -0.0018 | no |
+| siglip_L24 R4 | 0.7208 | 0.7208 | 0.7186 | -0.0021 | no |
+
+## 5. Where the high-norm tokens sit on the stim_v3 displays (token-weighted shares, 60 illusory / 60 control180)
+
+| backbone | block | arm | size | ratio median / p90 (480) | illusory: inside / inducer / elsewhere (n) | control180: inside / inducer / elsewhere (n) |
+|---|---|---|---|---|---|---|
+| clip | 12 | plain | 336 | 11.69 / 12.19 | 0.000 / 0.000 / 1.000 (778) | 0.000 / 0.000 / 1.000 (779) |
+| clip | 12 | plain | 448 | 11.82 / 12.55 | 0.000 / 0.000 / 1.000 (1266) | 0.000 / 0.000 / 1.000 (1272) |
+| clip | 12 | reg0 | 336 | 11.82 / 12.37 | 0.000 / 0.000 / 1.000 (763) | 0.000 / 0.000 / 1.000 (766) |
+| clip | 12 | reg0 | 448 | 11.94 / 12.64 | 0.000 / 0.000 / 1.000 (1249) | 0.000 / 0.000 / 1.000 (1258) |
+| clip | 12 | ttr | 336 | 2.09 / 2.18 | 0.000 / 0.000 / 1.000 (78) | 0.000 / 0.000 / 1.000 (81) |
+| clip | 12 | ttr | 448 | 2.12 / 2.24 | 0.000 / 0.000 / 1.000 (98) | 0.000 / 0.000 / 1.000 (100) |
+| clip | 16 | plain | 336 | 27.30 / 27.92 | 0.000 / 0.000 / 1.000 (1140) | 0.000 / 0.000 / 1.000 (1123) |
+| clip | 16 | plain | 448 | 27.52 / 28.66 | 0.000 / 0.000 / 1.000 (1965) | 0.000 / 0.000 / 1.000 (1947) |
+| clip | 16 | reg0 | 336 | 27.51 / 28.15 | 0.000 / 0.000 / 1.000 (1143) | 0.000 / 0.000 / 1.000 (1115) |
+| clip | 16 | reg0 | 448 | 27.72 / 28.67 | 0.000 / 0.000 / 1.000 (1938) | 0.000 / 0.000 / 1.000 (1926) |
+| clip | 16 | ttr | 336 | 1.94 / 2.01 | 0.000 / 0.000 / 1.000 (14) | 0.000 / 0.000 / 1.000 (6) |
+| clip | 16 | ttr | 448 | 1.97 / 2.04 | 0.000 / 0.000 / 1.000 (30) | 0.000 / 0.000 / 1.000 (10) |
+| clip | 20 | plain | 336 | 15.13 / 15.62 | 0.000 / 0.000 / 1.000 (814) | 0.000 / 0.000 / 1.000 (822) |
+| clip | 20 | plain | 448 | 15.45 / 16.09 | 0.000 / 0.000 / 1.000 (1365) | 0.000 / 0.000 / 1.000 (1357) |
+| clip | 20 | reg0 | 336 | 15.21 / 15.71 | 0.000 / 0.000 / 1.000 (805) | 0.000 / 0.000 / 1.000 (809) |
+| clip | 20 | reg0 | 448 | 15.51 / 16.10 | 0.000 / 0.000 / 1.000 (1352) | 0.000 / 0.000 / 1.000 (1342) |
+| clip | 20 | ttr | 336 | 1.46 / 1.54 | n/a / n/a / n/a (0) | n/a / n/a / n/a (0) |
+| clip | 20 | ttr | 448 | 1.46 / 1.54 | n/a / n/a / n/a (0) | n/a / n/a / n/a (0) |
+| clip | 24 | plain | 336 | 9.40 / 9.77 | 0.000 / 0.000 / 1.000 (1408) | 0.000 / 0.000 / 1.000 (1138) |
+| clip | 24 | plain | 448 | 9.52 / 9.94 | 0.000 / 0.000 / 1.000 (2154) | 0.000 / 0.000 / 1.000 (2317) |
+| clip | 24 | reg0 | 336 | 9.43 / 9.80 | 0.000 / 0.000 / 1.000 (1328) | 0.000 / 0.000 / 1.000 (1158) |
+| clip | 24 | reg0 | 448 | 9.56 / 9.99 | 0.000 / 0.000 / 1.000 (2141) | 0.000 / 0.000 / 1.000 (2372) |
+| clip | 24 | ttr | 336 | 2.00 / 2.09 | 0.000 / 0.000 / 1.000 (862) | 0.000 / 0.000 / 1.000 (297) |
+| clip | 24 | ttr | 448 | 2.00 / 2.09 | 0.000 / 0.000 / 1.000 (1306) | 0.000 / 0.000 / 1.000 (636) |
+| siglip | 4 | plain | 336 | 2.65 / 2.68 | 0.000 / 0.000 / 1.000 (120) | 0.000 / 0.000 / 1.000 (120) |
+| siglip | 4 | plain | 448 | 2.51 / 2.55 | 0.000 / 0.000 / 1.000 (180) | 0.000 / 0.000 / 1.000 (180) |
+| siglip | 4 | reg0 | 336 | 2.65 / 2.68 | 0.000 / 0.000 / 1.000 (120) | 0.000 / 0.000 / 1.000 (120) |
+| siglip | 4 | reg0 | 448 | 2.51 / 2.54 | 0.000 / 0.000 / 1.000 (180) | 0.000 / 0.000 / 1.000 (180) |
+| siglip | 4 | ttr | 336 | 2.65 / 2.68 | 0.000 / 0.000 / 1.000 (120) | 0.000 / 0.000 / 1.000 (120) |
+| siglip | 4 | ttr | 448 | 2.51 / 2.54 | 0.000 / 0.000 / 1.000 (180) | 0.000 / 0.000 / 1.000 (180) |
+| siglip | 8 | plain | 336 | 8.49 / 8.83 | 0.000 / 0.000 / 1.000 (752) | 0.000 / 0.000 / 1.000 (763) |
+| siglip | 8 | plain | 448 | 10.58 / 11.12 | 0.000 / 0.000 / 1.000 (1361) | 0.000 / 0.000 / 1.000 (1381) |
+| siglip | 8 | reg0 | 336 | 8.48 / 8.83 | 0.000 / 0.000 / 1.000 (754) | 0.000 / 0.000 / 1.000 (764) |
+| siglip | 8 | reg0 | 448 | 10.59 / 11.13 | 0.000 / 0.000 / 1.000 (1362) | 0.000 / 0.000 / 1.000 (1382) |
+| siglip | 8 | ttr | 336 | 1.78 / 1.84 | n/a / n/a / n/a (0) | n/a / n/a / n/a (0) |
+| siglip | 8 | ttr | 448 | 1.78 / 1.89 | n/a / n/a / n/a (0) | n/a / n/a / n/a (0) |
+| siglip | 12 | plain | 336 | 17.24 / 17.78 | 0.000 / 0.000 / 1.000 (803) | 0.000 / 0.000 / 1.000 (811) |
+| siglip | 12 | plain | 448 | 19.50 / 20.20 | 0.000 / 0.000 / 1.000 (1477) | 0.000 / 0.000 / 1.000 (1504) |
+| siglip | 12 | reg0 | 336 | 17.29 / 17.80 | 0.000 / 0.000 / 1.000 (808) | 0.000 / 0.000 / 1.000 (811) |
+| siglip | 12 | reg0 | 448 | 19.53 / 20.24 | 0.000 / 0.000 / 1.000 (1477) | 0.000 / 0.000 / 1.000 (1504) |
+| siglip | 12 | ttr | 336 | 1.83 / 1.99 | 0.000 / 0.000 / 1.000 (7) | 0.000 / 0.000 / 1.000 (8) |
+| siglip | 12 | ttr | 448 | 1.97 / 2.03 | 0.000 / 0.000 / 1.000 (18) | 0.000 / 0.000 / 1.000 (26) |
+| siglip | 16 | plain | 336 | 12.70 / 13.26 | 0.000 / 0.000 / 1.000 (798) | 0.000 / 0.000 / 1.000 (798) |
+| siglip | 16 | plain | 448 | 14.33 / 14.90 | 0.000 / 0.000 / 1.000 (1457) | 0.000 / 0.000 / 1.000 (1481) |
+| siglip | 16 | reg0 | 336 | 12.75 / 13.31 | 0.000 / 0.000 / 1.000 (796) | 0.000 / 0.000 / 1.000 (800) |
+| siglip | 16 | reg0 | 448 | 14.38 / 14.96 | 0.000 / 0.000 / 1.000 (1459) | 0.000 / 0.000 / 1.000 (1484) |
+| siglip | 16 | ttr | 336 | 1.53 / 1.61 | n/a / n/a / n/a (0) | n/a / n/a / n/a (0) |
+| siglip | 16 | ttr | 448 | 1.58 / 1.64 | n/a / n/a / n/a (0) | n/a / n/a / n/a (0) |
+| siglip | 20 | plain | 336 | 9.69 / 10.06 | 0.000 / 0.000 / 1.000 (789) | 0.000 / 0.000 / 1.000 (790) |
+| siglip | 20 | plain | 448 | 10.91 / 11.15 | 0.000 / 0.000 / 1.000 (1440) | 0.000 / 0.000 / 1.000 (1460) |
+| siglip | 20 | reg0 | 336 | 9.72 / 10.09 | 0.000 / 0.000 / 1.000 (788) | 0.000 / 0.000 / 1.000 (792) |
+| siglip | 20 | reg0 | 448 | 10.93 / 11.17 | 0.000 / 0.000 / 1.000 (1443) | 0.000 / 0.000 / 1.000 (1460) |
+| siglip | 20 | ttr | 336 | 1.45 / 1.52 | n/a / n/a / n/a (0) | n/a / n/a / n/a (0) |
+| siglip | 20 | ttr | 448 | 1.45 / 1.51 | n/a / n/a / n/a (0) | n/a / n/a / n/a (0) |
+| siglip | 24 | plain | 336 | 4.44 / 4.62 | 0.000 / 0.000 / 1.000 (713) | 0.000 / 0.000 / 1.000 (719) |
+| siglip | 24 | plain | 448 | 4.97 / 5.16 | 0.000 / 0.000 / 1.000 (1267) | 0.000 / 0.000 / 1.000 (1297) |
+| siglip | 24 | reg0 | 336 | 4.46 / 4.62 | 0.000 / 0.000 / 1.000 (714) | 0.000 / 0.000 / 1.000 (717) |
+| siglip | 24 | reg0 | 448 | 4.98 / 5.18 | 0.000 / 0.000 / 1.000 (1267) | 0.000 / 0.000 / 1.000 (1300) |
+| siglip | 24 | ttr | 336 | 1.52 / 1.63 | n/a / n/a / n/a (0) | n/a / n/a / n/a (0) |
+| siglip | 24 | ttr | 448 | 1.56 / 1.73 | n/a / n/a / n/a (0) | n/a / n/a / n/a (0) |
+
+## 6. Plain-arm reproduction of the published E
+
+- Largest |E_plain - E_published| over 15 units: 3.15e-07.
+
+## 7. Wall times (results/run_logs/wall_times.tsv)
+
+| step | start (UTC) | wall s | exit |
+|---|---|---|---|
+| TTR_T | 2026-11-18T20:26:36Z | 5 | 0 |
+| TTR_P_siglip | 2026-11-18T20:27:50Z | 1322 | 0 |
+| TTR_P_clip | 2026-11-18T20:50:02Z | 1623 | 0 |
+| TTR_S_siglip | 2026-11-18T21:17:40Z | 1742 | 0 |
+| TTR_S_clip | 2026-11-18T21:46:49Z | 1833 | 0 |
+| TTR_K | 2026-11-18T22:17:22Z | 271 | 0 |
+| TTR_C_siglip | 2026-11-18T22:22:09Z | 1532 | 0 |
+| TTR_C_clip | 2026-11-18T22:48:09Z | 1472 | 0 |
+| TTR_A | 2026-11-18T23:12:58Z | 5 | 0 |
+| total of listed steps | | 9805 | |
+

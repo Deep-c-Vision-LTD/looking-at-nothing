@@ -1,0 +1,6 @@
+2026-11-18 13:04:00 === eval dinov2 on cpu: 2 heads, stimsets ['stim_v3'], maps saved for: none
+2026-11-18 13:04:02 stim_v3 px336 block 1/1 features 18 images 2s
+2026-11-18 13:04:06 stim_v3 px448 block 1/1 features 18 images 4s
+2026-11-18 13:04:07 stim_v3 dinov2_L12_R4_s0 scored 18 images x 2 sizes (maps saved: False)
+2026-11-18 13:04:07 stim_v3 dinov2_L6_R1n_s0 scored 18 images x 2 sizes (maps saved: False)
+2026-11-18 13:04:07 === eval dinov2 done

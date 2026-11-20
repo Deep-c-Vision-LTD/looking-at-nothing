@@ -1,0 +1,14 @@
+### R4a_check_iie start 2026-11-18T13:05:06Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis/gpu cmd: $LAN_SAL_SRC/.venv/bin/python -B -I check_eval_re.py ../check_cpu_iie --tol 1e-4
+### R4a_check_iie pid 3503
+{
+ "stim_v3_iie_shapenetc_R1n_s0.json": {
+  "values": 396,
+  "max_abs_diff": 9.63620804683707e-06
+ },
+ "stim_v3_iie_shapenetc_R4_s0.json": {
+  "values": 396,
+  "max_abs_diff": 3.3266231681539082e-06
+ }
+}
+worst 9.63620804683707e-06 values 792 tol 0.0001
+### R4a_check_iie end 2026-11-18T13:05:11Z exit 0 wall 5s

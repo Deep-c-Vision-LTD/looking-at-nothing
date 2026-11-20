@@ -1,0 +1,72 @@
+### R3c_sweep_siglip start 2026-11-18T12:49:54Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 $LAN_SAL_SRC/.venv/bin/python -B scoring/score_rigid.py sweep:siglip
+### R3c_sweep_siglip pid 2623
+Loading weights:   0%|          | 0/400 [00:00<?, ?it/s]Loading weights: 100%|██████████| 400/400 [00:00<00:00, 7485.05it/s]
+[transformers] [1mSiglipVisionModel LOAD REPORT[0m from: google/siglip-large-patch16-256
+Key                                                          | Status     |  | 
+-------------------------------------------------------------+------------+--+-
+text_model.encoder.layers.{0...23}.self_attn.k_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.q_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.k_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm1.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.q_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc2.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm2.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.v_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.v_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm2.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc1.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.out_proj.weight | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm1.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc1.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc2.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.out_proj.bias   | UNEXPECTED |  | 
+text_model.embeddings.position_embedding.weight              | UNEXPECTED |  | 
+text_model.embeddings.token_embedding.weight                 | UNEXPECTED |  | 
+text_model.head.weight                                       | UNEXPECTED |  | 
+text_model.final_layer_norm.weight                           | UNEXPECTED |  | 
+logit_bias                                                   | UNEXPECTED |  | 
+text_model.final_layer_norm.bias                             | UNEXPECTED |  | 
+text_model.head.bias                                         | UNEXPECTED |  | 
+logit_scale                                                  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+### R3c_sweep_siglip pid 2623: no Metal client at first check (~5 s)
+sweep siglip: pipeline check on 4 stim_v3 images, max |r_inside - published| per tag: siglip_L4_s336 0.00e+00, siglip_L8_s336 0.00e+00, siglip_L12_s336 0.00e+00, siglip_L16_s336 0.00e+00, siglip_L20_s336 0.00e+00, siglip_L24_s336 0.00e+00, siglip_L4_s448 4.47e-08, siglip_L8_s448 5.54e-08, siglip_L12_s448 1.14e-07, siglip_L16_s448 2.31e-07, siglip_L20_s448 2.60e-07, siglip_L24_s448 2.31e-07
+sweep siglip: 660 of 660 images to score, tags ['siglip_L4_s336', 'siglip_L8_s336', 'siglip_L12_s336', 'siglip_L16_s336', 'siglip_L20_s336', 'siglip_L24_s336', 'siglip_L4_s448', 'siglip_L8_s448', 'siglip_L12_s448', 'siglip_L16_s448', 'siglip_L20_s448', 'siglip_L24_s448']
+### R3c_sweep_siglip pid 2623: no Metal client at ~30 s
+  sweep siglip 20/660 23s (1.17 s/img)
+  sweep siglip 40/660 47s (1.18 s/img)
+  sweep siglip 60/660 71s (1.18 s/img)
+  sweep siglip 80/660 94s (1.18 s/img)
+  sweep siglip 100/660 118s (1.18 s/img)
+  sweep siglip 120/660 141s (1.18 s/img)
+  sweep siglip 140/660 164s (1.17 s/img)
+  sweep siglip 160/660 188s (1.17 s/img)
+  sweep siglip 180/660 212s (1.18 s/img)
+  sweep siglip 200/660 236s (1.18 s/img)
+  sweep siglip 220/660 259s (1.18 s/img)
+  sweep siglip 240/660 283s (1.18 s/img)
+  sweep siglip 260/660 306s (1.18 s/img)
+  sweep siglip 280/660 330s (1.18 s/img)
+  sweep siglip 300/660 354s (1.18 s/img)
+  sweep siglip 320/660 378s (1.18 s/img)
+  sweep siglip 340/660 402s (1.18 s/img)
+  sweep siglip 360/660 426s (1.18 s/img)
+  sweep siglip 380/660 450s (1.18 s/img)
+  sweep siglip 400/660 474s (1.19 s/img)
+  sweep siglip 420/660 500s (1.19 s/img)
+  sweep siglip 440/660 526s (1.20 s/img)
+  sweep siglip 460/660 554s (1.20 s/img)
+  sweep siglip 480/660 581s (1.21 s/img)
+  sweep siglip 500/660 611s (1.22 s/img)
+  sweep siglip 520/660 642s (1.23 s/img)
+  sweep siglip 540/660 673s (1.25 s/img)
+  sweep siglip 560/660 698s (1.25 s/img)
+  sweep siglip 580/660 723s (1.25 s/img)
+  sweep siglip 600/660 749s (1.25 s/img)
+  sweep siglip 620/660 774s (1.25 s/img)
+  sweep siglip 640/660 798s (1.25 s/img)
+  sweep siglip 660/660 823s (1.25 s/img)
+sweep siglip: done, 824s
+### R3c_sweep_siglip end 2026-11-18T13:03:56Z exit 0 wall 842s

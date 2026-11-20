@@ -1,0 +1,14 @@
+### R4a_check_dinov2 start 2026-11-18T13:04:11Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis/gpu cmd: $LAN_SAL_SRC/.venv/bin/python -B -I check_eval_re.py ../check_cpu_dinov2 --tol 1e-4
+### R4a_check_dinov2 pid 3386
+{
+ "stim_v3_dinov2_L12_R4_s0.json": {
+  "values": 396,
+  "max_abs_diff": 9.14237338700552e-06
+ },
+ "stim_v3_dinov2_L6_R1n_s0.json": {
+  "values": 396,
+  "max_abs_diff": 1.2593177303621417e-05
+ }
+}
+worst 1.2593177303621417e-05 values 792 tol 0.0001
+### R4a_check_dinov2 end 2026-11-18T13:04:16Z exit 0 wall 5s

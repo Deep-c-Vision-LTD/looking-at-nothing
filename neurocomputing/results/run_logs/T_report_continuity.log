@@ -1,0 +1,105 @@
+### T_report_continuity start 2026-11-20T09:16:58Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=2 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONDONTWRITEBYTECODE=1 V3_DEVICE=cpu $LAN_SAL_SRC/.venv/bin/python -B -I explore/test_report_continuity.py --out explore/tests_report_continuity_output.txt
+### T_report_continuity pid 18553
+test_report_continuity.py 2026-11-20T09:16:59Z; scratch ../_trash/test_report_continuity_scratch_20261120T091659Z
+PASS  no torch imported
+PASS  report_continuity imports no torch
+PASS  main calls require_public first, then refuses if an output exists, before any computation
+PASS  no new interval code (engine functions only)
+PASS  no random draw of its own (no np.random or RandomState in the code; indices come from analyze_re.Design)  []
+PASS  pct_ratio_diff composes analyze_re.bmeans and np.nanpercentile only
+PASS  header lists implementation choices (a) to (k)
+PASS  header quotes rule 4.5 verbatim
+PASS  only a missing stored field (KeyError) is reported as one
+PASS  no em-dash or en-dash in the script
+PASS  pooled design 12 x 5 and square design 6 x 5
+PASS  Design indices equal the published RandomState(2026) draws (pooled and square)
+PASS  pct_ratio_diff with a zero second numerator equals analyze_re.pct_ratio exactly
+PASS  pct_ratio_diff equals the percentile interval of the difference of two independently resampled ratios
+PASS  pct_ratio_diff value is the difference of the ratios of means (as analyze_re.p4)
+PASS  pct_ratio_diff is antisymmetric
+PASS  pct_ratio_diff gives no p and counts resamples on each side of 0
+PASS  pct_ratio_diff = 2.5 and 97.5 percentiles of the bootstrap distribution behind analyze_re.bca (no adjustment)  BCa [-0.09439810708404482, 0.020822812186501748] against unadjusted [-0.08481785752617749, 0.027831648038391475]
+PASS  a difference with every resample above 0 is flagged (the BCa p is then set by the clip, D4)  0 below; weak case 8299 below, 1701 above
+PASS  pct_summary of a difference = percentile of the difference of the two published bootstrap distributions
+synthetic inputs written (2.4s)
+PASS  configs_meta reads the synthetic items (60 configurations)
+09:17:02 records computed: 124
+09:17:02 G1 passed: 164 point estimates, max |difference| 0.0
+09:17:03 G2 passed: 1318 and 1219 numeric leaves
+09:17:03 G3 passed
+run() on synthetic inputs: 1.5s
+PASS  G0 passes (reused code hashes)
+PASS  G1 passes: every point estimate equals the stored value  164 checks, max |difference| 0.0
+PASS  G1 covers records, both P4 ratios and the P1 and P2 model estimates
+PASS  G2 passes: P1, P2, P4 and the P5 file reproduced leaf by leaf  1318 and 1219 numeric leaves
+PASS  G3 passes against the copies of the published code  P1_L20 68/68; P2_square_Delta20 68/68; E_swap 52/52; P4_ratio_U20 39/39; P4_ratio_A20 39/39
+PASS  G3 covers P1 L20, P2 square Delta20 (17 units each; mean, interval, p) and E (mean, interval, p), U20 and A20 (value, interval) of the 13 P4 cells  {'P1_L20': 68, 'P2_square_Delta20': 68, 'E_swap': 52, 'P4_ratio_U20': 39, 'P4_ratio_A20': 39}
+PASS  coverage: P1 30, P2 30, P4 18, P5 23 per model; 104 with p, 20 ratio-type without
+PASS  P1 record = analyze_re.pct_summary of model minus null L20 on the pooled indices
+PASS  P1 record carries the stored WCU interval and WCR p
+PASS  P2 record uses the square design (6 clusters, 30 configurations)
+PASS  P2 record reproduces the published code applied to the difference (4 decimals)
+PASS  P5: C* = L_uni - 2 L_rig and A* = L_uni - L_rig (point estimates)
+PASS  P5 A* minus null and secondary records = pct_summary of the analyze_re.p5_parts arrays
+PASS  P5 s* = analyze_re.pct_ratio(L_rig, L_uni), no p
+PASS  planted truth: every IIE P1 difference has its continuity interval above 0
+PASS  planted truth: MSDB L_uni (mean 2e-4) has a continuity interval including 0
+PASS  a p of 0 is flagged below the resolution
+PASS  MSDB s* not reportable (rule 4.3), IIE s* reportable
+PASS  P4 records: no p, with the no-analogue note
+PASS  P4 both ratios = analyze_re.pct_ratio, equal to the stored ratio
+PASS  planted strong P4 contrast (#10) has 0 outside every resample; planted near-null ones (#2, #13) do not  clipped: [1, 3, 4, 7, 8, 9, 10, 11, 12, 14, 15]
+PASS  every contrast flagged as set by the clip has the stored BCa p that bca_p's clip gives (D4), exactly  11 contrasts
+PASS  P4 with a denominator about 0: difference listed with its flag, its single ratio not reportable
+PASS  rule 4.3 list names MSDB s* and the two iie_shapenetc R3 readout ratios  ['P4/contrasts/iie_shapenetc|R3|A20/ratio_readout', 'P4/contrasts/iie_shapenetc|R3|U20/ratio_readout', 'P5/DeepGaze MSDB/rigid_share']
+PASS  agreement counted over every record except s* (122)
+PASS  no-analogue list: the p of ratio-type estimates (18 differences, 36 ratios, 2 s*)
+PASS  composition list: the 18 P4 differences, labelled not a published computation, no p
+PASS  every P4 record says it is a composition, not a published computation
+PASS  covered-elsewhere list names P1/P2 model estimates, P4 ratios (none missing), P3, P6 and the nulls' own P5
+### T_report_continuity pid 18553: no Metal client at first check (~5 s)
+09:17:03 records computed: 124
+PASS  run() raises GateError (G1) on a 1e-9 change of a stored point estimate and writes nothing  G1 (point estimates equal the stored primary values) failed: [{"path": "P1/DeepGaze IIE/vs_null/corner_s8", "value": 0.0
+PASS  G1 passes a 1e-14 difference (tolerance 1e-12)
+PASS  G1 fails on a 1e-9 change of a stored P4 single ratio
+PASS  G2 fails on a 1e-9 change of a stored interval bound (not a point estimate)
+PASS  G2 fails on a changed stored P5 category
+PASS  G2 fails on a changed abstract-rule key
+PASS  G3 fails on a 2e-4 change of a published ratio bound
+PASS  G3 fails on a missing published value
+PASS  G3 fails on a published p changed by one resample pair (2e-4)
+PASS  G3 passes on the unchanged published files (reference for the two checks above)
+09:17:07 records computed: 124
+09:17:07 G1 passed: 164 point estimates, max |difference| 0.0
+09:17:08 G2 passed: 1318 and 1219 numeric leaves
+PASS  run() raises GateError (G3) and writes nothing  G3 (published values at 4 decimals) failed: [{"category": "P4_ratio_U20", "unit": "dinov2_L12|R4", "field": "ci[1]", "va
+PASS  run() raises GateError (G0) when a reused file's hash differs  G0 (reused code unchanged) failed: {"files": {"explore/report_p6_cells.py": {"current_sha256": "5db1fc3bc45f4e4820f28d16
+PASS  a missing stored field stops the run (GateError naming it)  inputs (stored primary fields) failed: stored field missing: KeyError('edge_s8')
+PASS  a missing published file stops the run  inputs failed: required file missing: neuro/_trash/test_report_continuity_scratch_20261120T091659Z/v3/scores/results.jso
+09:17:09 records computed: 101
+09:17:09 G1 passed: 141 point estimates, max |difference| 0.0
+09:17:10 G2 passed: 1318 and 965 numeric leaves
+09:17:10 G3 passed
+PASS  a P5 model without rigid scores is reported not computable; gates still pass
+PASS  no output exists before the first write
+wrote $LAN_PROJECT_ROOT/neuro/_trash/test_report_continuity_scratch_20261120T091659Z/results/continuity_intervals.json
+wrote $LAN_PROJECT_ROOT/neuro/_trash/test_report_continuity_scratch_20261120T091659Z/results/continuity_intervals.md
+PASS  JSON written to the output folder with code, rule and commit provenance
+PASS  a second write is refused and leaves both outputs byte-identical
+PASS  markdown embeds the code SHA-256, rule SHA-256 and public commit
+PASS  markdown has no em-dash or en-dash
+PASS  markdown prints flags as yes or no, never Python booleans
+PASS  markdown sections 0 to 9
+PASS  markdown P1 and P2 tables: 30 rows each with 8 columns  30, 30
+PASS  markdown P4 table: 18 rows with 13 columns  18 rows
+PASS  markdown P5: both models, 15 null rows each
+PASS  markdown MSDB s*: not reportable, printed without a value or interval  Rigid share s*(20) = L_rig(20) / L_uni(20): not reportable (the WCU interval of L_uni includes 0; rule 4.3); no value or interval is printed.
+PASS  markdown prints p of 0 as below the resolution
+PASS  markdown prints the clipped BCa p as below the resolution (D4)
+PASS  markdown P4 #17: difference with its flag, readout ratio not reportable without a value
+PASS  markdown says the P4 differences and s* have no published-method p
+PASS  markdown P4 column header marks the interval as composed
+PASS  markdown lists the no-analogue item, the composition and the rule 4.3 withholdings
+PASS  markdown summary separates published-method, ratio and composed intervals
+# 83 checks, 0 failed, 11.3s
+### T_report_continuity end 2026-11-20T09:17:13Z exit 0 wall 15s

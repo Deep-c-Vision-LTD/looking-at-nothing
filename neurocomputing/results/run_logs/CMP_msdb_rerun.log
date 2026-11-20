@@ -1,0 +1,29 @@
+### CMP_msdb_rerun start 2026-11-18T19:26:04Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 PYTHONDONTWRITEBYTECODE=1 $LAN_SAL_SRC/.venv/bin/python -B -I results/scripts/compare_msdb_rerun.py
+### CMP_msdb_rerun pid 18141
+== A4_4_logmass.json: old 2026-11-18T14:32:21Z, new 2026-11-18T19:05:43Z, 58 units; differences outside MSDB stim_rigid: 0; top-level: 0; code hash differences: 0; still a string stim_rigid: ['MSI-Net']
+   DeepGaze MSDB inside: phi 10 +0.1256 [+0.0649, +0.1868], p 0.0002; phi 20 +0.1308 [+0.0695, +0.1923], p 0.0002; phi 30 +0.1404 [+0.0746, +0.2060], p 0.0004; phi 45 +0.0983 [+0.0466, +0.1506], p 0.0002
+   DeepGaze MSDB notch: phi 10 +1.1336 [+0.8193, +1.4366], p 0.0006; phi 20 +1.0991 [+0.8274, +1.3647], p 0.0004; phi 30 +1.0603 [+0.8018, +1.3149], p 0.0004; phi 45 +1.0250 [+0.7686, +1.2739], p 0.0002
+   DeepGaze MSDB ink: phi 10 -0.6443 [-0.8233, -0.4585], p 0.0006; phi 20 -0.6068 [-0.7761, -0.4334], p 0.0006; phi 30 -0.5825 [-0.7546, -0.4067], p 0.0004; phi 45 -0.4871 [-0.6411, -0.3290], p 0.0004
+   DeepGaze IIE inside: phi 10 +0.3630 [+0.2321, +0.4941], p 0.0004; phi 20 +0.3131 [+0.1774, +0.4501], p 0.0004; phi 30 +0.2462 [+0.1370, +0.3559], p 0.0004; phi 45 +0.2501 [+0.1003, +0.4018], p 0.0008
+   DeepGaze IIE notch: phi 10 +0.1618 [+0.0207, +0.2984], p 0.0158; phi 20 +0.1681 [+0.0405, +0.2923], p 0.0054; phi 30 +0.1807 [+0.0540, +0.3025], p 0.0022; phi 45 +0.2142 [+0.0898, +0.3365], p 0.001
+   DeepGaze IIE ink: phi 10 -0.1832 [-0.2731, -0.0928], p 0.0008; phi 20 -0.1456 [-0.2220, -0.0689], p 0.0008; phi 30 -0.1237 [-0.1904, -0.0570], p 0.0008; phi 45 -0.1230 [-0.1822, -0.0638], p 0.0008
+== A12_kavsek.json: old 2026-11-18T14:39:50Z, new 2026-11-18T19:16:56Z, 58 units; differences outside MSDB stim_rigid: 0; top-level: 0; code hash differences: 0; still a string stim_rigid: ['MSI-Net']
+   DeepGaze MSDB phi 10: E_K +0.2443 [+0.1775, +0.3110], p 0.0002; E_K minus gain +0.1339 [+0.0841, +0.1840], p 0.0002
+   DeepGaze MSDB phi 20: E_K +0.2483 [+0.1837, +0.3128], p 0.0002; E_K minus gain +0.1379 [+0.0910, +0.1855], p 0.0002
+   DeepGaze MSDB phi 30: E_K +0.2503 [+0.1853, +0.3148], p 0.0002; E_K minus gain +0.1398 [+0.0939, +0.1867], p 0.0002
+   DeepGaze MSDB phi 45: E_K +0.2305 [+0.1698, +0.2906], p 0.0002; E_K minus gain +0.1200 [+0.0783, +0.1621], p 0.0002
+   DeepGaze IIE phi 10: E_K +0.2451 [+0.1983, +0.2916], p 0.0006; E_K minus gain +0.1347 [+0.1090, +0.1609], p 0.0006
+   DeepGaze IIE phi 20: E_K +0.2313 [+0.1855, +0.2772], p 0.0006; E_K minus gain +0.1209 [+0.0949, +0.1474], p 0.0006
+   DeepGaze IIE phi 30: E_K +0.2181 [+0.1778, +0.2581], p 0.0006; E_K minus gain +0.1076 [+0.0857, +0.1295], p 0.0006
+   DeepGaze IIE phi 45: E_K +0.2193 [+0.1800, +0.2582], p 0.0002; E_K minus gain +0.1088 [+0.0890, +0.1286], p 0.0002
+== A13_region.json: old 2026-11-18T14:50:07Z, new 2026-11-18T19:25:22Z, 58 units; differences outside MSDB stim_rigid: 0; top-level: 0; code hash differences: 0; still a string stim_rigid: ['MSI-Net']
+   DeepGaze MSDB phi 10: E_N +0.0709 [+0.0357, +0.1063], p 0.0008
+   DeepGaze MSDB phi 20: E_N +0.0735 [+0.0383, +0.1088], p 0.0008
+   DeepGaze MSDB phi 30: E_N +0.0754 [+0.0409, +0.1108], p 0.0004
+   DeepGaze MSDB phi 45: E_N +0.0612 [+0.0301, +0.0926], p 0.0006
+   DeepGaze IIE phi 10: E_N +0.0744 [+0.0391, +0.1104], p 0.001
+   DeepGaze IIE phi 20: E_N +0.0564 [+0.0212, +0.0920], p 0.0032
+   DeepGaze IIE phi 30: E_N +0.0410 [+0.0113, +0.0712], p 0.007
+   DeepGaze IIE phi 45: E_N +0.0393 [+0.0054, +0.0741], p 0.0222
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/results/explore/msdb_rerun_comparison.json
+### CMP_msdb_rerun end 2026-11-18T19:26:09Z exit 0 wall 5s

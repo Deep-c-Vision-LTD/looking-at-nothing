@@ -1,0 +1,4 @@
+### EX_item7_corrected start 2026-11-18T14:07:04Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 V3_DEVICE=cpu PYTHONDONTWRITEBYTECODE=1 $LAN_SAL_SRC/.venv/bin/python -B explore/item7_corrected.py
+### EX_item7_corrected pid 6272
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/results/explore/item7_corrected.json
+### EX_item7_corrected end 2026-11-18T14:07:10Z exit 0 wall 6s

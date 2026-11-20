@@ -1,0 +1,239 @@
+### EX_a46_calibration start 2026-11-18T14:50:19Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 V3_DEVICE=cpu PYTHONDONTWRITEBYTECODE=1 $LAN_SAL_SRC/.venv/bin/python -B explore/a46_calibration.py
+### EX_a46_calibration pid 8267
+14:50:20 group deepgaze: 2 units, 360 displays
+### EX_a46_calibration pid 8267: no Metal client at first check (~5 s)
+14:50:40   500 unit-displays (20s); last deepgaze DeepGaze MSDB triangle_sr30_dark_p4_mis20
+### EX_a46_calibration pid 8267: no Metal client at ~30 s
+14:50:51 group msinet: 1 units, 360 displays
+14:50:54 group sweep: 18 units, 360 displays
+Loading weights:   0%|          | 0/223 [00:00<?, ?it/s]Loading weights: 100%|██████████| 223/223 [00:00<00:00, 27920.29it/s]
+14:50:57   sweep dinov2: blocks [2, 4, 6, 8, 10, 12]
+14:51:01   1000 unit-displays (41s); last sweep dinov2_L8 square_sr30_dark_p0_mis20
+14:51:52   1500 unit-displays (93s); last sweep dinov2_L6 square_sr50_dark_p1_mis20
+14:52:44   2000 unit-displays (144s); last sweep dinov2_L4 square_sr70_dark_p1_mis20
+14:53:36   2500 unit-displays (196s); last sweep dinov2_L2 triangle_sr30_dark_p2_mis20
+14:54:26   3000 unit-displays (246s); last sweep dinov2_L12 triangle_sr50_dark_p2_mis20
+14:55:18   3500 unit-displays (299s); last sweep dinov2_L10 triangle_sr70_dark_p2_mis20
+14:56:07   4000 unit-displays (347s); last sweep dinov2_L8 square_sr30_light_p2_alt20b
+14:56:58   4500 unit-displays (398s); last sweep dinov2_L6 square_sr70_light_p2_alt20b
+14:57:48   5000 unit-displays (448s); last sweep dinov2_L4 triangle_sr50_light_p4_alt20b
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 27677.00it/s]
+[transformers] [1mCLIPVisionModel LOAD REPORT[0m from: openai/clip-vit-large-patch14
+Key                                                          | Status     |  | 
+-------------------------------------------------------------+------------+--+-
+text_model.encoder.layers.{0...11}.mlp.fc1.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.q_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.out_proj.bias   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.layer_norm1.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.v_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.mlp.fc1.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.mlp.fc2.weight            | UNEXPECTED |  | 
+text_model.embeddings.position_embedding.weight              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.layer_norm1.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.k_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.layer_norm2.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.mlp.fc2.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.layer_norm2.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.k_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.q_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.v_proj.bias     | UNEXPECTED |  | 
+text_model.embeddings.token_embedding.weight                 | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.out_proj.weight | UNEXPECTED |  | 
+text_model.final_layer_norm.weight                           | UNEXPECTED |  | 
+logit_scale                                                  | UNEXPECTED |  | 
+visual_projection.weight                                     | UNEXPECTED |  | 
+text_model.final_layer_norm.bias                             | UNEXPECTED |  | 
+text_projection.weight                                       | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+14:58:15   sweep clip: blocks [4, 8, 12, 16, 20, 24]
+14:58:51   5500 unit-displays (511s); last sweep clip_L4 square_sr30_dark_p4_mis20
+14:59:58   6000 unit-displays (578s); last sweep clip_L24 square_sr50_dark_p4_mis20
+15:01:05   6500 unit-displays (645s); last sweep clip_L20 square_sr70_light_p0_mis20
+15:02:10   7000 unit-displays (711s); last sweep clip_L16 triangle_sr30_light_p0_mis20
+15:03:23   7500 unit-displays (783s); last sweep clip_L12 triangle_sr50_light_p1_mis20
+15:04:44   8000 unit-displays (864s); last sweep clip_L8 triangle_sr70_light_p1_mis20
+15:06:07   8500 unit-displays (947s); last sweep clip_L4 square_sr50_light_p0_alt20b
+15:07:28   9000 unit-displays (1028s); last sweep clip_L24 triangle_sr30_light_p0_alt20b
+15:08:53   9500 unit-displays (1113s); last sweep clip_L20 triangle_sr70_light_p0_alt20b
+Loading weights:   0%|          | 0/400 [00:00<?, ?it/s]Loading weights: 100%|██████████| 400/400 [00:00<00:00, 7367.96it/s]
+[transformers] [1mSiglipVisionModel LOAD REPORT[0m from: google/siglip-large-patch16-256
+Key                                                          | Status     |  | 
+-------------------------------------------------------------+------------+--+-
+text_model.encoder.layers.{0...23}.layer_norm1.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.k_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm1.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc2.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm2.weight        | UNEXPECTED |  | 
+text_model.embeddings.position_embedding.weight              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.out_proj.bias   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc1.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc1.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.v_proj.bias     | UNEXPECTED |  | 
+text_model.embeddings.token_embedding.weight                 | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.v_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.q_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc2.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.k_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.q_proj.bias     | UNEXPECTED |  | 
+logit_bias                                                   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.out_proj.weight | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm2.bias          | UNEXPECTED |  | 
+text_model.final_layer_norm.weight                           | UNEXPECTED |  | 
+text_model.head.bias                                         | UNEXPECTED |  | 
+text_model.head.weight                                       | UNEXPECTED |  | 
+logit_scale                                                  | UNEXPECTED |  | 
+text_model.final_layer_norm.bias                             | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+15:09:09   sweep siglip: blocks [4, 8, 12, 16, 20, 24]
+15:10:10   10000 unit-displays (1190s); last sweep siglip_L16 square_sr30_light_p3_mis20
+15:11:26   10500 unit-displays (1266s); last sweep siglip_L12 square_sr50_light_p3_mis20
+15:12:41   11000 unit-displays (1341s); last sweep siglip_L8 square_sr70_light_p4_mis20
+15:13:57   11500 unit-displays (1417s); last sweep siglip_L4 triangle_sr30_light_p4_mis20
+15:15:11   12000 unit-displays (1491s); last sweep siglip_L24 triangle_sr50_light_p4_mis20
+15:16:25   12500 unit-displays (1565s); last sweep siglip_L20 square_sr30_dark_p1_alt20b
+15:17:48   13000 unit-displays (1649s); last sweep siglip_L16 square_sr70_dark_p1_alt20b
+15:19:04   13500 unit-displays (1725s); last sweep siglip_L12 triangle_sr50_dark_p3_alt20b
+15:20:09 group swap: 20 units, 360 displays
+15:20:14   14000 unit-displays (1794s); last swap dinov2_L12|R1n square_sr30_dark_p3_mis20
+15:20:41   14500 unit-displays (1821s); last swap dinov2_L12|R3 square_sr30_dark_p0_mis20
+15:21:09   15000 unit-displays (1849s); last swap dinov2_L12|R1n square_sr70_light_p4_mis20
+15:21:37   15500 unit-displays (1877s); last swap dinov2_L12|R3 square_sr70_light_p1_mis20
+15:22:04   16000 unit-displays (1905s); last swap dinov2_L12|R1n triangle_sr30_light_p4_mis20
+15:22:32   16500 unit-displays (1932s); last swap dinov2_L12|R3 triangle_sr30_light_p1_mis20
+15:23:00   17000 unit-displays (1960s); last swap dinov2_L12|R1 triangle_sr50_light_p4_mis20
+15:23:28   17500 unit-displays (1988s); last swap dinov2_L12|R4 triangle_sr70_dark_p4_mis20
+15:23:58   18000 unit-displays (2018s); last swap dinov2_L12|R2 square_sr30_light_p2_mis20
+15:24:33   18500 unit-displays (2053s); last swap dinov2_L12|R1n square_sr70_dark_p0_mis20
+15:25:05   19000 unit-displays (2085s); last swap dinov2_L12|R2 square_sr50_light_p2_mis20
+15:25:40   19500 unit-displays (2120s); last swap dinov2_L12|R1n triangle_sr50_light_p1_mis20
+15:26:11   20000 unit-displays (2151s); last swap dinov2_L12|R2 triangle_sr50_dark_p3_mis20
+15:26:45   20500 unit-displays (2185s); last swap dinov2_L12|R1n triangle_sr50_light_p3_mis20
+15:27:17   21000 unit-displays (2218s); last swap dinov2_L12|R4 triangle_sr70_dark_p3_mis20
+15:27:46   21500 unit-displays (2247s); last swap dinov2_L6|R1 square_sr50_dark_p4_mis20
+15:28:15   22000 unit-displays (2275s); last swap dinov2_L6|R4 square_sr50_dark_p1_mis20
+15:28:42   22500 unit-displays (2302s); last swap dinov2_L6|R2 square_sr70_dark_p4_mis20
+15:29:11   23000 unit-displays (2332s); last swap dinov2_L6|R4 square_sr70_dark_p1_mis20
+15:29:38   23500 unit-displays (2358s); last swap dinov2_L6|R2 triangle_sr30_dark_p4_mis20
+15:30:07   24000 unit-displays (2387s); last swap dinov2_L6|R4 triangle_sr50_light_p2_mis20
+15:30:34   24500 unit-displays (2414s); last swap dinov2_L6|R3 triangle_sr70_dark_p2_mis20
+15:31:03   25000 unit-displays (2443s); last swap dinov2_L6|R1 square_sr30_light_p0_mis20
+15:31:37   25500 unit-displays (2477s); last swap dinov2_L6|R4 square_sr30_dark_p2_mis20
+15:32:09   26000 unit-displays (2509s); last swap dinov2_L6|R1 triangle_sr30_dark_p1_mis20
+15:32:44   26500 unit-displays (2544s); last swap dinov2_L6|R4 square_sr70_light_p3_mis20
+15:33:16   27000 unit-displays (2576s); last swap dinov2_L6|R1 triangle_sr50_dark_p1_mis20
+15:33:51   27500 unit-displays (2612s); last swap dinov2_L6|R4 triangle_sr30_light_p3_mis20
+15:34:24   28000 unit-displays (2644s); last swap dinov2_L6|R2 triangle_sr70_dark_p1_mis20
+15:34:57   28500 unit-displays (2677s); last swap siglip_L24|R1n square_sr50_dark_p2_mis20
+15:35:27   29000 unit-displays (2707s); last swap siglip_L24|R3 square_sr30_light_p4_mis20
+15:35:57   29500 unit-displays (2737s); last swap siglip_L24|R1 square_sr70_dark_p2_mis20
+15:36:26   30000 unit-displays (2767s); last swap siglip_L24|R3 square_sr50_light_p4_mis20
+15:36:56   30500 unit-displays (2796s); last swap siglip_L24|R1 triangle_sr30_dark_p2_mis20
+15:37:26   31000 unit-displays (2826s); last swap siglip_L24|R3 triangle_sr50_light_p0_mis20
+15:37:56   31500 unit-displays (2856s); last swap siglip_L24|R2 triangle_sr70_dark_p0_mis20
+15:38:27   32000 unit-displays (2887s); last swap siglip_L24|R1n square_sr30_dark_p3_mis20
+15:39:01   32500 unit-displays (2921s); last swap siglip_L24|R3 square_sr30_dark_p0_mis20
+15:39:36   33000 unit-displays (2956s); last swap siglip_L24|R1n square_sr70_light_p4_mis20
+15:40:10   33500 unit-displays (2990s); last swap siglip_L24|R3 square_sr70_light_p1_mis20
+15:40:44   34000 unit-displays (3024s); last swap siglip_L24|R1n triangle_sr30_light_p4_mis20
+15:41:18   34500 unit-displays (3058s); last swap siglip_L24|R3 triangle_sr30_light_p1_mis20
+15:41:52   35000 unit-displays (3092s); last swap siglip_L24|R1 triangle_sr50_light_p4_mis20
+15:42:28   35500 unit-displays (3128s); last swap siglip_L24|R4 triangle_sr70_dark_p4_mis20
+15:42:57   36000 unit-displays (3157s); last swap iie_shapenetc|R2 square_sr30_light_p2_mis20
+15:43:31   36500 unit-displays (3191s); last swap iie_shapenetc|R1n square_sr70_dark_p0_mis20
+15:44:00   37000 unit-displays (3220s); last swap iie_shapenetc|R2 square_sr50_light_p2_mis20
+15:44:33   37500 unit-displays (3253s); last swap iie_shapenetc|R1n triangle_sr50_light_p1_mis20
+15:45:04   38000 unit-displays (3284s); last swap iie_shapenetc|R2 triangle_sr50_dark_p3_mis20
+15:45:36   38500 unit-displays (3316s); last swap iie_shapenetc|R1n triangle_sr50_light_p3_mis20
+15:46:07   39000 unit-displays (3347s); last swap iie_shapenetc|R4 triangle_sr70_dark_p3_mis20
+15:46:38   39500 unit-displays (3378s); last swap iie_shapenetc|R1 square_sr50_dark_p4_mis20
+15:47:13   40000 unit-displays (3413s); last swap iie_shapenetc|R4 square_sr50_dark_p1_mis20
+15:47:41   40500 unit-displays (3441s); last swap iie_shapenetc|R2 square_sr70_dark_p4_mis20
+15:48:13   41000 unit-displays (3473s); last swap iie_shapenetc|R4 square_sr70_dark_p1_mis20
+15:48:40   41500 unit-displays (3500s); last swap iie_shapenetc|R2 triangle_sr30_dark_p4_mis20
+15:49:11   42000 unit-displays (3531s); last swap iie_shapenetc|R4 triangle_sr50_light_p2_mis20
+15:49:38   42500 unit-displays (3559s); last swap iie_shapenetc|R3 triangle_sr70_dark_p2_mis20
+Loading weights:   0%|          | 0/223 [00:00<?, ?it/s]Loading weights: 100%|██████████| 223/223 [00:00<00:00, 22736.39it/s]
+15:49:52   swap backbone dinov2: 30 heads
+15:50:07   43000 unit-displays (3587s); last swap dinov2_L6|R1n square_sr30_dark_p3_alt20b
+15:50:35   43500 unit-displays (3615s); last swap dinov2_L6|R1 square_sr30_light_p0_alt20b
+15:51:02   44000 unit-displays (3642s); last swap dinov2_L6|R1 square_sr50_light_p0_alt20b
+15:51:30   44500 unit-displays (3670s); last swap dinov2_L6|R2 square_sr30_light_p4_alt20b
+15:52:00   45000 unit-displays (3700s); last swap dinov2_L6|R2 square_sr50_light_p4_alt20b
+15:52:36   45500 unit-displays (3736s); last swap dinov2_L6|R2 square_sr70_dark_p1_alt20b
+15:53:11   46000 unit-displays (3771s); last swap dinov2_L6|R3 triangle_sr30_dark_p1_alt20b
+15:53:48   46500 unit-displays (3808s); last swap dinov2_L6|R3 square_sr70_light_p0_alt20b
+15:54:19   47000 unit-displays (3839s); last swap dinov2_L6|R4 triangle_sr30_light_p0_alt20b
+15:54:56   47500 unit-displays (3876s); last swap dinov2_L6|R4 triangle_sr30_light_p2_alt20b
+15:55:26   48000 unit-displays (3906s); last swap dinov2_L6|R4 triangle_sr50_light_p2_alt20b
+15:56:05   48500 unit-displays (3946s); last swap dinov2_L12|R1n triangle_sr50_light_p4_alt20b
+15:56:38   49000 unit-displays (3978s); last swap dinov2_L12|R1n triangle_sr70_dark_p1_alt20b
+15:57:12   49500 unit-displays (4012s); last swap dinov2_L12|R2 triangle_sr70_light_p2_alt20b
+Loading weights:   0%|          | 0/400 [00:00<?, ?it/s]Loading weights: 100%|██████████| 400/400 [00:00<00:00, 7905.09it/s]
+[transformers] [1mSiglipVisionModel LOAD REPORT[0m from: google/siglip-large-patch16-256
+Key                                                          | Status     |  | 
+-------------------------------------------------------------+------------+--+-
+text_model.encoder.layers.{0...23}.layer_norm1.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.k_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm1.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc2.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm2.weight        | UNEXPECTED |  | 
+text_model.embeddings.position_embedding.weight              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.out_proj.bias   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc1.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc1.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.v_proj.bias     | UNEXPECTED |  | 
+text_model.embeddings.token_embedding.weight                 | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.v_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.q_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc2.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.k_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.q_proj.bias     | UNEXPECTED |  | 
+logit_bias                                                   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.out_proj.weight | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm2.bias          | UNEXPECTED |  | 
+text_model.final_layer_norm.weight                           | UNEXPECTED |  | 
+text_model.head.bias                                         | UNEXPECTED |  | 
+text_model.head.weight                                       | UNEXPECTED |  | 
+logit_scale                                                  | UNEXPECTED |  | 
+text_model.final_layer_norm.bias                             | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+15:57:38   swap backbone siglip: 15 heads
+15:57:49   50000 unit-displays (4049s); last swap siglip_L24|R1 square_sr30_light_p2_alt20b
+15:58:36   50500 unit-displays (4096s); last swap siglip_L24|R2 square_sr30_light_p4_alt20b
+15:59:24   51000 unit-displays (4144s); last swap siglip_L24|R2 square_sr50_light_p4_alt20b
+16:00:11   51500 unit-displays (4191s); last swap siglip_L24|R2 square_sr70_light_p4_alt20b
+16:00:58   52000 unit-displays (4238s); last swap siglip_L24|R3 triangle_sr30_light_p4_alt20b
+16:01:45   52500 unit-displays (4286s); last swap siglip_L24|R3 triangle_sr50_dark_p1_alt20b
+16:02:33   53000 unit-displays (4333s); last swap siglip_L24|R4 triangle_sr70_dark_p1_alt20b
+16:03:23   53500 unit-displays (4383s); last swap siglip_L24|R4 triangle_sr70_light_p2_alt20b
+$LAN_SAL_SRC/.venv/lib/python3.12/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+$LAN_SAL_SRC/.venv/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+16:03:25   swap backbone iie: 15 heads
+16:04:10   54000 unit-displays (4430s); last swap iie_shapenetc|R4 square_sr30_light_p2_alt20b
+16:05:02   54500 unit-displays (4482s); last swap iie_shapenetc|R1n square_sr50_light_p2_alt20b
+16:05:48   55000 unit-displays (4529s); last swap iie_shapenetc|R1n square_sr70_light_p2_alt20b
+16:06:35   55500 unit-displays (4575s); last swap iie_shapenetc|R1 triangle_sr30_light_p2_alt20b
+16:07:21   56000 unit-displays (4621s); last swap iie_shapenetc|R1 triangle_sr50_light_p2_alt20b
+16:08:08   56500 unit-displays (4668s); last swap iie_shapenetc|R2 triangle_sr50_light_p4_alt20b
+16:08:50   57000 unit-displays (4710s); last swap iie_shapenetc|R4 triangle_sr70_light_p4_alt20b
+16:08:59 group registers: 2 units, 360 displays
+Loading weights:   0%|          | 0/224 [00:00<?, ?it/s]Loading weights: 100%|██████████| 224/224 [00:00<00:00, 7883.70it/s]
+16:08:59   registers backbone dinov2reg: 6 heads
+16:09:38   57500 unit-displays (4758s); last registers dinov2reg_L6|R4 square_sr30_light_p1_mis20
+16:10:30   58000 unit-displays (4810s); last registers dinov2reg_L12|R4 square_sr50_light_p4_mis20
+16:11:20   58500 unit-displays (4860s); last registers dinov2reg_L12|R4 square_sr70_light_p3_mis20
+16:12:11   59000 unit-displays (4911s); last registers dinov2reg_L6|R4 triangle_sr30_light_p2_mis20
+16:13:00   59500 unit-displays (4961s); last registers dinov2reg_L6|R4 triangle_sr70_dark_p0_mis20
+16:13:52   60000 unit-displays (5012s); last registers dinov2reg_L6|R4 triangle_sr70_light_p4_mis20
+16:14:45   60500 unit-displays (5065s); last registers dinov2reg_L12|R4 square_sr50_light_p2_alt20b
+16:15:35   61000 unit-displays (5115s); last registers dinov2reg_L12|R4 triangle_sr50_dark_p3_alt20b
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/results/explore/A4_6_calibration.json
+### EX_a46_calibration end 2026-11-18T16:16:25Z exit 0 wall 5166s

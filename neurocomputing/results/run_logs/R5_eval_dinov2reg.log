@@ -1,0 +1,16 @@
+### R5_eval_dinov2reg start 2026-11-18T13:50:36Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis/gpu cmd: nice -n 10 env V3_DEVICE=cpu V3_MAPS=none OMP_NUM_THREADS=4 $LAN_SAL_SRC/.venv/bin/python -B eval_re.py --bb dinov2reg --out ../scores_rigid/heads --ckpt-dir $LAN_PROJECT_ROOT/nn/registers/full/ckpt --stimsets stim_rigid --skip-mit
+### R5_eval_dinov2reg pid 5430
+2026-11-18 13:50:40 === eval dinov2reg on cpu: 6 heads, stimsets ['stim_rigid'], maps saved for: none
+Loading weights:   0%|          | 0/224 [00:00<?, ?it/s]Loading weights: 100%|██████████| 224/224 [00:00<00:00, 7939.86it/s]
+### R5_eval_dinov2reg pid 5430: no Metal client at first check (~5 s)
+### R5_eval_dinov2reg pid 5430: no Metal client at ~30 s
+2026-11-18 13:52:09 stim_rigid px336 block 1/1 features 660 images 81s
+2026-11-18 13:55:56 stim_rigid px448 block 1/1 features 660 images 161s
+2026-11-18 13:58:00 stim_rigid dinov2reg_L12_R4_s0 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:58:01 stim_rigid dinov2reg_L12_R4_s1 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:58:01 stim_rigid dinov2reg_L12_R4_s2 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:58:01 stim_rigid dinov2reg_L6_R4_s0 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:58:01 stim_rigid dinov2reg_L6_R4_s1 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:58:01 stim_rigid dinov2reg_L6_R4_s2 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:58:01 === eval dinov2reg done
+### R5_eval_dinov2reg end 2026-11-18T13:58:07Z exit 0 wall 451s

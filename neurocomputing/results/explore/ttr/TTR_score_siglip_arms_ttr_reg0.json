@@ -1,0 +1,54 @@
+{
+ "created_utc": "2026-11-18T22:47:23Z",
+ "label": "exploratory (REANALYSIS_RULE.md Section 6; unadjusted; never used for a headline claim)",
+ "code": {
+  "explore/ttr/ttr_score.py": "80f3b6f253868887d60f4a9ef9b31e8940037b34bba13fba2dd298744e5eb257",
+  "explore/excommon.py": "d168232289be46a9e883385aeee279165e1c7924879c07c5f03204b3b38a397a",
+  "explore/ttr/ttr_common.py": "33e8083f3aa989c053da7eb814398fb5c748328cadae614b488772547ba26f97",
+  "explore/mapsrc.py": "d634d2bf0290aa11bec8565a981cdb0dbdf1a52ea5d8e735a6e2fb8bb8cab559",
+  "explore/a15a_token_norms.py": "d30d65a623dc46db2952863076c58d28d068a5135125e7f176ff14b1373c5901"
+ },
+ "rule_sha256": "b03f397b6b1808e7055f0d6db8f5685c0e6a2850261eeb3d8525dddbeca73a38",
+ "public_commit": "f67c7df98c27136be8ff3db4eea57d1973579602",
+ "inputs": [
+  "as plain",
+  "results/explore/ttr/TTR_select_<bb>.json",
+  "results/explore/ttr/TTR_gateK.json"
+ ],
+ "notes": null,
+ "result": {
+  "backbone": "siglip",
+  "arms": [
+   "ttr",
+   "reg0"
+  ],
+  "sets": [
+   "stim_v3",
+   "mit",
+   "stim_alt"
+  ],
+  "selection": {
+   "path": "results/explore/ttr/TTR_select_siglip.json",
+   "sha256": "da694796c9c7f2d29ccc67aeb99074bc94b9bd1cb0fe51ae7f84070c9d004b2a"
+  },
+  "neuron_dict_n": 200,
+  "exact_formula_check": {
+   "ttr": {
+    "n": 252,
+    "max_abs_diff": 0.0
+   },
+   "reg0": {
+    "n": 126,
+    "max_abs_diff": 0.0
+   }
+  },
+  "timings": {
+   "ttr_stim_v3_s": 530.4478058815002,
+   "ttr_mit_s": 90.31810307502747,
+   "ttr_stim_alt_s": 421.8658039569855,
+   "reg0_stim_v3_s": 387.6502010822296,
+   "reg0_mit_s": 75.7406747341156,
+   "total_s": 1512.4596190452576
+  }
+ }
+}

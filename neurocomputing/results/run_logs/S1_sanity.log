@@ -1,0 +1,6 @@
+### S1_sanity start 2026-11-18T11:41:48Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 $LAN_SAL_SRC/.venv/bin/python -B -I analyze_re.py sanity
+### S1_sanity pid 96220
+### S1_sanity pid 96220: no Metal client at first check (~5 s)
+sanity gate: 94 checks, 0 failed -> PASS
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/out/sanity.json
+### S1_sanity end 2026-11-18T11:41:58Z exit 0 wall 10s

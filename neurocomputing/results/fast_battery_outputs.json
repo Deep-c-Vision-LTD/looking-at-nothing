@@ -1,0 +1,4871 @@
+{
+ "created_utc": "2026-11-18T13:58:31Z",
+ "require_public_hashed_files": 33,
+ "n_items_expected": 660,
+ "files": {
+  "scores_rigid/nulls.json": {
+   "md5": "0e1ebda6a19374243d0b65a8f44a8f5f",
+   "bytes": 4566632,
+   "nulls": [
+    "corner_s16",
+    "corner_s25",
+    "corner_s40",
+    "corner_s60",
+    "corner_s8",
+    "edge_s16",
+    "edge_s25",
+    "edge_s40",
+    "edge_s60",
+    "edge_s8",
+    "ink_s16",
+    "ink_s25",
+    "ink_s40",
+    "ink_s60",
+    "ink_s8"
+   ],
+   "n_nulls": 15,
+   "all_15": true,
+   "per_null": {
+    "corner_s16": {
+     "n_displays": 660,
+     "names_match": true,
+     "missing_measures": [],
+     "measures": [
+      "f_core30",
+      "f_core45",
+      "f_ind",
+      "f_ink",
+      "f_inside",
+      "f_notch",
+      "f_polygon",
+      "r_K",
+      "r_N",
+      "r_core30",
+      "r_core45",
+      "r_eroded_all",
+      "r_inside"
+     ],
+     "nonfinite": 0
+    },
+    "corner_s25": {
+     "n_displays": 660,
+     "names_match": true,
+     "missing_measures": [],
+     "measures": [
+      "f_core30",
+      "f_core45",
+      "f_ind",
+      "f_ink",
+      "f_inside",
+      "f_notch",
+      "f_polygon",
+      "r_K",
+      "r_N",
+      "r_core30",
+      "r_core45",
+      "r_eroded_all",
+      "r_inside"
+     ],
+     "nonfinite": 0
+    },
+    "corner_s40": {
+     "n_displays": 660,
+     "names_match": true,
+     "missing_measures": [],
+     "measures": [
+      "f_core30",
+      "f_core45",
+      "f_ind",
+      "f_ink",
+      "f_inside",
+      "f_notch",
+      "f_polygon",
+      "r_K",
+      "r_N",
+      "r_core30",
+      "r_core45",
+      "r_eroded_all",
+      "r_inside"
+     ],
+     "nonfinite": 0
+    },
+    "corner_s60": {
+     "n_displays": 660,
+     "names_match": true,
+     "missing_measures": [],
+     "measures": [
+      "f_core30",
+      "f_core45",
+      "f_ind",
+      "f_ink",
+      "f_inside",
+      "f_notch",
+      "f_polygon",
+      "r_K",
+      "r_N",
+      "r_core30",
+      "r_core45",
+      "r_eroded_all",
+      "r_inside"
+     ],
+     "nonfinite": 0
+    },
+    "corner_s8": {
+     "n_displays": 660,
+     "names_match": true,
+     "missing_measures": [],
+     "measures": [
+      "f_core30",
+      "f_core45",
+      "f_ind",
+      "f_ink",
+      "f_inside",
+      "f_notch",
+      "f_polygon",
+      "r_K",
+      "r_N",
+      "r_core30",
+      "r_core45",
+      "r_eroded_all",
+      "r_inside"
+     ],
+     "nonfinite": 0
+    },
+    "edge_s16": {
+     "n_displays": 660,
+     "names_match": true,
+     "missing_measures": [],
+     "measures": [
+      "f_core30",
+      "f_core45",
+      "f_ind",
+      "f_ink",
+      "f_inside",
+      "f_notch",
+      "f_polygon",
+      "r_K",
+      "r_N",
+      "r_core30",
+      "r_core45",
+      "r_eroded_all",
+      "r_inside"
+     ],
+     "nonfinite": 0
+    },
+    "edge_s25": {
+     "n_displays": 660,
+     "names_match": true,
+     "missing_measures": [],
+     "measures": [
+      "f_core30",
+      "f_core45",
+      "f_ind",
+      "f_ink",
+      "f_inside",
+      "f_notch",
+      "f_polygon",
+      "r_K",
+      "r_N",
+      "r_core30",
+      "r_core45",
+      "r_eroded_all",
+      "r_inside"
+     ],
+     "nonfinite": 0
+    },
+    "edge_s40": {
+     "n_displays": 660,
+     "names_match": true,
+     "missing_measures": [],
+     "measures": [
+      "f_core30",
+      "f_core45",
+      "f_ind",
+      "f_ink",
+      "f_inside",
+      "f_notch",
+      "f_polygon",
+      "r_K",
+      "r_N",
+      "r_core30",
+      "r_core45",
+      "r_eroded_all",
+      "r_inside"
+     ],
+     "nonfinite": 0
+    },
+    "edge_s60": {
+     "n_displays": 660,
+     "names_match": true,
+     "missing_measures": [],
+     "measures": [
+      "f_core30",
+      "f_core45",
+      "f_ind",
+      "f_ink",
+      "f_inside",
+      "f_notch",
+      "f_polygon",
+      "r_K",
+      "r_N",
+      "r_core30",
+      "r_core45",
+      "r_eroded_all",
+      "r_inside"
+     ],
+     "nonfinite": 0
+    },
+    "edge_s8": {
+     "n_displays": 660,
+     "names_match": true,
+     "missing_measures": [],
+     "measures": [
+      "f_core30",
+      "f_core45",
+      "f_ind",
+      "f_ink",
+      "f_inside",
+      "f_notch",
+      "f_polygon",
+      "r_K",
+      "r_N",
+      "r_core30",
+      "r_core45",
+      "r_eroded_all",
+      "r_inside"
+     ],
+     "nonfinite": 0
+    },
+    "ink_s16": {
+     "n_displays": 660,
+     "names_match": true,
+     "missing_measures": [],
+     "measures": [
+      "f_core30",
+      "f_core45",
+      "f_ind",
+      "f_ink",
+      "f_inside",
+      "f_notch",
+      "f_polygon",
+      "r_K",
+      "r_N",
+      "r_core30",
+      "r_core45",
+      "r_eroded_all",
+      "r_inside"
+     ],
+     "nonfinite": 0
+    },
+    "ink_s25": {
+     "n_displays": 660,
+     "names_match": true,
+     "missing_measures": [],
+     "measures": [
+      "f_core30",
+      "f_core45",
+      "f_ind",
+      "f_ink",
+      "f_inside",
+      "f_notch",
+      "f_polygon",
+      "r_K",
+      "r_N",
+      "r_core30",
+      "r_core45",
+      "r_eroded_all",
+      "r_inside"
+     ],
+     "nonfinite": 0
+    },
+    "ink_s40": {
+     "n_displays": 660,
+     "names_match": true,
+     "missing_measures": [],
+     "measures": [
+      "f_core30",
+      "f_core45",
+      "f_ind",
+      "f_ink",
+      "f_inside",
+      "f_notch",
+      "f_polygon",
+      "r_K",
+      "r_N",
+      "r_core30",
+      "r_core45",
+      "r_eroded_all",
+      "r_inside"
+     ],
+     "nonfinite": 0
+    },
+    "ink_s60": {
+     "n_displays": 660,
+     "names_match": true,
+     "missing_measures": [],
+     "measures": [
+      "f_core30",
+      "f_core45",
+      "f_ind",
+      "f_ink",
+      "f_inside",
+      "f_notch",
+      "f_polygon",
+      "r_K",
+      "r_N",
+      "r_core30",
+      "r_core45",
+      "r_eroded_all",
+      "r_inside"
+     ],
+     "nonfinite": 0
+    },
+    "ink_s8": {
+     "n_displays": 660,
+     "names_match": true,
+     "missing_measures": [],
+     "measures": [
+      "f_core30",
+      "f_core45",
+      "f_ind",
+      "f_ink",
+      "f_inside",
+      "f_notch",
+      "f_polygon",
+      "r_K",
+      "r_N",
+      "r_core30",
+      "r_core45",
+      "r_eroded_all",
+      "r_inside"
+     ],
+     "nonfinite": 0
+    }
+   }
+  },
+  "scores_rigid/DeepGaze_IIE.json": {
+   "md5": "d49e6cbed27eb4bed687cd188bd20ae0",
+   "bytes": 324503,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/dinov2_L2_s336.json": {
+   "md5": "8208c35e6667fba2a279febb3127f158",
+   "bytes": 324823,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/dinov2_L4_s336.json": {
+   "md5": "3a91ae732f43c89a82cb73a5c9df1bdc",
+   "bytes": 323846,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/dinov2_L6_s336.json": {
+   "md5": "d67a8fcfbeed8c77a3d19dba28190384",
+   "bytes": 323082,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/dinov2_L8_s336.json": {
+   "md5": "670cfa034b46cb6a5d7027c1a0659b69",
+   "bytes": 322644,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/dinov2_L10_s336.json": {
+   "md5": "3277201afa1c10e9cbc3b21fc6b652bc",
+   "bytes": 322267,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/dinov2_L12_s336.json": {
+   "md5": "8ce6208dfcd76e5e3258075c85af30b7",
+   "bytes": 322372,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/dinov2_L2_s448.json": {
+   "md5": "fefaa73f45e3b66880325c824f59c3a6",
+   "bytes": 325818,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/dinov2_L4_s448.json": {
+   "md5": "ad3ce412792b1f908833709053a4525c",
+   "bytes": 324762,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/dinov2_L6_s448.json": {
+   "md5": "b645bbe79a4924a00c8b47664ccc2ccd",
+   "bytes": 323355,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/dinov2_L8_s448.json": {
+   "md5": "60890d5722f2855f1e7e131799f98693",
+   "bytes": 322901,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/dinov2_L10_s448.json": {
+   "md5": "f01fc6f30aeff017332c159965106d67",
+   "bytes": 322258,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/dinov2_L12_s448.json": {
+   "md5": "5aa35d42dbbe594f6fb954eb89ad806a",
+   "bytes": 322324,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/clip_L4_s336.json": {
+   "md5": "a924c4f2f015c725db60df581038c681",
+   "bytes": 324599,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/clip_L8_s336.json": {
+   "md5": "b8e24f08d14cf717c2916dce8e51e081",
+   "bytes": 322989,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/clip_L12_s336.json": {
+   "md5": "9c20e5907e3eee75804ade10c4aa4424",
+   "bytes": 322858,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/clip_L16_s336.json": {
+   "md5": "93099fdbe3dca9eebec1fd84bf75f4ff",
+   "bytes": 322501,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/clip_L20_s336.json": {
+   "md5": "75d8643d9bccf94032c423e209a35d8c",
+   "bytes": 322779,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/clip_L24_s336.json": {
+   "md5": "e991299f158bf46a5a5b1d8bd04b1e06",
+   "bytes": 323044,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/clip_L4_s448.json": {
+   "md5": "d8342b5c7b29cb85794cb5d01a1cc8d1",
+   "bytes": 325443,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/clip_L8_s448.json": {
+   "md5": "9f4ec840458ce2ec2e02187a8f4ec00c",
+   "bytes": 323684,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/clip_L12_s448.json": {
+   "md5": "741b0727fc0fed9db9b59a25a3fb2cdb",
+   "bytes": 322927,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/clip_L16_s448.json": {
+   "md5": "3178f05b836f7c83a6b85be49809ac77",
+   "bytes": 323001,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/clip_L20_s448.json": {
+   "md5": "bc1956b97b3347c340acd270fcd9a978",
+   "bytes": 323161,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/clip_L24_s448.json": {
+   "md5": "ae5c005826afd2bb8c651f2b75fb5112",
+   "bytes": 323416,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/siglip_L4_s336.json": {
+   "md5": "6850f7161d79091d0d6a99d72699c1d7",
+   "bytes": 324437,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/siglip_L8_s336.json": {
+   "md5": "310324ae4502d4674cabab88035c453b",
+   "bytes": 322942,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/siglip_L12_s336.json": {
+   "md5": "52a908180b93b469192d767ccee01c04",
+   "bytes": 322850,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/siglip_L16_s336.json": {
+   "md5": "a1fc9ec1e4938d1e6d9dc7e41e4b2909",
+   "bytes": 323181,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/siglip_L20_s336.json": {
+   "md5": "5b36bd935e2b1fb438d2cb3b91748bca",
+   "bytes": 323428,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/siglip_L24_s336.json": {
+   "md5": "906f06053d68038ed874b30af76d1dab",
+   "bytes": 324063,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/siglip_L4_s448.json": {
+   "md5": "0e5b42506e2ef009e88fe3ab2a9cf222",
+   "bytes": 325255,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/siglip_L8_s448.json": {
+   "md5": "1902ad837a88d8119019286424ec2973",
+   "bytes": 323429,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/siglip_L12_s448.json": {
+   "md5": "d28700a90623f6cdfc6524f01c8b8ec3",
+   "bytes": 323405,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/siglip_L16_s448.json": {
+   "md5": "07ddf12873aa02df22dc5942b6692daf",
+   "bytes": 323864,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/siglip_L20_s448.json": {
+   "md5": "99d05bb2bc8ff05d342ecd6afbe750d7",
+   "bytes": 323878,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/siglip_L24_s448.json": {
+   "md5": "69f796397d3bea9a64960817643ec55f",
+   "bytes": 324489,
+   "n_displays": 660,
+   "names_match": true,
+   "missing_measures": [],
+   "measures": [
+    "f_core30",
+    "f_core45",
+    "f_ind",
+    "f_ink",
+    "f_inside",
+    "f_notch",
+    "f_polygon",
+    "r_K",
+    "r_N",
+    "r_core30",
+    "r_core45",
+    "r_eroded_all",
+    "r_inside",
+    "r_inside_f32"
+   ],
+   "nonfinite": 0
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L12_R1n_s0.json": {
+   "md5": "1cd2bba7b1658e4bd0504090883cc3f9",
+   "bytes": 1291652,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L12_R1n_s1.json": {
+   "md5": "9063bf917d94cc6736cbcfa0dd20f211",
+   "bytes": 1291619,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L12_R1n_s2.json": {
+   "md5": "bb6dfc8dd6d3b0e9789d784fe453b618",
+   "bytes": 1291478,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L12_R1_s0.json": {
+   "md5": "d0faaf2b79bbadf40533804f091f09e9",
+   "bytes": 1293048,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L12_R1_s1.json": {
+   "md5": "06507ef25720b2177683cf5c72819831",
+   "bytes": 1292964,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L12_R1_s2.json": {
+   "md5": "807eabfd566aa1a036e6159e0ff27d66",
+   "bytes": 1292495,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L12_R2_s0.json": {
+   "md5": "67e68c4c0a8a37c21a12c00ea21e888c",
+   "bytes": 1291628,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L12_R2_s1.json": {
+   "md5": "dcf3ce6c7093f24c87169d277eda4dd6",
+   "bytes": 1292477,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L12_R2_s2.json": {
+   "md5": "9e8547235b419dcb35b01c4a8a42f49e",
+   "bytes": 1291794,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L12_R3_s0.json": {
+   "md5": "08718e651a6fefef993ae7dff447549b",
+   "bytes": 1292004,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L12_R3_s1.json": {
+   "md5": "fbfe2a241a9be13398eaf8f57486b2f0",
+   "bytes": 1292453,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L12_R3_s2.json": {
+   "md5": "62943655d9620bfaf59163c7a4652ad8",
+   "bytes": 1292057,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L12_R4_s0.json": {
+   "md5": "5060363b6ecdff76a14dd3e5201155a1",
+   "bytes": 1291691,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L12_R4_s1.json": {
+   "md5": "d980d94af2b81c8c53db127284562953",
+   "bytes": 1292548,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L12_R4_s2.json": {
+   "md5": "36faf4685181c1fa533feaca7c6fc816",
+   "bytes": 1291478,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L6_R1n_s0.json": {
+   "md5": "485167d9a3a25a30d3c91fd7d140d434",
+   "bytes": 1295475,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L6_R1n_s1.json": {
+   "md5": "1b11587af69497c0e46e3bc4f0a2bed2",
+   "bytes": 1295532,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L6_R1n_s2.json": {
+   "md5": "df2d756ecea6c22f8ea9a14898abd812",
+   "bytes": 1296212,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L6_R1_s0.json": {
+   "md5": "fb6e1f41ebfede37a51e14e96f5089b3",
+   "bytes": 1296174,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L6_R1_s1.json": {
+   "md5": "1dc515eb8b71c66be596d89c35ef178f",
+   "bytes": 1295454,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L6_R1_s2.json": {
+   "md5": "f811b4f79e5bc59e9e7c873cb1631a33",
+   "bytes": 1295404,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L6_R2_s0.json": {
+   "md5": "fdf1fc559dcf12073a8e9dffd3d83903",
+   "bytes": 1294378,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L6_R2_s1.json": {
+   "md5": "bd1b522b9845dd4b4b8638612e410756",
+   "bytes": 1294258,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L6_R2_s2.json": {
+   "md5": "671278f68c02719006a008e67bb2bb0e",
+   "bytes": 1293975,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L6_R3_s0.json": {
+   "md5": "6e8bb46a9f76961c5faed117963c1159",
+   "bytes": 1294795,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L6_R3_s1.json": {
+   "md5": "1933210d1043edaefedf596cf905ebff",
+   "bytes": 1294287,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L6_R3_s2.json": {
+   "md5": "55c18d615c9ed8defb4e1f1f4572811e",
+   "bytes": 1294288,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L6_R4_s0.json": {
+   "md5": "e9a4c7645abfd7f2ce93fc6d89c3d502",
+   "bytes": 1294437,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L6_R4_s1.json": {
+   "md5": "a6b2b15474c09a6e8ff0fa093d5190d3",
+   "bytes": 1295312,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2_L6_R4_s2.json": {
+   "md5": "9bf4239a63e43b0edd62afd3576f9150",
+   "bytes": 1294598,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_siglip_L24_R1n_s0.json": {
+   "md5": "a110d6dc26c7e14b5e74ab9a82364596",
+   "bytes": 1296591,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_siglip_L24_R1n_s1.json": {
+   "md5": "1fc9b6c1a88e6a691f18a9acdbcbae5d",
+   "bytes": 1296229,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_siglip_L24_R1n_s2.json": {
+   "md5": "bd24487578b9c0e72735a4c0ee31bf33",
+   "bytes": 1296056,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_siglip_L24_R1_s0.json": {
+   "md5": "b6dfa4f82ac953e38c2a7427b96c7b26",
+   "bytes": 1295963,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_siglip_L24_R1_s1.json": {
+   "md5": "99dadbce13e46c489b748356b22b4657",
+   "bytes": 1296779,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_siglip_L24_R1_s2.json": {
+   "md5": "38b22db5c64e04e66f475725baf83a6f",
+   "bytes": 1296753,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_siglip_L24_R2_s0.json": {
+   "md5": "bcd3fa80af0fd0050fafd9eba6914fd8",
+   "bytes": 1295988,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_siglip_L24_R2_s1.json": {
+   "md5": "a9ce662d0a087f3bb39abbbfff4ad078",
+   "bytes": 1296370,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_siglip_L24_R2_s2.json": {
+   "md5": "faf8681e02d843672e7e8d872de7fd89",
+   "bytes": 1296100,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_siglip_L24_R3_s0.json": {
+   "md5": "49386896519fae2b1d20a8d8b1038093",
+   "bytes": 1293684,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_siglip_L24_R3_s1.json": {
+   "md5": "2bc93a2d56cdf377636bd0f03a713aa0",
+   "bytes": 1294286,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_siglip_L24_R3_s2.json": {
+   "md5": "3f12abb1e02ef4b48840d57b7b3cbbef",
+   "bytes": 1293684,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_siglip_L24_R4_s0.json": {
+   "md5": "fdb3753167e15585da9a8375a78dfc21",
+   "bytes": 1296063,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_siglip_L24_R4_s1.json": {
+   "md5": "6855c2b92f34685a2dc53768e3b661da",
+   "bytes": 1296363,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_siglip_L24_R4_s2.json": {
+   "md5": "f8b043c566c4ad4569a5bfecfa45a672",
+   "bytes": 1295698,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_iie_shapenetc_R1n_s0.json": {
+   "md5": "5496896c88d9ae57b29ed7e3c670d320",
+   "bytes": 1296298,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_iie_shapenetc_R1n_s1.json": {
+   "md5": "43522f73c29b88520ff70807548b8207",
+   "bytes": 1293797,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_iie_shapenetc_R1n_s2.json": {
+   "md5": "6a22a536b061adcf4f7e499e960c988e",
+   "bytes": 1295553,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_iie_shapenetc_R1_s0.json": {
+   "md5": "b99b8959705bef59c16bb6a86465b26b",
+   "bytes": 1293882,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_iie_shapenetc_R1_s1.json": {
+   "md5": "d213634a7a90521c7d90666b226437d9",
+   "bytes": 1294797,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_iie_shapenetc_R1_s2.json": {
+   "md5": "172c196bfa40ba3e6cdbf53fe7778881",
+   "bytes": 1295281,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_iie_shapenetc_R2_s0.json": {
+   "md5": "9a5c1d50914c8ac60846246225aa453f",
+   "bytes": 1294780,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_iie_shapenetc_R2_s1.json": {
+   "md5": "07fe5ad5c6a5527f39c5dd4dca5ac21a",
+   "bytes": 1295201,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_iie_shapenetc_R2_s2.json": {
+   "md5": "a93194fe2596f831ec20f5388bafb022",
+   "bytes": 1295711,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_iie_shapenetc_R3_s0.json": {
+   "md5": "79e8c2fa0468e7be12e1b9dd2f89ce86",
+   "bytes": 1295371,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_iie_shapenetc_R3_s1.json": {
+   "md5": "61206de07e5432a53cd72d3529872027",
+   "bytes": 1295675,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_iie_shapenetc_R3_s2.json": {
+   "md5": "969b8b8fd12d53ed3d76c37932d5559d",
+   "bytes": 1295132,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_iie_shapenetc_R4_s0.json": {
+   "md5": "271011aacae814b95bfa76845aaecd02",
+   "bytes": 1295594,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_iie_shapenetc_R4_s1.json": {
+   "md5": "ec01f8e7da4601f651e4ed9421f81b93",
+   "bytes": 1296748,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_iie_shapenetc_R4_s2.json": {
+   "md5": "e2d3c0d4c1f414c226a8b8b0b6c8b0d3",
+   "bytes": 1295474,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2reg_L12_R4_s0.json": {
+   "md5": "7a61864e66dff85f8a9bed96e074c03c",
+   "bytes": 1292455,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2reg_L12_R4_s1.json": {
+   "md5": "e4e8f33311587fe4f0b5d56e800a5911",
+   "bytes": 1292273,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2reg_L12_R4_s2.json": {
+   "md5": "61af5da6baf18f3533d6a88ffd598ced",
+   "bytes": 1292513,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2reg_L6_R4_s0.json": {
+   "md5": "63963b68e8316de0dbf364fa291e1225",
+   "bytes": 1295044,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2reg_L6_R4_s1.json": {
+   "md5": "9387f5a55c473430af2a80ca5d3ce7ba",
+   "bytes": 1295092,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "scores_rigid/heads/scores/stim_rigid_dinov2reg_L6_R4_s2.json": {
+   "md5": "58d847d2a4b411c24f700c6a4d335f38",
+   "bytes": 1293838,
+   "sizes": [
+    "336",
+    "448"
+   ],
+   "336": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   },
+   "448": {
+    "measures": [
+     "f_core30",
+     "f_core45",
+     "f_ind",
+     "f_ink",
+     "f_inside",
+     "f_notch",
+     "f_polygon",
+     "inside",
+     "inside_eroded",
+     "inside_eroded_all",
+     "r_K",
+     "r_N",
+     "r_core30",
+     "r_core45",
+     "r_eroded_all",
+     "r_inside"
+    ],
+    "all_names_match": true,
+    "missing_measures": [],
+    "nonfinite": 0
+   }
+  },
+  "check_cpu_dinov2/eval_check.json": {
+   "md5": "b221799d1a9ffa999e8c2f6f322b18e2",
+   "worst": 1.2593177303621417e-05,
+   "n": 792,
+   "tol": 0.0001,
+   "pub": "$LAN_PROJECT_ROOT/v3/gpu/full/scores",
+   "per_file": {
+    "stim_v3_dinov2_L12_R4_s0.json": {
+     "values": 396,
+     "max_abs_diff": 9.14237338700552e-06
+    },
+    "stim_v3_dinov2_L6_R1n_s0.json": {
+     "values": 396,
+     "max_abs_diff": 1.2593177303621417e-05
+    }
+   }
+  },
+  "check_cpu_siglip/eval_check.json": {
+   "md5": "ca2b8ad41d20e03ffd9301fcde45261f",
+   "worst": 1.6384263989199788e-05,
+   "n": 792,
+   "tol": 0.0001,
+   "pub": "$LAN_PROJECT_ROOT/v3/gpu/full/scores",
+   "per_file": {
+    "stim_v3_siglip_L24_R1n_s0.json": {
+     "values": 396,
+     "max_abs_diff": 1.6384263989199788e-05
+    },
+    "stim_v3_siglip_L24_R4_s0.json": {
+     "values": 396,
+     "max_abs_diff": 1.1689471980769195e-05
+    }
+   }
+  },
+  "check_cpu_iie/eval_check.json": {
+   "md5": "92fa540138e6153f34a7b1bdb6d03fdd",
+   "worst": 9.63620804683707e-06,
+   "n": 792,
+   "tol": 0.0001,
+   "pub": "$LAN_PROJECT_ROOT/v3/gpu/full/scores",
+   "per_file": {
+    "stim_v3_iie_shapenetc_R1n_s0.json": {
+     "values": 396,
+     "max_abs_diff": 9.63620804683707e-06
+    },
+    "stim_v3_iie_shapenetc_R4_s0.json": {
+     "values": 396,
+     "max_abs_diff": 3.3266231681539082e-06
+    }
+   }
+  },
+  "check_cpu_dinov2reg/eval_check.json": {
+   "md5": "799458e92d030ca685ca7bd0fadc191a",
+   "worst": 5.352938456493206e-06,
+   "n": 396,
+   "tol": 0.0001,
+   "pub": "$LAN_PROJECT_ROOT/nn/registers/full/scores",
+   "per_file": {
+    "stim_v3_dinov2reg_L12_R4_s0.json": {
+     "values": 396,
+     "max_abs_diff": 5.352938456493206e-06
+    }
+   }
+  },
+  "out/sanity.json": {
+   "md5": "fca6a4af5f4b0b4b2cfa1b7890c7b355",
+   "checks": 94,
+   "failed": 0,
+   "passed": true
+  }
+ },
+ "missing": [],
+ "total_nonfinite": 0
+}

@@ -1,0 +1,14 @@
+### R1_local_nulls start 2026-11-18T11:53:24Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 $LAN_SAL_SRC/.venv/bin/python -B -I scoring/local_nulls_rigid.py
+### R1_local_nulls pid 97860
+### R1_local_nulls pid 97860: no Metal client at first check (~5 s)
+reproduction check on 8 stim_v3 displays: max |difference| = 0.00e+00
+0 660 1s
+### R1_local_nulls pid 97860: no Metal client at ~30 s
+100 660 169s
+200 660 340s
+300 660 503s
+400 660 559s
+500 660 600s
+600 660 642s
+local nulls on stim_rigid: 660 images x 15 nulls; check 0.00e+00; 671s
+### R1_local_nulls end 2026-11-18T12:04:56Z exit 0 wall 692s

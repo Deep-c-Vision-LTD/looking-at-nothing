@@ -1,0 +1,40 @@
+{
+ "tag": "dinov2reg_L12_R3_s1",
+ "fset": "dinov2reg_L12",
+ "arch": "R3",
+ "seed": 1,
+ "job": "dinov2reg_R1n-R1-R2-R3_s1",
+ "device": "mps",
+ "n_train": 12803,
+ "batches": 400,
+ "epochs": 6,
+ "bs": 32,
+ "lr": 0.0005,
+ "hist": [
+  {
+   "epoch": 0,
+   "loss": 0.88243
+  },
+  {
+   "epoch": 1,
+   "loss": 0.60333
+  },
+  {
+   "epoch": 2,
+   "loss": 0.54702
+  },
+  {
+   "epoch": 3,
+   "loss": 0.50747
+  },
+  {
+   "epoch": 4,
+   "loss": 0.47581
+  },
+  {
+   "epoch": 5,
+   "loss": 0.45295
+  }
+ ],
+ "finished": "2026-11-19 20:36:57"
+}

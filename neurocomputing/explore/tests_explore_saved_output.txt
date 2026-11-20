@@ -1,0 +1,46 @@
+test_explore_saved.py 2026-11-18T23:45:47Z; scratch ../_trash/test_explore_saved_scratch_20261118T234547Z
+PASS  no torch imported
+PASS  main calls require_public before reading any score
+PASS  explore_saved imports no torch
+PASS  two_level plan interval equals the cbb code
+PASS  two_level two-level interval equals the cbb code
+PASS  two_level with identical seeds: both intervals equal
+PASS  two_level widens with seed spread
+PASS  A4.1 E equals the mean of illusory minus control180
+PASS  A4.1 U20 is the ratio of means
+PASS  A4.1 A20 uses the mean of phases a and b
+PASS  A4.1 L20 equals E(illusory) - E(mis20)
+PASS  A4.1 D20 reported and equal to the drop ratio when L20 excludes 0
+PASS  A4.1 U20 has BCa, Fieller and the stability flag
+PASS  A4.3 D only where the uniform-loss interval excludes 0  L excl0 at []
+PASS  A4.3 D record names the reason when not computed
+PASS  A4.3 L_uni = E(illusory) - E(mis) and U point equals ratio of means at every angle
+PASS  A4.3 slope has the two-stage percentile interval
+PASS  A4.2 E90 against control90
+PASS  A4.2 ratio E90 / E180 is the ratio of means
+PASS  per-size getter: 336 px = seed mean at 336
+PASS  per-size getter: 448 px = seed mean at 448
+PASS  size average = mean of the two sizes
+PASS  per-seed getter averages the two sizes of one seed
+PASS  alt phases read from the stim_alt file
+PASS  registers cells read from the registers folder
+PASS  measure f_core30 selected
+PASS  sweep getter averages 336 and 448
+PASS  A10 sub-design: 4 clusters x 5 positions at each support ratio
+PASS  A10 clusters are shape x polarity
+PASS  A10 WCU enumerates 1,296 weight vectors
+PASS  A10 smallest attainable p = 6 / 1,296 = 0.00463
+PASS  A10 mean of the three support-ratio means = overall E (balanced)
+PASS  A10 strong effect reaches p near the enumeration floor  p [0.00309, 0.0, 0.00463]
+PASS  A10 label
+PASS  A10 flags a p below the enumeration floor (engine tie tolerance at very large |t|)
+PASS  A10 moderate effect: p not below the floor  p [0.03704, 0.03086, 0.00926]
+PASS  same_side: positive sign needs lower bound > 0
+PASS  same_side: negative sign needs upper bound < 0
+PASS  compare: identical objects
+PASS  compare: numeric and string mismatches found
+PASS  close4 tolerance
+PASS  item 17 ratio difference = U20(a) - U20(b)
+PASS  item 17 ratio difference carries flags and BCa p
+PASS  per-seed record: E with WCU and the published percentile interval
+# 44 checks, 0 failed, 0.3s

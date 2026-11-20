@@ -1,0 +1,28 @@
+2026-11-19 18:31:31 === eval dinov2reg on mps: 1 heads, stimsets ['stim_v3', 'stim_alt'], maps saved for: none
+Loading weights:   0%|          | 0/224 [00:00<?, ?it/s]Loading weights: 100%|██████████| 224/224 [00:00<00:00, 8696.32it/s]
+2026-11-19 18:31:37 MIT features 200 images 6s
+2026-11-19 18:31:38 dinov2reg_L12_R4_s0 MIT1003 held-out CC 0.7275 NSS 2.6022 (n 200)
+2026-11-19 18:32:03 stim_v3 px336 block 1/1 features 740 images 22s
+2026-11-19 18:32:57 stim_v3 px448 block 1/1 features 740 images 52s
+2026-11-19 18:32:59 stim_v3 dinov2reg_L12_R4_s0 scored 740 images x 2 sizes (maps saved: False)
+2026-11-19 18:33:12 stim_alt px336 block 1/1 features 360 images 12s
+2026-11-19 18:33:38 stim_alt px448 block 1/1 features 360 images 26s
+2026-11-19 18:33:39 stim_alt dinov2reg_L12_R4_s0 scored 360 images x 2 sizes (maps saved: False)
+2026-11-19 18:33:39 === eval dinov2reg done
+{
+ "mit_dinov2reg_L12_R4_s0.json": {
+  "CC_new": 0.727460495531559,
+  "CC_pub": 0.727460495531559,
+  "n": 200,
+  "max_abs_diff_cc_per_image": 0.0
+ },
+ "stim_alt_dinov2reg_L12_R4_s0.json": {
+  "values": 7920,
+  "max_abs_diff": 0.0
+ },
+ "stim_v3_dinov2reg_L12_R4_s0.json": {
+  "values": 16280,
+  "max_abs_diff": 0.0
+ }
+}
+worst 0.0 values 24400 tol 1e-06

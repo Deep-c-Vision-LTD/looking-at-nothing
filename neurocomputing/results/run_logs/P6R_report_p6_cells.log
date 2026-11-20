@@ -1,0 +1,31 @@
+### P6R_report_p6_cells start 2026-11-20T04:01:44Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONDONTWRITEBYTECODE=1 V3_DEVICE=cpu $LAN_SAL_SRC/.venv/bin/python -B -I explore/report_p6_cells.py
+### P6R_report_p6_cells pid 93486
+04:01:45 require_public: 33 hashed files verified
+04:01:46 G2 passed: 430 numeric leaves, max |difference| 0.0
+04:01:46 computed dinov2reg_L6|R1n
+04:01:46 computed dinov2reg_L6|R1
+04:01:46 computed dinov2reg_L6|R2
+04:01:47 computed dinov2reg_L6|R3
+04:01:47 computed dinov2reg_L6|R4
+04:01:47 computed dinov2reg_L12|R1n
+04:01:47 computed dinov2reg_L12|R1
+04:01:48 computed dinov2reg_L12|R2
+04:01:48 computed dinov2reg_L12|R3
+04:01:48 computed dinov2reg_L12|R4
+04:01:48 computed dinov2ms_L7L11|R1n
+04:01:49 computed dinov2ms_L7L11|R1
+04:01:49 computed dinov2ms_L7L11|R2
+04:01:49 computed dinov2ms_L7L11|R3
+### P6R_report_p6_cells pid 93486: no Metal client at first check (~5 s)
+04:01:49 computed dinov2ms_L7L11|R4
+04:01:50 computed dinov2ms_L11|R1n
+04:01:50 computed dinov2ms_L11|R1
+04:01:50 computed dinov2ms_L11|R2
+04:01:51 computed dinov2ms_L11|R3
+04:01:51 computed dinov2ms_L11|R4
+04:01:51 G3 passed: 290 checks
+04:01:51 G4 passed
+04:01:51 G5 and internal checks passed
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/results/explore/P6_reporting.json
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/results/explore/P6_reporting.md
+### P6R_report_p6_cells end 2026-11-20T04:01:54Z exit 0 wall 10s

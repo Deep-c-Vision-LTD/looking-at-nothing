@@ -1,0 +1,14 @@
+### R4a_check_siglip start 2026-11-18T13:04:41Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis/gpu cmd: $LAN_SAL_SRC/.venv/bin/python -B -I check_eval_re.py ../check_cpu_siglip --tol 1e-4
+### R4a_check_siglip pid 3461
+{
+ "stim_v3_siglip_L24_R1n_s0.json": {
+  "values": 396,
+  "max_abs_diff": 1.6384263989199788e-05
+ },
+ "stim_v3_siglip_L24_R4_s0.json": {
+  "values": 396,
+  "max_abs_diff": 1.1689471980769195e-05
+ }
+}
+worst 1.6384263989199788e-05 values 792 tol 0.0001
+### R4a_check_siglip end 2026-11-18T13:04:46Z exit 0 wall 5s

@@ -1,0 +1,10 @@
+### R8_explore_rigid start 2026-11-18T19:26:41Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONDONTWRITEBYTECODE=1 $LAN_SAL_SRC/.venv/bin/python -B -I explore/explore_rigid.py
+### R8_explore_rigid pid 18211
+19:26:41 loading DeepGaze IIE, MSDB and the 15 nulls (as analyze_re.step_primary P5)
+19:26:41 loading the 20 swap cells, 18 sweep readouts and 2 registers cells
+19:26:42 computing (theta 10, 20, 30, 45)
+### R8_explore_rigid pid 18211: no Metal client at first check (~5 s)
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/results/explore/explore_rigid.json
+19:26:46 P5 reproduction: max |diff| 0.0, 0 mismatches; nulls vs P5 partial: max |diff| 0.0, 0 mismatches; units ok 57 of 57; compute 4.4 s
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/results/explore/explore_rigid.md
+### R8_explore_rigid end 2026-11-18T19:26:51Z exit 0 wall 10s

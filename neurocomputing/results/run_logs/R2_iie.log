@@ -1,0 +1,52 @@
+### R2_iie start 2026-11-18T12:04:56Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 $LAN_SAL_SRC/.venv/bin/python -B scoring/score_rigid.py iie
+### R2_iie pid 99655
+$LAN_SAL_SRC/.venv/lib/python3.12/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+$LAN_SAL_SRC/.venv/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+Using cache found in $HOME/.cache/torch/hub/pytorch_vision_v0.6.0
+$LAN_SAL_SRC/.venv/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=DenseNet201_Weights.IMAGENET1K_V1`. You can also use `weights=DenseNet201_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+### R2_iie pid 99655: no Metal client at first check (~5 s)
+Using cache found in $HOME/.cache/torch/hub/pytorch_vision_v0.6.0
+$LAN_SAL_SRC/.venv/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNeXt50_32X4D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt50_32X4D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Loaded pretrained weights for efficientnet-b5
+DeepGaze IIE: pipeline check on 4 stim_v3 images, max |r_inside - published| per tag: DeepGaze_IIE 1.20e-09
+DeepGaze IIE: 660 of 660 images to score, tags ['DeepGaze_IIE']
+### R2_iie pid 99655: no Metal client at ~30 s
+  DeepGaze IIE 20/660 37s (1.84 s/img)
+  DeepGaze IIE 40/660 75s (1.87 s/img)
+  DeepGaze IIE 60/660 112s (1.87 s/img)
+  DeepGaze IIE 80/660 148s (1.85 s/img)
+  DeepGaze IIE 100/660 181s (1.81 s/img)
+  DeepGaze IIE 120/660 219s (1.82 s/img)
+  DeepGaze IIE 140/660 257s (1.84 s/img)
+  DeepGaze IIE 160/660 294s (1.84 s/img)
+  DeepGaze IIE 180/660 330s (1.84 s/img)
+  DeepGaze IIE 200/660 369s (1.84 s/img)
+  DeepGaze IIE 220/660 406s (1.85 s/img)
+  DeepGaze IIE 240/660 442s (1.84 s/img)
+  DeepGaze IIE 260/660 476s (1.83 s/img)
+  DeepGaze IIE 280/660 513s (1.83 s/img)
+  DeepGaze IIE 300/660 550s (1.83 s/img)
+  DeepGaze IIE 320/660 586s (1.83 s/img)
+  DeepGaze IIE 340/660 624s (1.83 s/img)
+  DeepGaze IIE 360/660 657s (1.82 s/img)
+  DeepGaze IIE 380/660 692s (1.82 s/img)
+  DeepGaze IIE 400/660 729s (1.82 s/img)
+  DeepGaze IIE 420/660 767s (1.83 s/img)
+  DeepGaze IIE 440/660 802s (1.82 s/img)
+  DeepGaze IIE 460/660 838s (1.82 s/img)
+  DeepGaze IIE 480/660 876s (1.83 s/img)
+  DeepGaze IIE 500/660 912s (1.82 s/img)
+  DeepGaze IIE 520/660 946s (1.82 s/img)
+  DeepGaze IIE 540/660 982s (1.82 s/img)
+  DeepGaze IIE 560/660 1019s (1.82 s/img)
+  DeepGaze IIE 580/660 1055s (1.82 s/img)
+  DeepGaze IIE 600/660 1090s (1.82 s/img)
+  DeepGaze IIE 620/660 1125s (1.81 s/img)
+  DeepGaze IIE 640/660 1160s (1.81 s/img)
+  DeepGaze IIE 660/660 1195s (1.81 s/img)
+DeepGaze IIE: done, 1195s
+### R2_iie end 2026-11-18T12:25:28Z exit 0 wall 1232s

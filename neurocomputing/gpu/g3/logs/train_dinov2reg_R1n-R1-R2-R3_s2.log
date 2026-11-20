@@ -1,0 +1,72 @@
+2026-11-19 20:42:02 === dinov2reg_R1n-R1-R2-R3_s2 on mps: 12803 training images, 400 batches/epoch, heads [('dinov2reg_L12', 'R1n'), ('dinov2reg_L12', 'R1'), ('dinov2reg_L12', 'R2'), ('dinov2reg_L12', 'R3'), ('dinov2reg_L6', 'R1n'), ('dinov2reg_L6', 'R1'), ('dinov2reg_L6', 'R2'), ('dinov2reg_L6', 'R3')]
+2026-11-19 20:42:12 R1n calibration dinov2reg_L12_R1n_s2: input stats from dinov2reg_L12_chstats.npz, hidden layers from 256 images
+2026-11-19 20:42:12   R1n calib layer 1 (8 ch): mu +0.7334 sd 0.3027
+2026-11-19 20:42:12   R1n calib layer 2 (16 ch): mu +0.7313 sd 0.2842
+2026-11-19 20:42:12   R1n calib layer 3 (1 ch): mu +0.7662 sd 0.4598
+2026-11-19 20:42:12   R1n calib layer 4 (128 ch): mu +0.7240 sd 0.2327
+2026-11-19 20:42:12 R1n calibration dinov2reg_L6_R1n_s2: input stats from dinov2reg_L6_chstats.npz, hidden layers from 256 images
+2026-11-19 20:42:12   R1n calib layer 1 (8 ch): mu +0.7344 sd 0.2872
+2026-11-19 20:42:12   R1n calib layer 2 (16 ch): mu +0.7300 sd 0.2779
+2026-11-19 20:42:12   R1n calib layer 3 (1 ch): mu +0.7635 sd 0.4323
+2026-11-19 20:42:12   R1n calib layer 4 (128 ch): mu +0.7245 sd 0.2320
+2026-11-19 20:42:14   dinov2reg_R1n-R1-R2-R3_s2 ep 0 batch 1/400 1.7s
+2026-11-19 20:43:23   dinov2reg_R1n-R1-R2-R3_s2 ep 0 batch 51/400 70.9s
+2026-11-19 20:44:33   dinov2reg_R1n-R1-R2-R3_s2 ep 0 batch 101/400 140.7s
+2026-11-19 20:45:41   dinov2reg_R1n-R1-R2-R3_s2 ep 0 batch 151/400 208.4s
+2026-11-19 20:46:48   dinov2reg_R1n-R1-R2-R3_s2 ep 0 batch 201/400 275.9s
+2026-11-19 20:47:57   dinov2reg_R1n-R1-R2-R3_s2 ep 0 batch 251/400 344.2s
+2026-11-19 20:49:06   dinov2reg_R1n-R1-R2-R3_s2 ep 0 batch 301/400 413.6s
+2026-11-19 20:50:16   dinov2reg_R1n-R1-R2-R3_s2 ep 0 batch 351/400 483.3s
+2026-11-19 20:51:23   dinov2reg_R1n-R1-R2-R3_s2 ep 0 batch 400/400 550.0s
+2026-11-19 20:51:23 dinov2reg_R1n-R1-R2-R3_s2 epoch 0 dinov2reg_L12:R1n 1.3155 dinov2reg_L12:R1 1.5376 dinov2reg_L12:R2 0.7810 dinov2reg_L12:R3 0.8702 dinov2reg_L6:R1n 0.9221 dinov2reg_L6:R1 1.0199 dinov2reg_L6:R2 0.7631 dinov2reg_L6:R3 0.8152 550s
+2026-11-19 20:51:24   dinov2reg_R1n-R1-R2-R3_s2 ep 1 batch 1/400 1.5s
+2026-11-19 20:52:32   dinov2reg_R1n-R1-R2-R3_s2 ep 1 batch 51/400 69.2s
+2026-11-19 20:53:39   dinov2reg_R1n-R1-R2-R3_s2 ep 1 batch 101/400 136.6s
+2026-11-19 20:54:47   dinov2reg_R1n-R1-R2-R3_s2 ep 1 batch 151/400 203.9s
+2026-11-19 20:55:54   dinov2reg_R1n-R1-R2-R3_s2 ep 1 batch 201/400 271.0s
+2026-11-19 20:57:02   dinov2reg_R1n-R1-R2-R3_s2 ep 1 batch 251/400 339.0s
+2026-11-19 20:58:09   dinov2reg_R1n-R1-R2-R3_s2 ep 1 batch 301/400 406.4s
+2026-11-19 20:59:17   dinov2reg_R1n-R1-R2-R3_s2 ep 1 batch 351/400 473.8s
+2026-11-19 21:00:23   dinov2reg_R1n-R1-R2-R3_s2 ep 1 batch 400/400 540.0s
+2026-11-19 21:00:23 dinov2reg_R1n-R1-R2-R3_s2 epoch 1 dinov2reg_L12:R1n 0.7362 dinov2reg_L12:R1 0.8182 dinov2reg_L12:R2 0.5132 dinov2reg_L12:R3 0.6007 dinov2reg_L6:R1n 0.7105 dinov2reg_L6:R1 0.7106 dinov2reg_L6:R2 0.5241 dinov2reg_L6:R3 0.5830 540s
+2026-11-19 21:00:25   dinov2reg_R1n-R1-R2-R3_s2 ep 2 batch 1/400 1.6s
+2026-11-19 21:01:32   dinov2reg_R1n-R1-R2-R3_s2 ep 2 batch 51/400 69.2s
+2026-11-19 21:02:42   dinov2reg_R1n-R1-R2-R3_s2 ep 2 batch 101/400 139.0s
+2026-11-19 21:03:52   dinov2reg_R1n-R1-R2-R3_s2 ep 2 batch 151/400 209.2s
+2026-11-19 21:05:02   dinov2reg_R1n-R1-R2-R3_s2 ep 2 batch 201/400 279.3s
+2026-11-19 21:06:14   dinov2reg_R1n-R1-R2-R3_s2 ep 2 batch 251/400 350.9s
+2026-11-19 21:07:21   dinov2reg_R1n-R1-R2-R3_s2 ep 2 batch 301/400 418.4s
+2026-11-19 21:08:28   dinov2reg_R1n-R1-R2-R3_s2 ep 2 batch 351/400 485.4s
+2026-11-19 21:09:34   dinov2reg_R1n-R1-R2-R3_s2 ep 2 batch 400/400 551.2s
+2026-11-19 21:09:34 dinov2reg_R1n-R1-R2-R3_s2 epoch 2 dinov2reg_L12:R1n 0.6985 dinov2reg_L12:R1 0.7514 dinov2reg_L12:R2 0.4459 dinov2reg_L12:R3 0.5427 dinov2reg_L6:R1n 0.6816 dinov2reg_L6:R1 0.6795 dinov2reg_L6:R2 0.4610 dinov2reg_L6:R3 0.5395 551s
+2026-11-19 21:09:36   dinov2reg_R1n-R1-R2-R3_s2 ep 3 batch 1/400 1.6s
+2026-11-19 21:10:43   dinov2reg_R1n-R1-R2-R3_s2 ep 3 batch 51/400 68.6s
+2026-11-19 21:11:51   dinov2reg_R1n-R1-R2-R3_s2 ep 3 batch 101/400 136.4s
+2026-11-19 21:12:58   dinov2reg_R1n-R1-R2-R3_s2 ep 3 batch 151/400 203.5s
+2026-11-19 21:14:05   dinov2reg_R1n-R1-R2-R3_s2 ep 3 batch 201/400 270.6s
+2026-11-19 21:15:13   dinov2reg_R1n-R1-R2-R3_s2 ep 3 batch 251/400 338.3s
+2026-11-19 21:16:21   dinov2reg_R1n-R1-R2-R3_s2 ep 3 batch 301/400 406.2s
+2026-11-19 21:17:28   dinov2reg_R1n-R1-R2-R3_s2 ep 3 batch 351/400 473.5s
+2026-11-19 21:18:34   dinov2reg_R1n-R1-R2-R3_s2 ep 3 batch 400/400 539.5s
+2026-11-19 21:18:34 dinov2reg_R1n-R1-R2-R3_s2 epoch 3 dinov2reg_L12:R1n 0.6776 dinov2reg_L12:R1 0.7224 dinov2reg_L12:R2 0.3875 dinov2reg_L12:R3 0.5035 dinov2reg_L6:R1n 0.6662 dinov2reg_L6:R1 0.6660 dinov2reg_L6:R2 0.4039 dinov2reg_L6:R3 0.5079 540s
+2026-11-19 21:18:36   dinov2reg_R1n-R1-R2-R3_s2 ep 4 batch 1/400 1.6s
+2026-11-19 21:19:43   dinov2reg_R1n-R1-R2-R3_s2 ep 4 batch 51/400 68.6s
+2026-11-19 21:20:50   dinov2reg_R1n-R1-R2-R3_s2 ep 4 batch 101/400 135.7s
+2026-11-19 21:21:57   dinov2reg_R1n-R1-R2-R3_s2 ep 4 batch 151/400 202.8s
+2026-11-19 21:23:04   dinov2reg_R1n-R1-R2-R3_s2 ep 4 batch 201/400 269.9s
+2026-11-19 21:24:12   dinov2reg_R1n-R1-R2-R3_s2 ep 4 batch 251/400 337.2s
+2026-11-19 21:25:19   dinov2reg_R1n-R1-R2-R3_s2 ep 4 batch 301/400 404.2s
+2026-11-19 21:26:26   dinov2reg_R1n-R1-R2-R3_s2 ep 4 batch 351/400 471.7s
+2026-11-19 21:27:32   dinov2reg_R1n-R1-R2-R3_s2 ep 4 batch 400/400 537.4s
+2026-11-19 21:27:32 dinov2reg_R1n-R1-R2-R3_s2 epoch 4 dinov2reg_L12:R1n 0.6655 dinov2reg_L12:R1 0.7064 dinov2reg_L12:R2 0.3358 dinov2reg_L12:R3 0.4722 dinov2reg_L6:R1n 0.6572 dinov2reg_L6:R1 0.6588 dinov2reg_L6:R2 0.3498 dinov2reg_L6:R3 0.4802 537s
+2026-11-19 21:27:34   dinov2reg_R1n-R1-R2-R3_s2 ep 5 batch 1/400 1.6s
+2026-11-19 21:28:41   dinov2reg_R1n-R1-R2-R3_s2 ep 5 batch 51/400 68.6s
+2026-11-19 21:29:48   dinov2reg_R1n-R1-R2-R3_s2 ep 5 batch 101/400 135.7s
+2026-11-19 21:30:55   dinov2reg_R1n-R1-R2-R3_s2 ep 5 batch 151/400 202.8s
+2026-11-19 21:32:02   dinov2reg_R1n-R1-R2-R3_s2 ep 5 batch 201/400 269.8s
+2026-11-19 21:33:09   dinov2reg_R1n-R1-R2-R3_s2 ep 5 batch 251/400 336.9s
+2026-11-19 21:34:16   dinov2reg_R1n-R1-R2-R3_s2 ep 5 batch 301/400 404.0s
+2026-11-19 21:35:23   dinov2reg_R1n-R1-R2-R3_s2 ep 5 batch 351/400 471.0s
+2026-11-19 21:36:29   dinov2reg_R1n-R1-R2-R3_s2 ep 5 batch 400/400 536.7s
+2026-11-19 21:36:29 dinov2reg_R1n-R1-R2-R3_s2 epoch 5 dinov2reg_L12:R1n 0.6584 dinov2reg_L12:R1 0.6972 dinov2reg_L12:R2 0.3003 dinov2reg_L12:R3 0.4499 dinov2reg_L6:R1n 0.6521 dinov2reg_L6:R1 0.6543 dinov2reg_L6:R2 0.3134 dinov2reg_L6:R3 0.4608 537s
+2026-11-19 21:36:29 === dinov2reg_R1n-R1-R2-R3_s2 done

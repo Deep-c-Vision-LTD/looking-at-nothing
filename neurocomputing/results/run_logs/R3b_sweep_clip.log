@@ -1,0 +1,71 @@
+### R3b_sweep_clip start 2026-11-18T12:33:53Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 $LAN_SAL_SRC/.venv/bin/python -B scoring/score_rigid.py sweep:clip
+### R3b_sweep_clip pid 1942
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 7541.91it/s]
+[transformers] [1mCLIPVisionModel LOAD REPORT[0m from: openai/clip-vit-large-patch14
+Key                                                          | Status     |  | 
+-------------------------------------------------------------+------------+--+-
+text_model.encoder.layers.{0...11}.self_attn.q_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.v_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.v_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.k_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.mlp.fc1.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.q_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.layer_norm1.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.layer_norm1.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.layer_norm2.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.out_proj.weight | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.k_proj.weight   | UNEXPECTED |  | 
+text_model.final_layer_norm.bias                             | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.out_proj.bias   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.mlp.fc2.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.mlp.fc1.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.mlp.fc2.bias              | UNEXPECTED |  | 
+text_projection.weight                                       | UNEXPECTED |  | 
+text_model.embeddings.position_embedding.weight              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.layer_norm2.bias          | UNEXPECTED |  | 
+text_model.embeddings.token_embedding.weight                 | UNEXPECTED |  | 
+logit_scale                                                  | UNEXPECTED |  | 
+text_model.final_layer_norm.weight                           | UNEXPECTED |  | 
+visual_projection.weight                                     | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+### R3b_sweep_clip pid 1942: no Metal client at first check (~5 s)
+sweep clip: pipeline check on 4 stim_v3 images, max |r_inside - published| per tag: clip_L4_s336 1.04e-08, clip_L8_s336 4.61e-08, clip_L12_s336 1.09e-07, clip_L16_s336 1.17e-07, clip_L20_s336 1.21e-07, clip_L24_s336 9.40e-08, clip_L4_s448 2.48e-08, clip_L8_s448 7.62e-08, clip_L12_s448 6.67e-08, clip_L16_s448 1.33e-07, clip_L20_s448 1.76e-07, clip_L24_s448 4.10e-07
+sweep clip: 660 of 660 images to score, tags ['clip_L4_s336', 'clip_L8_s336', 'clip_L12_s336', 'clip_L16_s336', 'clip_L20_s336', 'clip_L24_s336', 'clip_L4_s448', 'clip_L8_s448', 'clip_L12_s448', 'clip_L16_s448', 'clip_L20_s448', 'clip_L24_s448']
+### R3b_sweep_clip pid 1942: no Metal client at ~30 s
+  sweep clip 20/660 28s (1.41 s/img)
+  sweep clip 40/660 56s (1.41 s/img)
+  sweep clip 60/660 85s (1.41 s/img)
+  sweep clip 80/660 113s (1.42 s/img)
+  sweep clip 100/660 142s (1.42 s/img)
+  sweep clip 120/660 170s (1.41 s/img)
+  sweep clip 140/660 198s (1.41 s/img)
+  sweep clip 160/660 227s (1.42 s/img)
+  sweep clip 180/660 255s (1.42 s/img)
+  sweep clip 200/660 283s (1.42 s/img)
+  sweep clip 220/660 312s (1.42 s/img)
+  sweep clip 240/660 342s (1.43 s/img)
+  sweep clip 260/660 372s (1.43 s/img)
+  sweep clip 280/660 402s (1.44 s/img)
+  sweep clip 300/660 434s (1.45 s/img)
+  sweep clip 320/660 465s (1.45 s/img)
+  sweep clip 340/660 485s (1.43 s/img)
+  sweep clip 360/660 501s (1.39 s/img)
+  sweep clip 380/660 520s (1.37 s/img)
+  sweep clip 400/660 542s (1.35 s/img)
+  sweep clip 420/660 564s (1.34 s/img)
+  sweep clip 440/660 590s (1.34 s/img)
+  sweep clip 460/660 617s (1.34 s/img)
+  sweep clip 480/660 647s (1.35 s/img)
+  sweep clip 500/660 677s (1.35 s/img)
+  sweep clip 520/660 708s (1.36 s/img)
+  sweep clip 540/660 738s (1.37 s/img)
+  sweep clip 560/660 769s (1.37 s/img)
+  sweep clip 580/660 802s (1.38 s/img)
+  sweep clip 600/660 834s (1.39 s/img)
+  sweep clip 620/660 866s (1.40 s/img)
+  sweep clip 640/660 895s (1.40 s/img)
+  sweep clip 660/660 923s (1.40 s/img)
+sweep clip: done, 923s
+### R3b_sweep_clip end 2026-11-18T12:49:54Z exit 0 wall 961s

@@ -1,0 +1,79 @@
+### T_explore_rigid_r2 start 2026-11-18T19:27:58Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=2 PYTHONDONTWRITEBYTECODE=1 $LAN_SAL_SRC/.venv/bin/python -B -I explore/test_explore_rigid.py --out explore/tests_explore_rigid_output.txt
+### T_explore_rigid_r2 pid 18261
+test_explore_rigid.py, 2026-11-18T19:27:58Z, synthetic inputs only, OMP_NUM_THREADS=2
+--- imports, no torch, require_public first
+PASS  importing explore_rigid imports no torch
+PASS  require_public() is the first action of main (only argument parsing before it)  statement 3
+PASS  the script refers to the engine only through excommon (analyze_re imported read only)
+--- per-configuration quantities against the decomposition of rule Section 5.5
+PASS  theta 10: E(0), E_rig, L_uni, L_rig, A* = a + (g_in - g_out), C*, the three secondary quantities  max err 2.50e-16
+PASS  theta 20: E(0), E_rig, L_uni, L_rig, A* = a + (g_in - g_out), C*, the three secondary quantities  max err 2.78e-16
+PASS  theta 30: E(0), E_rig, L_uni, L_rig, A* = a + (g_in - g_out), C*, the three secondary quantities  max err 3.33e-16
+PASS  theta 45: only E_rig and L_rig, E_rig = RI45 - RC45, L_rig = E(0) - E_rig
+PASS  own45 reports E_rig(45) and L_rig(45) with WCU intervals and nothing else
+PASS  linear quantities are analyze_re.wild_cluster (WCU interval, WCR p) exactly
+--- identity with the engine (analyze_re.p5) and with the P5-partial null construction
+PASS  theta 10, DeepGaze IIE: every engine leaf identical to analyze_re.p5  256 leaves
+PASS  theta 10, DeepGaze IIE: category renamed category_analogue (exploratory), abstract keys absent
+PASS  theta 10, DeepGaze IIE: E_rig added with its WCU interval
+PASS  theta 10, DeepGaze IIE: s* flag added from the engine's stable and denominator check
+PASS  theta 10, DeepGaze MSDB: every engine leaf identical to analyze_re.p5  256 leaves
+PASS  theta 10, DeepGaze MSDB: category renamed category_analogue (exploratory), abstract keys absent
+PASS  theta 10, DeepGaze MSDB: E_rig added with its WCU interval
+PASS  theta 10, DeepGaze MSDB: s* flag added from the engine's stable and denominator check
+PASS  theta 20, DeepGaze IIE: every engine leaf identical to analyze_re.p5  256 leaves
+PASS  theta 20, DeepGaze IIE: category kept as P5's, role label added
+PASS  theta 20, DeepGaze IIE: E_rig added with its WCU interval
+PASS  theta 20, DeepGaze IIE: s* flag added from the engine's stable and denominator check
+PASS  theta 20, DeepGaze MSDB: every engine leaf identical to analyze_re.p5  256 leaves
+PASS  theta 20, DeepGaze MSDB: category kept as P5's, role label added
+PASS  theta 20, DeepGaze MSDB: E_rig added with its WCU interval
+PASS  theta 20, DeepGaze MSDB: s* flag added from the engine's stable and denominator check
+PASS  theta 30, DeepGaze IIE: every engine leaf identical to analyze_re.p5  256 leaves
+PASS  theta 30, DeepGaze IIE: category renamed category_analogue (exploratory), abstract keys absent
+PASS  theta 30, DeepGaze IIE: E_rig added with its WCU interval
+PASS  theta 30, DeepGaze IIE: s* flag added from the engine's stable and denominator check
+PASS  theta 30, DeepGaze MSDB: every engine leaf identical to analyze_re.p5  256 leaves
+PASS  theta 30, DeepGaze MSDB: category renamed category_analogue (exploratory), abstract keys absent
+PASS  theta 30, DeepGaze MSDB: E_rig added with its WCU interval
+PASS  theta 30, DeepGaze MSDB: s* flag added from the engine's stable and denominator check
+PASS  raw theta-20 output kept for the reproduction check equals analyze_re.p5
+PASS  abstract-rule keys of theta 20 kept for the check
+PASS  nulls at theta 20 reproduce the nulls_own_values construction of p5_partial.py exactly  1344 leaves
+PASS  nulls: theta 10/20/30 carry E_rig, L_uni, L_rig, A*, C*, s*, secondary; theta 45 E_rig and L_rig only
+PASS  readouts: E_rig, L_uni, L_rig, A*, s*, secondary at 10/20/30, no C*; theta 45 E_rig and L_rig only
+PASS  a readout with missing score files is not computable with its reason (no substitute)
+PASS  a readout with one missing rigid display is not computable (KeyError), no partial values  not computable: missing display or score (KeyError: 'c00p3_rig30_control180')
+PASS  groups and E(0) recorded for every computable unit
+PASS  descriptive counts over computable readouts (3 here) at every angle, A* and s* not at 45
+PASS  a model without rigid scores: not computable, the other model still computed
+--- rigid share s*: BCa, stability flag, denominator check, Fieller
+PASS  strong denominator: value = ratio of means, stable, reportable, no flag, Fieller bounded
+PASS  denominator around 0: flagged not reportable
+PASS  flag logic: excludes 0 but |t| < 4 gives 'unstable'; both fine gives None
+PASS  non-finite configuration values: not computable, no interval
+--- loaders (temporary files only)
+PASS  heads: seeds then sizes averaged per display, stim_v3 and stim_rigid merged
+PASS  heads: a missing seed file gives (None, reason)  not computable: score files missing: stim_v3_fsX_R2_s2.json, stim_rigid_fsX_R2_s2.json
+PASS  heads: a display name in both stim_v3 and stim_rigid is refused (no silent overwrite)
+PASS  sweep: the two sizes averaged per display (single seed), published and rigid merged
+PASS  sweep: a missing file gives (None, reason)
+PASS  DeepGaze: published and rigid scores merged as step_primary; MSDB without a rigid file is None
+PASS  nulls: published and rigid merged for all 15
+PASS  accuracy flag as analyze_re.accuracy_valid (0.03 margin, published rounding); R4 valid
+PASS  accuracy flag not available when a CC file is missing (no crash)
+PASS  the read guard refuses any project file (no real score or result is read by these tests)
+--- reproduction-check comparison
+PASS  identical shared leaves: 0 difference, 0 mismatches (keys present in one only are ignored)
+PASS  a numeric difference and a boolean mismatch are both found
+PASS  plain(): numpy to Python, tuples to lists, infinity kept (as analyze_re.jdump writes it)
+--- markdown summary from a synthetic JSON record
+wrote $LAN_PROJECT_ROOT/neuro/_trash/test_explore_rigid_scratch_20261118T192758Z/md/x.md
+PASS  markdown written, labelled exploratory, with the IIE and MSDB tables, the nulls and the readouts
+PASS  markdown table cells never contain a unit name with a literal '|' (it would split the row)
+PASS  markdown shows the s* flag of IIE and MSDB (engine blocks) derived from stable and the denominator check  [None, None]
+PASS  markdown shows a not-computable readout with its reason
+PASS  markdown marks intervals that exclude 0 with '*' only when they do
+PASS  no torch imported by the whole test run
+66 checks, 0 failed, 2.7s
+### T_explore_rigid_r2 end 2026-11-18T19:28:03Z exit 0 wall 5s

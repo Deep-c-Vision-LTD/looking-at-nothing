@@ -1,0 +1,72 @@
+### S5b_tokens_encoding_nulls_copy start 2026-11-18T23:59:23Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONDONTWRITEBYTECODE=1 $LAN_SAL_SRC/.venv/bin/python -B -I explore/tokens/encoding_nulls.py
+### S5b_tokens_encoding_nulls_copy pid 28541
+$LAN_PROJECT_ROOT/neuro/reanalysis/explore/tokens/encoding_nulls.py:73: RuntimeWarning: Mean of empty slice
+  Eavg = {s: {t: np.nanmean(np.stack([Es[0][0][s][t], Es[1][0][s][t]]), 0) for t in Es[0][0][s]} for s in SETS}
+### S5b_tokens_encoding_nulls_copy pid 28541: no Metal client at first check (~5 s)
+
+== dinov2: median tokens per config (336, 448): {'int': [7, 14], 'int_far': [3, 8], 'int_near': [3, 8], 'ext_near': [52, 91]}; configs with >=1 token: {'int': [60, 60], 'int_far': [48, 48], 'int_near': [58, 60], 'ext_near': [60, 60]}
+L 1 int -0.510 [-0.852,-0.226]  int_far -0.352 [-0.707,-0.109]  int_near -0.535 [-0.877,-0.252]  ext_near -0.219 [-0.417,-0.052]  int>ext_near:False
+L 2 int -0.047 [-0.173,+0.064]  int_far -0.254 [-0.607,-0.026]  int_near -0.030 [-0.160,+0.083]  ext_near -0.017 [-0.045,+0.008]  int>ext_near:False
+L 3 int +0.039 [-0.027,+0.118]  int_far -0.182 [-0.415,-0.032]  int_near +0.059 [-0.013,+0.139]  ext_near +0.026 [+0.011,+0.044]  int>ext_near:False
+L 4 int +0.093 [+0.049,+0.143]  int_far -0.026 [-0.063,-0.000]  int_near +0.122 [+0.084,+0.164]  ext_near +0.083 [+0.055,+0.114]  int>ext_near:False
+L 5 int +0.169 [+0.106,+0.237]  int_far +0.060 [+0.041,+0.082]  int_near +0.208 [+0.153,+0.266]  ext_near +0.123 [+0.081,+0.169]  int>ext_near:False
+L 6 int +0.240 [+0.179,+0.305]  int_far +0.166 [+0.122,+0.220]  int_near +0.283 [+0.236,+0.333]  ext_near +0.131 [+0.089,+0.175]  int>ext_near:True
+L 7 int +0.274 [+0.216,+0.333]  int_far +0.199 [+0.159,+0.244]  int_near +0.312 [+0.269,+0.359]  ext_near +0.166 [+0.120,+0.214]  int>ext_near:True
+L 8 int +0.258 [+0.203,+0.314]  int_far +0.199 [+0.150,+0.254]  int_near +0.294 [+0.257,+0.334]  ext_near +0.183 [+0.146,+0.221]  int>ext_near:False
+L 9 int +0.285 [+0.228,+0.346]  int_far +0.218 [+0.175,+0.266]  int_near +0.315 [+0.269,+0.364]  ext_near +0.213 [+0.180,+0.240]  int>ext_near:False
+L10 int +0.314 [+0.240,+0.389]  int_far +0.266 [+0.192,+0.358]  int_near +0.337 [+0.271,+0.403]  ext_near +0.214 [+0.191,+0.234]  int>ext_near:True
+L11 int +0.304 [+0.230,+0.377]  int_far +0.265 [+0.193,+0.353]  int_near +0.312 [+0.247,+0.379]  ext_near +0.146 [+0.119,+0.170]  int>ext_near:True
+L12 int +0.305 [+0.225,+0.388]  int_far +0.262 [+0.183,+0.356]  int_near +0.313 [+0.240,+0.391]  ext_near +0.118 [+0.076,+0.153]  int>ext_near:True
+
+== clip: median tokens per config (336, 448): {'int': [7, 14], 'int_far': [3, 8], 'int_near': [3, 8], 'ext_near': [52, 91]}; configs with >=1 token: {'int': [60, 60], 'int_far': [48, 48], 'int_near': [58, 60], 'ext_near': [60, 60]}
+L 1 int -0.007 [-0.262,+0.318]  int_far +0.070 [-0.112,+0.336]  int_near -0.005 [-0.261,+0.318]  ext_near +0.044 [-0.209,+0.393]  int>ext_near:False
+L 2 int -0.144 [-0.258,-0.044]  int_far -0.185 [-0.366,-0.049]  int_near -0.143 [-0.255,-0.045]  ext_near -0.034 [-0.111,+0.049]  int>ext_near:False
+L 3 int -0.106 [-0.206,-0.026]  int_far -0.088 [-0.193,-0.017]  int_near -0.113 [-0.213,-0.033]  ext_near -0.013 [-0.086,+0.058]  int>ext_near:False
+L 4 int +0.079 [+0.020,+0.138]  int_far -0.161 [-0.520,+0.028]  int_near +0.083 [-0.000,+0.156]  ext_near +0.034 [+0.010,+0.060]  int>ext_near:False
+L 5 int +0.069 [+0.032,+0.114]  int_far +0.005 [-0.020,+0.035]  int_near +0.108 [+0.057,+0.161]  ext_near +0.022 [+0.000,+0.047]  int>ext_near:False
+L 6 int +0.092 [+0.049,+0.145]  int_far +0.023 [-0.008,+0.061]  int_near +0.139 [+0.089,+0.190]  ext_near +0.032 [+0.015,+0.050]  int>ext_near:False
+L 7 int +0.168 [+0.103,+0.238]  int_far +0.088 [+0.046,+0.146]  int_near +0.208 [+0.150,+0.267]  ext_near +0.079 [+0.053,+0.109]  int>ext_near:False
+L 8 int +0.220 [+0.139,+0.309]  int_far +0.127 [+0.075,+0.197]  int_near +0.256 [+0.180,+0.335]  ext_near +0.110 [+0.076,+0.149]  int>ext_near:False
+L 9 int +0.268 [+0.174,+0.371]  int_far +0.177 [+0.110,+0.265]  int_near +0.300 [+0.208,+0.395]  ext_near +0.149 [+0.104,+0.200]  int>ext_near:False
+L10 int +0.319 [+0.211,+0.436]  int_far +0.227 [+0.149,+0.327]  int_near +0.344 [+0.239,+0.456]  ext_near +0.187 [+0.136,+0.242]  int>ext_near:False
+L11 int +0.321 [+0.217,+0.433]  int_far +0.218 [+0.151,+0.296]  int_near +0.345 [+0.245,+0.451]  ext_near +0.226 [+0.166,+0.288]  int>ext_near:False
+L12 int +0.357 [+0.248,+0.473]  int_far +0.249 [+0.179,+0.328]  int_near +0.379 [+0.272,+0.491]  ext_near +0.238 [+0.183,+0.291]  int>ext_near:False
+L13 int +0.379 [+0.276,+0.486]  int_far +0.271 [+0.205,+0.349]  int_near +0.400 [+0.299,+0.504]  ext_near +0.322 [+0.228,+0.419]  int>ext_near:False
+L14 int +0.401 [+0.308,+0.497]  int_far +0.314 [+0.248,+0.393]  int_near +0.413 [+0.319,+0.508]  ext_near +0.302 [+0.223,+0.384]  int>ext_near:False
+L15 int +0.380 [+0.286,+0.479]  int_far +0.322 [+0.241,+0.428]  int_near +0.383 [+0.290,+0.478]  ext_near +0.273 [+0.210,+0.336]  int>ext_near:False
+L16 int +0.394 [+0.302,+0.489]  int_far +0.335 [+0.256,+0.433]  int_near +0.398 [+0.307,+0.491]  ext_near +0.266 [+0.205,+0.327]  int>ext_near:False
+L17 int +0.405 [+0.319,+0.495]  int_far +0.348 [+0.275,+0.441]  int_near +0.408 [+0.323,+0.496]  ext_near +0.268 [+0.212,+0.325]  int>ext_near:False
+L18 int +0.400 [+0.322,+0.481]  int_far +0.342 [+0.277,+0.424]  int_near +0.407 [+0.332,+0.485]  ext_near +0.282 [+0.229,+0.336]  int>ext_near:False
+L19 int +0.391 [+0.319,+0.468]  int_far +0.349 [+0.281,+0.435]  int_near +0.398 [+0.329,+0.471]  ext_near +0.275 [+0.223,+0.328]  int>ext_near:False
+L20 int +0.400 [+0.328,+0.476]  int_far +0.357 [+0.289,+0.442]  int_near +0.407 [+0.339,+0.479]  ext_near +0.295 [+0.240,+0.352]  int>ext_near:False
+L21 int +0.396 [+0.327,+0.473]  int_far +0.351 [+0.277,+0.448]  int_near +0.410 [+0.349,+0.480]  ext_near +0.324 [+0.256,+0.397]  int>ext_near:False
+L22 int +0.426 [+0.364,+0.493]  int_far +0.386 [+0.318,+0.469]  int_near +0.444 [+0.390,+0.506]  ext_near +0.340 [+0.277,+0.407]  int>ext_near:False
+L23 int +0.440 [+0.384,+0.498]  int_far +0.405 [+0.343,+0.481]  int_near +0.456 [+0.406,+0.507]  ext_near +0.351 [+0.290,+0.416]  int>ext_near:False
+L24 int +0.433 [+0.380,+0.486]  int_far +0.401 [+0.343,+0.473]  int_near +0.447 [+0.403,+0.494]  ext_near +0.354 [+0.294,+0.418]  int>ext_near:False
+
+== siglip: median tokens per config (336, 448): {'int': [4, 10], 'int_far': [2, 3], 'int_near': [2, 5], 'ext_near': [37, 67]}; configs with >=1 token: {'int': [60, 60], 'int_far': [42, 40], 'int_near': [58, 60], 'ext_near': [60, 60]}
+L 1 int -0.400 [-0.619,-0.209]  int_far -0.224 [-0.376,-0.102]  int_near -0.404 [-0.621,-0.213]  ext_near -0.293 [-0.467,-0.143]  int>ext_near:False
+L 2 int -0.154 [-0.259,-0.058]  int_far -0.163 [-0.313,-0.050]  int_near -0.144 [-0.252,-0.046]  ext_near -0.100 [-0.189,-0.015]  int>ext_near:False
+L 3 int +0.017 [-0.069,+0.085]  int_far -0.010 [-0.044,+0.013]  int_near +0.038 [-0.058,+0.116]  ext_near +0.042 [+0.003,+0.081]  int>ext_near:False
+L 4 int +0.070 [+0.042,+0.098]  int_far +0.020 [-0.004,+0.039]  int_near +0.090 [+0.059,+0.120]  ext_near +0.061 [+0.025,+0.095]  int>ext_near:False
+L 5 int +0.130 [+0.093,+0.170]  int_far +0.062 [+0.040,+0.096]  int_near +0.160 [+0.127,+0.192]  ext_near +0.102 [+0.073,+0.135]  int>ext_near:False
+L 6 int +0.214 [+0.154,+0.279]  int_far +0.113 [+0.089,+0.148]  int_near +0.244 [+0.191,+0.298]  ext_near +0.157 [+0.126,+0.193]  int>ext_near:False
+L 7 int +0.295 [+0.221,+0.373]  int_far +0.182 [+0.150,+0.226]  int_near +0.321 [+0.253,+0.391]  ext_near +0.181 [+0.151,+0.214]  int>ext_near:True
+L 8 int +0.344 [+0.252,+0.442]  int_far +0.198 [+0.164,+0.238]  int_near +0.369 [+0.281,+0.460]  ext_near +0.258 [+0.206,+0.315]  int>ext_near:False
+L 9 int +0.360 [+0.272,+0.454]  int_far +0.232 [+0.189,+0.286]  int_near +0.383 [+0.299,+0.469]  ext_near +0.291 [+0.232,+0.354]  int>ext_near:False
+L10 int +0.348 [+0.269,+0.428]  int_far +0.234 [+0.191,+0.287]  int_near +0.369 [+0.293,+0.443]  ext_near +0.280 [+0.226,+0.334]  int>ext_near:False
+L11 int +0.390 [+0.295,+0.487]  int_far +0.266 [+0.212,+0.328]  int_near +0.404 [+0.310,+0.498]  ext_near +0.341 [+0.266,+0.420]  int>ext_near:False
+L12 int +0.441 [+0.343,+0.541]  int_far +0.319 [+0.258,+0.390]  int_near +0.450 [+0.348,+0.550]  ext_near +0.380 [+0.289,+0.479]  int>ext_near:False
+L13 int +0.445 [+0.354,+0.536]  int_far +0.339 [+0.275,+0.416]  int_near +0.452 [+0.357,+0.545]  ext_near +0.378 [+0.297,+0.462]  int>ext_near:False
+L14 int +0.476 [+0.381,+0.570]  int_far +0.367 [+0.301,+0.445]  int_near +0.480 [+0.380,+0.578]  ext_near +0.397 [+0.317,+0.480]  int>ext_near:False
+L15 int +0.511 [+0.415,+0.605]  int_far +0.405 [+0.334,+0.488]  int_near +0.512 [+0.411,+0.612]  ext_near +0.370 [+0.306,+0.434]  int>ext_near:False
+L16 int +0.509 [+0.417,+0.600]  int_far +0.413 [+0.339,+0.499]  int_near +0.510 [+0.413,+0.605]  ext_near +0.391 [+0.324,+0.459]  int>ext_near:False
+L17 int +0.518 [+0.426,+0.608]  int_far +0.430 [+0.351,+0.521]  int_near +0.513 [+0.415,+0.609]  ext_near +0.397 [+0.330,+0.464]  int>ext_near:False
+L18 int +0.520 [+0.430,+0.607]  int_far +0.436 [+0.357,+0.526]  int_near +0.514 [+0.418,+0.607]  ext_near +0.401 [+0.334,+0.467]  int>ext_near:False
+L19 int +0.506 [+0.422,+0.588]  int_far +0.427 [+0.350,+0.515]  int_near +0.502 [+0.413,+0.589]  ext_near +0.401 [+0.337,+0.466]  int>ext_near:False
+L20 int +0.507 [+0.425,+0.588]  int_far +0.436 [+0.355,+0.526]  int_near +0.500 [+0.413,+0.587]  ext_near +0.405 [+0.342,+0.467]  int>ext_near:False
+L21 int +0.486 [+0.408,+0.561]  int_far +0.416 [+0.337,+0.504]  int_near +0.484 [+0.403,+0.563]  ext_near +0.400 [+0.341,+0.459]  int>ext_near:False
+L22 int +0.495 [+0.427,+0.560]  int_far +0.437 [+0.368,+0.514]  int_near +0.491 [+0.417,+0.562]  ext_near +0.412 [+0.354,+0.469]  int>ext_near:False
+L23 int +0.504 [+0.429,+0.579]  int_far +0.449 [+0.368,+0.538]  int_near +0.492 [+0.410,+0.575]  ext_near +0.415 [+0.360,+0.468]  int>ext_near:False
+L24 int +0.523 [+0.448,+0.598]  int_far +0.476 [+0.392,+0.566]  int_near +0.509 [+0.426,+0.591]  ext_near +0.429 [+0.375,+0.482]  int>ext_near:False
+### S5b_tokens_encoding_nulls_copy end 2026-11-18T23:59:33Z exit 0 wall 10s

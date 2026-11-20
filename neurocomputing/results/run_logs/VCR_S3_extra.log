@@ -1,0 +1,35 @@
+### VCR_S3_extra start 2026-11-19T00:31:25Z cwd $LAN_PROJECT_ROOT/neuro/verify_rescore/cpu_remaining cmd: nice -n 10 env OMP_NUM_THREADS=4 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONDONTWRITEBYTECODE=1 $LAN_SAL_SRC/.venv/bin/python -B -I v_s3_extra.py
+### VCR_S3_extra pid 29903
+{
+ "L_mismatch_rows": [
+  {
+   "cell": "dinov2_L12|R1n",
+   "theta": 10,
+   "L": -0.03126568365919542,
+   "L_rounded": -0.0313,
+   "rounded_components": -0.0312,
+   "published": -0.0312,
+   "explained": true
+  },
+  {
+   "cell": "dinov2_L12|R4",
+   "theta": 20,
+   "L": -0.03209610152045907,
+   "L_rounded": -0.0321,
+   "rounded_components": -0.032,
+   "published": -0.032,
+   "explained": true
+  }
+ ],
+ "a10_mean_of_sr_means": {
+  "clip_L16": {
+   "mean_of_sr_means": 0.017640339409948455,
+   "all60": 0.017640339409948462
+  },
+  "siglip_L24": {
+   "mean_of_sr_means": 0.14470428947213712,
+   "all60": 0.14470428947213715
+  }
+ }
+}
+### VCR_S3_extra end 2026-11-19T00:31:30Z exit 0 wall 5s

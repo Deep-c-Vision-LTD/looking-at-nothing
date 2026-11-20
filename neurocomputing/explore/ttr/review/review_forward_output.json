@@ -1,0 +1,43 @@
+{
+ "lines": [
+  "review_forward.py: independent TTR implementation (from the released transformer.py) vs the stored scores",
+  "pid 26966, torch 2.12.0, device cpu",
+  "MATCH  siglip plain: my implementation vs scores_ttr/plain on 3 displays x 2 sizes x 2 units: max |r_inside diff| 0",
+  "MATCH  siglip reg0: my implementation vs scores_ttr/reg0 on 3 displays x 2 sizes x 2 units: max |r_inside diff| 0",
+  "MATCH  siglip ttr: my implementation vs scores_ttr/ttr on 3 displays x 2 sizes x 2 units: max |r_inside diff| 0",
+  "MATCH  siglip register-token norm at block 24 (ttr) vs scores_ttr/norms: max relative diff 0; my values [300.05, 352.32, 298.36, 351.67, 311.04, 367.9]",
+  "MATCH  clip plain: my implementation vs scores_ttr/plain on 3 displays x 2 sizes x 2 units: max |r_inside diff| 0",
+  "MATCH  clip reg0: my implementation vs scores_ttr/reg0 on 3 displays x 2 sizes x 2 units: max |r_inside diff| 0",
+  "MATCH  clip ttr: my implementation vs scores_ttr/ttr on 3 displays x 2 sizes x 2 units: max |r_inside diff| 0",
+  "MATCH  clip register-token norm at block 16 (ttr) vs scores_ttr/norms: max relative diff 0; my values [199.57, 207.98, 200.94, 207.87, 206.71, 213.5]",
+  "MATCH  selection images re-derived (build_mit1003, 803 training, RandomState(2026)): equal to TTR_select: True; overlap with held-out 200: 0"
+ ],
+ "checks": {
+  "siglip_ttr_block24_max_over_median": [
+   1.6237012147903442,
+   1.7099303007125854,
+   1.4842215776443481,
+   1.5120635032653809,
+   1.5236306190490723,
+   1.5902305841445923
+  ],
+  "siglip_plain_max_abs_diff": 0.0,
+  "siglip_reg0_max_abs_diff": 0.0,
+  "siglip_ttr_max_abs_diff": 0.0,
+  "siglip_register_norm_rel_diff": 0.0,
+  "clip_ttr_block16_max_over_median": [
+   2.0084311962127686,
+   2.0369203090667725,
+   1.9610944986343384,
+   1.982450246810913,
+   1.951427698135376,
+   1.999945878982544
+  ],
+  "clip_plain_max_abs_diff": 0.0,
+  "clip_reg0_max_abs_diff": 0.0,
+  "clip_ttr_max_abs_diff": 0.0,
+  "clip_register_norm_rel_diff": 0.0,
+  "selection_rederived_equal": true,
+  "selection_overlap_heldout": 0
+ }
+}

@@ -1,0 +1,3 @@
+MD5 (A4_4_logmass.json) = 94d36bb91a1d8ccd2cc60826ecfb3dd3
+MD5 (A12_kavsek.json) = b9afaa8cbde546c0ceacd9316b494e80
+MD5 (A13_region.json) = e364eff55a6aaa75aeff0c0cea190292

@@ -1,0 +1,43 @@
+REG_SELF_PGID=59723
+2026-11-19 18:26:05 start run_gpu_re (both; pid 59728; 26 GB free)
+2026-11-19 18:28:16 start check_eval (try 1; 26 GB free)
+2026-11-19 18:30:22 done check_eval 126s
+2026-11-19 18:30:22 sanity gate 3 passed (plain path): worst 0.0 values 24400 tol 1e-06
+2026-11-19 18:31:28 start check_eval_reg (try 1; 26 GB free)
+2026-11-19 18:33:40 done check_eval_reg 132s
+2026-11-19 18:33:40 sanity gate 3 passed (registers path): worst 0.0 values 24400 tol 1e-06
+2026-11-19 18:34:45 start stats_dinov2reg (try 1; 26 GB free)
+2026-11-19 18:41:37 done stats_dinov2reg 412s
+2026-11-19 18:42:43 start train_dinov2reg_s0 (try 1; 26 GB free)
+2026-11-19 19:37:23 done train_dinov2reg_s0 3280s
+2026-11-19 19:38:29 start eval_dinov2reg_s0 (try 1; 25 GB free)
+2026-11-19 19:41:17 done eval_dinov2reg_s0 168s
+2026-11-19 19:42:22 start train_dinov2reg_s1 (try 1; 25 GB free)
+2026-11-19 20:36:57 done train_dinov2reg_s1 3275s
+2026-11-19 20:38:03 start eval_dinov2reg_s1 (try 1; 25 GB free)
+2026-11-19 20:40:53 done eval_dinov2reg_s1 170s
+2026-11-19 20:41:58 start train_dinov2reg_s2 (try 1; 25 GB free)
+2026-11-19 21:36:29 done train_dinov2reg_s2 3271s
+2026-11-19 21:37:35 start eval_dinov2reg_s2 (try 1; 26 GB free)
+2026-11-19 21:40:25 done eval_dinov2reg_s2 170s
+2026-11-19 21:41:31 start eval_dinov2reg_final (try 1; 26 GB free)
+2026-11-19 21:41:34 done eval_dinov2reg_final 3s
+2026-11-19 21:43:01 G3 continuity statistics done
+2026-11-19 21:44:06 start stats_dinov2ms (try 1; 26 GB free)
+2026-11-19 21:50:38 done stats_dinov2ms 392s
+2026-11-19 21:51:43 start train_dinov2ms_s0 (try 1; 26 GB free)
+2026-11-19 22:54:22 done train_dinov2ms_s0 3759s
+2026-11-19 22:55:27 start eval_dinov2ms_s0 (try 1; 24 GB free)
+2026-11-19 22:58:36 done eval_dinov2ms_s0 189s
+2026-11-19 22:59:41 start train_dinov2ms_s1 (try 1; 24 GB free)
+2026-11-20 00:02:25 done train_dinov2ms_s1 3764s
+2026-11-20 00:03:30 start eval_dinov2ms_s1 (try 1; 23 GB free)
+2026-11-20 00:06:38 done eval_dinov2ms_s1 188s
+2026-11-20 00:07:44 start train_dinov2ms_s2 (try 1; 23 GB free)
+2026-11-20 01:10:28 done train_dinov2ms_s2 3764s
+2026-11-20 01:11:33 start eval_dinov2ms_s2 (try 1; 23 GB free)
+2026-11-20 01:14:43 done eval_dinov2ms_s2 190s
+2026-11-20 01:15:48 start eval_dinov2ms_final (try 1; 23 GB free)
+2026-11-20 01:15:52 done eval_dinov2ms_final 4s
+2026-11-20 01:17:40 A14 continuity statistics done
+2026-11-20 01:17:40 finished; failed steps: none; heads: G3 24 of 24, A14 30 of 30

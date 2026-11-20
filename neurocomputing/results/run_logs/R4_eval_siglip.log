@@ -1,0 +1,55 @@
+### R4_eval_siglip start 2026-11-18T13:19:03Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis/gpu cmd: nice -n 10 env V3_DEVICE=cpu V3_MAPS=none OMP_NUM_THREADS=4 $LAN_SAL_SRC/.venv/bin/python -B eval_re.py --bb siglip --out ../scores_rigid/heads --ckpt-dir $LAN_PROJECT_ROOT/v3/gpu/full/ckpt --stimsets stim_rigid --skip-mit
+### R4_eval_siglip pid 4316
+2026-11-18 13:19:07 === eval siglip on cpu: 15 heads, stimsets ['stim_rigid'], maps saved for: none
+Loading weights:   0%|          | 0/400 [00:00<?, ?it/s]Loading weights: 100%|██████████| 400/400 [00:00<00:00, 7887.55it/s]
+[transformers] [1mSiglipVisionModel LOAD REPORT[0m from: google/siglip-large-patch16-256
+Key                                                          | Status     |  | 
+-------------------------------------------------------------+------------+--+-
+text_model.embeddings.token_embedding.weight                 | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.k_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc1.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm2.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm1.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.q_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.v_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm1.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.out_proj.bias   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc1.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.k_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc2.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.mlp.fc2.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.q_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.layer_norm2.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.v_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...23}.self_attn.out_proj.weight | UNEXPECTED |  | 
+text_model.head.weight                                       | UNEXPECTED |  | 
+text_model.final_layer_norm.weight                           | UNEXPECTED |  | 
+text_model.final_layer_norm.bias                             | UNEXPECTED |  | 
+text_model.embeddings.position_embedding.weight              | UNEXPECTED |  | 
+logit_scale                                                  | UNEXPECTED |  | 
+text_model.head.bias                                         | UNEXPECTED |  | 
+logit_bias                                                   | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+### R4_eval_siglip pid 4316: no Metal client at first check (~5 s)
+### R4_eval_siglip pid 4316: no Metal client at ~30 s
+2026-11-18 13:22:36 stim_rigid px336 block 1/1 features 660 images 201s
+2026-11-18 13:30:43 stim_rigid px448 block 1/1 features 660 images 376s
+2026-11-18 13:33:22 stim_rigid siglip_L24_R1_s0 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:33:22 stim_rigid siglip_L24_R1_s1 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:33:22 stim_rigid siglip_L24_R1_s2 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:33:22 stim_rigid siglip_L24_R1n_s0 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:33:22 stim_rigid siglip_L24_R1n_s1 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:33:22 stim_rigid siglip_L24_R1n_s2 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:33:22 stim_rigid siglip_L24_R2_s0 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:33:22 stim_rigid siglip_L24_R2_s1 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:33:22 stim_rigid siglip_L24_R2_s2 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:33:22 stim_rigid siglip_L24_R3_s0 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:33:22 stim_rigid siglip_L24_R3_s1 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:33:22 stim_rigid siglip_L24_R3_s2 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:33:22 stim_rigid siglip_L24_R4_s0 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:33:22 stim_rigid siglip_L24_R4_s1 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:33:22 stim_rigid siglip_L24_R4_s2 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:33:22 === eval siglip done
+### R4_eval_siglip end 2026-11-18T13:33:34Z exit 0 wall 871s

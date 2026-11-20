@@ -1,0 +1,19 @@
+2026-11-18 13:33:39 === eval iie on cpu: 15 heads, stimsets ['stim_rigid'], maps saved for: none
+2026-11-18 13:37:14 stim_rigid px336 block 1/1 features 660 images 207s
+2026-11-18 13:45:39 stim_rigid px448 block 1/1 features 660 images 322s
+2026-11-18 13:50:12 stim_rigid iie_shapenetc_R1_s0 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:50:12 stim_rigid iie_shapenetc_R1_s1 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:50:12 stim_rigid iie_shapenetc_R1_s2 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:50:12 stim_rigid iie_shapenetc_R1n_s0 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:50:12 stim_rigid iie_shapenetc_R1n_s1 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:50:12 stim_rigid iie_shapenetc_R1n_s2 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:50:12 stim_rigid iie_shapenetc_R2_s0 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:50:12 stim_rigid iie_shapenetc_R2_s1 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:50:12 stim_rigid iie_shapenetc_R2_s2 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:50:12 stim_rigid iie_shapenetc_R3_s0 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:50:12 stim_rigid iie_shapenetc_R3_s1 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:50:12 stim_rigid iie_shapenetc_R3_s2 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:50:12 stim_rigid iie_shapenetc_R4_s0 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:50:12 stim_rigid iie_shapenetc_R4_s1 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:50:12 stim_rigid iie_shapenetc_R4_s2 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:50:12 === eval iie done

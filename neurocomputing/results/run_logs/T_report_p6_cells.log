@@ -1,0 +1,120 @@
+### T_report_p6_cells start 2026-11-20T03:39:59Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=2 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONDONTWRITEBYTECODE=1 $LAN_SAL_SRC/.venv/bin/python -B -I explore/test_report_p6_cells.py --out explore/tests_report_p6_cells_output.txt
+### T_report_p6_cells pid 91784
+test_report_p6_cells.py 2026-11-20T03:39:59Z; scratch ../_trash/test_report_p6_cells_scratch_20261120T033959Z
+PASS  no torch imported
+PASS  report_p6_cells imports no torch
+PASS  main calls require_public before anything else
+PASS  statistics come from analyze_re through excommon and explore_saved (no new interval code)
+PASS  items 1 and 3 use the explore_saved functions
+PASS  header lists implementation choices (a) to (k)
+PASS  no em-dash or en-dash in the script
+PASS  20 units: 18 new cells and 2 registers R4 references
+PASS  registers R4 read from the registers folder
+PASS  G3 cells read from gpu/g3
+PASS  A14 cells (R4 included) read from gpu/a14
+synthetic inputs written (4.6s)
+### T_report_p6_cells pid 91784: no Metal client at first check (~5 s)
+PASS  per-size getter = seed mean at that size
+PASS  size average = mean of the two per-size seed means
+PASS  per-seed getter averages the two sizes of one seed
+PASS  alt20 = phase mean read from the stim_alt files
+PASS  per-size E (336) = mean of the per-size differences
+PASS  per-size E carries the WCU interval and the WCR p (12 clusters)
+PASS  E against control90 = mean of illusory minus control90
+PASS  U20 and A20 are ratios of means
+PASS  U20 BCa interval = analyze_re.bca as in analyze_re.p4 ratio_readout_bca
+PASS  U20 and A20 carry Fieller, |t| of the denominator, stability and reportability
+PASS  continuity interval = analyze_re.pct_summary on E
+PASS  continuity interval reproduces the published v2 boot (4 decimals)
+PASS  published-percentile U20 for the gate reproduces analyze_gpu.ratio (4 decimals)
+PASS  seed point estimates average to E
+PASS  ratio not reportable exactly when the E interval includes 0  E +0.0018 [-0.0005777114568162312, 0.004224852799019207]
+PASS  synthetic near-zero cell is not reportable (exercises the markdown rule)
+PASS  item 1 per size = explore_saved.a41_block
+PASS  item 3 profile = explore_saved.a43_profile
+PASS  item 3 two-level bootstrap = explore_saved.two_level
+PASS  item 3 per-seed record = explore_saved.a43_seed
+PASS  gate_compare: identical objects pass
+PASS  gate_compare: 1e-13 within the 1e-12 tolerance
+PASS  gate_compare: 1e-9 fails
+PASS  gate_compare: bool, string and missing-key mismatches found
+PASS  gate_compare: equal infinities pass, inf against a number fails
+03:40:04 G2 passed: 429 numeric leaves, max |difference| 0.0
+03:40:05 computed dinov2reg_L6|R1n
+03:40:05 computed dinov2reg_L6|R1
+03:40:05 computed dinov2reg_L6|R2
+03:40:05 computed dinov2reg_L6|R3
+03:40:05 computed dinov2reg_L6|R4
+03:40:06 computed dinov2reg_L12|R1n
+03:40:06 computed dinov2reg_L12|R1
+03:40:06 computed dinov2reg_L12|R2
+03:40:06 computed dinov2reg_L12|R3
+03:40:06 computed dinov2reg_L12|R4
+03:40:07 computed dinov2ms_L7L11|R1n
+03:40:07 computed dinov2ms_L7L11|R1
+03:40:07 computed dinov2ms_L7L11|R2
+03:40:07 computed dinov2ms_L7L11|R3
+03:40:07 computed dinov2ms_L7L11|R4
+03:40:08 computed dinov2ms_L11|R1n
+03:40:08 computed dinov2ms_L11|R1
+03:40:08 computed dinov2ms_L11|R2
+03:40:08 computed dinov2ms_L11|R3
+03:40:08 computed dinov2ms_L11|R4
+03:40:08 G3 passed: 268 checks
+03:40:08 G4 passed
+03:40:08 G5 and internal checks passed
+run() on synthetic inputs: 4.3s
+PASS  G1 passes (reused code hashes)
+PASS  G2 passes: primary_P6.json reproduced leaf by leaf  429 numeric leaves
+PASS  G3 passes  268 checks
+PASS  G3 covers CC, threshold, validity, E, interval, p, Holm, flags, seeds and rule-fixed values
+PASS  G3 checks every unit
+PASS  G4 passes against the published-method copies  mit_cc_seed 60/60; mit_cc_mean 20/20; E_mean 20/20; E_percentile_ci 40/40; E_seed_mean 60/60; E_seed_percentile_ci 120/120; E_per_size 80/80; E_per_size_percentile_ci 80/80; E_vs_control90 20/20; E_vs_control90_percentile_ci 40/40; alt_effect_illusory 20/20; profile_U_A 120/120; profile_D 57/57; U20_A20_value 40/40; U20_A20_percentile_ci 80/80; validity_flag_a14 8/8
+PASS  G4 covers every continuity category
+PASS  G5 passes (registers R4 items 1 and 3 equal explore_saved.json)
+PASS  internal: rule 5.6 items equal item 1
+PASS  every set has 5 rows (R4 included)
+PASS  invalid cells reported with the flag, never dropped
+PASS  a14 below-criterion cell flagged (dinov2ms_L11 R1)
+PASS  Holm p, keeps-sign and opposite-sign flags are those of primary_P6.json
+PASS  registers cells carry the plain-threshold comparison (never decision-bearing)
+PASS  R4 rows: no threshold, validity or Holm p
+PASS  per-seed counts: 20 units x 3 seeds overall, 18 x 3 new cells only
+PASS  per-seed counts: valid group = valid non-R4 cells x 3  13 valid cells
+PASS  per-seed counts never exceed the number of seed runs
+PASS  not computable: no unit (all files present)
+PASS  not computable list names items 4, 6, 7, 10, 11, 15 with reasons
+PASS  items 2, 5 and 7 (first part) listed as not computed here (5 computable from saved outputs)
+PASS  count logic: point signs, WCU and percentile sides  {"n_point_R4_sign": 3, "n_wcu_excl0_R4_side": 3, "n_percentile_excl0_R4_side": 3}
+PASS  G2 fails on a 1e-9 change of a stored E
+PASS  G2 passes a 1e-14 change (tolerance 1e-12)
+PASS  G2 fails on a changed title flag
+PASS  run() raises GateError (G2) and writes nothing
+PASS  G3 fails on a 1e-9 change of a stored CC
+PASS  G3 set-level fails on a changed Holm p
+PASS  G3 fails when the rule-fixed registers R4 mean differs
+PASS  G3 rule-fixed checks pass again after restoring
+PASS  G4 fails on a 2e-4 change of a stored percentile bound
+PASS  G4 fails on a missing stored value
+PASS  G4 fails on a changed A14 validity flag
+PASS  G5 fails on a 1e-9 change of a stored explore_saved value
+PASS  G1 fails when a reused file's hash differs
+03:40:09 computed dinov2ms_L11|R1n
+03:40:10 computed dinov2ms_L11|R1
+03:40:10 computed dinov2ms_L11|R2
+03:40:10 computed dinov2ms_L11|R4
+PASS  a unit with a missing file is reported as not computable with the file named
+PASS  the other units of the set are still computed
+PASS  a missing R4 makes every unit of its set not computable, each with a reason
+wrote $LAN_PROJECT_ROOT/neuro/_trash/test_report_p6_cells_scratch_20261120T033959Z/results/P6_reporting.json
+wrote $LAN_PROJECT_ROOT/neuro/_trash/test_report_p6_cells_scratch_20261120T033959Z/results/P6_reporting.md
+PASS  JSON written to the output folder with code, rule and commit provenance
+PASS  markdown embeds the code SHA-256, rule SHA-256 and public commit
+PASS  markdown has no em-dash or en-dash
+PASS  markdown rule 5.6 tables: 20 rows with the 13 columns  20 rows
+PASS  markdown flags below-criterion cells
+PASS  markdown prints not reportable ratios without a value
+PASS  markdown lists the not computable items
+PASS  markdown table cells carry no unit key with a pipe
+# 82 checks, 0 failed, 10.8s
+### T_report_p6_cells end 2026-11-20T03:40:14Z exit 0 wall 15s

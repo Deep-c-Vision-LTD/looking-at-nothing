@@ -1,0 +1,20 @@
+gate 0 bit-identity checks, started 2026-11-18T11:41:05Z
+--- (a) RUN_PLAN 0.4: hashed files in neuro/reanalysis against REANALYSIS_RULE.sha256
+PASS: 33 fixed files unchanged
+--- (b) same hash list checked against the pushed clone looking-at-nothing/neurocomputing (read only)
+PASS: 33 fixed files in the clone equal the rule hashes
+--- (c) REANALYSIS_RULE.sha256 itself identical in RE, push_staging and the clone
+53d8dc20853231ddcfe669ffff6bf258bf0d9c17a77407d1869ec6c02b7ec914  neuro/reanalysis/REANALYSIS_RULE.sha256
+53d8dc20853231ddcfe669ffff6bf258bf0d9c17a77407d1869ec6c02b7ec914  neuro/push_staging/neurocomputing/REANALYSIS_RULE.sha256
+53d8dc20853231ddcfe669ffff6bf258bf0d9c17a77407d1869ec6c02b7ec914  looking-at-nothing/neurocomputing/REANALYSIS_RULE.sha256
+--- (d) every staged file (push_staging/SHA256SUMS, 1312 files) present and identical in the clone
+PASS: 1312 staged files identical in the clone
+--- (e) every stim_rigid file in RE identical to the clone copy and to manifest md5
+PASS: stim_rigid trees identical (diff -rq)
+--- (f) PUBLIC_PUSH.txt
+f67c7df98c27136be8ff3db4eea57d1973579602 https://github.com/Deep-c-Vision-LTD/looking-at-nothing/commit/f67c7df98c27136be8ff3db4eea57d1973579602 pushed 2026-11-18T11:36:31Z
+--- (g) local clone refs (plain file reads, no git command)
+looking-at-nothing/.git/HEAD: ref: refs/heads/main
+looking-at-nothing/.git/refs/heads/main: f67c7df98c27136be8ff3db4eea57d1973579602
+looking-at-nothing/.git/refs/remotes/origin/main: f67c7df98c27136be8ff3db4eea57d1973579602
+finished 2026-11-18T11:41:07Z

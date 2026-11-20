@@ -1,0 +1,615 @@
+"""
+Unit tests of explore/report_continuity.py on synthetic inputs only. No score, result or primary file of the project is
+read: analyze_re._load is wrapped so that any read outside this test's scratch folder fails, analyze_re.ROOT and
+analyze_re.HERE point at the scratch folder (so analyze_re.configs_meta, survey_scores, null_scores, load_swap and
+step_primary see only synthetic files written here), and every data path of the script is pointed there. The stored
+files the gates compare against are built independently: the two primary files with analyze_re.step_primary (as the
+primary runs wrote them), v3/scores/results.json and v3/gpu/full/results_full.json with copies of the published
+percentile code (v3/scores/analyze_alt.summ and ratio, v2/scores/analyze_v3 indices: own RandomState(2026) draws), and
+P6_reporting.json with the current hashes of the three reused files. Code files, REANALYSIS_RULE.md and PUBLIC_PUSH.txt
+are read for their hashes only. No torch import (asserted). One process, 2 threads.
+Writes only its output file (--out) and synthetic files in a new scratch folder
+neuro/_trash/test_report_continuity_scratch_<UTC time>/ (inside neuro/, never deleted by the test).
+Usage: OMP_NUM_THREADS=2 $PY -B -I explore/test_report_continuity.py --out explore/tests_report_continuity_output.txt
+Written 20 November 2026.
+"""
+import argparse, ast, copy, hashlib, inspect, json, os, sys, time
+for _k in ("OMP_NUM_THREADS", "MKL_NUM_THREADS", "VECLIB_MAXIMUM_THREADS", "OPENBLAS_NUM_THREADS"):
+    os.environ[_k] = "2"
+sys.dont_write_bytecode = True
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+import numpy as np                                                        # noqa: E402
+import excommon as X                                                      # noqa: E402
+import report_continuity as RC                                            # noqa: E402
+
+AR = X.AR
+RES, LINES = [], []
+SCRATCH = os.path.join(os.path.dirname(X.RE), "_trash",
+                       "test_report_continuity_scratch_" + time.strftime("%Y%m%dT%H%M%SZ", time.gmtime()))
+os.makedirs(SCRATCH, exist_ok=False)
+_ORIG_LOAD = AR._load
+
+
+def _guarded_load(p):
+    if not os.path.abspath(p).startswith(SCRATCH + os.sep):
+        raise RuntimeError(f"test read outside its scratch folder: {p}")
+    return _ORIG_LOAD(p)
+
+
+AR._load = _guarded_load                                                  # no project data file can be read
+S = lambda *a: os.path.join(SCRATCH, *a)                                  # noqa: E731
+AR.ROOT = SCRATCH                                                         # configs_meta, survey_scores, null_scores
+AR.HERE = SCRATCH                                                         # step_primary's scores_rigid folder
+AR.SWAP_SCORES = X.SWAP_SCORES = S("v3", "gpu", "full", "scores")
+RC.SCORES_RIGID = S("scores_rigid")
+X.RESULTS = S("results")
+RC.PATHS = dict(primary_1234=S("out", "primary_P1_P2_P3_P4.json"), primary_5=S("out", "primary_P5.json"),
+                p6_reporting=S("results", "P6_reporting.json"), v3_results=S("v3", "scores", "results.json"),
+                full_results=S("v3", "gpu", "full", "results_full.json"))
+for d in (("v2", "stim_v3"), ("v3", "scores", "raw_v3maps"), ("v3", "scores", "raw"), ("v3", "gpu", "full", "scores"),
+          ("scores_rigid",), ("out",), ("results",)):
+    os.makedirs(S(*d))
+
+
+def out(s):
+    LINES.append(s); print(s, flush=True)
+
+
+def check(name, ok, detail=""):
+    RES.append(bool(ok))
+    out(("PASS  " if ok else "FAIL  ") + name + (f"  {detail}" if detail != "" else ""))
+
+
+# ====================================================================== synthetic design and scores
+def synth_meta():
+    return {f"{sh}_sr{int(round(sr * 100))}_{pol}_p{pos}": (sh, sr, pol, pos)
+            for sh in ("square", "triangle") for sr in (0.3, 0.5, 0.7) for pol in ("dark", "light") for pos in range(5)}
+
+
+META = synth_meta()
+D = AR.Design(META)
+DSQ = AR.Design(META, "square")
+SYN_MODEL, SYN_NULL, SYN_HEAD = {}, {}, {}
+
+
+def write_items():
+    items = [dict(config=c, shape=sh, sr=sr, pol=pol, pos=pos, illusion="kanizsa", cond="illusory")
+             for c, (sh, sr, pol, pos) in META.items()]
+    json.dump(items, open(S("v2", "stim_v3", "items.json"), "w"))
+
+
+def unit_scores(rng, L, Dl, E0, Emis, Erig, noise, lnoise, luni_mean=None):
+    """Per-display r_inside of a model or null: E(0) = I - C about E0, L20 = I - M about L, Delta20 = alt20 - M about
+    Dl, E'_mis = M - MC about Emis, E_rig = RI - RC about Erig. luni_mean: shift MC so that mean L_uni equals it."""
+    v = {}
+    for c in META:
+        C = 0.3 + noise * rng.randn()
+        I = C + E0 + lnoise * rng.randn()
+        M = I - L + lnoise * rng.randn()
+        A = M + Dl + lnoise * rng.randn()
+        dd = 0.002 * rng.randn()
+        RC_ = 0.3 + noise * rng.randn()
+        v.update({f"{c}_illusory": I, f"{c}_control180": C, f"{c}_mis20": M, f"{c}_alt20a": A + dd,
+                  f"{c}_alt20b": A - dd, f"{c}_mis20_control180": M - Emis + lnoise * rng.randn(),
+                  f"{c}_rig20_control180": RC_, f"{c}_rig20_illusory": RC_ + Erig + lnoise * rng.randn()})
+    if luni_mean is not None:
+        lu = np.mean([(v[f"{c}_illusory"] - v[f"{c}_control180"]) - (v[f"{c}_mis20"] - v[f"{c}_mis20_control180"])
+                      for c in META])
+        for c in META:
+            v[f"{c}_mis20_control180"] += luni_mean - lu                # mean L_uni = luni_mean exactly
+    return v
+
+
+V3_CONDS, ALT_CONDS, RIG_CONDS = ("illusory", "control180", "mis20"), ("alt20a", "alt20b"), \
+    ("rig20_illusory", "rig20_control180", "mis20_control180")
+
+
+def split(v, conds):
+    return {k: {"r_inside": x} for k, x in v.items() if any(k.endswith("_" + c) for c in conds)}
+
+
+def build_models_nulls():
+    rng = np.random.RandomState(11)
+    spec = {"DeepGaze IIE": dict(L=0.05, Dl=0.024, E0=0.10, Emis=0.05, Erig=0.09, noise=0.01, lnoise=0.004),
+            "DeepGaze MSDB": dict(L=0.03, Dl=0.02, E0=0.08, Emis=0.08, Erig=0.07, noise=0.01, lnoise=0.01,
+                                  luni_mean=2e-4)}
+    for m, kw in spec.items():
+        v = unit_scores(rng, **kw)
+        SYN_MODEL[m] = v
+        tag = m.replace(" ", "_")
+        json.dump(split(v, V3_CONDS), open(S("v3", "scores", "raw_v3maps", tag + ".json"), "w"))
+        json.dump(split(v, ALT_CONDS), open(S("v3", "scores", "raw", tag + ".json"), "w"))
+        json.dump(split(v, RIG_CONDS), open(S("scores_rigid", tag + ".json"), "w"))
+    raw, rig = {}, {}
+    for k in AR.NULLS:
+        v = unit_scores(rng, L=0.001, Dl=0.0002, E0=0.01, Emis=0.01, Erig=0.01, noise=0.01, lnoise=0.003)
+        SYN_NULL[k] = v
+        raw[k] = {**split(v, V3_CONDS), **split(v, ALT_CONDS)}
+        rig[k] = split(v, RIG_CONDS)
+    json.dump(raw, open(S("v3", "scores", "raw_nulls.json"), "w"))
+    json.dump(rig, open(S("scores_rigid", "nulls.json"), "w"))
+
+
+HEADS = {  # (E, u, a, noise): E = illusory - control180, mis20 about u E, alt20 about a E (ratios U20, A20)
+    ("dinov2_L12", "R4"): (0.10, 0.72, 0.86, 0.01), ("dinov2_L12", "R1n"): (0.10, 0.66, 0.88, 0.01),
+    ("dinov2_L12", "R1"): (0.10, 0.57, 0.78, 0.01), ("dinov2_L12", "R2"): (0.10, 0.69, 0.84, 0.01),
+    ("dinov2_L12", "R3"): (0.08, 0.58, 0.69, 0.01),
+    ("dinov2_L6", "R4"): (0.10, 0.59, 0.95, 0.004), ("dinov2_L6", "R1n"): (0.09, 0.6, 0.9, 0.01),
+    ("dinov2_L6", "R1"): (0.09, 0.6, 0.9, 0.01), ("dinov2_L6", "R2"): (0.10, 0.67, 1.11, 0.004),
+    ("dinov2_L6", "R3"): (0.10, 0.65, 1.02, 0.01),
+    ("siglip_L24", "R4"): (0.14, 0.81, 0.63, 0.01), ("siglip_L24", "R1n"): (0.14, 0.8, 0.7, 0.01),
+    ("siglip_L24", "R1"): (0.12, 0.8, 0.7, 0.01), ("siglip_L24", "R2"): (0.13, 0.82, 0.68, 0.01),
+    ("siglip_L24", "R3"): (0.11, 1.0, 1.07, 0.01),
+    ("iie_shapenetc", "R4"): (0.05, 0.10, 0.49, 0.01), ("iie_shapenetc", "R1n"): (0.05, 0.2, 0.5, 0.01),
+    ("iie_shapenetc", "R1"): (0.05, 0.2, 0.5, 0.01), ("iie_shapenetc", "R2"): (0.05, -0.03, 0.44, 0.01),
+    ("iie_shapenetc", "R3"): (0.0, 0.25, 0.67, 0.03),                    # E about 0: its ratios are not reportable
+}
+
+
+def build_heads():
+    rng = np.random.RandomState(12)
+    for (fs, ar), (E, u, a, nz) in HEADS.items():
+        SYN_HEAD[(fs, ar)] = {}
+        for seed in (0, 1, 2):
+            per = {}
+            for z in ("336", "448"):
+                v = {}
+                for c in META:
+                    b = 0.4 + nz * rng.randn()
+                    m = b + a * E + nz * rng.randn()
+                    dd = 0.003 * rng.randn()
+                    v.update({f"{c}_control180": b, f"{c}_illusory": b + E + nz * rng.randn(),
+                              f"{c}_mis20": b + u * E + nz * rng.randn(), f"{c}_alt20a": m + dd, f"{c}_alt20b": m - dd})
+                per[z] = v
+            SYN_HEAD[(fs, ar)][seed] = per
+            for st, conds in (("stim_v3", V3_CONDS), ("stim_alt", ALT_CONDS)):
+                d = {z: {"r_inside": {k: x for k, x in per[z].items() if any(k.endswith("_" + c) for c in conds)}}
+                     for z in per}
+                json.dump(d, open(S("v3", "gpu", "full", "scores", f"{st}_{fs}_{ar}_s{seed}.json"), "w"))
+
+
+def jdump_like(obj, p):
+    """As analyze_re.jdump (numpy to Python; created_utc and result)."""
+    def conv(o):
+        if isinstance(o, (np.floating, np.integer)):
+            return o.item()
+        if isinstance(o, np.bool_):
+            return bool(o)
+        if isinstance(o, np.ndarray):
+            return o.tolist()
+        if isinstance(o, tuple):
+            return list(o)
+        raise TypeError(type(o))
+    json.dump(dict(created_utc="2026-11-18T00:00:00Z", result=obj), open(p, "w"), indent=1, default=conv)
+
+
+def build_primary():
+    """The two primary files exactly as analyze_re.step_primary writes them (on the synthetic files)."""
+    jdump_like(AR.step_primary({"P1", "P2", "P3", "P4"}), RC.PATHS["primary_1234"])
+    jdump_like(AR.step_primary({"P5"}), RC.PATHS["primary_5"])
+
+
+def sha(p):
+    return hashlib.sha256(open(p, "rb").read()).hexdigest()
+
+
+def build_p6_reporting():
+    json.dump(dict(code={rel: sha(os.path.join(X.RE, rel)) for rel in RC.REUSED}), open(RC.PATHS["p6_reporting"], "w"))
+
+
+# ---- copies of the published percentile code (v3/scores/analyze_alt.py summ, ratio; v2 indices), independent of analyze_re
+def pub_idx(K, P):
+    rng = np.random.RandomState(2026)
+    return rng.randint(0, K, (10000, K)), rng.randint(0, P, (10000, K, P))
+
+
+def pub_cells(shape=None):
+    cells = {}
+    for c, (sh, sr, pol, pos) in META.items():
+        if shape is None or sh == shape:
+            cells.setdefault((sh, sr, pol), []).append((pos, c))
+    return [[c for _, c in sorted(cells[k])] for k in sorted(cells, key=str)]
+
+
+def pub_bmeans(vals):
+    ci, pi = pub_idx(*vals.shape)
+    return vals[ci[:, :, None], pi].mean((1, 2))
+
+
+def pub_summ(vals):
+    bm = pub_bmeans(vals)
+    lo, hi = np.percentile(bm, [2.5, 97.5])
+    p = min(1.0, 2 * min(np.mean(bm <= 0), np.mean(bm >= 0)))
+    return dict(mean=round(float(vals.mean()), 4), ci=[round(float(lo), 4), round(float(hi), 4)], p=float(p))
+
+
+def pub_ratio(num, den):
+    bn, bd = pub_bmeans(num), pub_bmeans(den)
+    with np.errstate(divide="ignore", invalid="ignore"):
+        br = bn / bd
+    lo, hi = np.nanpercentile(br, [2.5, 97.5])
+    return dict(value=round(float(num.mean() / den.mean()), 4), ci=[round(float(lo), 4), round(float(hi), 4)])
+
+
+def unit_val(v, c, cond):
+    return 0.5 * (v[f"{c}_{cond}a"] + v[f"{c}_{cond}b"]) if cond == "alt20" else v[f"{c}_{cond}"]
+
+
+def pub_arr(v, cells, test, ctrl):
+    return np.array([[unit_val(v, c, test) - unit_val(v, c, ctrl) for c in cell] for cell in cells])
+
+
+def head_val(fs, ar, c, cond):
+    return np.mean([unit_val(SYN_HEAD[(fs, ar)][s][z], c, cond) for s in (0, 1, 2) for z in ("336", "448")])
+
+
+def build_published():
+    allc, sq = pub_cells(), pub_cells("square")
+    models = {}
+    for name, v in list(SYN_MODEL.items()) + [("null " + k, v) for k, v in SYN_NULL.items()]:
+        models[name] = {"results": {"r_inside": {"all": {"drop_uni": {"20": pub_summ(pub_arr(v, allc, "illusory", "mis20"))}},
+                                                 "square": {"alt_minus_mis": {"20": pub_summ(pub_arr(v, sq, "alt20", "mis20"))}}}}}
+    json.dump(dict(models=models), open(RC.PATHS["v3_results"], "w"))
+    full = dict(stim_v3={}, stim_alt={})
+    for (fs, ar) in HEADS:
+        arr = lambda cond: np.array([[head_val(fs, ar, c, cond) for c in cell] for cell in allc])   # noqa: E731
+        ill, c180, mis, alt = arr("illusory"), arr("control180"), arr("mis20"), arr("alt20")
+        full["stim_v3"].setdefault(fs, {})[ar] = {"kanizsa": {"illusory-control180": {"avg|r_inside": pub_summ(ill - c180)}}}
+        full["stim_alt"].setdefault(fs, {})[ar] = {"r_inside": {"ratio_uni20": pub_ratio(mis - c180, ill - c180),
+                                                                "ratio_alt20": pub_ratio(alt - c180, ill - c180)}}
+    json.dump(full, open(RC.PATHS["full_results"], "w"))
+
+
+def load_json(p):
+    return json.load(open(p))
+
+
+# ====================================================================== tests
+def main():
+    ap = argparse.ArgumentParser(); ap.add_argument("--out", default=os.path.join(HERE, "tests_report_continuity_output.txt"))
+    a = ap.parse_args()
+    t0 = time.time()
+    out(f"test_report_continuity.py {time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())}; scratch "
+        f"{os.path.relpath(SCRATCH, X.RE)}")
+
+    # 1. static properties
+    check("no torch imported", "torch" not in sys.modules)
+    src = open(os.path.join(HERE, "report_continuity.py")).read()
+    tree = ast.parse(src)
+    imported = {n.names[0].name for n in ast.walk(tree) if isinstance(n, ast.Import)}
+    check("report_continuity imports no torch", "torch" not in imported and "import torch" not in src)
+    msrc = inspect.getsource(RC.main)
+    check("main calls require_public first, then refuses if an output exists, before any computation",
+          msrc.index("require_public") < msrc.index("existing_outputs") < msrc.index("X.design") < msrc.index("run(")
+          < msrc.index("write_outputs"))
+    check("no new interval code (engine functions only)",
+          all(f"def {f}(" not in src for f in ("wild_cluster", "bca", "bca_p", "pct_summary", "pct_ratio", "holm",
+                                               "fieller", "two_stage_idx", "bmeans", "cluster_se")))
+    rnd = [n.attr for n in ast.walk(tree) if isinstance(n, ast.Attribute) and n.attr in
+           ("random", "RandomState", "default_rng", "randint", "choice", "permutation", "shuffle")]
+    check("no random draw of its own (no np.random or RandomState in the code; indices come from analyze_re.Design)",
+          not rnd, rnd)
+    psrc = inspect.getsource(RC.pct_ratio_diff)
+    check("pct_ratio_diff composes analyze_re.bmeans and np.nanpercentile only",
+          psrc.count("AR.bmeans(") == 4 and "np.nanpercentile" in psrc and "np.percentile(" not in psrc)
+    doc = RC.__doc__
+    check("header lists implementation choices (a) to (k)", all(f"  ({c}) " in doc for c in "abcdefghijk"))
+    check("header quotes rule 4.5 verbatim", "Continuity: the published two-stage percentile intervals are reported in "
+          "the supplement for every\n  primary estimate." in doc)
+    check("only a missing stored field (KeyError) is reported as one", "except KeyError" in src and
+          "except (KeyError, TypeError)" not in src and "except Exception" not in src)
+    check("no em-dash or en-dash in the script", "—" not in src and "–" not in src)
+
+    # 2. designs: the published indices
+    check("pooled design 12 x 5 and square design 6 x 5", (D.K, D.P, DSQ.K, DSQ.P) == (12, 5, 6, 5))
+    pi12, pi6 = pub_idx(12, 5), pub_idx(6, 5)
+    check("Design indices equal the published RandomState(2026) draws (pooled and square)",
+          np.array_equal(D.idx[0], pi12[0]) and np.array_equal(D.idx[1], pi12[1]) and
+          np.array_equal(DSQ.idx[0], pi6[0]) and np.array_equal(DSQ.idx[1], pi6[1]))
+
+    # 3. pct_ratio_diff
+    rng = np.random.RandomState(5)
+    n1, d1 = 0.07 + 0.01 * rng.randn(12, 5), 0.10 + 0.01 * rng.randn(12, 5)
+    n2, d2 = 0.08 + 0.01 * rng.randn(12, 5), 0.11 + 0.01 * rng.randn(12, 5)
+    z = np.zeros((12, 5))
+    r0, pr = RC.pct_ratio_diff(n1, d1, z, d2, D.idx), AR.pct_ratio(n1, d1, D.idx)
+    check("pct_ratio_diff with a zero second numerator equals analyze_re.pct_ratio exactly",
+          r0["value"] == pr["value"] and r0["ci"] == pr["ci"])
+    rd = RC.pct_ratio_diff(n1, d1, n2, d2, D.idx)
+    bd = pub_bmeans(n1) / pub_bmeans(d1) - pub_bmeans(n2) / pub_bmeans(d2)
+    lo, hi = np.nanpercentile(bd, [2.5, 97.5])
+    check("pct_ratio_diff equals the percentile interval of the difference of two independently resampled ratios",
+          abs(rd["ci"][0] - lo) < 1e-12 and abs(rd["ci"][1] - hi) < 1e-12)
+    check("pct_ratio_diff value is the difference of the ratios of means (as analyze_re.p4)",
+          rd["value"] == float(n1.mean() / d1.mean() - n2.mean() / d2.mean()))
+    rr = RC.pct_ratio_diff(n2, d2, n1, d1, D.idx)
+    check("pct_ratio_diff is antisymmetric", abs(rr["ci"][0] + rd["ci"][1]) < 1e-12 and abs(rr["ci"][1] + rd["ci"][0]) < 1e-12)
+    check("pct_ratio_diff gives no p and counts resamples on each side of 0",
+          "p" not in rd and rd["n_below_0"] + rd["n_at_0"] + rd["n_above_0"] == 10000 - rd["n_nan"])
+    stat = lambda a_, b_, c_, d_: a_ / b_ - c_ / d_                       # noqa: E731  (the statistic of analyze_re.p4)
+    bt = np.asarray(stat(*[AR.bmeans(x, D.idx) for x in (n1, d1, n2, d2)]), float)
+    bt = bt[np.isfinite(bt)]                                              # as analyze_re.bca
+    bq = np.quantile(bt, [0.025, 0.975])
+    bc = AR.bca(stat, [n1, d1, n2, d2], D.idx, theta0=0.0)
+    check("pct_ratio_diff = 2.5 and 97.5 percentiles of the bootstrap distribution behind analyze_re.bca (no adjustment)",
+          abs(rd["ci"][0] - bq[0]) < 1e-12 and abs(rd["ci"][1] - bq[1]) < 1e-12 and bc["B"] == 10000 - rd["n_nan"]
+          and bc["value"] == rd["value"], f"BCa {bc['ci']} against unadjusted {rd['ci']}")
+    big = RC.pct_ratio_diff(n1 + 0.05, d1, n2, d2, D.idx)
+    check("a difference with every resample above 0 is flagged (the BCa p is then set by the clip, D4)",
+          big["zero_outside_every_resample"] and not rd["zero_outside_every_resample"],
+          f"{big['n_below_0']} below; weak case {rd['n_below_0']} below, {rd['n_above_0']} above")
+
+    # 4. linearity: a model-minus-null interval is the interval of the difference of the two bootstrap distributions
+    av, bv = 0.05 + 0.02 * rng.randn(12, 5), 0.01 * rng.randn(12, 5)
+    pc = AR.pct_summary(av - bv, D.idx)
+    lo, hi = np.percentile(pub_bmeans(av) - pub_bmeans(bv), [2.5, 97.5])
+    check("pct_summary of a difference = percentile of the difference of the two published bootstrap distributions",
+          abs(pc["ci"][0] - lo) < 1e-12 and abs(pc["ci"][1] - hi) < 1e-12)
+
+    # 5. synthetic inputs and stored files
+    write_items()
+    build_models_nulls()
+    build_heads()
+    build_primary()
+    build_published()
+    build_p6_reporting()
+    out(f"synthetic inputs written ({time.time() - t0:.1f}s)")
+    check("configs_meta reads the synthetic items (60 configurations)", AR.configs_meta() == META)
+
+    # 6. full run on synthetic inputs
+    t1 = time.time()
+    res = RC.run(D, DSQ)
+    out(f"run() on synthetic inputs: {time.time() - t1:.1f}s")
+    gt = res["gates"]
+    check("G0 passes (reused code hashes)", gt["G0_reused_code"]["passed"])
+    check("G1 passes: every point estimate equals the stored value", gt["G1_point_estimates"]["passed"],
+          f"{gt['G1_point_estimates']['n_checks']} checks, max |difference| {gt['G1_point_estimates']['max_abs_diff']}")
+    check("G1 covers records, both P4 ratios and the P1 and P2 model estimates",
+          gt["G1_point_estimates"]["n_checks"] == 124 + 36 + 4)
+    g2 = gt["G2_families_reproduced"]
+    check("G2 passes: P1, P2, P4 and the P5 file reproduced leaf by leaf",
+          g2["passed"] and g2["primary_P1_P2_P3_P4"]["max_abs_diff"] == 0.0 and g2["primary_P5"]["max_abs_diff"] == 0.0,
+          f"{g2['primary_P1_P2_P3_P4']['n_numeric']} and {g2['primary_P5']['n_numeric']} numeric leaves")
+    g3 = gt["G3_published_values"]
+    check("G3 passes against the copies of the published code", g3["passed"],
+          "; ".join(f"{k} {v['n_agree']}/{v['n']}" for k, v in g3["categories"].items()))
+    check("G3 covers P1 L20, P2 square Delta20 (17 units each; mean, interval, p) and E (mean, interval, p), U20 and A20 "
+          "(value, interval) of the 13 P4 cells",
+          g3["n_cells_P4"] == 13 and g3["categories"]["P1_L20"]["n"] == 68 and
+          g3["categories"]["P2_square_Delta20"]["n"] == 68 and g3["categories"]["E_swap"]["n"] == 52 and
+          g3["categories"]["P4_ratio_U20"]["n"] == 39 and g3["categories"]["P4_ratio_A20"]["n"] == 39,
+          {k: v["n"] for k, v in g3["categories"].items()})
+    cov = res["coverage"]
+    check("coverage: P1 30, P2 30, P4 18, P5 23 per model; 104 with p, 20 ratio-type without",
+          cov["n_records"] == dict(P1=30, P2=30, P4=18, P5={"DeepGaze IIE": 23, "DeepGaze MSDB": 23}) and
+          cov["n_total"] == 124 and cov["n_with_published_method_p"] == 104 and cov["n_without_p_ratio_type"] == 20)
+
+    models, nulls = AR.load_survey_and_nulls()
+    m, k = "DeepGaze MSDB", "edge_s25"
+    d1 = AR.per_config(D, models[m], "illusory", "mis20") - AR.per_config(D, nulls[k], "illusory", "mis20")
+    r = res["P1"][m][k]
+    check("P1 record = analyze_re.pct_summary of model minus null L20 on the pooled indices",
+          r["continuity"]["ci"] == AR.pct_summary(d1, D.idx)["ci"] and r["continuity"]["p"] == AR.pct_summary(d1, D.idx)["p"])
+    st = load_json(RC.PATHS["primary_1234"])["result"]
+    check("P1 record carries the stored WCU interval and WCR p", r["rule"]["ci"] == st["P1"][m]["vs_null"][k]["ci"] and
+          r["rule"]["p"] == st["P1"][m]["vs_null"][k]["p"])
+    d2 = AR.per_config(DSQ, models[m], "alt20", "mis20") - AR.per_config(DSQ, nulls[k], "alt20", "mis20")
+    r2 = res["P2"][m][k]
+    check("P2 record uses the square design (6 clusters, 30 configurations)",
+          r2["continuity"]["ci"] == AR.pct_summary(d2, DSQ.idx)["ci"] and d2.shape == (6, 5) and "6 clusters" in r2["design"])
+    pubd = pub_summ(pub_arr(SYN_MODEL[m], pub_cells("square"), "alt20", "mis20") -
+                    pub_arr(SYN_NULL[k], pub_cells("square"), "alt20", "mis20"))
+    check("P2 record reproduces the published code applied to the difference (4 decimals)",
+          all(abs(x - y) <= 5.001e-5 for x, y in zip(r2["continuity"]["ci"], pubd["ci"])) and
+          r2["continuity"]["p"] == pubd["p"])
+    i5 = res["P5"]["DeepGaze IIE"]
+    check("P5: C* = L_uni - 2 L_rig and A* = L_uni - L_rig (point estimates)",
+          abs(i5["C_star"]["estimate"] - (i5["L_uni"]["estimate"] - 2 * i5["L_rig"]["estimate"])) < 1e-12 and
+          abs(i5["A_star"]["estimate"] - (i5["L_uni"]["estimate"] - i5["L_rig"]["estimate"])) < 1e-12)
+    m5, n5 = RC.p5_inputs()
+    L_uni, L_rig, Aal, sec = AR.p5_parts(D, m5["DeepGaze IIE"], 20)
+    An = AR.p5_parts(D, n5["ink_s60"], 20)[2]
+    check("P5 A* minus null and secondary records = pct_summary of the analyze_re.p5_parts arrays",
+          i5["A_star_minus_null"]["ink_s60"]["continuity"]["ci"] == AR.pct_summary(Aal - An, D.idx)["ci"] and
+          i5["secondary"]["A_drafted"]["continuity"]["ci"] == AR.pct_summary(sec["A_drafted"], D.idx)["ci"])
+    check("P5 s* = analyze_re.pct_ratio(L_rig, L_uni), no p",
+          i5["rigid_share"]["continuity"]["ci"] == AR.pct_ratio(L_rig, L_uni, D.idx)["ci"] and
+          i5["rigid_share"]["continuity"]["p"] is None)
+    check("planted truth: every IIE P1 difference has its continuity interval above 0",
+          all(RC.side(x["continuity"]["ci"]) == 1 for x in res["P1"]["DeepGaze IIE"].values()))
+    check("planted truth: MSDB L_uni (mean 2e-4) has a continuity interval including 0",
+          RC.side(res["P5"]["DeepGaze MSDB"]["L_uni"]["continuity"]["ci"]) == 0)
+    check("a p of 0 is flagged below the resolution",
+          any(x["continuity"]["p_below_resolution"] for x in res["P1"]["DeepGaze IIE"].values()) and
+          all(x["continuity"]["p_below_resolution"] == (x["continuity"]["p"] == 0.0) for _, x in RC.iter_records(res)
+              if x["continuity"]["p"] is not None))
+    check("MSDB s* not reportable (rule 4.3), IIE s* reportable",
+          res["P5"]["DeepGaze MSDB"]["rigid_share"]["reportable"] is False and i5["rigid_share"]["reportable"] is True)
+    p4 = res["P4"]
+    check("P4 records: no p, with the no-analogue note", all(x["continuity"]["p"] is None and "no" in x["continuity"]["p_note"]
+                                                            and "analogue" in x["continuity"]["p_note"] for x in p4.values()))
+    k4 = "dinov2_L6|R2|A20"
+    n1_, d1_ = AR.ratio_parts(D, AR.load_swap()[("dinov2_L6", "R2")], "A20")
+    check("P4 both ratios = analyze_re.pct_ratio, equal to the stored ratio",
+          p4[k4]["both_ratios"]["readout"]["continuity_ci"] == AR.pct_ratio(n1_, d1_, D.idx)["ci"] and
+          p4[k4]["both_ratios"]["readout"]["value"] == p4[k4]["both_ratios"]["readout"]["stored_value"])
+    clipped = [x["number"] for x in p4.values() if x["rule"]["p_set_by_clip"]]
+    check("planted strong P4 contrast (#10) has 0 outside every resample; planted near-null ones (#2, #13) do not",
+          10 in clipped and 2 not in clipped and 13 not in clipped, f"clipped: {clipped}")
+    st4 = st["P4"]["contrasts"]
+    def clip_p(x):
+        """The p that analyze_re.bca_p returns when every finite resample lies on one side of 0 (q0 clipped)."""
+        s4 = st4[f"{x['feature_set']}|{x['readout']}|{x['ratio']}"]
+        c = x["continuity"]
+        nf = c["n_below_0"] + c["n_at_0"] + c["n_above_0"]
+        return AR.bca_p(np.full(nf, 1.0 if c["n_above_0"] else -1.0), s4["z0"], s4["acc"], 0.0), s4["p"]
+    cl = [clip_p(x) for x in p4.values() if x["rule"]["p_set_by_clip"]]
+    check("every contrast flagged as set by the clip has the stored BCa p that bca_p's clip gives (D4), exactly",
+          bool(cl) and all(a == b for a, b in cl), f"{len(cl)} contrasts")
+    k17 = "iie_shapenetc|R3|U20"
+    check("P4 with a denominator about 0: difference listed with its flag, its single ratio not reportable",
+          p4[k17]["flag"] is not None and "listed" in p4[k17]["flag"] and
+          p4[k17]["both_ratios"]["readout"]["reportable"] is False and p4[k17]["both_ratios"]["R4"]["reportable"] is True)
+    npr = {x["path"] for x in res["computed_not_printed_rule_4_3"]}
+    check("rule 4.3 list names MSDB s* and the two iie_shapenetc R3 readout ratios",
+          npr == {"P5/DeepGaze MSDB/rigid_share", "P4/contrasts/iie_shapenetc|R3|U20/ratio_readout",
+                  "P4/contrasts/iie_shapenetc|R3|A20/ratio_readout"}, sorted(npr))
+    agr = res["agreement"]
+    check("agreement counted over every record except s* (122)", agr["total"]["n"] == 122 and
+          all(f["n_agree"] + len(f["disagreements"]) == f["n"] for f in agr["per_family"].values()))
+    na = res["no_published_method_analogue"]
+    check("no-analogue list: the p of ratio-type estimates (18 differences, 36 ratios, 2 s*)",
+          len(na) == 1 and "(18)" in na[0]["what"] and "(36" in na[0]["what"] and "(2)" in na[0]["what"])
+    cp = res["composed_not_published"]
+    check("composition list: the 18 P4 differences, labelled not a published computation, no p",
+          len(cp) == 1 and "18 P4" in cp[0]["what"] and "never resampled" in cp[0]["why"] and "no p" in cp[0]["status"])
+    check("every P4 record says it is a composition, not a published computation",
+          all("composition of the published procedure, not a published computation" in x["provenance"] for x in p4.values()))
+    ce = res["covered_elsewhere"]
+    check("covered-elsewhere list names P1/P2 model estimates, P4 ratios (none missing), P3, P6 and the nulls' own P5",
+          len(ce) == 5 and "none is missing" in ce[1]["where"] and "not computed here" in ce[4]["where"])
+
+    # 7. gate functions and failures (each stops the run; nothing written)
+    stored = load_json(RC.PATHS["primary_1234"])
+    before = sorted(os.listdir(X.RESULTS))
+
+    def run_with(path, obj, expect):
+        os.replace(path, path + ".orig")
+        json.dump(obj, open(path, "w"))
+        try:
+            RC.run(D, DSQ)
+            got = None
+        except RC.GateError as e:
+            got = str(e)
+        finally:
+            os.replace(path + ".orig", path)
+        return got is not None and expect in got, got
+
+    bad = copy.deepcopy(stored); bad["result"]["P1"]["DeepGaze IIE"]["vs_null"]["corner_s8"]["mean"] += 1e-9
+    ok, got = run_with(RC.PATHS["primary_1234"], bad, "G1")
+    check("run() raises GateError (G1) on a 1e-9 change of a stored point estimate and writes nothing",
+          ok and sorted(os.listdir(X.RESULTS)) == before, (got or "")[:120])
+    recs = {f: res[f] for f in ("P1", "P2", "P4", "P5")}
+    rc2 = copy.deepcopy(recs); rc2["P1"]["DeepGaze IIE"]["corner_s8"]["rule"]["mean"] += 1e-14
+    check("G1 passes a 1e-14 difference (tolerance 1e-12)", RC.gate_points(rc2, [])["passed"])
+    rc3 = copy.deepcopy(recs); rc3["P4"]["siglip_L24|R2|A20"]["both_ratios"]["R4"]["stored_value"] += 1e-9
+    check("G1 fails on a 1e-9 change of a stored P4 single ratio", not RC.gate_points(rc3, [])["passed"])
+    inputs = RC.load_inputs()
+    st5 = load_json(RC.PATHS["primary_5"])
+    b2 = copy.deepcopy(stored); b2["result"]["P4"]["contrasts"]["dinov2_L12|R1|U20"]["ci"][0] += 1e-9
+    check("G2 fails on a 1e-9 change of a stored interval bound (not a point estimate)",
+          not RC.gate_families(D, DSQ, inputs, b2, st5)["passed"])
+    b5 = copy.deepcopy(st5)
+    b5["result"]["P5"]["DeepGaze IIE"]["category"] = "3" if st5["result"]["P5"]["DeepGaze IIE"]["category"] != "3" else "1"
+    check("G2 fails on a changed stored P5 category", not RC.gate_families(D, DSQ, inputs, stored, b5)["passed"])
+    b6 = copy.deepcopy(st5); b6["result"]["abstract_rotation"]["highlight4"] = "x"
+    check("G2 fails on a changed abstract-rule key", not RC.gate_families(D, DSQ, inputs, stored, b6)["passed"])
+    full = load_json(RC.PATHS["full_results"])
+    v3r = load_json(RC.PATHS["v3_results"])
+    fb = copy.deepcopy(full); fb["stim_alt"]["dinov2_L12"]["R4"]["r_inside"]["ratio_uni20"]["ci"][1] += 2e-4
+    check("G3 fails on a 2e-4 change of a published ratio bound", not RC.gate_published(D, DSQ, inputs, v3r, fb)[0]["passed"])
+    vb = copy.deepcopy(v3r); del vb["models"]["null ink_s16"]["results"]["r_inside"]["square"]
+    check("G3 fails on a missing published value", not RC.gate_published(D, DSQ, inputs, vb, full)[0]["passed"])
+    vp = copy.deepcopy(v3r); vp["models"]["DeepGaze MSDB"]["results"]["r_inside"]["all"]["drop_uni"]["20"]["p"] += 2e-4
+    g3p = RC.gate_published(D, DSQ, inputs, vp, full)[0]
+    check("G3 fails on a published p changed by one resample pair (2e-4)",
+          not g3p["passed"] and [f["field"] for f in g3p["failures"]] == ["p"])
+    check("G3 passes on the unchanged published files (reference for the two checks above)",
+          RC.gate_published(D, DSQ, inputs, v3r, full)[0]["passed"])
+    ok, got = run_with(RC.PATHS["full_results"], fb, "G3")
+    check("run() raises GateError (G3) and writes nothing", ok and sorted(os.listdir(X.RESULTS)) == before, (got or "")[:120])
+    p6b = load_json(RC.PATHS["p6_reporting"]); p6b["code"]["explore/excommon.py"] = "0" * 64
+    ok, got = run_with(RC.PATHS["p6_reporting"], p6b, "G0")
+    check("run() raises GateError (G0) when a reused file's hash differs", ok, (got or "")[:120])
+    b7 = copy.deepcopy(stored); del b7["result"]["P2"]["DeepGaze MSDB"]["vs_null"]["edge_s8"]
+    ok, got = run_with(RC.PATHS["primary_1234"], b7, "stored field missing")
+    check("a missing stored field stops the run (GateError naming it)", ok, (got or "")[:120])
+    os.replace(RC.PATHS["v3_results"], RC.PATHS["v3_results"] + ".moved")
+    try:
+        RC.run(D, DSQ)
+        miss = None
+    except RC.GateError as e:
+        miss = str(e)
+    os.replace(RC.PATHS["v3_results"] + ".moved", RC.PATHS["v3_results"])
+    check("a missing published file stops the run", miss is not None and "required file missing" in miss, (miss or "")[:120])
+
+    # 8. a P5 model without rigid scores is not computable (stored P5 rebuilt in the same state)
+    rigm = S("scores_rigid", "DeepGaze_MSDB.json")
+    os.replace(rigm, rigm + ".moved")
+    os.replace(RC.PATHS["primary_5"], RC.PATHS["primary_5"] + ".full")
+    try:
+        jdump_like(AR.step_primary({"P5"}), RC.PATHS["primary_5"])
+        res_nc = RC.run(D, DSQ)
+        nc_ok = (res_nc["P5"]["DeepGaze MSDB"].get("not_computable", "").startswith("not computable") and
+                 res_nc["coverage"]["n_records"]["P5"]["DeepGaze MSDB"] == 0 and res_nc["gates"]["G2_families_reproduced"]["passed"])
+    finally:
+        os.replace(rigm + ".moved", rigm)
+        os.replace(RC.PATHS["primary_5"] + ".full", RC.PATHS["primary_5"])
+    check("a P5 model without rigid scores is reported not computable; gates still pass", nc_ok)
+
+    # 9. outputs
+    res["run"] = dict(start_utc="2026-11-20T00:00:00Z", end_utc="2026-11-20T00:00:10Z", compute_s=10.0,
+                      hashed_files_verified=33)
+    check("no output exists before the first write", RC.existing_outputs() == [])
+    pj = RC.write_outputs(res, 10.0)
+    rec = load_json(pj)
+    check("JSON written to the output folder with code, rule and commit provenance",
+          os.path.dirname(pj) == X.RESULTS and set(rec["code"]) == {"explore/report_continuity.py", "explore/excommon.py",
+                                                                    "explore/explore_saved.py", "explore/report_p6_cells.py"}
+          and len(rec["rule_sha256"]) == 64 and rec["public_commit"])
+    mdp = os.path.join(X.RESULTS, RC.OUT_MD)
+    md = open(mdp).read()
+    snap = (open(pj, "rb").read(), open(mdp, "rb").read())
+    try:
+        RC.write_outputs(res, 10.0)
+        refused = False
+    except FileExistsError:
+        refused = True
+    check("a second write is refused and leaves both outputs byte-identical",
+          refused and (open(pj, "rb").read(), open(mdp, "rb").read()) == snap and len(RC.existing_outputs()) == 2)
+    check("markdown embeds the code SHA-256, rule SHA-256 and public commit",
+          rec["code"]["explore/report_continuity.py"] in md and rec["rule_sha256"] in md and rec["public_commit"] in md)
+    check("markdown has no em-dash or en-dash", "—" not in md and "–" not in md)
+    check("markdown prints flags as yes or no, never Python booleans", "True" not in md and "False" not in md)
+    check("markdown sections 0 to 9", all(f"## {i}." in md for i in range(10)))
+    sec = lambda a_, b_: md.split(f"## {a_}.")[1].split(f"## {b_}.")[0]          # noqa: E731
+    rows3 = [ln for ln in sec(3, 4).splitlines() if ln.startswith("| DeepGaze")]
+    rows4 = [ln for ln in sec(4, 5).splitlines() if ln.startswith("| DeepGaze")]
+    rows5 = [ln for ln in sec(5, 6).splitlines() if ln[:3] in {f"| {i}" for i in range(1, 10)}]
+    check("markdown P1 and P2 tables: 30 rows each with 8 columns", len(rows3) == 30 and len(rows4) == 30 and
+          all(ln.count(" | ") == 7 for ln in rows3 + rows4), f"{len(rows3)}, {len(rows4)}")
+    check("markdown P4 table: 18 rows with 13 columns", len(rows5) == 18 and all(ln.count(" | ") == 12 for ln in rows5),
+          f"{len(rows5)} rows")
+    s6 = sec(6, 7)
+    check("markdown P5: both models, 15 null rows each", s6.count("| ink sigma 60 |") == 2 and
+          s6.count("### DeepGaze") == 2)
+    msdb = s6.split("### DeepGaze MSDB")[1]
+    shl = [ln for ln in msdb.splitlines() if ln.startswith("Rigid share")]
+    check("markdown MSDB s*: not reportable, printed without a value or interval",
+          len(shl) == 1 and "not reportable" in shl[0] and "[" not in shl[0], shl[0] if shl else "")
+    check("markdown prints p of 0 as below the resolution", "below resolution (0 outside every resample)" in md)
+    r10 = [ln for ln in rows5 if ln.startswith("| 10 |")]
+    check("markdown prints the clipped BCa p as below the resolution (D4)",
+          len(r10) == 1 and "below resolution (0 outside every resample; D4)" in r10[0])
+    r17 = [ln for ln in rows5 if ln.startswith("| 17 |")]
+    check("markdown P4 #17: difference with its flag, readout ratio not reportable without a value",
+          len(r17) == 1 and "listed, not counted" in r17[0] and "not reportable (denominator interval includes 0)" in r17[0])
+    check("markdown says the P4 differences and s* have no published-method p",
+          "no published-method p" in sec(5, 6) and "no published-method p" in s6.split("### DeepGaze MSDB")[0])
+    check("markdown P4 column header marks the interval as composed", "published percentile (composed)" in sec(5, 6))
+    check("markdown lists the no-analogue item, the composition and the rule 4.3 withholdings",
+          "No analogue: a p-value for every ratio-type primary estimate" in sec(7, 8) and
+          "Composition, not a published computation: the 18 P4" in sec(7, 8) and
+          "DeepGaze MSDB rigid share" in md.split("## 9.")[1])
+    check("markdown summary separates published-method, ratio and composed intervals",
+          "by a composition of the published method" in sec(2, 3))
+
+    n_fail = RES.count(False)
+    out(f"# {len(RES)} checks, {n_fail} failed, {time.time() - t0:.1f}s")
+    open(a.out, "w").write("\n".join(LINES) + "\n")
+    sys.exit(1 if n_fail else 0)
+
+
+if __name__ == "__main__":
+    main()

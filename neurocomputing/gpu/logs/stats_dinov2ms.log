@@ -1,0 +1,14 @@
+2026-11-19 21:44:09 === stats dinov2ms on mps: 12803 training images, bs 32
+Loading weights:   0%|          | 0/223 [00:00<?, ?it/s]Loading weights: 100%|██████████| 223/223 [00:00<00:00, 9831.19it/s]
+2026-11-19 21:44:11   dinov2ms batch 1/401 1s
+2026-11-19 21:44:59   dinov2ms batch 51/401 49s
+2026-11-19 21:45:49   dinov2ms batch 101/401 99s
+2026-11-19 21:46:39   dinov2ms batch 151/401 149s
+2026-11-19 21:47:27   dinov2ms batch 201/401 197s
+2026-11-19 21:48:15   dinov2ms batch 251/401 245s
+2026-11-19 21:49:03   dinov2ms batch 301/401 293s
+2026-11-19 21:49:51   dinov2ms batch 351/401 341s
+2026-11-19 21:50:38   dinov2ms batch 401/401 388s
+2026-11-19 21:50:38 dinov2ms_L7L11: C 1536 tokens 7374528 mean(|mu|) 0.1153 mean(sd) 0.5206 min sd 5.83e-02 max sd 20.93
+2026-11-19 21:50:38 dinov2ms_L11: C 768 tokens 7374528 mean(|mu|) 0.2040 mean(sd) 0.9222 min sd 4.32e-01 max sd 20.93
+2026-11-19 21:50:38 === stats dinov2ms done 388s

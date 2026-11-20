@@ -1,0 +1,55 @@
+### TTR_P_clip start 2026-11-18T20:50:02Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONDONTWRITEBYTECODE=1 $LAN_SAL_SRC/.venv/bin/python -B -I explore/ttr/ttr_score.py plain clip
+### TTR_P_clip pid 20968
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]### TTR_P_clip pid 20968: no Metal client at first check (~5 s)
+Loading weights: 100%|██████████| 391/391 [00:00<00:00, 6840.35it/s]
+[transformers] [1mCLIPVisionModel LOAD REPORT[0m from: openai/clip-vit-large-patch14
+Key                                                          | Status     |  | 
+-------------------------------------------------------------+------------+--+-
+text_model.encoder.layers.{0...11}.self_attn.v_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.layer_norm1.weight        | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.q_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.layer_norm2.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.v_proj.weight   | UNEXPECTED |  | 
+text_model.final_layer_norm.weight                           | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.k_proj.weight   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.out_proj.bias   | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.mlp.fc2.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.layer_norm1.bias          | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.mlp.fc1.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.layer_norm2.weight        | UNEXPECTED |  | 
+logit_scale                                                  | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.q_proj.bias     | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.mlp.fc2.weight            | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.mlp.fc1.bias              | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.k_proj.bias     | UNEXPECTED |  | 
+text_projection.weight                                       | UNEXPECTED |  | 
+text_model.encoder.layers.{0...11}.self_attn.out_proj.weight | UNEXPECTED |  | 
+text_model.final_layer_norm.bias                             | UNEXPECTED |  | 
+visual_projection.weight                                     | UNEXPECTED |  | 
+text_model.embeddings.token_embedding.weight                 | UNEXPECTED |  | 
+text_model.embeddings.position_embedding.weight              | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+### TTR_P_clip pid 20968: no Metal client at ~30 s
+20:50:42 gate F: PASS {'336': {'sweep_L4': 0.0, 'after_hooks_removed_L4': 0.0, 'sweep_L8': 0.0, 'after_hooks_removed_L8': 0.0, 'sweep_L12': 0.0, 'after_hooks_removed_L12': 0.0, 'sweep_L16': 0.0, 'after_hooks_removed_L16': 0.0, 'sweep_L20': 0.0, 'after_hooks_removed_L20': 0.0, 'sweep_L24': 0.0, 'after_hooks_removed_L24': 0.0}, '448': {'sweep_L4': 0.0, 'after_hooks_removed_L4': 0.0, 'sweep_L8': 0.0, 'after_hooks_removed_L8': 0.0, 'sweep_L12': 0.0, 'after_hooks_removed_L12': 0.0, 'sweep_L16': 0.0, 'after_hooks_removed_L16': 0.0, 'sweep_L20': 0.0, 'after_hooks_removed_L20': 0.0, 'sweep_L24': 0.0, 'after_hooks_removed_L24': 0.0}}
+20:50:52   plain stim_v3 6/480 displays (10s)
+20:52:37   plain stim_v3 66/480 displays (115s)
+20:54:20   plain stim_v3 126/480 displays (217s)
+20:56:02   plain stim_v3 186/480 displays (320s)
+20:57:41   plain stim_v3 246/480 displays (419s)
+20:59:22   plain stim_v3 306/480 displays (519s)
+21:00:58   plain stim_v3 366/480 displays (616s)
+21:02:39   plain stim_v3 426/480 displays (717s)
+21:04:12 plain stim_v3: 480 displays in 810s
+21:04:24   plain stim_alt 6/360 displays (11s)
+21:06:17   plain stim_alt 66/360 displays (124s)
+21:08:14   plain stim_alt 126/360 displays (241s)
+21:10:08   plain stim_alt 186/360 displays (356s)
+21:12:02   plain stim_alt 246/360 displays (469s)
+21:13:42   plain stim_alt 306/360 displays (569s)
+21:14:55 plain stim_alt: 360 displays in 642s
+21:16:34 plain MIT1003 held-out 200: 99s
+21:16:34 gate P: PASS; display values 6720 max |diff| 1.0169435601392607e-06; MIT per-image max |diff| None; failed []
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/results/explore/ttr/TTR_score_clip_plain.json
+### TTR_P_clip end 2026-11-18T21:17:05Z exit 0 wall 1623s

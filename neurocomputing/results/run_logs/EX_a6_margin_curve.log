@@ -1,0 +1,4 @@
+### EX_a6_margin_curve start 2026-11-18T14:06:54Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 V3_DEVICE=cpu PYTHONDONTWRITEBYTECODE=1 $LAN_SAL_SRC/.venv/bin/python -B explore/a6_margin_curve.py
+### EX_a6_margin_curve pid 6243
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/results/explore/A6_margin_curve.json
+### EX_a6_margin_curve end 2026-11-18T14:06:59Z exit 0 wall 5s

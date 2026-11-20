@@ -1,0 +1,24 @@
+### EX_a11_scale start 2026-11-18T14:07:10Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 V3_DEVICE=cpu PYTHONDONTWRITEBYTECODE=1 $LAN_SAL_SRC/.venv/bin/python -B explore/a11_scale.py
+### EX_a11_scale pid 6298
+### EX_a11_scale pid 6298: no Metal client at first check (~5 s)
+14:07:37   50/900 displays
+### EX_a11_scale pid 6298: no Metal client at ~30 s
+14:08:05   100/900 displays
+14:08:32   150/900 displays
+14:08:59   200/900 displays
+14:09:27   250/900 displays
+14:09:55   300/900 displays
+14:10:22   350/900 displays
+14:10:49   400/900 displays
+14:11:17   450/900 displays
+14:11:45   500/900 displays
+14:12:13   550/900 displays
+14:12:41   600/900 displays
+14:13:09   650/900 displays
+14:13:35   700/900 displays
+14:14:02   750/900 displays
+14:14:31   800/900 displays
+14:14:59   850/900 displays
+14:15:26   900/900 displays
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/results/explore/A11_scale.json
+### EX_a11_scale end 2026-11-18T14:15:40Z exit 0 wall 510s

@@ -1,0 +1,11 @@
+### T_explore_saved start 2026-11-18T23:44:47Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=2 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONDONTWRITEBYTECODE=1 $LAN_SAL_SRC/.venv/bin/python -B -I explore/test_explore_saved.py --out explore/tests_explore_saved_output.txt
+### T_explore_saved pid 27960
+Traceback (most recent call last):
+  File "$LAN_PROJECT_ROOT/neuro/reanalysis/explore/test_explore_saved.py", line 18, in <module>
+    import explore_saved as ES                                                # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "$LAN_PROJECT_ROOT/neuro/reanalysis/explore/explore_saved.py", line 494
+    return dict(n_compared=n, max_abs_diff_vs_4_decimals=worst, n_above_5e-5=len(bad), first_bad=bad[:5],
+                                                                ^^^^^^^^^^^^^
+SyntaxError: expression cannot contain assignment, perhaps you meant "=="?
+### T_explore_saved end 2026-11-18T23:44:52Z exit 1 wall 5s

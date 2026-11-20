@@ -9,7 +9,7 @@
 set -euo pipefail
 NN="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(dirname "$NN")"
-PY=/Users/hamitsoyel/Downloads/saliency_research/.venv/bin/python
+PY=${PY:-$(cd "${LAN_PROJECT_ROOT:-$ROOT}/.." && pwd)/saliency_research/.venv/bin/python}   # set PY to override; default as neurocomputing/gpu/run_gpu_re.sh
 LOG="$NN/logs/run_all.log"
 mkdir -p "$NN/logs" "$NN/results"
 export PYTHONDONTWRITEBYTECODE=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1

@@ -1,0 +1,177 @@
+### G0_render_check_only start 2026-11-18T11:42:16Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 $LAN_SAL_SRC/.venv/bin/python -B -I render_rigid.py --check-only
+### G0_render_check_only pid 96303
+### G0_render_check_only pid 96303: no Metal client at first check (~5 s)
+square_sr30_dark_p0: 11 displays (16s)
+square_sr30_dark_p1: 11 displays (28s)
+### G0_render_check_only pid 96303: no Metal client at ~30 s
+square_sr30_dark_p2: 11 displays (36s)
+square_sr30_dark_p3: 11 displays (43s)
+square_sr30_dark_p4: 11 displays (51s)
+square_sr30_light_p0: 11 displays (59s)
+square_sr30_light_p1: 11 displays (66s)
+square_sr30_light_p2: 11 displays (76s)
+square_sr30_light_p3: 11 displays (92s)
+square_sr30_light_p4: 11 displays (109s)
+square_sr50_dark_p0: 11 displays (126s)
+square_sr50_dark_p1: 11 displays (142s)
+square_sr50_dark_p2: 11 displays (156s)
+square_sr50_dark_p3: 11 displays (171s)
+square_sr50_dark_p4: 11 displays (185s)
+square_sr50_light_p0: 11 displays (199s)
+square_sr50_light_p1: 11 displays (213s)
+square_sr50_light_p2: 11 displays (224s)
+square_sr50_light_p3: 11 displays (231s)
+square_sr50_light_p4: 11 displays (237s)
+square_sr70_dark_p0: 11 displays (243s)
+square_sr70_dark_p1: 11 displays (249s)
+square_sr70_dark_p2: 11 displays (264s)
+square_sr70_dark_p3: 11 displays (279s)
+square_sr70_dark_p4: 11 displays (293s)
+square_sr70_light_p0: 11 displays (309s)
+square_sr70_light_p1: 11 displays (323s)
+square_sr70_light_p2: 11 displays (338s)
+square_sr70_light_p3: 11 displays (347s)
+square_sr70_light_p4: 11 displays (353s)
+triangle_sr30_dark_p0: 11 displays (359s)
+triangle_sr30_dark_p1: 11 displays (365s)
+triangle_sr30_dark_p2: 11 displays (372s)
+triangle_sr30_dark_p3: 11 displays (383s)
+triangle_sr30_dark_p4: 11 displays (396s)
+triangle_sr30_light_p0: 11 displays (409s)
+triangle_sr30_light_p1: 11 displays (423s)
+triangle_sr30_light_p2: 11 displays (436s)
+triangle_sr30_light_p3: 11 displays (449s)
+triangle_sr30_light_p4: 11 displays (461s)
+triangle_sr50_dark_p0: 11 displays (471s)
+triangle_sr50_dark_p1: 11 displays (482s)
+triangle_sr50_dark_p2: 11 displays (491s)
+triangle_sr50_dark_p3: 11 displays (500s)
+triangle_sr50_dark_p4: 11 displays (509s)
+triangle_sr50_light_p0: 11 displays (517s)
+triangle_sr50_light_p1: 11 displays (525s)
+triangle_sr50_light_p2: 11 displays (532s)
+triangle_sr50_light_p3: 11 displays (539s)
+triangle_sr50_light_p4: 11 displays (545s)
+triangle_sr70_dark_p0: 11 displays (553s)
+triangle_sr70_dark_p1: 11 displays (559s)
+triangle_sr70_dark_p2: 11 displays (566s)
+triangle_sr70_dark_p3: 11 displays (572s)
+triangle_sr70_dark_p4: 11 displays (578s)
+triangle_sr70_light_p0: 11 displays (584s)
+triangle_sr70_light_p1: 11 displays (590s)
+triangle_sr70_light_p2: 11 displays (596s)
+triangle_sr70_light_p3: 11 displays (603s)
+triangle_sr70_light_p4: 11 displays (609s)
+{
+ "n_displays": 660,
+ "n_rigid": 480,
+ "n_mis_control180": 180,
+ "n_configs": 60,
+ "phis": [
+  10,
+  20,
+  30,
+  45
+ ],
+ "conds": [
+  "illusory",
+  "control180"
+ ],
+ "mis_thetas": [
+  10,
+  20,
+  30
+ ],
+ "refused": [],
+ "n_refused": 0,
+ "checks": {
+  "n_configs": 60,
+  "phi0_pixels_equal": 120,
+  "phi0_aoi_equal": 60,
+  "phi0_core_equal": 60,
+  "mis_inward_pixels_equal": 180
+ },
+ "worst": {
+  "aoi_rel": {
+   "inside": 0.0077428437353355235,
+   "ind": 0.003904724716907458,
+   "polygon": 0.0038812088439230735,
+   "inside_eroded": 0.008555783709787816,
+   "inside_eroded_all": 0.008265438658637384,
+   "core30": 0.006895300308473961,
+   "core45": 0.016233766233766232
+  },
+  "aoi_abs": {
+   "inside": 217,
+   "ind": 68,
+   "polygon": 89,
+   "inside_eroded": 192,
+   "inside_eroded_all": 166,
+   "core30": 100,
+   "core45": 69
+  },
+  "ink_mass_rel": 0.0024011298848478587,
+  "ink_count_rel_reported": 0.005601944826128316,
+  "vertex_centroid_px": 1.1368683772161603e-13,
+  "ind_centroid_shift_px": 0.10969000685914695,
+  "ink_centroid_shift_px": 0.2930639865030977,
+  "inside_centroid_shift_px": 0.5352987454362907,
+  "polygon_centroid_shift_px": 0.7071067811865476,
+  "notch_ink_px": 0,
+  "notch_area_rel": 0.016009371339320577,
+  "rim_px_phi0_max": 191,
+  "rim_px_rot_max": 244,
+  "mis_notch_dir_dev_deg": 0.0,
+  "mis_orient_corr_with_mis_min": 0.9915081599491175,
+  "mis_orient_corr_with_control180_max": 0.8851835816647862,
+  "mis_ink_mass_rel": 0.0017362438885787067
+ },
+ "aoi_over_1pct": {
+  "notch": [
+   "square_sr30_dark_p0_rig45_control180 (1.60%)",
+   "square_sr30_dark_p1_rig45_control180 (1.60%)",
+   "square_sr30_dark_p2_rig45_control180 (1.60%)",
+   "square_sr30_dark_p3_rig45_control180 (1.60%)",
+   "square_sr30_dark_p4_rig45_control180 (1.60%)",
+   "square_sr30_light_p0_rig45_control180 (1.60%)",
+   "square_sr30_light_p1_rig45_control180 (1.60%)",
+   "square_sr30_light_p2_rig45_control180 (1.60%)",
+   "square_sr30_light_p3_rig45_control180 (1.60%)",
+   "square_sr30_light_p4_rig45_control180 (1.60%)",
+   "triangle_sr30_dark_p0_rig45_illusory (1.60%)",
+   "triangle_sr30_dark_p1_rig45_illusory (1.60%)",
+   "triangle_sr30_dark_p2_rig45_illusory (1.60%)",
+   "triangle_sr30_dark_p3_rig45_illusory (1.60%)",
+   "triangle_sr30_dark_p4_rig45_illusory (1.60%)",
+   "triangle_sr30_light_p0_rig45_illusory (1.60%)",
+   "triangle_sr30_light_p1_rig45_illusory (1.60%)",
+   "triangle_sr30_light_p2_rig45_illusory (1.60%)",
+   "triangle_sr30_light_p3_rig45_illusory (1.60%)",
+   "triangle_sr30_light_p4_rig45_illusory (1.60%)"
+  ],
+  "core45": [
+   "square_sr70_dark_p0_rig10 (1.58%, 36 of 2281 px)",
+   "square_sr70_dark_p1_rig10 (1.58%, 36 of 2281 px)",
+   "square_sr70_dark_p2_rig10 (1.58%, 36 of 2281 px)",
+   "square_sr70_dark_p3_rig10 (1.58%, 36 of 2281 px)",
+   "square_sr70_dark_p4_rig10 (1.58%, 36 of 2281 px)",
+   "square_sr70_light_p0_rig10 (1.58%, 36 of 2281 px)",
+   "square_sr70_light_p1_rig10 (1.58%, 36 of 2281 px)",
+   "square_sr70_light_p2_rig10 (1.58%, 36 of 2281 px)",
+   "square_sr70_light_p3_rig10 (1.58%, 36 of 2281 px)",
+   "square_sr70_light_p4_rig10 (1.58%, 36 of 2281 px)",
+   "triangle_sr70_dark_p0_rig45 (1.62%, 5 of 308 px)",
+   "triangle_sr70_dark_p1_rig45 (1.62%, 5 of 308 px)",
+   "triangle_sr70_dark_p2_rig45 (1.62%, 5 of 308 px)",
+   "triangle_sr70_dark_p3_rig45 (1.62%, 5 of 308 px)",
+   "triangle_sr70_dark_p4_rig45 (1.62%, 5 of 308 px)",
+   "triangle_sr70_light_p0_rig45 (1.62%, 5 of 308 px)",
+   "triangle_sr70_light_p1_rig45 (1.62%, 5 of 308 px)",
+   "triangle_sr70_light_p2_rig45 (1.62%, 5 of 308 px)",
+   "triangle_sr70_light_p3_rig45 (1.62%, 5 of 308 px)",
+   "triangle_sr70_light_p4_rig45 (1.62%, 5 of 308 px)"
+  ]
+ },
+ "n_failures": 0
+}
+### G0_render_check_only end 2026-11-18T11:52:48Z exit 0 wall 632s

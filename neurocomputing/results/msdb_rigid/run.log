@@ -1,0 +1,50 @@
+=== run_msdb.sh start 2026-11-18T16:16:59Z wrapper pid 11854 (host load: 2.68 2.50 2.48)
+2026-11-18T16:16:59Z displays already in $LAN_PROJECT_ROOT/neuro/reanalysis/scores_rigid/DeepGaze_MSDB.json: 0 of 660
+2026-11-18T16:16:59Z scoring pid 11864 (written to $LAN_PROJECT_ROOT/neuro/reanalysis/results/msdb_rigid/PID); command: nice -n 10 env OMP_NUM_THREADS=4 $LAN_SAL_SRC/.venv/bin/python -B scoring/score_rigid.py msdb
+Using cache found in $HOME/.cache/torch/hub/facebookresearch_dinov2_6a62615
+$HOME/.cache/torch/hub/facebookresearch_dinov2_6a62615/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+$HOME/.cache/torch/hub/facebookresearch_dinov2_6a62615/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+$HOME/.cache/torch/hub/facebookresearch_dinov2_6a62615/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+2026-11-18T16:17:09Z pid 11864: no Metal client at ~10 s
+2026-11-18T16:17:24Z pid 11864: no Metal client at ~25 s
+DeepGaze MSDB: pipeline check on 4 stim_v3 images, max |r_inside - published| per tag: DeepGaze_MSDB 0.00e+00
+DeepGaze MSDB: 660 of 660 images to score, tags ['DeepGaze_MSDB']
+  DeepGaze MSDB 20/660 268s (13.40 s/img)
+  DeepGaze MSDB 40/660 537s (13.43 s/img)
+  DeepGaze MSDB 60/660 807s (13.45 s/img)
+  DeepGaze MSDB 80/660 1112s (13.90 s/img)
+  DeepGaze MSDB 100/660 1412s (14.12 s/img)
+  DeepGaze MSDB 120/660 1682s (14.02 s/img)
+  DeepGaze MSDB 140/660 1895s (13.53 s/img)
+  DeepGaze MSDB 160/660 2063s (12.89 s/img)
+  DeepGaze MSDB 180/660 2217s (12.32 s/img)
+  DeepGaze MSDB 200/660 2352s (11.76 s/img)
+  DeepGaze MSDB 220/660 2493s (11.33 s/img)
+  DeepGaze MSDB 240/660 2669s (11.12 s/img)
+  DeepGaze MSDB 260/660 2940s (11.31 s/img)
+  DeepGaze MSDB 280/660 3205s (11.45 s/img)
+  DeepGaze MSDB 300/660 3472s (11.57 s/img)
+  DeepGaze MSDB 320/660 3738s (11.68 s/img)
+  DeepGaze MSDB 340/660 4004s (11.78 s/img)
+  DeepGaze MSDB 360/660 4268s (11.86 s/img)
+  DeepGaze MSDB 380/660 4533s (11.93 s/img)
+  DeepGaze MSDB 400/660 4799s (12.00 s/img)
+  DeepGaze MSDB 420/660 5064s (12.06 s/img)
+  DeepGaze MSDB 440/660 5331s (12.11 s/img)
+  DeepGaze MSDB 460/660 5594s (12.16 s/img)
+  DeepGaze MSDB 480/660 5855s (12.20 s/img)
+  DeepGaze MSDB 500/660 6149s (12.30 s/img)
+  DeepGaze MSDB 520/660 6426s (12.36 s/img)
+  DeepGaze MSDB 540/660 6592s (12.21 s/img)
+  DeepGaze MSDB 560/660 6737s (12.03 s/img)
+  DeepGaze MSDB 580/660 6940s (11.97 s/img)
+  DeepGaze MSDB 600/660 7259s (12.10 s/img)
+  DeepGaze MSDB 620/660 7542s (12.16 s/img)
+  DeepGaze MSDB 640/660 7885s (12.32 s/img)
+  DeepGaze MSDB 660/660 8224s (12.46 s/img)
+DeepGaze MSDB: done, 8224s
+2026-11-18T18:36:06Z final: 660 of 660 displays; md5 scores_rigid/DeepGaze_MSDB.json 51db3832b635ebc15523d3e3e8a9bc14; copy results/msdb_rigid/DeepGaze_MSDB.json
+MSDB_DONE

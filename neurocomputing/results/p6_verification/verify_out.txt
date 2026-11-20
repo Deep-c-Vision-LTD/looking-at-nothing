@@ -1,0 +1,59 @@
+==== dinov2reg_L6: R4 E +0.1114 [+0.0921, +0.1304] p 0.0002 t 12.87 CC 0.737734 -> rounded 0.7377 thr 0.7077; seeds E ['+0.1134', '+0.1025', '+0.1183'] sizes {'336': 0.1081040722974278, '448': 0.11469900639385817}
+  R1n CC 0.700030 (round 0.7) seeds ['0.7004', '0.7005', '0.6992'] valid False E +0.0672 [+0.0531, +0.0817] p 0.0002 holm nan keeps None opp False seedE ['+0.0637', '+0.0537', '+0.0842'] size +0.0704/+0.0640
+  R1  CC 0.689851 (round 0.6899) seeds ['0.6861', '0.6923', '0.6911'] valid False E +0.0384 [+0.0215, +0.0560] p 0.0006 holm nan keeps None opp False seedE ['+0.0334', '+0.0371', '+0.0446'] size +0.0467/+0.0300
+  R2  CC 0.722512 (round 0.7225) seeds ['0.7207', '0.7213', '0.7255'] valid True E +0.1065 [+0.0879, +0.1250] p 0.0002 holm 0.0004 keeps True opp False seedE ['+0.1096', '+0.1032', '+0.1067'] size +0.1065/+0.1064
+  R3  CC 0.723256 (round 0.7233) seeds ['0.7194', '0.7244', '0.7259'] valid True E +0.0979 [+0.0673, +0.1282] p 0.0002 holm 0.0004 keeps True opp False seedE ['+0.1109', '+0.0989', '+0.0838'] size +0.1183/+0.0774
+==== dinov2reg_L12: R4 E +0.0473 [+0.0228, +0.0723] p 0.0008 t 4.22 CC 0.728237 -> rounded 0.7282 thr 0.6982; seeds E ['+0.0652', '+0.0366', '+0.0400'] sizes {'336': 0.04630106321233312, '448': 0.048284882157949315}
+  R1n CC 0.707772 (round 0.7078) seeds ['0.7092', '0.7057', '0.7084'] valid True E +0.0033 [-0.0458, +0.0537] p 0.8598 holm 1.0000 keeps False opp False seedE ['-0.0224', '+0.0316', '+0.0006'] size +0.0084/-0.0018
+  R1  CC 0.705478 (round 0.7055) seeds ['0.7034', '0.7076', '0.7055'] valid True E -0.0351 [-0.0688, -0.0007] p 0.0404 holm 0.1616 keeps False opp True seedE ['-0.0329', '-0.0874', '+0.0151'] size -0.0309/-0.0393
+  R2  CC 0.722269 (round 0.7223) seeds ['0.7200', '0.7206', '0.7263'] valid True E +0.0255 [-0.0142, +0.0660] p 0.1874 holm 0.5622 keeps False opp False seedE ['+0.0185', '+0.0190', '+0.0388'] size +0.0216/+0.0293
+  R3  CC 0.726418 (round 0.7264) seeds ['0.7262', '0.7235', '0.7295'] valid True E +0.0034 [-0.0393, +0.0470] p 0.8440 holm 1.0000 keeps False opp False seedE ['+0.0300', '-0.0163', '-0.0035'] size +0.0019/+0.0049
+==== dinov2ms_L7L11: R4 E -0.0225 [-0.0347, -0.0103] p 0.0018 t -4.08 CC 0.745117 -> rounded 0.7451 thr 0.7151; seeds E ['-0.0185', '-0.0284', '-0.0205'] sizes {'336': -0.0198188297181689, '448': -0.025108236561901965}
+  R1n CC 0.727950 (round 0.7279) seeds ['0.7262', '0.7284', '0.7292'] valid True E +0.0121 [-0.0013, +0.0255] p 0.0674 holm 0.0674 keeps False opp False seedE ['+0.0016', '+0.0168', '+0.0180'] size +0.0023/+0.0219
+  R1  CC 0.723771 (round 0.7238) seeds ['0.7230', '0.7240', '0.7243'] valid True E +0.0198 [+0.0063, +0.0343] p 0.0136 holm 0.0272 keeps False opp True seedE ['+0.0459', '+0.0338', '-0.0204'] size +0.0140/+0.0256
+  R2  CC 0.736585 (round 0.7366) seeds ['0.7366', '0.7361', '0.7371'] valid True E -0.0188 [-0.0299, -0.0078] p 0.0046 holm 0.0138 keeps True opp False seedE ['-0.0114', '-0.0214', '-0.0236'] size -0.0248/-0.0129
+  R3  CC 0.735756 (round 0.7358) seeds ['0.7376', '0.7338', '0.7359'] valid True E -0.0450 [-0.0641, -0.0254] p 0.0008 holm 0.0032 keeps True opp False seedE ['-0.0072', '-0.0593', '-0.0684'] size -0.0513/-0.0386
+==== dinov2ms_L11: R4 E -0.0948 [-0.1241, -0.0654] p 0.0004 t -7.23 CC 0.730896 -> rounded 0.7309 thr 0.7009; seeds E ['-0.0974', '-0.0998', '-0.0871'] sizes {'336': -0.08508882523459292, '448': -0.10445859391096111}
+  R1n CC 0.714678 (round 0.7147) seeds ['0.7145', '0.7130', '0.7165'] valid True E -0.0532 [-0.0688, -0.0373] p 0.0004 holm 0.0016 keeps True opp False seedE ['-0.0174', '-0.0423', '-0.0999'] size -0.0571/-0.0493
+  R1  CC 0.708735 (round 0.7087) seeds ['0.7078', '0.7101', '0.7083'] valid True E -0.0315 [-0.0450, -0.0179] p 0.0008 holm 0.0016 keeps True opp False seedE ['-0.0223', '-0.0335', '-0.0388'] size -0.0309/-0.0322
+  R2  CC 0.725152 (round 0.7252) seeds ['0.7252', '0.7276', '0.7227'] valid True E -0.0803 [-0.1014, -0.0595] p 0.0004 holm 0.0016 keeps True opp False seedE ['-0.0845', '-0.0752', '-0.0813'] size -0.0748/-0.0859
+  R3  CC 0.727092 (round 0.7271) seeds ['0.7271', '0.7272', '0.7269'] valid True E -0.0920 [-0.1275, -0.0558] p 0.0006 holm 0.0016 keeps True opp False seedE ['-0.0609', '-0.0935', '-0.1214'] size -0.0919/-0.0920
+max |independent - primary_P6.json| over P6 fields: 0.0
+P3 ('dinov2_L12', 'R1n'): E -0.1338 [-0.1805, -0.0865] p 0.0004 holm 0.0032 keep True opp False
+P3 ('dinov2_L12', 'R1'): E -0.0729 [-0.0978, -0.0469] p 0.0004 holm 0.0032 keep True opp False
+P3 ('dinov2_L12', 'R2'): E -0.1298 [-0.1677, -0.0912] p 0.0006 holm 0.0032 keep True opp False
+P3 ('dinov2_L12', 'R3'): E -0.1303 [-0.1925, -0.0672] p 0.0008 holm 0.0032 keep True opp False
+P3 ('dinov2_L6', 'R2'): E +0.0717 [+0.0538, +0.0895] p 0.0002 holm 0.0020 keep True opp False
+P3 ('dinov2_L6', 'R3'): E +0.0679 [+0.0516, +0.0840] p 0.0002 holm 0.0020 keep True opp False
+P3 ('siglip_L24', 'R2'): E +0.1362 [+0.1140, +0.1585] p 0.0004 holm 0.0032 keep True opp False
+P3 ('siglip_L24', 'R3'): E +0.1133 [+0.0204, +0.2043] p 0.0266 holm 0.0266 keep True opp False
+P3 ('iie_shapenetc', 'R2'): E +0.0803 [+0.0420, +0.1188] p 0.0006 holm 0.0032 keep True opp False
+P3 ('iie_shapenetc', 'R3'): E +0.1086 [+0.0647, +0.1525] p 0.0008 holm 0.0032 keep True opp False
+P3 n_keep 10 of 10; opposite 0 ; max |indep - json| 0
+P3 ref dinov2_L12: E -0.1142 [-0.1518, -0.0759] p 0.0006
+P3 ref dinov2_L6: E +0.0898 [+0.0665, +0.1128] p 0.0002
+P3 ref siglip_L24: E +0.1435 [+0.1154, +0.1717] p 0.0004
+P3 ref iie_shapenetc: E +0.0820 [+0.0428, +0.1216] p 0.0006
+engine title decision (recomputed): {
+ "title": null,
+ "stronger": false,
+ "narrowed": true,
+ "reasons": [
+  "(c) dinov2reg_L12 R1n: valid but does not keep R4's sign after Holm adjustment",
+  "(c) dinov2reg_L12 R1: valid but does not keep R4's sign after Holm adjustment",
+  "(c) dinov2reg_L12 R2: valid but does not keep R4's sign after Holm adjustment",
+  "(c) dinov2reg_L12 R3: valid but does not keep R4's sign after Holm adjustment",
+  "(c) dinov2ms_L7L11 R1n: valid but does not keep R4's sign after Holm adjustment",
+  "(c) dinov2ms_L7L11 R1: valid but does not keep R4's sign after Holm adjustment",
+  "(d) dinov2reg_L12 R1: valid cell with an interval of the opposite sign",
+  "(d) dinov2ms_L7L11 R1: valid cell with an interval of the opposite sign"
+ ],
+ "note": "neither T1 nor the scoped title: narrow the claim and title to the feature sets where no valid readout has an opposite-signed interval"
+}
+matches json title: True
+
+Sets with a valid opposite-signed interval:
+  dinov2reg_L6 []
+  dinov2reg_L12 ['R1']
+  dinov2ms_L7L11 ['R1']
+  dinov2ms_L11 []

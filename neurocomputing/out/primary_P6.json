@@ -1,0 +1,747 @@
+{
+ "created_utc": "2026-11-20T01:20:26Z",
+ "result": {
+  "P3": {
+   "cells": {
+    "dinov2_L12|R1n": {
+     "mean": -0.13382656456691727,
+     "se": 0.021122880645709878,
+     "t": -6.335620922712446,
+     "p": 0.0004,
+     "p_min": 0.0002,
+     "ci": [
+      -0.18049918493544387,
+      -0.0865294709386864
+     ],
+     "draws": 9999,
+     "enumerated": false,
+     "G": 12,
+     "N": 60,
+     "skew_cluster_means": -0.41511631065231386,
+     "ref_sign": -1,
+     "ref_defined": true,
+     "p_holm": 0.0032,
+     "keeps_sign": true,
+     "opposite_sign_interval": false
+    },
+    "dinov2_L12|R1": {
+     "mean": -0.07290285071837617,
+     "se": 0.011356118042226988,
+     "t": -6.419698214415494,
+     "p": 0.0004,
+     "p_min": 0.0002,
+     "ci": [
+      -0.09781858094873869,
+      -0.04691857692158767
+     ],
+     "draws": 9999,
+     "enumerated": false,
+     "G": 12,
+     "N": 60,
+     "skew_cluster_means": -0.11369019535948709,
+     "ref_sign": -1,
+     "ref_defined": true,
+     "p_holm": 0.0032,
+     "keeps_sign": true,
+     "opposite_sign_interval": false
+    },
+    "dinov2_L12|R2": {
+     "mean": -0.12983697515516981,
+     "se": 0.01685567631020186,
+     "t": -7.702863579350196,
+     "p": 0.0006,
+     "p_min": 0.0002,
+     "ci": [
+      -0.16765566437244067,
+      -0.09120389196558154
+     ],
+     "draws": 9999,
+     "enumerated": false,
+     "G": 12,
+     "N": 60,
+     "skew_cluster_means": -0.06026975094680175,
+     "ref_sign": -1,
+     "ref_defined": true,
+     "p_holm": 0.0032,
+     "keeps_sign": true,
+     "opposite_sign_interval": false
+    },
+    "dinov2_L12|R3": {
+     "mean": -0.13030193217048516,
+     "se": 0.027682765023844806,
+     "t": -4.706969555181659,
+     "p": 0.0008,
+     "p_min": 0.0002,
+     "ci": [
+      -0.1924817117529827,
+      -0.06715631832923599
+     ],
+     "draws": 9999,
+     "enumerated": false,
+     "G": 12,
+     "N": 60,
+     "skew_cluster_means": -0.458518038465414,
+     "ref_sign": -1,
+     "ref_defined": true,
+     "p_holm": 0.0032,
+     "keeps_sign": true,
+     "opposite_sign_interval": false
+    },
+    "dinov2_L6|R2": {
+     "mean": 0.07167981283201523,
+     "se": 0.008150197802403449,
+     "t": 8.794855605943361,
+     "p": 0.0002,
+     "p_min": 0.0002,
+     "ci": [
+      0.05379755296941097,
+      0.08948298471204681
+     ],
+     "draws": 9999,
+     "enumerated": false,
+     "G": 12,
+     "N": 60,
+     "skew_cluster_means": -0.6041518922795255,
+     "ref_sign": 1,
+     "ref_defined": true,
+     "p_holm": 0.002,
+     "keeps_sign": true,
+     "opposite_sign_interval": false
+    },
+    "dinov2_L6|R3": {
+     "mean": 0.06786010570651495,
+     "se": 0.007241213698540073,
+     "t": 9.371371779871165,
+     "p": 0.0002,
+     "p_min": 0.0002,
+     "ci": [
+      0.05164686488055528,
+      0.08399948008500623
+     ],
+     "draws": 9999,
+     "enumerated": false,
+     "G": 12,
+     "N": 60,
+     "skew_cluster_means": -0.21666015792210552,
+     "ref_sign": 1,
+     "ref_defined": true,
+     "p_holm": 0.002,
+     "keeps_sign": true,
+     "opposite_sign_interval": false
+    },
+    "siglip_L24|R2": {
+     "mean": 0.13623627780275366,
+     "se": 0.010300074578316954,
+     "t": 13.226727318028297,
+     "p": 0.0004,
+     "p_min": 0.0002,
+     "ci": [
+      0.11400792823911493,
+      0.1584733674515247
+     ],
+     "draws": 9999,
+     "enumerated": false,
+     "G": 12,
+     "N": 60,
+     "skew_cluster_means": 1.1375073955841706,
+     "ref_sign": 1,
+     "ref_defined": true,
+     "p_holm": 0.0032,
+     "keeps_sign": true,
+     "opposite_sign_interval": false
+    },
+    "siglip_L24|R3": {
+     "mean": 0.11332680097365183,
+     "se": 0.039946445385895236,
+     "t": 2.836968342962165,
+     "p": 0.0266,
+     "p_min": 0.0002,
+     "ci": [
+      0.020416550691787536,
+      0.20425315929599092
+     ],
+     "draws": 9999,
+     "enumerated": false,
+     "G": 12,
+     "N": 60,
+     "skew_cluster_means": 0.12182211859473539,
+     "ref_sign": 1,
+     "ref_defined": true,
+     "p_holm": 0.0266,
+     "keeps_sign": true,
+     "opposite_sign_interval": false
+    },
+    "iie_shapenetc|R2": {
+     "mean": 0.08031410488987481,
+     "se": 0.017539953470420738,
+     "t": 4.578923486046642,
+     "p": 0.0006,
+     "p_min": 0.0002,
+     "ci": [
+      0.04195700397331569,
+      0.1188165300050569
+     ],
+     "draws": 9999,
+     "enumerated": false,
+     "G": 12,
+     "N": 60,
+     "skew_cluster_means": 0.6568280843513629,
+     "ref_sign": 1,
+     "ref_defined": true,
+     "p_holm": 0.0032,
+     "keeps_sign": true,
+     "opposite_sign_interval": false
+    },
+    "iie_shapenetc|R3": {
+     "mean": 0.1085998824879415,
+     "se": 0.019663705667148437,
+     "t": 5.5228594409534955,
+     "p": 0.0008,
+     "p_min": 0.0002,
+     "ci": [
+      0.06465349318209071,
+      0.15247491894930465
+     ],
+     "draws": 9999,
+     "enumerated": false,
+     "G": 12,
+     "N": 60,
+     "skew_cluster_means": -0.6718895996398734,
+     "ref_sign": 1,
+     "ref_defined": true,
+     "p_holm": 0.0032,
+     "keeps_sign": true,
+     "opposite_sign_interval": false
+    }
+   },
+   "n": 10,
+   "n_keep": 10,
+   "any_opposite": false,
+   "reference": {
+    "dinov2_L12": {
+     "mean": -0.11424647603601298,
+     "ci": [
+      -0.15180091814951807,
+      -0.07593310460195629
+     ],
+     "p": 0.0006
+    },
+    "dinov2_L6": {
+     "mean": 0.08978825897526249,
+     "ci": [
+      0.06647088902873102,
+      0.11281615295224809
+     ],
+     "p": 0.0002
+    },
+    "siglip_L24": {
+     "mean": 0.14351126855727717,
+     "ci": [
+      0.11536011817294783,
+      0.171701018252736
+     ],
+     "p": 0.0004
+    },
+    "iie_shapenetc": {
+     "mean": 0.0820074645536373,
+     "ci": [
+      0.0428274476125855,
+      0.1216161655372596
+     ],
+     "p": 0.0006
+    }
+   },
+   "wording": "No readout that met the accuracy criterion changed the sign set by the checkpoint and layer read (10 of 10 non-reference cells after Holm adjustment; 30 of 30 seed point estimates had that sign)."
+  },
+  "P6": {
+   "dinov2reg_L6": {
+    "status": "run",
+    "R4": {
+     "mean": 0.11140153934564298,
+     "se": 0.008654537843589624,
+     "t": 12.872037924954894,
+     "p": 0.0002,
+     "p_min": 0.0002,
+     "ci": [
+      0.09210122563643458,
+      0.13036441097033627
+     ],
+     "draws": 9999,
+     "enumerated": false,
+     "G": 12,
+     "N": 60,
+     "skew_cluster_means": -0.3899661518185286
+    },
+    "R4_cc": 0.7377339843908945,
+    "R4_sign": 1,
+    "R4_reference_defined": true,
+    "cells": {
+     "R1n": {
+      "mean": 0.06719102803136481,
+      "se": 0.006951297632816143,
+      "t": 9.665969086716268,
+      "p": 0.0002,
+      "p_min": 0.0002,
+      "ci": [
+       0.05309632235284897,
+       0.08167986058184196
+      ],
+      "draws": 9999,
+      "enumerated": false,
+      "G": 12,
+      "N": 60,
+      "skew_cluster_means": 1.4230171267753497,
+      "valid": false,
+      "status": "below criterion",
+      "cc": 0.7000295545160772,
+      "threshold": 0.7077,
+      "opposite_sign_interval": false
+     },
+     "R1": {
+      "mean": 0.03837847145898778,
+      "se": 0.007663880351354822,
+      "t": 5.007707544938802,
+      "p": 0.0006,
+      "p_min": 0.0002,
+      "ci": [
+       0.021547307845342877,
+       0.05601939873503612
+      ],
+      "draws": 9999,
+      "enumerated": false,
+      "G": 12,
+      "N": 60,
+      "skew_cluster_means": 0.12070319936932616,
+      "valid": false,
+      "status": "below criterion",
+      "cc": 0.6898507983485856,
+      "threshold": 0.7077,
+      "opposite_sign_interval": false
+     },
+     "R2": {
+      "mean": 0.10647811350196669,
+      "se": 0.008396020293472025,
+      "t": 12.681974290218701,
+      "p": 0.0002,
+      "p_min": 0.0002,
+      "ci": [
+       0.08788310158380247,
+       0.12497428752050271
+      ],
+      "draws": 9999,
+      "enumerated": false,
+      "G": 12,
+      "N": 60,
+      "skew_cluster_means": -0.14342772301475024,
+      "valid": true,
+      "status": "valid",
+      "cc": 0.7225120024383068,
+      "threshold": 0.7077,
+      "opposite_sign_interval": false,
+      "p_holm": 0.0004,
+      "keeps_sign": true
+     },
+     "R3": {
+      "mean": 0.09786885172639777,
+      "se": 0.013294787205329785,
+      "t": 7.361445521080837,
+      "p": 0.0002,
+      "p_min": 0.0002,
+      "ci": [
+       0.06732692252490999,
+       0.12819146043381738
+      ],
+      "draws": 9999,
+      "enumerated": false,
+      "G": 12,
+      "N": 60,
+      "skew_cluster_means": 0.15997427276345347,
+      "valid": true,
+      "status": "valid",
+      "cc": 0.7232555796205996,
+      "threshold": 0.7077,
+      "opposite_sign_interval": false,
+      "p_holm": 0.0004,
+      "keeps_sign": true
+     }
+    },
+    "n_valid": 2,
+    "n_keep": 2,
+    "complete": true
+   },
+   "dinov2reg_L12": {
+    "status": "run",
+    "R4": {
+     "mean": 0.04729297268514121,
+     "se": 0.011207633277244524,
+     "t": 4.219710934079432,
+     "p": 0.0008,
+     "p_min": 0.0002,
+     "ci": [
+      0.02280399440091969,
+      0.07232124232134125
+     ],
+     "draws": 9999,
+     "enumerated": false,
+     "G": 12,
+     "N": 60,
+     "skew_cluster_means": 0.6054958031144043
+    },
+    "R4_cc": 0.7282367978990077,
+    "R4_sign": 1,
+    "R4_reference_defined": true,
+    "cells": {
+     "R1n": {
+      "mean": 0.003294303142139879,
+      "se": 0.021904137017060742,
+      "t": 0.1503963903975767,
+      "p": 0.8598,
+      "p_min": 0.0002,
+      "ci": [
+       -0.04581662853955356,
+       0.053664630002275414
+      ],
+      "draws": 9999,
+      "enumerated": false,
+      "G": 12,
+      "N": 60,
+      "skew_cluster_means": -0.47484190448588526,
+      "valid": true,
+      "status": "valid",
+      "cc": 0.7077724545697371,
+      "threshold": 0.6982,
+      "opposite_sign_interval": false,
+      "p_holm": 1.0,
+      "keeps_sign": false
+     },
+     "R1": {
+      "mean": -0.035067151575963296,
+      "se": 0.014986877968700137,
+      "t": -2.3398570168650537,
+      "p": 0.0404,
+      "p_min": 0.0002,
+      "ci": [
+       -0.06878915953201217,
+       -0.0006738902840779243
+      ],
+      "draws": 9999,
+      "enumerated": false,
+      "G": 12,
+      "N": 60,
+      "skew_cluster_means": -0.4948684955316855,
+      "valid": true,
+      "status": "valid",
+      "cc": 0.7054776842395465,
+      "threshold": 0.6982,
+      "opposite_sign_interval": true,
+      "p_holm": 0.1616,
+      "keeps_sign": false
+     },
+     "R2": {
+      "mean": 0.025462700865151896,
+      "se": 0.017810979582786827,
+      "t": 1.4296069874651907,
+      "p": 0.1874,
+      "p_min": 0.0002,
+      "ci": [
+       -0.01418911985944921,
+       0.06603691855555892
+      ],
+      "draws": 9999,
+      "enumerated": false,
+      "G": 12,
+      "N": 60,
+      "skew_cluster_means": 0.1984605511038828,
+      "valid": true,
+      "status": "valid",
+      "cc": 0.7222689900298914,
+      "threshold": 0.6982,
+      "opposite_sign_interval": false,
+      "p_holm": 0.5622,
+      "keeps_sign": false
+     },
+     "R3": {
+      "mean": 0.0034168735136516776,
+      "se": 0.019074688982504813,
+      "t": 0.1791312831777028,
+      "p": 0.844,
+      "p_min": 0.0002,
+      "ci": [
+       -0.03926838639207263,
+       0.0470214038884051
+      ],
+      "draws": 9999,
+      "enumerated": false,
+      "G": 12,
+      "N": 60,
+      "skew_cluster_means": -0.17512346365399914,
+      "valid": true,
+      "status": "valid",
+      "cc": 0.72641817599535,
+      "threshold": 0.6982,
+      "opposite_sign_interval": false,
+      "p_holm": 1.0,
+      "keeps_sign": false
+     }
+    },
+    "n_valid": 4,
+    "n_keep": 0,
+    "complete": true
+   },
+   "dinov2ms_L7L11": {
+    "status": "run",
+    "R4": {
+     "mean": -0.022463533140035432,
+     "se": 0.005510717602399106,
+     "t": -4.076335381485683,
+     "p": 0.0018,
+     "p_min": 0.0002,
+     "ci": [
+      -0.03466613036993419,
+      -0.010311483864294159
+     ],
+     "draws": 9999,
+     "enumerated": false,
+     "G": 12,
+     "N": 60,
+     "skew_cluster_means": -0.42476469352465174
+    },
+    "R4_cc": 0.7451168557008107,
+    "R4_sign": -1,
+    "R4_reference_defined": true,
+    "cells": {
+     "R1n": {
+      "mean": 0.01212065892952237,
+      "se": 0.006135241655333332,
+      "t": 1.9755797098857462,
+      "p": 0.0674,
+      "p_min": 0.0002,
+      "ci": [
+       -0.0012629788729603426,
+       0.025484967718314173
+      ],
+      "draws": 9999,
+      "enumerated": false,
+      "G": 12,
+      "N": 60,
+      "skew_cluster_means": -0.13917099225833615,
+      "valid": true,
+      "status": "valid",
+      "cc": 0.7279499768217406,
+      "threshold": 0.7151,
+      "opposite_sign_interval": false,
+      "p_holm": 0.0674,
+      "keeps_sign": false
+     },
+     "R1": {
+      "mean": 0.019769323344596936,
+      "se": 0.006407525540274072,
+      "t": 3.0853288403359738,
+      "p": 0.0136,
+      "p_min": 0.0002,
+      "ci": [
+       0.006327802224650783,
+       0.03428798124362729
+      ],
+      "draws": 9999,
+      "enumerated": false,
+      "G": 12,
+      "N": 60,
+      "skew_cluster_means": -1.0644281048062867,
+      "valid": true,
+      "status": "valid",
+      "cc": 0.723770811309417,
+      "threshold": 0.7151,
+      "opposite_sign_interval": true,
+      "p_holm": 0.0272,
+      "keeps_sign": false
+     },
+     "R2": {
+      "mean": -0.018807234303050493,
+      "se": 0.005046228832206011,
+      "t": -3.7269880000326334,
+      "p": 0.0046,
+      "p_min": 0.0002,
+      "ci": [
+       -0.029907709576507173,
+       -0.007791714785992674
+      ],
+      "draws": 9999,
+      "enumerated": false,
+      "G": 12,
+      "N": 60,
+      "skew_cluster_means": -0.002024145171899439,
+      "valid": true,
+      "status": "valid",
+      "cc": 0.7365852551162243,
+      "threshold": 0.7151,
+      "opposite_sign_interval": false,
+      "p_holm": 0.0138,
+      "keeps_sign": true
+     },
+     "R3": {
+      "mean": -0.04495926111896944,
+      "se": 0.008707108266521237,
+      "t": -5.1635123559721245,
+      "p": 0.0008,
+      "p_min": 0.0002,
+      "ci": [
+       -0.06412269956968047,
+       -0.02537119303752748
+      ],
+      "draws": 9999,
+      "enumerated": false,
+      "G": 12,
+      "N": 60,
+      "skew_cluster_means": 0.316340465901687,
+      "valid": true,
+      "status": "valid",
+      "cc": 0.7357562860846519,
+      "threshold": 0.7151,
+      "opposite_sign_interval": false,
+      "p_holm": 0.0032,
+      "keeps_sign": true
+     }
+    },
+    "n_valid": 4,
+    "n_keep": 2,
+    "complete": true
+   },
+   "dinov2ms_L11": {
+    "status": "run",
+    "R4": {
+     "mean": -0.09477370957277702,
+     "se": 0.013115067072398918,
+     "t": -7.226322904000343,
+     "p": 0.0004,
+     "p_min": 0.0002,
+     "ci": [
+      -0.12413037440658148,
+      -0.06540360155828709
+     ],
+     "draws": 9999,
+     "enumerated": false,
+     "G": 12,
+     "N": 60,
+     "skew_cluster_means": -0.20228839854365302
+    },
+    "R4_cc": 0.7308955978850523,
+    "R4_sign": -1,
+    "R4_reference_defined": true,
+    "cells": {
+     "R1n": {
+      "mean": -0.053185392900048374,
+      "se": 0.007165705656583573,
+      "t": -7.422212891368723,
+      "p": 0.0004,
+      "p_min": 0.0002,
+      "ci": [
+       -0.06879282512725127,
+       -0.03731245684334111
+      ],
+      "draws": 9999,
+      "enumerated": false,
+      "G": 12,
+      "N": 60,
+      "skew_cluster_means": -0.29763749907675563,
+      "valid": true,
+      "status": "valid",
+      "cc": 0.7146782867610456,
+      "threshold": 0.7009,
+      "opposite_sign_interval": false,
+      "p_holm": 0.0016,
+      "keeps_sign": true
+     },
+     "R1": {
+      "mean": -0.03152442368311632,
+      "se": 0.006165993820413525,
+      "t": -5.112626545091497,
+      "p": 0.0008,
+      "p_min": 0.0002,
+      "ci": [
+       -0.045035903205470976,
+       -0.01789350160475725
+      ],
+      "draws": 9999,
+      "enumerated": false,
+      "G": 12,
+      "N": 60,
+      "skew_cluster_means": -0.2923307814466468,
+      "valid": true,
+      "status": "valid",
+      "cc": 0.708735378086567,
+      "threshold": 0.7009,
+      "opposite_sign_interval": false,
+      "p_holm": 0.0016,
+      "keeps_sign": true
+     },
+     "R2": {
+      "mean": -0.08034983401684669,
+      "se": 0.009383438077638263,
+      "t": -8.562941786585553,
+      "p": 0.0004,
+      "p_min": 0.0002,
+      "ci": [
+       -0.10140536646193028,
+       -0.05945602245644546
+      ],
+      "draws": 9999,
+      "enumerated": false,
+      "G": 12,
+      "N": 60,
+      "skew_cluster_means": 0.11634382471717923,
+      "valid": true,
+      "status": "valid",
+      "cc": 0.7251524609824022,
+      "threshold": 0.7009,
+      "opposite_sign_interval": false,
+      "p_holm": 0.0016,
+      "keeps_sign": true
+     },
+     "R3": {
+      "mean": -0.09196167609663003,
+      "se": 0.015738259450604013,
+      "t": -5.843192278362183,
+      "p": 0.0006,
+      "p_min": 0.0002,
+      "ci": [
+       -0.12754091558941946,
+       -0.05584715902270574
+      ],
+      "draws": 9999,
+      "enumerated": false,
+      "G": 12,
+      "N": 60,
+      "skew_cluster_means": 0.3382536838403055,
+      "valid": true,
+      "status": "valid",
+      "cc": 0.7270919787387053,
+      "threshold": 0.7009,
+      "opposite_sign_interval": false,
+      "p_holm": 0.0016,
+      "keeps_sign": true
+     }
+    },
+    "n_valid": 4,
+    "n_keep": 4,
+    "complete": true
+   }
+  },
+  "title": {
+   "title": null,
+   "stronger": false,
+   "narrowed": true,
+   "reasons": [
+    "(c) dinov2reg_L12 R1n: valid but does not keep R4's sign after Holm adjustment",
+    "(c) dinov2reg_L12 R1: valid but does not keep R4's sign after Holm adjustment",
+    "(c) dinov2reg_L12 R2: valid but does not keep R4's sign after Holm adjustment",
+    "(c) dinov2reg_L12 R3: valid but does not keep R4's sign after Holm adjustment",
+    "(c) dinov2ms_L7L11 R1n: valid but does not keep R4's sign after Holm adjustment",
+    "(c) dinov2ms_L7L11 R1: valid but does not keep R4's sign after Holm adjustment",
+    "(d) dinov2reg_L12 R1: valid cell with an interval of the opposite sign",
+    "(d) dinov2ms_L7L11 R1: valid cell with an interval of the opposite sign"
+   ],
+   "note": "neither T1 nor the scoped title: narrow the claim and title to the feature sets where no valid readout has an opposite-signed interval"
+  }
+ }
+}

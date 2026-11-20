@@ -1,0 +1,6 @@
+### EX_a3_reg_tokens_analyze start 2026-11-18T14:19:41Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 V3_DEVICE=cpu PYTHONDONTWRITEBYTECODE=1 $LAN_SAL_SRC/.venv/bin/python -B explore/a3_reg_tokens_analyze.py
+### EX_a3_reg_tokens_analyze pid 6921
+$LAN_PROJECT_ROOT/neuro/reanalysis/explore/a3_reg_tokens_analyze.py:198: RuntimeWarning: Mean of empty slice
+  return np.nanmean(np.stack([a, b]), 0)
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/results/explore/A3iv_registers_tokens.json
+### EX_a3_reg_tokens_analyze end 2026-11-18T14:19:46Z exit 0 wall 5s

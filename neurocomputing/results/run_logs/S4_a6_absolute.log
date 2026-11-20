@@ -1,0 +1,71 @@
+### S4_a6_absolute start 2026-11-18T23:52:36Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONDONTWRITEBYTECODE=1 V3_DEVICE=cpu $LAN_SAL_SRC/.venv/bin/python -B -I explore/a6_absolute.py
+### S4_a6_absolute pid 28244
+23:52:39 loading MIT1003 held-out maps and the training-map baseline
+### S4_a6_absolute pid 28244: no Metal client at first check (~5 s)
+23:52:42 baseline from 12803 of 12803 training maps; min 0.01101 max 106.3
+$LAN_PROJECT_ROOT/neuro/reanalysis/explore/a6_absolute.py:129: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at $PYTORCH_SRC/torch/csrc/utils/tensor_numpy.cpp:219.)
+  x = torch.from_numpy(np.asarray(F[b:b + bs], dtype=np.float16)).float()
+23:52:48 1/60 dinov2_L12_R4_s0 gate pass (dCC 4.04e-08, dNSS 4.55e-07, max per-image 1.23e-05); cb off CC 0.7234 NSS 2.5888 IG 1.1190 6.4s
+23:52:52 2/60 dinov2_L12_R1n_s0 gate pass (dCC 1.53e-07, dNSS 4.71e-07, max per-image 1.54e-05); cb off CC 0.7138 NSS 2.5512 IG 1.0364 3.4s
+23:52:55 3/60 dinov2_L12_R1n_s1 gate pass (dCC 1.50e-07, dNSS 7.90e-07, max per-image 2.14e-05); cb off CC 0.7125 NSS 2.5454 IG 1.0389 3.3s
+23:52:58 4/60 dinov2_L12_R1n_s2 gate pass (dCC 2.33e-07, dNSS 7.20e-07, max per-image 2.93e-05); cb off CC 0.7090 NSS 2.5311 IG 1.0156 3.4s
+23:53:02 5/60 dinov2_L12_R1_s0 gate pass (dCC 3.18e-07, dNSS 1.09e-06, max per-image 1.69e-05); cb off CC 0.7056 NSS 2.5026 IG 1.0000 3.3s
+23:53:05 6/60 dinov2_L12_R1_s1 gate pass (dCC 1.15e-07, dNSS 5.43e-07, max per-image 1.32e-05); cb off CC 0.7102 NSS 2.5336 IG 1.0128 3.3s
+### S4_a6_absolute pid 28244: no Metal client at ~30 s
+23:53:08 7/60 dinov2_L12_R1_s2 gate pass (dCC 3.84e-07, dNSS 1.49e-06, max per-image 1.19e-05); cb off CC 0.7110 NSS 2.5320 IG 1.0122 3.3s
+23:53:14 8/60 dinov2_L12_R2_s0 gate pass (dCC 2.65e-07, dNSS 1.13e-06, max per-image 1.28e-05); cb off CC 0.7190 NSS 2.5550 IG 1.0970 5.9s
+23:53:20 9/60 dinov2_L12_R2_s1 gate pass (dCC 1.48e-07, dNSS 1.00e-06, max per-image 1.26e-05); cb off CC 0.7185 NSS 2.5615 IG 1.1018 5.5s
+23:53:25 10/60 dinov2_L12_R2_s2 gate pass (dCC 1.18e-07, dNSS 9.28e-07, max per-image 1.08e-05); cb off CC 0.7197 NSS 2.5578 IG 1.0979 5.5s
+23:53:29 11/60 dinov2_L12_R3_s0 gate pass (dCC 7.11e-08, dNSS 1.37e-06, max per-image 1.61e-05); cb off CC 0.7270 NSS 2.5766 IG 1.1079 3.8s
+23:53:33 12/60 dinov2_L12_R3_s1 gate pass (dCC 1.25e-07, dNSS 1.06e-06, max per-image 1.94e-05); cb off CC 0.7242 NSS 2.5691 IG 1.0929 3.8s
+23:53:37 13/60 dinov2_L12_R3_s2 gate pass (dCC 2.44e-08, dNSS 9.37e-07, max per-image 1.48e-05); cb off CC 0.7230 NSS 2.5642 IG 1.0837 3.7s
+23:53:42 14/60 dinov2_L12_R4_s1 gate pass (dCC 1.83e-07, dNSS 1.41e-06, max per-image 1.10e-05); cb off CC 0.7239 NSS 2.5897 IG 1.1168 5.8s
+23:53:48 15/60 dinov2_L12_R4_s2 gate pass (dCC 3.21e-07, dNSS 2.05e-06, max per-image 1.27e-05); cb off CC 0.7210 NSS 2.5737 IG 1.1027 6.1s
+23:53:52 16/60 dinov2_L6_R1n_s0 gate pass (dCC 3.46e-07, dNSS 1.60e-06, max per-image 1.47e-05); cb off CC 0.7011 NSS 2.4826 IG 1.0229 3.5s
+23:53:55 17/60 dinov2_L6_R1n_s1 gate pass (dCC 3.01e-07, dNSS 1.19e-06, max per-image 1.29e-05); cb off CC 0.6987 NSS 2.4795 IG 1.0212 3.5s
+23:53:59 18/60 dinov2_L6_R1n_s2 gate pass (dCC 1.68e-07, dNSS 4.51e-07, max per-image 1.43e-05); cb off CC 0.7012 NSS 2.4801 IG 1.0255 3.4s
+23:54:02 19/60 dinov2_L6_R1_s0 gate pass (dCC 3.73e-07, dNSS 1.35e-06, max per-image 1.37e-05); cb off CC 0.6939 NSS 2.4610 IG 1.0029 3.4s
+23:54:06 20/60 dinov2_L6_R1_s1 gate pass (dCC 3.26e-07, dNSS 1.27e-06, max per-image 1.80e-05); cb off CC 0.7017 NSS 2.5011 IG 1.0337 3.4s
+23:54:09 21/60 dinov2_L6_R1_s2 gate pass (dCC 3.57e-07, dNSS 1.30e-06, max per-image 1.45e-05); cb off CC 0.6983 NSS 2.4904 IG 1.0159 3.3s
+23:54:15 22/60 dinov2_L6_R2_s0 gate pass (dCC 2.07e-07, dNSS 1.08e-06, max per-image 9.62e-06); cb off CC 0.7226 NSS 2.5643 IG 1.1012 6.1s
+23:54:21 23/60 dinov2_L6_R2_s1 gate pass (dCC 1.04e-09, dNSS 9.24e-08, max per-image 1.31e-05); cb off CC 0.7230 NSS 2.5767 IG 1.1024 6.0s
+23:54:27 24/60 dinov2_L6_R2_s2 gate pass (dCC 1.21e-08, dNSS 1.42e-07, max per-image 1.07e-05); cb off CC 0.7243 NSS 2.5726 IG 1.1062 6.1s
+23:54:31 25/60 dinov2_L6_R3_s0 gate pass (dCC 2.25e-07, dNSS 8.24e-07, max per-image 1.15e-05); cb off CC 0.7249 NSS 2.5634 IG 1.1071 3.8s
+23:54:35 26/60 dinov2_L6_R3_s1 gate pass (dCC 2.30e-07, dNSS 7.90e-07, max per-image 1.69e-05); cb off CC 0.7266 NSS 2.5728 IG 1.1019 3.8s
+23:54:38 27/60 dinov2_L6_R3_s2 gate pass (dCC 2.59e-07, dNSS 1.09e-06, max per-image 1.07e-05); cb off CC 0.7257 NSS 2.5688 IG 1.1013 3.7s
+23:54:44 28/60 dinov2_L6_R4_s0 gate pass (dCC 7.51e-08, dNSS 4.23e-07, max per-image 1.28e-05); cb off CC 0.7380 NSS 2.6688 IG 1.1651 6.1s
+23:54:51 29/60 dinov2_L6_R4_s1 gate pass (dCC 1.15e-07, dNSS 3.22e-07, max per-image 1.35e-05); cb off CC 0.7393 NSS 2.6827 IG 1.1787 6.4s
+23:54:57 30/60 dinov2_L6_R4_s2 gate pass (dCC 2.89e-08, dNSS 4.67e-07, max per-image 1.30e-05); cb off CC 0.7458 NSS 2.6985 IG 1.1847 6.3s
+23:55:01 31/60 siglip_L24_R1n_s0 gate pass (dCC 4.85e-07, dNSS 1.41e-06, max per-image 3.65e-05); cb off CC 0.6670 NSS 2.3922 IG 0.8782 3.7s
+23:55:04 32/60 siglip_L24_R1n_s1 gate pass (dCC 3.93e-07, dNSS 1.26e-06, max per-image 2.10e-05); cb off CC 0.6738 NSS 2.4198 IG 0.8849 3.5s
+23:55:08 33/60 siglip_L24_R1n_s2 gate pass (dCC 1.27e-07, dNSS 1.34e-07, max per-image 2.32e-05); cb off CC 0.6713 NSS 2.4041 IG 0.8880 3.5s
+23:55:11 34/60 siglip_L24_R1_s0 gate pass (dCC 3.76e-07, dNSS 1.26e-06, max per-image 2.38e-05); cb off CC 0.6695 NSS 2.3919 IG 0.8842 3.4s
+23:55:15 35/60 siglip_L24_R1_s1 gate pass (dCC 1.62e-07, dNSS 3.06e-07, max per-image 2.90e-05); cb off CC 0.6713 NSS 2.3910 IG 0.8771 3.5s
+23:55:18 36/60 siglip_L24_R1_s2 gate pass (dCC 3.62e-07, dNSS 1.42e-06, max per-image 2.37e-05); cb off CC 0.6775 NSS 2.4246 IG 0.9053 3.4s
+23:55:25 37/60 siglip_L24_R2_s0 gate pass (dCC 1.29e-07, dNSS 4.78e-07, max per-image 2.00e-05); cb off CC 0.7146 NSS 2.5427 IG 1.0849 6.6s
+23:55:31 38/60 siglip_L24_R2_s1 gate pass (dCC 2.94e-07, dNSS 6.33e-07, max per-image 1.63e-05); cb off CC 0.7130 NSS 2.5437 IG 1.0822 6.1s
+23:55:37 39/60 siglip_L24_R2_s2 gate pass (dCC 4.63e-07, dNSS 9.23e-07, max per-image 1.98e-05); cb off CC 0.7149 NSS 2.5534 IG 1.0862 6.0s
+23:55:41 40/60 siglip_L24_R3_s0 gate pass (dCC 1.79e-07, dNSS 4.87e-07, max per-image 3.01e-05); cb off CC 0.6993 NSS 2.4871 IG 1.0161 4.0s
+23:55:45 41/60 siglip_L24_R3_s1 gate pass (dCC 2.84e-07, dNSS 6.36e-07, max per-image 2.55e-05); cb off CC 0.6976 NSS 2.4831 IG 1.0056 4.1s
+23:55:49 42/60 siglip_L24_R3_s2 gate pass (dCC 1.47e-07, dNSS 2.36e-07, max per-image 2.98e-05); cb off CC 0.7004 NSS 2.4933 IG 1.0141 4.1s
+23:55:55 43/60 siglip_L24_R4_s0 gate pass (dCC 2.54e-07, dNSS 5.89e-07, max per-image 2.42e-05); cb off CC 0.7182 NSS 2.5738 IG 1.1030 6.3s
+23:56:02 44/60 siglip_L24_R4_s1 gate pass (dCC 5.48e-07, dNSS 1.39e-06, max per-image 2.81e-05); cb off CC 0.7193 NSS 2.5742 IG 1.1039 6.4s
+23:56:08 45/60 siglip_L24_R4_s2 gate pass (dCC 1.61e-08, dNSS 4.21e-07, max per-image 2.83e-05); cb off CC 0.7203 NSS 2.5818 IG 1.0994 6.2s
+23:56:12 46/60 iie_shapenetc_R1n_s0 gate pass (dCC 1.69e-07, dNSS 9.37e-07, max per-image 8.58e-06); cb off CC 0.6645 NSS 2.3714 IG 0.9162 4.4s
+23:56:16 47/60 iie_shapenetc_R1n_s1 gate pass (dCC 9.88e-08, dNSS 5.10e-07, max per-image 9.48e-06); cb off CC 0.6548 NSS 2.3257 IG 0.8852 3.9s
+23:56:20 48/60 iie_shapenetc_R1n_s2 gate pass (dCC 1.17e-07, dNSS 3.95e-07, max per-image 8.47e-06); cb off CC 0.6570 NSS 2.3321 IG 0.8986 3.8s
+23:56:24 49/60 iie_shapenetc_R1_s0 gate pass (dCC 1.60e-07, dNSS 6.93e-07, max per-image 8.21e-06); cb off CC 0.6590 NSS 2.3482 IG 0.9133 3.8s
+23:56:28 50/60 iie_shapenetc_R1_s1 gate pass (dCC 9.69e-08, dNSS 6.08e-07, max per-image 1.12e-05); cb off CC 0.6517 NSS 2.3089 IG 0.8811 3.8s
+23:56:31 51/60 iie_shapenetc_R1_s2 gate pass (dCC 1.21e-07, dNSS 2.95e-07, max per-image 1.04e-05); cb off CC 0.6562 NSS 2.3417 IG 0.9048 3.8s
+23:56:42 52/60 iie_shapenetc_R2_s0 gate pass (dCC 1.46e-07, dNSS 5.25e-07, max per-image 5.89e-06); cb off CC 0.7136 NSS 2.5338 IG 1.0721 10.7s
+23:56:52 53/60 iie_shapenetc_R2_s1 gate pass (dCC 4.02e-08, dNSS 1.15e-08, max per-image 7.08e-06); cb off CC 0.7097 NSS 2.5236 IG 1.0696 10.4s
+23:57:03 54/60 iie_shapenetc_R2_s2 gate pass (dCC 1.01e-08, dNSS 1.36e-07, max per-image 6.47e-06); cb off CC 0.7116 NSS 2.5295 IG 1.0727 10.8s
+23:57:09 55/60 iie_shapenetc_R3_s0 gate pass (dCC 3.91e-08, dNSS 4.02e-07, max per-image 6.23e-06); cb off CC 0.6726 NSS 2.3815 IG 0.9575 5.4s
+23:57:14 56/60 iie_shapenetc_R3_s1 gate pass (dCC 2.91e-08, dNSS 1.07e-08, max per-image 6.66e-06); cb off CC 0.6731 NSS 2.3834 IG 0.9559 5.4s
+23:57:19 57/60 iie_shapenetc_R3_s2 gate pass (dCC 2.97e-08, dNSS 3.09e-08, max per-image 8.75e-06); cb off CC 0.6784 NSS 2.4087 IG 0.9707 5.4s
+23:57:30 58/60 iie_shapenetc_R4_s0 gate pass (dCC 2.88e-08, dNSS 3.14e-07, max per-image 7.48e-06); cb off CC 0.7263 NSS 2.6030 IG 1.1158 10.7s
+23:57:41 59/60 iie_shapenetc_R4_s1 gate pass (dCC 2.52e-08, dNSS 1.36e-07, max per-image 8.76e-06); cb off CC 0.7231 NSS 2.5999 IG 1.1164 11.3s
+23:57:53 60/60 iie_shapenetc_R4_s2 gate pass (dCC 2.01e-08, dNSS 1.17e-07, max per-image 6.33e-06); cb off CC 0.7258 NSS 2.6076 IG 1.1249 11.4s
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/results/explore/A6_absolute.json
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/results/explore/A6_absolute.md
+### S4_a6_absolute end 2026-11-18T23:58:06Z exit 0 wall 330s

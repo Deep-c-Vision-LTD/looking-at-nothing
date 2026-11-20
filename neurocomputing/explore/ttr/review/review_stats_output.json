@@ -1,0 +1,208 @@
+{
+ "lines": [
+  "review_stats.py: independent recomputation (numbers in ttr_results.json)",
+  "MATCH  1a siglip_L24 R4 plain E (mean, WCU lo, hi, WCR p): mine ['+0.143512', '+0.115361', '+0.171701', '+0.000400'] | ttr_results ['+0.143512', '+0.115361', '+0.171701', '+0.000400'] | max |diff| 1.11e-16",
+  "MATCH  1b siglip_L24 R4 ttr - plain dE (mean, WCU lo, hi, WCR p): mine ['-0.023179', '-0.030619', '-0.015718', '+0.000200'] | ttr_results ['-0.023179', '-0.030619', '-0.015718', '+0.000200'] | max |diff| 2.78e-17",
+  "MATCH  2 clip_L24 ttr - plain dE (mean, WCU lo, hi): mine ['-0.029973', '-0.046764', '-0.013917'] | ttr_results ['-0.029973', '-0.046764', '-0.013917'] | max |diff| 0.00e+00",
+  "MATCH  3 siglip_L24 R3 ttr E (mean, WCU lo, hi, WCR p): mine ['+0.069751', '-0.012477', '+0.151129', '+0.081000'] | ttr_results ['+0.069751', '-0.012477', '+0.151129', '+0.081000'] | max |diff| 1.39e-17",
+  "MATCH  4 clip_L16 ttr E (mean, WCU lo, hi): mine ['+0.007909', '-0.005709', '+0.021741'] | ttr_results ['+0.007909', '-0.005709', '+0.021741'] | max |diff| 0.00e+00",
+  "MATCH  5 P4-like ttr A20 (R2, R4, R2 - R4): mine ['+0.781827', '+0.687614', '+0.094213'] | ttr_results ['+0.781827', '+0.687614', '+0.094213'] | max |diff| 0.00e+00",
+  "MATCH  5 P4-like plain A20 (R2, R4, R2 - R4): mine ['+0.679309', '+0.630134', '+0.049175'] | ttr_results ['+0.679309', '+0.630134', '+0.049175'] | max |diff| 3.33e-16",
+  "MATCH  6 MIT1003 CC R4 (plain, ttr, ttr - plain): mine ['+0.720785', '+0.718647', '-0.002138'] | ttr_results ['+0.720785', '+0.718647', '-0.002138'] | max |diff| 0.00e+00",
+  "MATCH  7 siglip_L4 ttr vs reg0 on stim_v3: 960 values, max |diff| 0 (ttr vs plain 0.00169)",
+  "MATCH  8 gate K siglip block 24 Kanizsa 336 p90 (plain, ttr): mine ['+4.601136', '+1.658642'] | ttr_results ['+4.601136', '+1.658642'] | max |diff| 0.00e+00",
+  "MATCH  8 gate K clip block 16 Kanizsa 336 p90 (plain, ttr): mine ['+27.885859', '+1.962322'] | ttr_results ['+27.885859', '+1.962322'] | max |diff| 0.00e+00",
+  "MATCH  8 gate K clip block 12 Kanizsa 336 p90 (plain, ttr): mine ['+12.037322', '+2.144790'] | ttr_results ['+12.037322', '+2.144790'] | max |diff| 0.00e+00",
+  "MATCH  8b gate K clip block 16 Kanizsa 336 share > 2x median (plain, ttr): mine ['+0.032480', '+0.000000'] | ttr_results ['+0.032480', '+0.000000'] | max |diff| 0.00e+00",
+  "MATCH  9a gate P clip_L16 stim_v3 336: 480 values, max |diff| 3.91e-07",
+  "MATCH  9b gate P siglip_L24 R4 s1 stim_alt 448: 360 values, max |diff| 3.6e-05",
+  "MATCH  10 selection images: 100 (same list for both backbones: True); overlap with the 24 A15(a) MIT1003 images 0; display-like names 0"
+ ],
+ "checks": {
+  "1a siglip_L24 R4 plain E (mean, WCU lo, hi, WCR p)": {
+   "mine": [
+    0.1435115831505341,
+    0.11536058573596056,
+    0.17170108541763177,
+    0.0004
+   ],
+   "ttr_results": [
+    0.14351158315053417,
+    0.11536058573596056,
+    0.17170108541763188,
+    0.0004
+   ],
+   "max_abs_diff": 1.1102230246251565e-16,
+   "match": true
+  },
+  "1b siglip_L24 R4 ttr - plain dE (mean, WCU lo, hi, WCR p)": {
+   "mine": [
+    -0.023179440372319518,
+    -0.03061897384148924,
+    -0.015718196237825936,
+    0.0002
+   ],
+   "ttr_results": [
+    -0.02317944037231953,
+    -0.03061897384148925,
+    -0.01571819623782591,
+    0.0002
+   ],
+   "max_abs_diff": 2.7755575615628914e-17,
+   "match": true
+  },
+  "2 clip_L24 ttr - plain dE (mean, WCU lo, hi)": {
+   "mine": [
+    -0.029973457874914167,
+    -0.04676402878123509,
+    -0.013916715162728868
+   ],
+   "ttr_results": [
+    -0.029973457874914167,
+    -0.04676402878123509,
+    -0.013916715162728868
+   ],
+   "max_abs_diff": 0.0,
+   "match": true
+  },
+  "3 siglip_L24 R3 ttr E (mean, WCU lo, hi, WCR p)": {
+   "mine": [
+    0.0697510203206177,
+    -0.012476633720295796,
+    0.15112874047924146,
+    0.081
+   ],
+   "ttr_results": [
+    0.0697510203206177,
+    -0.01247663372029581,
+    0.15112874047924146,
+    0.081
+   ],
+   "max_abs_diff": 1.3877787807814457e-17,
+   "match": true
+  },
+  "4 clip_L16 ttr E (mean, WCU lo, hi)": {
+   "mine": [
+    0.007908649525057602,
+    -0.005709002412350532,
+    0.021741291434500955
+   ],
+   "ttr_results": [
+    0.007908649525057602,
+    -0.005709002412350532,
+    0.021741291434500955
+   ],
+   "max_abs_diff": 0.0,
+   "match": true
+  },
+  "5 P4-like ttr A20 (R2, R4, R2 - R4)": {
+   "mine": [
+    0.7818271642306155,
+    0.6876138341098319,
+    0.09421333012078359
+   ],
+   "ttr_results": [
+    0.7818271642306155,
+    0.6876138341098319,
+    0.09421333012078359
+   ],
+   "max_abs_diff": 0.0,
+   "match": true
+  },
+  "5 P4-like plain A20 (R2, R4, R2 - R4)": {
+   "mine": [
+    0.679308673438485,
+    0.6301337383432087,
+    0.04917493509527626
+   ],
+   "ttr_results": [
+    0.6793086734384851,
+    0.6301337383432085,
+    0.049174935095276595
+   ],
+   "max_abs_diff": 3.3306690738754696e-16,
+   "match": true
+  },
+  "6 MIT1003 CC R4 (plain, ttr, ttr - plain)": {
+   "mine": [
+    0.7207852123181026,
+    0.7186467819909255,
+    -0.0021384303271770877
+   ],
+   "ttr_results": [
+    0.7207852123181026,
+    0.7186467819909255,
+    -0.0021384303271770877
+   ],
+   "max_abs_diff": 0.0,
+   "match": true
+  },
+  "7 siglip_L4 ttr vs reg0": {
+   "n": 960,
+   "max_abs_diff": 0.0,
+   "ttr_vs_plain": 0.001686846043116308
+  },
+  "8 gate K siglip block 24 Kanizsa 336 p90 (plain, ttr)": {
+   "mine": [
+    4.601136186658787,
+    1.6586421171743133
+   ],
+   "ttr_results": [
+    4.601136186658787,
+    1.6586421171743133
+   ],
+   "max_abs_diff": 0.0,
+   "match": true
+  },
+  "8 gate K clip block 16 Kanizsa 336 p90 (plain, ttr)": {
+   "mine": [
+    27.885858588157618,
+    1.9623223141581934
+   ],
+   "ttr_results": [
+    27.885858588157618,
+    1.9623223141581934
+   ],
+   "max_abs_diff": 0.0,
+   "match": true
+  },
+  "8 gate K clip block 12 Kanizsa 336 p90 (plain, ttr)": {
+   "mine": [
+    12.0373215412246,
+    2.144789737970405
+   ],
+   "ttr_results": [
+    12.0373215412246,
+    2.144789737970405
+   ],
+   "max_abs_diff": 0.0,
+   "match": true
+  },
+  "8b gate K clip block 16 Kanizsa 336 share > 2x median (plain, ttr)": {
+   "mine": [
+    0.03247974537037037,
+    0.0
+   ],
+   "ttr_results": [
+    0.03247974537037037,
+    0.0
+   ],
+   "max_abs_diff": 0.0,
+   "match": true
+  },
+  "9a gate P clip_L16 stim_v3 336": {
+   "n": 480,
+   "max_abs_diff": 3.9126436079950366e-07
+  },
+  "9b gate P siglip_L24 R4 s1 stim_alt 448": {
+   "n": 360,
+   "max_abs_diff": 3.598644293634212e-05
+  },
+  "10 selection images": {
+   "n": 100,
+   "same_both": true,
+   "overlap_a15": 0,
+   "display_like": 0
+  }
+ }
+}

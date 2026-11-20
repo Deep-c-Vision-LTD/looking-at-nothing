@@ -1,0 +1,395 @@
+{
+ "created_utc": "2026-11-18T13:59:46Z",
+ "require_public_hashed_files": 33,
+ "gate0_bit_identity": {
+  "source": "results/run_logs/gate0_bit_identity.txt",
+  "pass_lines": [
+   "PASS: 33 fixed files unchanged",
+   "PASS: 33 fixed files in the clone equal the rule hashes",
+   "PASS: 1312 staged files identical in the clone",
+   "PASS: stim_rigid trees identical (diff -rq)"
+  ],
+  "rule_sha256_files": [
+   [
+    "53d8dc20853231ddcfe669ffff6bf258bf0d9c17a77407d1869ec6c02b7ec914",
+    "neuro/reanalysis/REANALYSIS_RULE.sha256"
+   ],
+   [
+    "53d8dc20853231ddcfe669ffff6bf258bf0d9c17a77407d1869ec6c02b7ec914",
+    "neuro/push_staging/neurocomputing/REANALYSIS_RULE.sha256"
+   ],
+   [
+    "53d8dc20853231ddcfe669ffff6bf258bf0d9c17a77407d1869ec6c02b7ec914",
+    "looking-at-nothing/neurocomputing/REANALYSIS_RULE.sha256"
+   ]
+  ],
+  "clone_refs": [
+   [
+    "looking-at-nothing/.git/HEAD",
+    "ref: refs/heads/main"
+   ],
+   [
+    "looking-at-nothing/.git/refs/heads/main",
+    "f67c7df98c27136be8ff3db4eea57d1973579602"
+   ],
+   [
+    "looking-at-nothing/.git/refs/remotes/origin/main",
+    "f67c7df98c27136be8ff3db4eea57d1973579602"
+   ]
+  ]
+ },
+ "gate0_post_run": {
+  "source": "results/run_logs/gate0_post_run_hashes.txt",
+  "text": "post-run: 33 fixed files unchanged"
+ },
+ "S1_sanity": {
+  "source": "out/sanity.json",
+  "created_utc": "2026-11-18T11:41:55Z",
+  "checks": 94,
+  "failed": 0,
+  "passed": true
+ },
+ "G0_render_check_only": {
+  "source": "results/run_logs/G0_render_check_only.log",
+  "n_displays": 660,
+  "n_rigid": 480,
+  "n_mis_control180": 180,
+  "n_configs": 60,
+  "n_refused": 0,
+  "checks": {
+   "n_configs": 60,
+   "phi0_pixels_equal": 120,
+   "phi0_aoi_equal": 60,
+   "phi0_core_equal": 60,
+   "mis_inward_pixels_equal": 180
+  },
+  "n_failures": 0,
+  "worst": {
+   "ink_mass_rel": 0.0024011298848478587,
+   "ink_count_rel_reported": 0.005601944826128316,
+   "vertex_centroid_px": 1.1368683772161603e-13,
+   "ind_centroid_shift_px": 0.10969000685914695,
+   "ink_centroid_shift_px": 0.2930639865030977,
+   "inside_centroid_shift_px": 0.5352987454362907,
+   "polygon_centroid_shift_px": 0.7071067811865476,
+   "notch_ink_px": 0,
+   "notch_area_rel": 0.016009371339320577,
+   "rim_px_phi0_max": 191,
+   "rim_px_rot_max": 244,
+   "mis_notch_dir_dev_deg": 0.0,
+   "mis_orient_corr_with_mis_min": 0.9915081599491175,
+   "mis_orient_corr_with_control180_max": 0.8851835816647862,
+   "mis_ink_mass_rel": 0.0017362438885787067
+  }
+ },
+ "pipeline_checks": {
+  "15 local nulls": {
+   "source": "results/run_logs/R1_local_nulls.log (also logs/local_nulls_rigid.log)",
+   "displays": 8,
+   "max_abs_diff": 0.0,
+   "tol": 1e-09,
+   "passed": true
+  },
+  "DeepGaze IIE": {
+   "source": "results/run_logs/R2_iie.log (also logs/score_rigid.log)",
+   "displays": 4,
+   "per_tag": {
+    "DeepGaze_IIE": 1.2e-09
+   },
+   "max_abs_diff": 1.2e-09,
+   "tol": 0.0001,
+   "passed": true
+  },
+  "sweep dinov2": {
+   "source": "results/run_logs/R3_sweep_all.log (also logs/score_rigid.log)",
+   "displays": 4,
+   "per_tag": {
+    "dinov2_L2_s336": 0.0,
+    "dinov2_L4_s336": 0.0,
+    "dinov2_L6_s336": 0.0,
+    "dinov2_L8_s336": 0.0,
+    "dinov2_L10_s336": 0.0,
+    "dinov2_L12_s336": 0.0,
+    "dinov2_L2_s448": 0.0,
+    "dinov2_L4_s448": 9.05e-10,
+    "dinov2_L6_s448": 1.81e-12,
+    "dinov2_L8_s448": 5.69e-12,
+    "dinov2_L10_s448": 6.99e-10,
+    "dinov2_L12_s448": 0.0
+   },
+   "max_abs_diff": 9.05e-10,
+   "tol": 0.0001,
+   "passed": true
+  },
+  "sweep clip": {
+   "source": "results/run_logs/R3b_sweep_clip.log (also logs/score_rigid.log)",
+   "displays": 4,
+   "per_tag": {
+    "clip_L4_s336": 1.04e-08,
+    "clip_L8_s336": 4.61e-08,
+    "clip_L12_s336": 1.09e-07,
+    "clip_L16_s336": 1.17e-07,
+    "clip_L20_s336": 1.21e-07,
+    "clip_L24_s336": 9.4e-08,
+    "clip_L4_s448": 2.48e-08,
+    "clip_L8_s448": 7.62e-08,
+    "clip_L12_s448": 6.67e-08,
+    "clip_L16_s448": 1.33e-07,
+    "clip_L20_s448": 1.76e-07,
+    "clip_L24_s448": 4.1e-07
+   },
+   "max_abs_diff": 4.1e-07,
+   "tol": 0.0001,
+   "passed": true
+  },
+  "sweep siglip": {
+   "source": "results/run_logs/R3c_sweep_siglip.log (also logs/score_rigid.log)",
+   "displays": 4,
+   "per_tag": {
+    "siglip_L4_s336": 0.0,
+    "siglip_L8_s336": 0.0,
+    "siglip_L12_s336": 0.0,
+    "siglip_L16_s336": 0.0,
+    "siglip_L20_s336": 0.0,
+    "siglip_L24_s336": 0.0,
+    "siglip_L4_s448": 4.47e-08,
+    "siglip_L8_s448": 5.54e-08,
+    "siglip_L12_s448": 1.14e-07,
+    "siglip_L16_s448": 2.31e-07,
+    "siglip_L20_s448": 2.6e-07,
+    "siglip_L24_s448": 2.31e-07
+   },
+   "max_abs_diff": 2.6e-07,
+   "tol": 0.0001,
+   "passed": true
+  },
+  "heads dinov2": {
+   "source": "check_cpu_dinov2/eval_check.json",
+   "worst": 1.2593177303621417e-05,
+   "values": 792,
+   "tol": 0.0001,
+   "per_file": {
+    "stim_v3_dinov2_L12_R4_s0.json": {
+     "values": 396,
+     "max_abs_diff": 9.14237338700552e-06
+    },
+    "stim_v3_dinov2_L6_R1n_s0.json": {
+     "values": 396,
+     "max_abs_diff": 1.2593177303621417e-05
+    }
+   },
+   "passed": true
+  },
+  "heads siglip": {
+   "source": "check_cpu_siglip/eval_check.json",
+   "worst": 1.6384263989199788e-05,
+   "values": 792,
+   "tol": 0.0001,
+   "per_file": {
+    "stim_v3_siglip_L24_R1n_s0.json": {
+     "values": 396,
+     "max_abs_diff": 1.6384263989199788e-05
+    },
+    "stim_v3_siglip_L24_R4_s0.json": {
+     "values": 396,
+     "max_abs_diff": 1.1689471980769195e-05
+    }
+   },
+   "passed": true
+  },
+  "heads iie": {
+   "source": "check_cpu_iie/eval_check.json",
+   "worst": 9.63620804683707e-06,
+   "values": 792,
+   "tol": 0.0001,
+   "per_file": {
+    "stim_v3_iie_shapenetc_R1n_s0.json": {
+     "values": 396,
+     "max_abs_diff": 9.63620804683707e-06
+    },
+    "stim_v3_iie_shapenetc_R4_s0.json": {
+     "values": 396,
+     "max_abs_diff": 3.3266231681539082e-06
+    }
+   },
+   "passed": true
+  },
+  "heads dinov2reg": {
+   "source": "check_cpu_dinov2reg/eval_check.json",
+   "worst": 5.352938456493206e-06,
+   "values": 396,
+   "tol": 0.0001,
+   "per_file": {
+    "stim_v3_dinov2reg_L12_R4_s0.json": {
+     "values": 396,
+     "max_abs_diff": 5.352938456493206e-06
+    }
+   },
+   "passed": true
+  }
+ },
+ "steps": [
+  {
+   "label": "S1_sanity",
+   "start_utc": "2026-11-18T11:41:48Z",
+   "end_utc": "2026-11-18T11:41:58Z",
+   "wall_s": 10,
+   "exit": 0,
+   "command": "nice -n 10 $LAN_SAL_SRC/.venv/bin/python -B -I analyze_re.py sanity"
+  },
+  {
+   "label": "G0_render_check_only",
+   "start_utc": "2026-11-18T11:42:16Z",
+   "end_utc": "2026-11-18T11:52:48Z",
+   "wall_s": 632,
+   "exit": 0,
+   "command": "nice -n 10 $LAN_SAL_SRC/.venv/bin/python -B -I render_rigid.py --check-only"
+  },
+  {
+   "label": "R1_local_nulls",
+   "start_utc": "2026-11-18T11:53:24Z",
+   "end_utc": "2026-11-18T12:04:56Z",
+   "wall_s": 692,
+   "exit": 0,
+   "command": "nice -n 10 env OMP_NUM_THREADS=4 $LAN_SAL_SRC/.venv/bin/python -B -I scoring/local_nulls_rigid.py"
+  },
+  {
+   "label": "R2_iie",
+   "start_utc": "2026-11-18T12:04:56Z",
+   "end_utc": "2026-11-18T12:25:28Z",
+   "wall_s": 1232,
+   "exit": 0,
+   "command": "nice -n 10 env OMP_NUM_THREADS=4 $LAN_SAL_SRC/.venv/bin/python -B scoring/score_rigid.py iie"
+  },
+  {
+   "label": "R3_sweep_all",
+   "start_utc": "2026-11-18T12:25:28Z",
+   "end_utc": "2026-11-18T12:32:59Z",
+   "wall_s": 451,
+   "exit": 1,
+   "command": "nice -n 10 env OMP_NUM_THREADS=4 $LAN_SAL_SRC/.venv/bin/python -B scoring/score_rigid.py sweep:dinov2 sweep:clip sweep:siglip"
+  },
+  {
+   "label": "R3b_sweep_clip",
+   "start_utc": "2026-11-18T12:33:53Z",
+   "end_utc": "2026-11-18T12:49:54Z",
+   "wall_s": 961,
+   "exit": 0,
+   "command": "nice -n 10 env OMP_NUM_THREADS=4 $LAN_SAL_SRC/.venv/bin/python -B scoring/score_rigid.py sweep:clip"
+  },
+  {
+   "label": "R3c_sweep_siglip",
+   "start_utc": "2026-11-18T12:49:54Z",
+   "end_utc": "2026-11-18T13:03:56Z",
+   "wall_s": 842,
+   "exit": 0,
+   "command": "nice -n 10 env OMP_NUM_THREADS=4 $LAN_SAL_SRC/.venv/bin/python -B scoring/score_rigid.py sweep:siglip"
+  },
+  {
+   "label": "R4a_eval_dinov2",
+   "start_utc": "2026-11-18T13:03:56Z",
+   "end_utc": "2026-11-18T13:04:11Z",
+   "wall_s": 15,
+   "exit": 0,
+   "command": "nice -n 10 env V3_DEVICE=cpu V3_MAPS=none OMP_NUM_THREADS=4 $LAN_SAL_SRC/.venv/bin/python -B eval_re.py --bb dinov2 --out ../check_cpu_dinov2 --ckpt-dir $LAN_PROJECT_ROOT/v3/gpu/full/ckpt --tags dinov2_L12_R4_s0,dinov2_L6_R1n_s0 --stimsets stim_v3 --stim-limit 18 --skip-mit"
+  },
+  {
+   "label": "R4a_check_dinov2",
+   "start_utc": "2026-11-18T13:04:11Z",
+   "end_utc": "2026-11-18T13:04:16Z",
+   "wall_s": 5,
+   "exit": 0,
+   "command": "$LAN_SAL_SRC/.venv/bin/python -B -I check_eval_re.py ../check_cpu_dinov2 --tol 1e-4"
+  },
+  {
+   "label": "R4a_eval_siglip",
+   "start_utc": "2026-11-18T13:04:16Z",
+   "end_utc": "2026-11-18T13:04:41Z",
+   "wall_s": 25,
+   "exit": 0,
+   "command": "nice -n 10 env V3_DEVICE=cpu V3_MAPS=none OMP_NUM_THREADS=4 $LAN_SAL_SRC/.venv/bin/python -B eval_re.py --bb siglip --out ../check_cpu_siglip --ckpt-dir $LAN_PROJECT_ROOT/v3/gpu/full/ckpt --tags siglip_L24_R4_s0,siglip_L24_R1n_s0 --stimsets stim_v3 --stim-limit 18 --skip-mit"
+  },
+  {
+   "label": "R4a_check_siglip",
+   "start_utc": "2026-11-18T13:04:41Z",
+   "end_utc": "2026-11-18T13:04:46Z",
+   "wall_s": 5,
+   "exit": 0,
+   "command": "$LAN_SAL_SRC/.venv/bin/python -B -I check_eval_re.py ../check_cpu_siglip --tol 1e-4"
+  },
+  {
+   "label": "R4a_eval_iie",
+   "start_utc": "2026-11-18T13:04:46Z",
+   "end_utc": "2026-11-18T13:05:06Z",
+   "wall_s": 20,
+   "exit": 0,
+   "command": "nice -n 10 env V3_DEVICE=cpu V3_MAPS=none OMP_NUM_THREADS=4 $LAN_SAL_SRC/.venv/bin/python -B eval_re.py --bb iie --out ../check_cpu_iie --ckpt-dir $LAN_PROJECT_ROOT/v3/gpu/full/ckpt --tags iie_shapenetc_R4_s0,iie_shapenetc_R1n_s0 --stimsets stim_v3 --stim-limit 18 --skip-mit"
+  },
+  {
+   "label": "R4a_check_iie",
+   "start_utc": "2026-11-18T13:05:06Z",
+   "end_utc": "2026-11-18T13:05:11Z",
+   "wall_s": 5,
+   "exit": 0,
+   "command": "$LAN_SAL_SRC/.venv/bin/python -B -I check_eval_re.py ../check_cpu_iie --tol 1e-4"
+  },
+  {
+   "label": "R4a_eval_dinov2reg",
+   "start_utc": "2026-11-18T13:05:11Z",
+   "end_utc": "2026-11-18T13:05:26Z",
+   "wall_s": 15,
+   "exit": 0,
+   "command": "nice -n 10 env V3_DEVICE=cpu V3_MAPS=none OMP_NUM_THREADS=4 $LAN_SAL_SRC/.venv/bin/python -B eval_re.py --bb dinov2reg --out ../check_cpu_dinov2reg --ckpt-dir $LAN_PROJECT_ROOT/nn/registers/full/ckpt --tags dinov2reg_L12_R4_s0 --stimsets stim_v3 --stim-limit 18 --skip-mit"
+  },
+  {
+   "label": "R4a_check_dinov2reg",
+   "start_utc": "2026-11-18T13:05:26Z",
+   "end_utc": "2026-11-18T13:05:31Z",
+   "wall_s": 5,
+   "exit": 0,
+   "command": "$LAN_SAL_SRC/.venv/bin/python -B -I check_eval_re.py ../check_cpu_dinov2reg --tol 1e-4 --pub $LAN_PROJECT_ROOT/nn/registers/full/scores"
+  },
+  {
+   "label": "R4_eval_dinov2",
+   "start_utc": "2026-11-18T13:05:31Z",
+   "end_utc": "2026-11-18T13:19:03Z",
+   "wall_s": 812,
+   "exit": 0,
+   "command": "nice -n 10 env V3_DEVICE=cpu V3_MAPS=none OMP_NUM_THREADS=4 $LAN_SAL_SRC/.venv/bin/python -B eval_re.py --bb dinov2 --out ../scores_rigid/heads --ckpt-dir $LAN_PROJECT_ROOT/v3/gpu/full/ckpt --stimsets stim_rigid --skip-mit"
+  },
+  {
+   "label": "R4_eval_siglip",
+   "start_utc": "2026-11-18T13:19:03Z",
+   "end_utc": "2026-11-18T13:33:34Z",
+   "wall_s": 871,
+   "exit": 0,
+   "command": "nice -n 10 env V3_DEVICE=cpu V3_MAPS=none OMP_NUM_THREADS=4 $LAN_SAL_SRC/.venv/bin/python -B eval_re.py --bb siglip --out ../scores_rigid/heads --ckpt-dir $LAN_PROJECT_ROOT/v3/gpu/full/ckpt --stimsets stim_rigid --skip-mit"
+  },
+  {
+   "label": "R4_eval_iie",
+   "start_utc": "2026-11-18T13:33:34Z",
+   "end_utc": "2026-11-18T13:50:36Z",
+   "wall_s": 1022,
+   "exit": 0,
+   "command": "nice -n 10 env V3_DEVICE=cpu V3_MAPS=none OMP_NUM_THREADS=4 $LAN_SAL_SRC/.venv/bin/python -B eval_re.py --bb iie --out ../scores_rigid/heads --ckpt-dir $LAN_PROJECT_ROOT/v3/gpu/full/ckpt --stimsets stim_rigid --skip-mit"
+  },
+  {
+   "label": "R5_eval_dinov2reg",
+   "start_utc": "2026-11-18T13:50:36Z",
+   "end_utc": "2026-11-18T13:58:07Z",
+   "wall_s": 451,
+   "exit": 0,
+   "command": "nice -n 10 env V3_DEVICE=cpu V3_MAPS=none OMP_NUM_THREADS=4 $LAN_SAL_SRC/.venv/bin/python -B eval_re.py --bb dinov2reg --out ../scores_rigid/heads --ckpt-dir $LAN_PROJECT_ROOT/nn/registers/full/ckpt --stimsets stim_rigid --skip-mit"
+  },
+  {
+   "label": "V1_verify",
+   "start_utc": "2026-11-18T13:58:31Z",
+   "end_utc": "2026-11-18T13:58:36Z",
+   "wall_s": 5,
+   "exit": 0,
+   "command": "nice -n 10 $LAN_SAL_SRC/.venv/bin/python -B -I results/scripts/verify_fast_battery.py"
+  }
+ ],
+ "metal_client_detected_in_any_step": false,
+ "scoring_wall_s_R1_to_R5": 7429
+}

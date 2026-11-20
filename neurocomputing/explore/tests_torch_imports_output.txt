@@ -1,0 +1,16 @@
+test_torch_imports.py pid 839
+PASS  stub ab_objective loaded (DEV = cpu)
+PASS  recommon on the CPU
+PASS  torch threads = OMP_NUM_THREADS  2
+PASS  gate_kanizsa is the repository copy  $LAN_PROJECT_ROOT/looking-at-nothing/models/gate_kanizsa.py
+PASS  render_rigid's stimcode modules stay the stimcode copies
+PASS  sweep.py reloaded per backbone (BB follows the request)
+PASS  and again for siglip
+PASS  untrained R1n head runs on random features at 336 px  (2, 1, 336, 336)
+PASS  untrained R1 head runs on random features at 336 px  (2, 1, 336, 336)
+PASS  untrained R2 head runs on random features at 336 px  (2, 1, 336, 336)
+PASS  untrained R3 head runs on random features at 336 px  (2, 1, 336, 336)
+PASS  untrained R4 head runs on random features at 336 px  (2, 1, 336, 336)
+PASS  sweep Readout runs at 448 px
+PASS  this process holds no Metal client
+14 checks, 0 failed, 5.4s

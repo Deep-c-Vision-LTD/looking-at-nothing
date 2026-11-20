@@ -1,0 +1,49 @@
+### R3_sweep_all start 2026-11-18T12:25:28Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 $LAN_SAL_SRC/.venv/bin/python -B scoring/score_rigid.py sweep:dinov2 sweep:clip sweep:siglip
+### R3_sweep_all pid 1518
+### R3_sweep_all pid 1518: no Metal client at first check (~5 s)
+Loading weights:   0%|          | 0/223 [00:00<?, ?it/s]Loading weights: 100%|██████████| 223/223 [00:00<00:00, 7258.61it/s]
+sweep dinov2: pipeline check on 4 stim_v3 images, max |r_inside - published| per tag: dinov2_L2_s336 0.00e+00, dinov2_L4_s336 0.00e+00, dinov2_L6_s336 0.00e+00, dinov2_L8_s336 0.00e+00, dinov2_L10_s336 0.00e+00, dinov2_L12_s336 0.00e+00, dinov2_L2_s448 0.00e+00, dinov2_L4_s448 9.05e-10, dinov2_L6_s448 1.81e-12, dinov2_L8_s448 5.69e-12, dinov2_L10_s448 6.99e-10, dinov2_L12_s448 0.00e+00
+sweep dinov2: 660 of 660 images to score, tags ['dinov2_L2_s336', 'dinov2_L4_s336', 'dinov2_L6_s336', 'dinov2_L8_s336', 'dinov2_L10_s336', 'dinov2_L12_s336', 'dinov2_L2_s448', 'dinov2_L4_s448', 'dinov2_L6_s448', 'dinov2_L8_s448', 'dinov2_L10_s448', 'dinov2_L12_s448']
+  sweep dinov2 20/660 15s (0.74 s/img)
+### R3_sweep_all pid 1518: no Metal client at ~30 s
+  sweep dinov2 40/660 30s (0.74 s/img)
+  sweep dinov2 60/660 44s (0.73 s/img)
+  sweep dinov2 80/660 59s (0.73 s/img)
+  sweep dinov2 100/660 73s (0.73 s/img)
+  sweep dinov2 120/660 87s (0.73 s/img)
+  sweep dinov2 140/660 102s (0.73 s/img)
+  sweep dinov2 160/660 116s (0.72 s/img)
+  sweep dinov2 180/660 130s (0.72 s/img)
+  sweep dinov2 200/660 145s (0.72 s/img)
+  sweep dinov2 220/660 159s (0.72 s/img)
+  sweep dinov2 240/660 172s (0.72 s/img)
+  sweep dinov2 260/660 184s (0.71 s/img)
+  sweep dinov2 280/660 196s (0.70 s/img)
+  sweep dinov2 300/660 208s (0.69 s/img)
+  sweep dinov2 320/660 220s (0.69 s/img)
+  sweep dinov2 340/660 232s (0.68 s/img)
+  sweep dinov2 360/660 244s (0.68 s/img)
+  sweep dinov2 380/660 256s (0.67 s/img)
+  sweep dinov2 400/660 269s (0.67 s/img)
+  sweep dinov2 420/660 280s (0.67 s/img)
+  sweep dinov2 440/660 292s (0.66 s/img)
+  sweep dinov2 460/660 304s (0.66 s/img)
+  sweep dinov2 480/660 316s (0.66 s/img)
+  sweep dinov2 500/660 328s (0.66 s/img)
+  sweep dinov2 520/660 340s (0.65 s/img)
+  sweep dinov2 540/660 352s (0.65 s/img)
+  sweep dinov2 560/660 364s (0.65 s/img)
+  sweep dinov2 580/660 376s (0.65 s/img)
+  sweep dinov2 600/660 388s (0.65 s/img)
+  sweep dinov2 620/660 400s (0.65 s/img)
+  sweep dinov2 640/660 412s (0.64 s/img)
+  sweep dinov2 660/660 424s (0.64 s/img)
+sweep dinov2: done, 424s
+Traceback (most recent call last):
+  File "$LAN_PROJECT_ROOT/neuro/reanalysis/scoring/score_rigid.py", line 195, in <module>
+    main(sys.argv[1:])
+  File "$LAN_PROJECT_ROOT/neuro/reanalysis/scoring/score_rigid.py", line 163, in main
+    assert sweep.DEV == "cpu" and sweep.BB == bb_name and sweep.AB is AB
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+### R3_sweep_all end 2026-11-18T12:32:59Z exit 1 wall 451s

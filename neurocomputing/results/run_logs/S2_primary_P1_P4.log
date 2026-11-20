@@ -1,0 +1,4 @@
+### S2_primary_P1_P4 start 2026-11-18T14:02:42Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 $LAN_SAL_SRC/.venv/bin/python -B -I analyze_re.py primary --which P1,P2,P3,P4
+### S2_primary_P1_P4 pid 6085
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/out/primary_P1_P2_P3_P4.json
+### S2_primary_P1_P4 end 2026-11-18T14:02:47Z exit 0 wall 5s

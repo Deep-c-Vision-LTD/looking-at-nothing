@@ -1,0 +1,29 @@
+% A3 (v) comparison table (exploratory; REANALYSIS_RULE.md Section 6 item 8 (v)); written by explore/tokens/a3_tokens_published.py
+\begin{tabular}{llllll}
+\hline
+Block & Pre-specified & Near-exterior & $E$ [95\% WCU] & $S_{20}$ [95\% BCa] \\
+\hline
+dinov2\_L12 & fail & pass & -0.098 [-0.130, -0.064] & 0.440 [0.300, 0.571] \\
+dinov2\_L6 & pass & pass & +0.082 [+0.059, +0.105] & 0.350 [0.252, 0.494] \\
+siglip\_L24 & pass & fail & +0.145 [+0.119, +0.170] & 0.163 [0.031, 0.292] \\
+dinov2\_L2 & fail & fail & -0.000 [-0.019, +0.020] & -180.307 [-2789.057, -2739.673]$^u$ \\
+dinov2\_L4 & pass & fail & +0.051 [+0.042, +0.059] & 0.261 [0.166, 0.354] \\
+dinov2\_L6 & pass & pass & +0.082 [+0.059, +0.105] & 0.350 [0.252, 0.494] \\
+dinov2\_L8 & fail & fail & +0.035 [+0.021, +0.048] & -0.566 [-0.948, -0.367] \\
+dinov2\_L10 & fail & pass & -0.028 [-0.047, -0.010] & 0.759 [0.180, 1.994]$^u$ \\
+dinov2\_L12 & fail & pass & -0.098 [-0.130, -0.064] & 0.440 [0.300, 0.571] \\
+clip\_L4 & fail & fail & -0.000 [-0.021, +0.020] & -16.758 [-2414.034, -27.446]$^u$ \\
+clip\_L8 & pass & fail & +0.041 [+0.016, +0.066] & 0.775 [0.429, 1.688]$^u$ \\
+clip\_L12 & pass & fail & +0.061 [+0.046, +0.075] & 0.104 [-0.039, 0.278] \\
+clip\_L16 & pass & fail & +0.018 [+0.004, +0.032] & -0.155 [-1.360, 0.213]$^u$ \\
+clip\_L20 & pass & fail & -0.010 [-0.025, +0.005] & 1.188 [-3.804, 4.540]$^u$ \\
+clip\_L24 & pass & fail & +0.014 [-0.018, +0.044] & 0.760 [-6.613, 4.039]$^u$ \\
+siglip\_L4 & fail & fail & +0.020 [+0.009, +0.031] & 0.535 [0.112, 1.116]$^u$ \\
+siglip\_L8 & fail & fail & +0.055 [+0.040, +0.070] & 0.450 [0.227, 0.656] \\
+siglip\_L12 & fail & fail & -0.021 [-0.035, -0.007] & 0.582 [0.153, 1.670]$^u$ \\
+siglip\_L16 & pass & fail & +0.002 [-0.013, +0.017] & -0.992 [-167.742, 1.354]$^u$ \\
+siglip\_L20 & pass & fail & +0.047 [+0.016, +0.078] & 0.589 [0.192, 1.523]$^u$ \\
+siglip\_L24 & pass & fail & +0.145 [+0.119, +0.170] & 0.163 [0.031, 0.292] \\
+\hline
+\end{tabular}
+% u: ratio flagged (unstable or not reportable)

@@ -1,0 +1,6 @@
+2026-11-18 13:04:19 === eval siglip on cpu: 2 heads, stimsets ['stim_v3'], maps saved for: none
+2026-11-18 13:04:24 stim_v3 px336 block 1/1 features 18 images 5s
+2026-11-18 13:04:35 stim_v3 px448 block 1/1 features 18 images 10s
+2026-11-18 13:04:35 stim_v3 siglip_L24_R1n_s0 scored 18 images x 2 sizes (maps saved: False)
+2026-11-18 13:04:35 stim_v3 siglip_L24_R4_s0 scored 18 images x 2 sizes (maps saved: False)
+2026-11-18 13:04:35 === eval siglip done

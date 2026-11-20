@@ -1,0 +1,4 @@
+### EX_s13_block12_nulls start 2026-11-18T14:06:59Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 V3_DEVICE=cpu PYTHONDONTWRITEBYTECODE=1 $LAN_SAL_SRC/.venv/bin/python -B explore/s13_block12_nulls.py
+### EX_s13_block12_nulls pid 6258
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/results/explore/S13_block12_vs_nulls.json
+### EX_s13_block12_nulls end 2026-11-18T14:07:04Z exit 0 wall 5s

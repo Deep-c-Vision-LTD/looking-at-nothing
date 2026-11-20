@@ -10,7 +10,7 @@
 # Usage: bash nn/registers/run_reg.sh      (holds caffeinate -i internally; one instance)
 set -u
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PY=/Users/hamitsoyel/Downloads/saliency_research/.venv/bin/python
+PY=${PY:-$(cd "${LAN_PROJECT_ROOT:-$HERE/../..}/.." && pwd)/saliency_research/.venv/bin/python}   # set PY to override; default as neurocomputing/gpu/run_gpu_re.sh
 OUT=$HERE/full; L=$HERE/logs; QL=$L/run_reg.log
 export PYTHONDONTWRITEBYTECODE=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 V3_DEVICE=mps PYTORCH_ENABLE_MPS_FALLBACK=1
 export OMP_NUM_THREADS=3 MKL_NUM_THREADS=3

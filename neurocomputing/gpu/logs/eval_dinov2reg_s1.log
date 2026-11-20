@@ -1,0 +1,32 @@
+2026-11-19 20:38:06 === eval dinov2reg on mps: 16 heads, stimsets ['stim_v3', 'stim_alt'], maps saved for: none
+Loading weights:   0%|          | 0/224 [00:00<?, ?it/s]Loading weights: 100%|██████████| 224/224 [00:00<00:00, 34875.98it/s]
+2026-11-19 20:38:13 MIT features 200 images 7s
+2026-11-19 20:38:13 dinov2reg_L12_R1_s1 MIT1003 held-out CC 0.7076 NSS 2.5186 (n 200)
+2026-11-19 20:38:14 dinov2reg_L12_R1n_s1 MIT1003 held-out CC 0.7057 NSS 2.5234 (n 200)
+2026-11-19 20:38:15 dinov2reg_L12_R2_s1 MIT1003 held-out CC 0.7206 NSS 2.5803 (n 200)
+2026-11-19 20:38:15 dinov2reg_L12_R3_s1 MIT1003 held-out CC 0.7235 NSS 2.5658 (n 200)
+2026-11-19 20:38:16 dinov2reg_L6_R1_s1 MIT1003 held-out CC 0.6923 NSS 2.4553 (n 200)
+2026-11-19 20:38:16 dinov2reg_L6_R1n_s1 MIT1003 held-out CC 0.7005 NSS 2.4836 (n 200)
+2026-11-19 20:38:17 dinov2reg_L6_R2_s1 MIT1003 held-out CC 0.7213 NSS 2.5656 (n 200)
+2026-11-19 20:38:18 dinov2reg_L6_R3_s1 MIT1003 held-out CC 0.7244 NSS 2.5681 (n 200)
+2026-11-19 20:38:43 stim_v3 px336 block 1/1 features 740 images 23s
+2026-11-19 20:39:47 stim_v3 px448 block 1/1 features 740 images 51s
+2026-11-19 20:40:02 stim_v3 dinov2reg_L12_R1_s1 scored 740 images x 2 sizes (maps saved: False)
+2026-11-19 20:40:02 stim_v3 dinov2reg_L12_R1n_s1 scored 740 images x 2 sizes (maps saved: False)
+2026-11-19 20:40:02 stim_v3 dinov2reg_L12_R2_s1 scored 740 images x 2 sizes (maps saved: False)
+2026-11-19 20:40:02 stim_v3 dinov2reg_L12_R3_s1 scored 740 images x 2 sizes (maps saved: False)
+2026-11-19 20:40:02 stim_v3 dinov2reg_L6_R1_s1 scored 740 images x 2 sizes (maps saved: False)
+2026-11-19 20:40:02 stim_v3 dinov2reg_L6_R1n_s1 scored 740 images x 2 sizes (maps saved: False)
+2026-11-19 20:40:02 stim_v3 dinov2reg_L6_R2_s1 scored 740 images x 2 sizes (maps saved: False)
+2026-11-19 20:40:02 stim_v3 dinov2reg_L6_R3_s1 scored 740 images x 2 sizes (maps saved: False)
+2026-11-19 20:40:14 stim_alt px336 block 1/1 features 360 images 11s
+2026-11-19 20:40:45 stim_alt px448 block 1/1 features 360 images 25s
+2026-11-19 20:40:52 stim_alt dinov2reg_L12_R1_s1 scored 360 images x 2 sizes (maps saved: False)
+2026-11-19 20:40:52 stim_alt dinov2reg_L12_R1n_s1 scored 360 images x 2 sizes (maps saved: False)
+2026-11-19 20:40:52 stim_alt dinov2reg_L12_R2_s1 scored 360 images x 2 sizes (maps saved: False)
+2026-11-19 20:40:52 stim_alt dinov2reg_L12_R3_s1 scored 360 images x 2 sizes (maps saved: False)
+2026-11-19 20:40:52 stim_alt dinov2reg_L6_R1_s1 scored 360 images x 2 sizes (maps saved: False)
+2026-11-19 20:40:52 stim_alt dinov2reg_L6_R1n_s1 scored 360 images x 2 sizes (maps saved: False)
+2026-11-19 20:40:52 stim_alt dinov2reg_L6_R2_s1 scored 360 images x 2 sizes (maps saved: False)
+2026-11-19 20:40:52 stim_alt dinov2reg_L6_R3_s1 scored 360 images x 2 sizes (maps saved: False)
+2026-11-19 20:40:52 === eval dinov2reg done

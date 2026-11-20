@@ -1,0 +1,32 @@
+### T_a6_absolute start 2026-11-18T23:52:13Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=2 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONDONTWRITEBYTECODE=1 V3_DEVICE=cpu $LAN_SAL_SRC/.venv/bin/python -B -I explore/test_a6_absolute.py --out explore/tests_a6_absolute_output.txt
+### T_a6_absolute pid 28219
+test_a6_absolute.py 2026-11-18T23:52:14Z
+PASS  V3_DEVICE forced to cpu at import
+PASS  PYTORCH_ENABLE_MPS_FALLBACK unset
+PASS  torch not imported by the module import
+PASS  main: require_public before recommon, torch and any data
+PASS  norm_log2 is a normalised log2 map
+PASS  IG = 0 when the model equals the baseline
+PASS  IG = 0 for uniform model and uniform baseline
+PASS  IG analytic value (model a on fixations, b elsewhere; uniform baseline)  2.237864
+PASS  IG antisymmetric in model and baseline
+PASS  IG nan without fixations
+PASS  floor keeps the log finite for a map with zeros
+PASS  gate passes on a faithful reproduction
+PASS  gate fails on a 2e-4 shift of the mean CC
+PASS  gate fails on one per-image CC off by 3e-4
+PASS  gate fails on a 2e-4 shift of the mean NSS
+PASS  gate fails on a different image count
+PASS  summarise: mean, G = 200 images, 9,999 random draws
+PASS  summarise: CR1 se with singleton clusters equals the iid se
+PASS  recommon on the CPU with the stub
+PASS  R4: zero centre bias, on equals off
+PASS  R4: non-zero centre bias changes the map only when on
+PASS  R4: use_cb left False after the off pass
+PASS  R1: zero centre bias, on equals off
+PASS  R1: non-zero centre bias changes the map only when on
+PASS  R1: use_cb left False after the off pass
+PASS  metal_guard: this process holds no Metal client
+# 26 checks, 0 failed, 4.3s
+### T_a6_absolute pid 28219: no Metal client at first check (~5 s)
+### T_a6_absolute end 2026-11-18T23:52:23Z exit 0 wall 10s

@@ -1,0 +1,9 @@
+### S5c_a3_tokens_published_r2 start 2026-11-19T00:01:06Z cwd $LAN_PROJECT_ROOT/neuro/reanalysis cmd: nice -n 10 env OMP_NUM_THREADS=4 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONDONTWRITEBYTECODE=1 $LAN_SAL_SRC/.venv/bin/python -B -I explore/tokens/a3_tokens_published.py
+### S5c_a3_tokens_published_r2 pid 28645
+00:01:07 reproduction compared
+### S5c_a3_tokens_published_r2 pid 28645: no Metal client at first check (~5 s)
+00:01:14 token analyses done
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/results/explore/A3_tokens_published.json
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/results/explore/A3_tokens_published.md
+wrote $LAN_PROJECT_ROOT/neuro/reanalysis/A3_tokens/published/tab_tokens.tex
+### S5c_a3_tokens_published_r2 end 2026-11-19T00:01:16Z exit 0 wall 10s

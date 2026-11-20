@@ -1,0 +1,10 @@
+2026-11-18 13:50:40 === eval dinov2reg on cpu: 6 heads, stimsets ['stim_rigid'], maps saved for: none
+2026-11-18 13:52:09 stim_rigid px336 block 1/1 features 660 images 81s
+2026-11-18 13:55:56 stim_rigid px448 block 1/1 features 660 images 161s
+2026-11-18 13:58:00 stim_rigid dinov2reg_L12_R4_s0 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:58:01 stim_rigid dinov2reg_L12_R4_s1 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:58:01 stim_rigid dinov2reg_L12_R4_s2 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:58:01 stim_rigid dinov2reg_L6_R4_s0 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:58:01 stim_rigid dinov2reg_L6_R4_s1 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:58:01 stim_rigid dinov2reg_L6_R4_s2 scored 660 images x 2 sizes (maps saved: False)
+2026-11-18 13:58:01 === eval dinov2reg done

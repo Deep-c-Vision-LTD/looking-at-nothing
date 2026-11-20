@@ -1,0 +1,16 @@
+{
+ "tol": 0.0001,
+ "pub": "$LAN_PROJECT_ROOT/v3/gpu/full/scores",
+ "files": {
+  "stim_v3_iie_shapenetc_R1n_s0.json": {
+   "values": 396,
+   "max_abs_diff": 9.63620804683707e-06
+  },
+  "stim_v3_iie_shapenetc_R4_s0.json": {
+   "values": 396,
+   "max_abs_diff": 3.3266231681539082e-06
+  }
+ },
+ "worst": 9.63620804683707e-06,
+ "n": 792
+}

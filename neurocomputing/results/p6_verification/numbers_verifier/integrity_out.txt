@@ -1,0 +1,46 @@
+== train logs
+a14/logs/train_dinov2ms_R1n-R1-R2-R3-R4_s0.log epochs [0, 1, 2, 3, 4, 5] headers 1 done True resumed False skip False stopping False batch400x 6
+a14/logs/train_dinov2ms_R1n-R1-R2-R3-R4_s1.log epochs [0, 1, 2, 3, 4, 5] headers 1 done True resumed False skip False stopping False batch400x 6
+a14/logs/train_dinov2ms_R1n-R1-R2-R3-R4_s2.log epochs [0, 1, 2, 3, 4, 5] headers 1 done True resumed False skip False stopping False batch400x 6
+g3/logs/train_dinov2reg_R1n-R1-R2-R3_s0.log epochs [0, 1, 2, 3, 4, 5] headers 1 done True resumed False skip False stopping False batch400x 6
+g3/logs/train_dinov2reg_R1n-R1-R2-R3_s1.log epochs [0, 1, 2, 3, 4, 5] headers 1 done True resumed False skip False stopping False batch400x 6
+g3/logs/train_dinov2reg_R1n-R1-R2-R3_s2.log epochs [0, 1, 2, 3, 4, 5] headers 1 done True resumed False skip False stopping False batch400x 6
+logs/train_dinov2ms_s0.log epochs [0, 1, 2, 3, 4, 5] headers 1 done True resumed False skip False stopping False batch400x 6
+logs/train_dinov2ms_s1.log epochs [0, 1, 2, 3, 4, 5] headers 1 done True resumed False skip False stopping False batch400x 6
+logs/train_dinov2ms_s2.log epochs [0, 1, 2, 3, 4, 5] headers 1 done True resumed False skip False stopping False batch400x 6
+logs/train_dinov2reg_s0.log epochs [0, 1, 2, 3, 4, 5] headers 1 done True resumed False skip False stopping False batch400x 6
+logs/train_dinov2reg_s1.log epochs [0, 1, 2, 3, 4, 5] headers 1 done True resumed False skip False stopping False batch400x 6
+logs/train_dinov2reg_s2.log epochs [0, 1, 2, 3, 4, 5] headers 1 done True resumed False skip False stopping False batch400x 6
+== ckpt records
+g3 pt 24 json 24 expected 24 bad records [] train done markers 24 finished times ['2026-11-19 19:37', '2026-11-19 20:36', '2026-11-19 21:36']
+   ckpt mtime range 2026-11-19 19:37:23 2026-11-19 21:36:29
+a14 pt 30 json 30 expected 30 bad records [] train done markers 30 finished times ['2026-11-19 22:54', '2026-11-20 00:02', '2026-11-20 01:10']
+   ckpt mtime range 2026-11-19 22:54:22 2026-11-20 01:10:28
+== score files
+g3 72 mtime range 2026-11-19 19:38:40 2026-11-19 21:40:25
+a14 90 mtime range 2026-11-19 22:55:38 2026-11-20 01:14:43
+registers R4 18 mtime range 2026-11-17 13:52:07 2026-11-17 15:37:24
+== markers
+DONE_both True 2026-11-20 01:17:40 2026-11-20 01:17:40
+primary_P6.json created_utc 2026-11-20T01:20:26Z mtime 2026-11-20 01:20:26
+eval final logs 2026-11-20 01:15:52 2026-11-19 21:41:34
+== sha256
+hashed files 33 unchanged 33
+REANALYSIS_RULE.md sha256 b03f397b6b1808e7055f0d6db8f5685c0e6a2850261eeb3d8525dddbeca73a38
+analyze_re.py sha256 8c412ec6c126926f39269f12c9fb30d1897c5f6240528d1b9668b09a28786bf3
+== stimulus manifest
+stim_rigid files 1082 bad 0
+== deviations
+  D1 2026-11-18 (UTC 12:33): R3 run as three processes instead of one (execution only)
+  D2 2026-11-18 (UTC 14:07): secondary item 7 of the receptive-field rule recomputed with the corrected sign (depar
+  D3 2026-11-18 (UTC 14:05): IIE part of P5 computed before the exploratory analyses (execution order only)
+  D4 2026-11-18 (UTC 16:45): BCa p-value at the edge of the bootstrap distribution set by an unstated clip in `anal
+  D5 2026-11-18 (UTC 16:45): one known value in rule Section 1.1 item 1 is a difference of rounded values (found by
+  D6 2026-11-18 (UTC 18:54 to 19:26): A4.4, A12 and A13 rerun after DeepGaze MSDB was scored, before R8 (execution 
+  D7 2026-11-18 (UTC 19:00 to 19:28): R8 written and run after P5 had been seen; implementation choices fixed then 
+  D8 2026-11-18 (UTC 20:27 onwards): test-time registers (rule Section 6, item 12) designed and run after P1 to P5 
+  D9 2026-11-18 (UTC 23:40 to 23:48): S3 `explore_saved.py` written and run after P1 to P5, R8, the exploratory bat
+  D10 2026-11-18 (UTC 23:50 to 23:58): S4 `a6_absolute.py` (A6 absolute metrics, centre bias off) written and run af
+  D11 2026-11-18/19 (UTC 23:55 to 00:01): S5 A3 (i) to (iii) and (v) for the published ViTs, written and run after P
+  D12 2026-11-19 (UTC 18:22 to 18:26): GPU runner G3/A14 restarted once before any step, with its process group name
+DEVIATIONS.md mtime 2026-11-19 18:27:51

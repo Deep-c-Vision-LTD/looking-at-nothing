@@ -1,0 +1,636 @@
+{
+ "created_utc": "2026-11-18T14:07:06Z",
+ "label": "exploratory (REANALYSIS_RULE.md Section 6; unadjusted; never used for a headline claim)",
+ "code": {
+  "explore/item7_corrected.py": "a8d553c197c58f4b9a92559da70500010c3a84e26b89bc52cdec60f679246bc8",
+  "explore/excommon.py": "d168232289be46a9e883385aeee279165e1c7924879c07c5f03204b3b38a397a"
+ },
+ "rule_sha256": "b03f397b6b1808e7055f0d6db8f5685c0e6a2850261eeb3d8525dddbeca73a38",
+ "public_commit": "f67c7df98c27136be8ff3db4eea57d1973579602",
+ "inputs": [
+  "v3/scores/raw_v3maps",
+  "v3/scores/raw",
+  "nn/results/raw_v3maps",
+  "nn/results/raw_alt",
+  "nn/results/erf/<bb>.json",
+  "nn/results/summary.json"
+ ],
+ "notes": null,
+ "result": {
+  "stored_value_quoted_by_rule": "rho = -0.06 [-0.18, +0.13], p = .807",
+  "stored_recomputed": {
+   "n": 18,
+   "readouts": [
+    "DINOv2-B L2",
+    "DINOv2-B L4",
+    "DINOv2-B L6",
+    "DINOv2-B L8",
+    "DINOv2-B L10",
+    "DINOv2-B L12",
+    "CLIP-L L4",
+    "CLIP-L L8",
+    "CLIP-L L12",
+    "CLIP-L L16",
+    "CLIP-L L20",
+    "CLIP-L L24",
+    "SigLIP-L L4",
+    "SigLIP-L L8",
+    "SigLIP-L L12",
+    "SigLIP-L L16",
+    "SigLIP-L L20",
+    "SigLIP-L L24"
+   ],
+   "x": [
+    244.0,
+    287.5,
+    300.5,
+    312.5,
+    294.5,
+    288.5,
+    259.0,
+    238.5,
+    318.0,
+    317.5,
+    322.5,
+    319.5,
+    249.0,
+    277.5,
+    318.0,
+    313.0,
+    318.5,
+    325.5
+   ],
+   "y": [
+    0.0052,
+    0.0133,
+    0.0288,
+    -0.0197,
+    0.0216,
+    0.043,
+    -0.0058,
+    0.0317,
+    0.0063,
+    -0.0027,
+    0.012,
+    0.0104,
+    0.0106,
+    0.0248,
+    0.012,
+    -0.0019,
+    0.0279,
+    0.0235
+   ],
+   "rho": -0.06195147960330745,
+   "perm_p": 0.80709,
+   "perm_kind": "100000 random permutations",
+   "rho_ci": [
+    -0.18278267794625833,
+    0.13009810716694564
+   ],
+   "rho_boot_frac_pos": 0.3866,
+   "within": {
+    "clip": {
+     "n": 6,
+     "rho": 0.14285714285714288
+    },
+    "dinov2": {
+     "n": 6,
+     "rho": -0.028571428571428574
+    },
+    "siglip": {
+     "n": 6,
+     "rho": 0.4285714285714286
+    }
+   },
+   "T": 0.18095238095238098,
+   "T_perm_p": 0.51904,
+   "T_backbones": [
+    "clip",
+    "dinov2",
+    "siglip"
+   ],
+   "n_qual_backbones_rho_pos": 2,
+   "R2_bb": 0.050341531436545184,
+   "R2_x": 0.014841541863407803,
+   "R2_both": 0.06570866883967685,
+   "adjR2_bb": -0.07627959770524884,
+   "adjR2_x": -0.046730861770129195,
+   "adjR2_both": -0.13449661640896382,
+   "partial_R2_x_given_bb": 0.016181751557881107,
+   "coef_x_joint": -0.012895881071746794,
+   "coef_x_alone": -0.012503735621058788,
+   "signs": {
+    "DINOv2-B L2": {
+     "point": 1.0,
+     "bootstrap": 0.0
+    },
+    "DINOv2-B L4": {
+     "point": 1.0,
+     "bootstrap": 1.0
+    },
+    "DINOv2-B L6": {
+     "point": 1.0,
+     "bootstrap": 1.0
+    },
+    "DINOv2-B L8": {
+     "point": 1.0,
+     "bootstrap": 1.0
+    },
+    "DINOv2-B L10": {
+     "point": -1.0,
+     "bootstrap": -1.0
+    },
+    "DINOv2-B L12": {
+     "point": -1.0,
+     "bootstrap": -1.0
+    },
+    "CLIP-L L4": {
+     "point": -1.0,
+     "bootstrap": -1.0
+    },
+    "CLIP-L L8": {
+     "point": 1.0,
+     "bootstrap": 1.0
+    },
+    "CLIP-L L12": {
+     "point": 1.0,
+     "bootstrap": 1.0
+    },
+    "CLIP-L L16": {
+     "point": 1.0,
+     "bootstrap": 1.0
+    },
+    "CLIP-L L20": {
+     "point": -1.0,
+     "bootstrap": -1.0
+    },
+    "CLIP-L L24": {
+     "point": 1.0,
+     "bootstrap": 1.0
+    },
+    "SigLIP-L L4": {
+     "point": 1.0,
+     "bootstrap": 1.0
+    },
+    "SigLIP-L L8": {
+     "point": 1.0,
+     "bootstrap": 1.0
+    },
+    "SigLIP-L L12": {
+     "point": -1.0,
+     "bootstrap": -1.0
+    },
+    "SigLIP-L L16": {
+     "point": 1.0,
+     "bootstrap": 1.0
+    },
+    "SigLIP-L L20": {
+     "point": 1.0,
+     "bootstrap": 1.0
+    },
+    "SigLIP-L L24": {
+     "point": 1.0,
+     "bootstrap": 1.0
+    }
+   },
+   "y_unrounded": [
+    0.005198326737801621,
+    0.013251360123738528,
+    0.02881552023396593,
+    -0.01967012569724412,
+    0.021636117458481256,
+    0.042958417242284413,
+    -0.0058467971410868765,
+    0.03170065296237368,
+    0.006282155765869521,
+    -0.0027426069612878864,
+    0.012047634838167178,
+    0.010424953077923719,
+    0.010625390076801973,
+    0.02478495107892893,
+    0.011966705703052988,
+    -0.001907042290430865,
+    0.027859790611589042,
+    0.023531737762718486
+   ]
+  },
+  "stored_reference": {
+   "n": 18,
+   "readouts": [
+    "DINOv2-B L2",
+    "DINOv2-B L4",
+    "DINOv2-B L6",
+    "DINOv2-B L8",
+    "DINOv2-B L10",
+    "DINOv2-B L12",
+    "CLIP-L L4",
+    "CLIP-L L8",
+    "CLIP-L L12",
+    "CLIP-L L16",
+    "CLIP-L L20",
+    "CLIP-L L24",
+    "SigLIP-L L4",
+    "SigLIP-L L8",
+    "SigLIP-L L12",
+    "SigLIP-L L16",
+    "SigLIP-L L20",
+    "SigLIP-L L24"
+   ],
+   "x": [
+    244.0,
+    287.5,
+    300.5,
+    312.5,
+    294.5,
+    288.5,
+    259.0,
+    238.5,
+    318.0,
+    317.5,
+    322.5,
+    319.5,
+    249.0,
+    277.5,
+    318.0,
+    313.0,
+    318.5,
+    325.5
+   ],
+   "y": [
+    0.0052,
+    0.0133,
+    0.0288,
+    -0.0197,
+    0.0216,
+    0.043,
+    -0.0058,
+    0.0317,
+    0.0063,
+    -0.0027,
+    0.012,
+    0.0104,
+    0.0106,
+    0.0248,
+    0.012,
+    -0.0019,
+    0.0279,
+    0.0235
+   ],
+   "rho": -0.06195147960330745,
+   "perm_p": 0.80709,
+   "perm_kind": "100000 random permutations",
+   "rho_ci": [
+    -0.18278267794625833,
+    0.13009810716694564
+   ],
+   "rho_boot_frac_pos": 0.3866,
+   "within": {
+    "clip": {
+     "n": 6,
+     "rho": 0.14285714285714288
+    },
+    "dinov2": {
+     "n": 6,
+     "rho": -0.028571428571428574
+    },
+    "siglip": {
+     "n": 6,
+     "rho": 0.4285714285714286
+    }
+   },
+   "T": 0.18095238095238098,
+   "T_perm_p": 0.51904,
+   "T_backbones": [
+    "clip",
+    "dinov2",
+    "siglip"
+   ],
+   "n_qual_backbones_rho_pos": 2,
+   "R2_bb": 0.050341531436545184,
+   "R2_x": 0.014841541863407803,
+   "R2_both": 0.06570866883967685,
+   "adjR2_bb": -0.07627959770524884,
+   "adjR2_x": -0.046730861770129195,
+   "adjR2_both": -0.13449661640896382,
+   "partial_R2_x_given_bb": 0.016181751557881107,
+   "coef_x_joint": -0.012895881071746794,
+   "coef_x_alone": -0.012503735621058788
+  },
+  "stored_reproduction": {
+   "rho_abs_diff": 0.0,
+   "rho_ci_abs_diff": 0.0,
+   "perm_p_abs_diff": 0.0,
+   "reproduced": true
+  },
+  "corrected": {
+   "n": 18,
+   "readouts": [
+    "DINOv2-B L2",
+    "DINOv2-B L4",
+    "DINOv2-B L6",
+    "DINOv2-B L8",
+    "DINOv2-B L10",
+    "DINOv2-B L12",
+    "CLIP-L L4",
+    "CLIP-L L8",
+    "CLIP-L L12",
+    "CLIP-L L16",
+    "CLIP-L L20",
+    "CLIP-L L24",
+    "SigLIP-L L4",
+    "SigLIP-L L8",
+    "SigLIP-L L12",
+    "SigLIP-L L16",
+    "SigLIP-L L20",
+    "SigLIP-L L24"
+   ],
+   "x": [
+    244.0,
+    287.5,
+    300.5,
+    312.5,
+    294.5,
+    288.5,
+    259.0,
+    238.5,
+    318.0,
+    317.5,
+    322.5,
+    319.5,
+    249.0,
+    277.5,
+    318.0,
+    313.0,
+    318.5,
+    325.5
+   ],
+   "y": [
+    -0.0052,
+    0.0133,
+    0.0288,
+    -0.0197,
+    0.0216,
+    0.043,
+    -0.0058,
+    0.0317,
+    0.0063,
+    -0.0027,
+    0.012,
+    0.0104,
+    0.0106,
+    0.0248,
+    0.012,
+    -0.0019,
+    0.0279,
+    0.0235
+   ],
+   "rho": -0.022715542521212734,
+   "perm_p": 0.93013,
+   "perm_kind": "100000 random permutations",
+   "rho_ci": [
+    -0.17243161822920575,
+    0.16520394560881987
+   ],
+   "rho_boot_frac_pos": 0.4805,
+   "within": {
+    "clip": {
+     "n": 6,
+     "rho": 0.14285714285714288
+    },
+    "dinov2": {
+     "n": 6,
+     "rho": -0.028571428571428574
+    },
+    "siglip": {
+     "n": 6,
+     "rho": 0.4285714285714286
+    }
+   },
+   "T": 0.18095238095238098,
+   "T_perm_p": 0.51904,
+   "T_backbones": [
+    "clip",
+    "dinov2",
+    "siglip"
+   ],
+   "n_qual_backbones_rho_pos": 2,
+   "R2_bb": 0.04042677157469021,
+   "R2_x": 0.0025385679152237772,
+   "R2_both": 0.04395643184111031,
+   "adjR2_bb": -0.08751632554868438,
+   "adjR2_x": -0.05980277159007463,
+   "adjR2_both": -0.16091004705008038,
+   "partial_R2_x_given_bb": 0.003678364674900719,
+   "coef_x_joint": -0.006384714132847592,
+   "coef_x_alone": -0.0053421384218079945,
+   "signs": {
+    "DINOv2-B L2": {
+     "point": -1.0,
+     "bootstrap": -1.0
+    },
+    "DINOv2-B L4": {
+     "point": 1.0,
+     "bootstrap": 1.0
+    },
+    "DINOv2-B L6": {
+     "point": 1.0,
+     "bootstrap": 1.0
+    },
+    "DINOv2-B L8": {
+     "point": 1.0,
+     "bootstrap": 1.0
+    },
+    "DINOv2-B L10": {
+     "point": -1.0,
+     "bootstrap": -1.0
+    },
+    "DINOv2-B L12": {
+     "point": -1.0,
+     "bootstrap": -1.0
+    },
+    "CLIP-L L4": {
+     "point": -1.0,
+     "bootstrap": -1.0
+    },
+    "CLIP-L L8": {
+     "point": 1.0,
+     "bootstrap": 1.0
+    },
+    "CLIP-L L12": {
+     "point": 1.0,
+     "bootstrap": 1.0
+    },
+    "CLIP-L L16": {
+     "point": 1.0,
+     "bootstrap": 1.0
+    },
+    "CLIP-L L20": {
+     "point": -1.0,
+     "bootstrap": -1.0
+    },
+    "CLIP-L L24": {
+     "point": 1.0,
+     "bootstrap": 1.0
+    },
+    "SigLIP-L L4": {
+     "point": 1.0,
+     "bootstrap": 1.0
+    },
+    "SigLIP-L L8": {
+     "point": 1.0,
+     "bootstrap": 1.0
+    },
+    "SigLIP-L L12": {
+     "point": -1.0,
+     "bootstrap": -1.0
+    },
+    "SigLIP-L L16": {
+     "point": 1.0,
+     "bootstrap": 1.0
+    },
+    "SigLIP-L L20": {
+     "point": 1.0,
+     "bootstrap": 1.0
+    },
+    "SigLIP-L L24": {
+     "point": 1.0,
+     "bootstrap": 1.0
+    }
+   },
+   "y_unrounded": [
+    -0.005198326737801621,
+    0.013251360123738528,
+    0.02881552023396593,
+    -0.01967012569724412,
+    0.021636117458481256,
+    0.042958417242284413,
+    -0.0058467971410868765,
+    0.03170065296237368,
+    0.006282155765869521,
+    -0.0027426069612878864,
+    0.012047634838167178,
+    0.010424953077923719,
+    0.010625390076801973,
+    0.02478495107892893,
+    0.011966705703052988,
+    -0.001907042290430865,
+    0.027859790611589042,
+    0.023531737762718486
+   ]
+  },
+  "readouts_with_changed_sign": [
+   "DINOv2-B L2"
+  ],
+  "E_and_L20": {
+   "DINOv2-B L2": {
+    "E_unrounded": -2.883039918509106e-05,
+    "E_rounded_as_stored": -0.0,
+    "L20_stored": 0.005198326737801621,
+    "L20_corrected": -0.005198326737801621
+   },
+   "DINOv2-B L4": {
+    "E_unrounded": 0.050730556384057476,
+    "E_rounded_as_stored": 0.0507,
+    "L20_stored": 0.013251360123738528,
+    "L20_corrected": 0.013251360123738528
+   },
+   "DINOv2-B L6": {
+    "E_unrounded": 0.08241979180845066,
+    "E_rounded_as_stored": 0.0824,
+    "L20_stored": 0.02881552023396593,
+    "L20_corrected": 0.02881552023396593
+   },
+   "DINOv2-B L8": {
+    "E_unrounded": 0.03474444049938376,
+    "E_rounded_as_stored": 0.0347,
+    "L20_stored": -0.01967012569724412,
+    "L20_corrected": -0.01967012569724412
+   },
+   "DINOv2-B L10": {
+    "E_unrounded": -0.02849442597446767,
+    "E_rounded_as_stored": -0.0285,
+    "L20_stored": 0.021636117458481256,
+    "L20_corrected": 0.021636117458481256
+   },
+   "DINOv2-B L12": {
+    "E_unrounded": -0.09752208467595681,
+    "E_rounded_as_stored": -0.0975,
+    "L20_stored": 0.042958417242284413,
+    "L20_corrected": 0.042958417242284413
+   },
+   "CLIP-L L4": {
+    "E_unrounded": -0.00034890482731492894,
+    "E_rounded_as_stored": -0.0003,
+    "L20_stored": -0.0058467971410868765,
+    "L20_corrected": -0.0058467971410868765
+   },
+   "CLIP-L L8": {
+    "E_unrounded": 0.04088292888599406,
+    "E_rounded_as_stored": 0.0409,
+    "L20_stored": 0.03170065296237368,
+    "L20_corrected": 0.03170065296237368
+   },
+   "CLIP-L L12": {
+    "E_unrounded": 0.060522897371997814,
+    "E_rounded_as_stored": 0.0605,
+    "L20_stored": 0.006282155765869521,
+    "L20_corrected": 0.006282155765869521
+   },
+   "CLIP-L L16": {
+    "E_unrounded": 0.017640339409948462,
+    "E_rounded_as_stored": 0.0176,
+    "L20_stored": -0.0027426069612878864,
+    "L20_corrected": -0.0027426069612878864
+   },
+   "CLIP-L L20": {
+    "E_unrounded": -0.010144725392273957,
+    "E_rounded_as_stored": -0.0101,
+    "L20_stored": 0.012047634838167178,
+    "L20_corrected": 0.012047634838167178
+   },
+   "CLIP-L L24": {
+    "E_unrounded": 0.013708544016249753,
+    "E_rounded_as_stored": 0.0137,
+    "L20_stored": 0.010424953077923719,
+    "L20_corrected": 0.010424953077923719
+   },
+   "SigLIP-L L4": {
+    "E_unrounded": 0.01984567386949015,
+    "E_rounded_as_stored": 0.0198,
+    "L20_stored": 0.010625390076801973,
+    "L20_corrected": 0.010625390076801973
+   },
+   "SigLIP-L L8": {
+    "E_unrounded": 0.05512208853255914,
+    "E_rounded_as_stored": 0.0551,
+    "L20_stored": 0.02478495107892893,
+    "L20_corrected": 0.02478495107892893
+   },
+   "SigLIP-L L12": {
+    "E_unrounded": -0.020555133826364258,
+    "E_rounded_as_stored": -0.0206,
+    "L20_stored": 0.011966705703052988,
+    "L20_corrected": 0.011966705703052988
+   },
+   "SigLIP-L L16": {
+    "E_unrounded": 0.0019224056036925314,
+    "E_rounded_as_stored": 0.0019,
+    "L20_stored": -0.001907042290430865,
+    "L20_corrected": -0.001907042290430865
+   },
+   "SigLIP-L L20": {
+    "E_unrounded": 0.04726113614412207,
+    "E_rounded_as_stored": 0.0473,
+    "L20_stored": 0.027859790611589042,
+    "L20_corrected": 0.027859790611589042
+   },
+   "SigLIP-L L24": {
+    "E_unrounded": 0.14470428947213715,
+    "E_rounded_as_stored": 0.1447,
+    "L20_stored": 0.023531737762718486,
+    "L20_corrected": 0.023531737762718486
+   }
+  },
+  "note": "a logged departure from the code of nn/ANALYSIS_RULE.md, not from the rule (REANALYSIS_RULE.md 6.13)"
+ }
+}
