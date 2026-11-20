@@ -1,0 +1,46 @@
+### probe start 2026-11-18T16:34:36Z
+### probe pid 12602
+### pid 12602: no Metal client at ~0s
+### pid 12602: no Metal client at ~5s
+$LAN_SAL_SRC/.venv/lib/python3.12/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+$LAN_SAL_SRC/.venv/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+### pid 12602: no Metal client at ~10s
+Using cache found in $HOME/.cache/torch/hub/pytorch_vision_v0.6.0
+$LAN_SAL_SRC/.venv/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=DenseNet201_Weights.IMAGENET1K_V1`. You can also use `weights=DenseNet201_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using cache found in $HOME/.cache/torch/hub/pytorch_vision_v0.6.0
+$LAN_SAL_SRC/.venv/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNeXt50_32X4D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt50_32X4D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Loaded pretrained weights for efficientnet-b5
+Loading weights:   0%|          | 0/223 [00:00<?, ?it/s]Loading weights: 100%|██████████| 223/223 [00:00<00:00, 4115.75it/s]
+### pid 12602: no Metal client at ~15s
+### pid 12602: no Metal client at ~20s
+### pid 12602: no Metal client at ~25s
+### pid 12602: no Metal client at ~30s
+done: 100 values, max |mine - published| 8.282e-06, wall 101.5 s
+### probe end 2026-11-18T16:36:22Z exit 0 metal 0 elapsed_checks ~105s
+### probe start 2026-11-18T16:36:47Z set rigid
+### probe pid 12693
+### pid 12693: no Metal client at ~0s
+### pid 12693: no Metal client at ~5s
+$LAN_SAL_SRC/.venv/lib/python3.12/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+$LAN_SAL_SRC/.venv/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+Using cache found in $HOME/.cache/torch/hub/pytorch_vision_v0.6.0
+$LAN_SAL_SRC/.venv/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=DenseNet201_Weights.IMAGENET1K_V1`. You can also use `weights=DenseNet201_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Using cache found in $HOME/.cache/torch/hub/pytorch_vision_v0.6.0
+$LAN_SAL_SRC/.venv/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNeXt50_32X4D_Weights.IMAGENET1K_V1`. You can also use `weights=ResNeXt50_32X4D_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Loaded pretrained weights for efficientnet-b5
+Loading weights:   0%|          | 0/223 [00:00<?, ?it/s]Loading weights: 100%|██████████| 223/223 [00:00<00:00, 10127.66it/s]
+### pid 12693: no Metal client at ~10s
+### pid 12693: no Metal client at ~15s
+### pid 12693: no Metal client at ~20s
+### pid 12693: no Metal client at ~25s
+### pid 12693: no Metal client at ~30s
+done: 100 values, max |mine - published| 6.819e-06, wall 98.3 s
+### probe end 2026-11-18T16:38:33Z exit 0 metal 0 elapsed_checks ~105s

@@ -1,0 +1,4 @@
+wrote $LAN_PROJECT_ROOT/neuro/verify_rescore/recompute_p5.json (1.0 s)
+DeepGaze IIE cat 3 sep 12 Luni +0.0449 [+0.0233, +0.0664] Lrig +0.0284 A* +0.0166 C* -0.0118 p 0.3208
+DeepGaze MSDB cat 3 sep 3 Luni +0.0063 [-0.0043, +0.0167] Lrig +0.0049 A* +0.0014 C* -0.0034 p 0.8286
+{'uniform_models': [], 'alternation_models': ['DeepGaze IIE', 'DeepGaze MSDB'], 'branch': 'A not empty: abstract leads with the ratio-free square alternation clause for A; no uniform-rotation clause', 'highlight4': 'On squares, alternating rotation separates DeepGaze IIE and MSDB from 15 local nulls', 'highlight4_chars': 84, 'highlight4_chars_stated_in_rule': 84, 'highlight_char_counts_all': {'both_U': 74, 'DeepGaze IIE+DeepGaze MSDB': 84, 'DeepGaze IIE': 75, 'DeepGaze MSDB': 76}, 'rule72_drop_uniform_abstract_clause': True, 'P1_leaves_contributions': True, 'p2_abstract_clause_values': ['+0.024', '+0.021']}

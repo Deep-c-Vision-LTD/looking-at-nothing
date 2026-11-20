@@ -1,0 +1,24 @@
+wrote $LAN_PROJECT_ROOT/neuro/verify_rescore/compare_p5.json: 1470 rows (1356 decisive), 0 disagree, 20 informational rows differ
+  mean           n= 108 disagree=  0 max|diff|=0 info=False
+  se             n= 108 disagree=  0 max|diff|=0 info=False
+  t              n= 112 disagree=  0 max|diff|=0 info=False
+  p              n= 108 disagree=  0 max|diff|=0 info=False
+  p_strict_info  n= 108 disagree= 20 max|diff|=8.57e-05 info=True
+  p_min          n= 108 disagree=  0 max|diff|=0 info=False
+  ci             n= 216 disagree=  0 max|diff|=4.16e-17 info=False
+  int            n= 326 disagree=  0 max|diff|=0 info=False
+  bool           n= 108 disagree=  0 max|diff|=0 info=False
+  skew           n= 108 disagree=  0 max|diff|=0 info=False
+  decision       n=  21 disagree=  0 max|diff|=0 info=False
+  decision_info  n=   6 disagree=  0 max|diff|=0 info=True
+  str            n=   5 disagree=  0 max|diff|=0 info=False
+  count          n=   9 disagree=  0 max|diff|=0 info=False
+  ratio          n=   4 disagree=  0 max|diff|=0 info=False
+  ci_bca         n=   4 disagree=  0 max|diff|=1.11e-16 info=False
+  z0             n=   2 disagree=  0 max|diff|=0 info=False
+  acc            n=   2 disagree=  0 max|diff|=1.53e-16 info=False
+  alpha_adj      n=   4 disagree=  0 max|diff|=1.11e-16 info=False
+  ci_fieller     n=   3 disagree=  0 max|diff|=0 info=False
+null square Delta20 range [1.0186441571959544e-06, 0.00025070087912279493]
+partial vs R7 (IIE): {'n_common_leaves': 284, 'only_in_partial': [], 'only_in_R7': [], 'n_different': 0}
+S2 vs R7: {'P1': {'n_common_leaves': 391, 'only_in_S2': [], 'only_in_R7': [], 'n_different': 0}, 'P2': {'n_common_leaves': 389, 'only_in_S2': [], 'only_in_R7': [], 'n_different': 0}}
